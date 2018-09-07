@@ -64,7 +64,7 @@ class TeamSection extends React.Component {
                 <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
                   <img src={person1} alt="..." className={imageClasses} />
                 </GridItem>
-                <h4 className={classes.cardTitle}>
+                <h4 className={classes.title}>
                   Avery Siciliano
                   <br />
                   <small className={classes.smallTitle}>BAP Program Integrity Specialist</small>

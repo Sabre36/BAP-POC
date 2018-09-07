@@ -89,9 +89,9 @@ class ParallaxHeader extends React.Component {
                             <GridContainer>
                                 <GridItem xs={12} sm={12} md={6}>
                                     <h1 className={classes.title}>Who we are</h1>
-                                    <h4 className={classes.description}>
+                                    <h3 className={classes.description}>
                                         BAP is the world’s most trusted, comprehensive and proven third-party aquaculture certification program. We’ve been improving the environmental, social and economic performance of the aquaculture supply chain and growing the global supply of responsibly farmed seafood since 2002.
-                                    </h4>
+                                    </h3>
                                     <br />
                                     <Button
                                         color="success"
@@ -117,9 +117,9 @@ class ParallaxHeader extends React.Component {
                                 <GridContainer>
                                     <GridItem xs={12} sm={12} md={6}>
                                         <h1 className={classes.title}>In the marketplace</h1>
-                                        <h4>
+                                        <h3>
                                             More than 150 retail and foodservice brands worldwide are publicly committed to sourcing seafood responsibly from BAP-certified aquaculture processing plants, farms, hatcheries and feed mills.
-                                        </h4>
+                                        </h3>
                                         <br />
                                         <Button
                                             color="primary"
@@ -145,9 +145,9 @@ class ParallaxHeader extends React.Component {
                                     <GridContainer>
                                         <GridItem xs={12} sm={12} md={6}>
                                             <h1 className={classes.title}>Certification</h1>
-                                            <h4>
-                                                The BAP program recognizes product from associated or integrated facilities along the aquaculture production chain with a star-based ranking system, which can be found by rolling over a plant’s row in the table. “Facilities in process” refers to a certified facility that is past its expiration date but actively engaged in the re-certification process, while “fallow” refers to a site not currently in production or in the early stages of production that will complete re-certification at a later date.
-                                            </h4>
+                                            <h3>
+                                                The BAP program recognizes product from associated or integrated facilities along the aquaculture production chain with a star-based ranking system.
+                                            </h3>
                                             <br />
                                             <Button
                                                 color="primary"
@@ -184,9 +184,9 @@ class ParallaxHeader extends React.Component {
                                             <GridContainer>
                                                 <GridItem xs={12} sm={12} md={6}>
                                                     <h1 className={classes.title}>Program standards</h1>
-                                                    <h4>
-                                                         our program to ensure the highest level of integrity, with a team of staff members dedicated to ensuring that independent, third-party certification bodies (CBs) and auditors as well as BAP-certified aquaculture facilities are in compliance with program requirements.
-                                                    </h4>
+                                                    <h3>
+                                                         Our program ensures the highest level of integrity, with a team of staff members dedicated to ensuring that independent, third-party certification bodies (CBs) and auditors as well as BAP-certified aquaculture facilities are in compliance with program requirements.
+                                                    </h3>
                                                     <br />
                                                     <Button
                                                         color="primary"
