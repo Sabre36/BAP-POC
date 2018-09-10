@@ -123,18 +123,18 @@ function HeaderLinks({ ...props }) {
 
       <ListItem className={classes.listItem}>
         <CustomDropdown
-          noLiPadding
-          buttonText="Certification"
-          buttonProps={{
-            className: classes.navLink,
-            color: "transparent"
-          }}
-          dropdownList={[
-            <Link to="/" className={classes.dropdownLink}>Certification</Link>,
-            <a href="#" className={classes.dropdownLink}>Facilities</a>
-          ]}
+            noLiPadding
+            buttonText="Certification"
+            buttonProps={{
+                className: classes.navLink,
+                color: "transparent"
+            }}
+            dropdownList={[
+                <Link to="/" className={classes.dropdownLink}>Certification</Link>,
+                <a href="#" className={classes.dropdownLink}>Facilities</a>
+            ]}
         />
-      </ListItem>
+    </ListItem>
 
 
       <ListItem className={classes.listItem}>
@@ -166,6 +166,15 @@ function HeaderLinks({ ...props }) {
               <a href="#" className={classes.dropdownLink}>Consumers</a>
             ]}
           />
+        </ListItem>
+
+        <ListItem className={classes.listItem}>
+            <Button
+                href="./ProgramIntegrity"
+                color="transparent"
+                className={classes.navLink}
+            > Program Integrity
+            </Button>
         </ListItem>
 
       <ListItem className={classes.listItem}>

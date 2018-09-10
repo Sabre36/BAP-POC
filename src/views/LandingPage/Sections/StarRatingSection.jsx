@@ -25,7 +25,7 @@ class StarRatingSection extends React.Component {
                         <h4 className={classes.description}>
 
                             <div style={normalDiv}>
-                                The BAP program employs a star system to signify the integration levels of BAP certification along the aquaculture production chain. These stars are displayed on the BAP logo and appear on packaging for a variety of farmed seafood products worldwide.
+                                This BAP program employs a star system to signify the integration levels of BAP certification along the aquaculture production chain. These stars are displayed on the BAP logo and appear on packaging for a variety of farmed seafood products worldwide.
 
                                 <br/><br/>
                                 Download the <a href="#">BAP Logo Use Guide</a> to ensure that you’re using the BAP logo appropriately and that any claims associated with GAA or BAP are portrayed in an accurate manner.
