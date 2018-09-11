@@ -13,23 +13,16 @@ import Footer from "components/Footer/Footer.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
-import Parallax from "components/Parallax/ParallaxHeader.jsx";
+import Parallax from "components/Parallax/Parallax.jsx";
 
-import landingPageStyle from "assets/jss/site-styles/views/landingPage.jsx";
+import FacilitiesMainSection from "./Sections/FacilitiesMainSection.jsx";
 
-// Sections for this page
-import AboutBAPSection from "./Sections/AboutBAPSection.jsx";
-import FacilitiesSection from "./Sections/FacilitiesSection.jsx";
-import StarRatingSection from "./Sections/StarRatingSection.jsx";
-import TeamSection from "./Sections/TeamSection.jsx";
-import StayConnectedSection from "./Sections/StayConnectedSection.jsx";
-import ContactSection from "./Sections/ContactSection.jsx";
+import facilitiesPageStyle from "assets/jss/site-styles/views/facilitiesPage.jsx";
 
-import pillars from "assets/img/4-pillars.png";
 
 const dashboardRoutes = [];
 
-class LandingPage extends React.Component {
+class FacilitiesPage extends React.Component {
   render() {
     const { classes, ...rest } = this.props;
 
@@ -48,30 +41,24 @@ class LandingPage extends React.Component {
           }}
           {...rest}
         />
-        <Parallax filter image={require("assets/img/Aquapod_Hawaii.jpg")}>
+        <Parallax filter image={require("assets/img/slide3a.png")}>
             <div className={classes.container}>
 
             <GridContainer>
               <GridItem xs={12} sm={12} md={6} >
-                <h2 className={classes.title}>Why BAP certification?</h2>
+                <h2 className={classes.title}>Certified facilities</h2>
                 <h4 className={classes.subtitle}>
-                   The Best Aquaculture Practices is the only third-party aquaculture certification program to be compliant with the Global Food Safety Initiative (GFSI), Global Social Compliance Programme (GSCP) and Global Sustainable Seafood Initiative (GSSI).
+                    BAP certifies farms, hatcheries, feed mills, processing plants and repacking plants in over nn countries. The BAP program recognizes product from associated or integrated facilities along the aquaculture production chain with a star-based ranking system.
+                    <br/>
                 </h4>
-              </GridItem>
-              <GridItem xs={12} sm={12} md={6}>
-                <img src={pillars} height={300} />
               </GridItem>
             </GridContainer>
           </div>
         </Parallax>
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
-            <AboutBAPSection />
-            <FacilitiesSection />
-            <StarRatingSection/>
-            <TeamSection />
-            <StayConnectedSection />
-            <ContactSection />
+
+            <FacilitiesMainSection />
 
           </div>
         </div>
@@ -81,4 +68,4 @@ class LandingPage extends React.Component {
   }
 }
 
-export default withStyles(landingPageStyle)(LandingPage);
+export default withStyles(facilitiesPageStyle)(FacilitiesPage);

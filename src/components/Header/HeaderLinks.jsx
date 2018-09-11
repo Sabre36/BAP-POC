@@ -43,7 +43,7 @@ function HeaderLinks({ ...props }) {
         </Tooltip>
       </ListItem>
 
-      <ListItem className={classes.listItemActive}>
+      <ListItem className={classes.listItemActive} href="./landing-page">
           <Button
               color="transparent"
               className={classes.navLink}
@@ -76,7 +76,7 @@ function HeaderLinks({ ...props }) {
             }}
             dropdownList={[
                 <Link to="/" className={classes.dropdownLink}>Certification</Link>,
-                <a href="#" className={classes.dropdownLink}>Facilities</a>
+                <a href="./facilities" className={classes.dropdownLink}>Facilities</a>
             ]}
         />
     </ListItem>

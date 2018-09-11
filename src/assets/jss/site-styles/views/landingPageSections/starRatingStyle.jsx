@@ -31,7 +31,8 @@ const starRatingStyle = {
         fontSize: "17px",
         fontWeight: "300",
         color: "#fff",
-    }
+    },
+
 };
 
 export default starRatingStyle;
