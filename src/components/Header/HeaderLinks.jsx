@@ -43,8 +43,9 @@ function HeaderLinks({ ...props }) {
         </Tooltip>
       </ListItem>
 
-      <ListItem className={classes.listItemActive} href="./landing-page">
+      <ListItem className={classes.listItemActive} >
           <Button
+              href="/"
               color="transparent"
               className={classes.navLink}
               > Who we are

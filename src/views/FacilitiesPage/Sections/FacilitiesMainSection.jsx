@@ -73,7 +73,7 @@ class FacilitiesMainSection extends React.Component {
                     </GridItem>
                     <GridItem xs={12} sm={12} md={6}>
                         <h2 className={classes.title}></h2>
-                        <Card className={classes.card} style={{backgroundColor: "#fcfcfc" }}>
+                        <Card className={classes.card} style={{backgroundColor: "#F2F3F7" }}>
                             <CardActionArea>
                                 <CardContent >
                                     <Typography gutterBottom variant="headline" component="h3" className={classes.title}>
