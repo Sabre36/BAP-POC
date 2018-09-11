@@ -4,8 +4,8 @@
   "private": true,
   "main": "dist/index.js",
   "dependencies": {
-    "@material-ui/core": "1.5.0",
-    "@material-ui/icons": "^2.0.2",
+    "@material-ui/core": "^3.0.3",
+    "@material-ui/icons": "^3.0.1",
     "ajv": "6.5.2",
     "classnames": "2.2.6",
     "history": "4.7.2",
@@ -16,10 +16,13 @@
     "react": "16.4.2",
     "react-datetime": "2.15.0",
     "react-dom": "16.4.2",
+    "react-nouislider": "2.0.1",
+    "react-photo-gallery": "^6.2.1",
     "react-router-dom": "4.3.1",
     "react-scripts": "1.1.4",
     "react-slick": "0.23.1",
-    "react-swipeable-views": "0.12.16"
+    "react-swipeable-views": "0.12.16",
+    "recharts": "^1.2.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

@@ -19,9 +19,10 @@ import landingPageStyle from "assets/jss/site-styles/views/landingPage.jsx";
 
 // Sections for this page
 import AboutBAPSection from "./Sections/AboutBAPSection.jsx";
+import FacilitiesSection from "./Sections/FacilitiesSection.jsx";
 import StarRatingSection from "./Sections/StarRatingSection.jsx";
 import TeamSection from "./Sections/TeamSection.jsx";
-import WorkSection from "./Sections/WorkSection.jsx";
+import StayConnectedSection from "./Sections/StayConnectedSection.jsx";
 import ContactSection from "./Sections/ContactSection.jsx";
 
 import pillars from "assets/img/4-pillars.png";
@@ -51,9 +52,9 @@ class LandingPage extends React.Component {
             <div className={classes.container}>
 
             <GridContainer>
-              <GridItem xs={12} sm={12} md={6}>
+              <GridItem xs={12} sm={12} md={6} >
                 <h2 className={classes.title}>Why BAP certification?</h2>
-                <h4>
+                <h4 className={classes.subtitle}>
                    The Best Aquaculture Practices is the only third-party aquaculture certification program to be compliant with the Global Food Safety Initiative (GFSI), Global Social Compliance Programme (GSCP) and Global Sustainable Seafood Initiative (GSSI).
                 </h4>
               </GridItem>
@@ -66,9 +67,10 @@ class LandingPage extends React.Component {
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
             <AboutBAPSection />
+            <FacilitiesSection />
             <StarRatingSection/>
             <TeamSection />
-            <WorkSection />
+            <StayConnectedSection />
             <ContactSection />
 
           </div>

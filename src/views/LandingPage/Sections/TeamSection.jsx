@@ -57,7 +57,7 @@ class TeamSection extends React.Component {
     };
     return (
       <div className={classes.section}>
-        <h2 className={classes.title}>Here is our team</h2>
+        <h2 className={classes.title}>Our team</h2>
         <div style={{border: '1px solid rgba(0,0,0,.075)', borderRadius: '4px'}}>
           <Carousel {...settings}>
               <Card plain>

@@ -40,7 +40,8 @@ const card = {
   margin: "25px 0",
   boxShadow: "0 1px 4px 0 rgba(0, 0, 0, 0.14)",
   borderRadius: "3px",
-  color: "rgba(0, 0, 0, 0.87)",
+  fontSize: "15px",
+  color: "rgba(0, 0, 0, .75)",
   background: "#fff"
 };
 
@@ -164,6 +165,10 @@ const cardSubtitle = {
   marginBottom: "0",
   marginTop: "-.375rem"
 };
+const typography = {
+    fontSize: "16px",
+    color: "green"
+}
 
 export {
   //variables
@@ -199,5 +204,6 @@ export {
   title,
   cardTitle,
   cardLink,
-  cardSubtitle
+  cardSubtitle,
+  typography
 };
