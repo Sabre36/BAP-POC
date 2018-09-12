@@ -7,7 +7,6 @@ import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import FacilitiesMap from "components/Maps/FacilitiesMap.jsx";
 import FacilitiesGrid from "components/Tables/FacilitiesGrid.jsx";
-import HeaderCarousel from "components/Carousel/HeaderCarousel.jsx";
 
 import aboutBAPStyle from "assets/jss/site-styles/views/landingPageSections/aboutBAPStyle.jsx";
 import InfoIcon from "@material-ui/icons/Info";
@@ -108,7 +107,6 @@ class FacilitiesMainSection extends React.Component {
             </TabContainer>}
 
             {value === 0 && <TabContainer>
-                <HeaderCarousel />
                 <FacilitiesGrid/>
             </TabContainer>}
 
