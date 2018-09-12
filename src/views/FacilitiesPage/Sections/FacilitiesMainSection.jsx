@@ -7,6 +7,7 @@ import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import FacilitiesMap from "components/Maps/FacilitiesMap.jsx";
 import FacilitiesGrid from "components/Tables/FacilitiesGrid.jsx";
+import HeaderCarousel from "components/Carousel/HeaderCarousel.jsx";
 
 import aboutBAPStyle from "assets/jss/site-styles/views/landingPageSections/aboutBAPStyle.jsx";
 import InfoIcon from "@material-ui/icons/Info";
@@ -96,17 +97,18 @@ class FacilitiesMainSection extends React.Component {
                 <br/>
                 <GridItem xs={12} sm={12} md={12}>
                     <Tabs value={value} onChange={this.handleChange} style={{color: "#000"}}>
-                        <Tab label="Locations" icon={<LocationIcon/>} />
                         <Tab label="Data Table" icon={<ListIcon/>} />
+                        <Tab label="Locations" icon={<LocationIcon/>} />
                       </Tabs>
                 </GridItem>
             </GridContainer>
 
-            {value === 0 && <TabContainer >
+            {value === 1 && <TabContainer >
                 <FacilitiesMap/>
             </TabContainer>}
 
-            {value === 1 && <TabContainer>
+            {value === 0 && <TabContainer>
+                <HeaderCarousel />
                 <FacilitiesGrid/>
             </TabContainer>}
 
