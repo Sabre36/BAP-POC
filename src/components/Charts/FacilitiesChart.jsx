@@ -1,5 +1,5 @@
 import React from "react";
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ReferenceLine, ResponsiveContainer } from 'recharts';
 
 //const {AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip} = Recharts;
 const data = [
@@ -23,17 +23,19 @@ class FacilitiesChart extends React.Component {
 
     render() {
         return (
-            <div>
+            <div style={{height: "300px"}}>
+                <ResponsiveContainer height="100%">
+                    <AreaChart width={500} height={300} data={data}
+                        margin={{top: -20, right: 30, left: 0, bottom: 0}}>
+                    <CartesianGrid strokeDasharray="3 3"/>
 
-                <AreaChart width={500} height={275} data={data}
-                    margin={{top: -20, right: 30, left: 0, bottom: 0}}>
-                <CartesianGrid strokeDasharray="3 3"/>
-                <XAxis dataKey="year"/>
-                <YAxis/>
-                <Tooltip/>
-                <Area type='monotone' dataKey='Facilities' label='Number of facilities' stroke='#000' fill='#43a546' />
-              </AreaChart>
-        </div>
+                    <XAxis dataKey="year" padding={{left: 25, right: 0}}/>
+                    <YAxis/>
+                    <Tooltip/>
+                    <Area type='monotone' dataKey='Facilities' label='Number of facilities' stroke='#000' fill='#43a546' />
+                  </AreaChart>
+              </ResponsiveContainer>
+          </div>
 
         );
     }
