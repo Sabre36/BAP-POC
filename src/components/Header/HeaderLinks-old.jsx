@@ -21,7 +21,7 @@ import Button from "components/CustomButtons/Button.jsx";
 
 import headerLinksStyle from "assets/jss/site-styles/components/headerLinksStyle.jsx";
 
-function HeaderLinks3({ ...props }) {
+function HeaderLinks({ ...props }) {
   const { classes } = props;
   return (
     <List className={classes.list}>
@@ -30,7 +30,7 @@ function HeaderLinks3({ ...props }) {
         <Tooltip
           id="search-site"
           title="Search this site"
-          placement={window.innerWidth > 459 ? "top" : "left"}
+          placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
           <Button
@@ -72,7 +72,7 @@ function HeaderLinks3({ ...props }) {
             noLiPadding
             buttonText="Certification"
             buttonProps={{
-                className: classes.navLinkActive,
+                className: classes.navLink,
                 color: "transparent"
             }}
             dropdownList={[
@@ -93,15 +93,14 @@ function HeaderLinks3({ ...props }) {
             </Button>
         </ListItem>
 
-
-      {/* <ListItem className={classes.listItem}>
+      <ListItem className={classes.listItem}>
         <Button
           href="#"
           color="transparent"
           className={classes.navLink}
         > Blog
         </Button>
-      </ListItem> */}
+      </ListItem>
 
 
       <ListItem className={classes.listItem}>
@@ -136,4 +135,4 @@ function HeaderLinks3({ ...props }) {
   );
 }
 
-export default withStyles(headerLinksStyle)(HeaderLinks3);
+export default withStyles(headerLinksStyle)(HeaderLinks);

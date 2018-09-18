@@ -15,10 +15,10 @@ const facilitiesPageStyle = {
     color: "#FFFFFF",
     textDecoration: "none"
   },
-  subtitle: {
+  description: {
     fontSize: "1.313rem",
     maxWidth: "500px",
-    margin: "10px auto 0"
+    margin: "0"
   },
   main: {
     background: "#FFFFFF",

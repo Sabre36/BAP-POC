@@ -13,15 +13,19 @@ var shrimp = process.env.PUBLIC_URL + '/bap/OurProducts_Shrimp.png';
 var communicates = process.env.PUBLIC_URL + '/bap/ResponsibleAquacultureIs_HealthyCommunicaties.png';
 var hatchery = process.env.PUBLIC_URL + '/bap/OurFacilities_Hatchery.png';
 var preparedsalmon = process.env.PUBLIC_URL + '/bap/prepared_salmon.jpg';
+var ani1 = process.env.PUBLIC_URL + '/bap/ani-places.gif';
+var ani2 = process.env.PUBLIC_URL + '/bap/ani-food.gif';
+var ani3 = process.env.PUBLIC_URL + '/bap/ani-people.gif';
+
 
 
 const photos = [
     { src: salmon, width: 1, height: 1},
-    { src: croatia, width: 2, height: 1 },
+    { src: ani2, width: 2, height: 1 },
     { src: cert, width: 2, height: 2 },
 
-    { src: healthypeople, width: 2, height: 3 },
-    { src: facfarms, width: 1, height: 1 },
+    { src: ani3, width: 2, height: 3 },
+    { src: ani1, width: 1, height: 1 },
     { src: shrimp, width: 2, height: 2},
 ];
 

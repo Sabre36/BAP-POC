@@ -23,15 +23,38 @@ const starRatingStyle = {
         color: "#fff"
     },
     typography: {
-        fontSize: "17px",
+        fontSize: "20px",
         fontWeight: "300",
         color: "#4a4a4a",
     },
     whitetext: {
-        fontSize: "17px",
+        fontSize: "20px",
         fontWeight: "300",
         color: "#fff",
     },
+    icon: {
+        height: "96px",
+        width: "96px",
+        color: "#147BDC"
+    },
+    whiteicon: {
+        height: "96px",
+        width: "96px",
+        color: "#fff"
+    },
+    ratingText: {
+        minHeight: "96px",
+        color: "#147BDC",
+        fontWeight: "500",
+        paddingTop: "30px"
+    },
+    whiteRatingText: {
+        minHeight: "96px",
+        color: "#fff",
+        fontWeight: "500",
+        paddingTop: "30px"
+    }
+
 
 };
 

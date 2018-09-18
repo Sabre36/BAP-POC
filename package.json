@@ -27,10 +27,12 @@
     "react-datetime": "2.15.0",
     "react-dom": "16.4.2",
     "react-google-maps": "^9.4.5",
+    "react-helmet": "^5.2.0",
     "react-nouislider": "2.0.1",
     "react-photo-gallery": "^6.2.1",
     "react-router-dom": "4.3.1",
     "react-scripts": "1.1.4",
+    "react-show-more": "^2.0.0",
     "react-slick": "0.23.1",
     "react-swipeable-views": "0.12.16",
     "recharts": "^1.2.0"
@@ -52,7 +54,7 @@
     "prettier": "^1.13.7"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ ",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",

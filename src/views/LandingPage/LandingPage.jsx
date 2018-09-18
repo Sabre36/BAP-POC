@@ -3,6 +3,7 @@ import React from "react";
 import classNames from "classnames";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
+import { Helmet } from "react-helmet";
 
 
 // @material-ui/icons
@@ -13,6 +14,7 @@ import Footer from "components/Footer/Footer.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
+import TopNavLinks from "components/Header/TopNavLinks.jsx";
 import Parallax from "components/Parallax/ParallaxHeader.jsx";
 
 import landingPageStyle from "assets/jss/site-styles/views/landingPage.jsx";
@@ -21,6 +23,8 @@ import landingPageStyle from "assets/jss/site-styles/views/landingPage.jsx";
 import AboutBAPSection from "./Sections/AboutBAPSection.jsx";
 import FacilitiesSection from "./Sections/FacilitiesSection.jsx";
 import StarRatingSection from "./Sections/StarRatingSection.jsx";
+import ProgramIntegritySection from "./Sections/ProgramIntegritySection.jsx";
+import TrainingSection from "./Sections/TrainingSection.jsx";
 import TeamSection from "./Sections/TeamSection.jsx";
 import StayConnectedSection from "./Sections/StayConnectedSection.jsx";
 import ContactSection from "./Sections/ContactSection.jsx";
@@ -29,56 +33,85 @@ import pillars from "assets/img/4-pillars.png";
 
 const dashboardRoutes = [];
 
+
 class LandingPage extends React.Component {
-  render() {
-    const { classes, ...rest } = this.props;
 
+    constructor(){
+        super();
+        this.state= {
+            activeSlide : 0,
+        }
 
-    return (
-      <div>
-        <Header
-          color="transparent"
-          routes={dashboardRoutes}
-          brand="Best Aquaculture Practices"
-          rightLinks={<HeaderLinks />}
-          fixed
-          changeColorOnScroll={{
-            height: 400,
-            //color: "danger"
-          }}
-          {...rest}
-        />
-        <Parallax filter image={require("assets/img/Aquapod_Hawaii.jpg")}>
-            <div className={classes.container}>
+        this.childHandler = this.childHandler.bind(this);
+    }
 
-            <GridContainer>
-              <GridItem xs={12} sm={12} md={6} >
-                <h2 className={classes.title}>Why BAP certification?</h2>
-                <h4 className={classes.subtitle}>
-                   The Best Aquaculture Practices is the only third-party aquaculture certification program to be compliant with the Global Food Safety Initiative (GFSI), Global Social Compliance Programme (GSCP) and Global Sustainable Seafood Initiative (GSSI).
-                </h4>
-              </GridItem>
-              <GridItem xs={12} sm={12} md={6}>
-                <img src={pillars} height={300} />
-              </GridItem>
-            </GridContainer>
-          </div>
-        </Parallax>
-        <div className={classNames(classes.main, classes.mainRaised)}>
-          <div className={classes.container}>
-            <AboutBAPSection />
-            <FacilitiesSection />
-            <StarRatingSection/>
-            <TeamSection />
-            <StayConnectedSection />
-            <ContactSection />
+    childHandler(dataFromChild) {
+        // log our state before and after we updated it
+        console.log('%cPrevious Parent State: ' + JSON.stringify(this.state), "color:orange");
+        this.setState({
+            activeSlide: dataFromChild
+        },() => console.log('Updated Parent State:', this.state));
+    }
 
-          </div>
+    render() {
+        const { classes, ...rest } = this.props;
+
+        return (
+            <div>
+                <Helmet>
+                    <title>Best Aquaculture Practices Certification</title>
+                    <meta name="description" content="Best Aquaculture Practices Certification" />
+                    <meta property="og:url" content="https://www.bapcertification.org/" />
+                    <meta property="og:site_name" content="Best Aquaculture Practices Certification" />
+                    <meta name="twitter:card" content="summary" />
+                    <meta name="twitter:title" content="Best Aquaculture Practices Certification" />
+                </Helmet>
+                <Header
+                    color="transparent"
+                    routes={dashboardRoutes}
+                    brand="Best Aquaculture Practices"
+                    rightLinks={<HeaderLinks itemIndex={this.state.activeSlide} />}
+                    topLinks={<TopNavLinks />}
+                    fixed
+                    itemIndex={this.state.activeSlide}
+                    changeColorOnScroll={{
+                        height: 275,
+                        color: "primary"
+                    }}
+                    {...rest}
+                />
+                <Parallax filter action={this.childHandler}>
+                <div className={classes.container}>
+                    <h3> {this.state.data}</h3>
+                    <GridContainer>
+                        <GridItem xs={12} sm={12} md={6} >
+                            <h2 className={classes.title}>Why BAP certification?</h2>
+                            <h4 className={classes.subtitle}>
+                                The Best Aquaculture Practices is the only third-party aquaculture certification program to be compliant with the Global Food Safety Initiative (GFSI), Global Social Compliance Programme (GSCP) and Global Sustainable Seafood Initiative (GSSI).
+                            </h4>
+                        </GridItem>
+                        <GridItem xs={12} sm={12} md={6}>
+                            <img src={pillars} height={275} />
+                        </GridItem>
+                    </GridContainer>
+                </div>
+            </Parallax>
+            <div className={classNames(classes.main, classes.mainRaised)}>
+                <div className={classes.container}>
+                    <AboutBAPSection />
+                    <FacilitiesSection />
+                    <StarRatingSection/>
+                    <ProgramIntegritySection />
+                    <TrainingSection />
+                    <TeamSection />
+                    <StayConnectedSection />
+                    <ContactSection />
+                </div>
+            </div>
+            <Footer />
         </div>
-        <Footer />
-      </div>
     );
-  }
+}
 }
 
 export default withStyles(landingPageStyle)(LandingPage);

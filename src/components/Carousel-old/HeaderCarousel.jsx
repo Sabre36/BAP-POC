@@ -18,6 +18,10 @@ export default class SlideChangeHooks extends Component {
     };
     return (
       <div>
+
+          <button
+
+
         <h2>beforeChange and afterChange hooks</h2>
         <p>
           BeforeChange => activeSlide: <strong>{this.state.activeSlide}</strong>

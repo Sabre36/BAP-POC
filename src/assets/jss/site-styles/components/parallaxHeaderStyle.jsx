@@ -27,12 +27,27 @@ const parallaxHeaderStyle = {
             content: "''"
         }
     },
+    container: {
+        //backgroundColor: "rgba(0,0,0,.15)",
+        border: "1px solid rgba(0,0,0,.05)",
+        padding: "15px",
+        borderTopRightRadius: "20px",
+        position: "absolute",
+        bottom: "0",
+        textAlign: "left"
+    },
     blurb: {
         textAlign: "left",
-        fontSize: "18px",
+        fontSize: "20px",
         fontWeight: "400",
         lineHeight: "27px",
-        textShadow: "1px 1px rgba(0,0,0,.1)"
+        textShadow: "1px 1px rgba(0,0,0,.2)",
+    },
+    moreLessLightText: {
+        color: "#7bd34b",
+        fontWeight: "400",
+        textTransform: "uppercase",
+        fontSize: "13px"
     },
     small: {
         height: "380px"
