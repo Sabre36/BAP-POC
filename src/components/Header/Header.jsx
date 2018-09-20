@@ -187,6 +187,7 @@ class Header extends React.Component {
             color: PropTypes.oneOf([
                 "primary",
                 "transparent",
+                "semiTransparent",
                 "white",
                 "dark"
             ]),
@@ -208,6 +209,7 @@ class Header extends React.Component {
                 color: PropTypes.oneOf([
                     "primary",
                     "transparent",
+                    "semiTransparent",
                     "white",
                     "dark"
                 ]).isRequired

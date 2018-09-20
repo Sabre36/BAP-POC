@@ -32,7 +32,7 @@ class FacilitiesChart extends React.Component {
                     <XAxis dataKey="year" padding={{left: 25, right: 0}}/>
                     <YAxis/>
                     <Tooltip/>
-                    <Area type='monotone' dataKey='Facilities' label='Number of facilities' stroke='#000' fill='#43a546' />
+                    <Area type='monotone' dataKey='Facilities' label='Number of facilities' stroke='rgba(0,0,0,.5)' fill='#43a546' />
                   </AreaChart>
               </ResponsiveContainer>
           </div>

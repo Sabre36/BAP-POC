@@ -18,7 +18,7 @@ class ProgramIntegritySection extends React.Component {
         return (
             <div className={classes.section}>
                 <GridContainer justify="left">
-                    <GridItem xs={12} sm={12} md={7}>
+                    <GridItem xs={12} sm={12} md={8}>
                         <h2 className={classes.title}>Program integrity</h2>
                         <h4 className={classes.description}>
                             <ShowMore lines={11} anchorClass={classes.moreLessLightText}>
@@ -37,9 +37,9 @@ class ProgramIntegritySection extends React.Component {
                             </ShowMore>
                         </h4>
                     </GridItem>
-                    <GridItem xs={12} sm={12} md={5}>
-                        <div style={{paddingTop: "100px"}}>
-                            <img src={QAImage} height={400} />                        
+                    <GridItem xs={12} sm={12} md={4}>
+                        <div style={{paddingTop: "100px", float: "right"}}>
+                            <img src={QAImage} height={400} />
                         </div>
                     </GridItem>
                 </GridContainer>

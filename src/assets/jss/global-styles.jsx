@@ -29,19 +29,19 @@ const container = {
         paddingBottom: "20px"
     },
     "@media (min-width: 1440px)": {
-        maxWidth: "1340px",
+        maxWidth: "1290px", /* 1340 */
         paddingBottom: "30px"
     },
     "@media (min-width: 1680px)": {
-        maxWidth: "1560px",
+        maxWidth: "1400px", /* 1560 */
         paddingBottom: "40px"
     },
     "@media (min-width: 1920px)": {
-        maxWidth: "1800px",
+        maxWidth: "1500px", /* 1800 */
         paddingBottom: "40px"
     },
     "@media (min-width: 2560px)": {
-        maxWidth: "2360px",
+        maxWidth: "2160px", /* 2360 */
         paddingBottom: "40px"
     },
 };
@@ -164,7 +164,7 @@ const title = {
   color: "#3C4858",
   margin: "1.75rem 0 0.875rem",
   textDecoration: "none",
-  fontWeight: "700",
+  fontWeight: "500",
   fontFamily: `"Roboto", "Helvetica", serif`
 };
 

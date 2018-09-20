@@ -23,7 +23,8 @@ const headerStyle = theme => ({
         flexFlow: "row nowrap",
         justifyContent: "flex-start",
         position: "relative",
-        zIndex: "unset"
+        zIndex: "unset",
+        maxHeight: "120px"
     },
     absolute: {
         position: "absolute",
@@ -35,7 +36,7 @@ const headerStyle = theme => ({
     },
     container: {
         ...container,
-        minHeight: "50px",
+        minHeight: "40px",
         flex: "1",
         alignItems: "center",
         justifyContent: "space-between",
@@ -50,7 +51,6 @@ const headerStyle = theme => ({
         lineHeight: "30px",
         fontSize: "24px",
         fontWeight: "500",
-        borderRadius: "3px",
         textTransform: "none",
         color: "inherit",
         whiteSpace: "nowrap",
@@ -69,12 +69,18 @@ const headerStyle = theme => ({
     transparent: {
         backgroundColor: "transparent !important",
         boxShadow: "none",
-        paddingTop: "25px",
         color: "#FFFFFF"
+    },
+    semiTransparent: {
+        backgroundColor: "rgba(0,0,0,.2) !important",
+        boxShadow: "none",
+        color: "#FFFFFF",
+        maxHeight: "120px"
     },
     dark: {
         color: "#FFFFFF",
         backgroundColor: "#212121 !important",
+        maxHeight: "120px",
         boxShadow:
         "0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(33, 33, 33, 0.46)"
     },
@@ -83,6 +89,7 @@ const headerStyle = theme => ({
         padding: "0.625rem 0",
         marginBottom: "20px",
         color: "#555",
+        maxHeight: "120px",
         backgroundColor: "#fff !important",
         boxShadow:
         "0 4px 18px 0px rgba(0, 0, 0, 0.12), 0 7px 10px -5px rgba(0, 0, 0, 0.15)"
@@ -110,78 +117,6 @@ const headerStyle = theme => ({
         paddingLeft: "0",
         ...transition
     },
-
-
-    list: {
-        ...defaultFont,
-        fontSize: "15px",
-        margin: 0,
-        paddingLeft: "0",
-        listStyle: "none",
-        paddingTop: "0",
-        paddingBottom: "0",
-        marginTop: "0",
-        color: "inherit",
-    },
-    listItem: {
-        float: "left",
-        fontSize: "15px",
-        color: "inherit",
-        position: "relative",
-        display: "block",
-        width: "auto",
-        margin: "0",
-        padding: "0",
-        [theme.breakpoints.down("sm")]: {
-            width: "100%",
-            "&:after": {
-                width: "calc(100% - 30px)",
-                content: '""',
-                display: "block",
-                height: "1px",
-                marginLeft: "15px",
-                backgroundColor: "#e5e5e5"
-            }
-        }
-    },
-    listItemText: {
-        padding: "0 !important"
-    },
-
-    navLink: {
-        color: "inherit",
-        position: "relative",
-        padding: "0.9375rem",
-        fontWeight: "500",
-        fontSize: "15px",
-        textTransform: "uppercase",
-        borderRadius: "3px",
-        lineHeight: "20px",
-        textDecoration: "none",
-        margin: "0px",
-        display: "inline-flex",
-        "&:hover,&:focus": {
-            color: "inherit",
-            background: "rgba(200, 200, 200, 0.2)"
-        },
-        [theme.breakpoints.down("sm")]: {
-            width: "calc(100% - 30px)",
-            marginLeft: "15px",
-            marginBottom: "8px",
-            marginTop: "8px",
-            textAlign: "left",
-            "& > span:first-child": {
-                justifyContent: "flex-start"
-            }
-        }
-    },
-    navLinkActive: {
-        color: "inherit",
-        fontSize: "15px",
-        fontWeight: "500",
-        backgroundColor: "rgba(255, 255, 255, 0.2)"
-    },
-
 });
 
 export default headerStyle;

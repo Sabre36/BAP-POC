@@ -66,8 +66,10 @@ class LandingPage extends React.Component {
                     <meta name="twitter:card" content="summary" />
                     <meta name="twitter:title" content="Best Aquaculture Practices Certification" />
                 </Helmet>
+
+
                 <Header
-                    color="transparent"
+                    color="semiTransparent"
                     routes={dashboardRoutes}
                     brand="Best Aquaculture Practices"
                     rightLinks={<HeaderLinks itemIndex={this.state.activeSlide} />}
@@ -81,37 +83,37 @@ class LandingPage extends React.Component {
                     {...rest}
                 />
                 <Parallax filter action={this.childHandler}>
-                <div className={classes.container}>
-                    <h3> {this.state.data}</h3>
-                    <GridContainer>
-                        <GridItem xs={12} sm={12} md={6} >
-                            <h2 className={classes.title}>Why BAP certification?</h2>
-                            <h4 className={classes.subtitle}>
-                                The Best Aquaculture Practices is the only third-party aquaculture certification program to be compliant with the Global Food Safety Initiative (GFSI), Global Social Compliance Programme (GSCP) and Global Sustainable Seafood Initiative (GSSI).
-                            </h4>
-                        </GridItem>
-                        <GridItem xs={12} sm={12} md={6}>
-                            <img src={pillars} height={275} />
-                        </GridItem>
-                    </GridContainer>
+                    <div className={classes.container}>
+                        <h3> {this.state.data}</h3>
+                        <GridContainer>
+                            <GridItem xs={12} sm={12} md={6} >
+                                <h2 className={classes.title}>Why BAP certification?</h2>
+                                <h4 className={classes.subtitle}>
+                                    The Best Aquaculture Practices is the only third-party aquaculture certification program to be compliant with the Global Food Safety Initiative (GFSI), Global Social Compliance Programme (GSCP) and Global Sustainable Seafood Initiative (GSSI).
+                                </h4>
+                            </GridItem>
+                            <GridItem xs={12} sm={12} md={6}>
+                                <img src={pillars} height={275} />
+                            </GridItem>
+                        </GridContainer>
+                    </div>
+                </Parallax>
+                <div className={classNames(classes.main, classes.mainRaised)}>
+                    <div className={classes.container}>
+                        <AboutBAPSection />
+                        <FacilitiesSection />
+                        <StarRatingSection/>
+                        <ProgramIntegritySection />
+                        <TrainingSection />
+                        <TeamSection />
+                        <StayConnectedSection />
+                        <ContactSection />
+                    </div>
                 </div>
-            </Parallax>
-            <div className={classNames(classes.main, classes.mainRaised)}>
-                <div className={classes.container}>
-                    <AboutBAPSection />
-                    <FacilitiesSection />
-                    <StarRatingSection/>
-                    <ProgramIntegritySection />
-                    <TrainingSection />
-                    <TeamSection />
-                    <StayConnectedSection />
-                    <ContactSection />
-                </div>
+                <Footer />
             </div>
-            <Footer />
-        </div>
-    );
-}
+        );
+    }
 }
 
 export default withStyles(landingPageStyle)(LandingPage);

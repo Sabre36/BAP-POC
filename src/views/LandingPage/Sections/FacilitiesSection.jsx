@@ -46,7 +46,7 @@ class FacilitiesSection extends React.Component {
                             BAP certification is administered by the Global Aquaculture Alliance (GAA), a nonprofit organization dedicated to advocacy, education and leadership in responsible aquaculture.
                             <br/>
                             <br/>
-                            <Button size="small" color="primary">
+                            <Button variant="outlined" color="primary">
                                 LEARN MORE
                             </Button>
 

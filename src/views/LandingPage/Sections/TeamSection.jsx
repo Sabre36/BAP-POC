@@ -34,10 +34,9 @@ class TeamSection extends React.Component {
         const settings = {
             dots: true,
             infinite: true,
-            speed: 500,
-            //slidesToShow: 3,
-            //slidesToScroll: 1,
+            speed: 3000,
             autoplay: true,
+            fade: false,
             responsive: [
                 {
                     breakpoint: 2400,

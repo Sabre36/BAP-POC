@@ -122,8 +122,8 @@ class StarRatingSection extends React.Component {
                             </Typography>
                             <Typography component="p"  className={classes.typography}>
                                 <GridContainer>
-                                    <GridItem xs={2} sm={2} md={2} lg={2} style={{textAlign: "center", minWidth: "200px"}}>
-                                        <img src={CertImage} height={256}/>
+                                    <GridItem xs={2} sm={2} md={3} lg={3} style={{textAlign: "center", minWidth: "250px"}}>
+                                        <img src={CertImage} height={350}/>
                                     </GridItem>
                                     <GridItem xs={8} sm={8} md={8} className={classes.whitetext}>
                                     The BAP program employs a star system to signify the integration levels of BAP certification along the aquaculture production chain. These stars are displayed on the BAP logo and appear on packaging for a variety of farmed seafood products worldwide.
@@ -133,48 +133,50 @@ class StarRatingSection extends React.Component {
                                     </GridItem>
                                 </GridContainer>
 
-                                <GridContainer>
-                                    <GridItem xs={12} sm={12} md={4} style={{textAlign: "right"}}>
-                                        <StarIcon className={classes.whiteicon}/>
-                                    </GridItem>
-                                    <GridItem xs={12} sm={12} md={8} className={classes.whiteRatingText}>
-                                    Plant
-                                    </GridItem>
-                                    <Divider />
-                                </GridContainer>
+                                <div style={{marginTop: "-35px"}}>
+                                    <GridContainer>
+                                        <GridItem xs={12} sm={12} md={5} style={{textAlign: "right"}}>
+                                            <StarIcon className={classes.whiteicon}/>
+                                        </GridItem>
+                                        <GridItem xs={12} sm={12} md={7} className={classes.whiteRatingText}>
+                                        Plant
+                                        </GridItem>
+                                        <Divider />
+                                    </GridContainer>
 
-                                <GridContainer>
-                                    <GridItem xs={12} sm={12} md={4} style={{textAlign: "right"}}>
-                                        <StarIcon className={classes.whiteicon}/><StarIcon className={classes.whiteicon}/>
-                                    </GridItem>
-                                    <GridItem xs={12} sm={12} md={8} className={classes.whiteRatingText}>
-                                        Plant + Farm
-                                    </GridItem>
-                                    <Divider />
-                                </GridContainer>
+                                    <GridContainer>
+                                        <GridItem xs={12} sm={12} md={5} style={{textAlign: "right"}}>
+                                            <StarIcon className={classes.whiteicon}/><StarIcon className={classes.whiteicon}/>
+                                        </GridItem>
+                                        <GridItem xs={12} sm={12} md={7} className={classes.whiteRatingText}>
+                                            Plant + Farm
+                                        </GridItem>
+                                        <Divider />
+                                    </GridContainer>
 
-                                <GridContainer>
-                                    <GridItem xs={12} sm={12} md={4} style={{textAlign: "right"}}>
-                                        <StarIcon className={classes.whiteicon}/><StarIcon className={classes.whiteicon}/><StarIcon className={classes.whiteicon}/>
-                                    </GridItem>
-                                    <GridItem xs={12} sm={12} md={8} className={classes.whiteRatingText}>
-                                        Plant + Farm + Feed mill
-                                    </GridItem>
-                                    <Divider />
-                                </GridContainer>
+                                    <GridContainer>
+                                        <GridItem xs={12} sm={12} md={5} style={{textAlign: "right"}}>
+                                            <StarIcon className={classes.whiteicon}/><StarIcon className={classes.whiteicon}/><StarIcon className={classes.whiteicon}/>
+                                        </GridItem>
+                                        <GridItem xs={12} sm={12} md={7} className={classes.whiteRatingText}>
+                                            Plant + Farm + Feed mill
+                                        </GridItem>
+                                        <Divider />
+                                    </GridContainer>
 
-                                <GridContainer>
-                                    <GridItem xs={12} sm={12} md={4} style={{textAlign: "right"}}>
-                                        <StarIcon className={classes.whiteicon}/><StarIcon className={classes.whiteicon}/><StarIcon className={classes.whiteicon}/><StarIcon className={classes.whiteicon}/>
-                                    </GridItem>
-                                    <GridItem xs={12} sm={12} md={8} >
-                                        <div className={classes.whiteRatingText}>
-                                        Plant + Farm + Feed mill + Hatchery
-                                    </div>
-                                    </GridItem>
-                                    <Divider />
-                                </GridContainer>
-                                <img src={FishImage} height={96} style={{ float: "right", marginRight: "50px" }} />
+                                    <GridContainer>
+                                        <GridItem xs={12} sm={12} md={5} style={{textAlign: "right"}}>
+                                            <StarIcon className={classes.whiteicon}/><StarIcon className={classes.whiteicon}/><StarIcon className={classes.whiteicon}/><StarIcon className={classes.whiteicon}/>
+                                        </GridItem>
+                                        <GridItem xs={12} sm={12} md={7} >
+                                            <div className={classes.whiteRatingText}>
+                                            Plant + Farm + Feed mill + Hatchery
+                                        </div>
+                                        </GridItem>
+                                        <Divider />
+                                    </GridContainer>
+                                    <img src={FishImage} height={96} style={{ float: "right", marginRight: "15%", marginTop: "-150px" }} />
+                                </div>
                             </Typography>
                         </CardContent>
                     </CardActionArea>

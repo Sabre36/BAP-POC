@@ -12,13 +12,11 @@ import Button from "components/CustomButtons/Button.jsx";
 import ShowMore from "react-show-more";
 import parallaxHeaderStyle from "assets/jss/site-styles/components/parallaxHeaderStyle.jsx";
 
-
-
-var img_whoWeAre = process.env.PUBLIC_URL + '/bap/AdobeStock_158396929_Preview.jpeg';  // AdobeStock_158396929_Preview.jpeg
-var img_certification = process.env.PUBLIC_URL + '/bap/mexico-farmer.png';
-var img_facilities = process.env.PUBLIC_URL + '/bap/mexico-farm.png';
-var img_marketplace = process.env.PUBLIC_URL + '/bap/fish-on-ice.png';
-var img_consumers = process.env.PUBLIC_URL + '/bap/tasty-red-salmon-filets-for-dinner.jpg';
+var img_whoWeAre = process.env.PUBLIC_URL + '/bap/header-intro.png';  // AdobeStock_158396929_Preview.jpeg
+var img_certification = process.env.PUBLIC_URL + '/bap/header-cert.png';
+var img_facilities = process.env.PUBLIC_URL + '/bap/header-facilities.png';
+var img_marketplace = process.env.PUBLIC_URL + '/bap/header-marketplace.png';
+var img_consumers = process.env.PUBLIC_URL + '/bap/header-food.jpg';
 
 // core components
 class ParallaxHeader extends React.Component {
@@ -56,15 +54,16 @@ class ParallaxHeader extends React.Component {
         var settings = {
             dots: true,
             infinite: true,
-            //speed: 2000,
-            speed: 5000,
+            speed: 2000,
+            //speed: 5000,
             slidesToShow: 1,
             slidesToScroll: 1,
             swipeToSlide: true,
             autoplay: true,
             pauseHover: true,
-            //fade: true,
+            fade: true,
             focusOnSelect: true,
+            adaptiveHeight: false,
             afterChange: current => {
                 this.setState({ activeSlide: current });
                 console.log('Current: ' + current);
@@ -98,12 +97,12 @@ class ParallaxHeader extends React.Component {
                             className="slick-image"
                         />
 
-                        {/* Who we are */}
+                        {/* WHO WE ARE */}
                         <div className="slick-caption">
                             <GridContainer>
                                 <GridItem xs={12} sm={12} md={8} lg={7}>
                                     <div className={classes.container}>
-                                        <h1 className={classes.title}>Who we are</h1>
+                                        <h1 className={classes.heading}>Who we are</h1>
                                         <p className={classes.blurb}>
                                             <ShowMore lines={4} anchorClass={classes.moreLessLightText}>
                                                 BAP is the world’s most trusted, comprehensive and proven third-party aquaculture certification program. We’ve been improving the environmental, social and economic performance of the aquaculture supply chain and growing the global supply of responsibly farmed seafood since 2002.
@@ -136,7 +135,7 @@ class ParallaxHeader extends React.Component {
                                 <GridContainer>
                                     <GridItem xs={12} sm={12} md={8} lg={7}>
                                         <div className={classes.container}>
-                                        <h1 className={classes.title}>Certification</h1>
+                                        <h1 className={classes.heading}>Certification</h1>
                                         <p className={classes.blurb}>
                                             <ShowMore lines={4} anchorClass={classes.moreLessLightText}>
                                                 Our program ensures the highest level of integrity, with a team of staff members dedicated to ensuring that independent, third-party certification bodies (CBs) and auditors as well as BAP-certified aquaculture facilities are in compliance with program requirements.
@@ -179,7 +178,7 @@ class ParallaxHeader extends React.Component {
                                         <GridContainer>
                                             <GridItem xs={12} sm={12} md={8} lg={7}>
                                                 <div className={classes.container}>
-                                                <h1 className={classes.title}>Certified facilities</h1>
+                                                <h1 className={classes.heading}>What is a certified facility?</h1>
                                                 <p className={classes.blurb}>
                                                     <ShowMore lines={4} anchorClass={classes.moreLessLightText}>
                                                         Our program ensures the highest level of integrity, with a team of staff members dedicated to ensuring that independent, third-party certification bodies (CBs) and auditors as well as BAP-certified aquaculture facilities are in compliance with program requirements.
@@ -212,7 +211,7 @@ class ParallaxHeader extends React.Component {
                                             <GridContainer>
                                                 <GridItem xs={12} sm={12} md={8} lg={7}>
                                                     <div className={classes.container}>
-                                                    <h1 className={classes.title}>In the marketplace</h1>
+                                                    <h1 className={classes.heading}>BAP in the marketplace</h1>
                                                     <p className={classes.blurb}>
 
                                                         <ShowMore lines={4} anchorClass={classes.moreLessLightText}>
@@ -246,7 +245,7 @@ class ParallaxHeader extends React.Component {
                                                 <GridContainer>
                                                     <GridItem xs={12} sm={12} md={8} lg={7}>
                                                         <div className={classes.container}>
-                                                        <h1 className={classes.title}>Consumers</h1>
+                                                        <h1 className={classes.heading}>How do we benefit consumers?</h1>
                                                         <p className={classes.blurb}>
                                                             Our BAP label signals that before the seafood that you purchased arrived at your supermarket or restaurant, it originated from BAP-certified processing plants and/or farms.                                                        </p>
                                                             <br />

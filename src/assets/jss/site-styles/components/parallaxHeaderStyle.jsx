@@ -1,7 +1,7 @@
 const parallaxHeaderStyle = {
     parallax: {
         height: "40vh",
-        maxHeight: "70vh",
+        //maxHeight: "70vh",
         overflow: "hidden",
         position: "relative",
         backgroundPosition: "center center",
@@ -14,7 +14,7 @@ const parallaxHeaderStyle = {
     },
     filter: {
         "&:before": {
-            background: "#157bdc"
+            background: "#157bdc" /* first level section */
         },
         "&:after,&:before": {
             position: "absolute",
@@ -36,17 +36,21 @@ const parallaxHeaderStyle = {
         bottom: "0",
         textAlign: "left"
     },
+    heading: {
+        fontSize: "40px",
+        fontWeight: "400"
+    },
     blurb: {
         textAlign: "left",
         fontSize: "20px",
         fontWeight: "400",
         lineHeight: "27px",
-        textShadow: "1px 1px rgba(0,0,0,.2)",
+        textShadow: "1px 1px rgba(0,0,0,.05)",
     },
     moreLessLightText: {
-        color: "#7bd34b",
+        color: "#157bdc",
         fontWeight: "400",
-        textTransform: "uppercase",
+        textTransform: "lowercase",
         fontSize: "13px"
     },
     small: {

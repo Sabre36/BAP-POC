@@ -4,36 +4,27 @@ import tooltip from "assets/jss/site-styles/tooltipsStyle.jsx";
 const headerLinksStyle = theme => ({
     topNavContainer: {
         margin: 0,
-        marginTop: "-25px",
-        padding: "0",
-        //backgroundColor: "rgba(0,0,0,.1)",
+        marginTop: "10px",
+        padding: 0,
         width: "100%",
         float: "right",
         whiteSpace: "no-wrap",
         overflow: "hidden",
-        maxHeight: "40px",
         verticalAlign: "middle"
     },
     topNavList: {
         ...defaultFont,
         float: "right",
         margin: 0,
-        paddingLeft: "0",
+        padding: 0,
         listStyle: "none",
-        paddingTop: "0",
-        paddingBottom: "0",
-        marginTop: "0",
-        color: "inherit"
+        color: "inherit",
+        whiteSpace: "no-wrap",
     },
     list: {
         ...defaultFont,
-        fontSize: "16px",
-        margin: 0,
-        paddingLeft: "0",
-        listStyle: "none",
-        paddingTop: "0",
-        paddingBottom: "0",
-        marginTop: "0",
+        margin: "-10px",
+        padding: 0,
         color: "inherit",
         whiteSpace: "no-wrap",
     },
@@ -76,7 +67,7 @@ const headerLinksStyle = theme => ({
         display: "inline-flex",
         "&:hover,&:focus": {
             color: "inherit",
-            background: "rgba(200, 200, 200, 0.2)"
+            background: "rgba(200, 200, 200, 0.3)"
         },
         [theme.breakpoints.down("sm")]: {
             width: "calc(100% - 30px)",
@@ -116,7 +107,7 @@ const headerLinksStyle = theme => ({
         color: "inherit",
         fontSize: "15px",
         fontWeight: "500",
-        backgroundColor: "rgba(255, 255, 255, 0.2)"
+        backgroundColor: "rgba(255, 255, 255, 0.3)"
     },
     icons: {
         width: "20px",

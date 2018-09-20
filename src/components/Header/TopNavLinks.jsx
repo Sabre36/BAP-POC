@@ -24,7 +24,6 @@ import TextField from '@material-ui/core/TextField';
 import headerLinksStyle from "assets/jss/site-styles/components/headerLinksStyle.jsx";
 
 function TopNavLinks({ ...props }) {
-
     const { classes } = props;
 
     return (
@@ -37,44 +36,44 @@ function TopNavLinks({ ...props }) {
 
                 <ListItem className={classes.listItem}>
                     <Button
+                        href="./"
+                        color="transparent"
+                        className={classes.navLink}
+                        >
+                            <SpeechIcon className={classes.icons}/> Blog
+                    </Button>
+                </ListItem>
+
+                <ListItem className={classes.listItem}>
+                    <Button
                         href="./login-page"
                         color="transparent"
                         className={classes.navLink}
                         >
                             <Person className={classes.icons}/> Sign In
-                        </Button>
-                    </ListItem>
+                    </Button>
+                </ListItem>
 
-                    <ListItem className={classes.listItem}>
-                        <Button
-                            href="./"
-                            color="transparent"
-                            className={classes.navLink}
-                            >
-                                <SpeechIcon className={classes.icons}/> Blog
-                            </Button>
-                        </ListItem>
+                <ListItem className={classes.listItem}>
+                    <CustomDropdown
+                        noLiPadding
+                        buttonText="EN"
+                        buttonProps={{
+                            className: classes.navLink,
+                            color: "transparent"
+                        }}
+                        buttonIcon={LanguageIcon}
+                        dropdownList={[
+                            <Link to="/" className={classes.dropdownLink}>EN English</Link>,
+                            <a href="#" className={classes.dropdownLink}>ES Español</a>,
+                            <a href="#" className={classes.dropdownLink}>FR Francais</a>
+                        ]}
+                    />
+                </ListItem>
 
-                    <ListItem className={classes.listItem}>
-                        <CustomDropdown
-                            noLiPadding
-                            buttonText="EN"
-                            buttonProps={{
-                                className: classes.navLink,
-                                color: "transparent"
-                            }}
-                            buttonIcon={LanguageIcon}
-                            dropdownList={[
-                                <Link to="/" className={classes.dropdownLink}>EN English</Link>,
-                                <a href="#" className={classes.dropdownLink}>ES Español</a>,
-                                <a href="#" className={classes.dropdownLink}>FR Francais</a>
-                            ]}
-                        />
-                    </ListItem>
-
-                </List>
-            </div>
-        );
-    }
+            </List>
+        </div>
+    );
+}
 
 export default withStyles(headerLinksStyle)(TopNavLinks);
