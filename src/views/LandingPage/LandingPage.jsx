@@ -3,7 +3,7 @@ import React from "react";
 import classNames from "classnames";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-import { Helmet } from "react-helmet";
+
 
 
 // @material-ui/icons
@@ -58,16 +58,6 @@ class LandingPage extends React.Component {
 
         return (
             <div>
-                <Helmet>
-                    <title>Best Aquaculture Practices Certification</title>
-                    <meta name="description" content="Best Aquaculture Practices Certification" />
-                    <meta property="og:url" content="https://www.bapcertification.org/" />
-                    <meta property="og:site_name" content="Best Aquaculture Practices Certification" />
-                    <meta name="twitter:card" content="summary" />
-                    <meta name="twitter:title" content="Best Aquaculture Practices Certification" />
-                </Helmet>
-
-
                 <Header
                     color="semiTransparent"
                     routes={dashboardRoutes}

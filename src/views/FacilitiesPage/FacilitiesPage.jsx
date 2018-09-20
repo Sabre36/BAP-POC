@@ -14,6 +14,7 @@ import TopNavLinks from "components/Header/TopNavLinks.jsx";
 import Parallax from "components/Parallax/Parallax.jsx";
 import FacilitiesMainSection from "./Sections/FacilitiesMainSection.jsx";
 import facilitiesPageStyle from "assets/jss/site-styles/views/facilitiesPage.jsx";
+import { Helmet } from "react-helmet";
 const dashboardRoutes = [];
 
 var img_facilities = process.env.PUBLIC_URL + '/bap/mexico-farm.png';
@@ -28,6 +29,16 @@ class FacilitiesPage extends React.Component {
 
         return (
             <div>
+                <Helmet>
+                    <meta name="description" content="BAP - Certified Facilities" />
+                    <meta property="og:url" content="https://www.bapcertification.org/" />
+                    <meta property="og:site_name" content="Best Aquaculture Practices Certification - Certified Facilities " />
+                    <meta name="twitter:card" content="facilities" />
+                    <meta name="twitter:title" content="Best Aquaculture Practices Certification - Certified Facilities" />
+                    <link rel="canonical" href="http://www.bestaquaculturepractices.org" />
+                    <title>BAP - Certified Facilities</title>
+                </Helmet>
+
                 <Header
                     color="transparent"
                     routes={dashboardRoutes}
