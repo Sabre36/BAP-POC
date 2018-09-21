@@ -46,7 +46,7 @@ function TopNavLinks({ ...props }) {
 
                 <ListItem className={classes.listItem}>
                     <Button
-                        href="./login-page"
+                        href="./login"
                         color="transparent"
                         className={classes.navLink}
                         >

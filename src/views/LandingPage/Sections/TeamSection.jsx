@@ -34,7 +34,7 @@ class TeamSection extends React.Component {
         const settings = {
             dots: true,
             infinite: true,
-            speed: 3000,
+            speed: 7000,
             autoplay: true,
             fade: false,
             responsive: [

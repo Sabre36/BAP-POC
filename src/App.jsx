@@ -26,47 +26,59 @@ var hist = createBrowserHistory();
 //~~~~
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+    constructor(){
+        super();
+        this.state= {
+            isSignedIn : false,
+        }
 
- render() {
-    const { classes, ...rest } = this.props;
-    return (
-        <div>
-            <Helmet>
-                <meta name="description" content="Best Aquaculture Practices Certification" />
-                <meta name="application-name" content="Best Aquaculture Practices Certification" />\
+        this.childHandler = this.childHandler.bind(this);
+    }
 
-                <meta name="twitter:card" content="summary" />
-                <meta name="twitter:title" content="Best Aquaculture Practices Certification" />
+    childHandler(dataFromChild) {
+        console.log('%cPrevious Parent State: ' + JSON.stringify(this.state), "color:cyan");
+        this.setState({
+            isSignedIn: dataFromChild
+        },() => console.log('Updated App State:', this.state));
+    }
 
-                <meta property="og:locale" content="en_US" />
-                <meta property="og:type" content="website" />
-                <meta property="og:title" content="Best Aquaculture Practices - Best Aquaculture Practices Certification" />
-                <meta property="og:url" content="https://www.bapcertification.org/" />
-                <meta property="og:site_name" content="Best Aquaculture Practices Certification" />
+    render() {
+        const { classes, ...rest } = this.props;
+        return (
+            <div>
+                <Helmet>
+                    <meta name="description" content="Best Aquaculture Practices Certification" />
+                    <meta name="application-name" content="Best Aquaculture Practices Certification" />\
 
-                <meta name="twitter:card" content="summary" />
-                <meta name="twitter:title" content="Best Aquaculture Practices - Best Aquaculture Practices Certification" />
-                <meta name="keywords" content="aquaculture,best practices,seafood,certification,shrimp,salmon,tilapia,certified facilities" />
-                <meta name="robots" content="index,follow"/>
-                <link rel="canonical" href="http://www.bestaquaculturepractices.org" />
-                <title>Best Aquaculture Practices</title>
-            </Helmet>
+                    <meta name="twitter:card" content="summary" />
+                    <meta name="twitter:title" content="Best Aquaculture Practices Certification" />
 
-            <MuiThemeProvider theme={theme}>
-                <Router history={hist}>
-                    <Switch>
-                        {indexRoutes.map((prop, key) => {
-                            return <Route path={prop.path} key={key} component={prop.component} />;
-                        })}
-                    </Switch>
-                </Router>
-            </MuiThemeProvider>
-        </div>
-    );
-  }
+                    <meta property="og:locale" content="en_US" />
+                    <meta property="og:type" content="website" />
+                    <meta property="og:title" content="Best Aquaculture Practices - Best Aquaculture Practices Certification" />
+                    <meta property="og:url" content="https://www.bapcertification.org/" />
+                    <meta property="og:site_name" content="Best Aquaculture Practices Certification" />
+
+                    <meta name="twitter:card" content="summary" />
+                    <meta name="twitter:title" content="Best Aquaculture Practices - Best Aquaculture Practices Certification" />
+                    <meta name="keywords" content="aquaculture,best practices,seafood,certification,shrimp,salmon,tilapia,certified facilities" />
+                    <meta name="robots" content="index,follow"/>
+                    <link rel="canonical" href="http://www.bestaquaculturepractices.org" />
+                    <title>Best Aquaculture Practices</title>
+                </Helmet>
+
+                <MuiThemeProvider theme={theme}>
+                    <Router history={hist}>
+                        <Switch>
+                            {indexRoutes.map((prop, key) => {
+                                return <Route path={prop.path} key={key} component={prop.component} />;
+                            })}
+                        </Switch>
+                    </Router>
+                </MuiThemeProvider>
+            </div>
+        );
+    }
 }
 
 export default App;

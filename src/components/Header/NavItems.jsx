@@ -36,8 +36,9 @@ class NavItems extends React.Component {
         super(props);
         this.state = {
             data: [
-                {index: 0, name: 'Sign in', url: '/login-page', active: true},
-                {index: 1, name: 'Facilities', url: '/facilities', active: false}
+                {index: 0, name: 'Sign in', url: '/login', active: true},
+                {index: 1, name: 'Certification', url: '/certification', active: false}
+                {index: 2, name: 'Facilities', url: '/facilities', active: false}
             ],
         };
     }

@@ -6,8 +6,6 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import aboutBAPStyle from "assets/jss/site-styles/views/landingPageSections/aboutBAPStyle.jsx";
-import parallaxHeaderStyle from "assets/jss/site-styles/components/parallaxHeaderStyle.jsx";
-
 import GalleryList from "components/GalleryList/GalleryList.jsx";
 import ShowMore from "react-show-more";
 

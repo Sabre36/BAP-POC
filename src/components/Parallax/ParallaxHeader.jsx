@@ -11,12 +11,17 @@ import GridItem from "components/Grid/GridItem.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 import ShowMore from "react-show-more";
 import parallaxHeaderStyle from "assets/jss/site-styles/components/parallaxHeaderStyle.jsx";
+import ReactPlayer from "react-player";
 
 var img_whoWeAre = process.env.PUBLIC_URL + '/bap/header-intro.png';  // AdobeStock_158396929_Preview.jpeg
 var img_certification = process.env.PUBLIC_URL + '/bap/header-cert.png';
 var img_facilities = process.env.PUBLIC_URL + '/bap/header-facilities.png';
 var img_marketplace = process.env.PUBLIC_URL + '/bap/header-marketplace.png';
 var img_consumers = process.env.PUBLIC_URL + '/bap/header-food.jpg';
+var img_portal = process.env.PUBLIC_URL + '/bap/header-portal.jpg';
+
+var video_fish = process.env.PUBLIC_URL + '/bap/940120480-640_adpp.mp4';
+//var video_fish = process.env.PUBLIC_URL + '/bap/878718598-640_adpp.mp4';
 
 // core components
 class ParallaxHeader extends React.Component {
@@ -90,15 +95,20 @@ class ParallaxHeader extends React.Component {
         return (
             <div>
                 <Slider {...settings} >
+                    {/* WHO WE ARE */}
                     <div>
-                        <img
+                        {/* <img
                             src={img_whoWeAre}
                             alt="Who we are"
                             className="slick-image"
-                        />
+                        /> */}
 
-                        {/* WHO WE ARE */}
-                        <div className="slick-caption">
+                        <div alt="Who we are" className="slick-video-container">
+                            <div className="slick-video-overlay"></div>
+                            <ReactPlayer url={video_fish} loop playing playbackRate={.33} className="slick-video" />
+                        </div>
+
+                        <div className="slick-video-caption" >
                             <GridContainer>
                                 <GridItem xs={12} sm={12} md={8} lg={7}>
                                     <div className={classes.container}>
@@ -135,7 +145,7 @@ class ParallaxHeader extends React.Component {
                                 <GridContainer>
                                     <GridItem xs={12} sm={12} md={8} lg={7}>
                                         <div className={classes.container}>
-                                        <h1 className={classes.heading}>Certification</h1>
+                                        <h1 className={classes.heading}>Certification &amp; program integrity</h1>
                                         <p className={classes.blurb}>
                                             <ShowMore lines={4} anchorClass={classes.moreLessLightText}>
                                                 Our program ensures the highest level of integrity, with a team of staff members dedicated to ensuring that independent, third-party certification bodies (CBs) and auditors as well as BAP-certified aquaculture facilities are in compliance with program requirements.
@@ -263,6 +273,37 @@ class ParallaxHeader extends React.Component {
                                                         </GridContainer>
                                                     </div>
                                                 </div>
+
+                                                {/* PORTAL */}
+                                                <div>
+                                                    <img
+                                                        src={img_portal}
+                                                        alt="Portal"
+                                                        className="slick-image"
+                                                    />
+                                                    <div className="slick-caption">
+                                                        <GridContainer>
+                                                            <GridItem xs={12} sm={12} md={8} lg={7}>
+                                                                <div className={classes.container}>
+                                                                <h1 className={classes.heading}>What can I do in the portal?</h1>
+                                                                <p className={classes.blurb}>
+                                                                    The portal allows you to view your lab reports, view your data, and much more. NOTE: you must be signed in to view the portal.
+                                                                </p>
+                                                                    <br />
+                                                                    <Button
+                                                                        color="warning"
+                                                                        size="lg"
+                                                                        href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                                                                        target="_blank"
+                                                                        rel="noopener noreferrer"
+                                                                        >
+                                                                            Sign in
+                                                                        </Button>
+                                                                    </div>
+                                                                    </GridItem>
+                                                                </GridContainer>
+                                                            </div>
+                                                        </div>
                                             </Slider>
                                             <div
                                                 className={parallaxClasses}

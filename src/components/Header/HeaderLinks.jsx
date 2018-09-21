@@ -41,7 +41,7 @@ function HeaderLinks({ ...props }) {
                     href="/certification"
                     color="transparent"
                     className={ props.itemIndex == 1 ? classes.navLinkActive : classes.navLink }
-                    > Certification
+                    > What we do
                 </Button>
             </ListItem>
 
@@ -50,7 +50,7 @@ function HeaderLinks({ ...props }) {
                     href="/facilities"
                     color="transparent"
                     className={ props.itemIndex == 2 ? classes.navLinkActive : classes.navLink }
-                    > Facilities
+                    > Our facilities
                 </Button>
             </ListItem>
 
@@ -69,6 +69,15 @@ function HeaderLinks({ ...props }) {
                     color="transparent"
                     className={ props.itemIndex == 4 ? classes.navLinkActive : classes.navLink }
                     > Consumers
+                </Button>
+            </ListItem>
+
+            <ListItem className={classes.listItem}>
+                <Button
+                    href="./portal"
+                    color="transparent"
+                    className={ props.itemIndex == 5 ? classes.navLinkActive : classes.navLink }
+                    > Your portal
                 </Button>
             </ListItem>
         </List>
