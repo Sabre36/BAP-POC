@@ -2,7 +2,7 @@
 import React from "react";
 // react components for routing our app without refresh
 import { Link } from "react-router-dom";
-
+import PropTypes from "prop-types";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import List from "@material-ui/core/List";
@@ -22,116 +22,72 @@ import Button from "components/CustomButtons/Button.jsx";
 import headerLinksStyle from "assets/jss/site-styles/components/headerLinksStyle.jsx";
 
 function HeaderLinks({ ...props }) {
-  const { classes } = props;
-  return (
-    <List className={classes.list}>
+    const { classes } = props;
 
-      <ListItem className={classes.listItem}>
-        <Tooltip
-          id="search-site"
-          title="Search this site"
-          placement={window.innerWidth > 959 ? "top" : "left"}
-          classes={{ tooltip: classes.tooltip }}
-        >
-          <Button
-            href="#"
-            color="transparent"
-            className={classes.navLink}
-          >
-          <SearchIcon/>
-          </Button>
-        </Tooltip>
-      </ListItem>
+    return (
+        <List className={classes.list}>
 
-      <ListItem className={classes.listItemActive}>
-          <Button
-              color="transparent"
-              className={classes.navLink}
-              > Who we are
-          </Button>
-      </ListItem>
+            <ListItem className={classes.listItem} >
+                <Button
+                    href="/"
+                    color="transparent"
+                    className={ props.itemIndex == 0 ? classes.navLinkActive : classes.navLink }
+                    > Who we are
+                </Button>
+            </ListItem>
 
-      <ListItem className={classes.listItem}>
-        <CustomDropdown
-          noLiPadding
-          buttonText="Marketplace"
-          buttonProps={{
-            className: classes.navLink,
-            color: "transparent"
-          }}
-          dropdownList={[
-            <Link to="/" className={classes.dropdownLink}>Marketplace</Link>,
-            <a href="#" className={classes.dropdownLink}>Consumers</a>
-          ]}
-        />
-      </ListItem>
+            <ListItem className={classes.listItem} >
+                <Button
+                    href="/certification"
+                    color="transparent"
+                    className={ props.itemIndex == 1 ? classes.navLinkActive : classes.navLink }
+                    > What we do
+                </Button>
+            </ListItem>
 
-      <ListItem className={classes.listItem}>
-        <CustomDropdown
-            noLiPadding
-            buttonText="Certification"
-            buttonProps={{
-                className: classes.navLink,
-                color: "transparent"
-            }}
-            dropdownList={[
-                <Link to="/" className={classes.dropdownLink}>Certification</Link>,
-                <a href="#" className={classes.dropdownLink}>Facilities</a>
-            ]}
-        />
-    </ListItem>
+            <ListItem className={classes.listItem} >
+                <Button
+                    href="/facilities"
+                    color="transparent"
+                    className={ props.itemIndex == 2 ? classes.navLinkActive : classes.navLink }
+                    > Our facilities
+                </Button>
+            </ListItem>
 
+            <ListItem className={classes.listItem} >
+                <Button
+                    href="/marketplace"
+                    color="transparent"
+                    className={ props.itemIndex == 3 ? classes.navLinkActive : classes.navLink }
+                    > Marketplace
+                </Button>
+            </ListItem>
 
+            <ListItem className={classes.listItem}>
+                <Button
+                    href="./consumers"
+                    color="transparent"
+                    className={ props.itemIndex == 4 ? classes.navLinkActive : classes.navLink }
+                    > Consumers
+                </Button>
+            </ListItem>
 
-        <ListItem className={classes.listItem}>
-            <Button
-                href="./ProgramIntegrity"
-                color="transparent"
-                className={classes.navLink}
-            > Program Integrity
-            </Button>
-        </ListItem>
-
-      <ListItem className={classes.listItem}>
-        <Button
-          href="#"
-          color="transparent"
-          className={classes.navLink}
-        > Blog
-        </Button>
-      </ListItem>
-
-
-      <ListItem className={classes.listItem}>
-        <Button
-          href="./login-page"
-          color="transparent"
-          className={classes.navLink}
-        >
-          <Person className={classes.icons}/> Sign In
-        </Button>
-      </ListItem>
-
-      <ListItem className={classes.listItem}>
-        <CustomDropdown
-          noLiPadding
-          buttonText="EN"
-          buttonProps={{
-            className: classes.navLink,
-            color: "transparent"
-          }}
-          buttonIcon={SpeechIcon}
-
-          dropdownList={[
-            <Link to="/" className={classes.dropdownLink}>EN English</Link>,
-            <a href="#" className={classes.dropdownLink}>ES Español</a>,
-            <a href="#" className={classes.dropdownLink}>FR Francais</a>
-          ]}
-        />
-      </ListItem>
-
-    </List>
-  );
+            <ListItem className={classes.listItem}>
+                <Button
+                    href="./portal"
+                    color="transparent"
+                    className={ props.itemIndex == 5 ? classes.navLinkActive : classes.navLink }
+                    > Your portal
+                </Button>
+            </ListItem>
+        </List>
+    );
 }
+
+HeaderLinks.propTypes = {
+    itemIndex: PropTypes.number,
+};
+
+
 
 export default withStyles(headerLinksStyle)(HeaderLinks);

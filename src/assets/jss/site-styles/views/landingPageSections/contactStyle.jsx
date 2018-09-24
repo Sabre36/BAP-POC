@@ -13,7 +13,7 @@ const contactStyle = {
     textAlign: "left"
   },
   description: {
-    color: "#4a4a4a",
+    color: "#212529",
     textAlign: "left"
   },
   textCenter: {

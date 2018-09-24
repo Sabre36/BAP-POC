@@ -14,8 +14,14 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Divider from '@material-ui/core/Divider';
 
 import HeaderImage from "assets/img/china-farm.png";
+import Watermark from "assets/img/watermark.png";
+import CertImage from "assets/img/BAPcert.png";
+import FishImage from "assets/img/fish.png";
+
+
 import WatermarkImage from "assets/img/china-farm.png";
 
 import starRatingStyle from "assets/jss/site-styles/views/landingPageSections/starRatingStyle.jsx";
@@ -26,7 +32,7 @@ class StarRatingSection extends React.Component {
 
         return (
             <div>
-                <Card className={classes.card} style={{backgroundColor: "rgba(21,123,220,.15)" }}>
+                {/* <Card className={classes.card} style={{backgroundColor: "rgba(21,123,220,.1)" }}>
                     <CardActionArea>
                         <CardMedia
                             component="img"
@@ -40,39 +46,60 @@ class StarRatingSection extends React.Component {
                                 BAP star rating system
                             </Typography>
                             <Typography component="p"  className={classes.typography}>
-                                <GridContainer justify="left">
-                                    <GridItem xs={12} sm={12} md={6}>
-
-                                        The BAP program employs a star system to signify the integration levels of BAP certification along the aquaculture production chain. These stars are displayed on the BAP logo and appear on packaging for a variety of farmed seafood products worldwide.
-
-                                        <br/><br/>
-                                        Download the <a href="#">BAP Logo Use Guide</a> to ensure that you’re using the BAP logo appropriately and that any claims associated with GAA or BAP are portrayed in an accurate manner.
-                                        Read about the <a href="#">BAP Logo Policing Program</a>to learn how BAP polices logo use at the retail level, with the help of Field Agent, a mobile market research and auditing firm.
+                                <GridContainer>
+                                    <GridItem xs={2} sm={2} md={2} lg={2} style={{textAlign: "center", minWidth: "200px"}}>
+                                        <img src={CertImage} height={256}/>
                                     </GridItem>
-
-                                    <GridItem xs={12} sm={12} md={6}>
-                                        <StarIcon/><StarIcon/><StarIcon/><StarIcon/>
-                                        <br/>
-                                        Product produced by a BAP-certified processing plant, BAP-certified farm(s) only, BAP-certified hatchery only and BAP-certified feed mill only.
-                                        <br/>
-                                        <br/>
-                                        <StarIcon/><StarIcon/><StarIcon/>
-                                        <br/>
-                                        Product produced by a BAP-certified processing plant, BAP-certified farm(s) only and BAP-certified hatchery and/or feed mill only.
-                                        <br/>
-                                        <br/>
-                                        <StarIcon/><StarIcon/>
-                                        <br/>
-                                        Product produced by a BAP-certified processing plant and BAP-certified farm(s) only.
-                                        <br/>
-                                        <br/>
-                                        <StarIcon/>
-                                        <br/>
-                                        Product produced by a BAP-certified processing plant.
+                                    <GridItem xs={8} sm={8} md={8}>
+                                    The BAP program employs a star system to signify the integration levels of BAP certification along the aquaculture production chain. These stars are displayed on the BAP logo and appear on packaging for a variety of farmed seafood products worldwide.
+                                    <br/><br/>
+                                    Download the <a href="#">BAP Logo Use Guide</a> to ensure that you’re using the BAP logo appropriately and that any claims associated with GAA or BAP are portrayed in an accurate manner.
+                                    Read about the <a href="#">BAP Logo Policing Program</a>to learn how BAP polices logo use at the retail level, with the help of Field Agent, a mobile market research and auditing firm.
                                     </GridItem>
                                 </GridContainer>
 
+                                <GridContainer>
+                                    <GridItem xs={12} sm={12} md={4} style={{textAlign: "right"}}>
+                                        <StarIcon className={classes.icon}/>
+                                    </GridItem>
+                                    <GridItem xs={12} sm={12} md={8} className={classes.ratingText}>
+                                    Plant
+                                    </GridItem>
+                                    <Divider />
+                                </GridContainer>
 
+                                <GridContainer>
+                                    <GridItem xs={12} sm={12} md={4} style={{textAlign: "right"}}>
+                                        <StarIcon className={classes.icon}/><StarIcon className={classes.icon}/>
+                                    </GridItem>
+                                    <GridItem xs={12} sm={12} md={8} className={classes.ratingText}>
+                                        Plant + Farm
+                                    </GridItem>
+                                    <Divider />
+                                </GridContainer>
+
+                                <GridContainer>
+                                    <GridItem xs={12} sm={12} md={4} style={{textAlign: "right"}}>
+                                        <StarIcon className={classes.icon}/><StarIcon className={classes.icon}/><StarIcon className={classes.icon}/>
+                                    </GridItem>
+                                    <GridItem xs={12} sm={12} md={8} className={classes.ratingText}>
+                                        Plant + Farm + Feed mill
+                                    </GridItem>
+                                    <Divider />
+                                </GridContainer>
+
+                                <GridContainer>
+                                    <GridItem xs={12} sm={12} md={4} style={{textAlign: "right"}}>
+                                        <StarIcon className={classes.icon}/><StarIcon className={classes.icon}/><StarIcon className={classes.icon}/><StarIcon className={classes.icon}/>
+                                    </GridItem>
+                                    <GridItem xs={12} sm={12} md={8} >
+                                        <div className={classes.ratingText}>
+                                        Plant + Farm + Feed mill + Hatchery
+                                    </div>
+                                    </GridItem>
+                                    <Divider />
+                                </GridContainer>
+                                <img src={FishImage} height={96} style={{ float: "right", marginRight: "50px" }} />
                             </Typography>
                         </CardContent>
                     </CardActionArea>
@@ -85,109 +112,84 @@ class StarRatingSection extends React.Component {
                         </Button>
                     </CardActions>
                 </Card>
-                <br/>
+                <br/> */}
 
-                <Card className={classes.card} style={{backgroundColor: "rgb(0,128,0,1)" }}>
+                <Card className={classes.card} style={{backgroundColor: "#0054A4" }}>
                     <CardActionArea>
                         <CardContent >
                             <Typography gutterBottom variant="headline" component="h2" className={classes.whitetitle}>
                                 BAP star rating system
                             </Typography>
-                            <Typography component="p"  className={classes.whitetext}>
-                                <GridContainer justify="left">
-                                    <GridItem xs={12} sm={12} md={6}>
-
-                                        The BAP program employs a star system to signify the integration levels of BAP certification along the aquaculture production chain. These stars are displayed on the BAP logo and appear on packaging for a variety of farmed seafood products worldwide.
-
-                                        <br/><br/>
-                                        Download the <a href="#">BAP Logo Use Guide</a> to ensure that you’re using the BAP logo appropriately and that any claims associated with GAA or BAP are portrayed in an accurate manner.
-                                        Read about the <a href="#">BAP Logo Policing Program</a>to learn how BAP polices logo use at the retail level, with the help of Field Agent, a mobile market research and auditing firm.
+                            <Typography component="p"  className={classes.typography}>
+                                <GridContainer>
+                                    <GridItem xs={2} sm={2} md={3} lg={3} style={{textAlign: "center", minWidth: "250px"}}>
+                                        <img src={CertImage} height={350}/>
                                     </GridItem>
-
-                                    <GridItem xs={12} sm={12} md={6}>
-                                        <StarIcon/><StarIcon/><StarIcon/><StarIcon/>
-                                        <br/>
-                                        Product produced by a BAP-certified processing plant, BAP-certified farm(s) only, BAP-certified hatchery only and BAP-certified feed mill only.
-                                        <br/>
-                                        <br/>
-                                        <StarIcon/><StarIcon/><StarIcon/>
-                                        <br/>
-                                        Product produced by a BAP-certified processing plant, BAP-certified farm(s) only and BAP-certified hatchery and/or feed mill only.
-                                        <br/>
-                                        <br/>
-                                        <StarIcon/><StarIcon/>
-                                        <br/>
-                                        Product produced by a BAP-certified processing plant and BAP-certified farm(s) only.
-                                        <br/>
-                                        <br/>
-                                        <StarIcon/>
-                                        <br/>
-                                        Product produced by a BAP-certified processing plant.
+                                    <GridItem xs={8} sm={8} md={8} className={classes.whitetext}>
+                                    The BAP program employs a star system to signify the integration levels of BAP certification along the aquaculture production chain. These stars are displayed on the BAP logo and appear on packaging for a variety of farmed seafood products worldwide.
+                                    <br/><br/>
+                                    Download the <a href="#">BAP Logo Use Guide</a> to ensure that you’re using the BAP logo appropriately and that any claims associated with GAA or BAP are portrayed in an accurate manner.
+                                    Read about the <a href="#">BAP Logo Policing Program</a>to learn how BAP polices logo use at the retail level, with the help of Field Agent, a mobile market research and auditing firm.
                                     </GridItem>
                                 </GridContainer>
 
+                                <div style={{marginTop: "-35px"}}>
+                                    <GridContainer>
+                                        <GridItem xs={12} sm={12} md={5} style={{textAlign: "right"}}>
+                                            <StarIcon className={classes.whiteicon}/>
+                                        </GridItem>
+                                        <GridItem xs={12} sm={12} md={7} className={classes.whiteRatingText}>
+                                        Plant
+                                        </GridItem>
+                                        <Divider />
+                                    </GridContainer>
 
+                                    <GridContainer>
+                                        <GridItem xs={12} sm={12} md={5} style={{textAlign: "right"}}>
+                                            <StarIcon className={classes.whiteicon}/><StarIcon className={classes.whiteicon}/>
+                                        </GridItem>
+                                        <GridItem xs={12} sm={12} md={7} className={classes.whiteRatingText}>
+                                            Plant + Farm
+                                        </GridItem>
+                                        <Divider />
+                                    </GridContainer>
+
+                                    <GridContainer>
+                                        <GridItem xs={12} sm={12} md={5} style={{textAlign: "right"}}>
+                                            <StarIcon className={classes.whiteicon}/><StarIcon className={classes.whiteicon}/><StarIcon className={classes.whiteicon}/>
+                                        </GridItem>
+                                        <GridItem xs={12} sm={12} md={7} className={classes.whiteRatingText}>
+                                            Plant + Farm + Feed mill
+                                        </GridItem>
+                                        <Divider />
+                                    </GridContainer>
+
+                                    <GridContainer>
+                                        <GridItem xs={12} sm={12} md={5} style={{textAlign: "right"}}>
+                                            <StarIcon className={classes.whiteicon}/><StarIcon className={classes.whiteicon}/><StarIcon className={classes.whiteicon}/><StarIcon className={classes.whiteicon}/>
+                                        </GridItem>
+                                        <GridItem xs={12} sm={12} md={7} >
+                                            <div className={classes.whiteRatingText}>
+                                            Plant + Farm + Feed mill + Hatchery
+                                        </div>
+                                        </GridItem>
+                                        <Divider />
+                                    </GridContainer>
+                                    <img src={FishImage} height={96} style={{ float: "right", marginRight: "15%", marginTop: "-150px" }} />
+                                </div>
                             </Typography>
                         </CardContent>
                     </CardActionArea>
                     <CardActions>
-                        <Button size="small" color="primary">
+                        <Button size="small" color="secondary" >
                             LEARN MORE
                         </Button>
-                        <Button size="small" color="primary">
+                        <Button size="small"  color="secondary">
                             SHARE
                         </Button>
                     </CardActions>
                 </Card>
 
-
-                {/* <br/>
-                <div className={classes.section} style={{backgroundColor: '#65B12F', borderRadius: '4px', padding: '20px'}}>
-
-                    <GridContainer justify="left">
-                        <GridItem xs={12} sm={12} md={6}>
-                            <h2 className={classes.whitetitle} >Star rating system</h2>
-                            <h4 className={classes.description}>
-
-
-                                    The BAP program employs a star system to signify the integration levels of BAP certification along the aquaculture production chain. These stars are displayed on the BAP logo and appear on packaging for a variety of farmed seafood products worldwide.
-
-                                    <br/><br/>
-                                    Download the <a href="#">BAP Logo Use Guide</a> to ensure that you’re using the BAP logo appropriately and that any claims associated with GAA or BAP are portrayed in an accurate manner.
-
-                                    <br/><br/>
-                                    Read about the <a href="#">BAP Logo Policing Program</a>to learn how BAP polices logo use at the retail level, with the help of Field Agent, a mobile market research and auditing firm.
-
-                            </h4>
-                        </GridItem>
-                        <GridItem xs={12} sm={12} md={6}>
-
-                                <br/>
-                                <br/>
-                                <br/>
-                                <StarIcon/><StarIcon/><StarIcon/><StarIcon/>
-                                <br/>
-                                Product produced by a BAP-certified processing plant, BAP-certified farm(s) only, BAP-certified hatchery only and BAP-certified feed mill only.
-                                <br/>
-                                <br/>
-                                <StarIcon/><StarIcon/><StarIcon/>
-                                <br/>
-                                Product produced by a BAP-certified processing plant, BAP-certified farm(s) only and BAP-certified hatchery and/or feed mill only.
-                                <br/>
-                                <br/>
-                                <StarIcon/><StarIcon/>
-                                <br/>
-                                Product produced by a BAP-certified processing plant and BAP-certified farm(s) only.
-                                <br/>
-                                <br/>
-                                <StarIcon/>
-                                <br/>
-                                Product produced by a BAP-certified processing plant.
-
-
-                        </GridItem>
-                    </GridContainer>
-                </div> */}
             </div>
         );
     }

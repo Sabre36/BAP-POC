@@ -24,7 +24,7 @@ class ContactSection extends React.Component {
             <h4 className={classes.description} >
                 Global Aquaculture Alliance<br/>
                 Best Aquaculture Practices<br/>
-                2 International Drive, Suite 105<br/>
+                85 New Hampshire Avenue, Suite 200<br/>
                 Portsmouth, NH 03801 USA<br/>
                 1-603-317-5000<br/>
                 <a href="www.bapcertification.org">www.bapcertification.org</a>

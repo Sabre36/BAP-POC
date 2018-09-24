@@ -13,9 +13,10 @@ const facilitiesStyle = {
     textAlign: "left"
   },
   description: {
-    color: "#4a4a4a",
+    color: "#212529",
     textAlign: "left",
-    marginBottom: "100px"
+    marginBottom: "100px",
+    fontSize: "18px"
   },
   textCenter: {
     textAlign: "left"

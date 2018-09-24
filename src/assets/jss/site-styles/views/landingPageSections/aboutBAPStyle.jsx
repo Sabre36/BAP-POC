@@ -13,16 +13,24 @@ const whatWeOfferStyle = {
         textDecoration: "none"
     },
     description: {
-        color: "#4a4a4a",
+        color: "#212529",
         textAlign: "left",
-        paddingBottom: "10px"
+        paddingBottom: "10px",
+        paddingRight: "20px",
+        fontSize: "18px"
     },
     gallery: {
         marginTop: "110px"
     },
     button: {
         marginLeft: "15px"
-    }
+    },
+    moreLessLightText: {
+        color: "#157bdc",
+        fontWeight: "400",
+        textTransform: "lowercase",
+        fontSize: "13px"
+    },
 };
 
 export default whatWeOfferStyle;

@@ -13,19 +13,37 @@ const containerFluid = {
   width: "100%"
 };
 const container = {
-  ...containerFluid,
-  "@media (min-width: 576px)": {
-    maxWidth: "540px"
-  },
-  "@media (min-width: 768px)": {
-    maxWidth: "720px"
-  },
-  "@media (min-width: 992px)": {
-    maxWidth: "960px"
-  },
-  "@media (min-width: 1200px)": {
-    maxWidth: "1140px"
-  }
+    ...containerFluid,
+    "@media (min-width: 576px)": {
+        maxWidth: "540px"
+    },
+    "@media (min-width: 768px)": {
+        maxWidth: "720px"
+    },
+    "@media (min-width: 1024px)": {
+        maxWidth: "900px",
+        paddingBottom: "20px"
+    },
+    "@media (min-width: 1200px)": {
+        maxWidth: "1140px",
+        paddingBottom: "20px"
+    },
+    "@media (min-width: 1440px)": {
+        maxWidth: "1290px", /* 1340 */
+        paddingBottom: "30px"
+    },
+    "@media (min-width: 1680px)": {
+        maxWidth: "1400px", /* 1560 */
+        paddingBottom: "40px"
+    },
+    "@media (min-width: 1920px)": {
+        maxWidth: "1500px", /* 1800 */
+        paddingBottom: "40px"
+    },
+    "@media (min-width: 2560px)": {
+        maxWidth: "2160px", /* 2360 */
+        paddingBottom: "40px"
+    },
 };
 
 const boxShadow = {
@@ -146,7 +164,7 @@ const title = {
   color: "#3C4858",
   margin: "1.75rem 0 0.875rem",
   textDecoration: "none",
-  fontWeight: "700",
+  fontWeight: "500",
   fontFamily: `"Roboto", "Helvetica", serif`
 };
 

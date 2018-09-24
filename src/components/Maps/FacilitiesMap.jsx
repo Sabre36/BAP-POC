@@ -8,15 +8,14 @@ import {
 } from "react-google-maps";
 
 const CustomSkinMap = withScriptjs(
-
-
   withGoogleMap(props => (
     <GoogleMap
-      defaultZoom={5}
+      defaultZoom={2}
       defaultCenter={{ lat: -2.203816, lng:	-79.897453 }}
       defaultOptions={{
         scrollwheel: true,
         zoomControl: true,
+        mapTypeId: "satellite",
         styles: [
           {
             featureType: "water",
@@ -83,6 +82,10 @@ const CustomSkinMap = withScriptjs(
     <Marker position={{ lat: -2.223363, lng: -80.958462 }} />
     <Marker position={{ lat: -3.292368, lng: -79.848633 }} />
 
+    <Marker position={{ lat: 13.736717, lng: 100.523186 }} />
+    <Marker position={{ lat: 23.179260, lng: 77.454422 }} />
+    <Marker position={{ lat: 22.279995, lng: 114.175468 }} />
+
 
 
     </GoogleMap>
@@ -95,10 +98,10 @@ function FacilitiesMap({ ...props }) {
 
   return (
       <div>
-        <h6 style={{marginLeft: "45px"}}>Under construction...</h6>
         <CustomSkinMap
           googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIKtIpp2m2PDlNBRHy2F9F2LzJMYXWb3U"
           loadingElement={<div style={{ height: `100%` }} />}
+
           containerElement={<div style={{ height: `100vh` }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />
