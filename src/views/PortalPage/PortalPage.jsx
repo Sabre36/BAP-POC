@@ -12,15 +12,19 @@ import GridItem from "components/Grid/GridItem.jsx";
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
 import TopNavLinks from "components/Header/TopNavLinks.jsx";
 import Parallax from "components/Parallax/Parallax.jsx";
-//import FacilitiesMainSection from "./Sections/FacilitiesMainSection.jsx";
 import portalPageStyle from "assets/jss/site-styles/views/portalPage.jsx";
+import PortalNav from "components/Drawers/PortalNav.jsx";
 import { Helmet } from "react-helmet";
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
+
 import MenuIcon from '@material-ui/icons/Menu';
+import PrintIcon from '@material-ui/icons/Print';
+import SaveAltIcon from '@material-ui/icons/SaveAlt';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const dashboardRoutes = [];
 
@@ -33,27 +37,28 @@ class PortalPage extends React.Component {
 
         this.state= {
             activeSlide : 5,
+            userName: this.props.userName,
+            userAffiliation: this.props.userAffiliation
         }
 
         const styles = {
             root: {
                 flexGrow: 1,
-                backgroundColor: "green"
             },
             grow: {
                 flexGrow: 1,
             },
-            menuButton: {
-                marginLeft: -12,
-                marginRight: 20,
+            rightToolbar: {
+                marginLeft: 'auto',
+                marginRight: -12,
             },
-            shiftRight: {
-                float: "right"
+            menuButton: {
+                marginRight: 16,
+                marginLeft: -12,
             },
             appbar: {
                 backgroundColor: "rgba(0,0,0.3)"
             }
-
         };
 
         return (
@@ -82,49 +87,39 @@ class PortalPage extends React.Component {
                     fixed
                     changeColorOnScroll={{
                         height: 2,
-                        //color: "danger"
                     }}
                     {...rest}
                 />
 
                 <AppBar position="sticky" style={{backgroundColor: "#1463AC", position: "fixed", top: "110px"}}>
                     <Toolbar>
-                        <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+                        <IconButton className={classes.menuButton} aria-label="Menu" color="inherit">
                             <MenuIcon />
                         </IconButton>
+                        <Typography variant="title" color="inherit">Welcome Sally Reynolds (Kroger)</Typography>
 
-                        <div position="right">
-                            <Button color="inherit">export</Button>
-                            <Button color="inherit">print</Button>
-                        </div>
+                        <section className={classes.rightToolbar}>
+                            <IconButton color="inherit" aria-label="Print">
+                                <PrintIcon />
+                            </IconButton>
+                            <IconButton color="inherit" aria-label="Save">
+                                <SaveAltIcon />
+                            </IconButton>
+                            <IconButton color="inherit" aria-label="More Options">
+                                <MoreVertIcon />
+                            </IconButton>
+                        </section>
                     </Toolbar>
                 </AppBar>
 
-                {/* <Parallax filter image={img_portal}>
+                <div style={{zIndex: "4", margin: "50px", color: "#000"}}>
+                    <PortalNav />
+                </div>
 
-            </Parallax> */}
-            <div style={{zIndex: "4", margin: "50px", color: "#000"}}>
-                <h1>filler</h1>
-                <h1>filler</h1>
-                <h1>filler</h1>
-                <h1>filler</h1>
-                <h1>filler</h1>
-                <h1>filler</h1>
-                <h1>filler</h1>
-                <h1>filler</h1>
-                <h1>filler</h1>
-                <h1>filler</h1>                <h1>filler</h1>                <h1>filler</h1>                <h1>filler</h1>                <h1>filler</h1>                <h1>filler</h1>                <h1>filler</h1>                <h1>filler</h1>                <h1>filler</h1>                <h1>filler</h1>                <h1>filler</h1>                <h1>filler</h1>
+                <Footer />
             </div>
-
-            {/* <div className={classNames(classes.main, classes.mainRaised)}>
-            <div className={classes.container}>
-            Hello
-        </div>
-    </div> */}
-    <Footer />
-</div>
-);
-}
+        );
+    }
 }
 
 export default withStyles(portalPageStyle)(PortalPage);

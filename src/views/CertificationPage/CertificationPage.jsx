@@ -12,7 +12,8 @@ import GridItem from "components/Grid/GridItem.jsx";
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
 import TopNavLinks from "components/Header/TopNavLinks.jsx";
 import Parallax from "components/Parallax/Parallax.jsx";
-//import FacilitiesMainSection from "./Sections/FacilitiesMainSection.jsx";
+import ProgramIntegritySection from "./Sections/ProgramIntegritySection.jsx";
+import TrainingSection from "./Sections/TrainingSection.jsx";
 import certificationPageStyle from "assets/jss/site-styles/views/certificationPage.jsx";
 import { Helmet } from "react-helmet";
 const dashboardRoutes = [];
@@ -49,7 +50,6 @@ class CertificationPage extends React.Component {
                     fixed
                     changeColorOnScroll={{
                         height: 400,
-                        //color: "danger"
                     }}
                     {...rest}
                 />
@@ -69,7 +69,9 @@ class CertificationPage extends React.Component {
             </Parallax>
             <div className={classNames(classes.main, classes.mainRaised)}>
                 <div className={classes.container}>
-                    Hello
+
+                    <ProgramIntegritySection />
+                    <TrainingSection />
 
                 </div>
             </div>

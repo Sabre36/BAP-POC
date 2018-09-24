@@ -23,8 +23,7 @@ import landingPageStyle from "assets/jss/site-styles/views/landingPage.jsx";
 import AboutBAPSection from "./Sections/AboutBAPSection.jsx";
 import FacilitiesSection from "./Sections/FacilitiesSection.jsx";
 import StarRatingSection from "./Sections/StarRatingSection.jsx";
-import ProgramIntegritySection from "./Sections/ProgramIntegritySection.jsx";
-import TrainingSection from "./Sections/TrainingSection.jsx";
+
 import TeamSection from "./Sections/TeamSection.jsx";
 import StayConnectedSection from "./Sections/StayConnectedSection.jsx";
 import ContactSection from "./Sections/ContactSection.jsx";
@@ -93,8 +92,6 @@ class LandingPage extends React.Component {
                         <AboutBAPSection />
                         <FacilitiesSection />
                         <StarRatingSection/>
-                        <ProgramIntegritySection />
-                        <TrainingSection />
                         <TeamSection />
                         <StayConnectedSection />
                         <ContactSection />

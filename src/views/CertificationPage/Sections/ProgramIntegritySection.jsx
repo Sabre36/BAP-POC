@@ -6,7 +6,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Button from "components/CustomButtons/Button.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
-import aboutBAPStyle from "assets/jss/site-styles/views/landingPageSections/aboutBAPStyle.jsx";
+import certificationPage from "assets/jss/site-styles/views/certificationPage.jsx";
 import parallaxHeaderStyle from "assets/jss/site-styles/components/parallaxHeaderStyle.jsx";
 import ShowMore from "react-show-more";
 import QAImage from "assets/img/BAP_quality_assurance.jpg";
@@ -19,7 +19,7 @@ class ProgramIntegritySection extends React.Component {
             <div className={classes.section}>
                 <GridContainer justify="left">
                     <GridItem xs={12} sm={12} md={8}>
-                        <h2 className={classes.title}>Program integrity</h2>
+                        <h2 className={classes.sectionTitle}>Program integrity</h2>
                         <h4 className={classes.description}>
                             <ShowMore lines={11} anchorClass={classes.moreLessLightText}>
                                 We’ve structured our program to ensure the highest level of integrity, with a team of staff members dedicated to ensuring that independent, third-party certification bodies (CBs) and auditors as well as BAP-certified aquaculture facilities are in compliance with program requirements.
@@ -48,4 +48,4 @@ class ProgramIntegritySection extends React.Component {
     }
 }
 
-export default withStyles(aboutBAPStyle)(ProgramIntegritySection);
+export default withStyles(certificationPage)(ProgramIntegritySection);

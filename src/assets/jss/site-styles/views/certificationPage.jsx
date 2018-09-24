@@ -15,10 +15,19 @@ const certificationPageStyle = {
     color: "#FFFFFF",
     textDecoration: "none"
   },
+  sectionTitle: {
+      ...title,
+      marginBottom: "1rem",
+      marginTop: "30px",
+      minHeight: "32px",
+      textDecoration: "none"
+  },
   description: {
-    fontSize: "1.313rem",
-    maxWidth: "500px",
-    margin: "0"
+      color: "#212529",
+      textAlign: "left",
+      paddingBottom: "10px",
+      paddingRight: "20px",
+      fontSize: "18px"
   },
   main: {
     background: "#FFFFFF",

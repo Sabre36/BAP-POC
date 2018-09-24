@@ -17,7 +17,7 @@ import Typography from '@material-ui/core/Typography';
 
 import HeaderImage from "assets/img/china-farm.png";
 import Slider from "react-slick";
-import facilitiesStyle from "assets/jss/site-styles/views/landingPageSections/facilitiesStyle.jsx";
+import certificationPage from "assets/jss/site-styles/views/certificationPage.jsx";
 
 var slide1 = process.env.PUBLIC_URL + '/bap/worker5.jpg';  // AdobeStock_158396929_Preview.jpeg
 var slide2 = process.env.PUBLIC_URL + '/bap/worker6.jpg';
@@ -48,7 +48,7 @@ class TrainingSection extends React.Component {
             <div>
                 <GridContainer justify="left">
                     <GridItem cs={12} sm={12} md={5}>
-                        <h2 className={classes.title}>Interested in training?</h2>
+                        <h2 className={classes.sectionTitle}>Interested in training?</h2>
                         <h4 className={classes.description}>
 
                             <div style={{width: "400px", height: "400px", overflow: "hidden"}}>
@@ -114,4 +114,4 @@ class TrainingSection extends React.Component {
     }
 }
 
-export default withStyles(facilitiesStyle)(TrainingSection);
+export default withStyles(certificationPage)(TrainingSection);

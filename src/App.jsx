@@ -23,13 +23,14 @@ const theme = createMuiTheme({
 });
 
 var hist = createBrowserHistory();
-//~~~~
 
 class App extends React.Component {
     constructor(){
         super();
         this.state= {
-            isSignedIn : false,
+            authenticated : false,
+            userName: 'Jeff Rask',
+            userAffiliation: 'Global Aquaculture Alliance'
         }
 
         this.childHandler = this.childHandler.bind(this);
@@ -38,7 +39,7 @@ class App extends React.Component {
     childHandler(dataFromChild) {
         console.log('%cPrevious Parent State: ' + JSON.stringify(this.state), "color:cyan");
         this.setState({
-            isSignedIn: dataFromChild
+            authenticated: dataFromChild
         },() => console.log('Updated App State:', this.state));
     }
 
