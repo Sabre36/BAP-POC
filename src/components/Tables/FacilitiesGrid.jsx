@@ -1,32 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import StarIcon from "@material-ui/icons/StarRate";
 import { withState } from './with-state.jsx';
-import { GridColumn, Grid, GridToolbar, GridPDFExport } from '@progress/kendo-react-grid';
+import { GridColumn, Grid, GridToolbar } from '@progress/kendo-react-grid';
 import '@progress/kendo-theme-material/dist/all.css';
 import { ExcelExport } from '@progress/kendo-react-excel-export';
-
 import facilities from 'assets/data/facilities.json';
 
 const StatefulGrid = withState(Grid);
 
-const numStyle = {
-    color: "orange"
-};
-
 class cellWithBackGround extends React.Component {
     render() {
-
-        const examplePrice = this.props.dataItem.rating >= 1;
-
-        const icon = this.props.dataItem.rating == 1 ? <span><StarIcon/></span> :
-        this.props.dataItem.rating == 2 ? <span><StarIcon/><StarIcon/></span> :
-        this.props.dataItem.rating == 3 ? <span><StarIcon/><StarIcon/><StarIcon/></span> :
-        this.props.dataItem.rating == 4 ? <span><StarIcon/><StarIcon/><StarIcon/><StarIcon/></span> : "N/A";
+        const icon = this.props.dataItem.rating === 1 ? <span><StarIcon/></span> :
+        this.props.dataItem.rating === 2 ? <span><StarIcon/><StarIcon/></span> :
+        this.props.dataItem.rating === 3 ? <span><StarIcon/><StarIcon/><StarIcon/></span> :
+        this.props.dataItem.rating === 4 ? <span><StarIcon/><StarIcon/><StarIcon/><StarIcon/></span> : "N/A";
 
         return (
             <td >

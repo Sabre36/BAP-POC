@@ -1,11 +1,4 @@
 import React from "react";
-// nodejs library that concatenates classes
-import classNames from "classnames";
-// nodejs library to set properties for components
-import PropTypes from "prop-types";
-// @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-
 import Tooltip from "@material-ui/core/Tooltip";
 import Button from "components/CustomButtons/Button.jsx";
 import SearchIcon from '@material-ui/icons/Search';

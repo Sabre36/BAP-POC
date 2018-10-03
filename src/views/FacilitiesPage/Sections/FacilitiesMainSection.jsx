@@ -15,7 +15,6 @@ import ListIcon from "@material-ui/icons/ListAlt";
 
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 
 import Tabs from '@material-ui/core/Tabs';
@@ -34,15 +33,6 @@ function TabContainer(props) {
 TabContainer.propTypes = {
   children: PropTypes.node.isRequired,
 };
-
-const styles = theme => ({
-  root: {
-    flexGrow: 1,
-    width: '100%',
-    backgroundColor: theme.palette.background.paper,
-  },
-});
-
 
 class FacilitiesMainSection extends React.Component {
     state = {

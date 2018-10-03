@@ -1,7 +1,6 @@
 import React from "react";
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ReferenceLine, ResponsiveContainer } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
-//const {AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip} = Recharts;
 const data = [
 {year: '2004', Facilities: 15},
 {year: '2005', Facilities: 29},

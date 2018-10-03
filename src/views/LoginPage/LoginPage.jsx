@@ -1,11 +1,6 @@
 import React from "react";
-// @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import Icon from "@material-ui/core/Icon";
-// @material-ui/icons
-import Email from "@material-ui/icons/Email";
-import People from "@material-ui/icons/People";
+
 // core components
 import Header from "components/Header/Header.jsx";
 import Footer from "components/Footer/Footer.jsx";
@@ -13,113 +8,169 @@ import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import StockButton from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-
+import Divider from '@material-ui/core/Divider';
+import SimpleStorage, { clearStorage, resetParentState } from "react-simple-storage";//
 
 import Card from "components/Card/Card.jsx";
 import CardBody from "components/Card/CardBody.jsx";
-import CardHeader from "components/Card/CardHeader.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
-import CustomInput from "components/CustomInput/CustomInput.jsx";
-
 import loginPageStyle from "assets/jss/site-styles/views/loginPage.jsx";
+import userFilters from 'assets/data/userFilters.json';
 
 import image from "assets/img/Aquapod_Hawaii.jpg";
 
 class LoginPage extends React.Component {
-  constructor(props) {
-    super(props);
-    // we use this to make the card to appear after the page has been rendered
-    this.state = {
-      cardAnimaton: "cardHidden"
+    constructor(props) {
+        super(props);
+        // we use this to make the card to appear after the page has been rendered
+        //console.log('%cRendering props: ' + JSON.stringify(this.props), "color:blue");
+
+        this.state = {
+            cardAnimation: "cardHidden",
+            userName: '',
+            password: '',
+            authenticated: false
+        };
+
+        this.initialState = this.state;  // sets react-simple-storage
+        this.keysToIgnore = ['userName'];
+
+        this.handleSigninClick = this.handleSigninClick.bind(this);
+        this.handleCancelClick = this.handleCancelClick.bind(this);
+    }
+
+    async handleSigninClick() {
+
+        for (let i=0; i<userFilters.length; i++){
+            if (userFilters[i].userName === this.state.userName) {
+                var affiliations = userFilters[i].affiliations;
+                var selectedAffiliation = affiliations[0];
+                var roles = userFilters[i].roles;
+                var entitlements = userFilters[i].entitlements;
+                var selectedView = entitlements[0];
+
+                await this.setState({authenticated: true, userAffiliations: affiliations, selectedAffiliation: selectedAffiliation, userRoles: roles, entitlements: entitlements, selectedView: selectedView});
+
+                break;
+            }
+        }
+        await this.props.handleLogin( this.state );
     };
-  }
-  componentDidMount() {
-    // we add a hidden class to the card and after 700 ms we delete it and the transition appears
-    setTimeout(
-      function() {
-        this.setState({ cardAnimaton: "" });
-      }.bind(this),
-      700
-    );
-  }
-  render() {
-    const { classes, ...rest } = this.props;
 
-    const styles = theme => ({
-      button: {
-        margin: theme.spacing.unit,
-      }
-    });
+    handleCancelClick() {
+        resetParentState(this, this.initialState, this.keysToIgnore);
+        //this.context.router.goBack();
+    };
 
-    return (
-      <div>
-        <Header
-          absolute
-          color="transparent"
-          brand="Best Aquaculture Practices"
+    componentDidMount() {
+        // we add a hidden class to the card and after 700 ms we delete it and the transition appears
+        setTimeout(
+            function() {
+                this.setState({ cardAnimation: "" });
+            }.bind(this),
+            700
+        );
+    }
+    render() {
+        const { classes, ...rest } = this.props;
 
-          {...rest}
-        />
-        <div
-          className={classes.pageHeader}
-          style={{
-            backgroundImage: "url(" + image + ")",
-            backgroundSize: "cover",
-            backgroundPosition: "top center"
-          }}
-        >
-          <div className={classes.container}>
-            <GridContainer justify="center">
-              <GridItem xs={12} sm={12} md={4}>
-                <Card className={classes[this.state.cardAnimaton]}>
-                  <form className={classes.form}>
+        const styles = theme => ({
+            button: {
+                margin: theme.spacing.unit,
+            }
+        });
 
+        return (
+            <div>
+                <SimpleStorage
+                  parent={this}
+                  prefix={ 'LoginPage' }
+                />
 
-                    <h3 className={classes.divider}>Please sign in</h3>
-                    <CardBody>
+                <Header
+                    absolute
+                    color="transparent"
+                    brand="Best Aquaculture Practices"
 
-                      <CustomInput
-                        labelText="Username..."
-                        id="email"
-                        formControlProps={{
-                          fullWidth: true
-                        }}
-                        inputProps={{
-                          type: "Username",
-                        }}
-                      />
+                    {...rest}
+                />
+                <div
+                    className={classes.pageHeader}
+                    style={{
+                        backgroundImage: "url(" + image + ")",
+                        backgroundSize: "cover",
+                        backgroundPosition: "top center"
+                    }}
+                    >
+                        <div className={classes.container}>
+                            <GridContainer justify="center">
+                                <GridItem xs={12} sm={6} md={4}>
+                                    <Card className={classes[this.state.cardAnimation]}>
+                                        <form className={classes.form}>
+                                            <h3 className={classes.divider}>Please sign in</h3>
+                                            <CardBody>
 
-                      <CustomInput
-                        labelText=""
-                        id="pw"
-                        formControlProps={{
-                          fullWidth: true
-                        }}
-                        inputProps={{
-                          type: "password",
+                                                <TextField
+                                                    id="standard-name"
+                                                    label="Username"
+                                                    type="email"
+                                                    className={classes.textField}
+                                                    value={this.state.userName}
+                                                    //onChange={this.handleChange('userName')}
+                                                    onChange={e => this.setState({ userName: e.target.value })}
+                                                    margin="normal"
+                                                    fullWidth={true}
+                                                    inputStyle ={{width: '100%'}}
+                                                />
+                                                <br/>
+                                                <TextField
+                                                    id="standard-password"
+                                                    label="Password"
+                                                    type="password"
+                                                    className={classes.textField}
+                                                    value={this.state.password}
+                                                    //onChange={this.handleChange('password')}
+                                                    onChange={e => this.setState({ password: e.target.value })}
+                                                    margin="normal"
+                                                    fullWidth={true}
+                                                    inputStyle ={{width: '100%'}}
+                                                />
 
-                        }}
-                      />
-                    </CardBody>
-                    <CardFooter className={classes.cardFooter}>
-                      <StockButton variant="outlined" color="primary" >
-                        Sign in
-                      </StockButton>
+                                                <br/>
+                                                <div>
+                                                    <StockButton color="primary" style={{padding: 0}} onClick={() => clearStorage()} >
+                                                        Forgot Password?
+                                                    </StockButton>
+                                                    <StockButton color="primary" style={{padding: 0, float: "right"}} onClick={() => clearStorage()} >
+                                                        Register now
+                                                    </StockButton>
 
-                      <StockButton color="infoColor" >
-                        Forgot password?
-                      </StockButton>
-                    </CardFooter>
-                  </form>
-                </Card>
-              </GridItem>
-            </GridContainer>
-          </div>
-          <Footer whiteFont />
-        </div>
-      </div>
-    );
-  }
-}
+                                                </div>
+                                                <br/>
+
+                                                <Divider light={false}/>
+
+                                            </CardBody>
+                                            <CardFooter className={classes.cardFooter}>
+                                                <StockButton color="primary" onClick={this.handleCancelClick} >
+                                                    Cancel
+                                                </StockButton>
+
+                                                <StockButton variant="raised" color="primary"  onClick={this.handleSigninClick}>
+                                                    Sign in
+                                                </StockButton>
+
+                                            </CardFooter>
+                                        </form>
+                                    </Card>
+                                </GridItem>
+                            </GridContainer>
+                        </div>
+                        <Footer whiteFont />
+                    </div>
+                </div>
+            );
+        }
+    }
 
 export default withStyles(loginPageStyle)(LoginPage);

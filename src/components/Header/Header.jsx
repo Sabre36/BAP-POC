@@ -13,10 +13,6 @@ import Hidden from "@material-ui/core/Hidden";
 import Drawer from "@material-ui/core/Drawer";
 import TopNavLinks from "./TopNavLinks.jsx";
 
-// import List from "@material-ui/core/List";
-// import ListItem from "@material-ui/core/ListItem";
-
-
 // @material-ui/icons
 import Menu from "@material-ui/icons/Menu";
 
@@ -113,36 +109,6 @@ class Header extends React.Component {
 
                     </div>
                     <Hidden smDown implementation="css">
-                        {/* <h2> data is {this.props.itemIndex} </h2> */}
-                        {/* <List className={classes.list}>
-
-                          <ListItem className={classes.listItem} >
-                              <Button
-                                  href="/"
-                                  color="transparent"
-                                  className={ this.props.itemIndex == 0 ? classes.navLinkActive : classes.navLink }
-                                  > Who we are
-                              </Button>
-                          </ListItem>
-
-                          <ListItem className={classes.listItem} >
-                              <Button
-                                  href="/"
-                                  color="transparent"
-                                  className={ this.props.itemIndex == 1 ? classes.navLinkActive : classes.navLink }
-                                  > Certification
-                              </Button>
-                          </ListItem>
-
-                          <ListItem className={classes.listItem} >
-                              <Button
-                                  href="/"
-                                  color="transparent"
-                                  className={ this.props.itemIndex == 2 ? classes.navLinkActive : classes.navLink }
-                                  > Facilities
-                              </Button>
-                          </ListItem>
-                      </List> */}
                         {topLinks}
                         {rightLinks}
                     </Hidden>

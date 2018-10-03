@@ -13,7 +13,7 @@ import ShowMore from "react-show-more";
 import parallaxHeaderStyle from "assets/jss/site-styles/components/parallaxHeaderStyle.jsx";
 import ReactPlayer from "react-player";
 
-var img_whoWeAre = process.env.PUBLIC_URL + '/bap/header-intro.png';  // AdobeStock_158396929_Preview.jpeg
+
 var img_certification = process.env.PUBLIC_URL + '/bap/header-cert.png';
 var img_facilities = process.env.PUBLIC_URL + '/bap/header-facilities.png';
 var img_marketplace = process.env.PUBLIC_URL + '/bap/header-marketplace.png';
@@ -82,7 +82,6 @@ class ParallaxHeader extends React.Component {
             className,
             children,
             style,
-            image,
             small
         } = this.props;
 

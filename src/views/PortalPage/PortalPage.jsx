@@ -1,6 +1,5 @@
 import React from "react";
-// nodejs library that concatenates classes
-import classNames from "classnames";
+import PropTypes from 'prop-types';
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 
@@ -11,98 +10,356 @@ import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
 import TopNavLinks from "components/Header/TopNavLinks.jsx";
-import Parallax from "components/Parallax/Parallax.jsx";
 import portalPageStyle from "assets/jss/site-styles/views/portalPage.jsx";
-import PortalNav from "components/Drawers/PortalNav.jsx";
+
+import { DropDownList } from '@progress/kendo-react-dropdowns';
+
+import Button from '@material-ui/core/Button';
 import { Helmet } from "react-helmet";
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from "@material-ui/core/Toolbar";
-import Button from "@material-ui/core/Button";
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
+
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+
+
+import FormLabel from '@material-ui/core/FormLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import Checkbox from '@material-ui/core/Checkbox';
+import Divider from '@material-ui/core/Divider';
+
+import Alerts from "./Sections/Alerts.jsx";
+import Compliance from "./Sections/Compliance.jsx";
+import FarmDetail from "./Sections/FarmDetail.jsx";
+import Labs from "./Sections/Labs.jsx";
+import Scorecard from "./Sections/Scorecard.jsx";
+import Settings from "./Sections/Settings.jsx";
+import SupplyChain from "./Sections/SupplyChain.jsx";
+import YearlyRecap from "./Sections/YearlyRecap.jsx";
+
 
 import MenuIcon from '@material-ui/icons/Menu';
 import PrintIcon from '@material-ui/icons/Print';
 import SaveAltIcon from '@material-ui/icons/SaveAlt';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
+
+import CheckCircleIcon from '@material-ui/icons/CheckCircleOutline';
+import GridIcon from '@material-ui/icons/GridOn';
+import TimeIcon from '@material-ui/icons/AccessTime';
+import NotificationIcon from '@material-ui/icons/Notifications';
+import SettingsIcon from '@material-ui/icons/Settings';
+import LinkIcon from '@material-ui/icons/Link';
+import BarchartIcon from '@material-ui/icons/BarChart';
+//import ListIcon from '@material-ui/icons/List';
+//import LabIcon from '@material-ui/icons/Opacity'; //replace this
+import LabIcon from 'assets/img/svg/lab.svg';
+
+import FilterIcon from 'assets/img/svg/filters.svg';
+import ViewIcon from 'assets/img/svg/puzzle.svg';
+
+import orgFilters from 'assets/data/orgFilters.json';
+
 const dashboardRoutes = [];
+
 
 var img_portal = process.env.PUBLIC_URL + '/bap/header-portal.jpg';
 
-class PortalPage extends React.Component {
 
+function TabContainer(props) {
+    return (
+        <Typography component="div" style={{ padding: 8 * 3 }}>
+            {props.children}
+        </Typography>
+    );
+}
+TabContainer.propTypes = {
+    children: PropTypes.node.isRequired,
+};
+
+
+class ViewItem extends React.Component {
     render() {
-        const { classes, ...rest } = this.props;
+        return <ListItem button
+            onClick={this.props.handler}
+            selected={this.props.selected === this.props.text }
+            >
+                { this.props.text === "Scorecard" && <BarchartIcon /> }
+                { this.props.text === "Yearly recap" && <TimeIcon /> }
+                { this.props.text === "Farm & plant detail" && <GridIcon /> }
+                { this.props.text === "Compliance" && <CheckCircleIcon /> }
+                { this.props.text === "Supply chain" && <LinkIcon /> }
+                { this.props.text === "Settings" && <SettingsIcon /> }
+                { this.props.text === "Labs" && <img src={LabIcon} height={22} /> }
+                { this.props.text === "Notifications" && <NotificationIcon /> }
 
-        this.state= {
-            activeSlide : 5,
-            userName: this.props.userName,
-            userAffiliation: this.props.userAffiliation
+                <ListItemText primary={this.props.text}  />
+            </ListItem>;
+    }
+}
+
+function RenderSpecies(props){
+    //console.log('render species size: ' + userFilters.length);
+    let checkBoxComponentList = [];
+
+    for (let i=0; i<orgFilters.length; i++){
+        if (orgFilters[i].organization === props.userAffiliation) {
+            if (orgFilters[i].species !== null) {
+                for (let j=0; j<orgFilters[i].species.length; j++) {
+                        checkBoxComponentList.push(<FormControlLabel
+                              control={
+                                <Checkbox color="primary" checked={true} /*onChange={this.handleChange('gilad')}*/ value={orgFilters[i].species[j]} />
+                              }
+                              label={orgFilters[i].species[j]}
+                            />
+                        );
+                }
+            }
+            break;
+        }
+    }
+    return checkBoxComponentList;
+}
+
+function RenderCountries(props){
+    let checkBoxComponentList = [];
+
+    for (let i=0; i<orgFilters.length; i++){
+        if (orgFilters[i].organization === props.userAffiliation) {
+            if (orgFilters[i].species !== null) {
+                for (let j=0; j<orgFilters[i].countries.length; j++) {
+                        checkBoxComponentList.push(<FormControlLabel
+                              control={
+                                <Checkbox color="primary" checked={true} /*onChange={this.handleChange('gilad')}*/ value={orgFilters[i].countries[j]} />
+                              }
+                              label={orgFilters[i].countries[j]}
+                            />
+                        );
+                }
+            }
+            break;
+        }
+    }
+    return checkBoxComponentList;
+}
+
+
+    // function ViewListItems(props) {
+    //     const lst = [];
+    //     console.log('%cCurrent props: ' + JSON.stringify(props), "color: purple");
+    //
+    //     Object.keys(props.entitlements).forEach(function(prop) {
+    //         var view = props.entitlements[prop].toString().toLowerCase();
+    //
+    //         if (view === 'sct') {
+    //             //lst.push(sctListItems);
+    //             lst.push (
+    //                 <div>
+    //                     <ViewItem icon={<BarchartIcon/>} text="Scorecard" selected={props.selectedView} handler={() => this.props.handleViewClick( "yearend")}/>
+    //                     <ViewItem icon={<NotificationIcon/>} text="Yearly report" selected={props.selectedView} handler={() => this.props.handleViewClick( "yearend")}/>
+    //                 </div>
+    //             );
+    //
+    //         }
+    //         if (view === 'alerts') {
+    //             lst.push(
+    //                 <ViewItem icon={<NotificationIcon/>} text="Alerts" selected={props.selectedView} handler={() => props.handleViewClick( "alerts")}/>
+    //             );
+    //         }
+    //         if (view === 'labs') {
+    //             lst.push(
+    //                 <ViewItem icon={<NotificationIcon/>} text="Labs" selected={props.selectedView} handler={() => props.handleViewClick( "labs")}/>
+    //             );
+    //         }
+    //     });
+    //
+    //     return lst;
+    // }
+    //
+
+
+    class PortalPage extends React.Component {
+
+        constructor(props) {
+            super(props);
+
+            this.handleViewClick = this.handleViewClick.bind(this);
         }
 
-        const styles = {
-            root: {
-                flexGrow: 1,
-            },
-            grow: {
-                flexGrow: 1,
-            },
-            rightToolbar: {
-                marginLeft: 'auto',
-                marginRight: -12,
-            },
-            menuButton: {
-                marginRight: 16,
-                marginLeft: -12,
-            },
-            appbar: {
-                backgroundColor: "rgba(0,0,0.3)"
-            }
+        state = {
+            activeSlide : 5,
+            value: 0,
+            selectedAffiliation: this.props.selectedAffiliation,
+            selectedView: this.props.selectedView,
+        }
+
+        handleChange = (event, value) => {
+            this.setState({ value });
         };
 
-        return (
-            <div>
-                <Helmet>
-                    <meta name="description" content="BAP - Portal" />
-                    <meta property="og:url" content="https://www.bapcertification.org/" />
-                    <meta property="og:site_name" content="Best Aquaculture Practices Certification - Portal" />
-                    <meta name="twitter:card" content="portal" />
-                    <meta name="twitter:title" content="Best Aquaculture Practices Certification - Portal" />
-                    <link rel="canonical" href="http://www.bestaquaculturepractices.org" />
-                    <title>BAP - Portal</title>
-                </Helmet>
+        handleOrganizationClick = (event, index) => {
+            this.setState({ selectedAffiliation: index });
+            console.log('%cRendering state: ' + JSON.stringify(this.state), "color:orange");
+        };
 
-                <div style={{width: "100%", height: "120px", overflow: "hidden"}}>
-                    <img src={img_portal} style={{width: "100%", zIndex: "1"}}/>
-                </div>
+        handleViewClick = async (index) => {
+            await this.setState({selectedView: index});
 
-                <Header
-                    color="semiTransparent"
-                    routes={dashboardRoutes}
-                    brand="Best Aquaculture Practices"
-                    rightLinks={<HeaderLinks itemIndex={this.state.activeSlide}/>}
-                    topLinks={<TopNavLinks />}
-                    top
-                    fixed
-                    changeColorOnScroll={{
-                        height: 2,
-                    }}
-                    {...rest}
-                />
+            //alert(this.state.selectedView + " " + index);
+        };
 
-                <AppBar position="sticky" style={{backgroundColor: "#1463AC", position: "fixed", top: "110px"}}>
-                    <Toolbar>
-                        <IconButton className={classes.menuButton} aria-label="Menu" color="inherit">
-                            <MenuIcon />
-                        </IconButton>
-                        <Typography variant="title" color="inherit">Welcome Sally Reynolds (Kroger)</Typography>
+        handleAffiliationChange = (event) => {
+            this.setState({
+                selectedAffiliation: event.target.value
+            });
+            console.log('%cRendering state: ' + JSON.stringify(this.state), "color:orange");
+        }
 
-                        <section className={classes.rightToolbar}>
+        valueRender = (element, value) => {
+            if (!value) {
+                return element;
+            }
+            const children = [
+                <span key={1} style={{color: '#fff', fontSize: '21px', fontWeight: 500}}>
+                    {value}
+                </span>,
+            ];
+
+            return React.cloneElement(element, { ...element.props }, children);
+        }
+
+        render() {
+            const { classes, ...rest } = this.props;
+            const { value } = this.state;
+
+            const styles = theme => ({
+                root: {
+                    flexGrow: 1,
+                },
+                grow: {
+                    flexGrow: 1,
+                },
+                rightToolbar: {
+                    marginLeft: 'auto',
+                    marginRight: -12,
+                },
+                menuButton: {
+                    marginRight: 16,
+                    marginLeft: -12,
+                },
+                list: {
+                    padding: 0,
+                    margin: 0,
+                },
+                appbar: {
+                    backgroundColor: "rgba(0,0,0.3)"
+                },
+                tabsRoot: {
+                  borderBottom: '1px solid #e8e8e8',
+                },
+                tabsIndicator: {
+                  backgroundColor: '#1890ff',
+                },
+                tabRoot: {
+                  textTransform: 'initial',
+                  minWidth: 72,
+                  fontWeight: theme.typography.fontWeightRegular,
+                  marginRight: theme.spacing.unit * 4,
+                  fontFamily: [
+                      'Roboto',
+                    '-apple-system',
+                    'BlinkMacSystemFont',
+                    '"Segoe UI"',
+                    '"Helvetica Neue"',
+                    'Arial',
+                    'sans-serif',
+                    '"Apple Color Emoji"',
+                    '"Segoe UI Emoji"',
+                    '"Segoe UI Symbol"',
+                  ].join(','),
+                  '&:hover': {
+                    color: '#40a9ff',
+                    opacity: 1,
+                  },
+                  '&$tabSelected': {
+                    color: '#1890ff',
+                    fontWeight: theme.typography.fontWeightMedium,
+                  },
+                  '&:focus': {
+                    color: '#40a9ff',
+                  },
+                },
+                tabSelected: {},
+                typography: {
+                  padding: theme.spacing.unit * 3,
+                },
+            });
+
+
+
+            return (
+                <div>
+                    <Helmet>
+                        <meta name="description" content="BAP - Portal" />
+                        <meta property="og:url" content="https://www.bapcertification.org/" />
+                        <meta property="og:site_name" content="Best Aquaculture Practices Certification - Portal" />
+                        <meta name="twitter:card" content="portal" />
+                        <meta name="twitter:title" content="Best Aquaculture Practices Certification - Portal" />
+                        <link rel="canonical" href="http://www.bestaquaculturepractices.org" />
+                        <title>BAP - Portal</title>
+                    </Helmet>
+
+                    <div style={{width: "100%", height: "120px", overflow: "hidden"}}>
+                        <img src={img_portal} style={{width: "100%", zIndex: "1"}}/>
+                    </div>
+
+                    <Header
+                        color="semiTransparent"
+                        routes={dashboardRoutes}
+                        brand="Best Aquaculture Practices"
+                        rightLinks={<HeaderLinks itemIndex={this.state.activeSlide}/>}
+                        topLinks={<TopNavLinks authenticated={this.props.authenticated} />}
+                        top
+                        fixed
+                        changeColorOnScroll={{
+                            height: 2,
+                            color: "primary"
+                        }}
+                        {...rest}
+                    />
+
+                    <AppBar position="sticky" style={{backgroundColor: "#1463AC", position: "fixed", top: "110px"}}>
+                        <Toolbar>
+                            <IconButton className={classes.menuButton} aria-label="Menu" color="inherit">
+                                <MenuIcon />
+                            </IconButton>
+
+
+                            <Typography variant="title" color="inherit">Welcome {this.props.userName}  (
+                                <DropDownList style={{display: "inline-block", width: "auto", color: "#ffffff", borderBottom: 0}}
+                                    data={this.props.userAffiliations}
+                                    defaultValue={this.props.userAffiliations[0]}
+                                    valueRender={this.valueRender}
+                                    onChange={this.handleAffiliationChange}
+                                    dataItemKey="selectedAffiliation"
+
+                                />
+                            )
+                        </Typography>
+
+                        <section style={styles.rightToolbar}>
                             <IconButton color="inherit" aria-label="Print">
                                 <PrintIcon />
                             </IconButton>
-                            <IconButton color="inherit" aria-label="Save">
+                            <IconButton color="inherit" aria-label="Download">
                                 <SaveAltIcon />
                             </IconButton>
                             <IconButton color="inherit" aria-label="More Options">
@@ -112,14 +369,87 @@ class PortalPage extends React.Component {
                     </Toolbar>
                 </AppBar>
 
-                <div style={{zIndex: "4", margin: "50px", color: "#000"}}>
-                    <PortalNav />
+                <div style={{zIndex: "4", margin: "55px", color: "#000"}}>
+                    <GridContainer justify="center">
+                        <GridItem xs={2} sm={2} md={2} style={{backgroundColor: "rgba(0,0,0,.03)", minHeight: "700px", height: "100%", padding: 0, margin: 0}}>
+
+                            <Tabs value={value} fullWidth={true} onChange={this.handleChange} classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}>
+                                <Tab label="Views" icon={<img src={ViewIcon} height={18} />} style={{minWidth: "110px"}} classes={{ root: classes.tabRoot, selected: classes.tabSelected }}> </Tab>
+                                <Tab  label="Filters" icon={<img src={FilterIcon} height={18} />}  style={{minWidth: "120px"}} classes={{ root: classes.tabRoot, selected: classes.tabSelected }}/>
+                            </Tabs>
+
+                            {value === 1 && <TabContainer>
+                                <div>
+                                    <FormControl component="fieldset" className={classes.formControl}>
+                                        <FormLabel component="legend">Species</FormLabel>
+                                        <FormGroup>
+                                            <RenderSpecies userAffiliation={this.state.selectedAffiliation}/>
+                                        </FormGroup>
+                                    </FormControl>
+                                    <br/>
+                                    <br/>
+
+                                    <FormControl component="fieldset" className={classes.formControl}>
+                                        <FormLabel component="legend">Countries</FormLabel>
+                                        <FormGroup>
+                                            <RenderCountries userAffiliation={this.state.selectedAffiliation} />
+                                        </FormGroup>
+                                    </FormControl>
+
+                                    <br/>
+                                    <Divider/>
+                                    <br/>
+                                    <Button variant="contained" color="primary">Apply</Button>
+
+                                    {/* <List component="nav" style={{marginLeft: "-18px", marginRight: "-18px"}}>
+                                        {this.props.userAffiliations.map((item) =>
+                                            <ListItem {...item}
+                                                key={item.id}
+                                                button
+                                                selected={this.state.selectedAffiliation === item }
+                                                onClick={event => this.handleOrganizationClick(event, item )}
+                                                >
+                                                    <ListItemText primary={item} />
+                                                </ListItem>
+                                            )}
+                                        </List> */}
+
+
+
+                                        {/* var json = JSON.parse(data); */}
+                                    </div>
+                                </TabContainer>}
+
+                                { value === 0 && <TabContainer>
+                                    <List component="nav" style={{marginLeft: "-18px", marginRight: "-18px"}}>
+                                        {this.props.entitlements.map((item) =>
+
+                                            <ViewItem text={item} selected={this.state.selectedView} handler={() => this.handleViewClick(item)}/>
+                                        )}
+                                    </List>
+                                </TabContainer> }
+                            </GridItem>
+
+                            <GridItem xs={10} sm={10} md={10}>
+                                <div style={{marginTop: "-50px"}}>
+                                    {this.state.selectedView === "Scorecard" && <Scorecard/> }
+                                    {this.state.selectedView === "Yearly recap" && <YearlyRecap/> }
+                                    {this.state.selectedView === "Farm & plant detail" && <FarmDetail/> }
+                                    {this.state.selectedView === "Compliance" && <Compliance/> }
+                                    {this.state.selectedView === "Supply chain" && <SupplyChain/> }
+                                    {this.state.selectedView === "Alerts" && <Alerts/> }
+                                    {this.state.selectedView === "Labs" && <Labs/> }
+                                    {this.state.selectedView === "Settings" && <Settings/> }
+                                </div>
+                            </GridItem>
+                        </GridContainer>
+
+                    </div>
+
+                    <Footer />
                 </div>
-
-                <Footer />
-            </div>
-        );
+            );
+        }
     }
-}
 
-export default withStyles(portalPageStyle)(PortalPage);
+    export default withStyles(portalPageStyle)(PortalPage);

@@ -3,7 +3,7 @@ import React from "react";
 import classNames from "classnames";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-
+import PropTypes from "prop-types";
 // core components
 import Header from "components/Header/Header.jsx";
 import Footer from "components/Footer/Footer.jsx";
@@ -44,40 +44,44 @@ class FacilitiesPage extends React.Component {
                     routes={dashboardRoutes}
                     brand="Best Aquaculture Practices"
                     rightLinks={<HeaderLinks itemIndex={this.state.activeSlide}/>}
-                    topLinks={<TopNavLinks />}
+                    topLinks={<TopNavLinks authenticated={this.props.authenticated}/>}
                     top
                     fixed
                     changeColorOnScroll={{
                         height: 400,
-                        //color: "danger"
+                        color: "primary"
                     }}
                     {...rest}
                 />
                 <Parallax filter image={img_facilities}>
-                <div className={classes.container}>
+                    <div className={classes.container}>
 
-                    <GridContainer>
-                        <GridItem xs={12} sm={12} md={6} >
-                            <h2 className={classes.title}>Certified facilities</h2>
-                            <h4 className={classes.subtitle}>
-                                BAP certifies farms, hatcheries, feed mills, processing plants and repacking plants in over nn countries. The BAP program recognizes product from associated or integrated facilities along the aquaculture production chain with a star-based ranking system.
-                                <br/>
-                            </h4>
-                        </GridItem>
-                    </GridContainer>
+                        <GridContainer>
+                            <GridItem xs={12} sm={12} md={6} >
+                                <h2 className={classes.title}>Certified facilities</h2>
+                                <h4 className={classes.subtitle}>
+                                    BAP certifies farms, hatcheries, feed mills, processing plants and repacking plants in over nn countries. The BAP program recognizes product from associated or integrated facilities along the aquaculture production chain with a star-based ranking system.
+                                    <br/>
+                                </h4>
+                            </GridItem>
+                        </GridContainer>
+                    </div>
+                </Parallax>
+                <div className={classNames(classes.main, classes.mainRaised)}>
+                    <div className={classes.container}>
+
+                        <FacilitiesMainSection />
+
+                    </div>
                 </div>
-            </Parallax>
-            <div className={classNames(classes.main, classes.mainRaised)}>
-                <div className={classes.container}>
-
-                    <FacilitiesMainSection />
-
-                </div>
+                <Footer />
             </div>
-            <Footer />
-        </div>
-    );
+        );
+    }
 }
-}
+
+FacilitiesPage.propTypes = {
+    authenticated: PropTypes.bool,
+};
 
 export default withStyles(facilitiesPageStyle)(FacilitiesPage);

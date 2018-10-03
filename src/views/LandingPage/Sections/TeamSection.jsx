@@ -20,8 +20,11 @@ import person1 from "assets/img/faces/avery.png";
 import person2 from "assets/img/faces/chrisweeks.png";
 import person3 from "assets/img/faces/davidyunker.png";
 import person4 from "assets/img/faces/gregbrown.png";
-import person5 from "assets/img/faces/jeffpeterson.png";
-import person6 from "assets/img/faces/ken.png";
+//import person5 from "assets/img/faces/jeffpeterson.png";
+import person6 from "assets/img/faces/taylor-morrison.png";
+//import person7 from "assets/img/faces/Valerie-Roy.png";
+import person8 from "assets/img/faces/jason-Trott.png";
+//import person9 from "assets/img/faces/ken.png";
 
 class TeamSection extends React.Component {
     render() {
@@ -271,12 +274,12 @@ class TeamSection extends React.Component {
 
                                                                             <Card plain>
                                                                                 <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                                                                                    <img src={person5} alt="..." className={imageClasses} />
+                                                                                    <img src={person8} alt="..." className={imageClasses} />
                                                                                 </GridItem>
                                                                                 <h4 className={classes.cardTitle}>
-                                                                                    Jeff Peterson
+                                                                                    Jason Trott
                                                                                     <br />
-                                                                                    <small className={classes.smallTitle}>Program Integrity Advisor</small>
+                                                                                    <small className={classes.smallTitle}>"Beer guy"</small>
                                                                                 </h4>
                                                                                 <CardBody>
                                                                                     <p className={classes.description}>
@@ -316,9 +319,9 @@ class TeamSection extends React.Component {
                                                                                                 <img src={person6} alt="..." className={imageClasses} />
                                                                                             </GridItem>
                                                                                             <h4 className={classes.cardTitle}>
-                                                                                                Ken Corpron
+                                                                                                Taylor Morrison
                                                                                                 <br />
-                                                                                                <small className={classes.smallTitle}>Program Integrity Analyst</small>
+                                                                                                <small className={classes.smallTitle}>BAP Certification Specialist</small>
                                                                                             </h4>
                                                                                             <CardBody>
                                                                                                 <p className={classes.description}>

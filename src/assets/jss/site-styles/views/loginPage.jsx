@@ -76,7 +76,8 @@ const signupPageStyle = {
     paddingTop: "0rem",
     border: "0",
     borderRadius: "6px",
-    justifyContent: "center !important"
+    //justifyContent: "center !important"
+    float: "right"
   },
   socialLine: {
     marginTop: "1rem",

@@ -15,7 +15,7 @@ import contactStyle from "assets/jss/site-styles/views/landingPageSections/conta
 class ContactSection extends React.Component {
   render() {
     const { classes } = this.props;
-    const leftJust = {textAlign: 'left'}
+
     return (
       <div className={classes.section}>
         <GridContainer justify="left">

@@ -5,17 +5,9 @@ import withStyles from "@material-ui/core/styles/withStyles";
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
-import StarIcon from "@material-ui/icons/StarRate";
 
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
+
 import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-
-import HeaderImage from "assets/img/china-farm.png";
 import Slider from "react-slick";
 import certificationPage from "assets/jss/site-styles/views/certificationPage.jsx";
 
@@ -100,7 +92,7 @@ class TrainingSection extends React.Component {
                                 New auditor candidates, existing auditors requiring refresher training, and observers — including government officials, producers and other industry stakeholders — are encouraged to attend our regularly held BAP auditor training courses.
                                 <br/>
                                 <br/>
-                                If you are a prospective CB interested in applying for accreditation, please review our <a href="#">criteria, requirements, and application form</a>.
+                                If you are a prospective CB interested in applying for accreditation, please review our <a href="">criteria, requirements, and application form</a>.
                                 <br/>
                                 <br/><Button variant="outlined" color="primary">
                                     LEARN MORE

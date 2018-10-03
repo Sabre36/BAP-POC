@@ -11,18 +11,17 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
+
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 
-import HeaderImage from "assets/img/china-farm.png";
-import Watermark from "assets/img/watermark.png";
+
+
 import CertImage from "assets/img/BAPcert.png";
 import FishImage from "assets/img/fish.png";
 
 
-import WatermarkImage from "assets/img/china-farm.png";
 
 import starRatingStyle from "assets/jss/site-styles/views/landingPageSections/starRatingStyle.jsx";
 
@@ -123,13 +122,13 @@ class StarRatingSection extends React.Component {
                             <Typography component="p"  className={classes.typography}>
                                 <GridContainer>
                                     <GridItem xs={2} sm={2} md={3} lg={3} style={{textAlign: "center", minWidth: "250px"}}>
-                                        <img src={CertImage} height={350}/>
+                                        <img src={CertImage} height={350} alt="Certication"/>
                                     </GridItem>
                                     <GridItem xs={8} sm={8} md={8} className={classes.whitetext}>
                                     The BAP program employs a star system to signify the integration levels of BAP certification along the aquaculture production chain. These stars are displayed on the BAP logo and appear on packaging for a variety of farmed seafood products worldwide.
                                     <br/><br/>
-                                    Download the <a href="#">BAP Logo Use Guide</a> to ensure that you’re using the BAP logo appropriately and that any claims associated with GAA or BAP are portrayed in an accurate manner.
-                                    Read about the <a href="#">BAP Logo Policing Program</a>to learn how BAP polices logo use at the retail level, with the help of Field Agent, a mobile market research and auditing firm.
+                                    Download the <a href="">BAP Logo Use Guide</a> to ensure that you’re using the BAP logo appropriately and that any claims associated with GAA or BAP are portrayed in an accurate manner.
+                                    Read about the <a href="">BAP Logo Policing Program</a>to learn how BAP polices logo use at the retail level, with the help of Field Agent, a mobile market research and auditing firm.
                                     </GridItem>
                                 </GridContainer>
 
@@ -175,7 +174,7 @@ class StarRatingSection extends React.Component {
                                         </GridItem>
                                         <Divider />
                                     </GridContainer>
-                                    <img src={FishImage} height={96} style={{ float: "right", marginRight: "15%", marginTop: "-150px" }} />
+                                    <img src={FishImage} height={96} alt="Fish" style={{ float: "right", marginRight: "15%", marginTop: "-150px" }} />
                                 </div>
                             </Typography>
                         </CardContent>

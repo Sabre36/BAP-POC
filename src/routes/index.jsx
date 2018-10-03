@@ -5,25 +5,16 @@ import CertificationPage from "views/CertificationPage/CertificationPage.jsx";
 import FacilitiesPage from "views/FacilitiesPage/FacilitiesPage.jsx";
 import PortalPage from "views/PortalPage/PortalPage.jsx";
 
-// function requireAuth(nextState, replace, next) {
-//     if (!authenticated) {
-//         replace({
-//             pathname: "/login",
-//             state: {nextPathname: nextState.location.pathname}
-//         });
-//     }
-//     next();
-// }
+
+
 
 var indexRoutes = [
-    { path: "/landing-page", name: "LandingPage", component: LandingPage },
-    { path: "/certification", name: "CertificationPage", component: CertificationPage, /*onEnter={requireAuth}*/},
-    { path: "/facilities", name: "FacilitiesPage", component: FacilitiesPage, /*onEnter={requireAuth}*/ },
-    { path: "/ProgramIntegrity", name: "ProgramIntegrity", component: ProgramIntegrity },
-    { path: "/portal", name: "PortalPage", component: PortalPage },
-
-    { path: "/login", name: "LoginPage", component: LoginPage },
-    { path: "/", name: "LandingPage", component: LandingPage }
+    { path: "/landing-page", name: "LandingPage", component: LandingPage, requireAuth: true },
+    { path: "/certification", name: "CertificationPage", component: CertificationPage, requireAuth: false},
+    { path: "/facilities", name: "FacilitiesPage", component: FacilitiesPage, requireAuth: false},
+    { path: "/portal", name: "PortalPage", component: PortalPage, requireAuth: true},
+    { path: "/login", name: "LoginPage", component: LoginPage, requireAuth: false },
+    { path: "/", name: "LandingPage", component: LandingPage, requireAuth: false}
 ];
 
 export default indexRoutes;

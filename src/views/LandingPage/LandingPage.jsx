@@ -82,7 +82,7 @@ class LandingPage extends React.Component {
                                 </h4>
                             </GridItem>
                             <GridItem xs={12} sm={12} md={6}>
-                                <img src={pillars} height={275} />
+                                <img src={pillars} height={275} alt="Pillars" />
                             </GridItem>
                         </GridContainer>
                     </div>

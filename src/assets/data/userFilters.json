@@ -1,0 +1,60 @@
+[
+    {
+        "userName": "bob",
+        "password": null,
+        "affiliations": ["Aquastar", "Kroger", "Walmart", "GAA"],
+        "roles": ["Admin"],
+        "entitlements": ["Scorecard", "Yearly recap", "Farm & plant detail", "Compliance", "Supply chain", "Notifications", "Settings"],
+        "alerts": [{
+            "message": "The system will be down for maintainence on Friday Oct 5, 2018 at 5:00PM EST", "type": "warning", "show": "until-expires", "expires": "10/05/2018 11:59PM"
+        }]
+    },
+    {
+        "userName": "jeff",
+        "password": null,
+        "affiliations": ["Kroger", "Walmart"],
+        "roles": ["User", "Author"],
+        "entitlements": ["Scorecard", "Compliance", "Supply chain", "Notifications"],
+        "alerts": null
+    },
+    {
+        "userName": "tim",
+        "password": null,
+        "affiliations": ["SGS Laboratories"],
+        "roles": ["Author", "Admin"],
+        "entitlements": ["Labs", "Settings"],
+        "alerts": [{
+            "message": "The system will be down for maintainence on Friday Oct 5, 2018 at 5:00PM EST", "type": "warning", "show": "until-expires", "expires": "10/05/2018 11:59PM"
+        },{
+            "message": "7 labs need your immediate attention", "type": "error", "show": "until-complete", "expires": null
+        }]
+    },
+    {
+        "userName": "paul",
+        "password": null,
+        "affiliations": ["Walmart"],
+        "roles": ["User", "Author"],
+        "entitlements": ["Farm & plant detail", "Compliance", "Supply chain", "Labs", "Notifications"],
+        "alerts": [{
+            "message": "3 facilities added since September 13, 2018", "type": "info", "show": "once", "expires": null
+        }]
+    },
+    {
+        "userName": "matt",
+        "password": null,
+        "affiliations": ["Aquastar", "Kroger", "Sunnyvale Seafood", "Walmart", "GAA"],
+        "roles": ["User", "Author"],
+        "entitlements": ["Scorecard", "Yearly recap", "Farm & plant detail", "Compliance", "Supply chain", "Notifications", "Labs"],
+        "alerts": null
+    },
+    {
+        "userName": "molly",
+        "password": null,
+        "affiliations": ["Aquastar", "Kroger", "Sunnyvale Seafood", "Walmart", "GAA"],
+        "roles": ["User"],
+        "entitlements": ["Scorecard", "Yearly recap", "Farm & plant detail", "Compliance", "Supply chain"],
+        "alerts": [{
+            "message": "The system will be down for maintainence on Friday Oct 5, 2018 at 5:00PM EST", "type": "warning", "show": "until-expires", "expires": "10/05/2018 11:59PM"
+        }]
+    }
+]

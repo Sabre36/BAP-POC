@@ -4,6 +4,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // @material-ui/core components
+import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -46,11 +47,12 @@ function TopNavLinks({ ...props }) {
 
                 <ListItem className={classes.listItem}>
                     <Button
-                        href="./login"
+                        href="/login"
                         color="transparent"
                         className={classes.navLink}
                         >
-                            <Person className={classes.icons}/> Sign In
+                            <Person className={classes.icons}/>
+                            { !props.authenticated  ? "Sign in" : "Sign out" }
                     </Button>
                 </ListItem>
 
@@ -75,5 +77,9 @@ function TopNavLinks({ ...props }) {
         </div>
     );
 }
+
+TopNavLinks.propTypes = {
+    authenticated: PropTypes.bool,
+};
 
 export default withStyles(headerLinksStyle)(TopNavLinks);
