@@ -28,6 +28,9 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
 import Snackbar from "components/Snackbar/Snackbar.jsx";
+//import Snackbar from "components/Snackbar/SimpleSnackbar.jsx";
+
+
 
 import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
@@ -96,24 +99,25 @@ class Message extends React.Component {
         open: this.props.open,
     };
 
-    handleClose = (event, reason) => {
+    handleRequestClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
         this.setState({ open: false });
     };
 
-    handleClick = () => {
-        this.setState({ open: true });
-    };
     render() {
-
         console.log('%cCurrent props: ' + JSON.stringify(this.props), "color: cyan");
 
         return (
             <Snackbar
+                autoHideDuration={6000}
                 open={this.state.open}
                 message={this.props.message}
                 color={this.props.color}
                 icon={this.props.icon}
-                handleClose={this.handleClose}
+                handleClose={this.handleRequestClose}
             />
         );
     }
@@ -194,11 +198,12 @@ function RenderAlerts(props){
         for (let i=props.alerts.length-1; i>=0; i--) {
             var message = props.alerts[i].message;
             var type = props.alerts[i].type;
-            var color = type === "info" ? "primary" : type === "error" ? "danger" : type;
-            const icon = color === "warning" ? WarningIcon : color === "danger" ? ErrorIcon : InfoIcon;
+            var color = type === "error" ? "danger" :  "dark";
+            var duration = i;
+            const icon = type === "warning" ? WarningIcon : type === "danger" ? ErrorIcon : InfoIcon;
 
             alertList.push(
-                <Message message={message} color={color} open={true} icon={icon}/>
+                <Message message={message} color={color} open={true} icon={icon} duration={duration}/>
             )
         }
     }

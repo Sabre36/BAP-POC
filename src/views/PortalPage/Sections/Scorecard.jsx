@@ -15,16 +15,16 @@ class Scorecard extends React.Component {
         return (
             <div className={classes.section}>
                 <GridContainer justify="center">
-                    <GridItem xs={12} sm={6} md={4}>
+                    <GridItem xs={12} sm={4} md={4}>
                         <div style={{width: "100%", height: "175px", background: "lightgray", padding: "2px", marginBottom: "20px"}}></div>
                     </GridItem>
 
-                    <GridItem xs={12} sm={6} md={4}>
+                    <GridItem xs={12} sm={4} md={4}>
                         <div style={{width: "100%", height: "175px", background: "lightgray", padding: "2px", marginBottom: "20px"}}></div>
                     </GridItem>
 
 
-                    <GridItem xs={12} sm={6} md={4}>
+                    <GridItem xs={12} sm={4} md={4}>
                         <div style={{width: "100%", height: "175px", background: "lightgray", padding: "2px", marginBottom: "20px"}}></div>
                     </GridItem>
 

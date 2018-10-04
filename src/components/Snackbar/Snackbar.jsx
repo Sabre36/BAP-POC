@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Snack from "@material-ui/core/Snackbar";
 import IconButton from "@material-ui/core/IconButton";
-import Close from "@material-ui/icons/Close";
+import CloseIcon from "@material-ui/icons/Close";
 import snackbarStyle from "assets/jss/site-styles/components/snackbarStyle.jsx";
 
 
@@ -37,11 +37,13 @@ function Snackbar({ ...props }) {
 
         action={[
             <IconButton
-                key="close"
-                aria-label="Close"
-                color="inherit"
-                onClick={props.handleClose}>
-                <Close className="material-icons" style={{fontSize: '16px'}}  />
+              key="close"
+              aria-label="Close"
+              color="inherit"
+              className={classes.close}
+              onClick={props.handleClose}
+            >
+              <CloseIcon />
             </IconButton>,
         ]}
 

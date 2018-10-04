@@ -5,7 +5,6 @@ import {
   successBoxShadow,
   warningBoxShadow,
   dangerBoxShadow,
-  roseBoxShadow
 } from "assets/jss/global-styles.jsx";
 
 const snackbarStyle = {
@@ -17,6 +16,7 @@ const snackbarStyle = {
     lineHeight: "20px",
     marginBottom: "20px",
     fontSize: "16px",
+    fontWeight: 400,
     backgroundColor: "white",
     color: "#555555",
     borderRadius: "3px",
@@ -52,14 +52,18 @@ const snackbarStyle = {
     ...dangerBoxShadow
   },
   primary: {
-    backgroundColor: "#157bdc",
+    backgroundColor: "#313131", //"#157bdc",
     color: "#ffffff",
-    ...primaryBoxShadow
+    boxShadow:
+      "0 12px 20px -10px rgba(255, 255, 255, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 255, 255, 0.2)"
+    //...primaryBoxShadow
   },
-  rose: {
-    backgroundColor: "#eb3573",
+  dark: {
+    backgroundColor: "#313131",
     color: "#ffffff",
-    ...roseBoxShadow
+    boxShadow:
+      "0 12px 20px -10px rgba(255, 255, 255, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 255, 255, 0.2)"
+
   },
   message: {
     padding: "0",
@@ -67,8 +71,7 @@ const snackbarStyle = {
     maxWidth: "89%"
   },
   close: {
-    width: "11px",
-    height: "11px"
+    padding: "10px",
   },
   iconButton: {
     width: "24px",
@@ -98,8 +101,8 @@ const snackbarStyle = {
   primaryIcon: {
     color: "#157bdc"
   },
-  roseIcon: {
-    color: "#eb3573"
+  darkIcon: {
+    color: "#313131"
   },
   iconMessage: {
     paddingLeft: "50px",
