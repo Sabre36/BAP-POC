@@ -49,6 +49,7 @@ class App extends React.Component {
             userAffiliations: [],
             selectedAffiliation: '',
             selectedView: '',
+            userAlerts: []
         }
 
         this.handleLogin = this.handleLogin.bind(this);
@@ -59,7 +60,16 @@ class App extends React.Component {
     }
 
     handleLogin(childState){
-        this.setState( {authenticated: childState.authenticated, userName: childState.userName, userAffiliations: childState.userAffiliations, selectedAffiliation: childState.selectedAffiliation, userRoles: childState.userRoles, entitlements: childState.entitlements, selectedView: childState.selectedView } );
+        this.setState({
+            authenticated: childState.authenticated,
+            userName: childState.userName,
+            userAffiliations: childState.userAffiliations,
+            selectedAffiliation: childState.selectedAffiliation,
+            userRoles: childState.userRoles,
+            entitlements: childState.entitlements,
+            selectedView: childState.selectedView,
+            userAlerts: childState.userAlerts
+        });
         hist.push('/portal');
 
         console.log('%cCurrent login: ' + JSON.stringify(this.state), "color: green");
@@ -100,6 +110,7 @@ class App extends React.Component {
                                     selectedAffiliation={this.state.selectedAffiliation}
                                     selectedView={this.state.selectedView}
                                     authenticated={this.state.authenticated}
+                                    userAlerts={this.state.userAlerts}
                                     handleLogin = {handleLogin.bind(this)}
                                 />}
                             />
@@ -117,6 +128,7 @@ class App extends React.Component {
                                         entitlements={this.state.entitlements}
                                         selectedAffiliation={this.state.selectedAffiliation}
                                         selectedView={this.state.selectedView}
+                                        userAlerts={this.state.userAlerts}
                                         authenticated={true}
                                     />
                                 )

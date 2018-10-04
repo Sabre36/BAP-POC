@@ -16,7 +16,6 @@ import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
 import loginPageStyle from "assets/jss/site-styles/views/loginPage.jsx";
 import userFilters from 'assets/data/userFilters.json';
-
 import image from "assets/img/Aquapod_Hawaii.jpg";
 
 class LoginPage extends React.Component {
@@ -29,7 +28,7 @@ class LoginPage extends React.Component {
             cardAnimation: "cardHidden",
             userName: '',
             password: '',
-            authenticated: false
+            authenticated: false,
         };
 
         this.initialState = this.state;  // sets react-simple-storage
@@ -48,8 +47,17 @@ class LoginPage extends React.Component {
                 var roles = userFilters[i].roles;
                 var entitlements = userFilters[i].entitlements;
                 var selectedView = entitlements[0];
+                var alerts = userFilters[i].alerts;
 
-                await this.setState({authenticated: true, userAffiliations: affiliations, selectedAffiliation: selectedAffiliation, userRoles: roles, entitlements: entitlements, selectedView: selectedView});
+                await this.setState({
+                    authenticated: true,
+                    userAffiliations: affiliations,
+                    selectedAffiliation: selectedAffiliation,
+                    userRoles: roles,
+                    entitlements: entitlements,
+                    selectedView: selectedView,
+                    userAlerts: alerts,
+                });
 
                 break;
             }

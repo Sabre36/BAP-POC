@@ -27,6 +27,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
+import Snackbar from "components/Snackbar/Snackbar.jsx";
 
 import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
@@ -35,6 +36,10 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Checkbox from '@material-ui/core/Checkbox';
 import Divider from '@material-ui/core/Divider';
+
+import InfoIcon from '@material-ui/icons/Info';
+import WarningIcon from '@material-ui/icons/Warning';
+import ErrorIcon from '@material-ui/icons/Error';
 
 import Alerts from "./Sections/Alerts.jsx";
 import Compliance from "./Sections/Compliance.jsx";
@@ -86,6 +91,36 @@ TabContainer.propTypes = {
 };
 
 
+class Message extends React.Component {
+    state = {
+        open: this.props.open,
+    };
+
+    handleClose = (event, reason) => {
+        this.setState({ open: false });
+    };
+
+    handleClick = () => {
+        this.setState({ open: true });
+    };
+    render() {
+
+        console.log('%cCurrent props: ' + JSON.stringify(this.props), "color: cyan");
+
+        return (
+            <Snackbar
+                open={this.state.open}
+                message={this.props.message}
+                color={this.props.color}
+                icon={this.props.icon}
+                handleClose={this.handleClose}
+            />
+        );
+    }
+
+}
+
+
 class ViewItem extends React.Component {
     render() {
         return <ListItem button
@@ -103,24 +138,24 @@ class ViewItem extends React.Component {
 
                 <ListItemText primary={this.props.text}  />
             </ListItem>;
+        }
     }
-}
 
-function RenderSpecies(props){
-    //console.log('render species size: ' + userFilters.length);
-    let checkBoxComponentList = [];
+    function RenderSpecies(props){
+        //console.log('render species size: ' + userFilters.length);
+        let checkBoxComponentList = [];
 
-    for (let i=0; i<orgFilters.length; i++){
-        if (orgFilters[i].organization === props.userAffiliation) {
-            if (orgFilters[i].species !== null) {
-                for (let j=0; j<orgFilters[i].species.length; j++) {
+        for (let i=0; i<orgFilters.length; i++){
+            if (orgFilters[i].organization === props.userAffiliation) {
+                if (orgFilters[i].species !== null) {
+                    for (let j=0; j<orgFilters[i].species.length; j++) {
                         checkBoxComponentList.push(<FormControlLabel
-                              control={
+                            control={
                                 <Checkbox color="primary" checked={true} /*onChange={this.handleChange('gilad')}*/ value={orgFilters[i].species[j]} />
-                              }
-                              label={orgFilters[i].species[j]}
-                            />
-                        );
+                            }
+                            label={orgFilters[i].species[j]}
+                        />
+                    );
                 }
             }
             break;
@@ -136,320 +171,270 @@ function RenderCountries(props){
         if (orgFilters[i].organization === props.userAffiliation) {
             if (orgFilters[i].species !== null) {
                 for (let j=0; j<orgFilters[i].countries.length; j++) {
-                        checkBoxComponentList.push(<FormControlLabel
-                              control={
-                                <Checkbox color="primary" checked={true} /*onChange={this.handleChange('gilad')}*/ value={orgFilters[i].countries[j]} />
-                              }
-                              label={orgFilters[i].countries[j]}
-                            />
-                        );
-                }
+                    checkBoxComponentList.push(<FormControlLabel
+                        control={
+                            <Checkbox color="primary" checked={true} /*onChange={this.handleChange('gilad')}*/ value={orgFilters[i].countries[j]} />
+                        }
+                        label={orgFilters[i].countries[j]}
+                    />
+                );
             }
-            break;
+        }
+        break;
+    }
+}
+return checkBoxComponentList;
+}
+
+function RenderAlerts(props){
+    let alertList = [];
+    //console.log('%cRendering props: ' + JSON.stringify(props), "color:purple");
+
+    if (props.alerts != null) {
+        for (let i=props.alerts.length-1; i>=0; i--) {
+            var message = props.alerts[i].message;
+            var type = props.alerts[i].type;
+            var color = type === "info" ? "primary" : type === "error" ? "danger" : type;
+            const icon = color === "warning" ? WarningIcon : color === "danger" ? ErrorIcon : InfoIcon;
+
+            alertList.push(
+                <Message message={message} color={color} open={true} icon={icon}/>
+            )
         }
     }
-    return checkBoxComponentList;
+    return alertList;
 }
 
 
-    // function ViewListItems(props) {
-    //     const lst = [];
-    //     console.log('%cCurrent props: ' + JSON.stringify(props), "color: purple");
-    //
-    //     Object.keys(props.entitlements).forEach(function(prop) {
-    //         var view = props.entitlements[prop].toString().toLowerCase();
-    //
-    //         if (view === 'sct') {
-    //             //lst.push(sctListItems);
-    //             lst.push (
-    //                 <div>
-    //                     <ViewItem icon={<BarchartIcon/>} text="Scorecard" selected={props.selectedView} handler={() => this.props.handleViewClick( "yearend")}/>
-    //                     <ViewItem icon={<NotificationIcon/>} text="Yearly report" selected={props.selectedView} handler={() => this.props.handleViewClick( "yearend")}/>
-    //                 </div>
-    //             );
-    //
-    //         }
-    //         if (view === 'alerts') {
-    //             lst.push(
-    //                 <ViewItem icon={<NotificationIcon/>} text="Alerts" selected={props.selectedView} handler={() => props.handleViewClick( "alerts")}/>
-    //             );
-    //         }
-    //         if (view === 'labs') {
-    //             lst.push(
-    //                 <ViewItem icon={<NotificationIcon/>} text="Labs" selected={props.selectedView} handler={() => props.handleViewClick( "labs")}/>
-    //             );
-    //         }
-    //     });
-    //
-    //     return lst;
-    // }
-    //
+class PortalPage extends React.Component {
+    constructor(props) {
+        super(props);
 
-
-    class PortalPage extends React.Component {
-
-        constructor(props) {
-            super(props);
-
-            this.handleViewClick = this.handleViewClick.bind(this);
-        }
-
-        state = {
-            activeSlide : 5,
-            value: 0,
-            selectedAffiliation: this.props.selectedAffiliation,
-            selectedView: this.props.selectedView,
-        }
-
-        handleChange = (event, value) => {
-            this.setState({ value });
-        };
-
-        handleOrganizationClick = (event, index) => {
-            this.setState({ selectedAffiliation: index });
-            console.log('%cRendering state: ' + JSON.stringify(this.state), "color:orange");
-        };
-
-        handleViewClick = async (index) => {
-            await this.setState({selectedView: index});
-
-            //alert(this.state.selectedView + " " + index);
-        };
-
-        handleAffiliationChange = (event) => {
-            this.setState({
-                selectedAffiliation: event.target.value
-            });
-            console.log('%cRendering state: ' + JSON.stringify(this.state), "color:orange");
-        }
-
-        valueRender = (element, value) => {
-            if (!value) {
-                return element;
-            }
-            const children = [
-                <span key={1} style={{color: '#fff', fontSize: '21px', fontWeight: 500}}>
-                    {value}
-                </span>,
-            ];
-
-            return React.cloneElement(element, { ...element.props }, children);
-        }
-
-        render() {
-            const { classes, ...rest } = this.props;
-            const { value } = this.state;
-
-            const styles = theme => ({
-                root: {
-                    flexGrow: 1,
-                },
-                grow: {
-                    flexGrow: 1,
-                },
-                rightToolbar: {
-                    marginLeft: 'auto',
-                    marginRight: -12,
-                },
-                menuButton: {
-                    marginRight: 16,
-                    marginLeft: -12,
-                },
-                list: {
-                    padding: 0,
-                    margin: 0,
-                },
-                appbar: {
-                    backgroundColor: "rgba(0,0,0.3)"
-                },
-                tabsRoot: {
-                  borderBottom: '1px solid #e8e8e8',
-                },
-                tabsIndicator: {
-                  backgroundColor: '#1890ff',
-                },
-                tabRoot: {
-                  textTransform: 'initial',
-                  minWidth: 72,
-                  fontWeight: theme.typography.fontWeightRegular,
-                  marginRight: theme.spacing.unit * 4,
-                  fontFamily: [
-                      'Roboto',
-                    '-apple-system',
-                    'BlinkMacSystemFont',
-                    '"Segoe UI"',
-                    '"Helvetica Neue"',
-                    'Arial',
-                    'sans-serif',
-                    '"Apple Color Emoji"',
-                    '"Segoe UI Emoji"',
-                    '"Segoe UI Symbol"',
-                  ].join(','),
-                  '&:hover': {
-                    color: '#40a9ff',
-                    opacity: 1,
-                  },
-                  '&$tabSelected': {
-                    color: '#1890ff',
-                    fontWeight: theme.typography.fontWeightMedium,
-                  },
-                  '&:focus': {
-                    color: '#40a9ff',
-                  },
-                },
-                tabSelected: {},
-                typography: {
-                  padding: theme.spacing.unit * 3,
-                },
-            });
-
-
-
-            return (
-                <div>
-                    <Helmet>
-                        <meta name="description" content="BAP - Portal" />
-                        <meta property="og:url" content="https://www.bapcertification.org/" />
-                        <meta property="og:site_name" content="Best Aquaculture Practices Certification - Portal" />
-                        <meta name="twitter:card" content="portal" />
-                        <meta name="twitter:title" content="Best Aquaculture Practices Certification - Portal" />
-                        <link rel="canonical" href="http://www.bestaquaculturepractices.org" />
-                        <title>BAP - Portal</title>
-                    </Helmet>
-
-                    <div style={{width: "100%", height: "120px", overflow: "hidden"}}>
-                        <img src={img_portal} style={{width: "100%", zIndex: "1"}}/>
-                    </div>
-
-                    <Header
-                        color="semiTransparent"
-                        routes={dashboardRoutes}
-                        brand="Best Aquaculture Practices"
-                        rightLinks={<HeaderLinks itemIndex={this.state.activeSlide}/>}
-                        topLinks={<TopNavLinks authenticated={this.props.authenticated} />}
-                        top
-                        fixed
-                        changeColorOnScroll={{
-                            height: 2,
-                            color: "primary"
-                        }}
-                        {...rest}
-                    />
-
-                    <AppBar position="sticky" style={{backgroundColor: "#1463AC", position: "fixed", top: "110px"}}>
-                        <Toolbar>
-                            <IconButton className={classes.menuButton} aria-label="Menu" color="inherit">
-                                <MenuIcon />
-                            </IconButton>
-
-
-                            <Typography variant="title" color="inherit">Welcome {this.props.userName}  (
-                                <DropDownList style={{display: "inline-block", width: "auto", color: "#ffffff", borderBottom: 0}}
-                                    data={this.props.userAffiliations}
-                                    defaultValue={this.props.userAffiliations[0]}
-                                    valueRender={this.valueRender}
-                                    onChange={this.handleAffiliationChange}
-                                    dataItemKey="selectedAffiliation"
-
-                                />
-                            )
-                        </Typography>
-
-                        <section style={styles.rightToolbar}>
-                            <IconButton color="inherit" aria-label="Print">
-                                <PrintIcon />
-                            </IconButton>
-                            <IconButton color="inherit" aria-label="Download">
-                                <SaveAltIcon />
-                            </IconButton>
-                            <IconButton color="inherit" aria-label="More Options">
-                                <MoreVertIcon />
-                            </IconButton>
-                        </section>
-                    </Toolbar>
-                </AppBar>
-
-                <div style={{zIndex: "4", margin: "55px", color: "#000"}}>
-                    <GridContainer justify="center">
-                        <GridItem xs={2} sm={2} md={2} style={{backgroundColor: "rgba(0,0,0,.03)", minHeight: "700px", height: "100%", padding: 0, margin: 0}}>
-
-                            <Tabs value={value} fullWidth={true} onChange={this.handleChange} classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}>
-                                <Tab label="Views" icon={<img src={ViewIcon} height={18} />} style={{minWidth: "110px"}} classes={{ root: classes.tabRoot, selected: classes.tabSelected }}> </Tab>
-                                <Tab  label="Filters" icon={<img src={FilterIcon} height={18} />}  style={{minWidth: "120px"}} classes={{ root: classes.tabRoot, selected: classes.tabSelected }}/>
-                            </Tabs>
-
-                            {value === 1 && <TabContainer>
-                                <div>
-                                    <FormControl component="fieldset" className={classes.formControl}>
-                                        <FormLabel component="legend">Species</FormLabel>
-                                        <FormGroup>
-                                            <RenderSpecies userAffiliation={this.state.selectedAffiliation}/>
-                                        </FormGroup>
-                                    </FormControl>
-                                    <br/>
-                                    <br/>
-
-                                    <FormControl component="fieldset" className={classes.formControl}>
-                                        <FormLabel component="legend">Countries</FormLabel>
-                                        <FormGroup>
-                                            <RenderCountries userAffiliation={this.state.selectedAffiliation} />
-                                        </FormGroup>
-                                    </FormControl>
-
-                                    <br/>
-                                    <Divider/>
-                                    <br/>
-                                    <Button variant="contained" color="primary">Apply</Button>
-
-                                    {/* <List component="nav" style={{marginLeft: "-18px", marginRight: "-18px"}}>
-                                        {this.props.userAffiliations.map((item) =>
-                                            <ListItem {...item}
-                                                key={item.id}
-                                                button
-                                                selected={this.state.selectedAffiliation === item }
-                                                onClick={event => this.handleOrganizationClick(event, item )}
-                                                >
-                                                    <ListItemText primary={item} />
-                                                </ListItem>
-                                            )}
-                                        </List> */}
-
-
-
-                                        {/* var json = JSON.parse(data); */}
-                                    </div>
-                                </TabContainer>}
-
-                                { value === 0 && <TabContainer>
-                                    <List component="nav" style={{marginLeft: "-18px", marginRight: "-18px"}}>
-                                        {this.props.entitlements.map((item) =>
-
-                                            <ViewItem text={item} selected={this.state.selectedView} handler={() => this.handleViewClick(item)}/>
-                                        )}
-                                    </List>
-                                </TabContainer> }
-                            </GridItem>
-
-                            <GridItem xs={10} sm={10} md={10}>
-                                <div style={{marginTop: "-50px"}}>
-                                    {this.state.selectedView === "Scorecard" && <Scorecard/> }
-                                    {this.state.selectedView === "Yearly recap" && <YearlyRecap/> }
-                                    {this.state.selectedView === "Farm & plant detail" && <FarmDetail/> }
-                                    {this.state.selectedView === "Compliance" && <Compliance/> }
-                                    {this.state.selectedView === "Supply chain" && <SupplyChain/> }
-                                    {this.state.selectedView === "Alerts" && <Alerts/> }
-                                    {this.state.selectedView === "Labs" && <Labs/> }
-                                    {this.state.selectedView === "Settings" && <Settings/> }
-                                </div>
-                            </GridItem>
-                        </GridContainer>
-
-                    </div>
-
-                    <Footer />
-                </div>
-            );
-        }
+        this.handleViewClick = this.handleViewClick.bind(this);
     }
 
-    export default withStyles(portalPageStyle)(PortalPage);
+    state = {
+        activeSlide : 5,
+        value: 0,
+        selectedAffiliation: this.props.selectedAffiliation,
+        selectedView: this.props.selectedView,
+        message: 'a test',
+        displayAlert: true
+    }
+
+
+    handleChange = (event, value) => {
+        this.setState({ value });
+
+    };
+
+    handleViewClick = async (index) => {
+        await this.setState({selectedView: index});
+
+        //alert(this.state.selectedView + " " + index);
+    };
+
+    handleAffiliationChange = (event) => {
+        this.setState({
+            selectedAffiliation: event.target.value
+        });
+        console.log('%cRendering state: ' + JSON.stringify(this.state), "color:orange");
+    }
+
+    valueRender = (element, value) => {
+        if (!value) {
+            return element;
+        }
+        const children = [
+            <span key={1} style={{color: '#fff', fontSize: '21px', fontWeight: 500}}>
+                {value}
+            </span>,
+        ];
+
+        return React.cloneElement(element, { ...element.props }, children);
+    }
+
+
+
+    render() {
+        const { classes, ...rest } = this.props;
+        const { value } = this.state;
+
+        const styles = {
+            root: {
+                flexGrow: 1,
+            },
+            grow: {
+                flexGrow: 1,
+            },
+            rightToolbar: {
+                marginLeft: 'auto',
+                marginRight: -12,
+            },
+            menuButton: {
+                marginRight: 16,
+                marginLeft: -12,
+            },
+            list: {
+                padding: 0,
+                margin: 0,
+            },
+            appbar: {
+                backgroundColor: "rgba(0,0,0.3)"
+            },
+        };
+
+
+
+        return (
+            <div>
+                <Helmet>
+                    <meta name="description" content="BAP - Portal" />
+                    <meta property="og:url" content="https://www.bapcertification.org/" />
+                    <meta property="og:site_name" content="Best Aquaculture Practices Certification - Portal" />
+                    <meta name="twitter:card" content="portal" />
+                    <meta name="twitter:title" content="Best Aquaculture Practices Certification - Portal" />
+                    <link rel="canonical" href="http://www.bestaquaculturepractices.org" />
+                    <title>BAP - Portal</title>
+                </Helmet>
+
+                <div style={{width: "100%", height: "120px", overflow: "hidden"}}>
+                    <img src={img_portal} style={{width: "100%", zIndex: "1"}}/>
+                </div>
+
+                <Header
+                    color="semiTransparent"
+                    routes={dashboardRoutes}
+                    brand="Best Aquaculture Practices"
+                    rightLinks={<HeaderLinks itemIndex={this.state.activeSlide}/>}
+                    topLinks={<TopNavLinks authenticated={this.props.authenticated} />}
+                    top
+                    fixed
+                    changeColorOnScroll={{
+                        height: 2,
+                        color: "primary"
+                    }}
+                    {...rest}
+                />
+
+                <AppBar position="sticky" style={{backgroundColor: "#1463AC", position: "fixed", top: "110px"}}>
+                    <Toolbar>
+                        <IconButton className={classes.menuButton} aria-label="Menu" color="inherit">
+                            <MenuIcon />
+                        </IconButton>
+
+
+                        <Typography variant="title" color="inherit">Welcome {this.props.userName}  (
+                            <DropDownList style={{display: "inline-block", width: "auto", color: "#ffffff", borderBottom: 0}}
+                                data={this.props.userAffiliations}
+                                defaultValue={this.props.userAffiliations[0]}
+                                valueRender={this.valueRender}
+                                onChange={this.handleAffiliationChange}
+                                dataItemKey="selectedAffiliation"
+
+                            />
+                        )
+                    </Typography>
+
+                    <section style={styles.rightToolbar}>
+                        <IconButton color="inherit" aria-label="Print">
+                            <PrintIcon />
+                        </IconButton>
+                        <IconButton color="inherit" aria-label="Download">
+                            <SaveAltIcon />
+                        </IconButton>
+                        <IconButton color="inherit" aria-label="More Options">
+                            <MoreVertIcon />
+                        </IconButton>
+                    </section>
+                </Toolbar>
+            </AppBar>
+
+            <div style={{zIndex: "4", margin: "55px", color: "#000"}}>
+                <GridContainer justify="center">
+
+                    <GridItem xs={2} sm={2} md={2} style={{backgroundColor: "rgba(0,0,0,.03)", minHeight: "700px", height: "100%", padding: 0, margin: 0}}>
+
+                        <Tabs value={value} fullWidth={true} onChange={this.handleChange} classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}>
+                            <Tab label="Views" icon={<img src={ViewIcon} height={18} />} style={{minWidth: "110px"}} classes={{ root: classes.tabRoot, selected: classes.tabSelected }}> </Tab>
+                            <Tab  label="Filters" icon={<img src={FilterIcon} height={18} />}  style={{minWidth: "120px"}} classes={{ root: classes.tabRoot, selected: classes.tabSelected }}/>
+                        </Tabs>
+
+                        {value === 1 && <TabContainer>
+                            <div>
+                                <FormControl component="fieldset" className={classes.formControl}>
+                                    <FormLabel component="legend">Species</FormLabel>
+                                    <FormGroup>
+                                        <RenderSpecies userAffiliation={this.state.selectedAffiliation}/>
+                                    </FormGroup>
+                                </FormControl>
+                                <br/>
+                                <br/>
+
+                                <FormControl component="fieldset" className={classes.formControl}>
+                                    <FormLabel component="legend">Countries</FormLabel>
+                                    <FormGroup>
+                                        <RenderCountries userAffiliation={this.state.selectedAffiliation} />
+                                    </FormGroup>
+                                </FormControl>
+
+                                <br/>
+                                <Divider/>
+                                <br/>
+                                <Button variant="contained" color="primary">Apply</Button>
+
+                                {/* <List component="nav" style={{marginLeft: "-18px", marginRight: "-18px"}}>
+                                {this.props.userAffiliations.map((item) =>
+                                <ListItem {...item}
+                                key={item.id}
+                                button
+                                selected={this.state.selectedAffiliation === item }
+                                onClick={event => this.handleOrganizationClick(event, item )}
+                                >
+                                <ListItemText primary={item} />
+                            </ListItem>
+                        )}
+                    </List> */}
+
+
+
+                    {/* var json = JSON.parse(data); */}
+                </div>
+            </TabContainer>}
+
+            { value === 0 && <TabContainer>
+                <List component="nav" style={{marginLeft: "-18px", marginRight: "-18px"}}>
+                    {this.props.entitlements.map((item) =>
+
+                        <ViewItem text={item} selected={this.state.selectedView} handler={() => this.handleViewClick(item)}/>
+                    )}
+                </List>
+
+            </TabContainer> }
+        </GridItem>
+
+        <GridItem xs={10} sm={10} md={10}>
+
+            <div style={{marginTop: "-50px"}}>
+                {this.state.selectedView === "Scorecard" && <Scorecard/> }
+                {this.state.selectedView === "Yearly recap" && <YearlyRecap/> }
+                {this.state.selectedView === "Farm & plant detail" && <FarmDetail/> }
+                {this.state.selectedView === "Compliance" && <Compliance/> }
+                {this.state.selectedView === "Supply chain" && <SupplyChain/> }
+                {this.state.selectedView === "Alerts" && <Alerts/> }
+                {this.state.selectedView === "Labs" && <Labs/> }
+                {this.state.selectedView === "Settings" && <Settings/> }
+            </div>
+        </GridItem>
+    </GridContainer>
+
+    </div>
+    <RenderAlerts alerts={this.props.userAlerts}/>
+
+    <Footer />
+    </div>
+    );
+    }
+}
+
+export default withStyles(portalPageStyle)(PortalPage);
