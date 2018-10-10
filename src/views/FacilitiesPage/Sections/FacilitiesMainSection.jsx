@@ -22,6 +22,13 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 
+import { render } from 'react-dom';
+import { Provider } from 'redux-zero/react';
+
+import store from '../../../store/store';
+import Counter from '../../../store/actions/counter';
+
+
 function TabContainer(props) {
   return (
     <Typography component="div" style={{ padding: 8 * 3 }}>
@@ -49,10 +56,12 @@ class FacilitiesMainSection extends React.Component {
             fontSize: "14px",
             fontWweight: "300"
         }
+        //console.log('%cRendering facilitiesmain props: ' + JSON.stringify(this.props), "color:brown");
 
         return (
+
             <div className={classes.section}>
-                <GridContainer justify="left">
+                <GridContainer>
                     <GridItem xs={12} sm={12} md={6}>
                         <h2 className={classes.title}>Facilities</h2>
                         <h4 className={classes.description}>
@@ -70,6 +79,7 @@ class FacilitiesMainSection extends React.Component {
                                         <InfoIcon style={{height: "20px", marginTop: "3px"}}/>&nbsp;Usage notes
                                     </Typography>
                                     <h4 className={classes.description}>
+
                                         <ul style={usage}>
                                             <li>You must be signed in to see <strong>all</strong> table columns.</li>
                                             <li><i>Facilities in process</i> refers to a certified facility that is past its expiration date but actively engaged in the re-certification process.</li>
@@ -97,7 +107,8 @@ class FacilitiesMainSection extends React.Component {
             </TabContainer>}
 
             {value === 0 && <TabContainer>
-                <FacilitiesGrid/>
+
+                <FacilitiesGrid authenticated={this.props.authenticated}/>
             </TabContainer>}
 
         </div>

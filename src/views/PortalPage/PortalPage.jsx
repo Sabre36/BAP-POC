@@ -79,7 +79,8 @@ import orgFilters from 'assets/data/orgFilters.json';
 const dashboardRoutes = [];
 
 
-var img_portal = process.env.PUBLIC_URL + '/bap/header-portal.jpg';
+var img_portal = process.env.PUBLIC_URL + '/bap/slide-portal.png';
+//var img_portal = process.env.PUBLIC_URL + '/bap/sea-coast-water-nature-ocean-shore-1409613-pxhere.com.jpg';
 
 
 function TabContainer(props) {

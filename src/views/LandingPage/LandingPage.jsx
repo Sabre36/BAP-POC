@@ -70,8 +70,8 @@ class LandingPage extends React.Component {
                         color: "primary"
                     }}
                     {...rest}
-                />
-                <Parallax filter action={this.childHandler}>
+                />            
+                <Parallax filter action={this.childHandler} style={{marginTop: "-8px"}}>
                     <div className={classes.container}>
                         <h3> {this.state.data}</h3>
                         <GridContainer>

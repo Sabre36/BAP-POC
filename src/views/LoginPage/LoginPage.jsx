@@ -16,7 +16,16 @@ import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
 import loginPageStyle from "assets/jss/site-styles/views/loginPage.jsx";
 import userFilters from 'assets/data/userFilters.json';
-import image from "assets/img/Aquapod_Hawaii.jpg";
+//import image from "assets/img/Aquapod_Hawaii.jpg";
+//import { render } from 'react-dom';
+import { Provider } from 'redux-zero/react';
+
+import store from '../../store/store';
+import Authenticated from '../../store/actions/authenticated';
+
+//var image = process.env.PUBLIC_URL + '/bap/kk1_7-1_web_Bryce.jpg';
+var image = process.env.PUBLIC_URL + '/bap/header-portal.png';
+
 
 class LoginPage extends React.Component {
     constructor(props) {
@@ -58,7 +67,8 @@ class LoginPage extends React.Component {
                     selectedView: selectedView,
                     userAlerts: alerts,
                 });
-
+                //store.setState({isAuthenticated: true, user: this.state.userName});
+                //alert(this.state.userName);
                 break;
             }
         }
@@ -89,11 +99,13 @@ class LoginPage extends React.Component {
         });
 
         return (
+            <Provider store={store}>
             <div>
                 <SimpleStorage
                   parent={this}
                   prefix={ 'LoginPage' }
                 />
+
 
                 <Header
                     absolute
@@ -128,7 +140,6 @@ class LoginPage extends React.Component {
                                                     onChange={e => this.setState({ userName: e.target.value })}
                                                     margin="normal"
                                                     fullWidth={true}
-                                                    inputStyle ={{width: '100%'}}
                                                 />
                                                 <br/>
                                                 <TextField
@@ -141,7 +152,6 @@ class LoginPage extends React.Component {
                                                     onChange={e => this.setState({ password: e.target.value })}
                                                     margin="normal"
                                                     fullWidth={true}
-                                                    inputStyle ={{width: '100%'}}
                                                 />
 
                                                 <br/>
@@ -156,13 +166,16 @@ class LoginPage extends React.Component {
                                                 </div>
                                                 <br/>
 
-                                                <Divider light={false}/>
+                                                {/* <Authenticated/> */}
+
+                                                {/* <Divider light={false}/> */}
 
                                             </CardBody>
                                             <CardFooter className={classes.cardFooter}>
-                                                <StockButton color="primary" onClick={this.handleCancelClick} >
+                                                <StockButton variant="outlined" color="primary" onClick={this.handleCancelClick} >
                                                     Cancel
                                                 </StockButton>
+                                                &nbsp;&nbsp;
 
                                                 <StockButton variant="raised" color="primary"  onClick={this.handleSigninClick}>
                                                     Sign in
@@ -177,6 +190,7 @@ class LoginPage extends React.Component {
                         <Footer whiteFont />
                     </div>
                 </div>
+                </Provider>
             );
         }
     }

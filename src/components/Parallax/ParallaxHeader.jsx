@@ -14,11 +14,12 @@ import parallaxHeaderStyle from "assets/jss/site-styles/components/parallaxHeade
 import ReactPlayer from "react-player";
 
 
-var img_certification = process.env.PUBLIC_URL + '/bap/header-cert.png';
-var img_facilities = process.env.PUBLIC_URL + '/bap/header-facilities.png';
-var img_marketplace = process.env.PUBLIC_URL + '/bap/header-marketplace.png';
-var img_consumers = process.env.PUBLIC_URL + '/bap/header-food.jpg';
-var img_portal = process.env.PUBLIC_URL + '/bap/header-portal.jpg';
+var img_certification = process.env.PUBLIC_URL + '/bap/slide-cert.png';
+var img_facilities = process.env.PUBLIC_URL + '/bap/slide-facilities.png';
+var img_marketplace = process.env.PUBLIC_URL + '/bap/slide-marketplace.png';
+var img_consumers = process.env.PUBLIC_URL + '/bap/slide-consumers.png';
+var img_portal = process.env.PUBLIC_URL + '/bap/slide-portal.png';
+//var img_portal = process.env.PUBLIC_URL + '/bap/sea-coast-water-nature-ocean-shore-1409613-pxhere.com.jpg';
 
 var video_fish = process.env.PUBLIC_URL + '/bap/940120480-640_adpp.mp4';
 //var video_fish = process.env.PUBLIC_URL + '/bap/878718598-640_adpp.mp4';
@@ -96,12 +97,6 @@ class ParallaxHeader extends React.Component {
                 <Slider {...settings} >
                     {/* WHO WE ARE */}
                     <div>
-                        {/* <img
-                            src={img_whoWeAre}
-                            alt="Who we are"
-                            className="slick-image"
-                        /> */}
-
                         <div alt="Who we are" className="slick-video-container">
                             <div className="slick-video-overlay"></div>
                             <ReactPlayer url={video_fish} loop playing playbackRate={.33} className="slick-video" />
@@ -195,7 +190,7 @@ class ParallaxHeader extends React.Component {
                                                 </p>
                                                 <br />
                                                 <Button
-                                                    color="primary"
+                                                    color="success"
                                                     size="lg"
                                                     href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                                                     target="_blank"

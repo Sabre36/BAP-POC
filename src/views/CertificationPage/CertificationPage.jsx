@@ -18,7 +18,7 @@ import certificationPageStyle from "assets/jss/site-styles/views/certificationPa
 import { Helmet } from "react-helmet";
 const dashboardRoutes = [];
 
-var img_certification = process.env.PUBLIC_URL + '/bap/header-cert.png';
+var img_certification = process.env.PUBLIC_URL + '/bap/slide-cert.png';
 
 class CertificationPage extends React.Component {
     render() {

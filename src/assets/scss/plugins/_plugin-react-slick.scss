@@ -47,14 +47,16 @@
         }
         .slick-image {
             width: 100% !important;
-            display: inline-flex !important;
+            height: 690px;
+            display: block;
+            //display: inline-flex !important;
         }
 
         // Bob Ryan add 9/21/18
         .slick-video-container {
             position: relative;
             width: 100%;
-            height: 690px;
+            height: 700px;
             background-attachment: scroll;
             overflow: hidden;
         }

@@ -19,7 +19,13 @@ import { Apps, CloudDownload, Person } from "@material-ui/icons";
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 
+
 import headerLinksStyle from "assets/jss/site-styles/components/headerLinksStyle.jsx";
+import store from '../../store/store';
+import { connect } from "redux-zero/react";
+
+const mapToProps = ({ isAuthenticated, user }) => ({ isAuthenticated, user });
+
 
 function HeaderLinks({ ...props }) {
     const { classes } = props;
@@ -28,57 +34,68 @@ function HeaderLinks({ ...props }) {
         <List className={classes.list}>
 
             <ListItem className={classes.listItem} >
-                <Button
-                    href="/"
-                    color="transparent"
-                    className={ props.itemIndex == 0 ? classes.navLinkActive : classes.navLink }
-                    > Who we are
-                </Button>
+                <Link to={'/'} style={{background: "transparent",color: "#fff"}}>
+                    <Button
+                        //href="/"
+                        color="transparent"
+                        className={ props.itemIndex == 0 ? classes.navLinkActive : classes.navLink }
+                        > Who we are {store.user}
+                    </Button>
+                </Link>
             </ListItem>
 
             <ListItem className={classes.listItem} >
-                <Button
-                    href="/certification"
-                    color="transparent"
-                    className={ props.itemIndex == 1 ? classes.navLinkActive : classes.navLink }
-                    > What we do
-                </Button>
+                <Link to={'/certification'} style={{background: "transparent",color: "#fff"}}>
+                    <Button
+                        //href="/certification"
+                        color="transparent"
+                        className={ props.itemIndex == 1 ? classes.navLinkActive : classes.navLink }
+                        > What we do
+                    </Button>
+                </Link>
             </ListItem>
 
             <ListItem className={classes.listItem} >
-                <Button
-                    href="/facilities"
-                    color="transparent"
-                    className={ props.itemIndex == 2 ? classes.navLinkActive : classes.navLink }
-                    > Our facilities
-                </Button>
+                <Link to={'/facilities'} style={{background: "transparent",color: "#fff"}}>
+                    <Button
+                        color="transparent"
+                        className={ props.itemIndex == 2 ? classes.navLinkActive : classes.navLink }
+                        > Our facilities
+                    </Button>
+                </Link>
             </ListItem>
 
             <ListItem className={classes.listItem} >
-                <Button
-                    href="/marketplace"
-                    color="transparent"
-                    className={ props.itemIndex == 3 ? classes.navLinkActive : classes.navLink }
-                    > Marketplace
-                </Button>
+                <Link to={'/'} style={{background: "transparent",color: "#fff"}}>
+                    <Button
+                        //href="/marketplace"
+                        color="transparent"
+                        className={ props.itemIndex == 3 ? classes.navLinkActive : classes.navLink }
+                        > Marketplace
+                    </Button>
+                </Link>
             </ListItem>
 
             <ListItem className={classes.listItem}>
-                <Button
-                    href="./consumers"
-                    color="transparent"
-                    className={ props.itemIndex == 4 ? classes.navLinkActive : classes.navLink }
-                    > Consumers
-                </Button>
+                <Link to={'/'} style={{background: "transparent",color: "#fff"}}>
+                    <Button
+                        //href="./consumers"
+                        color="transparent"
+                        className={ props.itemIndex == 4 ? classes.navLinkActive : classes.navLink }
+                        > Consumers
+                    </Button>
+                </Link>
             </ListItem>
 
             <ListItem className={classes.listItem}>
-                <Button
-                    href="./portal"
-                    color="transparent"
-                    className={ props.itemIndex == 5 ? classes.navLinkActive : classes.navLink }
-                    > Your portal
-                </Button>
+                <Link to={'/portal'} style={{background: "transparent",color: "#fff"}}>
+                    <Button
+                        //href="./portal"
+                        color="transparent"
+                        className={ props.itemIndex == 5 ? classes.navLinkActive : classes.navLink }
+                        > Your portal
+                    </Button>
+                </Link>
             </ListItem>
         </List>
     );

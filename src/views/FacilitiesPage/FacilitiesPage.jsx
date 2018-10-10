@@ -17,17 +17,20 @@ import facilitiesPageStyle from "assets/jss/site-styles/views/facilitiesPage.jsx
 import { Helmet } from "react-helmet";
 const dashboardRoutes = [];
 
-var img_facilities = process.env.PUBLIC_URL + '/bap/mexico-farm.png';
+var img_facilities = process.env.PUBLIC_URL + '/bap/slide-facilities.png';
 
 class FacilitiesPage extends React.Component {
+
     render() {
         const { classes, ...rest } = this.props;
 
         this.state= {
             activeSlide : 2,
         }
+        //console.log('%cRendering facilities props: ' + JSON.stringify(this.props), "color:blue");
 
         return (
+
             <div>
                 <Helmet>
                     <meta name="description" content="BAP - Certified Facilities" />
@@ -70,7 +73,7 @@ class FacilitiesPage extends React.Component {
                 <div className={classNames(classes.main, classes.mainRaised)}>
                     <div className={classes.container}>
 
-                        <FacilitiesMainSection />
+                        <FacilitiesMainSection authenticated={this.props.authenticated} />
 
                     </div>
                 </div>

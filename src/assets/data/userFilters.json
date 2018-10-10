@@ -6,7 +6,7 @@
         "roles": ["Admin"],
         "entitlements": ["Scorecard", "Yearly recap", "Farm & plant detail", "Compliance", "Supply chain", "Notifications", "Settings"],
         "alerts": [{
-            "message": "The system will be down for maintainence on Friday Oct 5, 2018 at 5:00PM EST", "type": "warning"
+            "message": "The system will be down for maintainence on Friday Oct 5, 2018 at 7:00PM EST", "type": "warning"
         }]
     },
     {
