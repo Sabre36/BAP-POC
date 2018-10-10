@@ -30,8 +30,8 @@ const theme = createMuiTheme({
 var hist = createBrowserHistory();
 
 hist.listen((location, action) => {
-  console.log(`The current URL is ${location.pathname}${location.search}${location.hash}`)
-  console.log(`The last navigation action was ${action}`)
+    console.log(`The current URL is ${location.pathname}${location.search}${location.hash}`);
+    console.log(`The last navigation action was ${action}`);
 })
 
 class App extends React.Component {
@@ -110,6 +110,7 @@ class App extends React.Component {
                                     authenticated={this.state.authenticated}
                                     userAlerts={this.state.userAlerts}
                                     handleLogin = {handleLogin.bind(this)}
+                                    history={hist}
                                 />}
                             />
                             <Route exact path="/" component={LandingPage}  />

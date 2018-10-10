@@ -109,7 +109,7 @@ class Message extends React.Component {
     };
 
     render() {
-        console.log('%cCurrent props: ' + JSON.stringify(this.props), "color: cyan");
+        //console.log('%cCurrent props: ' + JSON.stringify(this.props), "color: cyan");
 
         return (
             <Snackbar

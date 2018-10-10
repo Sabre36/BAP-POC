@@ -36,24 +36,26 @@ function TopNavLinks({ ...props }) {
                 </ListItem>
 
                 <ListItem className={classes.listItem}>
-                    <Button
-                        href="./"
-                        color="transparent"
-                        className={classes.navLink}
-                        >
-                            <SpeechIcon className={classes.icons}/> Blog
-                    </Button>
+                    <Link to={'/'} style={{background: "transparent",color: "#fff"}}>
+                        <Button
+                            color="transparent"
+                            className={classes.navLink}
+                            >
+                                <SpeechIcon className={classes.icons}/> Blog
+                        </Button>
+                    </Link>
                 </ListItem>
 
                 <ListItem className={classes.listItem}>
-                    <Button
-                        href="/login"
-                        color="transparent"
-                        className={classes.navLink}
-                        >
-                            <Person className={classes.icons}/>
-                            { !props.authenticated  ? "Sign in" : "Sign out" }
-                    </Button>
+                    <Link to={'/login'} style={{background: "transparent",color: "#fff"}}>
+                        <Button
+                            color="transparent"
+                            className={classes.navLink}
+                            >
+                                <Person className={classes.icons}/>
+                                { !props.authenticated  ? "Sign in" : "Sign out" }
+                        </Button>
+                    </Link>
                 </ListItem>
 
                 <ListItem className={classes.listItem}>

@@ -9,7 +9,7 @@ import GridItem from "components/Grid/GridItem.jsx";
 import StockButton from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Divider from '@material-ui/core/Divider';
-import SimpleStorage, { clearStorage, resetParentState } from "react-simple-storage";//
+import SimpleStorage, { clearStorage, resetParentState } from "react-simple-storage";//=
 
 import Card from "components/Card/Card.jsx";
 import CardBody from "components/Card/CardBody.jsx";
@@ -31,7 +31,7 @@ class LoginPage extends React.Component {
     constructor(props) {
         super(props);
         // we use this to make the card to appear after the page has been rendered
-        //console.log('%cRendering props: ' + JSON.stringify(this.props), "color:blue");
+        console.log('%cRendering props: ' + JSON.stringify(this.props), "color:blue");
 
         this.state = {
             cardAnimation: "cardHidden",
@@ -76,8 +76,8 @@ class LoginPage extends React.Component {
     };
 
     handleCancelClick() {
-        resetParentState(this, this.initialState, this.keysToIgnore);
-        //this.context.router.goBack();
+        //resetParentState(this, this.initialState, this.keysToIgnore);
+        this.props.history.goBack();
     };
 
     componentDidMount() {
@@ -124,7 +124,7 @@ class LoginPage extends React.Component {
                     >
                         <div className={classes.container}>
                             <GridContainer justify="center">
-                                <GridItem xs={12} sm={6} md={4}>
+                                <GridItem xs={12} sm={12} md={6} lg={4} xl={4}>
                                     <Card className={classes[this.state.cardAnimation]}>
                                         <form className={classes.form}>
                                             <h3 className={classes.divider}>Please sign in</h3>
