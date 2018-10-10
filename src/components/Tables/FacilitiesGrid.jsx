@@ -3,7 +3,7 @@ import React from 'react';
 import StarIcon from "@material-ui/icons/StarRate";
 import { withState } from './with-state.jsx';
 import { GridColumn, Grid, GridToolbar } from '@progress/kendo-react-grid';
-import '@progress/kendo-theme-material/dist/all.css';
+import './../../assets/plugins/kendo/all.css';
 import { ExcelExport } from '@progress/kendo-react-excel-export';
 import facilities from 'assets/data/facilities.json';
 

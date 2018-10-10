@@ -27,13 +27,6 @@ const theme = createMuiTheme({
     },
 });
 
-// var loginInfo = {
-//     authenticated : false,
-//     userName: 'Jeff Rask',
-//     userAffiliation: 'Global Aquaculture Alliance',
-//     userRole: 'admin',
-// };
-
 var hist = createBrowserHistory();
 
 hist.listen((location, action) => {
