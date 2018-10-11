@@ -1,0 +1,94 @@
+[
+    {
+        "userName": "tim",
+        "affiliations": [{
+            "name": "SGS Laboratories",
+            "role": "user",
+            "alerts": [{
+                "message": "The system will be down for maintainence on Friday Oct 5, 2018 at 5:00PM EST", "type": "info"
+            },{
+                "message": "7 labs need your immediate attention", "type": "warning"
+            },{
+                "message": "Your certification expires in 26 days", "type": "error"
+            }],
+            "entitlements": [{
+                "name": "Labs",
+                "permissions": "tbd",
+                "filters": null
+            }]
+        }]
+    },
+
+    {
+        "userName": "jeff",
+        "affiliations": [{
+            "name": "Aquastar",
+            "role": "admin",
+            "alerts": [{
+                "message": "The system will be down for maintainence on Friday Oct 5, 2018 at 5:00PM EST", "type": "info"
+            }],
+            "entitlements": [{
+                "name": "Scorecard",
+                "permissions": "tbd",
+                "filters": [{
+                    "countries": ["Bangladesh", "China", "Chile", "Indonesia"],
+                    "species": ["Pangasius", "Salmon", "Shrimp", "Tilapia"],
+                    "startDate": "1/1/2017",
+                    "endDate": "12/1/2018",
+                    "yieldConverson": "100"
+                }]
+            },{
+                "name": "Farm detail",
+                "permissions": "tbd",
+                "filters": [{
+                    "countries": ["Bangladesh", "China", "Chile", "Indonesia"],
+                    "species": ["Pangasius", "Salmon", "Shrimp", "Tilapia"],
+                    "startDate": "1/1/2017",
+                    "endDate": "12/1/2018",
+                    "yieldConverson": "100"
+                }]
+            },{
+                "name": "Non-conformities",
+                "permissions": "tbd",
+                "filters": [{
+                    "countries": ["Bangladesh", "China", "Chile", "Indonesia"],
+                    "species": ["Aquaculture feed, shrimp", "Barramundi", "Barramundi, Pangasius", "Barramundi, Pangasius, Tilapia", "Pangasius", "Pangasius, Shrimp", "Salmon", "Salmon, Trout", "Shrimp", "Shrimp, Tilapi", "Tilapia"],
+                    "startDate": "1/1/2017",
+                    "endDate": "12/1/2018"
+                }]
+            },{
+                "name": "Settings",
+                "permissions": "tbd",
+                "filters": null
+            }]
+        }],
+
+        "name": "Walmart",
+        "role": "user",
+        "alerts": [{
+            "message": "The system will be down for maintainence on Friday Oct 5, 2018 at 5:00PM EST", "type": "info"
+        }],
+        "entitlements": [{
+            "name": "Scorecard",
+            "permissions": "tbd",
+            "filters": [{
+                "countries": ["China", "India", "Thailand", "Viet Nam"],
+                "species": ["Shrimp", "Tilapia"],
+                "startDate": "1/1/2017",
+                "endDate": "12/1/2018",
+                "yieldConverson": "67"
+            }]
+        },{
+            "name": "Farm detail",
+            "permissions": "tbd",
+            "filters": [{
+                "countries": ["China", "India", "Thailand", "Viet Nam"],
+                "species": ["Shrimp", "Tilapia"],
+                "startDate": "1/1/2017",
+                "endDate": "12/1/2018",
+                "yieldConverson": "67"
+            }]
+        }]
+    }
+
+]
