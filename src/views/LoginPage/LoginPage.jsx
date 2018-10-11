@@ -16,6 +16,12 @@ import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
 import loginPageStyle from "assets/jss/site-styles/views/loginPage.jsx";
 import userFilters from 'assets/data/userFilters.json';
+import userData from 'assets/data/userData1.json';
+import userInfo from 'assets/data/userInfo.json';
+
+//import unique from "array-unique";
+import uniqueObjects from "unique-objects";
+
 //import image from "assets/img/Aquapod_Hawaii.jpg";
 //import { render } from 'react-dom';
 import { Provider } from 'redux-zero/react';
@@ -26,6 +32,12 @@ import Authenticated from '../../store/actions/authenticated';
 //var image = process.env.PUBLIC_URL + '/bap/kk1_7-1_web_Bryce.jpg';
 var image = process.env.PUBLIC_URL + '/bap/header-portal.png';
 
+
+// function add(set, item) {
+//     if (set.indexOf(item) <= -1) {
+//         set.push(item);
+//     }
+// }
 
 class LoginPage extends React.Component {
     constructor(props) {
@@ -47,7 +59,92 @@ class LoginPage extends React.Component {
         this.handleCancelClick = this.handleCancelClick.bind(this);
     }
 
-    async handleSigninClick() {
+     handleSigninClick() {
+
+        // let curUser = null;
+        // let curAffiliations = null;
+        //
+        // Object.keys(userInfo).forEach(key => {
+        //     if (userInfo[key].userName === this.state.userName){
+        //         curUser = userInfo[key];
+        //     }
+        // });
+        // console.log('%cuserData: ' + JSON.stringify(curUser), "color:green");
+        //
+        // Object.keys(curUser).forEach(function(key) {
+        //     console.log(key, curUser[key]);
+        //     curAffiliations = curUser[key];
+        // });
+        //
+        // for (let i=0; i<curAffiliations.length; i++) {
+        //     var affiliation = curAffiliations[i];
+        //     console.log('this affiliation:' + JSON.stringify(affiliation));
+        // }
+
+
+        let affiliationList = [];
+        let affiliationNames = [];
+        let defaultAffiliation = null;
+        let entitlementList = [];
+        let entitlementNames = [];
+        let defaultEntitlement = null;
+        let msgList = [];
+
+        for (let i=0; i<userData.length; i++){
+            if (userData[i].userName === this.state.userName) {
+                affiliationList = userData[i].affiliations;
+                //console.log("a:" + JSON.stringify(affiliationList));
+                for (let j=0; j<affiliationList.length; j++) {
+                    // for this user, create a simple list of just affiliation names
+                    affiliationNames.push(affiliationList[j].affiliation);
+
+                    // and get the first affiliation name to work with
+                    defaultAffiliation = affiliationNames[0];
+
+                    // now, create an alert array of ALL messages (even duplicates)
+                    let msg = affiliationList[j].alerts;
+                    for (let m=0; m<msg.length; m++) {
+                        msgList.push(msg[m]);
+                    }
+                }
+                break;
+            }
+        }
+
+        // now lets get the all the entitlements for the FIRST affiliation
+        for (let e=0; e<affiliationList[0].entitlements.length; e++) {
+            let name = affiliationList[0].entitlements[e].entitlement;
+            entitlementNames.push(name);
+
+            defaultEntitlement = affiliationList[0].entitlements[0].entitlement;
+        }
+
+
+        // Gets a unique list of message
+        msgList = uniqueObjects(msgList, ['message']);
+
+
+
+       //  this.setState({
+       //     authenticated: true,
+       //     userAffiliations: affiliations,
+       //     selectedAffiliation: selectedAffiliation,
+       //     userRoles: roles,
+       //     entitlements: entitlements,
+       //     selectedView: selectedView,
+       //     userAlerts: alerts,
+       // });
+
+        console.log(JSON.stringify(affiliationNames) + " default: " + defaultAffiliation);
+        console.log(JSON.stringify(entitlementNames) + " default:" + defaultEntitlement);
+        console.log(JSON.stringify(msgList));
+
+
+
+
+
+
+
 
         for (let i=0; i<userFilters.length; i++){
             if (userFilters[i].userName === this.state.userName) {
@@ -58,7 +155,7 @@ class LoginPage extends React.Component {
                 var selectedView = entitlements[0];
                 var alerts = userFilters[i].alerts;
 
-                await this.setState({
+                 this.setState({
                     authenticated: true,
                     userAffiliations: affiliations,
                     selectedAffiliation: selectedAffiliation,
@@ -72,7 +169,7 @@ class LoginPage extends React.Component {
                 break;
             }
         }
-        await this.props.handleLogin( this.state );
+        //await this.props.handleLogin( this.state );
     };
 
     handleCancelClick() {

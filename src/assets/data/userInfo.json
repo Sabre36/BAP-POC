@@ -1,0 +1,30 @@
+[
+    {
+        "userName": "jeff",
+        "affiliations": [{
+            "affiliation": [{
+                "name": "Aquastar",
+                "role": "user",
+                "alerts": [{
+                    "message": "The system will be down for maintainence on Friday Oct 5, 2018 at 5:00PM EST", "type": "info"
+                }],
+                "entitlements": [{
+                    "item": "Scorecard", "permissions": "tbd",
+                    "item": "Yearly results", "permissions": "tbd"
+                }]
+            }],
+            "affiliation": [{
+                "name": "Walmart",
+                "role": "admin",
+                "alerts": [{
+                    "message": "The system will be down for maintainence on Friday Oct 5, 2018 at 5:00PM EST", "type": "info"
+                }],
+                "entitlements": [{
+                    "item": "Scorecard", "permissions": "tbd",
+                    "item": "Yearly results", "permissions": "tbd",
+                    "item": "Settings", "permissions": "tbd"
+                }]
+            }]
+        }]
+    }
+]
