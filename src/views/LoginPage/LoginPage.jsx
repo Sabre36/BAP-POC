@@ -88,6 +88,8 @@ class LoginPage extends React.Component {
         let entitlementList = [];
         let entitlementNames = [];
         let defaultEntitlement = null;
+        let filtersList = [];
+        let defaultFilters = [];
         let msgList = [];
 
         for (let i=0; i<userData.length; i++){
@@ -111,13 +113,20 @@ class LoginPage extends React.Component {
             }
         }
 
-        // now lets get the all the entitlements for the FIRST affiliation
-        for (let e=0; e<affiliationList[0].entitlements.length; e++) {
-            let name = affiliationList[0].entitlements[e].entitlement;
+        // now let's get the all the entitlements for the FIRST affiliation
+        for (let en=0; en<affiliationList[0].entitlements.length; en++) {
+            let name = affiliationList[0].entitlements[en].entitlement;
+            let filters = affiliationList[0].entitlements[en].filters;
             entitlementNames.push(name);
-
-            defaultEntitlement = affiliationList[0].entitlements[0].entitlement;
         }
+        defaultEntitlement = affiliationList[0].entitlements[0].entitlement;
+        defaultFilters = affiliationList[0].entitlements[0].filters;
+
+        // finally, let's get all the filters for the default entitlement
+        // for (let f=0; f<defaultFilters[0].filters.length; f++) {
+        //     let name = affiliationList[0].entitlements[en].entitlement;
+        //     entitlementNames.push(name);
+        // }
 
 
         // Gets a unique list of message
@@ -135,9 +144,10 @@ class LoginPage extends React.Component {
        //     userAlerts: alerts,
        // });
 
-        console.log(JSON.stringify(affiliationNames) + " default: " + defaultAffiliation);
-        console.log(JSON.stringify(entitlementNames) + " default:" + defaultEntitlement);
-        console.log(JSON.stringify(msgList));
+        console.log("\n\n%cAFFILIATIONS: " + JSON.stringify(affiliationNames) + " (default: " + defaultAffiliation + ")", "color:green");
+        console.log("%cENTITLEMENTS: " + JSON.stringify(entitlementNames) + " (default:" + defaultEntitlement + ")",  "color:green");
+        console.log("%cFILTERS: " + JSON.stringify(defaultFilters) + " (default: " + defaultEntitlement + ")",  "color:green");
+        console.log("%cMESSAGES: " + JSON.stringify(msgList), "color: green");
 
 
 
