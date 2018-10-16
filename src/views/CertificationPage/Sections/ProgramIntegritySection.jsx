@@ -7,7 +7,6 @@ import Button from "components/CustomButtons/Button.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import certificationPage from "assets/jss/site-styles/views/certificationPage.jsx";
-import parallaxHeaderStyle from "assets/jss/site-styles/components/parallaxHeaderStyle.jsx";
 import ShowMore from "react-show-more";
 import QAImage from "assets/img/BAP_quality_assurance.jpg";
 
@@ -39,7 +38,7 @@ class ProgramIntegritySection extends React.Component {
                     </GridItem>
                     <GridItem xs={12} sm={12} md={4}>
                         <div style={{paddingTop: "100px", float: "right"}}>
-                            <img src={QAImage} height={400} />
+                            <img src={QAImage} height={400} alt="Quality assurance" />
                         </div>
                     </GridItem>
                 </GridContainer>

@@ -21,14 +21,17 @@ var img_facilities = process.env.PUBLIC_URL + '/bap/slide-facilities.png';
 
 class FacilitiesPage extends React.Component {
 
-    render() {
-        const { classes, ...rest } = this.props;
-
+    constructor(){
+        super();
         this.state= {
             activeSlide : 2,
         }
-        //console.log('%cRendering facilities props: ' + JSON.stringify(this.props), "color:blue");
+    }
 
+    render() {
+        const { classes, ...rest } = this.props;
+
+        //console.log('%cRendering facilities props: ' + JSON.stringify(this.props), "color:blue");
         return (
 
             <div>

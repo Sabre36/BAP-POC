@@ -7,7 +7,7 @@ import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import aboutBAPStyle from "assets/jss/site-styles/views/landingPageSections/aboutBAPStyle.jsx";
 
-class Alerts extends React.Component {
+class Notifications extends React.Component {
     render() {
         const { classes } = this.props;
 
@@ -15,10 +15,12 @@ class Alerts extends React.Component {
             <div className={classes.section}>
                 <GridContainer justify="left">
                     <GridItem xs={12} sm={12} md={6}>
-                        <h2 className={classes.title}>Alerts</h2>
+                        <h2 className={classes.title}>Notices</h2>
                         <h4 className={classes.description}>
 
+                            Stuff here...
                         </h4>
+
                     </GridItem>
                 </GridContainer>
             </div>
@@ -26,4 +28,4 @@ class Alerts extends React.Component {
     }
 }
 
-export default withStyles(aboutBAPStyle)(Alerts);
+export default withStyles(aboutBAPStyle)(Notifications);

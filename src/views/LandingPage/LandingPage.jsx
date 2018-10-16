@@ -1,14 +1,7 @@
 import React from "react";
-// nodejs library that concatenates classes
 import classNames from "classnames";
-// @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 
-
-
-// @material-ui/icons
-
-// core components
 import Header from "components/Header/Header.jsx";
 import Footer from "components/Footer/Footer.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
@@ -70,7 +63,7 @@ class LandingPage extends React.Component {
                         color: "primary"
                     }}
                     {...rest}
-                />            
+                />
                 <Parallax filter action={this.childHandler} style={{marginTop: "-8px"}}>
                     <div className={classes.container}>
                         <h3> {this.state.data}</h3>

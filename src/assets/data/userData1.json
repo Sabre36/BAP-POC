@@ -33,8 +33,8 @@
             },{
                 "entitlement": "Supply chain",
                 "filters": [
-                      { "species": ["Shrimp", "Tilapia"] },
-                      { "countries": ["China", "India", "Thailand", "Viet Nam"] }
+                      { "species": ["Shrimp", "Tilapia", "Something else"] },
+                      { "countries": ["Some new country","Viet Nam"] }
                   ]
             }
         ]
@@ -60,7 +60,7 @@
                   { "countries": ["Bangladesh", "China", "Chile", "Indonesia"] }
                 ]
                 },{
-                  "entitlement": "Farm and plant detail",
+                  "entitlement": "Plant and farm detail",
                   "filters": [
                     { "species": ["Pangasius", "Salmon", "Shrimp", "Tilapia"] },
                     { "countries": ["Bangladesh", "China", "Chile", "Indonesia"] }
@@ -113,6 +113,32 @@
       },
 
       {
+          "id": "5bbf8e9f9b14661a64856e8a",
+          "userName": "paul",
+          "isAuthenticated": true,
+          "affiliations": [
+          {
+              "affiliation": "GAA",
+              "key": "5bbf8e9fdd0dd0957a59a2ba",
+              "role": "user",
+              "alerts": [],
+              "entitlements": [
+              {
+                  "entitlement": "Yearly recap",
+                  "filters": [
+                      { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"]},
+                      { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "India", "Indonesia","Thailand", "United States", "Viet Nam"]}
+                  ]
+                },{
+                "entitlement": "Settings",
+                "filters": []
+              }
+          ]
+          }
+          ]
+        },
+
+      {
         "id": "5bbf8e9fd832d30983355611",
         "userName": "tim",
         "isAuthenticated": true,
@@ -161,7 +187,7 @@
                     { "countries": ["China", "India", "Thailand", "Viet Nam"] }
                 ]
               },{
-                "entitlement": "Lab",
+                "entitlement": "Labs",
                 "filters": [
                     { "species": ["Shrimp", "Tilapia"] },
                     { "countries": ["China", "India", "Thailand", "Viet Nam"] }
@@ -223,7 +249,7 @@
             ],
             "entitlements": [
             {
-                "entitlement": "Lab",
+                "entitlement": "Labs",
                 "filters": []
             }]
         },{
@@ -273,7 +299,7 @@
                     { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] }
                 ]
             },{
-                "entitlement": "Lab",
+                "entitlement": "Labs",
                 "filters": [
                     { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"]},
                     { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] }

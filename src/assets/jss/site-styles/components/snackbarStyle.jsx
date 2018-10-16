@@ -1,6 +1,5 @@
 import {
   defaultFont,
-  primaryBoxShadow,
   infoBoxShadow,
   successBoxShadow,
   warningBoxShadow,

@@ -8,36 +8,17 @@ import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import StockButton from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import Divider from '@material-ui/core/Divider';
 import SimpleStorage, { clearStorage, resetParentState } from "react-simple-storage";//=
-
 import Card from "components/Card/Card.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
 import loginPageStyle from "assets/jss/site-styles/views/loginPage.jsx";
-import userFilters from 'assets/data/userFilters.json';
 import userData from 'assets/data/userData1.json';
-import userInfo from 'assets/data/userInfo.json';
-
-//import unique from "array-unique";
 import uniqueObjects from "unique-objects";
-
-//import image from "assets/img/Aquapod_Hawaii.jpg";
-//import { render } from 'react-dom';
 import { Provider } from 'redux-zero/react';
-
 import store from '../../store/store';
-import Authenticated from '../../store/actions/authenticated';
 
-//var image = process.env.PUBLIC_URL + '/bap/kk1_7-1_web_Bryce.jpg';
 var image = process.env.PUBLIC_URL + '/bap/header-portal.png';
-
-
-// function add(set, item) {
-//     if (set.indexOf(item) <= -1) {
-//         set.push(item);
-//     }
-// }
 
 class LoginPage extends React.Component {
     constructor(props) {
@@ -50,6 +31,17 @@ class LoginPage extends React.Component {
             userName: '',
             password: '',
             authenticated: false,
+            defaultRole: null,
+            affiliationList: [],
+            affiliationNames: [],
+            defaultAffiliation: null,
+            entitlementList: [],
+            defaultEntitlement: null,
+            countries: [],
+            species: [],
+            filterList: [],
+            alertList: [],
+            msgList: []
         };
 
         this.initialState = this.state;  // sets react-simple-storage
@@ -59,54 +51,35 @@ class LoginPage extends React.Component {
         this.handleCancelClick = this.handleCancelClick.bind(this);
     }
 
-     handleSigninClick() {
+    async handleSigninClick() {
 
-        // let curUser = null;
-        // let curAffiliations = null;
-        //
-        // Object.keys(userInfo).forEach(key => {
-        //     if (userInfo[key].userName === this.state.userName){
-        //         curUser = userInfo[key];
-        //     }
-        // });
-        // console.log('%cuserData: ' + JSON.stringify(curUser), "color:green");
-        //
-        // Object.keys(curUser).forEach(function(key) {
-        //     console.log(key, curUser[key]);
-        //     curAffiliations = curUser[key];
-        // });
-        //
-        // for (let i=0; i<curAffiliations.length; i++) {
-        //     var affiliation = curAffiliations[i];
-        //     console.log('this affiliation:' + JSON.stringify(affiliation));
-        // }
-
-
-        let affiliationList = [];
-        let affiliationNames = [];
-        let defaultAffiliation = null;
-        let entitlementList = [];
-        let entitlementNames = [];
-        let defaultEntitlement = null;
-        let filtersList = [];
-        let defaultFilters = [];
-        let msgList = [];
+        let _affiliationList = [];
+        let _affiliationNames = [];
+        let _defaultAffiliation = null;
+        let _entitlementNames = [];
+        let _defaultEntitlement = null;
+        let _filterList = [];
+        let _species = [];
+        let _countries = [];
+        let _defaultRole = null;
+        let _alertList = [];
+        let _msgList = [];
 
         for (let i=0; i<userData.length; i++){
             if (userData[i].userName === this.state.userName) {
-                affiliationList = userData[i].affiliations;
-                //console.log("a:" + JSON.stringify(affiliationList));
-                for (let j=0; j<affiliationList.length; j++) {
+                _affiliationList = userData[i].affiliations;
+                //console.log("a:" + JSON.stringify(_affiliationList));
+                for (let j=0; j<_affiliationList.length; j++) {
                     // for this user, create a simple list of just affiliation names
-                    affiliationNames.push(affiliationList[j].affiliation);
+                    _affiliationNames.push(_affiliationList[j].affiliation);
 
                     // and get the first affiliation name to work with
-                    defaultAffiliation = affiliationNames[0];
+                    _defaultAffiliation = _affiliationNames[0];
 
-                    // now, create an alert array of ALL messages (even duplicates)
-                    let msg = affiliationList[j].alerts;
+                    // now, create an alert array of ALL messages (including duplicates).  Not sure if this makes sense?
+                    let msg = _affiliationList[j].alerts;
                     for (let m=0; m<msg.length; m++) {
-                        msgList.push(msg[m]);
+                        _msgList.push(msg[m]);
                     }
                 }
                 break;
@@ -114,76 +87,49 @@ class LoginPage extends React.Component {
         }
 
         // now let's get the all the entitlements for the FIRST affiliation
-        for (let en=0; en<affiliationList[0].entitlements.length; en++) {
-            let name = affiliationList[0].entitlements[en].entitlement;
-            let filters = affiliationList[0].entitlements[en].filters;
-            entitlementNames.push(name);
+        for (let en=0; en<_affiliationList[0].entitlements.length; en++) {
+            let name = _affiliationList[0].entitlements[en].entitlement;
+            _entitlementNames.push(name);
         }
-        defaultEntitlement = affiliationList[0].entitlements[0].entitlement;
-        defaultFilters = affiliationList[0].entitlements[0].filters;
 
-        // finally, let's get all the filters for the default entitlement
-        // for (let f=0; f<defaultFilters[0].filters.length; f++) {
-        //     let name = affiliationList[0].entitlements[en].entitlement;
-        //     entitlementNames.push(name);
-        // }
-
+        //_entitlementList = _affiliationList[0].entitlements[0];
+        _defaultEntitlement = _affiliationList[0].entitlements[0].entitlement;
+        _filterList = _affiliationList[0].entitlements[0].filters;
+        _defaultRole = _affiliationList[0].role;
+        _alertList = _affiliationList[0].alerts;
 
         // Gets a unique list of message
-        msgList = uniqueObjects(msgList, ['message']);
+        _msgList = uniqueObjects(_msgList, ['message']);
 
+        console.log("\n%cUSER: " + this.state.userName + " (role: " + _defaultRole + ")", "color:green");
+        console.log("%cAFFILIATIONS: " + JSON.stringify(_affiliationNames) + " (default: " + _defaultAffiliation + ")", "color:green");
+        console.log("%cENTITLEMENTS: " + JSON.stringify(_entitlementNames) + " (default:" + _defaultEntitlement + ")",  "color:green");
+        //console.log("%cFILTER LIST: " + JSON.stringify(_filterList));
+        console.log("%cSPECIES: " + JSON.stringify(_species),  "color:green");
+        console.log("%cCOUNTRIES: " + JSON.stringify(_countries),  "color:green");
+        console.log("%cALERT LIST: " + JSON.stringify(_alertList), "color: green");
+        console.log("%cMESSAGE SUBSET: " + JSON.stringify(_msgList), "color: green");
 
+         await this.setState({
+            authenticated: true,
+            defaultRole: _defaultRole,
+            affiliationList: _affiliationList,
+            affiliationNames: _affiliationNames,
+            defaultAffiliation: _defaultAffiliation,
+            entitlementNames: _entitlementNames,
+            defaultEntitlement: _defaultEntitlement,
+            filterList: _filterList,
+            species: _species,
+            countries: _countries,
+            alertList: _alertList,
+            msgList: _msgList
+        });
 
-       //  this.setState({
-       //     authenticated: true,
-       //     userAffiliations: affiliations,
-       //     selectedAffiliation: selectedAffiliation,
-       //     userRoles: roles,
-       //     entitlements: entitlements,
-       //     selectedView: selectedView,
-       //     userAlerts: alerts,
-       // });
-
-        console.log("\n\n%cAFFILIATIONS: " + JSON.stringify(affiliationNames) + " (default: " + defaultAffiliation + ")", "color:green");
-        console.log("%cENTITLEMENTS: " + JSON.stringify(entitlementNames) + " (default:" + defaultEntitlement + ")",  "color:green");
-        console.log("%cFILTERS: " + JSON.stringify(defaultFilters) + " (default: " + defaultEntitlement + ")",  "color:green");
-        console.log("%cMESSAGES: " + JSON.stringify(msgList), "color: green");
-
-
-
-
-
-
-
-
-        for (let i=0; i<userFilters.length; i++){
-            if (userFilters[i].userName === this.state.userName) {
-                var affiliations = userFilters[i].affiliations;
-                var selectedAffiliation = affiliations[0];
-                var roles = userFilters[i].roles;
-                var entitlements = userFilters[i].entitlements;
-                var selectedView = entitlements[0];
-                var alerts = userFilters[i].alerts;
-
-                 this.setState({
-                    authenticated: true,
-                    userAffiliations: affiliations,
-                    selectedAffiliation: selectedAffiliation,
-                    userRoles: roles,
-                    entitlements: entitlements,
-                    selectedView: selectedView,
-                    userAlerts: alerts,
-                });
-                //store.setState({isAuthenticated: true, user: this.state.userName});
-                //alert(this.state.userName);
-                break;
-            }
-        }
-        //await this.props.handleLogin( this.state );
+        await this.props.handleLogin( this.state );
     };
 
     handleCancelClick() {
-        //resetParentState(this, this.initialState, this.keysToIgnore);
+        resetParentState(this, this.initialState, this.keysToIgnore);
         this.props.history.goBack();
     };
 
@@ -198,12 +144,6 @@ class LoginPage extends React.Component {
     }
     render() {
         const { classes, ...rest } = this.props;
-
-        const styles = theme => ({
-            button: {
-                margin: theme.spacing.unit,
-            }
-        });
 
         return (
             <Provider store={store}>

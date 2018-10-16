@@ -1,23 +1,19 @@
-import React from "react";
-import PropTypes from 'prop-types';
-// @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import React from 'react';
+import withStyles from '@material-ui/core/styles/withStyles';
 
 // core components
-import Header from "components/Header/Header.jsx";
-import Footer from "components/Footer/Footer.jsx";
-import GridContainer from "components/Grid/GridContainer.jsx";
-import GridItem from "components/Grid/GridItem.jsx";
-import HeaderLinks from "components/Header/HeaderLinks.jsx";
-import TopNavLinks from "components/Header/TopNavLinks.jsx";
-import portalPageStyle from "assets/jss/site-styles/views/portalPage.jsx";
+import Header from 'components/Header/Header.jsx';
+import Footer from 'components/Footer/Footer.jsx';
+import GridContainer from 'components/Grid/GridContainer.jsx';
+import GridItem from 'components/Grid/GridItem.jsx';
+import HeaderLinks from 'components/Header/HeaderLinks.jsx';
+import TopNavLinks from 'components/Header/TopNavLinks.jsx';
+import portalPageStyle from 'assets/jss/site-styles/views/portalPage.jsx';
 
 import { DropDownList } from '@progress/kendo-react-dropdowns';
-
-import Button from '@material-ui/core/Button';
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet';
 import AppBar from '@material-ui/core/AppBar';
-import Toolbar from "@material-ui/core/Toolbar";
+import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 
@@ -27,31 +23,26 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
-import Snackbar from "components/Snackbar/Snackbar.jsx";
-//import Snackbar from "components/Snackbar/SimpleSnackbar.jsx";
-
-
+import Snackbar from 'components/Snackbar/Snackbar.jsx';
 
 import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import Checkbox from '@material-ui/core/Checkbox';
-import Divider from '@material-ui/core/Divider';
 
 import InfoIcon from '@material-ui/icons/Info';
 import WarningIcon from '@material-ui/icons/Warning';
 import ErrorIcon from '@material-ui/icons/Error';
 
-import Alerts from "./Sections/Alerts.jsx";
-import Compliance from "./Sections/Compliance.jsx";
-import FarmDetail from "./Sections/FarmDetail.jsx";
-import Labs from "./Sections/Labs.jsx";
-import Scorecard from "./Sections/Scorecard.jsx";
-import Settings from "./Sections/Settings.jsx";
-import SupplyChain from "./Sections/SupplyChain.jsx";
-import YearlyRecap from "./Sections/YearlyRecap.jsx";
+import Notifications from './Sections/Notifications.jsx';
+import Compliance from './Sections/Compliance.jsx';
+import FarmDetail from './Sections/FarmDetail.jsx';
+import Labs from './Sections/Labs.jsx';
+import Scorecard from './Sections/Scorecard.jsx';
+import Settings from './Sections/Settings.jsx';
+import SupplyChain from './Sections/SupplyChain.jsx';
+import YearlyRecap from './Sections/YearlyRecap.jsx';
 
 
 import MenuIcon from '@material-ui/icons/Menu';
@@ -67,32 +58,31 @@ import NotificationIcon from '@material-ui/icons/Notifications';
 import SettingsIcon from '@material-ui/icons/Settings';
 import LinkIcon from '@material-ui/icons/Link';
 import BarchartIcon from '@material-ui/icons/BarChart';
-//import ListIcon from '@material-ui/icons/List';
-//import LabIcon from '@material-ui/icons/Opacity'; //replace this
-import LabIcon from 'assets/img/svg/lab.svg';
-
+import LabSVG from "components/Icons/LabIcon.jsx";
 import FilterIcon from 'assets/img/svg/filters.svg';
 import ViewIcon from 'assets/img/svg/puzzle.svg';
 
-import orgFilters from 'assets/data/orgFilters.json';
-
 const dashboardRoutes = [];
 
+function guidGenerator() {
+    var S4 = function() {
+       return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+    };
+    return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+}
 
 var img_portal = process.env.PUBLIC_URL + '/bap/slide-portal.png';
-//var img_portal = process.env.PUBLIC_URL + '/bap/sea-coast-water-nature-ocean-shore-1409613-pxhere.com.jpg';
-
 
 function TabContainer(props) {
     return (
-        <Typography component="div" style={{ padding: 8 * 3 }}>
+        <Typography component='div' style={{ padding: 8 * 3 }}>
             {props.children}
         </Typography>
     );
 }
-TabContainer.propTypes = {
-    children: PropTypes.node.isRequired,
-};
+// TabContainer.propTypes = {
+//     children: PropTypes.node.isRequired,
+// };
 
 
 class Message extends React.Component {
@@ -109,10 +99,10 @@ class Message extends React.Component {
     };
 
     render() {
-        //console.log('%cCurrent props: ' + JSON.stringify(this.props), "color: cyan");
-
+        //console.log('%cCurrent props: ' + JSON.stringify(this.props), 'color: cyan');
         return (
             <Snackbar
+                key={guidGenerator()}
                 autoHideDuration={6000}
                 open={this.state.open}
                 message={this.props.message}
@@ -128,83 +118,71 @@ class Message extends React.Component {
 
 class ViewItem extends React.Component {
     render() {
+
         return <ListItem button
+            key={guidGenerator()}
             onClick={this.props.handler}
             selected={this.props.selected === this.props.text }
             >
-                { this.props.text === "Scorecard" && <BarchartIcon /> }
-                { this.props.text === "Yearly recap" && <TimeIcon /> }
-                { this.props.text === "Farm & plant detail" && <GridIcon /> }
-                { this.props.text === "Compliance" && <CheckCircleIcon /> }
-                { this.props.text === "Supply chain" && <LinkIcon /> }
-                { this.props.text === "Settings" && <SettingsIcon /> }
-                { this.props.text === "Labs" && <img src={LabIcon} height={22} /> }
-                { this.props.text === "Notifications" && <NotificationIcon /> }
+                { this.props.text === 'Scorecard' && <BarchartIcon color="primary" /> }
+                { this.props.text === 'Yearly recap' && <TimeIcon color="primary"/> }
+                { this.props.text === 'Plant and farm detail' && <GridIcon color="primary" /> }
+                { this.props.text === 'Non-conformities' && <CheckCircleIcon color="primary"/> }
+                { this.props.text === 'Supply chain' && <LinkIcon color="primary"/> }
+                { this.props.text === 'Settings' && <SettingsIcon color="primary"/> }
+                {/* { this.props.text === 'Labs' && <img src={LabIcon} height={22} /> } */}
+                { this.props.text === 'Labs' && <LabSVG fill="green"/> }
+                { this.props.text === 'Notifications' && <NotificationIcon color="primary"/> }
 
                 <ListItemText primary={this.props.text}  />
             </ListItem>;
         }
     }
 
-    function RenderSpecies(props){
-        //console.log('render species size: ' + userFilters.length);
-        let checkBoxComponentList = [];
+function RenderSpecies(props){
+    let checkBoxComponentList = [];
 
-        for (let i=0; i<orgFilters.length; i++){
-            if (orgFilters[i].organization === props.userAffiliation) {
-                if (orgFilters[i].species !== null) {
-                    for (let j=0; j<orgFilters[i].species.length; j++) {
-                        checkBoxComponentList.push(<FormControlLabel
-                            control={
-                                <Checkbox color="primary" checked={true} /*onChange={this.handleChange('gilad')}*/ value={orgFilters[i].species[j]} />
-                            }
-                            label={orgFilters[i].species[j]}
-                        />
-                    );
-                }
+    //console.log("species size: " + props.species.length + " " + JSON.stringify(props.species) );
+    for (let i=0; i<props.species.length; i++){
+        //console.log('render species: i=' + i + ': ' + props.species[i]);
+        checkBoxComponentList.push(<FormControlLabel
+            control={
+                <Checkbox key={guidGenerator()} color='primary' checked={true} /*onChange={this.handleTabChange('gilad')}*/ value={props.species[i]} />
             }
-            break;
-        }
+            label={props.species[i]} />
+        );
     }
+
     return checkBoxComponentList;
 }
 
 function RenderCountries(props){
     let checkBoxComponentList = [];
-
-    for (let i=0; i<orgFilters.length; i++){
-        if (orgFilters[i].organization === props.userAffiliation) {
-            if (orgFilters[i].species !== null) {
-                for (let j=0; j<orgFilters[i].countries.length; j++) {
-                    checkBoxComponentList.push(<FormControlLabel
-                        control={
-                            <Checkbox color="primary" checked={true} /*onChange={this.handleChange('gilad')}*/ value={orgFilters[i].countries[j]} />
-                        }
-                        label={orgFilters[i].countries[j]}
-                    />
-                );
+    for (let i=0; i<props.countries.length; i++){
+        //console.log('render countries: i=' + i + ': ' + props.countries[i]);
+        checkBoxComponentList.push(<FormControlLabel
+            control={
+                <Checkbox key={guidGenerator()} color='primary' checked={true} /*onChange={this.handleTabChange('gilad')}*/ value={props.countries[i]} />
             }
-        }
-        break;
+            label={props.countries[i]} />
+        );
     }
-}
-return checkBoxComponentList;
+    return checkBoxComponentList;
 }
 
 function RenderAlerts(props){
     let alertList = [];
-    //console.log('%cRendering props: ' + JSON.stringify(props), "color:purple");
+    //viewconsole.log('%cRendering alerts: ' + JSON.stringify(props), 'color:purple');
 
     if (props.alerts != null) {
         for (let i=props.alerts.length-1; i>=0; i--) {
             var message = props.alerts[i].message;
             var type = props.alerts[i].type;
-            var color = type === "error" ? "danger" :  "dark";
+            var color = type === 'error' ? 'danger' :  'dark';
             var duration = i;
-            const icon = type === "warning" ? WarningIcon : type === "danger" ? ErrorIcon : InfoIcon;
-
+            const icon = type === 'warning' ? WarningIcon : type === 'danger' ? ErrorIcon : InfoIcon;
             alertList.push(
-                <Message message={message} color={color} open={true} icon={icon} duration={duration}/>
+                <Message key={guidGenerator()} message={message} color={color} open={true} icon={icon} duration={duration}/>
             )
         }
     }
@@ -217,34 +195,106 @@ class PortalPage extends React.Component {
         super(props);
 
         this.handleViewClick = this.handleViewClick.bind(this);
+        this.handleAffiliationChange = this.handleAffiliationChange.bind(this);
     }
 
     state = {
         activeSlide : 5,
-        value: 0,
-        selectedAffiliation: this.props.selectedAffiliation,
-        selectedView: this.props.selectedView,
-        message: 'a test',
+        tabIndex: 0,
+        defaultAffiliation: this.props.defaultAffiliation,
+        defaultEntitlement: this.props.defaultEntitlement,
+        entitlementNames: this.props.entitlementNames,
+        filterList: this.props.filterList,
+        species: this.props.species,
+        countries: this.props.countries,
+        message: null,
         displayAlert: true
     }
 
 
-    handleChange = (event, value) => {
-        this.setState({ value });
+    handleTabChange = (event, value) => {
+        this.setState({ tabIndex: value });
 
     };
 
     handleViewClick = async (index) => {
-        await this.setState({selectedView: index});
 
-        //alert(this.state.selectedView + " " + index);
+        console.log("view index=" + index);
+
+        let _filterList = [];
+        let _species = [];
+        let _countries = [];
+
+        for (let i=0; i<this.props.affiliationList.length; i++) {
+            //console.log('%chandleAffiliation state: ' + JSON.stringify(this.props.affiliationList[i].affiliation), 'color:orange');
+            if (this.props.affiliationList[i].affiliation === this.state.defaultAffiliation) {
+                for (let en=0; en<this.props.affiliationList[i].entitlements.length; en++) {
+                    let name = this.props.affiliationList[i].entitlements[en].entitlement;
+
+                    if (name === index) {
+
+                        _filterList = this.props.affiliationList[i].entitlements[en].filters;
+
+                        for (let fi=0; fi<
+                            _filterList.length; fi++) {
+                            let sp = _filterList[fi].species;
+                            let co = _filterList[fi].countries;
+
+                            if (sp != null) {
+                                _species = sp;
+                                //console.log('sp:' + sp + " len: " + sp.length);
+                            }
+
+                            if (co != null) {
+                                _countries = co;
+                                //console.log('co:' + co + " len: " + co.length);
+                            }
+                        }
+
+
+                    }
+                }
+                break;
+            }
+        }
+
+        await this.setState({
+            defaultEntitlement: index,
+            countries: _countries,
+            species: _species,
+        });
     };
 
-    handleAffiliationChange = (event) => {
-        this.setState({
-            selectedAffiliation: event.target.value
+    handleAffiliationChange = async (event) => {
+        let _defaultAffiliation = event.target.value;
+        let _entitlementNames = [];
+        let _defaultEntitlement = null;
+
+        for (let i=0; i<this.props.affiliationList.length; i++) {
+            //console.log('%chandleAffiliation state: ' + JSON.stringify(this.props.affiliationList[i].affiliation), 'color:orange');
+            if (this.props.affiliationList[i].affiliation === _defaultAffiliation) {
+                for (let en=0; en<this.props.affiliationList[i].entitlements.length; en++) {
+                    let name = this.props.affiliationList[i].entitlements[en].entitlement;
+                    _entitlementNames.push(name);
+
+
+
+                }
+                _defaultEntitlement = _entitlementNames[0];
+                break;
+            }
+        }
+
+        // TODO change filters,
+        // TODO: consider changing alerts, as well?
+
+        await this.setState({
+            defaultAffiliation: _defaultAffiliation,
+            entitlementNames: _entitlementNames,
+            defaultEntitlement: _defaultEntitlement,
+            tabIndex: 0
         });
-        console.log('%cRendering state: ' + JSON.stringify(this.state), "color:orange");
+        console.log('%cRendering state: ' + JSON.stringify(this.state), 'color:orange');
     }
 
     valueRender = (element, value) => {
@@ -252,11 +302,10 @@ class PortalPage extends React.Component {
             return element;
         }
         const children = [
-            <span key={1} style={{color: '#fff', fontSize: '21px', fontWeight: 500}}>
+            <span key={guidGenerator()} style={{color: '#fff', fontSize: '21px', fontWeight: 500}}>
                 {value}
             </span>,
         ];
-
         return React.cloneElement(element, { ...element.props }, children);
     }
 
@@ -264,7 +313,7 @@ class PortalPage extends React.Component {
 
     render() {
         const { classes, ...rest } = this.props;
-        const { value } = this.state;
+        //const { value } = this.state;
 
         const styles = {
             root: {
@@ -286,110 +335,117 @@ class PortalPage extends React.Component {
                 margin: 0,
             },
             appbar: {
-                backgroundColor: "rgba(0,0,0.3)"
+                backgroundColor: 'rgba(0,0,0.3)'
             },
         };
-
-
 
         return (
             <div>
                 <Helmet>
-                    <meta name="description" content="BAP - Portal" />
-                    <meta property="og:url" content="https://www.bapcertification.org/" />
-                    <meta property="og:site_name" content="Best Aquaculture Practices Certification - Portal" />
-                    <meta name="twitter:card" content="portal" />
-                    <meta name="twitter:title" content="Best Aquaculture Practices Certification - Portal" />
-                    <link rel="canonical" href="http://www.bestaquaculturepractices.org" />
+                    <meta name='description' content='BAP - Portal' />
+                    <meta property='og:url' content='https://www.bapcertification.org/' />
+                    <meta property='og:site_name' content='Best Aquaculture Practices Certification - Portal' />
+                    <meta name='twitter:card' content='portal' />
+                    <meta name='twitter:title' content='Best Aquaculture Practices Certification - Portal' />
+                    <link rel='canonical' href='http://www.bestaquaculturepractices.org' />
                     <title>BAP - Portal</title>
                 </Helmet>
 
-                <div style={{width: "100%", height: "120px", overflow: "hidden"}}>
-                    <img src={img_portal} style={{width: "100%", zIndex: "1"}}/>
+                <div style={{width: '100%', height: '120px', overflow: 'hidden'}}>
+                    <img src={img_portal} style={{width: '100%', zIndex: '1'}} alt="fish swimming"/>
                 </div>
 
                 <Header
-                    color="semiTransparent"
+                    color='semiTransparent'
                     routes={dashboardRoutes}
-                    brand="Best Aquaculture Practices"
+                    brand='Best Aquaculture Practices'
                     rightLinks={<HeaderLinks itemIndex={this.state.activeSlide}/>}
                     topLinks={<TopNavLinks authenticated={this.props.authenticated} />}
                     top
                     fixed
                     changeColorOnScroll={{
                         height: 2,
-                        color: "primary"
+                        color: 'primary'
                     }}
                     {...rest}
                 />
 
-                <AppBar position="sticky" style={{backgroundColor: "#1463AC", position: "fixed", top: "110px"}}>
+                <AppBar position='sticky' style={{backgroundColor: '#1463AC', position: 'fixed', top: '110px'}}>
                     <Toolbar>
-                        <IconButton className={classes.menuButton} aria-label="Menu" color="inherit">
+                        <IconButton className={classes.menuButton} aria-label='Menu' color='inherit'>
                             <MenuIcon />
                         </IconButton>
 
 
-                        <Typography variant="title" color="inherit">Welcome {this.props.userName}  (
-                            <DropDownList style={{display: "inline-block", width: "auto", color: "#ffffff", borderBottom: 0}}
-                                data={this.props.userAffiliations}
-                                defaultValue={this.props.userAffiliations[0]}
+                        <Typography variant='title' color='inherit'>Welcome {this.props.userName}  (
+                            <DropDownList style={{display: 'inline-block', width: 'auto', color: '#ffffff', borderBottom: 0, bottomBorderColor: '#fff'}}
+                                data={this.props.affiliationNames}
+                                defaultValue={this.props.defaultAffiliation}
                                 valueRender={this.valueRender}
                                 onChange={this.handleAffiliationChange}
-                                dataItemKey="selectedAffiliation"
-
+                                dataItemKey='defaultAffiliation'
                             />
                         )
                     </Typography>
 
                     <section style={styles.rightToolbar}>
-                        <IconButton color="inherit" aria-label="Print">
+                        <IconButton color='inherit' aria-label='Print'>
                             <PrintIcon />
                         </IconButton>
-                        <IconButton color="inherit" aria-label="Download">
+                        <IconButton color='inherit' aria-label='Download'>
                             <SaveAltIcon />
                         </IconButton>
-                        <IconButton color="inherit" aria-label="More Options">
+                        <IconButton color='inherit' aria-label='More Options'>
                             <MoreVertIcon />
                         </IconButton>
                     </section>
                 </Toolbar>
             </AppBar>
 
-            <div style={{zIndex: "4", margin: "55px", color: "#000"}}>
-                <GridContainer justify="center">
+            <div style={{zIndex: '4', margin: '55px', color: '#000'}}>
+                <GridContainer justify='center'>
 
-                    <GridItem xs={2} sm={2} md={2} style={{backgroundColor: "rgba(0,0,0,.03)", minHeight: "700px", height: "100%", padding: 0, margin: 0}}>
+                    <GridItem xs={2} sm={2} md={2} style={{backgroundColor: 'rgba(0,0,0,.03)', minHeight: '700px', height: '100%', padding: 0, margin: 0}}>
 
-                        <Tabs value={value} fullWidth={true} onChange={this.handleChange} classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}>
-                            <Tab label="Views" icon={<img src={ViewIcon} height={18} />} style={{minWidth: "110px"}} classes={{ root: classes.tabRoot, selected: classes.tabSelected }}> </Tab>
-                            <Tab  label="Filters" icon={<img src={FilterIcon} height={18} />}  style={{minWidth: "120px"}} classes={{ root: classes.tabRoot, selected: classes.tabSelected }}/>
+                        <Tabs value={this.state.tabIndex} fullWidth={true} onChange={this.handleTabChange} classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}>
+                            <Tab label='Views' icon={<img src={ViewIcon} height={18}  alt="Views"/>} style={{minWidth: '110px'}} classes={{ root: classes.tabRoot, selected: classes.tabSelected }}> </Tab>
+                            <Tab  label='Filters' icon={<img src={FilterIcon} height={18} alt="Filters"/>} style={{minWidth: '120px'}} classes={{ root: classes.tabRoot, selected: classes.tabSelected }}/>
                         </Tabs>
 
-                        {value === 1 && <TabContainer>
+                        {this.state.tabIndex === 1 && <TabContainer>
                             <div>
-                                <FormControl component="fieldset" className={classes.formControl}>
-                                    <FormLabel component="legend">Species</FormLabel>
-                                    <FormGroup>
-                                        <RenderSpecies userAffiliation={this.state.selectedAffiliation}/>
-                                    </FormGroup>
-                                </FormControl>
-                                <br/>
-                                <br/>
 
-                                <FormControl component="fieldset" className={classes.formControl}>
-                                    <FormLabel component="legend">Countries</FormLabel>
-                                    <FormGroup>
-                                        <RenderCountries userAffiliation={this.state.selectedAffiliation} />
-                                    </FormGroup>
-                                </FormControl>
+                                {this.state.species.length > 0 &&
+                                    <div>
+                                        <FormControl component='fieldset' className={classes.formControl}>
+                                            <FormLabel component='legend'>Species</FormLabel>
+                                            <FormGroup>
+                                                <RenderSpecies species={this.state.species}/>
+                                            </FormGroup>
+                                        </FormControl>
+                                        <br/>
+                                        <br/>
+                                    </div>
+                                }
 
-                                <br/>
+                                {this.state.countries.length > 0 &&
+                                    <div>
+                                        <FormControl component='fieldset' className={classes.formControl}>
+                                            <FormLabel component='legend'>Countries</FormLabel>
+                                            <FormGroup>
+                                                <RenderCountries countries={this.state.countries} userAffiliation={this.state.defaultAffiliation} />
+                                            </FormGroup>
+                                        </FormControl>
+                                        <br/>
+                                    </div>
+                                }
+
+                                {/* <br/>
                                 <Divider/>
                                 <br/>
-                                <Button variant="contained" color="primary">Apply</Button>
+                                <Button variant='contained' color='primary'>Apply</Button> */}
 
-                                {/* <List component="nav" style={{marginLeft: "-18px", marginRight: "-18px"}}>
+                                {/* <List component='nav' style={{marginLeft: '-18px', marginRight: '-18px'}}>
                                 {this.props.userAffiliations.map((item) =>
                                 <ListItem {...item}
                                 key={item.id}
@@ -408,11 +464,10 @@ class PortalPage extends React.Component {
                 </div>
             </TabContainer>}
 
-            { value === 0 && <TabContainer>
-                <List component="nav" style={{marginLeft: "-18px", marginRight: "-18px"}}>
-                    {this.props.entitlements.map((item) =>
-
-                        <ViewItem text={item} selected={this.state.selectedView} handler={() => this.handleViewClick(item)}/>
+            { this.state.tabIndex === 0 && <TabContainer>
+                <List key={guidGenerator()} component='nav' style={{marginLeft: '-18px', marginRight: '-18px'}}>
+                    {this.state.entitlementNames.map((item) =>
+                        <ViewItem key={guidGenerator()} text={item} selected={this.state.defaultEntitlement} handler={() => this.handleViewClick(item)}/>
                     )}
                 </List>
 
@@ -421,21 +476,21 @@ class PortalPage extends React.Component {
 
         <GridItem xs={10} sm={10} md={10}>
 
-            <div style={{marginTop: "-50px"}}>
-                {this.state.selectedView === "Scorecard" && <Scorecard/> }
-                {this.state.selectedView === "Yearly recap" && <YearlyRecap/> }
-                {this.state.selectedView === "Farm & plant detail" && <FarmDetail/> }
-                {this.state.selectedView === "Compliance" && <Compliance/> }
-                {this.state.selectedView === "Supply chain" && <SupplyChain/> }
-                {this.state.selectedView === "Alerts" && <Alerts/> }
-                {this.state.selectedView === "Labs" && <Labs/> }
-                {this.state.selectedView === "Settings" && <Settings/> }
+            <div style={{marginTop: '-50px'}}>
+                {this.state.defaultEntitlement === 'Scorecard' && <Scorecard/> }
+                {this.state.defaultEntitlement === 'Yearly recap' && <YearlyRecap/> }
+                {this.state.defaultEntitlement === 'Plant and farm detail' && <FarmDetail/> }
+                {this.state.defaultEntitlement === 'Non-conformities' && <Compliance/> }
+                {this.state.defaultEntitlement === 'Supply chain' && <SupplyChain/> }
+                {this.state.defaultEntitlement === 'Notifications' && <Notifications/> }
+                {this.state.defaultEntitlement === 'Labs' && <Labs/> }
+                {this.state.defaultEntitlement === 'Settings' && <Settings/> }
             </div>
         </GridItem>
     </GridContainer>
 
     </div>
-    <RenderAlerts alerts={this.props.userAlerts}/>
+    <RenderAlerts alerts={this.props.msgList}/>
 
     <Footer />
     </div>

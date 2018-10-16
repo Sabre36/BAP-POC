@@ -42,12 +42,16 @@ class App extends React.Component {
             authenticated: false,
             userName: '',
             password: '',
-            userRoles: [],
-            entitlements: [],
-            userAffiliations: [],
-            selectedAffiliation: '',
-            selectedView: '',
-            userAlerts: []
+            defaultRole: null,
+            affiliationNames: [],
+            defaultAffiliation: null,
+            entitlementNames: [],
+            defaultEntitlement: null,
+            filterList: [],
+            countries: [],
+            species: [],
+            alertList: [],
+            msgList: [],
         }
 
         this.handleLogin = this.handleLogin.bind(this);
@@ -61,16 +65,23 @@ class App extends React.Component {
         this.setState({
             authenticated: childState.authenticated,
             userName: childState.userName,
-            userAffiliations: childState.userAffiliations,
-            selectedAffiliation: childState.selectedAffiliation,
-            userRoles: childState.userRoles,
-            entitlements: childState.entitlements,
-            selectedView: childState.selectedView,
-            userAlerts: childState.userAlerts
+            defaultRole: childState.defaultRole,
+            affiliationNames:  childState.affiliationNames,
+            affiliationList: childState.affiliationList,
+            defaultAffiliation: childState.defaultAffiliation,
+            entitlementNames: childState.entitlementNames,
+            defaultEntitlement: childState.defaultEntitlement,
+            filterList: childState.filterList,
+            countries:  childState.countries,
+            species: childState.species,
+            alertList: childState.alertList,
+            msgList: childState.msgList
         });
+
+        //console.log('%cCurrent login: ' + JSON.stringify(this.state), "color: magenta");
+
         hist.push('/portal');
 
-        console.log('%cCurrent login: ' + JSON.stringify(this.state), "color: green");
     }
 
     render() {
@@ -105,10 +116,10 @@ class App extends React.Component {
                             <Route exact path="/login" render={(props) =>
                                 <LoginPage {...props}
                                     userName={this.state.userName}
-                                    selectedAffiliation={this.state.selectedAffiliation}
-                                    selectedView={this.state.selectedView}
+                                    //selectedAffiliation={this.state.selectedAffiliation}
+                                    //selectedView={this.state.selectedView}
                                     authenticated={this.state.authenticated}
-                                    userAlerts={this.state.userAlerts}
+                                    //userAlerts={this.state.userAlerts}
                                     handleLogin = {handleLogin.bind(this)}
                                     history={hist}
                                 />}
@@ -121,14 +132,18 @@ class App extends React.Component {
                                 ) : (
                                     <PortalPage
                                         userName={this.state.userName}
-                                        //password={this.state.password}
-                                        userAffiliations={this.state.userAffiliations}
-                                        userRoles={this.state.userRoles}
-                                        entitlements={this.state.entitlements}
-                                        selectedAffiliation={this.state.selectedAffiliation}
-                                        selectedView={this.state.selectedView}
-                                        userAlerts={this.state.userAlerts}
                                         authenticated={true}
+                                        defaultRole={this.state.defaultRole}
+                                        affiliationNames={this.state.affiliationNames}
+                                        affiliationList={this.state.affiliationList}
+                                        defaultAffiliation={this.state.defaultAffiliation}
+                                        entitlementNames={this.state.entitlementNames}
+                                        defaultEntitlements={this.state.defaultEntitlements}
+                                        filterList={this.state.filterList}
+                                        countries={this.state.countries}
+                                        species={this.state.species}
+                                        alertList={this.state.alertList}
+                                        msgList={this.state.msgList}
                                     />
                                 )
                             )}/>
@@ -144,11 +159,7 @@ class App extends React.Component {
                             <Route exact path="/landing-page" render={() => (
                                 <LandingPage authenticated={this.state.authenticated} />
                             )}/>
-                            {/* <Route path="*" component={LandingPage} /> */}
-                            {/* <Route exact path="/login" component={LoginPage} /> */}
-                            {/* {indexRoutes.map((prop, key) => {
-                                return <Route path={prop.path} key={key} component={prop.component} onEnter={requireAuth} />;
-                            })} */}
+
                         </Switch>
                     </Router>
                 </MuiThemeProvider>

@@ -82,7 +82,7 @@ class Header extends React.Component {
 
         const brandComponent =
         <span className={classes.brand} >
-            <img src={logoImage} height={42} width={42} />
+            <img src={logoImage} height={42} width={42} alt="BAP logo" />
             <Button href="/" className={classes.title}>{brand} </Button>
         </span>;
 

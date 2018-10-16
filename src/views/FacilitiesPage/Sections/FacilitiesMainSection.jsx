@@ -12,21 +12,13 @@ import aboutBAPStyle from "assets/jss/site-styles/views/landingPageSections/abou
 import InfoIcon from "@material-ui/icons/Info";
 import LocationIcon from "@material-ui/icons/LocationOn";
 import ListIcon from "@material-ui/icons/ListAlt";
-
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
-
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
-
-import { render } from 'react-dom';
-import { Provider } from 'redux-zero/react';
-
-import store from '../../../store/store';
-import Counter from '../../../store/actions/counter';
 
 
 function TabContainer(props) {

@@ -21,12 +21,15 @@ const dashboardRoutes = [];
 var img_certification = process.env.PUBLIC_URL + '/bap/slide-cert.png';
 
 class CertificationPage extends React.Component {
-    render() {
-        const { classes, ...rest } = this.props;
-
+    constructor(){
+        super();
         this.state= {
             activeSlide : 1,
         }
+    }
+
+    render() {
+        const { classes, ...rest } = this.props;
 
         return (
             <div>
