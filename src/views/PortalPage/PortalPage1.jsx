@@ -23,8 +23,6 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
-
-import { OffCanvas, OffCanvasMenu, OffCanvasBody } from 'react-offcanvas';
 import Snackbar from 'components/Snackbar/Snackbar.jsx';
 
 import FormLabel from '@material-ui/core/FormLabel';
@@ -210,24 +208,7 @@ class PortalPage extends React.Component {
         species: this.props.species,
         countries: this.props.countries,
         message: null,
-        displayAlert: true,
-        isMenuOpen: true,
-        cols: 10,
-    }
-
-    componentWillMount() {
-        // sets the initial state
-        this.setState({
-            isMenuOpened: true,
-            cols: this.state.isMenuOpen ? 10 : 12,
-        })
-    }
-
-    async handleSidebar() {
-        await this.setState({
-            cols:  !this.state.isMenuOpened ? 10 : 12,
-            isMenuOpened: !this.state.isMenuOpened,
-        });
+        displayAlert: true
     }
 
 
@@ -281,7 +262,6 @@ class PortalPage extends React.Component {
             defaultEntitlement: index,
             countries: _countries,
             species: _species,
-            //isMenuOpened: !this.state.isMenuOpened
         });
     };
 
@@ -392,7 +372,7 @@ class PortalPage extends React.Component {
 
                 <AppBar position='sticky' style={{backgroundColor: '#1463AC', position: 'fixed', top: '110px'}}>
                     <Toolbar>
-                        <IconButton className={classes.menuButton} aria-label='Menu' color='inherit' onClick={this.handleSidebar.bind(this)}>
+                        <IconButton className={classes.menuButton} aria-label='Menu' color='inherit'>
                             <MenuIcon />
                         </IconButton>
 
@@ -423,81 +403,96 @@ class PortalPage extends React.Component {
             </AppBar>
 
             <div style={{zIndex: '4', margin: '55px', color: '#000'}}>
+                <GridContainer justify='center'>
 
-            <OffCanvas width={275} transitionDuration={300} isMenuOpened={this.state.isMenuOpened} position={"left"}>
-                <OffCanvasBody className={styles.bodyClass} >
-                    <div style={{marginTop: '-50px'}}>
-                        <GridContainer>
+                    <GridItem xs={2} sm={2} md={2} style={{backgroundColor: 'rgba(0,0,0,.03)', minHeight: '700px', height: '100%', padding: 0, margin: 0}}>
 
-                            <GridItem xs={this.state.cols} sm={this.state.cols} md={this.state.cols} >
-                                {this.state.defaultEntitlement === 'Scorecard' && <Scorecard/> }
-                                {this.state.defaultEntitlement === 'Yearly recap' && <YearlyRecap/> }
-                                {this.state.defaultEntitlement === 'Plant and farm detail' && <FarmDetail/> }
-                                {this.state.defaultEntitlement === 'Non-conformities' && <Compliance/> }
-                                {this.state.defaultEntitlement === 'Supply chain' && <SupplyChain/> }
-                                {this.state.defaultEntitlement === 'Notifications' && <Notifications/> }
-                                {this.state.defaultEntitlement === 'Labs' && <Labs/> }
-                                {this.state.defaultEntitlement === 'Settings' && <Settings/> }
-                            </GridItem>
-                        </GridContainer>
-
-                        <Footer />
-                    </div>
-                </OffCanvasBody>
-
-                <OffCanvasMenu className={styles.menuClass} style={{backgroundColor: "rgba(0,0,0,.025)", borderRight: "1px solid rgba(0,0,0,.03)", height: "100vh"}}>
-                    <div style={{marginTop: "185px"}}>
                         <Tabs value={this.state.tabIndex} fullWidth={true} onChange={this.handleTabChange} classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}>
                             <Tab label='Views' icon={<img src={ViewIcon} height={18}  alt="Views"/>} style={{minWidth: '110px'}} classes={{ root: classes.tabRoot, selected: classes.tabSelected }}> </Tab>
                             <Tab  label='Filters' icon={<img src={FilterIcon} height={18} alt="Filters"/>} style={{minWidth: '120px'}} classes={{ root: classes.tabRoot, selected: classes.tabSelected }}/>
                         </Tabs>
-                    </div>
 
-                    {this.state.tabIndex === 1 && <TabContainer>
-                        <div>
-                            { this.state.species.length > 0 &&
-                                <div>
-                                    <FormControl component='fieldset' className={classes.formControl}>
-                                        <FormLabel component='legend'>Species</FormLabel>
-                                        <FormGroup>
-                                            <RenderSpecies species={this.state.species}/>
-                                        </FormGroup>
-                                    </FormControl>
-                                    <br/>
-                                    <br/>
-                                </div>
-                            }
+                        {this.state.tabIndex === 1 && <TabContainer>
+                            <div>
 
-                            { this.state.countries.length > 0 &&
-                                <div>
-                                    <FormControl component='fieldset' className={classes.formControl}>
-                                        <FormLabel component='legend'>Countries</FormLabel>
-                                        <FormGroup>
-                                            <RenderCountries countries={this.state.countries} userAffiliation={this.state.defaultAffiliation} />
-                                        </FormGroup>
-                                    </FormControl>
-                                    <br/>
-                                </div>
-                            }
-                            </div>
-                            </TabContainer>
-                        }
+                                {this.state.species.length > 0 &&
+                                    <div>
+                                        <FormControl component='fieldset' className={classes.formControl}>
+                                            <FormLabel component='legend'>Species</FormLabel>
+                                            <FormGroup>
+                                                <RenderSpecies species={this.state.species}/>
+                                            </FormGroup>
+                                        </FormControl>
+                                        <br/>
+                                        <br/>
+                                    </div>
+                                }
 
-                        { this.state.tabIndex === 0 && <TabContainer>
-                            <List key={guidGenerator()} component='nav' style={{marginLeft: '-18px', marginRight: '-18px'}}>
-                                {this.state.entitlementNames.map((item) =>
-                                    <ViewItem key={guidGenerator()} text={item} selected={this.state.defaultEntitlement} handler={() => this.handleViewClick(item)}/>
-                                )}
-                            </List>
+                                {this.state.countries.length > 0 &&
+                                    <div>
+                                        <FormControl component='fieldset' className={classes.formControl}>
+                                            <FormLabel component='legend'>Countries</FormLabel>
+                                            <FormGroup>
+                                                <RenderCountries countries={this.state.countries} userAffiliation={this.state.defaultAffiliation} />
+                                            </FormGroup>
+                                        </FormControl>
+                                        <br/>
+                                    </div>
+                                }
 
-                        </TabContainer>
-                    }
-                </OffCanvasMenu>
-              </OffCanvas>
+                                {/* <br/>
+                                <Divider/>
+                                <br/>
+                                <Button variant='contained' color='primary'>Apply</Button> */}
+
+                                {/* <List component='nav' style={{marginLeft: '-18px', marginRight: '-18px'}}>
+                                {this.props.userAffiliations.map((item) =>
+                                <ListItem {...item}
+                                key={item.id}
+                                button
+                                selected={this.state.selectedAffiliation === item }
+                                onClick={event => this.handleOrganizationClick(event, item )}
+                                >
+                                <ListItemText primary={item} />
+                            </ListItem>
+                        )}
+                    </List> */}
+
+
+
+                    {/* var json = JSON.parse(data); */}
+                </div>
+            </TabContainer>}
+
+            { this.state.tabIndex === 0 && <TabContainer>
+                <List key={guidGenerator()} component='nav' style={{marginLeft: '-18px', marginRight: '-18px'}}>
+                    {this.state.entitlementNames.map((item) =>
+                        <ViewItem key={guidGenerator()} text={item} selected={this.state.defaultEntitlement} handler={() => this.handleViewClick(item)}/>
+                    )}
+                </List>
+
+            </TabContainer> }
+        </GridItem>
+
+        <GridItem xs={10} sm={10} md={10}>
+
+            <div style={{marginTop: '-50px'}}>
+                {this.state.defaultEntitlement === 'Scorecard' && <Scorecard/> }
+                {this.state.defaultEntitlement === 'Yearly recap' && <YearlyRecap/> }
+                {this.state.defaultEntitlement === 'Plant and farm detail' && <FarmDetail/> }
+                {this.state.defaultEntitlement === 'Non-conformities' && <Compliance/> }
+                {this.state.defaultEntitlement === 'Supply chain' && <SupplyChain/> }
+                {this.state.defaultEntitlement === 'Notifications' && <Notifications/> }
+                {this.state.defaultEntitlement === 'Labs' && <Labs/> }
+                {this.state.defaultEntitlement === 'Settings' && <Settings/> }
+            </div>
+        </GridItem>
+    </GridContainer>
+
     </div>
     <RenderAlerts alerts={this.props.msgList}/>
 
-
+    <Footer />
     </div>
     );
     }

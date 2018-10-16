@@ -36,7 +36,7 @@ class LoginPage extends React.Component {
             affiliationNames: [],
             defaultAffiliation: null,
             entitlementList: [],
-            defaultEntitlement: null,
+            defaultEntitlement: "Scorecard",
             countries: [],
             species: [],
             filterList: [],
