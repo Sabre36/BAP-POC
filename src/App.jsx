@@ -11,7 +11,7 @@ import CertificationPage from "views/CertificationPage/CertificationPage.jsx";
 import FacilitiesPage from "views/FacilitiesPage/FacilitiesPage.jsx";
 import PortalPage from "views/PortalPage/PortalPage.jsx";
 import { Helmet } from "react-helmet";
-
+//import { SnackbarProvider } from 'notistack';
 
 import "assets/scss/site-styles.css";
 
@@ -47,11 +47,8 @@ class App extends React.Component {
             defaultAffiliation: null,
             entitlementNames: [],
             defaultEntitlement: null,
-            filterList: [],
             countries: [],
             species: [],
-            alertList: [],
-            msgList: [],
         }
 
         this.handleLogin = this.handleLogin.bind(this);
@@ -71,15 +68,11 @@ class App extends React.Component {
             defaultAffiliation: childState.defaultAffiliation,
             entitlementNames: childState.entitlementNames,
             defaultEntitlement: childState.defaultEntitlement,
-            filterList: childState.filterList,
             countries:  childState.countries,
             species: childState.species,
-            alertList: childState.alertList,
-            msgList: childState.msgList
         });
 
         //console.log('%cCurrent login: ' + JSON.stringify(this.state), "color: magenta");
-
         hist.push('/portal');
 
     }
@@ -116,10 +109,7 @@ class App extends React.Component {
                             <Route exact path="/login" render={(props) =>
                                 <LoginPage {...props}
                                     userName={this.state.userName}
-                                    //selectedAffiliation={this.state.selectedAffiliation}
-                                    //selectedView={this.state.selectedView}
                                     authenticated={this.state.authenticated}
-                                    //userAlerts={this.state.userAlerts}
                                     handleLogin = {handleLogin.bind(this)}
                                     history={hist}
                                 />}
@@ -139,11 +129,8 @@ class App extends React.Component {
                                         defaultAffiliation={this.state.defaultAffiliation}
                                         entitlementNames={this.state.entitlementNames}
                                         defaultEntitlements={this.state.defaultEntitlements}
-                                        filterList={this.state.filterList}
                                         countries={this.state.countries}
                                         species={this.state.species}
-                                        alertList={this.state.alertList}
-                                        msgList={this.state.msgList}
                                     />
                                 )
                             )}/>

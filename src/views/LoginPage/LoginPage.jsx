@@ -13,7 +13,7 @@ import Card from "components/Card/Card.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
 import loginPageStyle from "assets/jss/site-styles/views/loginPage.jsx";
-import userData from 'assets/data/userData1.json';
+import userData from 'assets/data/userData.json';
 import uniqueObjects from "unique-objects";
 import { Provider } from 'redux-zero/react';
 import store from '../../store/store';
@@ -62,8 +62,8 @@ class LoginPage extends React.Component {
         let _species = [];
         let _countries = [];
         let _defaultRole = null;
-        let _alertList = [];
-        let _msgList = [];
+        // let _alertList = [];
+        // let _msgList = [];
 
         for (let i=0; i<userData.length; i++){
             if (userData[i].userName === this.state.userName) {
@@ -77,10 +77,10 @@ class LoginPage extends React.Component {
                     _defaultAffiliation = _affiliationNames[0];
 
                     // now, create an alert array of ALL messages (including duplicates).  Not sure if this makes sense?
-                    let msg = _affiliationList[j].alerts;
-                    for (let m=0; m<msg.length; m++) {
-                        _msgList.push(msg[m]);
-                    }
+                    // let msg = _affiliationList[j].alerts;
+                    // for (let m=0; m<msg.length; m++) {
+                    //     _msgList.push(msg[m]);
+                    // }
                 }
                 break;
             }
@@ -96,10 +96,10 @@ class LoginPage extends React.Component {
         _defaultEntitlement = _affiliationList[0].entitlements[0].entitlement;
         _filterList = _affiliationList[0].entitlements[0].filters;
         _defaultRole = _affiliationList[0].role;
-        _alertList = _affiliationList[0].alerts;
+        //_alertList = _affiliationList[0].alerts;
 
         // Gets a unique list of message
-        _msgList = uniqueObjects(_msgList, ['message']);
+        //_msgList = uniqueObjects(_msgList, ['message']);
 
         console.log("\n%cUSER: " + this.state.userName + " (role: " + _defaultRole + ")", "color:green");
         console.log("%cAFFILIATIONS: " + JSON.stringify(_affiliationNames) + " (default: " + _defaultAffiliation + ")", "color:green");
@@ -107,8 +107,8 @@ class LoginPage extends React.Component {
         //console.log("%cFILTER LIST: " + JSON.stringify(_filterList));
         console.log("%cSPECIES: " + JSON.stringify(_species),  "color:green");
         console.log("%cCOUNTRIES: " + JSON.stringify(_countries),  "color:green");
-        console.log("%cALERT LIST: " + JSON.stringify(_alertList), "color: green");
-        console.log("%cMESSAGE SUBSET: " + JSON.stringify(_msgList), "color: green");
+        //console.log("%cALERT LIST: " + JSON.stringify(_alertList), "color: green");
+        //console.log("%cMESSAGE SUBSET: " + JSON.stringify(_msgList), "color: green");
 
          await this.setState({
             authenticated: true,
@@ -121,8 +121,8 @@ class LoginPage extends React.Component {
             filterList: _filterList,
             species: _species,
             countries: _countries,
-            alertList: _alertList,
-            msgList: _msgList
+            //alertList: _alertList,
+            //msgList: _msgList
         });
 
         await this.props.handleLogin( this.state );
