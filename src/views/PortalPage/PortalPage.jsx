@@ -281,7 +281,7 @@ class PortalPage extends React.Component {
             defaultEntitlement: index,
             countries: _countries,
             species: _species,
-            //isMenuOpened: !this.state.isMenuOpened
+            isMenuOpened: !this.state.isMenuOpened
         });
     };
 
