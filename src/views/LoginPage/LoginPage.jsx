@@ -14,7 +14,7 @@ import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
 import loginPageStyle from "assets/jss/site-styles/views/loginPage.jsx";
 import userData from 'assets/data/userData.json';
-import uniqueObjects from "unique-objects";
+//import uniqueObjects from "unique-objects";
 import { Provider } from 'redux-zero/react';
 import store from '../../store/store';
 

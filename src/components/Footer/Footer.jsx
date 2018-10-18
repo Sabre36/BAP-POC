@@ -23,7 +23,7 @@ function Footer({ ...props }) {
   return (
     <footer className={footerClasses}>
       <div className={classes.container}>
-        <div className={classes.left}>
+        <div className={classes.center}>
           <List className={classes.list}>
               <ListItem className={classes.inlineBlock}>
                 <p>Connect with us</p>
@@ -92,8 +92,10 @@ function Footer({ ...props }) {
             </ListItem>
           </List>
         </div>
-        <div className={classes.right}>
-          &copy; {1900 + new Date().getYear()} Global Aquaculture Alliance. All rights reserved.{" "}
+        <div className={classes.center}>
+          <span className={classes.copyright}>
+              &copy; {1900 + new Date().getYear()} Global Aquaculture Alliance. All rights reserved.{" "}
+          </span>
         </div>
       </div>
     </footer>
