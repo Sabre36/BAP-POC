@@ -1,0 +1,315 @@
+[
+  {
+    "BAP Number": "P10605",
+    "Organization": "PT Bumi Pangan Utama",
+    "Country": "Indonesia",
+    "Species": "Shrimp",
+    "2016Shipped": 0,
+    "2017Shipped": null,
+    "2017Projected": null,
+    "2018Projected": 49,
+    "TotalProduction": 666.4,
+    "Farms": [
+        { "BAP Number": "sss", "Organization:": "xxxx", "Country": "Indonesia"},
+        { "BAP Number": "sss", "Organization:": "xxxx", "Country": "Indonesia"},
+        { "BAP Number": "sss", "Organization:": "xxxx", "Country": "Indonesia"}
+    ]
+  },
+
+  {
+    "BAP Number": "P10163",
+    "Organization": "Sagar Grandhi Exports (P) Ltd.",
+    "Country": "India",
+    "Species": "Shrimp",
+    "2016Shipped": 320,
+    "2017Shipped": 0.92,
+    "2017Projected": 820.99,
+    "2018Projected": 12.25,
+    "TotalProduction": 3739,
+    "Farms": [
+        { "BAP Number": "F10709A", "Organization:": "xxxx", "Country": "Indonesia"},
+        { "BAP Number": "F10709B", "Organization:": "xxxx", "Country": "Indonesia"},
+        { "BAP Number": "F10363E", "Organization:": "xxxx", "Country": "Indonesia"}
+        { "BAP Number": "F10363D", "Organization:": "xxxx", "Country": "Indonesia"}
+        { "BAP Number": "F10363B", "Organization:": "xxxx", "Country": "Indonesia"}
+        { "BAP Number": "F10363C", "Organization:": "xxxx", "Country": "Indonesia"}
+        { "BAP Number": "F10363A", "Organization:": "xxxx", "Country": "Indonesia"}
+    ]
+  },
+  {
+    "BAP Number": "P10209",
+    "Organization": "Tongwei Hainan Aquatic Products Co., Ltd.",
+    "Country": "China",
+    "Species": "Tilapia",
+    "2016Shipped": 0,
+    "2017Shipped": 3.63,
+    "2017Projected": 48.86,
+    "2018Projected": 4.08,
+    "TotalProduction": 4017.32
+  },
+  {
+    "BAP Number": "P10366",
+    "Organization": "Sagar Grandhi Exports Pvt. Ltd. Unit II",
+    "Country": "India",
+    "Species": "Shrimp",
+    "2016Shipped": 1474.38,
+    "2017Shipped": null,
+    "2017Projected": 1256.83,
+    "2018Projected": 14.52,
+    "TotalProduction": 4269
+  },
+  {
+    "BAP Number": "P10128",
+    "Organization": "Zhanjiang Longwei Aquatic Products Industry Co., Ltd.",
+    "Country": "China",
+    "Species": "Shrimp",
+    "2016Shipped": 1335.01,
+    "2017Shipped": 443.84,
+    "2017Projected": 1374.93,
+    "2018Projected": 1147,
+    "TotalProduction": 9779.06
+  },
+  {
+    "BAP Number": "P10248",
+    "Organization": "PT. First Marine Seafoods",
+    "2016Shipped": 227.5,
+    "2017Shipped": null,
+    "2017Projected": 311.97,
+    "2018Projected": 76.23,
+    "TotalProduction": 9628
+  },
+  {
+    "BAP Number": "P10123",
+    "Organization": "Okeanos Food Company Ltd.",
+    "2016Shipped": 313.54,
+    "2017Shipped": 7.67,
+    "2017Projected": 265.43,
+    "2018Projected": 7.67,
+    "TotalProduction": 12134
+  },
+  {
+    "BAP Number": "P10451",
+    "Organization": "Minh Phu Hau Giang Seafood Corporation",
+    "2016Shipped": 0,
+    "2017Shipped": 4.17,
+    "2017Projected": 103.73,
+    "2018Projected": 4.22,
+    "TotalProduction": 20380
+  },
+  {
+    "BAP Number": "P10368",
+    "Organization": "Vinh Hoan Corporation",
+    "2016Shipped": 0,
+    "2017Shipped": 2.95,
+    "2017Projected": null,
+    "2018Projected": 2.95,
+    "TotalProduction": 40000
+  },
+  {
+    "BAP Number": "P10016",
+    "Organization": "PT. Bumi Menara Internusa-Dampit Plant",
+    "2016Shipped": 16.84,
+    "2017Shipped": null,
+    "2017Projected": 63.3,
+    "2018Projected": null,
+    "TotalProduction": 828.65
+  },
+  {
+    "BAP Number": "P10025",
+    "Organization": "Apex Foods Limited",
+    "2016Shipped": 28.12,
+    "2017Shipped": null,
+    "2017Projected": null,
+    "2018Projected": null,
+    "TotalProduction": 1391.86
+  },
+  {
+    "BAP Number": "P10028",
+    "Organization": "Asian Seafoods Coldstorage Public Co., Ltd.",
+    "2016Shipped": 393.71,
+    "2017Shipped": null,
+    "2017Projected": 2599.62,
+    "2018Projected": null,
+    "TotalProduction": 16879.92
+  },
+  {
+    "BAP Number": "P10043",
+    "Organization": "Zhanjiang Guolian Aquatic Products Co., Ltd.",
+    "2016Shipped": 393.71,
+    "2017Shipped": null,
+    "2017Projected": 2599.62,
+    "2018Projected": null,
+    "TotalProduction": 16879.92
+  },
+  {
+    "BAP Number": "P10059",
+    "Organization": "Kitchens Of The Ocean (Thailand) Ltd.",
+    "2016Shipped": 18.51,
+    "2017Shipped": null,
+    "2017Projected": 21.72,
+    "2018Projected": null,
+    "TotalProduction": 1000
+  },
+  {
+    "BAP Number": "P10060",
+    "Organization": "Vietnam Fish One Co., Ltd",
+    "2016Shipped": 534.43,
+    "2017Shipped": null,
+    "2017Projected": 690.97,
+    "2018Projected": null,
+    "TotalProduction": 2215
+  },
+  {
+    "BAP Number": "P10061",
+    "Organization": "SAOTA Foods Joint Stock Company(FIMEX VN)",
+    "2016Shipped": 66.64,
+    "2017Shipped": null,
+    "2017Projected": null,
+    "2018Projected": null,
+    "TotalProduction": 10828
+  },
+  {
+    "BAP Number": "P10066",
+    "Organization": "PT. Bumi Menara Internusa - Surabaya",
+    "2016Shipped": 221.59,
+    "2017Shipped": null,
+    "2017Projected": 277.52,
+    "2018Projected": null,
+    "TotalProduction": 2131.37
+  },
+  {
+    "BAP Number": "P10071",
+    "Organization": "PT. Mega Marine Pride",
+    "2016Shipped": 156.98,
+    "2017Shipped": null,
+    "2017Projected": 1846.09,
+    "2018Projected": null,
+    "TotalProduction": 1609.34
+  },
+  {
+    "BAP Number": "P10085",
+    "Organization": "Minh Phu Seafood Corp.",
+    "2016Shipped": 1464.24,
+    "2017Shipped": null,
+    "2017Projected": 1177.26,
+    "2018Projected": null,
+    "TotalProduction": 29647
+  },
+  {
+    "BAP Number": "P10086",
+    "Organization": "Xian-Ning Seafood Co., Ltd.",
+    "2016Shipped": 652.11,
+    "2017Shipped": null,
+    "2017Projected": 875.85,
+    "2018Projected": null,
+    "TotalProduction": 2707
+  },
+  {
+    "BAP Number": "P10089",
+    "Organization": "Apex Frozen Foods Pvt. Ltd.",
+    "2016Shipped": 146.56,
+    "2017Shipped": 4.05,
+    "2017Projected": 42.47,
+    "2018Projected": null,
+    "TotalProduction": 13739
+  },
+  {
+    "BAP Number": "P10091",
+    "Organization": "May Ao Food Co., Ltd.",
+    "2016Shipped": 0.61,
+    "2017Shipped": null,
+    "2017Projected": 0.61,
+    "2018Projected": null,
+    "TotalProduction": 4669.48
+  },
+  {
+    "BAP Number": "P10102",
+    "Organization": "Nhatrang Seaproducts Company F - 17 - (Nhantrang Seafoods)",
+    "2016Shipped": 220.52,
+    "2017Shipped": null,
+    "2017Projected": 2600.73,
+    "2018Projected": null,
+    "TotalProduction": 2115
+  },
+  {
+    "BAP Number": "P10203",
+    "Organization": "PT. Bahari Makmur Sejati - Serang",
+    "2016Shipped": 822.21,
+    "2017Shipped": null,
+    "2017Projected": 632.8,
+    "2018Projected": null,
+    "TotalProduction": 16671
+  },
+  {
+    "BAP Number": "P10212",
+    "Organization": "M/s. Devi Fisheries Ltd.",
+    "2016Shipped": 252.01,
+    "2017Shipped": null,
+    "2017Projected": 2221.08,
+    "2018Projected": null,
+    "TotalProduction": 1750
+  },
+  {
+    "BAP Number": "P10232",
+    "Organization": "Quoc Viet Seaproducts Processing Trading and Export Co., Ltd.",
+    "2016Shipped": 48.4,
+    "2017Shipped": null,
+    "2017Projected": 109.95,
+    "2018Projected": null,
+    "TotalProduction": 14365
+  },
+  {
+    "BAP Number": "P10260",
+    "Organization": "PT. Bumi Menara Internusa - Lampung",
+    "2016Shipped": 34.01,
+    "2017Shipped": null,
+    "2017Projected": 63.3,
+    "2018Projected": null,
+    "TotalProduction": 1968.72
+  },
+  {
+    "BAP Number": "P10328",
+    "Organization": "Empresas AquaChile S.A  (AKA Cardonal)",
+    "2016Shipped": 68.71,
+    "2017Shipped": null,
+    "2017Projected": 30.92,
+    "2018Projected": null,
+    "TotalProduction": 21032
+  },
+  {
+    "BAP Number": "P10434",
+    "Organization": "M/s. Suryamitra Exim (P) Ltd. - Unit II",
+    "2016Shipped": 368.31,
+    "2017Shipped": null,
+    "2017Projected": 47.64,
+    "2018Projected": null,
+    "TotalProduction": 1413
+  },
+  {
+    "BAP Number": "P10516",
+    "Organization": "Thong Thuan - Nui Tao Industry Shrimp Farm",
+    "2016Shipped": 393.79,
+    "2017Shipped": null,
+    "2017Projected": 137.63,
+    "2018Projected": null,
+    "TotalProduction": 1184
+  },
+  {
+    "BAP Number": "P10517",
+    "Organization": "PT. Bahari Makmur Sejati - Medan",
+    "2016Shipped": 89.55,
+    "2017Shipped": null,
+    "2017Projected": 220.47,
+    "2018Projected": null,
+    "TotalProduction": 4265.79
+  },
+  {
+    "BAP Number": "P10523",
+    "Organization": "M/S Suryamitra Exim Limited Unit 1",
+    "2016Shipped": 46.41,
+    "2017Shipped": null,
+    "2017Projected": 46.41,
+    "2018Projected": null,
+    "TotalProduction": 1253.56
+  }
+]
