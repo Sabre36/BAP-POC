@@ -319,15 +319,21 @@ class PortalPage extends React.Component {
                             </IconButton>
 
                             <Typography variant='title' color='inherit'>Welcome {this.props.userName}  (
-                                <DropDownList style={{display: 'inline-block', width: 'auto', minWidth: '150px', color: '#ffffff'}}
-                                    data={this.props.affiliationNames}
-                                    defaultValue={this.props.defaultAffiliation}
-                                    itemRender={this.itemRender}
-                                    valueRender={this.valueRender}
-                                    header={<div style={{ paddingTop: '20px' }}></div>}
-                                    onChange={this.handleAffiliationChange}
-                                    dataItemKey='defaultAffiliation'
-                                />
+
+                                { this.props.affiliationNames.length === 1 &&
+                                    <span>{this.props.defaultAffiliation}</span>
+                                }
+                                { this.props.affiliationNames.length > 1 &&
+                                    <DropDownList style={{display: 'inline-block', width: 'auto', minWidth: '150px', color: '#ffffff'}}
+                                        data={this.props.affiliationNames}
+                                        defaultValue={this.props.defaultAffiliation}
+                                        itemRender={this.itemRender}
+                                        valueRender={this.valueRender}
+                                        header={<div style={{ paddingTop: '20px' }}></div>}
+                                        onChange={this.handleAffiliationChange}
+                                        dataItemKey='defaultAffiliation'
+                                    />
+                                }
                             )
                         </Typography>
 
