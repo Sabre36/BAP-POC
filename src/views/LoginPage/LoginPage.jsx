@@ -125,6 +125,8 @@ class LoginPage extends React.Component {
             //msgList: _msgList
         });
 
+        //alert(this.state.defaultEntitlement);
+
         await this.props.handleLogin( this.state );
     };
 

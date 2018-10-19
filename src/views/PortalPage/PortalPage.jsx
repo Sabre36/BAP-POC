@@ -30,9 +30,9 @@ import TopNavLinks from 'components/Header/TopNavLinks.jsx';
 
 // Helpers
 import guidGenerator from './Helpers/guidGenerator.jsx';
+import Entitlements from './Helpers/Entitlements.jsx';
 import Countries from './Helpers/Countries.jsx';
 import Species from './Helpers/Species.jsx';
-import Entitlements from './Helpers/Entitlements.jsx';
 import RenderAlerts from './Helpers/RenderAlerts.jsx';
 import TabContainer from './Helpers/TabContainer.jsx';
 
@@ -103,6 +103,22 @@ class PortalPage extends React.Component {
             cols: this.state.isMenuOpen ? 10 : 12,
         })
     }
+
+    // componentWillReceiveProps() {
+    //     console.log("componentWillReceiveProps:" + this.props.defaultEntitlement);
+    // }
+    //
+    // componentWillUpdate() {
+    //     console.log("componentWillUpdate:" + this.props.defaultEntitlement);
+    // }
+    //
+    // componentDidUpdate() {
+    //     console.log("componentDidUpdate:" + this.props.defaultEntitlement);
+    // }
+    //
+    // componentWillUnmount() {
+    //     console.log("componentWillUnmount:" + this.props.defaultEntitlement);
+    // }
 
     async handleSidebar() {
         await this.setState({
@@ -301,7 +317,6 @@ class PortalPage extends React.Component {
                             <IconButton className={classes.menuButton} aria-label='Menu' color='inherit' onClick={this.handleSidebar.bind(this)}>
                                 <MenuIcon />
                             </IconButton>
-
 
                             <Typography variant='title' color='inherit'>Welcome {this.props.userName}  (
                                 <DropDownList style={{display: 'inline-block', width: 'auto', minWidth: '150px', color: '#ffffff'}}

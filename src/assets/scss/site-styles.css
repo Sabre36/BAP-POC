@@ -69,11 +69,12 @@ body {
 legend {
   border-bottom: 0; }
 
-.listStyle {
-  fill: #007bff;
+.listStyleIcon {
+  fill: #7bd34b;
   max-height: 22px;
   max-width: 22px;
-  height: 22px; }
+  height: 22px;
+  margin-left: 11px; }
 
 * {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
@@ -228,9 +229,9 @@ form {
   padding: 0px;
   border-radius: 50%; }
   .rdtDay.rdtToday.rdtActive, .rdtDay.rdtActive, .rdtDay.rdtActive:hover {
-    background-color: #9c27b0 !important;
+    background-color: #2196f3 !important;
     color: #ffffff;
-    box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(156, 39, 176, 0.6); }
+    box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(33, 150, 243, 0.6); }
 
 .rdtDays tr .dow {
   border-bottom: 1px solid #E3E3E3;
@@ -295,7 +296,7 @@ form {
 .rdtPicker th.rdtNext,
 .rdtPicker th.rdtPrev,
 .rdtPicker .rdtTimeToggle {
-  color: #9c27b0; }
+  color: #2196f3; }
 
 .rdtPrev span,
 .rdtNext span {
@@ -371,9 +372,9 @@ td.rdtYear:hover {
     border: 1px solid transparent; }
 
 .rdtCounters .rdtCounter:last-child .rdtCount {
-  color: #9c27b0;
+  color: #2196f3;
   border-radius: 50%;
-  border: 1px solid #9c27b0; }
+  border: 1px solid #2196f3; }
 
 .rdtCounterSeparator {
   padding: 7px;
@@ -439,7 +440,7 @@ td.rdtYear:hover {
     .rdtMonths .rdtYear.rdtActive,
     .rdtYears .rdtMonth.rdtActive,
     .rdtYears .rdtYear.rdtActive {
-      background-color: #9c27b0 !important;
+      background-color: #2196f3 !important;
       color: #ffffff; }
 
 /* Slider */

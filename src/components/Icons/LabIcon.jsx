@@ -7,7 +7,7 @@ class LabIcon extends React.Component {
 
     render() {
         return (
-            <ReactSVG src={icon} svgClassName="listStyle"  />
+            <ReactSVG src={icon} svgClassName="listStyleIcon"  />
         );
     }
 }

@@ -128,7 +128,7 @@ class App extends React.Component {
                                         affiliationList={this.state.affiliationList}
                                         defaultAffiliation={this.state.defaultAffiliation}
                                         entitlementNames={this.state.entitlementNames}
-                                        defaultEntitlements={this.state.defaultEntitlements}
+                                        defaultEntitlement={this.state.defaultEntitlement}
                                         countries={this.state.countries}
                                         species={this.state.species}
                                     />

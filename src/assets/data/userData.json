@@ -144,6 +144,28 @@
         "isAuthenticated": true,
         "affiliations": [
         {
+            "affiliation": "Cook Laboratories",
+            "key": "5bbf8e9fc833e3753329027f",
+            "role": "user",
+            "alerts": [
+              { "message": "The system will be down for maintainence on Friday Oct 5, 2018 at 7:00PM EST", "type": "info" }
+            ],
+            "entitlements": [
+            {
+                "entitlement": "Labs",
+                "filters": []
+              },{
+                "entitlement": "Non-conformities",
+                "filters": [
+                    { "species": ["Shrimp", "Tilapia"] },
+                    { "countries": ["China", "India", "Thailand", "Viet Nam"] }
+                ]
+              },{
+                "entitlement": "Notifications",
+                "filters": []
+              }
+            ]
+        },{
             "affiliation": "Aquastar",
             "key": "5bbf8e9f737b4638e64cc9cc",
             "role": "admin",
@@ -168,34 +190,6 @@
                 "filters": [
                     { "species": ["Pangasius", "Salmon", "Shrimp", "Tilapia"] },
                     { "countries": ["Bangladesh", "China", "Chile", "Indonesia"] }
-                ]
-              }
-            ]
-        },{
-            "affiliation": "Walmart",
-            "key": "5bbf8e9fc833e3753329027f",
-            "role": "user",
-            "alerts": [
-              { "message": "The system will be down for maintainence on Friday Oct 5, 2018 at 7:00PM EST", "type": "info" }
-            ],
-            "entitlements": [
-            {
-                "entitlement": "Non-conformities",
-                "filters": [
-                    { "species": ["Shrimp", "Tilapia"] },
-                    { "countries": ["China", "India", "Thailand", "Viet Nam"] }
-                ]
-              },{
-                "entitlement": "Labs",
-                "filters": [
-                    { "species": ["Shrimp", "Tilapia"] },
-                    { "countries": ["China", "India", "Thailand", "Viet Nam"] }
-                ]
-              },{
-                "entitlement": "Non-conformities",
-                "filters": [
-                    { "species": ["Shrimp", "Tilapia"] },
-                    { "countries": ["China", "India", "Thailand", "Viet Nam"] }
                 ]
               }
             ]
