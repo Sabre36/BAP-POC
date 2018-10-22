@@ -11,7 +11,6 @@ import CertificationPage from "views/CertificationPage/CertificationPage.jsx";
 import FacilitiesPage from "views/FacilitiesPage/FacilitiesPage.jsx";
 import PortalPage from "views/PortalPage/PortalPage.jsx";
 import { Helmet } from "react-helmet";
-//import { SnackbarProvider } from 'notistack';
 
 import "assets/scss/site-styles.css";
 
@@ -58,8 +57,8 @@ class App extends React.Component {
         window.previousLocation = this.props.location;
     }
 
-    handleLogin(childState){
-        this.setState({
+     handleLogin(childState){
+         this.setState({
             authenticated: childState.authenticated,
             userName: childState.userName,
             defaultRole: childState.defaultRole,
@@ -68,13 +67,13 @@ class App extends React.Component {
             defaultAffiliation: childState.defaultAffiliation,
             entitlementNames: childState.entitlementNames,
             defaultEntitlement: childState.defaultEntitlement,
+            alertList: childState.alertList,
             countries:  childState.countries,
             species: childState.species,
         });
 
-        //console.log('%cCurrent login: ' + JSON.stringify(this.state), "color: magenta");
+        console.log('%cCurrent login: ' + JSON.stringify(this.state), "color: magenta");
         hist.push('/portal');
-
     }
 
     render() {
@@ -129,6 +128,7 @@ class App extends React.Component {
                                         defaultAffiliation={this.state.defaultAffiliation}
                                         entitlementNames={this.state.entitlementNames}
                                         defaultEntitlement={this.state.defaultEntitlement}
+                                        alertList={this.state.alertList}
                                         countries={this.state.countries}
                                         species={this.state.species}
                                     />

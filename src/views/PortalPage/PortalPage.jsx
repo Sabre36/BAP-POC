@@ -90,7 +90,7 @@ class PortalPage extends React.Component {
         filterList: this.props.filterList,
         species: this.props.species,
         countries: this.props.countries,
-        message: null,
+        alertList: this.props.alertList,
         displayAlert: true,
         isMenuOpen: true,
         cols: 10,
@@ -181,6 +181,7 @@ class PortalPage extends React.Component {
         handleAffiliationChange = async (event) => {
             let _defaultAffiliation = event.target.value;
             let _entitlementNames = [];
+            let _alertList = [];
             let _defaultEntitlement = null;
 
             for (let i=0; i<this.props.affiliationList.length; i++) {
@@ -189,6 +190,10 @@ class PortalPage extends React.Component {
                     for (let en=0; en<this.props.affiliationList[i].entitlements.length; en++) {
                         let name = this.props.affiliationList[i].entitlements[en].entitlement;
                         _entitlementNames.push(name);
+                    }
+
+                    for (let al=0; al<this.props.affiliationList[i].alerts.length; al++) {
+                        _alertList.push(this.props.affiliationList[i].alerts[al]);
                     }
 
                     _defaultEntitlement = _entitlementNames[0];
@@ -200,6 +205,7 @@ class PortalPage extends React.Component {
                 defaultAffiliation: _defaultAffiliation,
                 entitlementNames: _entitlementNames,
                 defaultEntitlement: _defaultEntitlement,
+                alertList: _alertList,
                 tabIndex: 0
             });
             console.log('%cRendering state: ' + JSON.stringify(this.state), 'color:orange');
@@ -309,8 +315,6 @@ class PortalPage extends React.Component {
                         }}
                         {...rest}
                     />
-                    <RenderAlerts alerts={this.props.msgList}/>
-
 
                     <AppBar position='sticky' style={{backgroundColor: '#1463AC', position: 'fixed', top: '110px'}}>
                         <Toolbar>
@@ -421,6 +425,7 @@ class PortalPage extends React.Component {
                 </OffCanvasMenu>
             </OffCanvas>
         </div>
+        <RenderAlerts alerts={this.state.alertList}/>
     </div>
 );
 }

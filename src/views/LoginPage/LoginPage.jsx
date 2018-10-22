@@ -40,8 +40,7 @@ class LoginPage extends React.Component {
             countries: [],
             species: [],
             filterList: [],
-            alertList: [],
-            msgList: []
+            alertList: []
         };
 
         this.initialState = this.state;  // sets react-simple-storage
@@ -62,8 +61,8 @@ class LoginPage extends React.Component {
         let _species = [];
         let _countries = [];
         let _defaultRole = null;
-        // let _alertList = [];
-        // let _msgList = [];
+        let _alertList = [];
+
 
         for (let i=0; i<userData.length; i++){
             if (userData[i].userName === this.state.userName) {
@@ -92,11 +91,15 @@ class LoginPage extends React.Component {
             _entitlementNames.push(name);
         }
 
+        for (let al=0; al<_affiliationList[0].alerts.length; al++) {
+            _alertList.push(_affiliationList[0].alerts[al]);
+        }
+
+
         //_entitlementList = _affiliationList[0].entitlements[0];
         _defaultEntitlement = _affiliationList[0].entitlements[0].entitlement;
         _filterList = _affiliationList[0].entitlements[0].filters;
         _defaultRole = _affiliationList[0].role;
-        //_alertList = _affiliationList[0].alerts;
 
         // Gets a unique list of message
         //_msgList = uniqueObjects(_msgList, ['message']);
@@ -105,8 +108,8 @@ class LoginPage extends React.Component {
         console.log("%cAFFILIATIONS: " + JSON.stringify(_affiliationNames) + " (default: " + _defaultAffiliation + ")", "color:green");
         console.log("%cENTITLEMENTS: " + JSON.stringify(_entitlementNames) + " (default:" + _defaultEntitlement + ")",  "color:green");
         //console.log("%cFILTER LIST: " + JSON.stringify(_filterList));
-        console.log("%cSPECIES: " + JSON.stringify(_species),  "color:green");
-        console.log("%cCOUNTRIES: " + JSON.stringify(_countries),  "color:green");
+        // console.log("%cSPECIES: " + JSON.stringify(_species),  "color:green");
+        // console.log("%cCOUNTRIES: " + JSON.stringify(_countries),  "color:green");
         //console.log("%cALERT LIST: " + JSON.stringify(_alertList), "color: green");
         //console.log("%cMESSAGE SUBSET: " + JSON.stringify(_msgList), "color: green");
 
@@ -121,11 +124,10 @@ class LoginPage extends React.Component {
             filterList: _filterList,
             species: _species,
             countries: _countries,
-            //alertList: _alertList,
-            //msgList: _msgList
+            alertList: _alertList,
         });
 
-        //alert(this.state.defaultEntitlement);
+        //alert(JSON.stringify(this.state.alertList));
 
         await this.props.handleLogin( this.state );
     };

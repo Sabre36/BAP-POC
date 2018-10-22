@@ -11,11 +11,11 @@
         "Farms": ["F10115","F10607","F10446"],
         "FarmData": [
             {
-                "BAPId": "F10115", "Production2Star": "99"
+                "BAPId": "F10115", "Name": "PT. Bahari Makmur Sejati - Medan #1", "Country": "Indonesia"
             },{
-                "BAPId": "F10607", "Production2Star": "88"
+                "BAPId": "F10607", "Name": "PT. Bahari Makmur Sejati - Medan #2", "Country": "Indonesia"
             },{
-                "BAPId": "F10446", "Production2Star": "66"                                
+                "BAPId": "F10446", "Name": "PT. Bahari Makmur Sejati - Medan #3", "Country": "Indonesia"
             }
         ]
     },
@@ -28,7 +28,15 @@
         "Shipped2017": null,
         "Projected2017": 395,
         "Shipped2016": 278.7,
-        "Farms": ["F10167F","F10167C"]
+        "Farms": ["F10167F","F10167C"],
+        "FarmData": [
+            {
+                "BAPId": "F10167F", "Name": "Xian-Ning Seafood Co., Ltd. #1", "Country": "Thailand"
+            },{
+                "BAPId": "F10167C", "Name": "Xian-Ning Seafood Co., Ltd. #2", "Country": "Thailand"
+            }
+        ]
+
     },
     {
         "Name": "Coastal Corporation Ltd.",
@@ -39,7 +47,12 @@
         "Shipped2017": null,
         "Projected2017": 266.39,
         "Shipped2016": 234.79,
-        "Farms": ["F10447"]
+        "Farms": ["F10447"],
+        "FarmData": [
+            {
+                "BAPId": "F10447", "Name": "Coastal Corporation Ltd. #1", "Country": "India"
+            }
+        ]
     },
     {
         "Name": "Procesadora Aguas Clara Ltda.",
@@ -71,7 +84,8 @@
         "Production2Star": 104,
         "Shipped2017": null,
         "Projected2017": 59.89,
-        "Shipped2016": 123.41
+        "Shipped2016": 123.41,
+        "Farms": ["F10447"]
     },
     {
         "Name": "Gemini Sea Food Ltd.",
@@ -81,7 +95,8 @@
         "Production2Star": 58,
         "Shipped2017": null,
         "Projected2017": 0.05,
-        "Shipped2016": 0.04
+        "Shipped2016": 0.04,
+        "Farms": ["F10447"]
     },
     {
         "Name": "PT. Fresh On Time Seafood",
@@ -91,7 +106,8 @@
         "Production2Star": 174,
         "Shipped2017": null,
         "Projected2017": 108.9,
-        "Shipped2016": 109.68
+        "Shipped2016": 109.68,
+        "Farms": ["F10447", "XXXX"]
     },
     {
         "Name": "Castlerock Fisheries Pvt. Ltd.",

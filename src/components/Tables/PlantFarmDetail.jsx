@@ -6,18 +6,44 @@ import { orderBy } from '@progress/kendo-data-query';
 import products from './products.json';
 import plantData from './../../assets/data/plantData.json';
 
+class cellWithBackGround extends React.Component {
+    render() {
+
+        const style = {
+            textAlign: "right",
+        };
+
+        return (
+            <td style={style}>
+                {this.props.dataItem[this.props.field]}
+            </td>
+        );
+    }
+}
+
 class DetailComponent extends GridDetailRow {
     render() {
         const dataItem = this.props.dataItem;
         return (
             <section>
 
-                <p><strong>Number of Farms:</strong> {dataItem.Farms.length}</p>
-                <p><strong>Farms:</strong> {dataItem.Farms}</p>
-                <p><strong>2016 - Production (2 Star):</strong> {dataItem.Production2Star} (m/t)</p>
+                <h4><strong>Farms</strong></h4>
+
+                {dataItem.FarmData.map((item) =>
+                    <p><strong style={{marginRight: "8px"}}>{item.BAPId}:</strong> {item.Name}, {item.Country}</p>
+                )}
+                {/* {dataItem.FarmData.map((item) =>
+                    <p>{item}</p>
+                )} */}
+
+
+                {/* for (let i=0; i < {dataItem.Farms.length}; i++) {
+                    <p><strong>Farm:\t</strong>{dataItem.Farms[i]}</p>
+                } */}
+                {/* <p><strong>2016 - Production (2 Star):</strong> {dataItem.Production2Star} (m/t)</p>
                 <p><strong>2016 - Shipped:</strong> {dataItem.Shipped2016} (m/t)</p>
                 <p><strong>2017 - Projected:</strong> {dataItem.Projected2017} (m/t)</p>
-                <p><strong>2017 - Shipped:</strong> {dataItem.Shipped2017} {dataItem.Shipped2017 > 0 && <span>(m/t)</span> }</p>
+                <p><strong>2017 - Shipped:</strong> {dataItem.Shipped2017} {dataItem.Shipped2017 > 0 && <span>(m/t)</span> }</p> */}
             </section>
         );
     }
@@ -70,13 +96,14 @@ class PlantFarmDetail extends React.Component {
                 expandField="expanded"
                 onExpandChange={this.expandChange}
             >
-                <Column field="BAPId" title="BAP ID" />
-                <Column field="Name" title="Plant Name" width="300px" />
+                <Column field="BAPId" title="BAP ID" minResizableWidth="110" filterable={true}  />
+                <Column field="Name" title="Plant Name" minResizableWidth="200" />
                 <Column field="Country" title="Country"  />
-                <Column field="Production2Star" title="2 Star Production" />
-                <Column field="Shipped2016" title="2016 Shipped" />
-                <Column field="Projected2017" title="2017 Projected" />
-                <Column field="Shipped2017" title="2017 Shipped" />
+                <Column field="Farms.length" title="# Farms" />
+                <Column field="Production2Star" title="2 Star Production" format="{0:n01}" cell={cellWithBackGround}/>
+                <Column field="Shipped2016" title="2016 Shipped" format="{0:n01}" cell={cellWithBackGround}/>
+                <Column field="Projected2017" title="2017 Projected" format="{0:n01}" cell={cellWithBackGround} />
+                <Column field="Shipped2017" title="2017 Shipped" format="{0:n01}" cell={cellWithBackGround} />
             </Grid>
         );
     }

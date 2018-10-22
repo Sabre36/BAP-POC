@@ -9,7 +9,7 @@
             "key": "5bbf8e9fdd0dd0957a59a2b6",
             "role": "user",
             "alerts": [
-                { "message": "The system will be down for maintainence on Friday Oct 15, 2018 at 6:00PM EST", "type": "info" }
+                { "message": "The system will be down for maintainence on Friday Nov 15, 2018 at 12.00 EST", "type": "info" }
             ],
             "entitlements": [
             {
@@ -30,6 +30,12 @@
                     { "species": ["Shrimp", "Tilapia"] },
                     { "countries": ["China", "India", "Thailand", "Viet Nam"] }
                 ]
+            },{
+              "entitlement": "Plant and farm detail",
+              "filters": [
+                { "species": ["Shrimp", "Tilapia"] },
+                { "countries": ["China", "India", "Thailand", "Viet Nam"] }
+              ]
             },{
                 "entitlement": "Supply chain",
                 "filters": [
@@ -144,7 +150,7 @@
         "isAuthenticated": true,
         "affiliations": [
         {
-            "affiliation": "Cook Laboratories",
+            "affiliation": "Cook Aquaculture",
             "key": "5bbf8e9fc833e3753329027f",
             "role": "user",
             "alerts": [
