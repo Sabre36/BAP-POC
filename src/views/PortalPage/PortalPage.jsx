@@ -91,7 +91,7 @@ class PortalPage extends React.Component {
         species: this.props.species,
         countries: this.props.countries,
         alertList: this.props.alertList,
-        displayAlert: true,
+        alertDismissed: false,
         isMenuOpen: true,
         cols: 10,
     }
@@ -174,6 +174,7 @@ class PortalPage extends React.Component {
                 defaultEntitlement: index,
                 countries: _countries,
                 species: _species,
+                alertDismissed: true,
                 //isMenuOpened: !this.state.isMenuOpened
             });
         };
@@ -206,7 +207,8 @@ class PortalPage extends React.Component {
                 entitlementNames: _entitlementNames,
                 defaultEntitlement: _defaultEntitlement,
                 alertList: _alertList,
-                tabIndex: 0
+                tabIndex: 0,
+                alertDismissed: false
             });
             console.log('%cRendering state: ' + JSON.stringify(this.state), 'color:orange');
         }
@@ -425,7 +427,10 @@ class PortalPage extends React.Component {
                 </OffCanvasMenu>
             </OffCanvas>
         </div>
-        <RenderAlerts alerts={this.state.alertList}/>
+
+        { !this.state.alertDismissed &&
+            <RenderAlerts alerts={this.state.alertList}/>
+        }
     </div>
 );
 }
