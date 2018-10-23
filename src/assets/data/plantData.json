@@ -10,6 +10,7 @@
         "TotalProduction": 3410.0,
         "Production2Star": 2350.0,
         "Delta": 1060,
+        "Percent": 33.166,
         "Farms": 9,
         "FarmData": [
             {
@@ -45,6 +46,7 @@
         "Projected2018": 2949.18,
         "Shipped2016": 0,
         "Delta": -528.18,
+        "Percent": -19.67,
         "Farms": 5,
         "FarmData": [
             {
@@ -69,6 +71,8 @@
         "Shipped2017": null,
         "Projected2017": 3129.49,
         "Shipped2016": 3356.25,
+        "Delta": 199,
+        "Percent": 11.5,
         "Farms": 3,
         "FarmData": [
             {
@@ -89,6 +93,8 @@
         "Shipped2017": null,
         "Projected2017": 395,
         "Shipped2016": 278.7,
+        "Delta": 1060,
+        "Percent": 5,
         "Farms": 2,
         "FarmData": [
             {
@@ -108,6 +114,8 @@
         "Shipped2017": null,
         "Projected2017": 266.39,
         "Shipped2016": 234.79,
+        "Delta": 1060,
+        "Percent": 60,
         "Farms": 1,
         "FarmData": [
             {
@@ -124,6 +132,8 @@
         "Shipped2017": null,
         "Projected2017": 145.19,
         "Shipped2016": 19.06,
+        "Delta": 1060,
+        "Percent": 80,
         "Farms": 1
     },
     {
@@ -135,6 +145,8 @@
         "Shipped2017": null,
         "Projected2017": 152.9,
         "Shipped2016": 136.39,
+        "Delta": 1060,
+        "Percent": -10,
         "Farms": 1
     },
     {
@@ -146,6 +158,8 @@
         "Shipped2017": null,
         "Projected2017": 59.89,
         "Shipped2016": 123.41,
+        "Delta": 1060,
+        "Percent": -50,
         "Farms": 1
     },
     {
@@ -157,6 +171,8 @@
         "Shipped2017": null,
         "Projected2017": 0.05,
         "Shipped2016": 0.04,
+        "Delta": 1060,
+        "Percent": -100,
         "Farms": 1
     },
     {
