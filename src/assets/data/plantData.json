@@ -1,5 +1,66 @@
 [
     {
+        "Name": "PT. Panca Mitra MultiPerdana",
+        "Country": "Indonesia",
+        "facility": "P10053:F10815C,F10815A,F10815B,F10974E,F10974C,F10974B,F10974D,F10644,F11024",
+        "BAPId": "P10053",
+        "Shipped2016": 61.05,
+        "Projected2017": 2439.88,
+        "Shipped2017": null,
+        "TotalProduction": 3410.0,
+        "Production2Star": 2350.0,
+        "Delta": 1060,
+        "Farms": 9,
+        "FarmData": [
+            {
+                "BAPId": "F10815C", "Name": "Panca Mitra IOM 1 - Empang Kuningan", "Country": "Indonesia", "Expires": "04-18-2019", "PlantsServed": 1
+            },{
+                "BAPId": "F10815A", "Name": "Panca Mitra IOM 1 - Kampe Mandiri", "Country": "Indonesia", "Expires": "04-18-2019", "PlantsServed": 2
+            },{
+                "BAPId": "F10815B", "Name": "Panca Mitra IOM 1 - Karya Bersama Sukses", "Country": "Indonesia", "Expires": "04-18-2019", "PlantsServed": 11
+            },{
+                "BAPId": "F10974E", "Name": "Panca Mitra IOM 2 - Citra Bhirawa Wira Sakti", "Country": "Indonesia", "Expires": "1-22-2019", "PlantsServed": 3
+            },{
+                "BAPId": "F10974C", "Name": "Panca Mitra IOM 2 - Sidojoyo Utama Tanjung Pecinan", "Country": "Indonesia", "Expires": "1-22-2019", "PlantsServed": 2
+            },{
+                "BAPId": "F10974B", "Name": "Panca Mitra IOM 2 - Tambak Pecemengan", "Country": "Indonesia", "Expires": "1-10-2019", "PlantsServed": 2
+            },{
+                "BAPId": "F10974D", "Name": "Panca Mitra IOM 2 - UD. Cahaya Sentra", "Country": "Indonesia", "Expires": "1-10-2019", "PlantsServed": 1
+            },{
+                "BAPId": "F10644", "Name": "PT Permata Citra Nusa 3 - Asembakor", "Country": "Indonesia", "Expires": "01-08-2019", "PlantsServed": 3
+            },{
+                "BAPId": "F11024", "Name": "Sumber Sewu Samudra", "Country": "Indonesia", "Expires": "01-11-2019", "PlantsServed": 1
+            }
+        ]
+    },
+    {
+        "Name": "Guangzhou Luxe Seafood Enterprise Ltd.",
+        "Country": "China",
+        "facility": "P10081:F10247,F10271,F10429,F10105,F10206",
+        "BAPId": "P10081",
+        "TotalProduction": 2421.00,
+        "Production2Star": 11147.05,
+        "Shipped2017": 2443.28,
+        "Projected2017": 2949.18,
+        "Projected2018": 2949.18,
+        "Shipped2016": 0,
+        "Delta": -528.18,
+        "Farms": 5,
+        "FarmData": [
+            {
+                "BAPId": "F10247", "Name": "Guangzhou Luxe Seafood Enterprise Ltd.", "Country": "China", "Expires": "08-09-2019", "PlantsServed": 1
+            },{
+                "BAPId": "F10271", "Name": "The Second Aquafarm of Zhuhai Fumin Tilapia Aquafarm & Research Co., Ltd.", "Country": "China", "Expires": "04-18-2019", "PlantsServed": 2
+            },{
+                "BAPId": "F10429", "Name": "The Third Aquafarm of Zhuhai Fumin Tilapia Aquafarm & Research Co., Ltd.", "Country": "China", "Expires": "04-18-2019", "PlantsServed": 11
+            },{
+                "BAPId": "F10105", "Name": "Zhuhai Jiayi Aquatic Limit Company", "Country": "China", "Expires": "04-03-2019", "PlantsServed": 3
+            },{
+                "BAPId": "F10206", "Name": "Zhuhai Yihai Aquatic Co., Ltd.", "Country": "China", "Expires": "08-09-2019", "PlantsServed": 2
+            }
+        ]
+    },
+    {
         "Name": "PT. Bahari Makmur Sejati - Medan",
         "Country": "Indonesia",
         "facility": "P10517:F10115,F10607,F10446",
@@ -8,7 +69,7 @@
         "Shipped2017": null,
         "Projected2017": 3129.49,
         "Shipped2016": 3356.25,
-        "Farms": ["F10115","F10607","F10446"],
+        "Farms": 3,
         "FarmData": [
             {
                 "BAPId": "F10115", "Name": "PT. Bahari Makmur Sejati - Medan #1", "Country": "Indonesia"
@@ -28,7 +89,7 @@
         "Shipped2017": null,
         "Projected2017": 395,
         "Shipped2016": 278.7,
-        "Farms": ["F10167F","F10167C"],
+        "Farms": 2,
         "FarmData": [
             {
                 "BAPId": "F10167F", "Name": "Xian-Ning Seafood Co., Ltd. #1", "Country": "Thailand"
@@ -47,7 +108,7 @@
         "Shipped2017": null,
         "Projected2017": 266.39,
         "Shipped2016": 234.79,
-        "Farms": ["F10447"],
+        "Farms": 1,
         "FarmData": [
             {
                 "BAPId": "F10447", "Name": "Coastal Corporation Ltd. #1", "Country": "India"
@@ -63,7 +124,7 @@
         "Shipped2017": null,
         "Projected2017": 145.19,
         "Shipped2016": 19.06,
-        "Farms": ["F10502B"]
+        "Farms": 1
     },
     {
         "Name": "Nekkanti Sea Foods Limited - Kakinada Plant",
@@ -74,7 +135,7 @@
         "Shipped2017": null,
         "Projected2017": 152.9,
         "Shipped2016": 136.39,
-        "Farms": ["F10847"]
+        "Farms": 1
     },
     {
         "Name": "Sprint Exports Private Limited",
@@ -85,7 +146,7 @@
         "Shipped2017": null,
         "Projected2017": 59.89,
         "Shipped2016": 123.41,
-        "Farms": ["F10447"]
+        "Farms": 1
     },
     {
         "Name": "Gemini Sea Food Ltd.",
@@ -96,7 +157,7 @@
         "Shipped2017": null,
         "Projected2017": 0.05,
         "Shipped2016": 0.04,
-        "Farms": ["F10447"]
+        "Farms": 1
     },
     {
         "Name": "PT. Fresh On Time Seafood",
@@ -107,7 +168,7 @@
         "Shipped2017": null,
         "Projected2017": 108.9,
         "Shipped2016": 109.68,
-        "Farms": ["F10447", "XXXX"]
+        "Farms": 2
     },
     {
         "Name": "Castlerock Fisheries Pvt. Ltd.",
@@ -117,7 +178,8 @@
         "Production2Star": 84,
         "Shipped2017": null,
         "Projected2017": 4.99,
-        "Shipped2016": null
+        "Shipped2016": null,
+        "Farms": 1
     },
     {
         "facility": "P10066:F10443,F10060",
@@ -125,7 +187,8 @@
         "Production2Star": 854,
         "Shipped2017": null,
         "Projected2017": 768.97,
-        "Shipped2016": 813.79
+        "Shipped2016": 813.79,
+        "Farms": 1
     },
     {
         "facility": "P10293:F10434",
@@ -414,14 +477,6 @@
         "Shipped2017": null,
         "Projected2017": 2041.74,
         "Shipped2016": 1296.73
-    },
-    {
-        "facility": "P10053:F10815C,F10815A,F10815B,F10974E,F10974C,F10974B,F10974D,F10644,F11024",
-        "BAPId": "P10053",
-        "Production2Star": 2350.50,
-        "Shipped2017": null,
-        "Projected2017": 464.18,
-        "Shipped2016": 753.99
     },
     {
         "facility": "P10203:F10115,F10607,F10446",
@@ -814,14 +869,6 @@
         "Shipped2017": null,
         "Projected2017": null,
         "Shipped2016": 57.11
-    },
-    {
-        "facility": "P10081:F10247,F10271,F10429,F10105,F10206",
-        "BAPId": "P10081",
-        "Production2Star": 11147.05,
-        "Shipped2017": null,
-        "Projected2017": null,
-        "Shipped2016": 109.37
     },
     {
         "facility": "P10134:F10488",
