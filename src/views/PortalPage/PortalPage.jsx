@@ -266,6 +266,9 @@ class PortalPage extends React.Component {
                     minWidth: "110px",
                     marginTop: "15px"
                 },
+                offCanvas: {
+                    overFlowX: 'hidden',
+                },
                 offCanvasMenu: {
                     marginTop: "172px",
                     height: "100vh",
@@ -279,7 +282,10 @@ class PortalPage extends React.Component {
                     //backgroundSize: "cover",
                     backgroundImage: `url(${Background})`,
                     borderRight: "1px solid paleblue",
-                    boxShadow: "inset 0 0 0 1000px rgba(0,0,0,.35)"
+                    boxShadow: "inset 0 0 0 1000px rgba(0,0,0,.35)",
+
+                    overflowX: 'hidden'
+
                 },
                 offCanvasContainer: {
                     //marginTop: "172px",
@@ -359,7 +365,7 @@ class PortalPage extends React.Component {
 
                 <div style={{zIndex: '4', margin: '55px', color: '#000'}}>
 
-                    <OffCanvas width={275} transitionDuration={300} isMenuOpened={this.state.isMenuOpened} position={"left"}>
+                    <OffCanvas width={275} transitionDuration={300} isMenuOpened={this.state.isMenuOpened} position={"left"} style={styles.offCanvas}>
                         <OffCanvasBody className={styles.bodyClass} >
                             <div style={{marginTop: '-50px'}}>
                                 <GridContainer>

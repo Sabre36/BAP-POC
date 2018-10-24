@@ -14,7 +14,7 @@
         "Farms": 9,
         "AvgFarm": 261.1,
         "AdjFarm": 118.2,
-        "FarmPlantRatio": "1:3.6",
+        "FarmPlantRatio": "1:2.8",
         "FarmData": [
             {
                 "BAPId": "F10815C", "Name": "Panca Mitra IOM 1 - Empang Kuningan", "Country": "Indonesia", "Expires": "04-18-2019", "PlantsServed": 1
@@ -49,11 +49,11 @@
         "Projected2018": 2949.18,
         "Shipped2016": 0,
         "Delta": -528.18,
-        "Risk": -19.67,
+        "Risk": -21.82,
         "Farms": 5,
         "AvgFarm": 229.41,
         "AdjFarm": 118.2,
-        "FarmPlantRatio": "1:2.9",
+        "FarmPlantRatio": "1:3.4",
         "FarmData": [
             {
                 "BAPId": "F10247", "Name": "Guangzhou Luxe Seafood Enterprise Ltd.", "Country": "China", "Expires": "08-09-2019", "PlantsServed": 1
@@ -73,12 +73,13 @@
         "Country": "Indonesia",
         "facility": "P10517:F10115,F10607,F10446",
         "BAPId": "P10517",
-        "Production2Star": 2049.25,
+        "TotalProduction": 3510,
+        "Production2Star": 3210.25,
         "Shipped2017": null,
-        "Projected2017": 3129.49,
+        "Projected2017": 3000.00,
         "Shipped2016": 3356.25,
-        "Delta": 199,
-        "Risk": 11.5,
+        "Delta": 510,
+        "Risk": 17,
         "Farms": 3,
         "FarmData": [
             {
@@ -95,12 +96,13 @@
         "Country": "Thailand",
         "facility": "P10086:F10167F,F10167C",
         "BAPId": "P10086",
+        "TotalProduction": 202.2,
         "Production2Star": 107,
         "Shipped2017": null,
         "Projected2017": 395,
         "Shipped2016": 278.7,
-        "Delta": 1060,
-        "Risk": 5,
+        "Delta": -193,
+        "Risk": -48.86,
         "Farms": 2,
         "FarmData": [
             {
@@ -116,12 +118,13 @@
         "Country": "India",
         "facility": "P10227:F10447",
         "BAPId": "P10227",
+        "TotalProduction": 200.1,
         "Production2Star": 174.29,
         "Shipped2017": null,
         "Projected2017": 266.39,
         "Shipped2016": 234.79,
-        "Delta": 1060,
-        "Risk": 50.4,
+        "Delta": -64.9,
+        "Risk": -24.4,
         "Farms": 1,
         "FarmData": [
             {
@@ -134,12 +137,13 @@
         "Country": "Chile",
         "facility": "P10329:F10502B",
         "BAPId": "P10329",
+        "TotalProduction": 70,
         "Production2Star": 62.5,
         "Shipped2017": null,
         "Projected2017": 145.19,
         "Shipped2016": 19.06,
-        "Delta": 1060,
-        "Risk": 106.2,
+        "Delta": -75.9,
+        "Risk": -51.79,
         "Farms": 1
     },
     {
@@ -147,50 +151,55 @@
         "Country": "India",
         "facility": "P10575:F10847",
         "BAPId": "P10575",
+        "TotalProduction": 80,
         "Production2Star": 188.33,
         "Shipped2017": null,
         "Projected2017": 152.9,
         "Shipped2016": 136.39,
-        "Delta": 1060,
-        "Risk": -127.78,
-        "Farms": 1
+        "Delta": 50,
+        "Risk": 32.89,
+        "Farms": 2
     },
     {
         "Name": "Sprint Exports Private Limited",
         "Country": "India",
         "facility": "P10263:F10505",
         "BAPId": "P10263",
+        "TotalProduction": 60,
         "Production2Star": 104,
         "Shipped2017": null,
         "Projected2017": 59.89,
         "Shipped2016": 123.41,
-        "Delta": 1060,
-        "Risk": -21,
-        "Farms": 1
+        "Delta": 0.11,
+        "Risk": 0.18,
+        "Farms": 3
     },
     {
         "Name": "Gemini Sea Food Ltd.",
         "Country": "Banglasdesh",
         "facility": "P10103:F11026",
         "BAPId": "P10103",
+        "TotalProduction": 58,
         "Production2Star": 58,
         "Shipped2017": null,
-        "Projected2017": 0.05,
+        "Projected2017": 265,
         "Shipped2016": 0.04,
-        "Delta": 1060,
-        "Risk": -33.5,
-        "Farms": 1
+        "Delta": null,
+        "Risk": null,
+        "Farms": 3
     },
     {
         "Name": "PT. Fresh On Time Seafood",
         "Country": "Indonesia",
         "facility": "P10637:F11023",
         "BAPId": "P10637",
+        "TotalProduction": 80,
         "Production2Star": 174,
         "Shipped2017": null,
         "Projected2017": 108.9,
         "Shipped2016": 109.68,
-        "Risk": -202.5,
+        "Delta": -28,
+        "Risk": -25.93,
         "Farms": 2
     },
     {
@@ -198,6 +207,7 @@
         "Country": "India",
         "facility": "P10440:F10609",
         "BAPId": "P10440",
+        "TotalProduction": null,
         "Production2Star": 84,
         "Shipped2017": null,
         "Projected2017": 4.99,

@@ -9,15 +9,21 @@ import GridItem from "components/Grid/GridItem.jsx";
 
 import { orderBy } from '@progress/kendo-data-query';
 
-import products from './products.json';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+
 import plantData from './../../assets/data/plantData.json';
 
 const red = 0,
-    yellow = 60,
-    green = 120,
-    turquoise = 180,
-    blue = 240,
-    pink = 300;
+yellow = 60,
+green = 120,
+turquoise = 180,
+blue = 240,
+pink = 300;
 
 function round(value, decimals) {
     return Number(Math.round(value +'e'+ decimals) +'e-'+ decimals).toFixed(decimals);
@@ -32,9 +38,9 @@ function formatNum(value, decimals) {
 
 function formatMT(value, units) {
     if (isNaN(value) || value <= 0)
-        return '-';
+    return '-';
     else
-        return value + units;
+    return value + units;
 }
 
 function hsl_col_perc(percent, start, end) {
@@ -50,20 +56,22 @@ function colorMap(value) {
     let isNeg = value < 0 ? true : false;
     let absValue = round(Math.abs(value),0);
 
-    if (isNeg) {
+    if ( isNaN(value) || value === null ) {
+        color = 'transparent';
+    } else if (isNeg) {
         if (absValue >= 0 && absValue < 25)
-            color = '#FFCC03';
-        else if (absValue >= 25 && absValue <= 50)
-            color = '#F89C05';
-        else if (absValue > 50)
-            color = '#ab0520';
+        color = '#FFCC03';
+        else if (absValue >= 25 && absValue < 50)
+        color = '#F89C05';
+        else if (absValue >= 50)
+        color = '#ab0520';
     } else {
-        if (absValue >= 0 && absValue <= 25)
-            color = '#65B12F';
-        else if (absValue >= 25 && absValue <= 50)
-            color = '#43A546';
-        else if (absValue > 50 )
-            color = '#37611A';
+        if (absValue >= 0 && absValue < 25)
+        color = '#65B12F';
+        else if (absValue >= 25 && absValue < 50)
+        color = '#43A546';
+        else if (absValue >= 50 )
+        color = '#37611A';
     }
 
     return color;
@@ -73,7 +81,9 @@ function colorMap(value) {
 class cellPercentDiff extends React.Component {
     render() {
         let value = this.props.dataItem[this.props.field];
-        //value = value < 0 ? 0 : value;
+        let strValue = isNaN(value) ? value : round(this.props.dataItem[this.props.field], 1).toString() + "%";
+
+
 
         const style = {
             textAlign: "center",
@@ -87,7 +97,8 @@ class cellPercentDiff extends React.Component {
         return (
             <td style={{padding: "4px"}}>
                 <div style={style}>
-                    {round(this.props.dataItem[this.props.field], 1)}
+                    {/* {round(this.props.dataItem[this.props.field], 1)} */}
+                    {strValue}
                 </div>
             </td>
         );
@@ -126,9 +137,11 @@ class cellFloatRight extends React.Component {
 class cellFloatRightColorize extends React.Component {
     render() {
         const value = formatNum(this.props.dataItem[this.props.field],1);
+         let strValue = (isNaN(value) || value < 0) ? value : "+" + value.toString();
+
         return (
             <td style={{ color: value > 0 ? 'initial' : '#ab0520', textAlign: 'right'}}>
-                {value}
+                {strValue}
             </td>
         );
     }
@@ -164,6 +177,7 @@ class DetailComponent extends GridDetailRow {
         const dataItem = this.props.dataItem;
         const { classes, ...rest } = this.props;
 
+
         return (
 
             <section>
@@ -175,9 +189,9 @@ class DetailComponent extends GridDetailRow {
 
                 {/* TAB 1 */}
                 { this.state.tabIndex === 0 &&
-                    <div>
+                    <Paper>
                         <GridContainer>
-                            <GridItem md={2}>
+                            <GridItem md={3}>
                                 <br/>
                                 <div style={{textAlign: 'right'}}>
                                     <p><strong>Total production (2017)</strong></p>
@@ -196,7 +210,7 @@ class DetailComponent extends GridDetailRow {
 
                                 </div>
                             </GridItem>
-                            <GridItem md={2}>
+                            <GridItem md={3}>
                                 <br/>
                                 <div style={{textAlign: 'right'}}>
                                     <p><strong>2 star production (2018):</strong></p>
@@ -212,22 +226,41 @@ class DetailComponent extends GridDetailRow {
                                 </div>
                             </GridItem>
                         </GridContainer>
-                    </div>
+                    </Paper>
                 }
 
                 {/* TAB 2 */}
                 { this.state.tabIndex === 2 &&
-                    <div>
-                        <br/>
-                        { dataItem.FarmData.map((item) =>
-                            <p><strong style={{marginRight: "8px"}}>{item.BAPId}:</strong> {item.Name}, {item.Country}</p>
-                        ) }
-                    </div>
+                    <Paper >
+                        <Table >
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>BAP ID</TableCell>
+                                    <TableCell>Name</TableCell>
+                                    <TableCell>Country</TableCell>
+                                    <TableCell date>Expiration</TableCell>
+                                    <TableCell numeric>Plants Served</TableCell>
+                                </TableRow>
+                            </TableHead>
+
+                            <TableBody>
+                                { dataItem.FarmData.map((item) =>
+                                    <TableRow>
+                                        <TableCell>{item.BAPId}</TableCell>
+                                        <TableCell>{item.Name}</TableCell>
+                                        <TableCell>{item.Country}</TableCell>
+                                        <TableCell>{item.Expires}</TableCell>
+                                        <TableCell numeric>{item.PlantsServed}</TableCell>
+                                    </TableRow>
+                                ) }
+                            </TableBody>
+                        </Table>
+                    </Paper>
                 }
 
                 {/* TAB 1 */}
                 { this.state.tabIndex === 1 &&
-                    <div>
+                    <Paper>
                         <GridContainer>
                             <GridItem md={3}>
                                 <br/>
@@ -248,13 +281,13 @@ class DetailComponent extends GridDetailRow {
 
                                 </div>
                             </GridItem>
-                            <GridItem md={2}>
+                            <GridItem md={3}>
                                 <br/>
                                 <div style={{textAlign: 'right'}}>
                                     <p><strong>Number of farms</strong></p>
-                                    <p><strong>Farm/plant ratio <i className={"fa fa-sm fa-info-circle"} title="The farm-to-plant ratio (1:1 is idea)"/>:</strong></p>
-                                    <p><strong>Average farm volume <i className={"fa fa-sm fa-info-circle"} title="Average farm volume is computed..."/>:</strong></p>
-                                    <p><strong>Adjusted farm volume <i className={"fa fa-sm fa-info-circle"} title="Farms that service more than plant have had their volumes adjusted"/>:</strong></p>
+                                    <p><strong>Diffusion ratio <i className={"fa fa-sm fa-info-circle"} title="The farm-to-plant ratio (1:1 is ideal)"/></strong></p>
+                                    <p><strong>Average farm volume <i className={"fa fa-sm fa-info-circle"} title="Average farm volume is computed..."/></strong></p>
+                                    <p><strong>Adjusted farm volume <i className={"fa fa-sm fa-info-circle"} title="Average volume x diffusion ratio"/></strong></p>
                                 </div>
                             </GridItem>
 
@@ -268,7 +301,7 @@ class DetailComponent extends GridDetailRow {
                                 </div>
                             </GridItem>
                         </GridContainer>
-                    </div>
+                    </Paper>
                 }
             </section>
         );
@@ -350,11 +383,8 @@ class PlantFarmDetail extends React.Component {
                         <Column field="TotalProduction" title="Total Production" type="number" cell={cellFloatRight}/>
                         <Column field="Projected2017" title="Total Projected" type="number"  cell={cellFloatRight} />
                         <Column field="Delta" title="Difference" type="number" cell={cellFloatRightColorize}  />
-                        <Column field="Risk" title="Risk %" type="number" width="130px" cell={cellPercentDiff}  />
+                        <Column field="Risk" title="Confidence" type="number" width="140px" cell={cellPercentDiff}  />
 
-                        {/* <Column field="Production2Star" title="2 Star Production" format="{0:n01}" cell={cellWithBackGround}/>
-                        <Column field="Shipped2016" title="2016 Shipped" format="{0:n01}" cell={cellWithBackGround}/>
-                        <Column field="Shipped2017" title="2017 Shipped" format="{0:n01}" cell={cellWithBackGround} /> */}
                     </Grid>
                 </div>
             );
