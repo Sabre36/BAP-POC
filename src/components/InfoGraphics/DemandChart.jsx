@@ -25,6 +25,9 @@ import FacilitiesChart from "components/Charts/FacilitiesChart.jsx";
 
 import starRatingStyle from "assets/jss/site-styles/views/landingPageSections/starRatingStyle.jsx";
 
+
+
+
 class DemandChart extends React.Component {
 
     handleClick() {
@@ -35,9 +38,9 @@ class DemandChart extends React.Component {
         const { classes, children } = this.props;
 
         const data = [
-            {name: '2016', shipped: 4000, projected: 2400, production: 2400},
-            {name: '2017', shipped: 4000, projected: 2400, production: 2400},
-            {name: '2018', shipped: null, projected: 1398, production: null},
+            {name: '2016', shipped: 28872.39, projected: null, production: null},
+            {name: '2017', shipped: 30010.33, projected: 24907.73, production: 96104.01},
+            {name: '2018', shipped: null, projected: null, production: 90207},
         ];
 
         const styles = {
@@ -71,14 +74,14 @@ class DemandChart extends React.Component {
 
                         <BarChart width={600} height={250} data={data}
                             margin={{top: 5, right: 30, left: 20, bottom: 5}}>
-                            
+
                             <XAxis dataKey="name"/>
                             <YAxis/>
                             <Tooltip/>
                             <Legend align="right" verticalAlign="middle" layout="vertical"/>
-                            <Bar dataKey="projected" label="Demand" fill="#8AA2C8" />
-                            <Bar dataKey="shipped" label="Shipped" fill="#02419A" />
-                            <Bar dataKey="production" label="Production" fill="#4C8623" />
+                            <Bar dataKey="projected" name="Demand" fill="#8AA2C8" />
+                            <Bar dataKey="shipped" name="Shipped" fill="#02419A" />
+                            <Bar dataKey="production" name="Production" fill="#4C8623" />
                         </BarChart>
 
                 </Card>
