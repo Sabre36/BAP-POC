@@ -15,6 +15,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
+import TrendIcon from "./../Icons/TrendIcon.jsx";
 
 
 import starRatingStyle from "assets/jss/site-styles/views/landingPageSections/starRatingStyle.jsx";
@@ -29,17 +30,7 @@ class InfoGraphic3 extends React.Component {
                     <CardActionArea>
                         <CardContent >
                             <Typography gutterBottom variant="headline" component="h2" className={classes.whitetitle}>
-                                Info here...
-                            </Typography>
-                            <Typography component="p"  className={classes.typography}>
-                                <GridContainer>
-                                    <GridItem xs={2} sm={2} md={3} lg={3} style={{textAlign: "center", minWidth: "250px"}}>
-                                        xyz
-                                    </GridItem>
-                                    <GridItem xs={8} sm={8} md={8} className={classes.whitetext}>
-                                        stuff here.
-                                    </GridItem>
-                                </GridContainer>
+                                <TrendIcon />
                             </Typography>
                         </CardContent>
                     </CardActionArea>
