@@ -20,21 +20,15 @@ import PropTypes from "prop-types";
 import MenuIcon from '@material-ui/icons/Menu';
 import InfoIcon from '@material-ui/icons/Info';
 
-import FacilitiesChart from "components/Charts/FacilitiesChart.jsx";
-
-import Datamap from 'react-datamaps';
+import Plantmap from './../Maps/Plantmap.jsx';
 import { ResponsiveContainer } from 'recharts';
-
-//import data1 from "assets/data/mapData.json";
 
 import inputData from "assets/data/Kroger/kroger_data.json";
 import geoData from "assets/data/all_geo.json";
-
 import starRatingStyle from "assets/jss/site-styles/views/landingPageSections/starRatingStyle.jsx";
 
 function  getFillColor(view) {
     var color = null;
-
     switch (view) {
         case "shipments": color = "#02419A"; break;
         case "projected": color = "#8AA2C8"; break;
@@ -48,15 +42,14 @@ class LocationMap extends React.Component {
     constructor(props) {
         super(props);
 
-        let mapData = [];
+        let shipmentData = [];
+        let projectedData = [];
+        let productionData = [];
 
         this.state = {
             view: "shipments",
             color: "#02419A"
         }
-
-        //this.handleViewClick = this.handleViewClick.bind(this);
-        //this.handleAffiliationChange = this.handleAffiliationChange.bind(this);
     }
 
     handleClick() {
@@ -64,7 +57,8 @@ class LocationMap extends React.Component {
     }
 
     handleViewShips() {
-        this.mapData.forEach(function(element) {
+        // Recomputte the radius
+        this.shipmentData.forEach(function(element) {
             let vol = element.TotalProduction;
             let newradius = 5;
 
@@ -80,54 +74,63 @@ class LocationMap extends React.Component {
                 newradius = 2.5;
 
             element.radius = newradius;
-
-          //console.log(element);
+            //console.log(element);
         });
+
+
         this.setState({ view: 'shipments', color: getFillColor('shipments')} );
     }
 
     handleViewProjected() {
-        this.mapData.forEach(function(element) {
-            let vol = element.Projected2017;
-            let newradius = 5;
 
-            if (vol > 2000)
-                newradius = 15;
-            else if (vol >= 1000 && vol < 2000)
-                newradius = 10;
-            else if (vol >= 500 && vol < 1000)
-                newradius = 7.5;
-            else if (vol >= 250 && vol < 500)
-                newradius = 5;
-            else
-                newradius = 2.5;
+        if (!this.projectedData) {
+            this.projectedData = this.shipmentData;
 
-            element.radius = newradius;
-          //console.log(element);
-      });
-      this.setState({ view: 'projected', color: getFillColor('projected')} );
+            this.projectedData.forEach(function(element) {
+                let vol = element.Projected2017;
+                let newradius = 5;
+
+                if (vol > 2000)
+                    newradius = 15;
+                else if (vol >= 1000 && vol < 2000)
+                    newradius = 10;
+                else if (vol >= 500 && vol < 1000)
+                    newradius = 7.5;
+                else if (vol >= 250 && vol < 500)
+                    newradius = 5;
+                else
+                    newradius = 2.5;
+
+                element.radius = newradius;
+                //console.log(element);
+            });
+        }
+        this.setState({ view: 'projected', color: getFillColor('projected')} );
     }
 
     handleViewProduction() {
-        this.mapData.forEach(function(element) {
-            let vol = element.TotalProduction;
-            let newradius = 5;
 
-            if (vol > 2000)
-                newradius = 15;
-            else if (vol >= 1000 && vol < 2000)
-                newradius = 10;
-            else if (vol >= 500 && vol < 1000)
-                newradius = 7.5;
-            else if (vol >= 250 && vol < 500)
-                newradius = 5;
-            else
-                newradius = 2.5;
+        if (!this.productionData) {
+            this.productionData = this.shipmentData;
 
-                newradius= 2.5;
+            this.productionData.forEach(function(element) {
+                let vol = element.TotalProduction;
+                let newradius = 5;
 
-            element.radius = newradius;
-        });
+                if (vol > 2000)
+                    newradius = 15;
+                else if (vol >= 1000 && vol < 2000)
+                    newradius = 10;
+                else if (vol >= 500 && vol < 1000)
+                    newradius = 7.5;
+                else if (vol >= 250 && vol < 500)
+                    newradius = 5;
+                else
+                    newradius = 2.5;
+
+                element.radius = newradius;
+            });
+        }
 
         this.setState({ view: 'production', color: getFillColor('production')} );
     }
@@ -141,10 +144,10 @@ class LocationMap extends React.Component {
             ...(merge.find(i => i[by] === item[by]) || {}),
         }));
 
-        this.mapData = mergeArray(inputData, geoData, 'BAPID');
+        this.shipmentData = mergeArray(inputData, geoData, 'BAPID');
 
-        // Put volume data into radius buckets -- TODO needs a better, statistical methodology
-        this.mapData.forEach(function(element) {
+        // Put volume data into radius buckets -- TODO needs a better, statistically-based methodology
+        this.shipmentData.forEach(function(element) {
             let vol = element.MostRecentShipped;
             let newradius = 5;
 
@@ -160,8 +163,7 @@ class LocationMap extends React.Component {
                 newradius = 2.5;
 
             element.radius = newradius;
-
-          console.log(element);
+            //console.log(element);
         });
 
 
@@ -171,10 +173,6 @@ class LocationMap extends React.Component {
                 opacity: '.86',
                 height: '18px',
                 margin: 0
-            },
-            justify: {
-                float: 'left',
-                marginBottom: '20px'
             },
             title: {
                 textAlign: 'center',
@@ -193,7 +191,6 @@ class LocationMap extends React.Component {
             }
         };
 
-
         return (
             <div>
                 <Card >
@@ -210,53 +207,23 @@ class LocationMap extends React.Component {
                         <a aria-label='Production' style={styles.anchor} onClick={this.handleViewProduction.bind(this)}> Production </a>
                     </div>
 
-                    <div style={{height: '235px'}}>
-                        <Datamap
-                            geographyConfig={{
-                                popupOnHover: false,
-                                highlightOnHover: true,
-                                highlightFillColor: 'rgba(0,0,0,.4)',
-                                highlightBorderColor: 'rgba(0, 0, 0, 0.2)',
-                                highlightBorderWidth: 1,
-                            }}
-                            fills={{
-                                defaultFill: '#ccc',
-                                bubbleFill: this.state.color
-                            }}
-                            bubbles={this.mapData}
-                            bubbleOptions={{
-                                borderWidth: 1,
-                                borderColor: 'rgba(0,0,0,.2)',
-                                popupOnHover: true,
 
-                                popupTemplate: (geography, data) =>
-                                `<div class='hoverinfo'>
-                                    <label><strong>Company:</strong> ${data.Company}</label><br/>
-                                    <label><strong>Country:</strong> ${data.Country}</label><br/>
-                                    <label><strong>Shipments:</strong> ${data.MostRecentShipped}</label> <br/>
-                                    <label><strong>Projected:</strong> ${data.Projected2017}</label> <br/>
-                                    <label><strong>Production:</strong> ${data.TotalProduction}</label> <br/>
-                                </div>`,
+                        { this.state.view === "shipments" &&
+                            <Plantmap data={this.shipmentData} color={this.state.color} />
+                        }
 
-                                highlightOnHover: true,
-                                highlightFillColor: '#02419A',
-                                highlightBorderColor: 'rgba(0, 0, 0, 0.2)',
-                                highlightBorderWidth: 2,
-                                highlightBorderOpacity: 1,
-                                highlightFillOpacity: 0.85,
-                            }}
-                        />
-                    </div>
+                        { this.state.view === "projected" &&
+                            <Plantmap data={this.projectedData} color={this.state.color} />
+                        }
+
+                        { this.state.view === "production" &&
+                            <Plantmap data={this.productionData} color={this.state.color} />
+                        }
+
                 </Card>
             </div>
         );
     }
 }
-
-LocationMap.propTypes = {
-    additionalClasses: PropTypes.string,
-    mapStyle: PropTypes.object,
-    data: PropTypes.array,
-};
 
 export default withStyles(starRatingStyle)(LocationMap);

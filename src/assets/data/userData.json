@@ -5,6 +5,35 @@
         "isAuthenticated": true,
         "affiliations": [
         {
+              "affiliation": "Kroger",
+              "key": "5bbf8e9fa13f44d0aa2d3844",
+              "role": "user",
+              "alerts": [
+                { "message": "The system will be down for maintainence on Friday Nov 1, 2018 at 12:00AM EST","type": "info" },
+                { "message": "Your certification expires in 25 days","type": "error" }
+              ],
+              "entitlements": [
+                {
+                  "entitlement": "Scorecard",
+                  "filters": [
+                    { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"] },
+                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] }
+                  ]
+                },{
+                  "entitlement": "Plant and farm detail",
+                  "filters": [
+                    { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"] },
+                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] }
+                  ]
+                },{
+                  "entitlement": "Supply chain",
+                  "filters": [
+                    { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"]},
+                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] }
+                  ]
+                }
+              ]
+          },{
             "affiliation": "Walmart",
             "key": "5bbf8e9fdd0dd0957a59a2b6",
             "role": "user",
@@ -83,35 +112,6 @@
               },{
                 "entitlement": "Settings",
                 "filters": []
-              }
-            ]
-          },{
-            "affiliation": "Kroger",
-            "key": "5bbf8e9fa13f44d0aa2d3844",
-            "role": "user",
-            "alerts": [
-              { "message": "The system will be down for maintainence on Friday Nov 1, 2018 at 12:00AM EST","type": "info" },
-              { "message": "Your certification expires in 25 days","type": "error" }
-            ],
-            "entitlements": [
-              {
-                "entitlement": "Scorecard",
-                "filters": [
-                  { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"] },
-                  { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] }
-                ]
-              },{
-                "entitlement": "Plant and farm detail",
-                "filters": [
-                  { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"] },
-                  { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] }
-                ]
-              },{
-                "entitlement": "Supply chain",
-                "filters": [
-                  { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"]},
-                  { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] }
-                ]
               }
             ]
           }

@@ -25,7 +25,7 @@ class InfoGraphic1 extends React.Component {
 
         return (
             <div>
-                <Card className={classes.card} style={{width: "100%", height: "175px", background: "#02419A", padding: "2px", marginBottom: "20px"}}>
+                <Card className={classes.card} style={{width: "100%", height: "150px", background: "#02419A", padding: "2px", marginBottom: "20px"}}>
                     <CardActionArea>
                         <CardContent >
                             <Typography gutterBottom variant="headline" component="h2" className={classes.whitetitle}>
