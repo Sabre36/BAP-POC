@@ -1,0 +1,56 @@
+
+
+[
+    {
+        "Banding": "Aquastar",
+        "Species": "Shrimp",
+        "Shipped2016": 9962.639999999998,
+        "Projected2017": 18316.120000000006,
+        "2017_shipped": 460.65,
+        "2018_projected": 1310.89
+    },
+    {
+        "Banding": "Aquastar",
+        "Species": "Tilapia",
+        "Projected2017": 48.86,
+        "2017_shipped": 3.63,
+        "2018_projected": 4.08
+    },
+    {
+        "Banding": "Aquastar",
+        "Species": "Salmon",
+        "Shipped2016": 68.71,
+        "Projected2017": 30.92
+    },
+    {
+        "Banding": "Aquastar",
+        "Species": "Pangasius",
+        "2017_shipped": 2.95,
+        "2018_projected": 2.95
+    },
+    {
+        "Banding": "Unique",
+        "Species": "Shrimp",
+        "Total_Production_2Plus_Star": 63517.25,
+        "Total_Production_4_Star": 63161.409999999996
+    },
+    {
+        "Banding": "Unique",
+        "Species": "Tilapia",
+        "Total_Production_2Plus_Star": 8360.369999999999,
+        "Total_Production_4_Star": 8360.369999999999
+    },
+    {
+        "Banding": "Unique",
+        "Species": "Salmon",
+        "Total_Production_2Plus_Star": 71201,
+        "Total_Production_4_Star": 71201
+    },
+    {
+        "Banding": "Unique",
+        "Species": "Pangasius",
+        "Total_Production_2Plus_Star": 31549,
+        "Total_Production_4_Star": 31549
+    }
+]
+

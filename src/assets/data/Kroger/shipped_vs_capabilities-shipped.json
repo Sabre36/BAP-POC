@@ -1,0 +1,350 @@
+
+
+[
+    {
+        "Banding": "Seattle Fish Company",
+        "Species": "Salmon",
+        "Shipped2016": 443.89,
+        "Projected2017": 463.25
+    },
+    {
+        "Banding": "Vita Foods-Supplier",
+        "Species": "Salmon",
+        "Shipped2016": 2.74,
+        "Projected2017": 2.2
+    },
+    {
+        "Banding": "High Liner Foods, Inc. Supplier",
+        "Species": "Salmon",
+        "Shipped2016": 166.11999999999998
+    },
+    {
+        "Banding": "CFE Boston-Supplier",
+        "Species": "Salmon",
+        "Shipped2016": 460.98,
+        "Projected2017": 460.98
+    },
+    {
+        "Banding": "Camanchaca Inc",
+        "Species": "Salmon",
+        "Shipped2016": 482.11,
+        "Projected2017": 424.73
+    },
+    {
+        "Banding": "Southwind Foods/Great American Seafood",
+        "Species": "Salmon",
+        "Shipped2016": 716.0999999999999,
+        "Projected2017": 698.73
+    },
+    {
+        "Banding": "BluGlacier LLC",
+        "Species": "Salmon",
+        "Shipped2016": 1028.05,
+        "Projected2017": 1076.71
+    },
+    {
+        "Banding": "Aquachile-Supplier",
+        "Species": "Salmon",
+        "Shipped2016": 421.96,
+        "Projected2017": 680.58
+    },
+    {
+        "Banding": "Aquastar",
+        "Species": "Salmon",
+        "Shipped2016": 68.71,
+        "Projected2017": 30.92
+    },
+    {
+        "Banding": "Aquachile-Supplier",
+        "Species": "Trout",
+        "Shipped2016": 19.06,
+        "Projected2017": 145.19
+    },
+    {
+        "Banding": "Ocean Beauty Seafoods",
+        "Species": "Salmon",
+        "Shipped2016": 5.35,
+        "Projected2017": 7.16
+    },
+    {
+        "Banding": "Fish Market Seafoods-Supplier",
+        "Species": "Salmon",
+        "Shipped2016": 11.15,
+        "Projected2017": 11.15
+    },
+    {
+        "Banding": "Pacific Seafood",
+        "Species": "Salmon",
+        "Shipped2016": 1695.94
+    },
+    {
+        "Banding": "Blue Sea Products LLC",
+        "Species": "Shrimp",
+        "Shipped2016": 3518.2499999999995,
+        "Projected2017": 1011.1200000000001
+    },
+    {
+        "Banding": "Southwind Foods/Great American Seafood",
+        "Species": "Shrimp",
+        "Shipped2016": 4775.63,
+        "Projected2017": 4679.24
+    },
+    {
+        "Banding": "Eastern Fish Company",
+        "Species": "Shrimp",
+        "Shipped2016": 1528.0299999999997,
+        "Projected2017": 1338.47
+    },
+    {
+        "Banding": "Aquastar",
+        "Species": "Shrimp",
+        "Shipped2016": 2347.66,
+        "Projected2017": 3236.8900000000003
+    },
+    {
+        "Banding": "Seattle Shrimp & Seafood",
+        "Species": "Shrimp",
+        "Projected2017": 2121.5899999999983,
+        "Shipped2016": 1296.73
+    },
+    {
+        "Banding": "Mazzetta",
+        "Species": "Shrimp",
+        "Shipped2016": 571.1599999999999
+    },
+    {
+        "Banding": "Rich Products Corporation",
+        "Species": "Shrimp",
+        "Shipped2016": 586.2199999999999,
+        "Projected2017": 644.85
+    },
+    {
+        "Banding": "High Liner Foods, Inc. Supplier",
+        "Species": "Shrimp",
+        "Shipped2016": 6.0600000000000005
+    },
+    {
+        "Banding": "Gortons",
+        "Species": "Shrimp",
+        "Shipped2016": 16.21,
+        "Projected2017": 14.26
+    },
+    {
+        "Banding": "Equator, Inc.-Supplier",
+        "Species": "Shrimp",
+        "Shipped2016": 113.94
+    },
+    {
+        "Banding": "Seattle Fish Company",
+        "Species": "Shrimp",
+        "Projected2017": 0.4,
+        "Shipped2016": 0.29
+    },
+    {
+        "Banding": "Gortons",
+        "Species": "Tilapia",
+        "Shipped2016": 129.01,
+        "Projected2017": 113.53
+    },
+    {
+        "Banding": "Fish Market Seafoods-Supplier",
+        "Species": "Catfish",
+        "Shipped2016": 2.13,
+        "Projected2017": 2.13
+    },
+    {
+        "Banding": "Seattle Fish Company",
+        "Species": "Catfish",
+        "Shipped2016": 123.6,
+        "Projected2017": 126.9
+    },
+    {
+        "Banding": "Southwind Foods/Great American Seafood",
+        "Species": "Catfish",
+        "Shipped2016": 139.84,
+        "Projected2017": 138.38
+    },
+    {
+        "Banding": "Fish Market Seafoods-Supplier",
+        "Species": "Tilapia",
+        "Shipped2016": 3.4699999999999998,
+        "Projected2017": 3.4699999999999998
+    },
+    {
+        "Banding": "Seattle Fish Company",
+        "Species": "Tilapia",
+        "Shipped2016": 115.55000000000001,
+        "Projected2017": 59.67999999999999
+    },
+    {
+        "Banding": "America's Catch-Supplier",
+        "Species": "Catfish",
+        "Shipped2016": 635.21,
+        "Projected2017": 725.95
+    },
+    {
+        "Banding": "Consolidated Catfish-Supplier",
+        "Species": "Catfish",
+        "Shipped2016": 2730.68,
+        "Projected2017": 2529.63
+    },
+    {
+        "Banding": "Camanchaca Inc",
+        "Species": "Mussels",
+        "Shipped2016": 365.61,
+        "Projected2017": 368.74
+    },
+    {
+        "Banding": "Pacific Seafood",
+        "Species": "Tilapia",
+        "Shipped2016": 42.76
+    },
+    {
+        "Banding": "Seattle Fish Company",
+        "Species": "Trout",
+        "Shipped2016": 8.61,
+        "Projected2017": 9.07
+    },
+    {
+        "Banding": "Aquastar",
+        "Species": "Tilapia",
+        "Projected2017": 48.86
+    },
+    {
+        "Banding": "High Liner Foods, Inc. Supplier",
+        "Species": "Tilapia",
+        "Shipped2016": 218.95
+    },
+    {
+        "Banding": "Ocean Beauty Seafoods",
+        "Species": "Catfish",
+        "Shipped2016": 3.21,
+        "Projected2017": 1.08
+    },
+    {
+        "Banding": "Star Fisheries-Supplier",
+        "Species": "Catfish",
+        "Shipped2016": 86.94,
+        "Projected2017": 78.95
+    },
+    {
+        "Banding": "Seattle Fish Company",
+        "Species": "Pangasius",
+        "Shipped2016": 0.01,
+        "Projected2017": 0.05
+    },
+    {
+        "Banding": "Southwind Foods/Great American Seafood",
+        "Species": "Pangasius",
+        "Shipped2016": 16.53,
+        "Projected2017": 16.779999999999998
+    },
+    {
+        "Banding": "Rubicon",
+        "Species": "Pangasius",
+        "2017_shipped": 310.33
+    },
+    {
+        "Banding": "Southwind Foods/Great American Seafood",
+        "Species": "Tilapia",
+        "Shipped2016": 1995.54,
+        "Projected2017": 1980.9299999999998
+    },
+    {
+        "Banding": "Ocean Beauty Seafoods",
+        "Species": "Tilapia",
+        "Shipped2016": 5.26,
+        "Projected2017": 6.84
+    },
+    {
+        "Banding": "Regal Springs-Supplier",
+        "Species": "Tilapia",
+        "Shipped2016": 1167.5,
+        "Projected2017": 1125.44
+    },
+    {
+        "Banding": "QVD Aquaculture",
+        "Species": "Pangasius",
+        "Projected2017": 37.4,
+        "Shipped2016": 45.55
+    },
+    {
+        "Banding": "Aquachile-Supplier",
+        "Species": "Tilapia",
+        "Shipped2016": 145.19,
+        "Projected2017": 45.37
+    },
+    {
+        "Banding": "Trapanada-Supplier",
+        "Species": "Salmon",
+        "Shipped2016": 607.82,
+        "Projected2017": 439.22
+    },
+    {
+        "Banding": "Southwind Foods/Great American Seafood",
+        "Species": "Mussels",
+        "Shipped2016": 1.08,
+        "Projected2017": 0.91
+    },
+    {
+        "Banding": "Shared",
+        "Species": "Salmon",
+        "Total_Production_2Plus_Star": 299481,
+        "Total_Production_4_Star": 298194
+    },
+    {
+        "Banding": "Unique",
+        "Species": "Salmon",
+        "Total_Production_2Plus_Star": 355528,
+        "Total_Production_4_Star": 333205
+    },
+    {
+        "Banding": "Unique",
+        "Species": "Trout",
+        "Total_Production_2Plus_Star": 62.5,
+        "Total_Production_4_Star": 62.5
+    },
+    {
+        "Banding": "Shared",
+        "Species": "Shrimp",
+        "Total_Production_2Plus_Star": 45075.39333333334,
+        "Total_Production_4_Star": 44625.39333333334
+    },
+    {
+        "Banding": "Unique",
+        "Species": "Shrimp",
+        "Total_Production_2Plus_Star": 50837.12666666666,
+        "Total_Production_4_Star": 45595.94666666666
+    },
+    {
+        "Banding": "Unique",
+        "Species": "Tilapia",
+        "Total_Production_2Plus_Star": 91848.72,
+        "Total_Production_4_Star": 83730.72
+    },
+    {
+        "Banding": "Shared",
+        "Species": "Tilapia",
+        "Total_Production_2Plus_Star": 63877.27,
+        "Total_Production_4_Star": 42331.27
+    },
+    {
+        "Banding": "Shared",
+        "Species": "Pangasius",
+        "Total_Production_2Plus_Star": 31549,
+        "Total_Production_4_Star": 31549
+    },
+    {
+        "Banding": "Unique",
+        "Species": "Pangasius",
+        "Total_Production_2Plus_Star": 22785,
+        "Total_Production_4_Star": 22785
+    },
+    {
+        "Banding": "Unique",
+        "Species": "Catfish",
+        "Total_Production_2Plus_Star": 0,
+        "Total_Production_4_Star": 0
+    }
+]
+

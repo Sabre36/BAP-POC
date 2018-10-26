@@ -1,0 +1,66 @@
+[
+    {
+        "bapid":"P10230",
+        "name": "Cermaq Chile SA - Planta Quemchi",
+        "radius":5,
+        "country":"Chile",
+        "latitude":38.944122,
+        "longitude":-77.356239,
+        "MostRecentShipped": 158.8,
+        "Projected2017": 19.25,
+        "TotalProduction": 3797.5,
+        "fillKey":"bubbleFill",
+        "dataShipColor": "red"
+    },
+    {
+        "bapid":"P10262",
+        "name": "Northern Harvest Sea Farms Inc.",
+        "radius":10,
+        "country":"Canada",
+        "latitude":51.501364,
+        "longitude":-0.1440787,
+        "MostRecentShipped": 158.8,
+        "Projected2017": 158.8,
+        "TotalProduction": 15819,
+        "fillKey":"bubbleFill",
+        "dataShipColor": "red"
+    },
+    {
+        "bapid":"P10269",
+        "name": "Salmones Camanchaca, S.A - Planta Tome",
+        "country": "Chile",
+        "radius":15,
+        "latitude":33.448376,
+        "longitude":-112.074036,
+        "MostRecentShipped": 42.73,
+        "Projected2017": 42.73,
+        "TotalProduction": 77571,
+        "fillKey":"bubbleFill",
+        "dataShipColor": "red"
+
+    },
+    {
+        "bapid":"P10285",
+        "name": "Cermaq Chile SA - Planta Ancud",
+        "country": "Chile",
+        "radius":10,
+        "latitude":41.881832,
+        "longitude":-87.623177,
+        "MostRecentShipped": 46.47,
+        "Projected2017": 46.47,
+        "TotalProduction": 3797.5,
+        "fillKey":"bubbleFill"
+    },
+    {
+        "bapid":"P10298",
+        "name": "Salmones Blumar S.A. (Processing)",
+        "country": "Chile",
+        "radius": 20,
+        "latitude":37.279518,
+        "longitude":-121.867905,
+        "MostRecentShipped": 1146.63,
+        "Projected2017": 114.63,
+        "TotalProduction": 105669,
+        "fillKey":"bubbleFill"
+    }
+]
