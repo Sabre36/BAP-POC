@@ -31,7 +31,7 @@ function  getFillColor(view) {
     var color = null;
     switch (view) {
         case "shipments": color = "#02419A"; break;
-        case "projected": color = "#8AA2C8"; break;
+        case "demand": color = "#8AA2C8"; break;
         case "production": color = "#4C8623"; break;
         default: color = "02419A";
     }
@@ -105,7 +105,7 @@ class LocationMap extends React.Component {
                 //console.log(element);
             });
         }
-        this.setState({ view: 'projected', color: getFillColor('projected')} );
+        this.setState({ view: 'demand', color: getFillColor('demand')} );
     }
 
     handleViewProduction() {
@@ -203,7 +203,7 @@ class LocationMap extends React.Component {
 
                     <div style={styles.viewContainer}>
                         <a aria-label='Shipments' style={styles.anchor} onClick={this.handleViewShips.bind(this)}> Shipments </a>
-                        <a aria-label='Projected' style={styles.anchor} onClick={this.handleViewProjected.bind(this)}> Projected </a>
+                        <a aria-label='Demand' style={styles.anchor} onClick={this.handleViewProjected.bind(this)}> Demand </a>
                         <a aria-label='Production' style={styles.anchor} onClick={this.handleViewProduction.bind(this)}> Production </a>
                     </div>
 
@@ -212,7 +212,7 @@ class LocationMap extends React.Component {
                             <Plantmap data={this.shipmentData} color={this.state.color} />
                         }
 
-                        { this.state.view === "projected" &&
+                        { this.state.view === "demand" &&
                             <Plantmap data={this.projectedData} color={this.state.color} />
                         }
 
