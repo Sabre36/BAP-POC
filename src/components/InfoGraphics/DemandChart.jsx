@@ -64,7 +64,7 @@ class DemandChart extends React.Component {
 
         return (
             <div>
-                <Card >
+                <Card style={{height: '375px', overflow: 'sroll'}}>
                     <CardActions>
                         <IconButton aria-label='Menu' color='inherit' onClick={this.handleClick.bind(this)}>
                             <MenuIcon style={styles.button}/>
@@ -72,9 +72,9 @@ class DemandChart extends React.Component {
                         <h4 style={styles.title}>Demand versus capacity</h4>
                     </CardActions>
 
-                        <BarChart width={600} height={250} data={data}
+                    <ResponsiveContainer height={300}>
+                        <BarChart data={data}
                             margin={{top: 5, right: 30, left: 20, bottom: 5}}>
-
                             <XAxis dataKey="name"/>
                             <YAxis/>
                             <Tooltip/>
@@ -83,7 +83,7 @@ class DemandChart extends React.Component {
                             <Bar dataKey="shipped" name="Shipped" fill="#02419A" />
                             <Bar dataKey="production" name="Production" fill="#4C8623" />
                         </BarChart>
-
+                    </ResponsiveContainer>
                 </Card>
         </div>
     );

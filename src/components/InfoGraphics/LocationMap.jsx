@@ -193,7 +193,7 @@ class LocationMap extends React.Component {
 
         return (
             <div>
-                <Card >
+                <Card style={{height: '375px', overflow: 'sroll'}}>
                     <CardActions>
                         <IconButton aria-label='Menu' color='inherit' onClick={this.handleClick.bind(this)}>
                             <MenuIcon style={styles.button}/>
@@ -206,7 +206,6 @@ class LocationMap extends React.Component {
                         <a aria-label='Demand' style={styles.anchor} onClick={this.handleViewProjected.bind(this)}> Demand </a>
                         <a aria-label='Production' style={styles.anchor} onClick={this.handleViewProduction.bind(this)}> Production </a>
                     </div>
-
 
                         { this.state.view === "shipments" &&
                             <Plantmap data={this.shipmentData} color={this.state.color} />
