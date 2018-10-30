@@ -1,32 +1,31 @@
 import React from "react";
-// @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-
-// core components
-import GridContainer from "components/Grid/GridContainer.jsx";
-import GridItem from "components/Grid/GridItem.jsx";
-import StarIcon from "@material-ui/icons/StarRate";
 import IconButton from '@material-ui/core/IconButton';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import PropTypes from "prop-types";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import MenuIcon from '@material-ui/icons/Menu';
-import InfoIcon from '@material-ui/icons/Info';
 
-import FacilitiesChart from "components/Charts/FacilitiesChart.jsx";
-
-import starRatingStyle from "assets/jss/site-styles/views/landingPageSections/starRatingStyle.jsx";
+import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
 
 
-
+const styles = {
+    button: {
+        color: '000',
+        opacity: '.86',
+        height: '18px',
+        margin: 0
+    },
+    justify: {
+        float: 'left',
+        marginBottom: '20px'
+    },
+    title: {
+        textAlign: 'center',
+        fontWeight: 400,
+        fontSize: '20px'
+    }
+};
 
 class DemandChart extends React.Component {
 
@@ -43,28 +42,9 @@ class DemandChart extends React.Component {
             {name: '2018', shipped: null, projected: null, production: 90207},
         ];
 
-        const styles = {
-            button: {
-                color: '000',
-                opacity: '.86',
-                height: '18px',
-                margin: 0
-            },
-            justify: {
-                float: 'left',
-                marginBottom: '20px'
-            },
-            title: {
-                textAlign: 'center',
-                fontWeight: 400,
-                fontSize: '20px'
-            }
-        };
-
-
         return (
             <div>
-                <Card style={{height: '375px', overflow: 'sroll'}}>
+                <Card className={classes.cardLarge}>
                     <CardActions>
                         <IconButton aria-label='Menu' color='inherit' onClick={this.handleClick.bind(this)}>
                             <MenuIcon style={styles.button}/>
@@ -92,4 +72,4 @@ class DemandChart extends React.Component {
 
 
 
-export default withStyles(starRatingStyle)(DemandChart);
+export default withStyles(infoGraphicStyle)(DemandChart);

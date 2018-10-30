@@ -1,8 +1,12 @@
 const infoGraphicStyle = theme => ({
     card: {
         width: '100%',
-        background: "#539127",
         height: "140px",
+        marginBottom: '20px'
+    },
+    cardLarge: {
+        width: '100%',
+        height: "375px",
         marginBottom: '20px'
     },
     heading: {

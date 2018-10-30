@@ -13,6 +13,7 @@ import InfoGraphic2 from "components/InfoGraphics/InfoGraphic2.jsx";
 import InfoGraphic3 from "components/InfoGraphics/InfoGraphic3.jsx";
 import CardContainer from "components/InfoGraphics/CardContainer.jsx";
 import DemandChart from "components/InfoGraphics/DemandChart.jsx";
+import ProductionChart from "components/InfoGraphics/ProductionChart.jsx";
 import LocationMap from "components/InfoGraphics/LocationMap.jsx";
 
 class Scorecard extends React.Component {
@@ -45,7 +46,7 @@ class Scorecard extends React.Component {
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={6}>
-
+                        <ProductionChart/>
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={6}>
