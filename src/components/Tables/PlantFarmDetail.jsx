@@ -18,12 +18,6 @@ import Paper from '@material-ui/core/Paper';
 
 import plantData from './../../assets/data/plantData.json';
 
-const red = 0,
-yellow = 60,
-green = 120,
-turquoise = 180,
-blue = 240,
-pink = 300;
 
 function round(value, decimals) {
     return Number(Math.round(value +'e'+ decimals) +'e-'+ decimals).toFixed(decimals);

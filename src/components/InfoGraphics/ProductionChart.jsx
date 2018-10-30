@@ -7,10 +7,6 @@ import { PieChart, Pie, Sector, Cell, Legend, Label, Text, ResponsiveContainer }
 import MenuIcon from '@material-ui/icons/Menu';
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
-
-//import DonutChart from "./DonutChart.jsx";
-
-
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
 
 const styles = {
@@ -20,19 +16,10 @@ const styles = {
         height: '18px',
         margin: 0
     },
-    justify: {
-        float: 'left',
-        marginBottom: '20px'
-    },
     title: {
         textAlign: 'center',
         fontWeight: 400,
         fontSize: '20px'
-    },
-    subtitle: {
-        display: 'block',
-        textAlign: 'center',
-        fontSize: '16px',
     }
 };
 
@@ -97,7 +84,7 @@ const renderActiveShape = (props) => {
                 />
 
                 {/* HACK to position the year label under the pie so that it will move with the responsive container */}
-                <text x={cx} y={cy+120} dy={8} textAnchor="middle">{payload.year}</text>
+                <text x={cx} y={cy+125} dy={8} textAnchor="middle">{payload.year}</text>
             </g>
         );
     };
@@ -138,7 +125,7 @@ const renderActiveShape = (props) => {
                             <IconButton aria-label='Menu' color='inherit' onClick={this.handleClick.bind(this)}>
                                 <MenuIcon style={styles.button}/>
                             </IconButton>
-                            <h4 style={styles.title}>Production Composition</h4>
+                            <h4 style={styles.title}>Production by rating</h4>
                         </CardActions>
 
                         <GridContainer>
@@ -149,10 +136,10 @@ const renderActiveShape = (props) => {
                                             activeIndex={this.state.activeIndex}
                                             activeShape={renderActiveShape}
                                             data={yr1}
-                                            innerRadius={75}
-                                            outerRadius={95}
+                                            innerRadius={80}
+                                            outerRadius={100}
                                             onMouseEnter={this.onPieEnter}
-                                            paddingAngle={2}
+                                            paddingAngle={1}
                                             >
                                                 {
                                                     yr1.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
@@ -169,10 +156,10 @@ const renderActiveShape = (props) => {
                                                 activeIndex={this.state.activeIndex}
                                                 activeShape={renderActiveShape}
                                                 data={yr2}
-                                                innerRadius={75}
-                                                outerRadius={95}
+                                                innerRadius={80}
+                                                outerRadius={100}
                                                 onMouseEnter={this.onPieEnter}
-                                                paddingAngle={2}
+                                                paddingAngle={1}
                                                 >
                                                     {
                                                         yr2.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)

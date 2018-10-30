@@ -55,6 +55,42 @@ const infoGraphicStyle = theme => ({
         boxShadow: theme.shadows[1],
         fontSize: 13,
     },
+    tr: {
+        '&:hover': {
+            backgroundColor: 'rgba(0,0,0,.075) !important',
+        },
+    },
+    td: {
+        fontSize: '16px',
+        fontWeight: 300
+    },
+    th: {
+        fontSize: '18px',
+        fontWeight: 400
+    },
+    redCircle: {
+        color: '#ab0520',
+        paddingRight: '6px'
+    },
+    orangeCircle: {
+        color: '#F89C05',
+        paddingRight: '6px'
+    },
+    yellowCircle: {
+        color: '#FFCC03',
+        paddingRight: '6px'
+    },
+    greenArrow: {
+        color: '#37611A'
+    },
+    redArrow: {
+        color: '#ab0520',
+    },
+    nonconformitiesTable: {
+        paddingRight: '40px!important',
+        paddingLeft: '40px!important',
+        fontSize: '20px!important',
+    }
 });
 
 export default infoGraphicStyle;

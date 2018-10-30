@@ -16,10 +16,6 @@ const styles = {
         height: '18px',
         margin: 0
     },
-    justify: {
-        float: 'left',
-        marginBottom: '20px'
-    },
     title: {
         textAlign: 'center',
         fontWeight: 400,
