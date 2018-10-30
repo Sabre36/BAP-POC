@@ -6,6 +6,14 @@ import PropTypes from "prop-types";
 
 class Plantmap extends React.Component {
 
+    addClickHandlers = (ref) => {
+        if (ref && ref.map) {
+            ref.map.svg.selectAll('.datamaps-bubble').on('click', (bubble) => {
+                //alert(`You clicked on ${bubble.BAPID}`);
+            });
+        }
+    };
+
     render() {
         const { classes } = this.props;
 
@@ -13,6 +21,7 @@ class Plantmap extends React.Component {
             <div style={{padding: '10px'}}>
                 <ResponsiveContainer height={275}>
                     <Datamap
+                        ref={this.addClickHandlers}
                         geographyConfig={{
                             popupOnHover: false,
                             highlightOnHover: true,
@@ -46,6 +55,7 @@ class Plantmap extends React.Component {
                         highlightBorderOpacity: 1,
                         highlightFillOpacity: 0.85,
                          }}
+
                     />
                 </ResponsiveContainer>
             </div>
