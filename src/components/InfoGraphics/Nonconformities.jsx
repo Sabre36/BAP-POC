@@ -37,7 +37,7 @@ class Nonconformities extends React.Component {
     }
 
     render() {
-        const { classes, ...rest } = this.props;
+        const { classes } = this.props;
 
         const data = [
             {name: 'Minor', yr1: 21, yr1Label: 2017, yr2: 26, yr2Label: 2018, delta: null},
@@ -83,20 +83,20 @@ class Nonconformities extends React.Component {
                                             <TableCell className={classes.td}>
 
                                                 { item.name === "Minor" &&
-                                                    <span className={classes.yellowCircle}>
-                                                        <i className={"fa fa-md fa-circle"} title="Minor"/>
+                                                    <span className={classes.yellowCircle} title={item.name}>
+                                                        <i className={"fa fa-md fa-circle"}/>
                                                     </span>
                                                 }
 
                                                 { item.name === "Major" &&
-                                                    <span className={classes.orangeCircle}>
-                                                        <i className={"fa fa-md fa-circle"} title="Minor"/>
+                                                    <span className={classes.orangeCircle} title={item.name}>
+                                                        <i className={"fa fa-md fa-circle"} />
                                                     </span>
                                                 }
 
                                                 { item.name === "Critical" &&
-                                                    <span className={classes.redCircle}>
-                                                        <i className={"fa fa-md fa-circle"} title="Minor"/>
+                                                    <span className={classes.redCircle} title={item.name}>
+                                                        <i className={"fa fa-md fa-circle"} />
                                                     </span>
                                                 }
 

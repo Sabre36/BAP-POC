@@ -3,7 +3,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import IconButton from '@material-ui/core/IconButton';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
-import { PieChart, Pie, Sector, Cell, Legend, Label, Text, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
 import MenuIcon from '@material-ui/icons/Menu';
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
@@ -41,18 +41,9 @@ const yr2 = [
 const COLORS = ['#37611A', '#37611A', '#65B12F', '#B1E18E'];
 
 const renderActiveShape = (props) => {
-    const RADIAN = Math.PI / 180;
-    const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle,
+
+    const { cx, cy, innerRadius, startAngle, endAngle,
         fill, payload, percent, value } = props;
-        const sin = Math.sin(-RADIAN * midAngle);
-        const cos = Math.cos(-RADIAN * midAngle);
-        const sx = cx + (outerRadius + 10) * cos;
-        const sy = cy + (outerRadius + 10) * sin;
-        const mx = cx + (outerRadius + 30) * cos;
-        const my = cy + (outerRadius + 30) * sin;
-        const ex = mx + (cos >= 0 ? 1 : -1) * 22;
-        const ey = my;
-        const textAnchor = cos >= 0 ? 'start' : 'end';
         const innerRadiusPadding = 10 ;
         const outerRadiusPadding = 6 ;
         const radiusPadding = 20;
@@ -116,7 +107,7 @@ const renderActiveShape = (props) => {
         }
 
         render() {
-            const { classes, children } = this.props;
+            const { classes } = this.props;
 
             return (
                 <div>

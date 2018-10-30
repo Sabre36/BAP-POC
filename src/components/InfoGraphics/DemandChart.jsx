@@ -5,9 +5,7 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import MenuIcon from '@material-ui/icons/Menu';
-
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
-
 
 const styles = {
     button: {
@@ -30,7 +28,7 @@ class DemandChart extends React.Component {
     }
 
     render() {
-        const { classes, children } = this.props;
+        const { classes } = this.props;
 
         const data = [
             {name: '2016', shipped: 28872.39, projected: null, production: null},
@@ -50,7 +48,7 @@ class DemandChart extends React.Component {
 
                     <ResponsiveContainer height={300}>
                         <BarChart data={data}
-                            margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+                            margin={{top: 10, right: 10, left: 20, bottom: 5}}>
                             <XAxis dataKey="name"/>
                             <YAxis/>
                             <Tooltip/>

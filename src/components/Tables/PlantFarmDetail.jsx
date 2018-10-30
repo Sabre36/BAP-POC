@@ -1,21 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Grid, GridColumn as Column, GridDetailRow } from '@progress/kendo-react-grid';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
-import Tooltip from "@material-ui/core/Tooltip";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
-
 import { orderBy } from '@progress/kendo-data-query';
-
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-
 import plantData from './../../assets/data/plantData.json';
 
 
@@ -30,20 +25,13 @@ function formatNum(value, decimals) {
     return newValue;
 }
 
-function formatMT(value, units) {
-    if (isNaN(value) || value <= 0)
-    return '-';
-    else
-    return value + units;
-}
-
-function hsl_col_perc(percent, start, end) {
-    var a = percent / 100,
-    b = (end - start) * a,
-    c = b + start;
-
-    return 'hsl('+c+', 100%, 50%)'; // Return a CSS HSL string
-}
+// function hsl_col_perc(percent, start, end) {
+//     var a = percent / 100,
+//     b = (end - start) * a,
+//     c = b + start;
+//
+//     return 'hsl('+c+', 100%, 50%)'; // Return a CSS HSL string
+// }
 
 function colorMap(value) {
     let color = '#fcfcfc';
@@ -153,10 +141,6 @@ class cellEllipsis extends React.Component {
 }
 
 class DetailComponent extends GridDetailRow {
-    constructor(props) {
-        super(props);
-    }
-
     state = {
         tabIndex: 0,
     }
@@ -169,8 +153,7 @@ class DetailComponent extends GridDetailRow {
 
     render() {
         const dataItem = this.props.dataItem;
-        const { classes, ...rest } = this.props;
-
+        const { classes } = this.props;
 
         return (
 

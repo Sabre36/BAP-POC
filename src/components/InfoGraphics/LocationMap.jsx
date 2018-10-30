@@ -1,31 +1,14 @@
 import React from "react";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-
-// core components
-import GridContainer from "components/Grid/GridContainer.jsx";
-import GridItem from "components/Grid/GridItem.jsx";
-import StarIcon from "@material-ui/icons/StarRate";
 import IconButton from '@material-ui/core/IconButton';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import PropTypes from "prop-types";
-
 import MenuIcon from '@material-ui/icons/Menu';
-import InfoIcon from '@material-ui/icons/Info';
-
 import Plantmap from './../Maps/Plantmap.jsx';
-import { ResponsiveContainer } from 'recharts';
-
 import inputData from "assets/data/Kroger/kroger_data.json";
 import geoData from "assets/data/all_geo.json";
-import starRatingStyle from "assets/jss/site-styles/views/landingPageSections/starRatingStyle.jsx";
+import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
 
 function  getFillColor(view) {
     var color = null;
@@ -76,7 +59,6 @@ class LocationMap extends React.Component {
             element.radius = newradius;
             //console.log(element);
         });
-
 
         this.setState({ view: 'shipments', color: getFillColor('shipments')} );
     }
@@ -137,7 +119,7 @@ class LocationMap extends React.Component {
 
     render() {
 
-        const { classes, children } = this.props;
+        const { classes } = this.props;
 
         const mergeArray = (source, merge, by) => source.map(item => ({
             ...item,
@@ -169,7 +151,7 @@ class LocationMap extends React.Component {
 
         const styles = {
             button: {
-                color: '000',
+                color: '#000',
                 opacity: '.86',
                 height: '18px',
                 margin: 0
@@ -185,9 +167,10 @@ class LocationMap extends React.Component {
                 marginTop: '-15px',
             },
             anchor: {
-                fontSize: '12px',
+                fontSize: '13px',
                 paddingRight: '20px',
-                cursor: 'hand!important'
+                cursor: 'pointer',
+                fontWeight: 400
             }
         };
 
@@ -225,4 +208,4 @@ class LocationMap extends React.Component {
     }
 }
 
-export default withStyles(starRatingStyle)(LocationMap);
+export default withStyles(infoGraphicStyle)(LocationMap);
