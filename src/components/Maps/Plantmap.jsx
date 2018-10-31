@@ -19,7 +19,7 @@ class Plantmap extends React.Component {
 
         return (
             <div style={{padding: '10px'}}>
-                <ResponsiveContainer height={275}>
+                <ResponsiveContainer  height={275} aspect={4.0/1.5}>
                     <Datamap
                         ref={this.addClickHandlers}
                         geographyConfig={{

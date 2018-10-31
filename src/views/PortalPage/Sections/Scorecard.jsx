@@ -14,6 +14,8 @@ import DemandChart from "components/InfoGraphics/DemandChart.jsx";
 import LocationMap from "components/InfoGraphics/LocationMap.jsx";
 import ProductionChart from "components/InfoGraphics/ProductionChart.jsx";
 import Nonconformities from "components/InfoGraphics/Nonconformities.jsx";
+import RiskDilutionChart from "components/InfoGraphics/RiskDilutionChart.jsx";
+import RiskDemandChart from "components/InfoGraphics/RiskDemandChart.jsx";
 
 class Scorecard extends React.Component {
     render() {
@@ -49,6 +51,14 @@ class Scorecard extends React.Component {
 
                     <GridItem xs={12} sm={12} md={6}>
                         <Nonconformities/>
+                    </GridItem>
+
+                    <GridItem xs={12} sm={12} md={6}>
+                        <RiskDilutionChart/>
+                    </GridItem>
+
+                    <GridItem xs={12} sm={12} md={6}>
+                        <RiskDemandChart/>
                     </GridItem>
                 </GridContainer>
             </div>

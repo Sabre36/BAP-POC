@@ -11,24 +11,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
-
-
-const styles = {
-    button: {
-        color: '000',
-        opacity: '.86',
-        height: '18px',
-        margin: 0
-    },
-    title: {
-        textAlign: 'center',
-        fontWeight: 400,
-        fontSize: '20px'
-    }
-};
-
 
 class Nonconformities extends React.Component {
 
@@ -60,9 +43,9 @@ class Nonconformities extends React.Component {
                 <Card className={classes.cardLarge}>
                     <CardActions>
                         <IconButton aria-label='Menu' color='inherit' onClick={this.handleClick.bind(this)}>
-                            <MenuIcon style={styles.button}/>
+                            <MenuIcon className={classes.iconButtonStyle}/>
                         </IconButton>
-                        <h4 style={styles.title}>Non-conformance</h4>
+                        <h4 className={classes.infoGraphicTitle}>Non-conformance</h4>
                     </CardActions>
 
                     <CardContent>

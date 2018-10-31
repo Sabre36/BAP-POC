@@ -150,18 +150,6 @@ class LocationMap extends React.Component {
 
 
         const styles = {
-            button: {
-                color: '#000',
-                opacity: '.86',
-                height: '18px',
-                margin: 0
-            },
-            title: {
-                textAlign: 'center',
-                fontWeight: 400,
-                fontSize: '20px',
-                display: 'block'
-            },
             viewContainer: {
                 marginBottom: '10px',
                 marginTop: '-15px',
@@ -179,9 +167,9 @@ class LocationMap extends React.Component {
                 <Card style={{height: '375px', overflow: 'sroll'}}>
                     <CardActions>
                         <IconButton aria-label='Menu' color='inherit' onClick={this.handleClick.bind(this)}>
-                            <MenuIcon style={styles.button}/>
+                            <MenuIcon className={classes.iconButtonStyle}/>
                         </IconButton>
-                        <h4 style={styles.title}>Worldwide {this.state.view} by plant</h4>
+                        <h4 className={classes.infoGraphicTitle}>Worldwide {this.state.view} by plant</h4>
                     </CardActions>
 
                     <div style={styles.viewContainer}>

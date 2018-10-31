@@ -90,6 +90,38 @@ const infoGraphicStyle = theme => ({
         paddingRight: '40px!important',
         paddingLeft: '40px!important',
         fontSize: '20px!important',
+    },
+    iconButtonStyle: {
+        color: '000',
+        opacity: '.86',
+        height: '18px',
+        margin: 0
+    },
+    infoGraphicTitle: {
+        fontWeight: 400,
+        fontSize: '20px'
+    },
+    riskBarsContainer: {
+        maxHeight: '250px',
+        overflowY: 'auto',
+        overflowX: 'hidden',
+        width: '100%',
+        position: 'absolute',
+        top: '95px'
+    },
+    riskLabelLowest: {
+        position: 'absolute',
+        left: '215px',
+        top: '80px',
+        fontSize: '12px',
+        textTransform: 'uppercase'
+    },
+    riskLabelHighest: {
+        position: 'absolute',
+        right: '95px',
+        top: '80px',
+        fontSize: '12px',
+        textTransform: 'uppercase'
     }
 });
 

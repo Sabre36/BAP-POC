@@ -7,19 +7,6 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } fro
 import MenuIcon from '@material-ui/icons/Menu';
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
 
-const styles = {
-    button: {
-        color: '000',
-        opacity: '.86',
-        height: '18px',
-        margin: 0
-    },
-    title: {
-        textAlign: 'center',
-        fontWeight: 400,
-        fontSize: '20px'
-    }
-};
 
 class DemandChart extends React.Component {
 
@@ -41,14 +28,13 @@ class DemandChart extends React.Component {
                 <Card className={classes.cardLarge}>
                     <CardActions>
                         <IconButton aria-label='Menu' color='inherit' onClick={this.handleClick.bind(this)}>
-                            <MenuIcon style={styles.button}/>
+                            <MenuIcon className={classes.iconButtonStyle}/>
                         </IconButton>
-                        <h4 style={styles.title}>Demand versus capacity</h4>
+                        <h4 className={classes.infoGraphicTitle}>Demand versus capacity</h4>
                     </CardActions>
 
-                    <ResponsiveContainer height={300}>
-                        <BarChart data={data}
-                            margin={{top: 10, right: 10, left: 20, bottom: 5}}>
+                    <ResponsiveContainer height={300} aspect={4.0/1.5}>
+                        <BarChart data={data} margin={{top: 50, right: 10, left: 20, bottom: 0}}>
                             <XAxis dataKey="name"/>
                             <YAxis/>
                             <Tooltip/>

@@ -9,20 +9,6 @@ import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
 
-const styles = {
-    button: {
-        color: '000',
-        opacity: '.86',
-        height: '18px',
-        margin: 0
-    },
-    title: {
-        textAlign: 'center',
-        fontWeight: 400,
-        fontSize: '20px'
-    }
-};
-
 
 const yr1 = [
     {year: 2016, name: '4 Star', value: 90},
@@ -114,9 +100,9 @@ const renderActiveShape = (props) => {
                     <Card className={classes.cardLarge}>
                         <CardActions>
                             <IconButton aria-label='Menu' color='inherit' onClick={this.handleClick.bind(this)}>
-                                <MenuIcon style={styles.button}/>
+                                <MenuIcon className={classes.iconButtonStyle}/>
                             </IconButton>
-                            <h4 style={styles.title}>Production by rating</h4>
+                            <h4 className={classes.infoGraphicTitle}>Production by rating</h4>
                         </CardActions>
 
                         <GridContainer>
