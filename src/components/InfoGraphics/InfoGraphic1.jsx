@@ -10,10 +10,6 @@ import FishIcon from "./../Icons/FishIcon.jsx";
 import Tooltip from '@material-ui/core/Tooltip';
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
 
-// function round(value, decimals) {
-//     return Number(Math.round(value +'e'+ decimals) +'e-'+ decimals).toFixed(decimals);
-// }
-
 
 class InfoGraphic1 extends React.Component {
     render() {

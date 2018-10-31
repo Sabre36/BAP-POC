@@ -12,11 +12,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import plantData from './../../assets/data/plantData.json';
-
-
-function round(value, decimals) {
-    return Number(Math.round(value +'e'+ decimals) +'e-'+ decimals).toFixed(decimals);
-}
+import round from "./../../views/PortalPage/Helpers/round.jsx";
 
 function formatNum(value, decimals) {
     let n = round(value, decimals);
