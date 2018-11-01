@@ -53,7 +53,12 @@ const infoGraphicStyle = theme => ({
         background: theme.palette.common.white,
         color: theme.palette.text.primary,
         boxShadow: theme.shadows[1],
-        fontSize: 13,
+        fontSize: '15px',
+        padding: '10px'
+    },
+    darkTooltip: {
+        fontSize: 15,
+        padding: '10px'
     },
     tr: {
         '&:hover': {

@@ -9,8 +9,8 @@
     "Demand": 635.21,
     "Delta": 0,
     "PctDiff": 0,
-    "DemandScore": "",
-    "DilutionScore": ""
+    "DemandScore": null,
+    "DilutionScore": null
   },
   {
     "Supplier": "Aquastar",
@@ -22,8 +22,8 @@
     "Demand": 30.92,
     "Delta": -37.79,
     "PctDiff": -122.2,
-    "DemandScore": "",
-    "DilutionScore": ""
+    "DemandScore": null,
+    "DilutionScore": null
   },
   {
     "Supplier": "Blue Sea Products LLC",
@@ -35,8 +35,8 @@
     "Demand": 1011.12,
     "Delta": -2507.13,
     "PctDiff": -248,
-    "DemandScore": "",
-    "DilutionScore": ""
+    "DemandScore": null,
+    "DilutionScore": null
   },
   {
     "Supplier": "BluGlacier LLC",
@@ -48,8 +48,8 @@
     "Demand": 1076.71,
     "Delta": 48.66,
     "PctDiff": 4.5,
-    "DemandScore": "",
-    "DilutionScore": ""
+    "DemandScore": null,
+    "DilutionScore": null
   },
   {
     "Supplier": "Camanchaca Inc",
@@ -61,8 +61,8 @@
     "Demand": 424.73,
     "Delta": -57.38,
     "PctDiff": -13.5,
-    "DemandScore": "",
-    "DilutionScore": ""
+    "DemandScore": null,
+    "DilutionScore": null
   },
   {
     "Supplier": "CFE Boston-Supplier",
@@ -74,8 +74,8 @@
     "Demand": 460.98,
     "Delta": 0,
     "PctDiff": 0,
-    "DemandScore": "",
-    "DilutionScore": ""
+    "DemandScore": null,
+    "DilutionScore": null
   },
   {
     "Supplier": "Consolidated Catfish-Supplier",
@@ -87,8 +87,8 @@
     "Demand": 2529.63,
     "Delta": -201.05,
     "PctDiff": -7.9,
-    "DemandScore": "",
-    "DilutionScore": ""
+    "DemandScore": null,
+    "DilutionScore": null
   },
   {
     "Supplier": "Eastern Fish Company",
@@ -97,11 +97,11 @@
     "Shipped2016": 1528.03,
     "Shipped": 1528.03,
     "Projected2017": 1338.47,
-    "Demand": 1338.47,
+    "Demand": 1538.47,
     "Delta": -189.56,
     "PctDiff": -14.2,
-    "DemandScore": "",
-    "DilutionScore": ""
+    "DemandScore": null,
+    "DilutionScore": null
   },
   {
     "Supplier": "Fish Market Seafoods-Supplier",
@@ -110,11 +110,11 @@
     "Shipped2016": 11.15,
     "Shipped": 11.15,
     "Projected2017": 11.15,
-    "Demand": 11.15,
+    "Demand": 20.1,
     "Delta": 0,
     "PctDiff": 6.8,
-    "DemandScore": "",
-    "DilutionScore": ""
+    "DemandScore": null,
+    "DilutionScore": null
   },
   {
     "Supplier": "Gortons",
@@ -123,11 +123,11 @@
     "Shipped2016": 16.21,
     "Shipped": 16.21,
     "Projected2017": 14.26,
-    "Demand": 14.26,
+    "Demand": 18.26,
     "Delta": -1.95,
     "PctDiff": -13.7,
-    "DemandScore": "",
-    "DilutionScore": ""
+    "DemandScore": null,
+    "DilutionScore": null
   },
   {
     "Supplier": "High Liner Foods, Inc. Supplier",
@@ -135,12 +135,12 @@
     "Species": "Salmon",
     "Shipped2016": 166.12,
     "Shipped": 166.12,
-    "Projected2017": "",
-    "Demand": 0,
+    "Projected2017": null,
+    "Demand": 160,
     "Delta": -166.12,
     "PctDiff": -1,
-    "DemandScore": "",
-    "DilutionScore": ""
+    "DemandScore": null,
+    "DilutionScore": null
   },
   {
     "Supplier": "Ocean Beauty Seafoods",
@@ -152,8 +152,8 @@
     "Demand": 7.16,
     "Delta": 1.81,
     "PctDiff": 25.3,
-    "DemandScore": "",
-    "DilutionScore": ""
+    "DemandScore": null,
+    "DilutionScore": null
   },
   {
     "Supplier": "Pacific Seafood",
@@ -161,12 +161,12 @@
     "Species": "Salmon",
     "Shipped2016": 1695.94,
     "Shipped": 1695.94,
-    "Projected2017": "",
-    "Demand": 0,
+    "Projected2017": null,
+    "Demand": 1821,
     "Delta": -1695.94,
     "PctDiff": -1,
-    "DemandScore": "",
-    "DilutionScore": ""
+    "DemandScore": null,
+    "DilutionScore": null
   },
   {
     "Supplier": "QVD Aquaculture",
@@ -178,8 +178,8 @@
     "Demand": 37.4,
     "Delta": -8.15,
     "PctDiff": -21.8,
-    "DemandScore": "",
-    "DilutionScore": ""
+    "DemandScore": null,
+    "DilutionScore": null
   },
   {
     "Supplier": "Regal Springs-Supplier",
@@ -188,11 +188,11 @@
     "Shipped2016": 1167.5,
     "Shipped": 1167.5,
     "Projected2017": 1125.44,
-    "Demand": 1125.44,
+    "Demand": 2125.44,
     "Delta": -42.06,
     "PctDiff": -3.7,
-    "DemandScore": "",
-    "DilutionScore": ""
+    "DemandScore": null,
+    "DilutionScore": null
   },
   {
     "Supplier": "Rich Products Corporation",
@@ -204,21 +204,21 @@
     "Demand": 644.85,
     "Delta": 58.63,
     "PctDiff": 9.1,
-    "DemandScore": "",
-    "DilutionScore": ""
+    "DemandScore": null,
+    "DilutionScore": null
   },
   {
     "Supplier": "Rubicon",
     "Banding": "Shipped_Projected",
     "Species": "Pangasius",
-    "Shipped2016": "",
+    "Shipped2016": null,
     "Shipped": 0,
-    "Projected2017": "",
+    "Projected2017": null,
     "Demand": 0,
     "Delta": 0,
     "PctDiff": -1,
-    "DemandScore": "",
-    "DilutionScore": ""
+    "DemandScore": null,
+    "DilutionScore": null
   },
   {
     "Supplier": "Seattle Fish Company",
@@ -230,8 +230,8 @@
     "Demand": 463.25,
     "Delta": 19.36,
     "PctDiff": 4.2,
-    "DemandScore": "",
-    "DilutionScore": ""
+    "DemandScore": null,
+    "DilutionScore": null
   },
   {
     "Supplier": "Seattle Shrimp & Seafood",
@@ -243,8 +243,8 @@
     "Demand": 2121.59,
     "Delta": 824.86,
     "PctDiff": 24.9,
-    "DemandScore": "",
-    "DilutionScore": ""
+    "DemandScore": null,
+    "DilutionScore": null
   },
   {
     "Supplier": "Southwind Foods/Great American Seafood",
@@ -256,8 +256,8 @@
     "Demand": 698.73,
     "Delta": -17.37,
     "PctDiff": -2.5,
-    "DemandScore": "",
-    "DilutionScore": ""
+    "DemandScore": null,
+    "DilutionScore": null
   },
   {
     "Supplier": "Star Fisheries-Supplier",
@@ -269,8 +269,8 @@
     "Demand": 78.95,
     "Delta": -7.99,
     "PctDiff": -10.1,
-    "DemandScore": "",
-    "DilutionScore": ""
+    "DemandScore": null,
+    "DilutionScore": null
   },
   {
     "Supplier": "Trapanada-Supplier",
@@ -282,20 +282,20 @@
     "Demand": 441.42,
     "Delta": 443.62,
     "PctDiff": -57.4,
-    "DemandScore": "",
-    "DilutionScore": ""
+    "DemandScore": null,
+    "DilutionScore": null
   },
   {
     "Supplier": "Vita Foods-Supplier",
     "Banding": "Shipped_Projected",
     "Species": "Salmon",
     "Shipped2016": 2.74,
-    "Shipped": "",
+    "Shipped": null,
     "Projected2017": 2.2,
-    "Demand": 2.2,
+    "Demand": 4.2,
     "Delta": 2.2,
     "PctDiff": 100,
-    "DemandScore": "",
-    "DilutionScore": ""
+    "DemandScore": null,
+    "DilutionScore": null
   }
 ]
