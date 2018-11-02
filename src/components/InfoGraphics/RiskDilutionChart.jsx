@@ -98,7 +98,7 @@ class RiskDilutionChart extends React.Component {
                 el.name = el.Supplier;
 
                 dilutionData.push(el);
-                console.log(el);
+                //console.log(el);
             }
         });
 

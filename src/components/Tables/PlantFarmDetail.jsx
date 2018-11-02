@@ -349,9 +349,9 @@ class PlantFarmDetail extends React.Component {
                     expandField="expanded"
                     onExpandChange={this.expandChange}
                     >
-                        <Column field="BAPId" title="BAP ID" minResizableWidth="110px" filterable={true}  />
-                        <Column field="Name" title="Plant Name" minResizableWidth="150px" width="200px" cell={cellEllipsis} />
-                        <Column field="Country" title="Country" width="100px" cell={cellEllipsis}/>
+                        <Column field="BAPId" title="BAP ID" minResizableWidth="110px" width="110px" filterable={true}  />
+                        <Column field="Name" title="Plant Name" minResizableWidth="150px" width="250px" cell={cellEllipsis} />
+                        <Column field="Country" title="Country" width="120px" cell={cellEllipsis}/>
                         <Column field="Farms" title="Farms" type="number" cell={cellIntegerRight}/>
                         <Column field="TotalProduction" title="Total Production" type="number" cell={cellFloatRight}/>
                         <Column field="Projected2017" title="Total Projected" type="number"  cell={cellFloatRight} />
