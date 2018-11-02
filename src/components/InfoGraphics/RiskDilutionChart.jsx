@@ -31,7 +31,7 @@ const CustomTooltip = props => {
                 </div>,
             },
         ];
-        // we render the default, but with our overridden payload
+
         return <DefaultTooltipContent payload={newPayload} />;
     }
 
@@ -98,7 +98,7 @@ class RiskDilutionChart extends React.Component {
                 el.name = el.Supplier;
 
                 dilutionData.push(el);
-                console.log(el.name + " ratio:" + el.DilutionRatio + " score:" + el.DilutionScore + " Remainder:" + el.Remaining);
+                console.log(el);
             }
         });
 

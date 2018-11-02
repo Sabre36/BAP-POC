@@ -30,7 +30,6 @@ const CustomTooltip = props => {
                 </div>,
             },
         ];
-        // we render the default, but with our overridden payload
         return <DefaultTooltipContent payload={newPayload} />;
     }
 
@@ -112,7 +111,7 @@ class RiskDemandChart extends React.Component {
                 el.name = el.Supplier;
 
                 data.push(el);
-                //onsole.log(el);
+                //console.log(el);
             }
         });
 
