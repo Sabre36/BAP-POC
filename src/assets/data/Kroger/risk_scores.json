@@ -10,7 +10,7 @@
     "Delta": 0,
     "PctDiff": 0,
     "DemandScore": null,
-    "DilutionScore": null
+    "DilutionRatio": 3.4
   },
   {
     "Supplier": "Aquastar",
@@ -23,7 +23,7 @@
     "Delta": -37.79,
     "PctDiff": -122.2,
     "DemandScore": null,
-    "DilutionScore": null
+    "DilutionRatio": 1.5
   },
   {
     "Supplier": "Blue Sea Products LLC",
@@ -36,7 +36,7 @@
     "Delta": -2507.13,
     "PctDiff": -248,
     "DemandScore": null,
-    "DilutionScore": null
+    "DilutionRatio": 6.5
   },
   {
     "Supplier": "BluGlacier LLC",
@@ -49,7 +49,7 @@
     "Delta": 48.66,
     "PctDiff": 4.5,
     "DemandScore": null,
-    "DilutionScore": null
+    "DilutionRatio": 4.5
   },
   {
     "Supplier": "Camanchaca Inc",
@@ -62,7 +62,7 @@
     "Delta": -57.38,
     "PctDiff": -13.5,
     "DemandScore": null,
-    "DilutionScore": null
+    "DilutionRatio": 11.2
   },
   {
     "Supplier": "CFE Boston-Supplier",
@@ -75,7 +75,7 @@
     "Delta": 0,
     "PctDiff": 0,
     "DemandScore": null,
-    "DilutionScore": null
+    "DilutionRatio": 1.8
   },
   {
     "Supplier": "Consolidated Catfish-Supplier",
@@ -88,7 +88,7 @@
     "Delta": -201.05,
     "PctDiff": -7.9,
     "DemandScore": null,
-    "DilutionScore": null
+    "DilutionRatio": 14.2
   },
   {
     "Supplier": "Eastern Fish Company",
@@ -101,7 +101,7 @@
     "Delta": -189.56,
     "PctDiff": -14.2,
     "DemandScore": null,
-    "DilutionScore": null
+    "DilutionRatio": 1
   },
   {
     "Supplier": "Fish Market Seafoods-Supplier",
@@ -114,7 +114,8 @@
     "Delta": 0,
     "PctDiff": 6.8,
     "DemandScore": null,
-    "DilutionScore": null
+    "DilutionRatio": 7.2,
+    "Farms": 11
   },
   {
     "Supplier": "Gortons",
@@ -127,7 +128,8 @@
     "Delta": -1.95,
     "PctDiff": -13.7,
     "DemandScore": null,
-    "DilutionScore": null
+    "DilutionRatio": 11.4,
+    "Farms": 20
   },
   {
     "Supplier": "High Liner Foods, Inc. Supplier",
@@ -140,7 +142,8 @@
     "Delta": -166.12,
     "PctDiff": -1,
     "DemandScore": null,
-    "DilutionScore": null
+    "DilutionRatio": 8.1,
+    "Farms": 14
   },
   {
     "Supplier": "Ocean Beauty Seafoods",
@@ -153,7 +156,8 @@
     "Delta": 1.81,
     "PctDiff": 25.3,
     "DemandScore": null,
-    "DilutionScore": null
+    "DilutionRatio": 2.1,
+    "Farms": 3
   },
   {
     "Supplier": "Pacific Seafood",
@@ -166,7 +170,8 @@
     "Delta": -1695.94,
     "PctDiff": -1,
     "DemandScore": null,
-    "DilutionScore": null
+    "DilutionRatio": 1.3,
+    "Farms": 2
   },
   {
     "Supplier": "QVD Aquaculture",
@@ -179,7 +184,8 @@
     "Delta": -8.15,
     "PctDiff": -21.8,
     "DemandScore": null,
-    "DilutionScore": null
+    "DilutionRatio": 2,
+    "Farms": 4
   },
   {
     "Supplier": "Regal Springs-Supplier",
@@ -192,7 +198,8 @@
     "Delta": -42.06,
     "PctDiff": -3.7,
     "DemandScore": null,
-    "DilutionScore": null
+    "DilutionRatio": 4.2,
+    "Farms": 5
   },
   {
     "Supplier": "Rich Products Corporation",
@@ -205,7 +212,8 @@
     "Delta": 58.63,
     "PctDiff": 9.1,
     "DemandScore": null,
-    "DilutionScore": null
+    "DilutionRatio": 3.3,
+    "Farms": 8
   },
   {
     "Supplier": "Rubicon",
@@ -218,7 +226,8 @@
     "Delta": 0,
     "PctDiff": -1,
     "DemandScore": null,
-    "DilutionScore": null
+    "DilutionRatio": 4.3,
+    "Farms": 7
   },
   {
     "Supplier": "Seattle Fish Company",
@@ -231,7 +240,8 @@
     "Delta": 19.36,
     "PctDiff": 4.2,
     "DemandScore": null,
-    "DilutionScore": null
+    "DilutionRatio": 5.4,
+    "Farms": 11
   },
   {
     "Supplier": "Seattle Shrimp & Seafood",
@@ -244,7 +254,8 @@
     "Delta": 824.86,
     "PctDiff": 24.9,
     "DemandScore": null,
-    "DilutionScore": null
+    "DilutionRatio": 2.4,
+    "Farms": 3
   },
   {
     "Supplier": "Southwind Foods/Great American Seafood",
@@ -257,7 +268,8 @@
     "Delta": -17.37,
     "PctDiff": -2.5,
     "DemandScore": null,
-    "DilutionScore": null
+    "DilutionRatio": 1.6,
+    "Farms": 2
   },
   {
     "Supplier": "Star Fisheries-Supplier",
@@ -270,7 +282,8 @@
     "Delta": -7.99,
     "PctDiff": -10.1,
     "DemandScore": null,
-    "DilutionScore": null
+    "DilutionRatio": 1.2,
+    "Farms": 2
   },
   {
     "Supplier": "Trapanada-Supplier",
@@ -283,7 +296,8 @@
     "Delta": 443.62,
     "PctDiff": -57.4,
     "DemandScore": null,
-    "DilutionScore": null
+    "DilutionRatio": 6.2,
+    "Farms": 6
   },
   {
     "Supplier": "Vita Foods-Supplier",
@@ -296,6 +310,7 @@
     "Delta": 2.2,
     "PctDiff": 100,
     "DemandScore": null,
-    "DilutionScore": null
+    "DilutionRatio": 3.4,
+    "Farms": 7
   }
 ]

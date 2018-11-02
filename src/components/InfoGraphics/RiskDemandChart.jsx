@@ -42,11 +42,13 @@ const tooltipTitle = ({rejects}) => {
     return (
         <div style={{fontSize: '15px', padding: '10px'}}>
             <p>
-                <strong>Risk</strong> is defined as demand exceeding or meeting shipments by +- 10% or greater.
+                <strong>Demand</strong> risk is defined as demand exceeding or meeting shipments by +- 10% or greater.
             </p>
-            <p>
-                Note: {rejects} suppliers were missing shipments or demand data.
-            </p>
+            { rejects > 0 &&
+                <p>
+                    Note: {rejects} suppliers were missing data and are omitted from this chart.
+                </p>
+            }
         </div>
     );
 };
@@ -110,7 +112,7 @@ class RiskDemandChart extends React.Component {
                 el.name = el.Supplier;
 
                 data.push(el);
-                console.log(el);
+                //onsole.log(el);
             }
         });
 
