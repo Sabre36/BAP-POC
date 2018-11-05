@@ -13,7 +13,7 @@ class Settings extends React.Component {
 
         return (
             <div className={classes.section}>
-                <GridContainer justify="left" style={{minHeight: "100vh"}}>
+                <GridContainer style={{minHeight: "100vh"}}>
                     <GridItem xs={12} sm={12} md={6}>
                         <h2 className={classes.title}>Settings</h2>
                         <h4 className={classes.description}>

@@ -27,7 +27,6 @@ const CustomTooltip = props => {
                     <text><b>Farms (#):</b> {props.payload[0].payload.Farms}</text><br/>
                     <text><b>Dilution (Ratio):</b> {round(props.payload[0].payload.DilutionRatio,1)}</text><br/>
                     <text><b>Dilution (Score):</b> {props.payload[0].payload.DilutionScore}</text><br/>
-                    <text><b>Remainder (REMOVE):</b> {props.payload[0].payload.Remainder}</text>
                 </div>,
             },
         ];

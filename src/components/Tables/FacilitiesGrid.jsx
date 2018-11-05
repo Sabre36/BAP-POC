@@ -66,7 +66,7 @@ class KendoGrid extends React.Component {
                                             </button>
                                         </div>
                                     </GridToolbar>
-                                    { this.props.authenticated && <GridColumn field="bapNo" title="BAP ID" width="160px" minResizableWidth="120"  /> }
+                                    { this.props.authenticated && <GridColumn field="bapNo" title="BAP ID" width="160px" minResizableWidth={120}  /> }
 
                                     <GridColumn field="location" title="Location"/>
 

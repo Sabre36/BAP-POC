@@ -16,7 +16,7 @@ class AboutBAPSection extends React.Component {
 
         return (
             <div className={classes.section}>
-                <GridContainer justify="left">
+                <GridContainer >
                     <GridItem xs={12} sm={12} md={6}>
                         <h2 className={classes.title}>What we offer</h2>
                         <h4 className={classes.description}>

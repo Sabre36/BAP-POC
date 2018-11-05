@@ -213,6 +213,7 @@ class DetailComponent extends GridDetailRow {
                                     <TableCell>Country</TableCell>
                                     <TableCell date>Expiration</TableCell>
                                     <TableCell numeric>Plants Served</TableCell>
+                                    {/* <TableCell numeric>Aggregate Volume</TableCell> */}
                                 </TableRow>
                             </TableHead>
 
@@ -224,6 +225,7 @@ class DetailComponent extends GridDetailRow {
                                         <TableCell>{item.Country}</TableCell>
                                         <TableCell>{item.Expires}</TableCell>
                                         <TableCell numeric>{item.PlantsServed}</TableCell>
+                                        {/* <TableCell numeric>{item.PlantsServed * 4.42}</TableCell> */}
                                     </TableRow>
                                 ) }
                             </TableBody>
@@ -258,9 +260,9 @@ class DetailComponent extends GridDetailRow {
                                 <br/>
                                 <div style={{textAlign: 'right'}}>
                                     <p><strong>Number of farms</strong></p>
-                                    <p><strong>Diffusion ratio <i className={"fa fa-sm fa-info-circle"} title="The farm-to-plant ratio (1:1 is ideal)"/></strong></p>
+                                    <p><strong>Dilution ratio <i className={"fa fa-sm fa-info-circle"} title="The farm-to-plant ratio (1:1 is ideal)"/></strong></p>
                                     <p><strong>Average farm volume <i className={"fa fa-sm fa-info-circle"} title="Average farm volume is computed..."/></strong></p>
-                                    <p><strong>Adjusted farm volume <i className={"fa fa-sm fa-info-circle"} title="Average volume x diffusion ratio"/></strong></p>
+                                    {/* <p><strong>Adjusted farm volume <i className={"fa fa-sm fa-info-circle"} title="Average volume x diffusion ratio"/></strong></p> */}
                                 </div>
                             </GridItem>
 
@@ -270,7 +272,7 @@ class DetailComponent extends GridDetailRow {
                                     <p> {dataItem.Farms}</p>
                                     <p> {dataItem.FarmPlantRatio}</p>
                                     <p> {dataItem.AvgFarm} {dataItem.AvgFarm > 0 ? ' MT' : '-'}</p>
-                                    <p> {dataItem.AdjFarm} {dataItem.AdjFarm > 0 ? ' MT' : '-'}</p>
+                                    {/* <p> {dataItem.AdjFarm} {dataItem.AdjFarm > 0 ? ' MT' : '-'}</p> */}
                                 </div>
                             </GridItem>
                         </GridContainer>
@@ -341,7 +343,7 @@ class PlantFarmDetail extends React.Component {
                     onSortChange={this.handleSortChange}
                     sort={this.state.sort}
                     onPageChange={this.handlePageChange}
-                    total={plantData.length}
+                    total={this.state.date.length}
                     skip={this.state.skip}
                     pageable={true}
                     pageSize={10}
@@ -349,8 +351,8 @@ class PlantFarmDetail extends React.Component {
                     expandField="expanded"
                     onExpandChange={this.expandChange}
                     >
-                        <Column field="BAPId" title="BAP ID" minResizableWidth="110px" width="110px" filterable={true}  />
-                        <Column field="Name" title="Plant Name" minResizableWidth="150px" width="250px" cell={cellEllipsis} />
+                        <Column field="BAPId" title="BAP ID" minResizableWidth={110} width="110px" filterable={true}  />
+                        <Column field="Name" title="Plant Name" minResizableWidth={150} width="250px" cell={cellEllipsis} />
                         <Column field="Country" title="Country" width="120px" cell={cellEllipsis}/>
                         <Column field="Farms" title="Farms" type="number" cell={cellIntegerRight}/>
                         <Column field="TotalProduction" title="Total Production" type="number" cell={cellFloatRight}/>

@@ -1,0 +1,5471 @@
+[
+  {
+    "BAPID": "P10230",
+    "Name": "Planta Quemchi",
+    "Country": "Chile",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5,
+    "Audits": [
+        {
+            "BAPNumber": "P10230",
+            "AuditAnswer": "No - Minor",
+            "AuditDate": "2017-12-06T00:00:00",
+            "AuditDetail": "No evidence was presented of the annual revision of the technical specifications of supplies according to what is established in the BAP standard. Reference: box 70 lbs of polystyrene, Technical sheet Linthern VAC D 140 - background, (November 2013), Technical sheet lid Linvac 90 N (November 2013).",
+            "FacilityType": "Plant",
+            "LongName": "Specifications shall be kept up-to-date and periodically reviewed (which shall occur at a minimum, annually).  Specifications shall be readily available for reference by designated personnel.",
+            "Question": "Specifications shall be kept up-to-date and periodically reviewed (which shall occur at a minimum, annually).  Specifications shall be readily available for reference by designated personnel.",
+            "ReferenceNumber": "2.8.5",
+            "Suppliers": "High Liner Foods, Inc. Supplier,Seattle Fish Company,Vita Foods-Supplier",
+            "Species": "Salmon",
+            "Minor": 0,
+            "Major": 0,
+            "Critical": 0,
+            "Total": 0
+        },
+        {
+            "BAPNumber": "P10230",
+            "AuditAnswer": "No - Minor",
+            "AuditDate": "2017-12-06T00:00:00",
+            "AuditDetail": "The Applicant has Corrective and preventive action procedure V 01 1/25/17. \r\n\r\nNo evidence of documented corrective action was presented for the case of unfavorable presence of total coliforms (3 cfu / cm2) in manipulator, according to report # 45595 (02/23/17).",
+            "FacilityType": "Plant",
+            "LongName": "The Applicant shall ensure that procedures for the determination and implementation of corrective action, in the event of any significant non-conformity, are prepared and documented.   These shall cover the full scope of the BAP standard (including its Annexes) and shall also address how future reoccurrences will be prevented.",
+            "Question": "The Applicant shall ensure that procedures for the determination and implementation of corrective action, in the event of any significant non-conformity, are prepared and documented.   These shall cover the full scope of the BAP standard (including its An",
+            "ReferenceNumber": "2.14.1",
+            "Suppliers": "High Liner Foods, Inc. Supplier,Seattle Fish Company,Vita Foods-Supplier",
+            "Species": "Salmon",
+            "Minor": 1,
+            "Major": 2
+        },
+        {
+            "BAPNumber": "P10230",
+            "AuditAnswer": "No - Major",
+            "AuditDate": "2017-12-06T00:00:00",
+            "AuditDetail": "Regarding the proper use of the PPE supplied by the organization, there was no evidence of the use of goggles by personnel carrying out activities of sharpening Baader knives and in process in the washing room.",
+            "FacilityType": "Plant",
+            "LongName": "Safe, appropriate and hygienic protective gear shall be provided, free of charge, to workers commensurate with work activity.",
+            "Question": "Safe, appropriate and hygienic protective gear shall be provided, free of charge, to workers commensurate with work activity.",
+            "ReferenceNumber": "3.2.1",
+            "Suppliers": "High Liner Foods, Inc. Supplier,Seattle Fish Company,Vita Foods-Supplier",
+            "Species": "Salmon",
+            "Minor": 1,
+            "Major": 2
+        },
+        {
+            "BAPNumber": "P10230",
+            "AuditAnswer": "No - Minor",
+            "AuditDate": "2017-12-06T00:00:00",
+            "AuditDetail": "Analysis for evidence of foreign matter in HACCP plan, with control measures implemented.                                                                           Metal Policy prohibits the entry of metallic artefacts into the plant.                                                                                                                           Only used in final product platforms (pallet's), which have been analyzed for risks assessment. Pallets are under visual inspection prior to use, and are destined to a secluded place for disposal.\r\nRegarding the control of glass and brittle material, it was evidenced: Standard operating procedures. Inventory of micas and luminaires Ed 08 (08/17/17), includes location, number and responsible, daily check.                                                                                                                                                            The organization has metal detectors for monitoring metal trace in the product, which are part of the preventive maintenance program.  The HACCP plan of the organization identify the metal detector as a CCP. The product is packed in case deposited via conveyor belts to a metal detection system which operates with a calibrated sensor for detecting any metallic piece having a size less than or equal to Detector finished product: Fe: 5.0 mm, S/S: 7.0 mm, Non Fe: 4.0 mm; Detector Portions (retail bag unit): Fe: 5.0 mm, S/S: 5.0 mm, Non Fe: 3.5 mm.  Continuous inspection, registration every 2 hours or product change.\r\nThe MD rejection system is: detention of the conveyor, is verified in each monitoring.  \r\nThe product committed is investigated and dealt with protocol defined for the treatment of potentially unsafe product.\r\n\r\n\r\n\r\nThere was no evidence of monitoring applied brittle material such as: mirrors, vector equipment, wall clock.",
+            "FacilityType": "Plant",
+            "LongName": "There shall be a foreign materials prevention program (or series of separate programs), that prevents contamination from all forms of foreign material.  Including but not limited to paint, wood, glass plastic, metal, hair, rust, and so forth.",
+            "Question": "There shall be a foreign materials prevention program (or series of separate programs), that prevents contamination from all forms of foreign material.  Including but not limited to paint, wood, glass plastic, metal, hair, rust, and so forth.",
+            "ReferenceNumber": "5.15.1",
+            "Suppliers": "High Liner Foods, Inc. Supplier,Seattle Fish Company,Vita Foods-Supplier",
+            "Species": "Salmon",
+            "Minor": 1,
+            "Major": 2
+        },
+        {
+            "BAPNumber": "P10230",
+            "AuditAnswer": "No - Minor",
+            "AuditDate": "2017-12-06T00:00:00",
+            "AuditDetail": "Obstruction of fire extinguisher was shown in clean room grader 2 and on the platform of the refrigerator.",
+            "FacilityType": "Plant",
+            "LongName": "The facility shall ensure proper measures for fire protection and prevention in all work, rest, dining, and where applicable, housing areas.   This includes but is not limited to:  adequate numbers of functioning fire extinguishers; emergency exits and evacuation routes that are clearly marked, properly lit and kept clear and unlocked while employees are present; proper training and enforcement for handling of flammable liquids and chemicals; and procedures to prevent fires during such activities as welding.",
+            "Question": "The facility shall ensure proper measures for fire protection and prevention in all work, rest, dining, and where applicable, housing areas.   This includes but is not limited to:  adequate numbers of functioning fire extinguishers; emergency exits and ev",
+            "ReferenceNumber": "A2-6.4",
+            "Suppliers": "High Liner Foods, Inc. Supplier,Seattle Fish Company,Vita Foods-Supplier",
+            "Species": "Salmon",
+            "Minor": 1,
+            "Major": 2
+        }
+    ]
+  },
+  {
+    "BAPID": "P10262",
+    "Name": "Northern Harvest Sea Farms Inc.",
+    "Country": "Canada",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3,
+    "Audits": [
+        {
+            "BAPNumber": "P10262",
+            "AuditAnswer": "No - Minor",
+            "AuditDate": "2017-12-28T00:00:00",
+            "AuditDetail": "Customer complaint records for the most recent complaint, 12/11/17, have not been completed per company procedure.",
+            "FacilityType": "Plant",
+            "LongName": "All customer complaints shall be documented.  Records shall include:  the nature of the complaint, investigation, product affected, root cause analysis, corrective and preventive action, product disposition where appropriate, and final complaint resolution.",
+            "Question": "All customer complaints shall be documented.  Records shall include:  the nature of the complaint, investigation, product affected, root cause analysis, corrective and preventive action, product disposition where appropriate, and final complaint resolutio",
+            "ReferenceNumber": "2.18.2",
+            "Suppliers": "CFE Boston-Supplier",
+            "Species": "Salmon",
+            "Minor": 1,
+            "Major": 2
+        },
+        {
+            "BAPNumber": "P10262",
+            "AuditAnswer": "No - Minor",
+            "AuditDate": "2017-12-28T00:00:00",
+            "AuditDetail": "The HACCP Plan is not up-to-date as it references documentation from a veterinary company no longer being used by the applicant, rather than Northern Harvest Sea Farms own veterinarians. In Spring 2017, the applicant's farming division hired two veterinarians who  now provide drug declaration documents relevant to CCP 1, Receiving Fresh Atlantic Salmon. The HACCP plan as presented during the audit still  refers to the declarations being provided by the contracted veterinary service previously used by the applicant.",
+            "FacilityType": "Plant",
+            "LongName": "All Critical control points shall be properly identified and procedures properly followed in order to control or prevent hazards.",
+            "Question": "All Critical control points shall be properly identified and procedures properly followed in order to control or prevent hazards.",
+            "ReferenceNumber": "5.2.7",
+            "Suppliers": "CFE Boston-Supplier",
+            "Species": "Salmon",
+            "Minor": 1,
+            "Major": 2
+        },
+        {
+            "BAPNumber": "P10262",
+            "AuditAnswer": "No - Minor",
+            "AuditDate": "2017-12-28T00:00:00",
+            "AuditDetail": "See 5.2.7",
+            "FacilityType": "Plant",
+            "LongName": "All critical limits set at each CCP shall be properly identified and followed.  Critical limits shall be based on validated processes, industry standards or scientific and regulatory guidance.",
+            "Question": "All critical limits set at each CCP shall be properly identified and followed.  Critical limits shall be based on validated processes, industry standards or scientific and regulatory guidance.",
+            "ReferenceNumber": "5.2.8",
+            "Suppliers": "CFE Boston-Supplier",
+            "Species": "Salmon",
+            "Minor": 1,
+            "Major": 2
+        },
+        {
+            "BAPNumber": "P10262",
+            "AuditAnswer": "No - Minor",
+            "AuditDate": "2017-12-28T00:00:00",
+            "AuditDetail": "Internal audits do not cover all sections of the BAP standard, specifically Section 4, Environmental and Waste Management, and Annex 2, Social Accountability.",
+            "FacilityType": "Plant",
+            "LongName": "The Applicant shall have an internal audit system in place that requires self-assessment of the facility's performance against the full scope of the BAP standard, including its Annexes.",
+            "Question": "The Applicant shall have an internal audit system in place that requires self-assessment of the facility's performance against the full scope of the BAP standard, including its Annexes.",
+            "ReferenceNumber": "6.2.1",
+            "Suppliers": "CFE Boston-Supplier",
+            "Species": "Salmon",
+            "Minor": 1,
+            "Major": 2
+        }
+    ]
+  },
+  {
+    "BAPID": "P10269",
+    "Name": "Planta Tome",
+    "Country": "Chile",
+    "Minor": 7,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 9
+  },
+  {
+    "BAPID": "P10285",
+    "Name": "Planta Ancud",
+    "Country": "Chile",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "P10298",
+    "Name": "Salmones Blumar S.A.",
+    "Country": "Chile",
+    "Minor": 7,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "P10328",
+    "Name": "Empresas AquaChile",
+    "Country": "Chile",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "P10329",
+    "Name": "Procesadora Aguas Clara Ltd.",
+    "Country": "Chile",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "P10341",
+    "Name": "Planta Chincui",
+    "Country": "Chile",
+    "Minor": 10,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 10
+  },
+  {
+    "BAPID": "P10375",
+    "Name": "Agroindustrial Santa Cruz Ltda.",
+    "Country": "Chile",
+    "Minor": 9,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 11
+  },
+  {
+    "BAPID": "P10347",
+    "Name": "Nova Austral S.A.",
+    "Country": "Chile",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "P10010",
+    "Name": "Tanuku",
+    "Country": "India",
+    "Minor": 9,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 9
+  },
+  {
+    "BAPID": "P10011",
+    "Name": "Singarayakonda",
+    "Country": "India",
+    "Minor": 17,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 17
+  },
+  {
+    "BAPID": "P10015",
+    "Name": "Falcon Marine Exports Ltd.",
+    "Country": "India",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "P10016",
+    "Name": "PT. Bumi Menara Internusa - Dampit Plant",
+    "Country": "Indonesia",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "P10028",
+    "Name": "Asian Seafoods Coldstorage Public Co. Ltd.",
+    "Country": "Thailand",
+    "Minor": 2,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "P10030",
+    "Name": "Sea Wealth Frozen Foods Co. Ltd.",
+    "Country": "Thailand",
+    "Minor": 11,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 14
+  },
+  {
+    "BAPID": "P10031",
+    "Name": "Andaman Seafood Co. Ltd.",
+    "Country": "Thailand",
+    "Minor": 9,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 11
+  },
+  {
+    "BAPID": "P10037",
+    "Name": "Kader Exports Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 13,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 13
+  },
+  {
+    "BAPID": "P10053",
+    "Name": "PT. Panca Mitra Multi Perdana",
+    "Country": "Indonesia",
+    "Minor": 2,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "P10056",
+    "Name": "Nekkanti Seafoods Ltd.",
+    "Country": "India",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "P10061",
+    "Name": "SAOTA Foods Joint Stock Co. (FIMEX VN)",
+    "Country": "Vietnam",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "P10066",
+    "Name": "PT. Bumi Menara Internusa - Surabaya",
+    "Country": "Indonesia",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "P10067",
+    "Name": "Marine Gold Products Ltd.",
+    "Country": "Thailand",
+    "Minor": 13,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 14
+  },
+  {
+    "BAPID": "P10069",
+    "Name": "Novaguatemala S.A.",
+    "Country": "Guatemala",
+    "Minor": 13,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 16
+  },
+  {
+    "BAPID": "P10071",
+    "Name": "PT. Mega Marine Pride",
+    "Country": "Indonesia",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "P10074",
+    "Name": "Fuqing Yihua Aquatic Food Co. Ltd.",
+    "Country": "China",
+    "Minor": 12,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 12
+  },
+  {
+    "BAPID": "P10076",
+    "Name": "Asian Seafoods (Zhanjiang) Co. Ltd.",
+    "Country": "China",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "P10085",
+    "Name": "Minh Phu Seafood Corp.",
+    "Country": "Vietnam",
+    "Minor": 3,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "P10089",
+    "Name": "Apex Frozen Foods Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 9,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 10
+  },
+  {
+    "BAPID": "P10090",
+    "Name": "Hainan Sky Blue Ocean Foods Co. Ltd.",
+    "Country": "China",
+    "Minor": 11,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 11
+  },
+  {
+    "BAPID": "P10091",
+    "Name": "May Ao food Co. Ltd.",
+    "Country": "Thailand",
+    "Minor": 17,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 19
+  },
+  {
+    "BAPID": "P10100",
+    "Name": "Harvest Select Catfish",
+    "Country": "United States",
+    "Minor": 7,
+    "Major": 0,
+    "Critical": 2,
+    "Total": 9
+  },
+  {
+    "BAPID": "P10103",
+    "Name": "Gemini SeaFood Ltd.",
+    "Country": "Bangladesh",
+    "Minor": 7,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "P10123",
+    "Name": "Okeanos Food Co. Ltd.",
+    "Country": "Thailand",
+    "Minor": 7,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "P10128",
+    "Name": "Zhanjiang Longwei Aquatic Products Industry Co. Ltd.",
+    "Country": "China",
+    "Minor": 17,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 17
+  },
+  {
+    "BAPID": "P10134",
+    "Name": "PT. Surya Alam Tunggal",
+    "Country": "Indonesia",
+    "Minor": 13,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 14
+  },
+  {
+    "BAPID": "P10149",
+    "Name": "Tropack S.A.",
+    "Country": "Ecuador",
+    "Minor": 8,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "P10643",
+    "Name": "M/s. Ananda Foods",
+    "Country": "India",
+    "Minor": 11,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 11
+  },
+  {
+    "BAPID": "P10578",
+    "Name": "M/S Veerabhadra Exports Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "P10575",
+    "Name": "Nekkanti Sea Foods Ltd. - Kakinada Plant",
+    "Country": "India",
+    "Minor": 11,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 11
+  },
+  {
+    "BAPID": "P10573",
+    "Name": "Piscicola El Rosario S.A.S",
+    "Country": "Colombia",
+    "Minor": 11,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 12
+  },
+  {
+    "BAPID": "P10567",
+    "Name": "Calcutta Seafoods Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 13,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 15
+  },
+  {
+    "BAPID": "P10535",
+    "Name": "Penver Products Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 14,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 15
+  },
+  {
+    "BAPID": "P10527",
+    "Name": "Vasista Marine",
+    "Country": "India",
+    "Minor": 17,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 19
+  },
+  {
+    "BAPID": "P10523",
+    "Name": "Suryamitra Exim Pvt. Ltd. Unit 1",
+    "Country": "India",
+    "Minor": 7,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "P10159",
+    "Name": "Tey Seng Cold Storage Co. Ltd.",
+    "Country": "Thailand",
+    "Minor": 23,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 25
+  },
+  {
+    "BAPID": "P10520",
+    "Name": "GeneSeas Aquaculture Ltda. (Tropical)",
+    "Country": "Brazil",
+    "Minor": 3,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "P10162",
+    "Name": "Tan-Long-Phat Dat",
+    "Country": "Vietnam",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "P10168",
+    "Name": "Asvini Fisheries Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 9,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 9
+  },
+  {
+    "BAPID": "P10173",
+    "Name": "America's Catch Inc.",
+    "Country": "United States",
+    "Minor": 17,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 17
+  },
+  {
+    "BAPID": "P10517",
+    "Name": "PT. Bahari Makmur Sejati - Medan",
+    "Country": "Indonesia",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "P10202",
+    "Name": "Consolidated Catfish Producers LLC",
+    "Country": "United States",
+    "Minor": 7,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "P10513",
+    "Name": "Royale Marine Impex Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 10,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 11
+  },
+  {
+    "BAPID": "P10203",
+    "Name": "PT. Bahari Makmur Sejati - Serang",
+    "Country": "Indonesia",
+    "Minor": 6,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "P10204",
+    "Name": "Sai Marine Exports Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 14,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 14
+  },
+  {
+    "BAPID": "P10212",
+    "Name": "Devi Fisheries Private Ltd.",
+    "Country": "India",
+    "Minor": 11,
+    "Major": 0,
+    "Critical": 1,
+    "Total": 12
+  },
+  {
+    "BAPID": "P10504",
+    "Name": "Universal Cold Storage Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 8,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "P10498",
+    "Name": "Camanchaca Cultivos Sur S.A. BRC FOS",
+    "Country": "Chile",
+    "Minor": 6,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "P10485",
+    "Name": "PT. Tri Mitra Makmur",
+    "Country": "Indonesia",
+    "Minor": 15,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 15
+  },
+  {
+    "BAPID": "P10482",
+    "Name": "Eco-Acuicola S.A.C.",
+    "Country": "Peru",
+    "Minor": 8,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 9
+  },
+  {
+    "BAPID": "P10479",
+    "Name": "Jayalakshmi Sea Foods Pvt.",
+    "Country": "Ltd",
+    "Minor": "India",
+    "Major": 4,
+    "Critical": 0,
+    "Total": 0
+  },
+  {
+    "BAPID": "P10476",
+    "Name": "Shree Dat Aquaculture Farms Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 17,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 19
+  },
+  {
+    "BAPID": "P10469",
+    "Name": "Paraiso Springs Aquaculture Guatemala v Cia. Ltda.",
+    "Country": "Guatemala",
+    "Minor": 22,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 23
+  },
+  {
+    "BAPID": "P10466",
+    "Name": "C.I. Piscicola Botero S.A.",
+    "Country": "Colombia",
+    "Minor": 8,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 10
+  },
+  {
+    "BAPID": "P10458",
+    "Name": "PT. Wirontono Baru",
+    "Country": "Indonesia",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "P10059",
+    "Name": "Kitchens of the Ocean (Thailand) Ltd.",
+    "Country": "Thailand",
+    "Minor": 20,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 21
+  },
+  {
+    "BAPID": "P10060",
+    "Name": "Vietnam Fish One Co.",
+    "Country": "Vietnam",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "P10455",
+    "Name": "Munnangi Seafoods Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 10,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 10
+  },
+  {
+    "BAPID": "P10451",
+    "Name": "Minh Phu Giang Seafood Corp.",
+    "Country": "Vietnam",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "P10086",
+    "Name": "Xian-Ning Seafood Co. Ltd.",
+    "Country": "Thailand",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "P10440",
+    "Name": "Castlerock Fisheries Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "P10434",
+    "Name": "Suryamitra Exim Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 7,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "P10163",
+    "Name": "Sagar Grandhi Exports Ltd.",
+    "Country": "India",
+    "Minor": 6,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 9
+  },
+  {
+    "BAPID": "P10430",
+    "Name": "PT. Surya Adikumala Abadi",
+    "Country": "Indonesia",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "P10427",
+    "Name": "Visakhaptnam",
+    "Country": "India",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "P10209",
+    "Name": "Tongwei Hainan Aquatic Products Co. Ltd.",
+    "Country": "China",
+    "Minor": 13,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 13
+  },
+  {
+    "BAPID": "P10248",
+    "Name": "PT. First Marine Seafoods",
+    "Country": "Indonesia",
+    "Minor": 8,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "P10422",
+    "Name": "Rupsha Fish & Allied Ind. Ltd.",
+    "Country": "Bangladesh",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "P10416",
+    "Name": "Yunnan Honghao Fisheries Co. Ltd.",
+    "Country": "China",
+    "Minor": 18,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 18
+  },
+  {
+    "BAPID": "P10413",
+    "Name": "Seaprimexco Vietnam",
+    "Country": "Vietnam",
+    "Minor": 5,
+    "Major": 6,
+    "Critical": 0,
+    "Total": 11
+  },
+  {
+    "BAPID": "P10387",
+    "Name": "Seavina Joint Stock Co.",
+    "Country": "Vietnam",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "P10383",
+    "Name": "Heartland Catfish Co.",
+    "Country": "United States",
+    "Minor": 9,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 10
+  },
+  {
+    "BAPID": "P10372",
+    "Name": "Ananda Enterprises (India) Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "P10368",
+    "Name": "Vinh Hoan Co. (DL 147)",
+    "Country": "Vietnam",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "P10342",
+    "Name": "Acuagranjas Dos Lagos S.A. DE CV Planta de Procesos Amachohite",
+    "Country": "Mexico",
+    "Minor": 16,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 18
+  },
+  {
+    "BAPID": "P10327",
+    "Name": "An Phu Plant",
+    "Country": "Vietnam",
+    "Minor": 3,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "P10320",
+    "Name": "Jiangmen Zhenye Fishery Ltd.",
+    "Country": "China",
+    "Minor": 8,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 10
+  },
+  {
+    "BAPID": "P10318",
+    "Name": "Seaprodex Minh Hau-Factory 69",
+    "Country": "Vietnam",
+    "Minor": 5,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "P10306",
+    "Name": "PT. Winaros Kawla Bahari",
+    "Country": "Indonesia",
+    "Minor": 7,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "P10217",
+    "Name": "West Coast Frozen Foods Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "P10303",
+    "Name": "Pisciciola New York S.A.",
+    "Country": "Colombia",
+    "Minor": 8,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "P10227",
+    "Name": "Coastal Corp. Ltd.",
+    "Country": "India",
+    "Minor": 10,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 10
+  },
+  {
+    "BAPID": "P10232",
+    "Name": "Quoc Viet Seaproducts Processing Trading and Export Co.",
+    "Country": "Ltd.",
+    "Minor": "Vietnam",
+    "Major": 7,
+    "Critical": 2,
+    "Total": 0
+  },
+  {
+    "BAPID": "P10233",
+    "Name": "Hainan Eternal Springs Fisheries Co. Ltd.",
+    "Country": "China",
+    "Minor": 18,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 18
+  },
+  {
+    "BAPID": "P10241",
+    "Name": "NTSF Seafoods Joint Stock Co.",
+    "Country": "Vietnam",
+    "Minor": 12,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 15
+  },
+  {
+    "BAPID": "P10249",
+    "Name": "Bien Dong Seafood Co. Ltd.",
+    "Country": "Vietnam",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "P10260",
+    "Name": "PT. Bumi Menara Internusa - Lampung",
+    "Country": "Indonesia",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "P10293",
+    "Name": "Yunnan Ocean King Fisheries Co. Ltd.",
+    "Country": "China",
+    "Minor": 6,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "P10263",
+    "Name": "Sprint Exports Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 13,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 13
+  },
+  {
+    "BAPID": "P10291",
+    "Name": "Sandhya Marine Ltd.",
+    "Country": "India",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "P10290",
+    "Name": "Can Tho Import Export Fishery Co. Ltd.",
+    "Country": "Vietnam",
+    "Minor": 6,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "P10268",
+    "Name": "Cuulong Seaproducts Company ( Cuulong Seapro)",
+    "Country": "Vietnam",
+    "Minor": 5,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "P10281",
+    "Name": "Ngoc Tri Seafood JSC",
+    "Country": "Vietnam",
+    "Minor": 8,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 11
+  },
+  {
+    "BAPID": "P10271",
+    "Name": "Hainan Qinfu Foods Co. Ltd.",
+    "Country": "China",
+    "Minor": 14,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 15
+  },
+  {
+    "BAPID": "P10279",
+    "Name": "Terrapez S.A.",
+    "Country": "Costa Rica",
+    "Minor": 14,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 16
+  },
+  {
+    "BAPID": "P10080",
+    "Name": "Shenzhen Allied Aquatic Produce Development Ltd.",
+    "Country": "China",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "P10081",
+    "Name": "Guangzhou Luxe Seafood Enterprise Ltd.",
+    "Country": "China",
+    "Minor": 9,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 9
+  },
+  {
+    "BAPID": "P10314",
+    "Name": "Granja Marina Tornagaleones S.A.",
+    "Country": "Chile",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "P10338",
+    "Name": "Congelados y Conservas Fitz Roy S.A.",
+    "Country": "Chile",
+    "Minor": 3,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "P10345",
+    "Name": "Planta De Procesos Quellon",
+    "Country": "Chile",
+    "Minor": 8,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 9
+  },
+  {
+    "BAPID": "P10565",
+    "Name": "Sea Favors S.A.",
+    "Country": "Chile",
+    "Minor": 14,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 16
+  },
+  {
+    "BAPID": "P10654",
+    "Name": "Bien Dong Hau Giang Seafood Joint Stock Company",
+    "Country": "Vietnam",
+    "Minor": 6,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "P10637",
+    "Name": "PT Fresh On Time Seafood",
+    "Country": "Indonesia",
+    "Minor": 10,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 12
+  },
+  {
+    "BAPID": "P10017",
+    "Name": "Chanthaburi Frozen Food Co. Ltd.",
+    "Country": "Thailand",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "P10045",
+    "Name": "Phatthana Frozen Food Co. Ltd.",
+    "Country": "Thailand",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "P10526",
+    "Name": "St. Andrews Smoky Delicacies S.A.",
+    "Country": "Chile",
+    "Minor": 23,
+    "Major": 4,
+    "Critical": 0,
+    "Total": 27
+  },
+  {
+    "BAPID": "P10072",
+    "Name": "Sandhya Aqua Exports Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "P10096",
+    "Name": "Zhenye - Aquatic (Huilong) Ltd.",
+    "Country": "China",
+    "Minor": 21,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 22
+  },
+  {
+    "BAPID": "P10491",
+    "Name": "Maoming Jincheng Frozen Foods Co. Ltd.",
+    "Country": "China",
+    "Minor": 11,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 12
+  },
+  {
+    "BAPID": "P10437",
+    "Name": "Moaming Hongye Aquatic Products Co. Ltd.",
+    "Country": "China",
+    "Minor": 10,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 10
+  },
+  {
+    "BAPID": "P10109",
+    "Name": "Hainan Golden Springs Foods Co. Ltd.",
+    "Country": "China",
+    "Minor": 9,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 9
+  },
+  {
+    "BAPID": "P10426",
+    "Name": "Gain Ocean Food Co. Ltd.",
+    "Country": "China",
+    "Minor": 10,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 10
+  },
+  {
+    "BAPID": "P10181",
+    "Name": "Hainan Xintaisheng Industry Co. Ltd.",
+    "Country": "China",
+    "Minor": 15,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 15
+  },
+  {
+    "BAPID": "P10207",
+    "Name": "undefined",
+    "Country": "undefined",
+    "Minor": 7,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "P10277",
+    "Name": "Hung Vuong Corp.",
+    "Country": "Vietnam",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10606A",
+    "Name": "Centro Quilen",
+    "Country": "Chile",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "H10291",
+    "Name": "Cermaq Chile Hatchery Cluster 1 - Collin",
+    "Country": "Chile",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "M10014",
+    "Name": "EWOS Chile Alimentos Ltda.",
+    "Country": "Chile",
+    "Minor": 3,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10606B",
+    "Name": "Centro Imelev",
+    "Country": "Chile",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10296",
+    "Name": "Clinq Island Cove",
+    "Country": "Canada",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "M10010",
+    "Name": "Skretting Canada Inc. Bayside NB",
+    "Country": "Canada",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "H10087",
+    "Name": "Northern Harvest Smolt Ltd.",
+    "Country": "Canada",
+    "Minor": 9,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 9
+  },
+  {
+    "BAPID": "H10224",
+    "Name": "Rio Petrohue",
+    "Country": "Chile",
+    "Minor": 6,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "M10013",
+    "Name": "Planta Biomar Pargua",
+    "Country": "Chile",
+    "Minor": 0,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "F10273B",
+    "Name": "Pilpilehue Farm",
+    "Country": "Chile",
+    "Minor": 8,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "F10273D",
+    "Name": "Leptepu Farm",
+    "Country": "Chile",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10273K",
+    "Name": "Ahoni Farm",
+    "Country": "Chile",
+    "Minor": 5,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "F10273O",
+    "Name": "Bahia Edwards",
+    "Country": "Chile",
+    "Minor": 3,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10273G",
+    "Name": "Punta Islotes",
+    "Country": "Chile",
+    "Minor": 3,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10328A",
+    "Name": "Chivato1",
+    "Country": "Chile",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "H10162",
+    "Name": "Chayahue Hatchery",
+    "Country": "Chile",
+    "Minor": 7,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "H10165",
+    "Name": "Sealand Aquaculture",
+    "Country": "Chile",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10328F",
+    "Name": "831 Tangbac",
+    "Country": "Chile",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "F10328G",
+    "Name": "770 Level 2 Farm Center",
+    "Country": "Chile",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "F10328H",
+    "Name": "Williams 1",
+    "Country": "Chile",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10328K",
+    "Name": "SE Forsyth",
+    "Country": "Chile",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10328L",
+    "Name": "Caicura",
+    "Country": "Chile",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "F10328M",
+    "Name": "Orestes",
+    "Country": "Chile",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "F10328R",
+    "Name": "Canlad 1 Site",
+    "Country": "Chile",
+    "Minor": 7,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "F11127",
+    "Name": "Salmones Blumar S.A. - 225 Punta Rouse",
+    "Country": "Chile",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10328T",
+    "Name": "Salmones Blumar S.A.- 226 Estero Largo Caleta Entranada",
+    "Country": "Chile",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "F10328S",
+    "Name": "Salmones Blumar S.A.- 700 Victoria 1",
+    "Country": "Chile",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "F10328I",
+    "Name": "Dring 1",
+    "Country": "Chile",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "H10350",
+    "Name": "undefined",
+    "Country": "undefined",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "F10328J",
+    "Name": "Dring 3",
+    "Country": "Chile",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "H10132",
+    "Name": "Rio Maullin",
+    "Country": "Chile",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "H10134",
+    "Name": "Novofish",
+    "Country": "Chile",
+    "Minor": 10,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 10
+  },
+  {
+    "BAPID": "H10209",
+    "Name": "Aqua Buena",
+    "Country": "Chile",
+    "Minor": 8,
+    "Major": 0,
+    "Critical": 2,
+    "Total": 10
+  },
+  {
+    "BAPID": "H10210",
+    "Name": "Ensenada",
+    "Country": "Chile",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "H10212",
+    "Name": "Piscicultura Chaicas",
+    "Country": "Chile",
+    "Minor": 10,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 10
+  },
+  {
+    "BAPID": "H10213",
+    "Name": "Rolizo",
+    "Country": "Chile",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "H10185",
+    "Name": "Chaqueihua",
+    "Country": "Chile",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 1,
+    "Total": 5
+  },
+  {
+    "BAPID": "H10186",
+    "Name": "Cuyamco",
+    "Country": "Chile",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "H10216",
+    "Name": "Chaqueihua II",
+    "Country": "Chile",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10315C",
+    "Name": "Isla Ica",
+    "Country": "Chile",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10570B",
+    "Name": "Centro Antepulli",
+    "Country": "Chile",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10570J",
+    "Name": "Productos del Mar Ventisqueros S.A. - Llancahue",
+    "Country": "Chile",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "H10217",
+    "Name": "Spring Waters",
+    "Country": "Chile",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "F10570H",
+    "Name": "Productos del Mar Ventisqueros S.A. - Meulin",
+    "Country": "Chile",
+    "Minor": 3,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10570A",
+    "Name": "Centro Renihue",
+    "Country": "Chile",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10570I",
+    "Name": "Productos del Mar Ventisqueros S.A. - Tambor",
+    "Country": "Chile",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10315D",
+    "Name": "Productos del Mar Ventisqueros S.A - Matao (10A)",
+    "Country": "Chile",
+    "Minor": 3,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "H10105",
+    "Name": "Big Tree Creek",
+    "Country": "Canada",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "H10106",
+    "Name": "Fresh Water Farm",
+    "Country": "Canada",
+    "Minor": 7,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "H10109",
+    "Name": "Glacial Creek Site",
+    "Country": "Canada",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "F10241",
+    "Name": "Beeramgunta Farm",
+    "Country": "India",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "M10040",
+    "Name": "Avanti Feeds Ltd.",
+    "Country": "India",
+    "Minor": 10,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 10
+  },
+  {
+    "BAPID": "H10051",
+    "Name": "Rajupalem",
+    "Country": "India",
+    "Minor": 3,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10755",
+    "Name": "Pedapudi",
+    "Country": "India",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "M10119",
+    "Name": "Devi Seafoods Ltd.",
+    "Country": "India",
+    "Minor": 16,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 17
+  },
+  {
+    "BAPID": "F10756",
+    "Name": "Golden Prawns Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10757",
+    "Name": "Prathyusha Global Trade Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10358",
+    "Name": "Falcon Marine Exports Ltd.",
+    "Country": "India",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "H10074",
+    "Name": "BMR Industries",
+    "Country": "India",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10795C",
+    "Name": "Basudevpur",
+    "Country": "India",
+    "Minor": 21,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 22
+  },
+  {
+    "BAPID": "M10111",
+    "Name": "Falcon Marine Exports Ltd.",
+    "Country": "India",
+    "Minor": 5,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "F10060",
+    "Name": "Pt. Lima Satu Lapan",
+    "Country": "Indonesia",
+    "Minor": 1,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "M10113",
+    "Name": "PT. Gold Coin Specialities",
+    "Country": "Indonesia",
+    "Minor": 2,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "H10231",
+    "Name": "PT. Delta Windu Purnama",
+    "Country": "Indonesia",
+    "Minor": 3,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "H10024",
+    "Name": "PT. Central Proteinaprima - Hatchery",
+    "Country": "Indonesia",
+    "Minor": 2,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10115",
+    "Name": "PT. Central Proteinaprima - Farm",
+    "Country": "Indonesia",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "M10061",
+    "Name": "PT. Central Pertiwi Bahari - Feed Mill",
+    "Country": "Indonesia",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10443",
+    "Name": "PT. Ketah Makmur",
+    "Country": "Indonesia",
+    "Minor": 5,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "F10137",
+    "Name": "Rachan Farm",
+    "Country": "Thailand",
+    "Minor": 8,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 10
+  },
+  {
+    "BAPID": "M10025",
+    "Name": "Charoen Pokphand Foods Public - Banbueng",
+    "Country": "Thailand",
+    "Minor": 13,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 13
+  },
+  {
+    "BAPID": "H10068",
+    "Name": "Charoen Pokphand Foods PCL. - Hatchery Group 1 - Shrimp Genetic Improvement Center - Pathio 1 Hatchery",
+    "Country": "Thailand",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "F10414",
+    "Name": "TSM 11",
+    "Country": "Thailand",
+    "Minor": 3,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "H10077",
+    "Name": "TSM Hatchery",
+    "Country": "Thailand",
+    "Minor": 14,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 15
+  },
+  {
+    "BAPID": "F10097A",
+    "Name": "Okeanos Farm Group - TSM 1 Farm",
+    "Country": "Thailand",
+    "Minor": 7,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "M10004",
+    "Name": "Thai Union Feed Mill Co. Ltd.",
+    "Country": "Thailand",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10097B",
+    "Name": "Okeanos Farm Group - TSM 13 Farm",
+    "Country": "Thailand",
+    "Minor": 1,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10148",
+    "Name": "Jaran Farm",
+    "Country": "Thailand",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "H10025",
+    "Name": "Thai Union Hatchery Co. Ltd.",
+    "Country": "Thailand",
+    "Minor": 2,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "H10063",
+    "Name": "East Asia Aquaculture",
+    "Country": "Thailand",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "F11018A",
+    "Name": "Asian Feed Co. Ltd. IOM 2 - Narin Farm",
+    "Country": "Thailand",
+    "Minor": 8,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "H10283",
+    "Name": "Asian Feed Co. Ltd. - Kasi Hatchery",
+    "Country": "Thailand",
+    "Minor": 23,
+    "Major": 4,
+    "Critical": 0,
+    "Total": 27
+  },
+  {
+    "BAPID": "M10060",
+    "Name": "Asian Feed Co. Ltd.",
+    "Country": "Thailand",
+    "Minor": 13,
+    "Major": 2,
+    "Critical": 2,
+    "Total": 17
+  },
+  {
+    "BAPID": "F11018D",
+    "Name": "Asian Feed Co. Ltd. IOM 2 - Jamrus Farm",
+    "Country": "Thailand",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F11018E",
+    "Name": "Asian Feed Co. Ltd. IOM 2 - Sanit Farm",
+    "Country": "Thailand",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "F10698B",
+    "Name": "I'm Shrimp Farm 3",
+    "Country": "Thailand",
+    "Minor": 8,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 9
+  },
+  {
+    "BAPID": "M10107",
+    "Name": "INTEQC Feed Co. Ltd.",
+    "Country": "Thailand",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10698C",
+    "Name": "I'm Shrimp Farm 4",
+    "Country": "Thailand",
+    "Minor": 7,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "F10727C",
+    "Name": "AMS - IOM 3 - Aom Aok Prai Farm",
+    "Country": "Thailand",
+    "Minor": 13,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 14
+  },
+  {
+    "BAPID": "M10024",
+    "Name": "Charoen Pokphand Foods Public Co.",
+    "Country": "Ltd. (Hatyai)",
+    "Minor": "Thailand",
+    "Major": 18,
+    "Critical": 1,
+    "Total": 0
+  },
+  {
+    "BAPID": "F10727A",
+    "Name": "AMS - IOM 3 - Pichit Farm (Aom Aok Prai Farm 2)",
+    "Country": "Thailand",
+    "Minor": 17,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 18
+  },
+  {
+    "BAPID": "F11129L",
+    "Name": "undefined",
+    "Country": "undefined",
+    "Minor": 9,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 9
+  },
+  {
+    "BAPID": "F10770A",
+    "Name": "AMS - IOM 4 - I'm Shrimp (Ranong)",
+    "Country": "Thailand",
+    "Minor": 7,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "F10770B",
+    "Name": "AMS - IOM 4 - Ku-Rod Farm",
+    "Country": "Thailand",
+    "Minor": 6,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "F10770C",
+    "Name": "AMS - IOM 4 - Sanit Farm",
+    "Country": "Thailand",
+    "Minor": 5,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "F10770D",
+    "Name": "AMS - IOM 4 - Permsub Farm",
+    "Country": "Thailand",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10770E",
+    "Name": "AMS - IOM 4 - Wanchai Farm",
+    "Country": "Thailand",
+    "Minor": 5,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "F10799A",
+    "Name": "I Shrimp Farm 1",
+    "Country": "Thailand",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "F10799B",
+    "Name": "I Shrimp Farm 2",
+    "Country": "Thailand",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10799C",
+    "Name": "I Shrimp Farm 4-1",
+    "Country": "Thailand",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "F10816A",
+    "Name": "Go-Sang Farm",
+    "Country": "Thailand",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "M10065",
+    "Name": "TRF Feedmill Co. Ltd.",
+    "Country": "Thailand",
+    "Minor": 10,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 11
+  },
+  {
+    "BAPID": "F10816B",
+    "Name": "Kriangkrai Farm",
+    "Country": "Thailand",
+    "Minor": 9,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 10
+  },
+  {
+    "BAPID": "F10816C",
+    "Name": "Pokkrong Farm",
+    "Country": "Thailand",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "F10816D",
+    "Name": "S. Siam Farm",
+    "Country": "Thailand",
+    "Minor": 7,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "F10816E",
+    "Name": "Thavee Farm",
+    "Country": "Thailand",
+    "Minor": 3,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10263",
+    "Name": "Best Aquaculture Practices 3",
+    "Country": "Thailand",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "F10629C",
+    "Name": "Sea Wealth Frozen Food Co. IOM 1 - Chaiwat Farm",
+    "Country": "Thailand",
+    "Minor": 8,
+    "Major": 7,
+    "Critical": 0,
+    "Total": 15
+  },
+  {
+    "BAPID": "M10036",
+    "Name": "Gold Coin Specialties Thailand Co. Ltd.",
+    "Country": "Thailand",
+    "Minor": 1,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10629B",
+    "Name": "Anach Farm",
+    "Country": "Thailand",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10629A",
+    "Name": "Sea Wealth Frozen Food Co.",
+    "Country": "Ltd. IOM 1 - Anantasit Farm",
+    "Minor": "Thailand",
+    "Major": 3,
+    "Critical": 0,
+    "Total": 0
+  },
+  {
+    "BAPID": "F10759C",
+    "Name": "Sea Wealth Frozen Food Co.",
+    "Country": "Ltd. IOM 2 - Barayee 1 Farm",
+    "Minor": "Thailand",
+    "Major": 1,
+    "Critical": 2,
+    "Total": 0
+  },
+  {
+    "BAPID": "H10161",
+    "Name": "Seafresh Industry - Thai Pacific Aquaculture Hatchery",
+    "Country": "Thailand",
+    "Minor": 12,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 14
+  },
+  {
+    "BAPID": "F10759A",
+    "Name": "Sea Wealth Frozen Food Co.",
+    "Country": "Ltd. IOM 2 - Samorn Farm",
+    "Minor": "Thailand",
+    "Major": 3,
+    "Critical": 0,
+    "Total": 0
+  },
+  {
+    "BAPID": "F10758",
+    "Name": "Thoong La Aong Farm",
+    "Country": "Thailand",
+    "Minor": 10,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 12
+  },
+  {
+    "BAPID": "F11015A",
+    "Name": "Sea Wealth Frozen Food Co. Ltd. IOM 3 - Thananit Farm",
+    "Country": "Thailand",
+    "Minor": 10,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 12
+  },
+  {
+    "BAPID": "M10123",
+    "Name": "Thai Union Feed Mill",
+    "Country": "Thailand",
+    "Minor": 9,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 9
+  },
+  {
+    "BAPID": "F11015B",
+    "Name": "Sea Wealth Frozen Food Co. Ltd. IOM 3 - Su-Ngai UPE Farm",
+    "Country": "Thailand",
+    "Minor": 13,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 15
+  },
+  {
+    "BAPID": "F11015C",
+    "Name": "Sea Wealth Frozen Food Co. Ltd. IOM 3 - Petsinat Farm",
+    "Country": "Thailand",
+    "Minor": 10,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 13
+  },
+  {
+    "BAPID": "F11015D",
+    "Name": "Sea Wealth Frozen Food Co. Ltd. IOM 3 - Kittisak Farm",
+    "Country": "Thailand",
+    "Minor": 10,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 12
+  },
+  {
+    "BAPID": "F11089A",
+    "Name": "Sea Wealth Frozen Food Co.",
+    "Country": "Ltd. - Cluster 4 - Chokserm Farm",
+    "Minor": "Thailand",
+    "Major": 9,
+    "Critical": 0,
+    "Total": 0
+  },
+  {
+    "BAPID": "F11089B",
+    "Name": "Sea Wealth Frozen Food Co.",
+    "Country": "Ltd. - Cluster 4 - Pakhamon Farm",
+    "Minor": "Thailand",
+    "Major": 3,
+    "Critical": 0,
+    "Total": 0
+  },
+  {
+    "BAPID": "F11089C",
+    "Name": "Sea Wealth Frozen Food Co.",
+    "Country": "Ltd. - Cluster 4 - Tung Noi Shrimp Farm",
+    "Minor": "Thailand",
+    "Major": 18,
+    "Critical": 0,
+    "Total": 0
+  },
+  {
+    "BAPID": "H10116",
+    "Name": "Jay Kay Hatchery II",
+    "Country": "India",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10720A",
+    "Name": "Bellam Ramu",
+    "Country": "India",
+    "Minor": 12,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 15
+  },
+  {
+    "BAPID": "F10720B",
+    "Name": "Kumbha Srinivas",
+    "Country": "India",
+    "Minor": 12,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 15
+  },
+  {
+    "BAPID": "F10720E",
+    "Name": "Chalam Cherla Veera Reddy",
+    "Country": "India",
+    "Minor": 12,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 15
+  },
+  {
+    "BAPID": "F10720G",
+    "Name": "Chapala Venkata Ramanaiah",
+    "Country": "India",
+    "Minor": 12,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 15
+  },
+  {
+    "BAPID": "F10617B",
+    "Name": "V.Trinadha Babu",
+    "Country": "India",
+    "Minor": 5,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "F10617C",
+    "Name": "K.R.Ganapathi Raju",
+    "Country": "India",
+    "Minor": 5,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "F10617E",
+    "Name": "D. Ramesh",
+    "Country": "India",
+    "Minor": 5,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "F10259A",
+    "Name": "Kona Machilipatnam",
+    "Country": "India",
+    "Minor": 8,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "F10259B",
+    "Name": "Srinivasa Marines",
+    "Country": "India",
+    "Minor": 8,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "F10847",
+    "Name": "Nekkanti Seafoods Ltd. - Pedapudi",
+    "Country": "India",
+    "Minor": 10,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 12
+  },
+  {
+    "BAPID": "F10061",
+    "Name": "Minh Phu",
+    "Country": "Vietnam",
+    "Minor": 1,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "M10005",
+    "Name": "Grobest Industrial Co. Ltd.",
+    "Country": "Vietnam",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "M10029",
+    "Name": "Green Feed Vietnam Co.",
+    "Country": "Vietnam",
+    "Minor": 0,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "M10092",
+    "Name": "Sheng Long Bio-Tech International Co. Ltd.",
+    "Country": "Vietnam",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "H10022",
+    "Name": "Min Phu Aquatic Larvae Co. Ltd.",
+    "Country": "Vietnam",
+    "Minor": 2,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10567",
+    "Name": "May Ao Foods Co.",
+    "Country": "Ltd. - S. Sununtha Farm",
+    "Minor": "Thailand",
+    "Major": 5,
+    "Critical": 0,
+    "Total": 0
+  },
+  {
+    "BAPID": "F10402",
+    "Name": "TCM Fishery Co. Ltd. Farm",
+    "Country": "Thailand",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10693",
+    "Name": "Juree Farm 16",
+    "Country": "Thailand",
+    "Minor": 9,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 10
+  },
+  {
+    "BAPID": "F10837",
+    "Name": "Juree 14",
+    "Country": "Thailand",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10841",
+    "Name": "Juree 31",
+    "Country": "Thailand",
+    "Minor": 4,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "F10692",
+    "Name": "Green Farm",
+    "Country": "Vietnam",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "M10033",
+    "Name": "Ben Tre",
+    "Country": "Vietnam",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "H10149",
+    "Name": "Viet UC",
+    "Country": "Vietnam",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10446",
+    "Name": "PT. Maju Tambak Sumur",
+    "Country": "Indonesia",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10607",
+    "Name": "PT. Maju Tambak Sumur",
+    "Country": "Indonesia",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "H10230",
+    "Name": "PT. Maju Tambak Sumur",
+    "Country": "Indonesia",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10560",
+    "Name": "Sri Rama Krishna Aquaculture Ltd.",
+    "Country": "India",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "H10142",
+    "Name": "Sai Marine Exports Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 12,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 14
+  },
+  {
+    "BAPID": "F10265",
+    "Name": "Devi Fisheries Private Ltd.",
+    "Country": "India",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "H10049",
+    "Name": "Satya",
+    "Country": "India",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10243",
+    "Name": "Bhatt Farm & Dash Farm",
+    "Country": "India",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "H10050",
+    "Name": "Kotada",
+    "Country": "India",
+    "Minor": 2,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "M10075",
+    "Name": "C.P. Aquaculture (India) Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10447",
+    "Name": "Seven Seas Aqua farms & Exports Ltd.",
+    "Country": "India",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "H10120",
+    "Name": "Asvini Fisheries Pvt. Ltd. Hatchery",
+    "Country": "India",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10505",
+    "Name": "Sprint Exports Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 8,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 9
+  },
+  {
+    "BAPID": "F10776",
+    "Name": "Ngoc Tri Farm",
+    "Country": "Vietnam",
+    "Minor": 3,
+    "Major": 4,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "H10173",
+    "Name": "Duong Hung Aquatic Breeding Co. Ltd.",
+    "Country": "Vietnam",
+    "Minor": 5,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "H10123",
+    "Name": "Coastal Aquaculture Hatchery",
+    "Country": "India",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10440F",
+    "Name": "Sandhya Marines Limited IOM Farm 1 - Sajja Bujji Aquaculture Farms",
+    "Country": "India",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10440G",
+    "Name": "Sandhya Marines Limited IOM Farm 1 - Priyanka Aqua Farms",
+    "Country": "India",
+    "Minor": 2,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10440H",
+    "Name": "Sandhya Marines Limited IOM Farm 1 - Priyanka Aqua Farms 2",
+    "Country": "India",
+    "Minor": 1,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F11230A",
+    "Name": "Sandhya Marines Limited. Cluster 3 - SAVITRI AQUACULTURE FARMS",
+    "Country": "India",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F11230B",
+    "Name": "Sandhya Marines Limited. Cluster 3 - GK FARMS",
+    "Country": "India",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F11263",
+    "Name": "SHRIMP AQUA FARM ELITE (SAFE)",
+    "Country": "India",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10486",
+    "Name": "PT. Permata Citranusa",
+    "Country": "Indonesia",
+    "Minor": 3,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "M10139",
+    "Name": "PT. CJ Feed Jombang",
+    "Country": "Indonesia",
+    "Minor": 7,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "F11016",
+    "Name": "PT. Bumi Harapan Jaya",
+    "Country": "Indonesia",
+    "Minor": 6,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "F11077",
+    "Name": "PT. GOLDEN STARS INDONESIA",
+    "Country": "Indonesia",
+    "Minor": 2,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10416",
+    "Name": "Global Seafood Shareholding Co. Seavina",
+    "Country": "Vietnam",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10488",
+    "Name": "PT. Surya Windu Kartika",
+    "Country": "Indonesia",
+    "Minor": 3,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "H10202",
+    "Name": "PT. Centralpertiwi Bahari Hatchery - Situbondo",
+    "Country": "Indonesia",
+    "Minor": 7,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 10
+  },
+  {
+    "BAPID": "F10244",
+    "Name": "I. Surya Rao",
+    "Country": "India",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "H10057",
+    "Name": "Siddardha Hatcheries Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10702A",
+    "Name": "M/S. Suryamitra Exim Pvt Ltd IOM Group 1 - Alluri Madhu Ravi Rama Raju Farm",
+    "Country": "India",
+    "Minor": 3,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10702B",
+    "Name": "M/S. Suryamitra Exim Pvt Ltd IOM Group 1 - Cherukuri Satyanarayana Varma Raju Farm",
+    "Country": "India",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10702C",
+    "Name": "M/S. Suryamitra Exim Pvt Ltd IOM Group 1 - Rudraraju Ranadeer Varma Farm",
+    "Country": "India",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10702D",
+    "Name": "M/S. Suryamitra Exim Pvt Ltd IOM Group 1 - Rudraraju Suryanarayana Raju Farm",
+    "Country": "India",
+    "Minor": 3,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10588",
+    "Name": "Shree Dat Aquaculture",
+    "Country": "India",
+    "Minor": 14,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 17
+  },
+  {
+    "BAPID": "H10307",
+    "Name": "M/S.PAVANI HATCHERIES",
+    "Country": "India",
+    "Minor": 10,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 13
+  },
+  {
+    "BAPID": "F10873",
+    "Name": "Chakkapalli Venkata Prabhakara Rao Farm",
+    "Country": "India",
+    "Minor": 18,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 19
+  },
+  {
+    "BAPID": "F10590A",
+    "Name": "undefined",
+    "Country": "undefined",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "H10151",
+    "Name": "Royale Marine Impex - Gayathri hatcheries",
+    "Country": "India",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10425E",
+    "Name": "Tropical Seafoods",
+    "Country": "India",
+    "Minor": 11,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 12
+  },
+  {
+    "BAPID": "F10425F",
+    "Name": "Gayatri Farm",
+    "Country": "India",
+    "Minor": 8,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 10
+  },
+  {
+    "BAPID": "F10425G",
+    "Name": "Jaganmohan Rao",
+    "Country": "India",
+    "Minor": 10,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 11
+  },
+  {
+    "BAPID": "F10425I",
+    "Name": "Ramanaih Naidu Farm 1",
+    "Country": "India",
+    "Minor": 11,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 12
+  },
+  {
+    "BAPID": "F10425J",
+    "Name": "Ramanaih Naidu farm 2",
+    "Country": "India",
+    "Minor": 11,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 13
+  },
+  {
+    "BAPID": "F10274",
+    "Name": "Quoc Viet Shrimp Farm",
+    "Country": "Vietnam",
+    "Minor": 3,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "M10137",
+    "Name": "Thuan Dao Branch - Nutreco Internal Vietnam",
+    "Country": "Vietnam",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "P10014",
+    "Name": "Thai Royal Frozen Foods Co. Ltd.",
+    "Country": "Thailand",
+    "Minor": 32,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 35
+  },
+  {
+    "BAPID": "F10068",
+    "Name": "Thai Union Group PCL. (Burapa Sarasin)",
+    "Country": "Thailand",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "F10441",
+    "Name": "Thaveepong Farm 1",
+    "Country": "Thailand",
+    "Minor": 6,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 9
+  },
+  {
+    "BAPID": "F10566",
+    "Name": "Thai Royal - Nakornpong Farm",
+    "Country": "Thailand",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10659C",
+    "Name": "Thai Royal IOM 6 - SeaQueen Farm 3",
+    "Country": "Thailand",
+    "Minor": 1,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10712B",
+    "Name": "Thai Royal IOM 8 - Petch Charoen Farm",
+    "Country": "Thailand",
+    "Minor": 9,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 11
+  },
+  {
+    "BAPID": "F10712A",
+    "Name": "Thai Royal IOM 8 - Wong Orawan Farm",
+    "Country": "Thailand",
+    "Minor": 10,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 12
+  },
+  {
+    "BAPID": "F10711A",
+    "Name": "Thai Royal IOM 7 - Kwanmuang Farm",
+    "Country": "Thailand",
+    "Minor": 7,
+    "Major": 4,
+    "Critical": 0,
+    "Total": 11
+  },
+  {
+    "BAPID": "F10711C",
+    "Name": "Thai Royal IOM 7 - Ratchakrit Farm",
+    "Country": "Thailand",
+    "Minor": 1,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10711D",
+    "Name": "Thai Royal IOM 7 - Rungroj Farm 1",
+    "Country": "Thailand",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10711E",
+    "Name": "Thai Royal IOM 7 - Rungroj Farm 2",
+    "Country": "Thailand",
+    "Minor": 6,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "F10711B",
+    "Name": "Thai Royal IOM 7 - Somchok Kaewkrajok",
+    "Country": "Thailand",
+    "Minor": 5,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "F10711F",
+    "Name": "Thai Royal IOM 7 - Yodpinij 5",
+    "Country": "Thailand",
+    "Minor": 1,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10711G",
+    "Name": "Thai Royal IOM 7 - TPN Farm",
+    "Country": "Thailand",
+    "Minor": 8,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 10
+  },
+  {
+    "BAPID": "F10711H",
+    "Name": "Thai Royal IOM 7 - Natenon 3",
+    "Country": "Thailand",
+    "Minor": 3,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10711I",
+    "Name": "Thai Royal IOM 7 - Natenon 14",
+    "Country": "Thailand",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10283",
+    "Name": "PT. Delta Guna Sukes - Mega Marine",
+    "Country": "Indonesia",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "M10118",
+    "Name": "PT Suri Tani Pemuka",
+    "Country": "Indonesia",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "P10668",
+    "Name": "Corporaci√≥n Refrigerados INY S.A",
+    "Country": "Peru",
+    "Minor": 9,
+    "Major": 3,
+    "Critical": 1,
+    "Total": 13
+  },
+  {
+    "BAPID": "F11079",
+    "Name": "Domingo Rodas S.A.: Camposol Group (Marinazul S.A.)",
+    "Country": "Peru",
+    "Minor": 1,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "M10087",
+    "Name": "Nutritional Technologies S.A.C.",
+    "Country": "Peru",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "M10045",
+    "Name": "Vitapro S.A.",
+    "Country": "Peru",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "M10054",
+    "Name": "GISIS Km 4.5 Duran Tambo",
+    "Country": "Ecuador",
+    "Minor": 7,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "H10293",
+    "Name": "Marinazul S.A. - Centro de Investigacion y Desarrollo de Post Larvas",
+    "Country": "Peru",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10612",
+    "Name": "Luthorcorp S.A.",
+    "Country": "Ecuador",
+    "Minor": 9,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 11
+  },
+  {
+    "BAPID": "H10255",
+    "Name": "Calademar S.A.",
+    "Country": "Ecuador",
+    "Minor": 10,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 10
+  },
+  {
+    "BAPID": "M10062",
+    "Name": "Alimentsa S.A.",
+    "Country": "Ecuador",
+    "Minor": 3,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "M10053",
+    "Name": "GISIS Km 6.5 Duran Tambo",
+    "Country": "Ecuador",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "M10048",
+    "Name": "Inbalnor S.A.",
+    "Country": "Ecuador",
+    "Minor": 2,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10604",
+    "Name": "Terraquil S.A.",
+    "Country": "Ecuador",
+    "Minor": 14,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 15
+  },
+  {
+    "BAPID": "F10595",
+    "Name": "Nirsa",
+    "Country": "Ecuador",
+    "Minor": 12,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 12
+  },
+  {
+    "BAPID": "F10535",
+    "Name": "Procae C.L. TDA",
+    "Country": "Ecuador",
+    "Minor": 2,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10536",
+    "Name": "Cipron Farm",
+    "Country": "Ecuador",
+    "Minor": 1,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10537",
+    "Name": "Culcae Farm",
+    "Country": "Ecuador",
+    "Minor": 1,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10538",
+    "Name": "Camarones y Langotinos del Mar",
+    "Country": "Ecuador",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10377",
+    "Name": "Tana Farms",
+    "Country": "Vietnam",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "H10292",
+    "Name": "C.P. Vietnam Corporation - Kien Giang Branch",
+    "Country": "Vietnam",
+    "Minor": 4,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "H10286",
+    "Name": "C.P Vietnam Corporaction - Vung Tau 2 Hatchery Branch",
+    "Country": "Vietnam",
+    "Minor": 2,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10257",
+    "Name": "Finca Ixtan",
+    "Country": "Guatemala",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "F10448A",
+    "Name": "Rajavaram Farm",
+    "Country": "India",
+    "Minor": 12,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 13
+  },
+  {
+    "BAPID": "F10448B",
+    "Name": "Siripuram 1 Farm",
+    "Country": "India",
+    "Minor": 15,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 16
+  },
+  {
+    "BAPID": "F10448C",
+    "Name": "Siripuram 2 Farm",
+    "Country": "India",
+    "Minor": 13,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 15
+  },
+  {
+    "BAPID": "F10448D",
+    "Name": "Yendamaru Farm",
+    "Country": "India",
+    "Minor": 12,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 13
+  },
+  {
+    "BAPID": "F10448E",
+    "Name": "Siripuram 3 Farm",
+    "Country": "India",
+    "Minor": 13,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 14
+  },
+  {
+    "BAPID": "M10063",
+    "Name": "Grobest Feeds Co. (India)",
+    "Country": "India",
+    "Minor": 8,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 11
+  },
+  {
+    "BAPID": "F10632A",
+    "Name": "Velangi",
+    "Country": "India",
+    "Minor": 3,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10632B",
+    "Name": "Gokavaram",
+    "Country": "India",
+    "Minor": 3,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10632C",
+    "Name": "Marripalem",
+    "Country": "India",
+    "Minor": 3,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10632D",
+    "Name": "Narasapurapeta",
+    "Country": "India",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10632E",
+    "Name": "Tallapalem",
+    "Country": "India",
+    "Minor": 2,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "P10102",
+    "Name": "Nhatrang Seaproducts Company F - 17",
+    "Country": "Vietnam",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "M10032",
+    "Name": "Bau Xeo",
+    "Country": "Vietnam",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "H10071",
+    "Name": "Thong Thuan Nui Tao Industry Shrimp Hatchery",
+    "Country": "Vietnam",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10923A",
+    "Name": "undefined",
+    "Country": "undefined",
+    "Minor": 9,
+    "Major": 5,
+    "Critical": 0,
+    "Total": 14
+  },
+  {
+    "BAPID": "F10924",
+    "Name": "Nhatrang Seaproduct Company - Phuocthe Shrimp Farm Zone",
+    "Country": "Vietnam",
+    "Minor": 8,
+    "Major": 4,
+    "Critical": 0,
+    "Total": 12
+  },
+  {
+    "BAPID": "F10264",
+    "Name": "Tan Loc Farm",
+    "Country": "Vietnam",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "P10366",
+    "Name": "Sagar Grandhi Exports Ltd. Unit II",
+    "Country": "India",
+    "Minor": 2,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10709A",
+    "Name": "Kami Reddy Suresh 1",
+    "Country": "India",
+    "Minor": 7,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "H10148",
+    "Name": "Associated Hatcheries of Ms. Sagar Grandhi Exports Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 13,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 15
+  },
+  {
+    "BAPID": "F10709B",
+    "Name": "Kami Reddy Suresh 2",
+    "Country": "India",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "F10363E",
+    "Name": "Sreenatha Reddy Farms",
+    "Country": "India",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10363D",
+    "Name": "M/s. Lotus Sea Farms",
+    "Country": "India",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10363A",
+    "Name": "Mr. Ande Saibabaiah",
+    "Country": "India",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10363B",
+    "Name": "Mr. Devaram Balarami Ravi Reddy¬†",
+    "Country": "India",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10363C",
+    "Name": "Mr.¬†Ranganayakulu",
+    "Country": "India",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "P10516",
+    "Name": "Thong Thuan Company Limited Ninh Thuan Branch - Shrimp Processing Factory No. 2",
+    "Country": "Vietnam",
+    "Minor": 8,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 9
+  },
+  {
+    "BAPID": "F10391",
+    "Name": "Thong Thuan Nui Tao Industry Shrimp Farm",
+    "Country": "Vietnam",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10378",
+    "Name": "Vietnam Fish One Co.",
+    "Country": "Vietnam",
+    "Minor": 3,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10167C",
+    "Name": "Xian Ning Seafood IOM Farm Group 2 - Kwanjai Farm",
+    "Country": "Thailand",
+    "Minor": 6,
+    "Major": 4,
+    "Critical": 0,
+    "Total": 10
+  },
+  {
+    "BAPID": "H10215",
+    "Name": "Plutalaung Hatchery",
+    "Country": "Thailand",
+    "Minor": 10,
+    "Major": 4,
+    "Critical": 0,
+    "Total": 14
+  },
+  {
+    "BAPID": "M10083",
+    "Name": "Grobest Corporation Limited",
+    "Country": "Thailand",
+    "Minor": 2,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10167F",
+    "Name": "Xian Ning Seafood IOM Farm Group 1 - XN Farm",
+    "Country": "Thailand",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "P10043",
+    "Name": "Zhanjiang Guolian Aquatic Products  Co. Ltd.",
+    "Country": "China",
+    "Minor": 8,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "F10042",
+    "Name": "Zhanjiang Guolian Nansing Farm Base",
+    "Country": "China",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "M10007",
+    "Name": "Zhanjiang Guolian Feed Co. Ltd.",
+    "Country": "China",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "H10021",
+    "Name": "Zhanjuan Guolian Shrimp Improvement Center",
+    "Country": "China",
+    "Minor": 8,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "F10354",
+    "Name": "Tan Loc Farm 2",
+    "Country": "Vietnam",
+    "Minor": 2,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "M10073",
+    "Name": "Bien Dong Seafood Co. Ltd.",
+    "Country": "Vietnam",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "H10288",
+    "Name": "Bien Dong Seafood Co.",
+    "Country": "Ltd. - Pangasius Hatchery Farm",
+    "Minor": "Vietnam",
+    "Major": 7,
+    "Critical": 2,
+    "Total": 0
+  },
+  {
+    "BAPID": "P10025",
+    "Name": "Apex Foods Ltd.",
+    "Country": "Bangladesh",
+    "Minor": 16,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 16
+  },
+  {
+    "BAPID": "F10058",
+    "Name": "Apex  Shrimp Farm 1",
+    "Country": "Bangladesh",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10550",
+    "Name": "XuWen County Xinliao Town Shidaoxiao Farm - Zhanjiang Longwei",
+    "Country": "China",
+    "Minor": 12,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 15
+  },
+  {
+    "BAPID": "F10790",
+    "Name": "Hainan Dingan Longhe Town Baichangdu Reservoir Wudoze Farming Base",
+    "Country": "China",
+    "Minor": 14,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 15
+  },
+  {
+    "BAPID": "M10042",
+    "Name": "Hainan Branch of Tongwei Co. Ltd.",
+    "Country": "China",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "H10233",
+    "Name": "Foshan Nanhai Tongwei Aquatic Science & Technology Co. Ltd.",
+    "Country": "China",
+    "Minor": 8,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "F10791",
+    "Name": "Hainan Tunchang Zhongjian Farm Twentieth Group Heqionghui Farming Base",
+    "Country": "China",
+    "Minor": 9,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 11
+  },
+  {
+    "BAPID": "F11091",
+    "Name": "Hencoop Ditch Reservoir Chen Qiongyi Farm",
+    "Country": "China",
+    "Minor": 8,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "F10579",
+    "Name": "Minh Phu",
+    "Country": "Vietnam",
+    "Minor": 5,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "F10648",
+    "Name": "Tan Khanh Trung Farm",
+    "Country": "Vietnam",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "M10059",
+    "Name": "Pilmico VHF Joint Stock Co.",
+    "Country": "Vietnam",
+    "Minor": 3,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "H10124",
+    "Name": "Binh Thanh 2 Hatchery",
+    "Country": "Vietnam",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10534",
+    "Name": "Tan Thuan Dong Farm",
+    "Country": "Vietnam",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10589",
+    "Name": "Binh Thanh Farm",
+    "Country": "Vietnam",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10253",
+    "Name": "My Xuong Farm",
+    "Country": "Vietnam",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F11265",
+    "Name": "Vinh Hoan Corporation - Tan Hoa Farm",
+    "Country": "Vietnam",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "P10605",
+    "Name": "PT. Bumi Pangan Utama",
+    "Country": "Indonesia",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F11022",
+    "Name": "PT Gosyen Binuangeun Indonesia",
+    "Country": "Indonesia",
+    "Minor": 11,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 14
+  },
+  {
+    "BAPID": "H10274",
+    "Name": "PT. Prima Larvae (Hatchery)",
+    "Country": "Indonesia",
+    "Minor": 8,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 11
+  },
+  {
+    "BAPID": "F11023",
+    "Name": "PT. Dewi Laut Aquaculture",
+    "Country": "Indonesia",
+    "Minor": 13,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 16
+  },
+  {
+    "BAPID": "F10517",
+    "Name": "Fujian Huawang Agriculture Comprehensive Development Co. Ltd.",
+    "Country": "China",
+    "Minor": 14,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 15
+  },
+  {
+    "BAPID": "M10064",
+    "Name": "Fujian Haida Feed Co.",
+    "Country": "China",
+    "Minor": 2,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10731",
+    "Name": "Fuqing Yujiang Agricultural Economy Development Co. Ltd.",
+    "Country": "China",
+    "Minor": 13,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 14
+  },
+  {
+    "BAPID": "F10563",
+    "Name": "Maoming Xinzhou - Dianbai Shrimp Farm",
+    "Country": "China",
+    "Minor": 4,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "H10199",
+    "Name": "Maoming Xinzhou Seafood Co. Ltd.",
+    "Country": "China",
+    "Minor": 6,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "M10058",
+    "Name": "Guangdong Evergreen Feed Industrial Co. Ltd.",
+    "Country": "China",
+    "Minor": 5,
+    "Major": 7,
+    "Critical": 0,
+    "Total": 12
+  },
+  {
+    "BAPID": "F10389",
+    "Name": "Qionhai Zhongpingzi Grobest Tilapia Farm",
+    "Country": "China",
+    "Minor": 7,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "M10031",
+    "Name": "Foshan Quanxing Aquatic Product Feed Co. Ltd.",
+    "Country": "China",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "H10122",
+    "Name": "Hainan Progift Aqua-tech (Wenbi Feng) Co.",
+    "Country": "Ltd.",
+    "Minor": "China",
+    "Major": 18,
+    "Critical": 5,
+    "Total": 0
+  },
+  {
+    "BAPID": "F10471",
+    "Name": "Dingan Liaoshangyi Reservior Tilapia Farm",
+    "Country": "China",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10469",
+    "Name": "Dingan Baoshan Reservoir Tilapia Farm",
+    "Country": "China",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10390",
+    "Name": "Wenchang Longfeng Reservior Tilapia Farm",
+    "Country": "China",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "F10470",
+    "Name": "Dingan Zhonggongtang Reservoir Tilapia Farm",
+    "Country": "China",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "F11026",
+    "Name": "Nalta Ahsania Matshya Khamar - Gemini Seafood Ltd.",
+    "Country": "Bangladesh",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10638",
+    "Name": "Industrial Pesquera Santa Priscilla S.A. (IPSP Taura 1 & Taurafish - Taura 2) (Tropical)",
+    "Country": "Ecuador",
+    "Minor": 10,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 11
+  },
+  {
+    "BAPID": "F10559A",
+    "Name": "undefined",
+    "Country": "undefined",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "M10067",
+    "Name": "Ananda Enterprises (India) Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 8,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "H10144",
+    "Name": "Ananda Enterprises (India) Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 11,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 11
+  },
+  {
+    "BAPID": "F10916A",
+    "Name": "Verrabadhara Exports - Sunnyvale Seafoods IOM 1 - Supran Farms",
+    "Country": "India",
+    "Minor": 5,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "H10220",
+    "Name": "M/S NGR Aquatech PVt. Ltd.",
+    "Country": "India",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "M10104",
+    "Name": "CPF (India) Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 13,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 14
+  },
+  {
+    "BAPID": "F10916C",
+    "Name": "Verrabadhara Exports - Sunnyvale Seafoods IOM 1 - Chaitanya Aqua Farm 2",
+    "Country": "India",
+    "Minor": 4,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "F11227B",
+    "Name": "Verrabadhara Exports - IOM 2 - Chaitanya Aqua Farms-1",
+    "Country": "India",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F11227A",
+    "Name": "Veerabhadra Exports - IOM 2 - Ramaraju Farms",
+    "Country": "India",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10863",
+    "Name": "Thongchai Farm",
+    "Country": "Thailand",
+    "Minor": 15,
+    "Major": 4,
+    "Critical": 0,
+    "Total": 19
+  },
+  {
+    "BAPID": "M10108",
+    "Name": "Thai Luxe Enterprises PCL",
+    "Country": "Thailand",
+    "Minor": 1,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10627",
+    "Name": "GeneSeas Aquacultura Ltda.",
+    "Country": "Brazil",
+    "Minor": 3,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10976",
+    "Name": "Geneseas Aquacultura Ltda - Quiteria Farm",
+    "Country": "Brazil",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10350A",
+    "Name": "Asvini IOM Farm Group 1 - Ch. Narasimha Raju",
+    "Country": "India",
+    "Minor": 7,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "F10350B",
+    "Name": "Asvini IOM Farm Group 1 - Ch. Satya Narayana Varma Raju",
+    "Country": "India",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "F10350C",
+    "Name": "Asvini IOM Farm Group 1 - *MVVST Prabhakara Rao",
+    "Country": "India",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10350D",
+    "Name": "Asvini IOM Farm Group 1 - *Talluri Venkatasathya Subba Rao",
+    "Country": "India",
+    "Minor": 7,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "F10350E",
+    "Name": "Asvini Fisheries Private Limited IOM 1 - Vundavalli Sailaja",
+    "Country": "India",
+    "Minor": 8,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "F10350F",
+    "Name": "Asvini Fisheries Private Limited IOM 1 - Tammineedi Sai Venkata Rajesh",
+    "Country": "India",
+    "Minor": 7,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "F10350H",
+    "Name": "Asvini Fisheries Private Limited IOM 1 - Potluri Srinivas",
+    "Country": "India",
+    "Minor": 9,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 9
+  },
+  {
+    "BAPID": "F10193A",
+    "Name": "undefined",
+    "Country": "undefined",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "H10243",
+    "Name": "Aquacorporacion Internacional S.A.",
+    "Country": "Costa Rica",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "M10116",
+    "Name": "Biomar Aquacorporation Products S. A.",
+    "Country": "Costa Rica",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "F11119",
+    "Name": "Wencun Yilong Aquafarm of Taishan City",
+    "Country": "China",
+    "Minor": 13,
+    "Major": 6,
+    "Critical": 0,
+    "Total": 19
+  },
+  {
+    "BAPID": "M10136",
+    "Name": "Jiangmen Lvyuan Feed Co.",
+    "Country": "Ltd.",
+    "Minor": "China",
+    "Major": 6,
+    "Critical": 4,
+    "Total": 0
+  },
+  {
+    "BAPID": "H10141",
+    "Name": "Guangdong Fishery Germplasm Protection Organization",
+    "Country": "China",
+    "Minor": 14,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 15
+  },
+  {
+    "BAPID": "H10294",
+    "Name": "Guangdong Jinyang Aquaculture Co.",
+    "Country": "Ltd.",
+    "Minor": "China",
+    "Major": 12,
+    "Critical": 1,
+    "Total": 0
+  },
+  {
+    "BAPID": "F11114",
+    "Name": "The Fifth and Sixth Aquafarm of Zhuhai Fumin Tilapia Aquafarm &Research Co.",
+    "Country": "Ltd(H",
+    "Minor": "G",
+    "Major": "W)",
+    "Critical": "China",
+    "Total": 11
+  },
+  {
+    "BAPID": "F10496",
+    "Name": "C.I. Piscicola Botero S.A.",
+    "Country": "Colombia",
+    "Minor": 8,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "H10180",
+    "Name": "Villa Dana",
+    "Country": "Colombia",
+    "Minor": 8,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 9
+  },
+  {
+    "BAPID": "P10474",
+    "Name": "Browns Bay Packing Co. - Fresh Fish",
+    "Country": "Canada",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "H10115",
+    "Name": "Gold River Hatchery",
+    "Country": "Canada",
+    "Minor": 9,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 9
+  },
+  {
+    "BAPID": "F10268B",
+    "Name": "Muchalat South Site",
+    "Country": "Canada",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10268C",
+    "Name": "Muchalat North Site",
+    "Country": "Canada",
+    "Minor": 2,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10268F",
+    "Name": "Barnes Bay",
+    "Country": "Canada",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10268J",
+    "Name": "Culloden",
+    "Country": "Canada",
+    "Minor": 2,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10268K",
+    "Name": "Site 13- East",
+    "Country": "Canada",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "F10268L",
+    "Name": "Salten",
+    "Country": "Canada",
+    "Minor": 2,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10268M",
+    "Name": "Vantage Point - East",
+    "Country": "Canada",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10268O",
+    "Name": "Atrevida Point - West",
+    "Country": "Canada",
+    "Minor": 3,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10268P",
+    "Name": "Ahlstrom Point - East",
+    "Country": "Canada",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "H10193",
+    "Name": "Ocean Farms Hatchery",
+    "Country": "Canada",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10267J",
+    "Name": "Miller Channel",
+    "Country": "Canada",
+    "Minor": 1,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10267L",
+    "Name": "Bawden Point",
+    "Country": "Canada",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10267P",
+    "Name": "Ross Pass",
+    "Country": "Canada",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10267R",
+    "Name": "Rant Point",
+    "Country": "Canada",
+    "Minor": 4,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "F10487",
+    "Name": "Eco-Acuicola S.A.C.",
+    "Country": "Peru",
+    "Minor": 6,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "F10610",
+    "Name": "Jayalakshmi Sea Foods Pvt Ltd",
+    "Country": "India",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10493",
+    "Name": "Paraiso Springs Aquaculture Guatemala",
+    "Country": "Guatemala",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "M10043",
+    "Name": "Cargill de Honduras",
+    "Country": "Honduras",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "F10691",
+    "Name": "Munnangi Seafoods Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10609",
+    "Name": "M/S Castlerock Fisheries Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 25,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 28
+  },
+  {
+    "BAPID": "H10159",
+    "Name": "Evergreen Seeds and Feeds Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 20,
+    "Major": 4,
+    "Critical": 0,
+    "Total": 24
+  },
+  {
+    "BAPID": "F10434",
+    "Name": "Funing Boai Baie Aqua Farm",
+    "Country": "China",
+    "Minor": 13,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 15
+  },
+  {
+    "BAPID": "M10051",
+    "Name": "Yunnan Ocean King Biological Feed Science and Technology Co. Ltd.",
+    "Country": "China",
+    "Minor": 11,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 12
+  },
+  {
+    "BAPID": "H10163",
+    "Name": "Yunnan Yilong Aquatic Product Development Co. Ltd.",
+    "Country": "China",
+    "Minor": 14,
+    "Major": 7,
+    "Critical": 0,
+    "Total": 21
+  },
+  {
+    "BAPID": "F10553A",
+    "Name": "Seaprimexco IOM 1- Doan Ngoc Son",
+    "Country": "Vietnam",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "F10553C",
+    "Name": "undefined",
+    "Country": "undefined",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "F11242",
+    "Name": "Seaprimexco - Tan Hung Tay",
+    "Country": "Vietnam",
+    "Minor": 2,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10639",
+    "Name": "Malpaso Farm",
+    "Country": "Mexico",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "H10168",
+    "Name": "Acuagranjas Dos Lagos S.A. DE CV - Hatchery",
+    "Country": "Mexico",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10640",
+    "Name": "Penitas Farm",
+    "Country": "Mexico",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10387",
+    "Name": "Vo Hong Ngoan's Farm",
+    "Country": "Vietnam",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "F10643",
+    "Name": "PT. Windu Empang Mas",
+    "Country": "Indonesia",
+    "Minor": 3,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10596",
+    "Name": "Cajon",
+    "Country": "Honduras",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "M10066",
+    "Name": "Aquafeed S.A. de CV (Regal Springs)",
+    "Country": "Honduras",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10597",
+    "Name": "Yojoa",
+    "Country": "Honduras",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10254",
+    "Name": "Jiatan Reservoir Tilapia Cage Farm",
+    "Country": "China",
+    "Minor": 11,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 13
+  },
+  {
+    "BAPID": "M10086",
+    "Name": "Hainan Eternal Springs Fisheries Co. Ltd.",
+    "Country": "China",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "H10169",
+    "Name": "Hainan Xiangtai Hatchery Co. Ltd.",
+    "Country": "China",
+    "Minor": 3,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10213",
+    "Name": "Chengmai Xingyuan Development Co. Ltd. Hainan",
+    "Country": "China",
+    "Minor": 14,
+    "Major": 1,
+    "Critical": 1,
+    "Total": 16
+  },
+  {
+    "BAPID": "F10786",
+    "Name": "Wenchang Wengtian Fushan Wanghaizhong Farm",
+    "Country": "China",
+    "Minor": 6,
+    "Major": 6,
+    "Critical": 0,
+    "Total": 12
+  },
+  {
+    "BAPID": "F10773",
+    "Name": "Donglin Gongyonghua Farm Wengtian Town Wenchang City",
+    "Country": "China",
+    "Minor": 5,
+    "Major": 5,
+    "Critical": 0,
+    "Total": 10
+  },
+  {
+    "BAPID": "F10774",
+    "Name": "Yeyuzhu Farm Fengpo Twon Wenchang City",
+    "Country": "China",
+    "Minor": 3,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10690",
+    "Name": "Cantho Import Export Fishery Co. Ltd.",
+    "Country": "Vietnam",
+    "Minor": 6,
+    "Major": 4,
+    "Critical": 0,
+    "Total": 10
+  },
+  {
+    "BAPID": "F11146",
+    "Name": "BaTri 2",
+    "Country": "Vietnam",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10287",
+    "Name": "Wenchang Xiwei Aquaculture Farm",
+    "Country": "China",
+    "Minor": 8,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "F10623",
+    "Name": "Wenchang Jinshan Hushan Mao Shan Po Village Huang Yuanfen Tilapia Farm",
+    "Country": "China",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "F10624",
+    "Name": "Wenchang Jinshan Xu Guolin Tilapia Farm",
+    "Country": "China",
+    "Minor": 1,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10697",
+    "Name": "Hainan Biyue Agriculture Development Co. Ltd.",
+    "Country": "China",
+    "Minor": 7,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "F10429",
+    "Name": "The Third Aquafarm of Zhuhai Fumin Tilapia Aquafarm & Research Co. Ltd.",
+    "Country": "China",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "H10157",
+    "Name": "Zhuhai Jiayi Aquatic Limit Co. - Hatchery",
+    "Country": "China",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 1,
+    "Total": 7
+  },
+  {
+    "BAPID": "F10752",
+    "Name": "Kuliarchar Shrimp Farm",
+    "Country": "Bangladesh",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10271",
+    "Name": "The Second Aquafarm of Zhuhai Fumin Tilapia Aquafarm & Research Co. Ltd.",
+    "Country": "China",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10206",
+    "Name": "Zhuhai Yihai Aquatic Co. Ltd.",
+    "Country": "China",
+    "Minor": 13,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 15
+  },
+  {
+    "BAPID": "F10105",
+    "Name": "Zhuhai Jiayi Aquatic Limit Co. - Qianqu Farm",
+    "Country": "China",
+    "Minor": 15,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 16
+  },
+  {
+    "BAPID": "F10247",
+    "Name": "Guangzhou Luxe Seafood Enterprise Ltd.",
+    "Country": "China",
+    "Minor": 8,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "F10552B",
+    "Name": "Quillaipe (Barrio 2)",
+    "Country": "Chile",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10552C",
+    "Name": "Latolque (Barrio 30B)",
+    "Country": "Chile",
+    "Minor": 3,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10552D",
+    "Name": "Chiguay (Barrio 32)",
+    "Country": "Chile",
+    "Minor": 3,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "H10204",
+    "Name": "Australis Agua Dulce Hatchery Cluster 1 - Curacalco",
+    "Country": "Chile",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "H10205",
+    "Name": "Australis Agua Dulce Hatchery Cluster 1 - Estero Matanza",
+    "Country": "Chile",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "H10206",
+    "Name": "Australis Agua Dulce Hatchery Cluster 1 - Las Vertientes",
+    "Country": "Chile",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10925",
+    "Name": "Caleta Fog",
+    "Country": "Chile",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10928",
+    "Name": "Punta Obstruccion",
+    "Country": "Chile",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "F11140",
+    "Name": "Australis Mar S.A. - Melchor 4",
+    "Country": "Chile",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10718",
+    "Name": "Australis Mar S.A. - Centro Canal Costa (Canal Costa Site)",
+    "Country": "Chile",
+    "Minor": 4,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "F10766",
+    "Name": "Centro Morgan",
+    "Country": "Chile",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10844A",
+    "Name": "undefined",
+    "Country": "undefined",
+    "Minor": 3,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10844B",
+    "Name": "undefined",
+    "Country": "undefined",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10961",
+    "Name": "Australis Mar S.A. - Centro Filomena 2",
+    "Country": "Chile",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "H10218",
+    "Name": "Ketrun Rayen",
+    "Country": "Chile",
+    "Minor": 8,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 9
+  },
+  {
+    "BAPID": "F10533A",
+    "Name": "Valverde 1",
+    "Country": "Chile",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "H10191",
+    "Name": "Piscicultura Curarrehue",
+    "Country": "Chile",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10533B",
+    "Name": "Valverde 2",
+    "Country": "Chile",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10533C",
+    "Name": "Valverde 3",
+    "Country": "Chile",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10533H",
+    "Name": "Estero Neito",
+    "Country": "Chile",
+    "Minor": 7,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "F10533I",
+    "Name": "Estero Soto",
+    "Country": "Chile",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "F10533J",
+    "Name": "Punta Ganso",
+    "Country": "Chile",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 1,
+    "Total": 7
+  },
+  {
+    "BAPID": "F10533O",
+    "Name": "Graffer",
+    "Country": "Chile",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10533P",
+    "Name": "Marta",
+    "Country": "Chile",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "F10362A",
+    "Name": "Canalad 1",
+    "Country": "Chile",
+    "Minor": 7,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "F10362C",
+    "Name": "Cuptana2",
+    "Country": "Chile",
+    "Minor": 0,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "F10362E",
+    "Name": "Francisco Norte - Melinka",
+    "Country": "Chile",
+    "Minor": 0,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "F10533AQ",
+    "Name": "Exportadora Los Fiordos - Cluster - Seno Vera",
+    "Country": "Chile",
+    "Minor": 6,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "F10533AH",
+    "Name": "Cuptana 4",
+    "Country": "Chile",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 1,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10533AJ",
+    "Name": "Luna 2",
+    "Country": "Chile",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10533AK",
+    "Name": "Jesus 3",
+    "Country": "Chile",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10533AL",
+    "Name": "Lalanca",
+    "Country": "Chile",
+    "Minor": 3,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10533R",
+    "Name": "Jesus 1",
+    "Country": "Chile",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10533Z",
+    "Name": "Elena",
+    "Country": "Chile",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10533U",
+    "Name": "Nueva Esperanza",
+    "Country": "Chile",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "H10166",
+    "Name": "Piscicultura Los Rios",
+    "Country": "Chile",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10302B",
+    "Name": "Las Mentas 1",
+    "Country": "Chile",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10302D",
+    "Name": "Punta Caldera",
+    "Country": "Chile",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10302E",
+    "Name": "Punto Garrao",
+    "Country": "Chile",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10302F",
+    "Name": "Ballenas 3",
+    "Country": "Chile",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10302G",
+    "Name": "Mentas 2",
+    "Country": "Chile",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "F10302N",
+    "Name": "Mentirosa 3",
+    "Country": "Chile",
+    "Minor": 1,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 1
+  },
+  {
+    "BAPID": "F10302C",
+    "Name": "Mentirosa 1",
+    "Country": "Chile",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10302P",
+    "Name": "Erasmo 2 (25-A)",
+    "Country": "Chile",
+    "Minor": 2,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10044",
+    "Name": "Chinnaganjam",
+    "Country": "India",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "M10085",
+    "Name": "The Waterbase Ltd.",
+    "Country": "India",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10442A",
+    "Name": "India Pvt. Ltd. 1",
+    "Country": "India",
+    "Minor": 6,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "M10112",
+    "Name": "BMR Industries Private Limited",
+    "Country": "India",
+    "Minor": 8,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 10
+  },
+  {
+    "BAPID": "F10975",
+    "Name": "Sandhya Aqua Exports Pvt. Ltd. - Priya Aqua Farms",
+    "Country": "India",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10872A",
+    "Name": "Waterola Aqua Farms Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 7,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "F10872B",
+    "Name": "Park Acquatics Private Limited",
+    "Country": "India",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10872C",
+    "Name": "Naturella Aqua Marine and Exports Pvt. Ltd.",
+    "Country": "India",
+    "Minor": 7,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "F10872E",
+    "Name": "Kakani Narahari Reddy",
+    "Country": "India",
+    "Minor": 7,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "F10872F",
+    "Name": "Isita Aqua Limited",
+    "Country": "India",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "F10442B",
+    "Name": "India Pvt. Ltd. 2",
+    "Country": "India",
+    "Minor": 6,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 9
+  },
+  {
+    "BAPID": "M10100",
+    "Name": "Hanuman Junction",
+    "Country": "India",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "F10073",
+    "Name": "Maoming Changxing Culture (Gaopo)",
+    "Country": "China",
+    "Minor": 4,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 4
+  },
+  {
+    "BAPID": "H10150",
+    "Name": "Maoming City Maonan Sangao Fine Breeding Base",
+    "Country": "China",
+    "Minor": 7,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 7
+  },
+  {
+    "BAPID": "F10576",
+    "Name": "Jincheng Aquaculture Base (Lanxi",
+    "Country": "China",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10742",
+    "Name": "Dianbai County Longshan Town Wu Ming Dong Farm",
+    "Country": "China",
+    "Minor": 6,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "H10158",
+    "Name": "Huazhou Hongfeng Aqauculture Co. Ltd.",
+    "Country": "China",
+    "Minor": 5,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "M10041",
+    "Name": "Guangdong Shuanghu Feed Co. Ltd.",
+    "Country": "China",
+    "Minor": 6,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 6
+  },
+  {
+    "BAPID": "F10725",
+    "Name": "Gaozhou Ise Agriculture Co. Ltd.",
+    "Country": "China",
+    "Minor": 7,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 8
+  },
+  {
+    "BAPID": "F10526",
+    "Name": "Hainan Xinhaiyang Aquatic Products Co. Ltd.",
+    "Country": "China",
+    "Minor": 9,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 11
+  },
+  {
+    "BAPID": "F10525",
+    "Name": "Hainan Shenghaiyuan Agriculture - Longma Base",
+    "Country": "China",
+    "Minor": 10,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 13
+  },
+  {
+    "BAPID": "F10890",
+    "Name": "LvNankang Aquaculture",
+    "Country": "China",
+    "Minor": 10,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 13
+  },
+  {
+    "BAPID": "F10728",
+    "Name": "North Branch Hanshan Reservoir Farm",
+    "Country": "China",
+    "Minor": 2,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "F10729",
+    "Name": "Shikang Reservoir - Junye Aquatic Farm",
+    "Country": "China",
+    "Minor": 3,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 3
+  },
+  {
+    "BAPID": "F10921",
+    "Name": "Lvjiayi Farm",
+    "Country": "China",
+    "Minor": 5,
+    "Major": 0,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10828",
+    "Name": "Chen Wenhuan Aquaculture Farm",
+    "Country": "China",
+    "Minor": 9,
+    "Major": 2,
+    "Critical": 0,
+    "Total": 11
+  },
+  {
+    "BAPID": "F10473",
+    "Name": "CAI GA Island",
+    "Country": "Vietnam",
+    "Minor": 1,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 2
+  },
+  {
+    "BAPID": "H10121",
+    "Name": "Hung Vuong",
+    "Country": "Vietnam",
+    "Minor": 9,
+    "Major": 3,
+    "Critical": 0,
+    "Total": 12
+  },
+  {
+    "BAPID": "M10050",
+    "Name": "Viet Thang Feed - Factory Sadec",
+    "Country": "Vietnam",
+    "Minor": 4,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 5
+  },
+  {
+    "BAPID": "F10474",
+    "Name": "Ban Island",
+    "Country": "Vietnam",
+    "Minor": 1,
+    "Major": 1,
+    "Critical": 0,
+    "Total": 2
+  }
+]

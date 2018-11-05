@@ -17,7 +17,7 @@ class WorkSection extends React.Component {
     const { classes } = this.props;
     return (
       <div className={classes.section}>
-        <GridContainer justify="left">
+        <GridContainer>
           <GridItem cs={12} sm={12} md={8}>
             <h2 className={classes.title}>Stay connected</h2>
             <h4 className={classes.description}>
@@ -44,7 +44,7 @@ class WorkSection extends React.Component {
                   />
                 </GridItem>
 
-                <GridContainer justify="left">
+                <GridContainer>
                   <GridItem
                     xs={12}
                     sm={12}

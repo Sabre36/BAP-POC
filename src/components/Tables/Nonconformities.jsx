@@ -1,4 +1,6 @@
 import React from 'react';
+import withStyles from "@material-ui/core/styles/withStyles";
+
 import { Grid, GridColumn as Column, GridDetailRow } from '@progress/kendo-react-grid';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
@@ -11,6 +13,11 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import nonConformitiesGrid from "assets/jss/site-styles/components/nonConformitiesGrid.jsx";
+
+
+import nonconf from './../../assets/data/Kroger/nonconf.json';
+
 import nonconformitiesData from './../../assets/data/Kroger/non_conformities.json';
 import geoData from "assets/data/all_geo.json";
 import round from "./../../views/PortalPage/Helpers/round.jsx";
@@ -172,7 +179,7 @@ class cellEllipsis extends React.Component {
     }
 }
 
-class DetailComponent extends GridDetailRow {
+class AuditData extends GridDetailRow {
     state = {
         tabIndex: 0,
     }
@@ -184,132 +191,101 @@ class DetailComponent extends GridDetailRow {
 
 
     render() {
-        const dataItem = this.props.dataItem;
         const { classes } = this.props;
+        const dataItem = this.props.dataItem;
+
+        const minor = [], major = [], critical = [];
+
+        dataItem.Audits.forEach(function(el) {
+            if (el.AuditAnswer === "No - Minor")
+                minor.push(el);
+            if (el.AuditAnswer === "No - Major")
+                major.push(el);
+            if (el.AuditAnswer === "No - Critical")
+                critical.push(el);
+        });
+
+        const styles = {
+            rowAlign: {
+                verticalAlign: 'top'
+            }
+        }
+
+        console.log("auditdata detail");
 
         return (
 
             <section>
                 <Tabs value={this.state.tabIndex} fullWidth={true} color="white" onChange={this.handleTabChange}>
-                    <Tab label='Plant Recap'/>
-                    <Tab label='Risk Analysis'/>
-                    <Tab label='Farm detail'/>
+                    <Tab label='Minor'/>
+                    <Tab label='Major'/>
+                    <Tab label='Critical'/>
                 </Tabs>
 
                 {/* TAB 1 */}
                 { this.state.tabIndex === 0 &&
                     <Paper>
-                        <GridContainer>
-                            <GridItem md={3}>
-                                <br/>
-                                <div style={{textAlign: 'right'}}>
-                                    <p><strong>Total production (2017)</strong></p>
-                                    <p><strong>Projected (2018)</strong></p>
-                                    <p><strong>Shipped (2017)</strong> </p>
-                                    <p><strong>Shipped (2016)</strong></p>
-                                </div>
-                            </GridItem>
-                            <GridItem md={2}>
-                                <br/>
-                                <div style={{textAlign: 'left'}}>
-                                    <p> {dataItem.TotalProduction} {dataItem.TotalProduction > 0 ? ' MT' : '-'} </p>
-                                    <p> {dataItem.Projected2017} {dataItem.Projected2017 > 0 ? ' MT' : '-'}</p>
-                                    <p> {dataItem.Shipped2017} {dataItem.Shipped2017 > 0 ? ' MT' : '-'}</p>
-                                    <p> {dataItem.Shipped2016} {dataItem.Shipped2016 > 0 ? ' MT' : '-'}</p>
-
-                                </div>
-                            </GridItem>
-                            <GridItem md={3}>
-                                <br/>
-                                <div style={{textAlign: 'right'}}>
-                                    <p><strong>2 star production (2018):</strong></p>
-                                    <p><strong>Number of farms:</strong></p>
-                                </div>
-                            </GridItem>
-
-                            <GridItem md={2}>
-                                <br/>
-                                <div style={{textAlign: 'left'}}>
-                                    <p> {dataItem.Production2Star} {dataItem.Production2Star > 0 ? ' MT' : '-'} </p>
-                                    <p> {dataItem.Farms}</p>
-                                </div>
-                            </GridItem>
-                        </GridContainer>
-                    </Paper>
-                }
-
-                {/* TAB 2 */}
-                { this.state.tabIndex === 2 &&
-                    <Paper >
-                        <Table >
+                        <Grid data={minor} sortable={true} style={{width: "100%"}}>
+                            <Column field="AuditDate" title="Audit Date" type="date" format="{0:MM dd, yyyy}" width="130px"  />
+                            <Column field="Question" title="Question" width="400px"  />
+                            <Column field="AuditDetail" title="Audit Detail" width="400px" />
+                            <Column field="ReferenceNumber" title="Reference #" width="130px"  />
+                            <Column field="Suppliers" title="Suppliers" width="250px" />
+                            <Column field="Species" title="Species" width="130px"/>
+                        </Grid>
+                        {/* <Table >
                             <TableHead>
                                 <TableRow>
-                                    <TableCell>BAP ID</TableCell>
-                                    <TableCell>Name</TableCell>
-                                    <TableCell>Country</TableCell>
-                                    <TableCell date>Expiration</TableCell>
-                                    <TableCell numeric>Plants Served</TableCell>
+                                    <TableCell date>Audit Date</TableCell>
+                                    <TableCell>Question</TableCell>
+                                    <TableCell>Audit Detail</TableCell>
+                                    <TableCell>Reference #</TableCell>
+                                    <TableCell>Suppliers</TableCell>
+                                    <TableCell>Species</TableCell>
                                 </TableRow>
                             </TableHead>
 
                             <TableBody>
-                                { dataItem.FarmData.map((item) =>
-                                    <TableRow>
-                                        <TableCell>{item.BAPId}</TableCell>
-                                        <TableCell>{item.Name}</TableCell>
-                                        <TableCell>{item.Country}</TableCell>
-                                        <TableCell>{item.Expires}</TableCell>
-                                        <TableCell numeric>{item.PlantsServed}</TableCell>
+                                { dataItem.Audits.map((item) =>
+                                    <TableRow hover={true}>
+                                        <TableCell date style={styles.rowAlign}>{item.AuditDate}</TableCell>
+                                        <TableCell style={styles.rowAlign}>{item.Question}</TableCell>
+                                        <TableCell style={styles.rowAlign}>{item.AuditDetail}</TableCell>
+                                        <TableCell style={styles.rowAlign}>{item.ReferenceNumber}</TableCell>
+                                        <TableCell style={styles.rowAlign}>{item.Suppliers}</TableCell>
+                                        <TableCell style={styles.rowAlign}>{item.Species}</TableCell>
                                     </TableRow>
                                 ) }
                             </TableBody>
-                        </Table>
+                        </Table> */}
                     </Paper>
                 }
+
 
                 {/* TAB 1 */}
                 { this.state.tabIndex === 1 &&
                     <Paper>
-                        <GridContainer>
-                            <GridItem md={3}>
-                                <br/>
-                                <div style={{textAlign: 'right'}}>
-                                    <p><strong>Production</strong></p>
-                                    <p><strong>Projected</strong></p>
-                                    <p><strong>Shortfall vs. surplus (#)</strong> </p>
-                                    <p><strong>Shortfall vs. surplus (%)</strong></p>
-                                </div>
-                            </GridItem>
-                            <GridItem md={2}>
-                                <br/>
-                                <div style={{textAlign: 'left'}}>
-                                    <p> {dataItem.TotalProduction} {dataItem.TotalProduction > 0 ? ' MT' : '-'} </p>
-                                    <p> {dataItem.Projected2017} {dataItem.Projected2017 > 0 ? ' MT' : '-'}</p>
-                                    <p> {dataItem.Delta} {dataItem.Delta > 0 ? ' MT' : '-'}</p>
-                                    <p> {dataItem.Risk} {dataItem.Risk > 0 ? '%' : '-'}</p>
-
-                                </div>
-                            </GridItem>
-                            <GridItem md={3}>
-                                <br/>
-                                <div style={{textAlign: 'right'}}>
-                                    <p><strong>Number of farms</strong></p>
-                                    <p><strong>Diffusion ratio <i className={"fa fa-sm fa-info-circle"} title="The farm-to-plant ratio (1:1 is ideal)"/></strong></p>
-                                    <p><strong>Average farm volume <i className={"fa fa-sm fa-info-circle"} title="Average farm volume is computed..."/></strong></p>
-                                    <p><strong>Adjusted farm volume <i className={"fa fa-sm fa-info-circle"} title="Average volume x diffusion ratio"/></strong></p>
-                                </div>
-                            </GridItem>
-
-                            <GridItem md={2}>
-                                <br/>
-                                <div style={{textAlign: 'left'}}>
-                                    <p> {dataItem.Farms}</p>
-                                    <p> {dataItem.FarmPlantRatio}</p>
-                                    <p> {dataItem.AvgFarm} {dataItem.AvgFarm > 0 ? ' MT' : '-'}</p>
-                                    <p> {dataItem.AdjFarm} {dataItem.AdjFarm > 0 ? ' MT' : '-'}</p>
-                                </div>
-                            </GridItem>
-                        </GridContainer>
+                        <Grid data={major} sortable={true} style={{width: "100%"}}>
+                            <Column field="AuditDate" title="Audit Date" type="date" format="{0:MM dd, yyyy}" width="130px"  />
+                            <Column field="Question" title="Question" width="400px"  />
+                            <Column field="AuditDetail" title="Audit Detail" width="400px" />
+                            <Column field="ReferenceNumber" title="Reference #" width="130px"  />
+                            <Column field="Suppliers" title="Suppliers" width="250px" />
+                            <Column field="Species" title="Species" width="130px"/>
+                        </Grid>
+                    </Paper>
+                }
+                {/* TAB 2 */}
+                { this.state.tabIndex === 2 &&
+                    <Paper>
+                        <Grid data={critical} sortable={true} style={{width: "100%"}}>
+                            <Column field="AuditDate" title="Audit Date" type="date" format="{0:MM dd, yyyy}" width="130px"  />
+                            <Column field="Question" title="Question" width="400px"  />
+                            <Column field="AuditDetail" title="Audit Detail" width="400px" />
+                            <Column field="ReferenceNumber" title="Reference #" width="130px"  />
+                            <Column field="Suppliers" title="Suppliers" width="250px" />
+                            <Column field="Species" title="Species" width="130px"/>
+                        </Grid>
                     </Paper>
                 }
             </section>
@@ -326,7 +302,7 @@ class Nonconformities extends React.Component {
         this.gridRef = React.createRef();
 
         this.state = {
-            data: nonconformitiesData.slice(0,10),
+            data: nonconf.slice(0,10),
             sort: [],
             skip: 0,
         };
@@ -364,7 +340,7 @@ class Nonconformities extends React.Component {
 
     handlePageChange = (event) => {
         this.setState({
-            data: nonconformitiesData.slice(event.page.skip, event.page.skip + event.page.take),
+            data: nonconf.slice(event.page.skip, event.page.skip + event.page.take),
             skip: event.page.skip
         })
     }
@@ -372,75 +348,74 @@ class Nonconformities extends React.Component {
 
     render() {
 
-        // const grouped = groupBy(nonconformitiesData, data =>  data.BAPNumber);
-        // console.log ("HERE");
-        //console.log(grouped);
-
-
-        let temp = [];
-        let plantData = [];
-        let farmData = [];
-        let hatcheryData = [];
-        let feedmillData = [];
-
-
-        let lastID = null;
-        let lastObj = [];
-
-        let minor = 0;
-        let major = 0;
-        let critical = 0;
-        let total = 0;
-
-        nonconformitiesData.forEach(function(el) {
-
-            if (lastID === null)
-                lastID = el.BAPNumber;
-
-            let thisID = el.BAPNumber;
-
-            if (thisID === lastID){
-                el.Minor = (el.AuditAnswer === "No - Minor") ? 1 : 0;
-                el.Major = (el.AuditAnswer === "No - Major") ? 1 : 0;
-                el.Critical = (el.AuditAnswer === "No - Critical") ? 1 : 0;
-
-                total = (el.Minor + el.Major + el.Critical);
-                el.Total = total;
-
-                el.BAPID = el.BAPNumber;
-
-                temp.push(el);
-            }
-            else {
-                lastID = thisID;
-            }
-
-        });
-
-        const reduced = groupByBAPID(temp, 'BAPID', 'Minor', 'Major', 'Critical', 'Total');
-
-        const mergeArray = (source, merge, by) => source.map(item => ({
-            ...item,
-            ...(merge.find(i => i[by] === item[by]) || {}),
-        }));
-
-        plantData = mergeArray(reduced, geoData, 'BAPID');
-
-        //console.log (plantData);
-
+        const { classes } = this.props;
+        // let temp = [];
+        // let newData = [];
+        // let plantData = [];
+        // let farmData = [];
+        // let hatcheryData = [];
+        // let feedmillData = [];
+        //
+        //
+        // let lastID = null;
+        // let lastObj = [];
+        //
+        // let minor = 0;
+        // let major = 0;
+        // let critical = 0;
+        // let total = 0;
+        //
+        // nonconformitiesData.forEach(function(el) {
+        //     if (lastID === null)
+        //         lastID = el.BAPNumber;
+        //
+        //     let thisID = el.BAPNumber;
+        //
+        //     if (thisID === lastID){
+        //         el.Minor = (el.AuditAnswer === "No - Minor") ? 1 : 0;
+        //         el.Major = (el.AuditAnswer === "No - Major") ? 1 : 0;
+        //         el.Critical = (el.AuditAnswer === "No - Critical") ? 1 : 0;
+        //
+        //         total = (el.Minor + el.Major + el.Critical);
+        //         el.Total = total;
+        //
+        //         el.BAPID = el.BAPNumber;
+        //
+        //         temp.push(el);
+        //     }
+        //     else {
+        //         lastID = thisID;
+        //     }
+        //
+        // });
+        //
+        // const reduced = groupByBAPID(temp, 'BAPID', 'Minor', 'Major', 'Critical', 'Total');
+        //
+        // const mergeArray = (source, merge, by) => source.map(item => ({
+        //     ...item,
+        //     ...(merge.find(i => i[by] === item[by]) || {}),
+        // }));
+        //
+        // plantData = mergeArray(reduced, geoData, 'BAPID');
+        //
+        // //``console.log(reduced);
+        //
+        // plantData.forEach(function(e) {
+        //     console.log(e.BAPID + ',' + e.Name + ',' + e.Country + ',' + e.Minor + ',' + e.Major + ',' + e.Critical + ',' + e.Total);
+        // });
 
 
 
         return (
             <div ref={this.gridRef}>
                 <Grid
-                    data={plantData}
-                    detail={DetailComponent}
+                    data={this.state.data}
+                    detail={AuditData}
                     sortable={true}
                     onSortChange={this.handleSortChange}
                     sort={this.state.sort}
                     onPageChange={this.handlePageChange}
-                    total={plantData.length}
+                    total={this.state.data.length}
                     skip={this.state.skip}
                     pageable={true}
                     pageSize={10}
@@ -449,18 +424,44 @@ class Nonconformities extends React.Component {
                     onExpandChange={this.expandChange}
                     >
                         <Column field="BAPID" title="BAP ID" width="110px" filterable={true}  />
-                        <Column field="Name" title="Facility Name" minResizableWidth="150px" width="250px" cell={cellEllipsis} />
+                        <Column field="Name" title="Facility Name" minResizableWidth={150} width="250px" cell={cellEllipsis} />
                         <Column field="Country" title="Country" width="120px" cell={cellEllipsis}/>
-                        <Column field="Minor" type="number" cell={cellIntegerRight}/>
-                        <Column field="Major"  type="number" cell={cellIntegerRight}/>
-                        <Column field="Critical" type="number"  cell={cellIntegerRight} />
-                        <Column field="Total"  type="number"  cell={cellIntegerRight} />
-
-
+                        <Column field="Minor" type="number" title={
+                            <span>
+                                <span className={classes.yellowCircle} ><i className={"fa fa-md fa-circle"} /></span>
+                                Minor
+                            </span>
+                        }
+                            cell={cellIntegerRight}/>
+                        <Column field="Major"  type="number" title=
+                            {
+                                <span>
+                                    <span className={classes.orangeCircle} ><i className={"fa fa-md fa-circle"} /></span>
+                                    Major
+                                </span>
+                            }
+                            cell={cellIntegerRight}/>
+                        <Column field="Critical" type="number"
+                            title=
+                            {
+                                <span>
+                                    <span className={classes.redCircle} ><i className={"fa fa-md fa-circle"} /></span>
+                                    Critical
+                                </span>
+                            }
+                            cell={cellIntegerRight} />
+                        <Column field="Total"  type="number" title=
+                            {
+                                <span>
+                                    <span className={classes.grayCircle} ><i className={"fa fa-md fa-circle"} /></span>
+                                    Total
+                                </span>
+                            }
+                            cell={cellIntegerRight} />
                     </Grid>
                 </div>
             );
         }
     }
 
-    export default Nonconformities;
+export default withStyles(nonConformitiesGrid)(Nonconformities);

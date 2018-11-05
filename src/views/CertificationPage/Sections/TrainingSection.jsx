@@ -38,7 +38,7 @@ class TrainingSection extends React.Component {
 
         return (
             <div>
-                <GridContainer justify="left">
+                <GridContainer >
                     <GridItem cs={12} sm={12} md={5}>
                         <h2 className={classes.sectionTitle}>Interested in training?</h2>
                         <h4 className={classes.description}>

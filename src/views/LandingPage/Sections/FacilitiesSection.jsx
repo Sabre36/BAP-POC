@@ -14,7 +14,7 @@ class FacilitiesSection extends React.Component {
 
         return (
             <div>
-                <GridContainer justify="left">
+                <GridContainer>
                     <GridItem cs={12} sm={12} md={6}>
                         <h2 className={classes.title}>Our certification program</h2>
                         <h4 className={classes.description}>

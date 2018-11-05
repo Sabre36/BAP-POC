@@ -1,7 +1,7 @@
 [
     {
         "id": "5bbf8e9f9b14661a64856e8f",
-        "userName": "jeff",
+        "userName": "molly",
         "isAuthenticated": true,
         "affiliations": [
         {
@@ -29,7 +29,9 @@
                   "entitlement": "Non-conformities",
                   "filters": [
                     { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"] },
-                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] }
+                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] },
+                    { "date": ["1/1/2016", "1/31/2018"]},
+                    { "type": ["Plants", "Farms", "Feedmills", "Hatcheries"]}
                   ]
                 },{
                   "entitlement": "Supply chain",
@@ -63,7 +65,9 @@
               "entitlement": "Non-conformities",
               "filters": [
                     { "species": ["Shrimp", "Tilapia"] },
-                    { "countries": ["China", "India", "Thailand", "Viet Nam"] }
+                    { "countries": ["China", "India", "Thailand", "Viet Nam"] },
+                    { "date": ["1/1/2016", "1/31/2018"]},
+                    { "type": ["Plants", "Farms", "Feedmills", "Hatcheries"]}
                 ]
             },{
               "entitlement": "Plant and farm detail",
@@ -237,7 +241,7 @@
 
       {
         "id": "5bbf8e9f9eb6fc70c8fb2bc1",
-        "userName": "matt",
+        "userName": "tim",
         "isAuthenticated": true,
         "affiliations": [
         {

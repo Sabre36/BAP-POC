@@ -18,7 +18,7 @@ class ContactSection extends React.Component {
 
     return (
       <div className={classes.section}>
-        <GridContainer justify="left">
+        <GridContainer>
           <GridItem cs={12} sm={12} md={6}>
             <h2 className={classes.title}>Contact us</h2>
             <h4 className={classes.description} >
@@ -64,7 +64,7 @@ class ContactSection extends React.Component {
                     rows: 3
                   }}
                 />
-                <GridContainer justify="left">
+                <GridContainer>
                   <GridItem
                     xs={12}
                     sm={12}
