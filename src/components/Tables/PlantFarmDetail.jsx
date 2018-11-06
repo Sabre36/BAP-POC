@@ -343,7 +343,7 @@ class PlantFarmDetail extends React.Component {
                     onSortChange={this.handleSortChange}
                     sort={this.state.sort}
                     onPageChange={this.handlePageChange}
-                    total={this.state.date.length}
+                    total={this.state.data.length}
                     skip={this.state.skip}
                     pageable={true}
                     pageSize={10}

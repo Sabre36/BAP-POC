@@ -93,7 +93,7 @@ function HeaderLinks({ ...props }) {
                         //href="./portal"
                         color="transparent"
                         className={ props.itemIndex == 5 ? classes.navLinkActive : classes.navLink }
-                        > Your portal
+                        > My portal
                     </Button>
                 </Link>
             </ListItem>

@@ -66,16 +66,16 @@ class KendoGrid extends React.Component {
                                             </button>
                                         </div>
                                     </GridToolbar>
-                                    { this.props.authenticated && <GridColumn field="bapNo" title="BAP ID" width="160px" minResizableWidth={120}  /> }
+                                    { this.props.authenticated && <GridColumn field="bapNo" title="BAP ID" width="175px" minResizableWidth={120}  /> }
 
-                                    <GridColumn field="location" title="Location"/>
+                                    <GridColumn field="location" title="Name"/>
 
-                                    { this.props.authenticated && <GridColumn field="facilityType" title="Type" />}
+                                    { this.props.authenticated && <GridColumn field="facilityType" width="100px" title="Type" />}
 
-                                    <GridColumn field="country" title="Country"/>
+                                    <GridColumn field="country" width="170px" title="Country"/>
 
-                                    { this.props.authenticated && <GridColumn field="species" title="Species"  />}
-                                    { this.props.authenticated && <GridColumn field="expiration" title="Expiration" type="date"  filter="date" width="100px"   />}
+                                    { this.props.authenticated && <GridColumn field="species" width="100px" title="Species"  />}
+                                    { this.props.authenticated && <GridColumn field="expiration" title="Expiration" type="date"  filter="date" width="175px"   />}
                                     { this.props.authenticated && <GridColumn field="rating" title="Rating"  cell={cellWithBackGround}  width="160px" />}
 
                                 </StatefulGrid>

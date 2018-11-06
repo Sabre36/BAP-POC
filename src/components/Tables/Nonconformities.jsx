@@ -14,6 +14,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import nonConformitiesGrid from "assets/jss/site-styles/components/nonConformitiesGrid.jsx";
+import Moment from 'react-moment';
 
 
 import nonconf from './../../assets/data/Kroger/nonconf.json';
@@ -29,103 +30,25 @@ function formatNum(value, decimals) {
     return newValue;
 }
 
-// function hsl_col_perc(percent, start, end) {
-//     var a = percent / 100,
-//     b = (end - start) * a,
-//     c = b + start;
-//
-//     return 'hsl('+c+', 100%, 50%)'; // Return a CSS HSL string
-// }
-
-// function groupBy(list, keyGetter) {
-//     const map = new Map();
-//     list.forEach((item) => {
-//         const key = keyGetter(item);
-//         const collection = map.get(key);
-//         if (!collection) {
-//             map.set(key, [item]);
-//         } else {
-//             collection.push(item);
+// function groupByBAPID(array, col, value1, value2, value3, value4) {
+//     var r = [], o = {};
+//     array.forEach(function (a) {
+//         if (!o[a[col]]) {
+//             o[a[col]] = {};
+//             o[a[col]][col] = a[col];
+//             o[a[col]][value1] = 0;
+//             o[a[col]][value2] = 0;
+//             o[a[col]][value3] = 0;
+//             o[a[col]][value4] = 0;
+//             r.push(o[a[col]]);
 //         }
+//         o[a[col]][value1] += +a[value1];
+//         o[a[col]][value2] += +a[value2];
+//         o[a[col]][value3] += +a[value3];
+//         o[a[col]][value4] += +a[value4];
 //     });
-//     return map;
-// }
-
-function groupByBAPID(array, col, value1, value2, value3, value4) {
-    var r = [], o = {};
-    array.forEach(function (a) {
-        if (!o[a[col]]) {
-            o[a[col]] = {};
-            o[a[col]][col] = a[col];
-            o[a[col]][value1] = 0;
-            o[a[col]][value2] = 0;
-            o[a[col]][value3] = 0;
-            o[a[col]][value4] = 0;
-            r.push(o[a[col]]);
-        }
-        o[a[col]][value1] += +a[value1];
-        o[a[col]][value2] += +a[value2];
-        o[a[col]][value3] += +a[value3];
-        o[a[col]][value4] += +a[value4];
-    });
-    return r;
-};
-
-
-function colorMap(value) {
-    let color = '#fcfcfc';
-    let isNeg = value < 0 ? true : false;
-    let absValue = round(Math.abs(value),0);
-
-    if ( isNaN(value) || value === null ) {
-        color = 'transparent';
-    } else if (isNeg) {
-        if (absValue >= 0 && absValue < 25)
-        color = '#FFCC03';
-        else if (absValue >= 25 && absValue < 50)
-        color = '#F89C05';
-        else if (absValue >= 50)
-        color = '#ab0520';
-    } else {
-        if (absValue >= 0 && absValue < 25)
-        color = '#65B12F';
-        else if (absValue >= 25 && absValue < 50)
-        color = '#43A546';
-        else if (absValue >= 50 )
-        color = '#37611A';
-    }
-
-    return color;
-}
-
-
-class cellPercentDiff extends React.Component {
-    render() {
-        let value = this.props.dataItem[this.props.field];
-        let strValue = isNaN(value) ? value : round(this.props.dataItem[this.props.field], 1).toString() + "%";
-
-
-
-        const style = {
-            textAlign: "center",
-            minWidth: "90px",
-            color: "#fff",
-            fontWeight: 500,
-            //backgroundColor: hsl_col_perc(value, red, green)
-            backgroundColor: colorMap(value)
-        };
-
-        return (
-            <td style={{padding: "4px"}}>
-                <div style={style}>
-                    {/* {round(this.props.dataItem[this.props.field], 1)} */}
-                    {strValue}
-                </div>
-            </td>
-        );
-    }
-}
-
+//     return r;
+// };
 
 class cellIntegerRight extends React.Component {
     render() {
@@ -141,28 +64,33 @@ class cellIntegerRight extends React.Component {
     }
 }
 
-class cellFloatRight extends React.Component {
+class cellVerticalAlign extends React.Component {
     render() {
         const style = {
-            textAlign: "right",
+            verticalAlign: "top",
         };
+
+        const value = this.props.dataItem[this.props.field];
 
         return (
             <td style={style}>
-                {formatNum(this.props.dataItem[this.props.field],1)}
+                {value}
             </td>
         );
     }
 }
 
-class cellFloatRightColorize extends React.Component {
+class cellDate extends React.Component {
     render() {
-        const value = formatNum(this.props.dataItem[this.props.field],1);
-         let strValue = (isNaN(value) || value < 0) ? value : "+" + value.toString();
+        const style = {
+            verticalAlign: "top",
+        };
+
+        const dateToFormat = this.props.dataItem[this.props.field];
 
         return (
-            <td style={{ color: value > 0 ? 'initial' : '#ab0520', textAlign: 'right'}}>
-                {strValue}
+            <td style={style}>
+                <Moment>{dateToFormat}</Moment>
             </td>
         );
     }
@@ -180,41 +108,39 @@ class cellEllipsis extends React.Component {
 }
 
 class AuditData extends GridDetailRow {
-    state = {
-        tabIndex: 0,
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            sort: [
+                { field: 'AuditDate', dir: 'asc' }
+            ],
+            tabIndex: 0,
+        };
     }
 
     handleTabChange = (event, value) => {
         this.setState({ tabIndex: value });
-
     };
-
 
     render() {
         const { classes } = this.props;
         const dataItem = this.props.dataItem;
-
-        const minor = [], major = [], critical = [];
+        let minor = [], major = [], critical = [];
 
         dataItem.Audits.forEach(function(el) {
-            if (el.AuditAnswer === "No - Minor")
+            if (el.AuditAnswer === "No - Minor") {
                 minor.push(el);
-            if (el.AuditAnswer === "No - Major")
+            }
+            if (el.AuditAnswer === "No - Major") {
                 major.push(el);
-            if (el.AuditAnswer === "No - Critical")
+            }
+            if (el.AuditAnswer === "No - Critical") {
                 critical.push(el);
+            }
         });
 
-        const styles = {
-            rowAlign: {
-                verticalAlign: 'top'
-            }
-        }
-
-        console.log("auditdata detail");
-
         return (
-
             <section>
                 <Tabs value={this.state.tabIndex} fullWidth={true} color="white" onChange={this.handleTabChange}>
                     <Tab label='Minor'/>
@@ -222,42 +148,26 @@ class AuditData extends GridDetailRow {
                     <Tab label='Critical'/>
                 </Tabs>
 
-                {/* TAB 1 */}
+                {/* TAB 0 */}
                 { this.state.tabIndex === 0 &&
                     <Paper>
-                        <Grid data={minor} sortable={true} style={{width: "100%"}}>
-                            <Column field="AuditDate" title="Audit Date" type="date" format="{0:MM dd, yyyy}" width="130px"  />
-                            <Column field="Question" title="Question" width="400px"  />
-                            <Column field="AuditDetail" title="Audit Detail" width="400px" />
-                            <Column field="ReferenceNumber" title="Reference #" width="130px"  />
-                            <Column field="Suppliers" title="Suppliers" width="250px" />
-                            <Column field="Species" title="Species" width="130px"/>
+                        <Grid
+                            data={orderBy(minor, this.state.sort)}
+                            sortable
+                            sort={this.state.sort}
+                            onSortChange={(e) => {
+                                this.setState({
+                                    sort: e.sort
+                                });
+                            }}
+                            style={{width: "100%", minHeight: "300px", padding: 0}}>
+                            <Column field="AuditDate" title="Audit Date" type="date" width="140px" cell={cellDate} />
+                            <Column field="Question" title="Question" width="400px" cell={cellVerticalAlign} />
+                            <Column field="AuditDetail" title="Audit Detail" width="400px" cell={cellVerticalAlign}/>
+                            <Column field="ReferenceNumber" title="Reference #" width="130px"  cell={cellVerticalAlign}/>
+                            <Column field="Suppliers" title="Suppliers" width="250px" cell={cellVerticalAlign}/>
+                            <Column field="Species" title="Species" width="130px" cell={cellVerticalAlign}/>
                         </Grid>
-                        {/* <Table >
-                            <TableHead>
-                                <TableRow>
-                                    <TableCell date>Audit Date</TableCell>
-                                    <TableCell>Question</TableCell>
-                                    <TableCell>Audit Detail</TableCell>
-                                    <TableCell>Reference #</TableCell>
-                                    <TableCell>Suppliers</TableCell>
-                                    <TableCell>Species</TableCell>
-                                </TableRow>
-                            </TableHead>
-
-                            <TableBody>
-                                { dataItem.Audits.map((item) =>
-                                    <TableRow hover={true}>
-                                        <TableCell date style={styles.rowAlign}>{item.AuditDate}</TableCell>
-                                        <TableCell style={styles.rowAlign}>{item.Question}</TableCell>
-                                        <TableCell style={styles.rowAlign}>{item.AuditDetail}</TableCell>
-                                        <TableCell style={styles.rowAlign}>{item.ReferenceNumber}</TableCell>
-                                        <TableCell style={styles.rowAlign}>{item.Suppliers}</TableCell>
-                                        <TableCell style={styles.rowAlign}>{item.Species}</TableCell>
-                                    </TableRow>
-                                ) }
-                            </TableBody>
-                        </Table> */}
                     </Paper>
                 }
 
@@ -265,26 +175,44 @@ class AuditData extends GridDetailRow {
                 {/* TAB 1 */}
                 { this.state.tabIndex === 1 &&
                     <Paper>
-                        <Grid data={major} sortable={true} style={{width: "100%"}}>
-                            <Column field="AuditDate" title="Audit Date" type="date" format="{0:MM dd, yyyy}" width="130px"  />
-                            <Column field="Question" title="Question" width="400px"  />
-                            <Column field="AuditDetail" title="Audit Detail" width="400px" />
-                            <Column field="ReferenceNumber" title="Reference #" width="130px"  />
-                            <Column field="Suppliers" title="Suppliers" width="250px" />
-                            <Column field="Species" title="Species" width="130px"/>
+                        <Grid
+                            data={major}
+                            sortable
+                            sort={this.state.sort}
+                            onSortChange={(e) => {
+                                this.setState({
+                                    sort: e.sort
+                                });
+                            }}
+                            style={{width: "100%", minHeight: "300px"}}>
+                            <Column field="AuditDate" title="Audit Date" type="date" format="{0:MM dd, yyyy}" width="130px" cell={cellDate} />
+                            <Column field="Question" title="Question" width="400px" cell={cellVerticalAlign} />
+                            <Column field="AuditDetail" title="Audit Detail" width="400px" cell={cellVerticalAlign}/>
+                            <Column field="ReferenceNumber" title="Reference #" width="130px" cell={cellVerticalAlign} />
+                            <Column field="Suppliers" title="Suppliers" width="250px" cell={cellVerticalAlign}/>
+                            <Column field="Species" title="Species" width="130px" cell={cellVerticalAlign}/>
                         </Grid>
                     </Paper>
                 }
                 {/* TAB 2 */}
                 { this.state.tabIndex === 2 &&
                     <Paper>
-                        <Grid data={critical} sortable={true} style={{width: "100%"}}>
-                            <Column field="AuditDate" title="Audit Date" type="date" format="{0:MM dd, yyyy}" width="130px"  />
-                            <Column field="Question" title="Question" width="400px"  />
-                            <Column field="AuditDetail" title="Audit Detail" width="400px" />
-                            <Column field="ReferenceNumber" title="Reference #" width="130px"  />
-                            <Column field="Suppliers" title="Suppliers" width="250px" />
-                            <Column field="Species" title="Species" width="130px"/>
+                        <Grid
+                            data={critical}
+                            sortable
+                            sort={this.state.sort}
+                            onSortChange={(e) => {
+                                this.setState({
+                                    sort: e.sort
+                                });
+                            }}
+                            style={{width: "100%", minHeight: "300px"}}>
+                            <Column field="AuditDate" title="Audit Date" type="date" format="{0:MM dd, yyyy}" width="130px" cell={cellDate} />
+                            <Column field="Question" title="Question" width="400px"  cell={cellVerticalAlign}/>
+                            <Column field="AuditDetail" title="Audit Detail" width="400px" cell={cellVerticalAlign}/>
+                            <Column field="ReferenceNumber" title="Reference #" width="130px"  cell={cellVerticalAlign}/>
+                            <Column field="Suppliers" title="Suppliers" width="250px" cell={cellVerticalAlign}/>
+                            <Column field="Species" title="Species" width="130px" cell={cellVerticalAlign}/>
                         </Grid>
                     </Paper>
                 }
