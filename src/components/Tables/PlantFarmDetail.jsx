@@ -339,6 +339,8 @@ class PlantFarmDetail extends React.Component {
                 <Grid
                     data={this.state.data}
                     detail={DetailComponent}
+                    resizable={true}
+                    reorderable={true}
                     sortable={true}
                     onSortChange={this.handleSortChange}
                     sort={this.state.sort}

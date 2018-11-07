@@ -90,7 +90,7 @@ class cellDate extends React.Component {
 
         return (
             <td style={style}>
-                <Moment>{dateToFormat}</Moment>
+                <Moment format="MM/DD/YYYY" date={dateToFormat}/>
             </td>
         );
     }
@@ -153,6 +153,8 @@ class AuditData extends GridDetailRow {
                     <Paper>
                         <Grid
                             data={orderBy(minor, this.state.sort)}
+                            resizable={true}
+                            reorderable={true}
                             sortable
                             sort={this.state.sort}
                             onSortChange={(e) => {
@@ -161,12 +163,12 @@ class AuditData extends GridDetailRow {
                                 });
                             }}
                             style={{width: "100%", minHeight: "300px", padding: 0}}>
-                            <Column field="AuditDate" title="Audit Date" type="date" width="140px" cell={cellDate} />
-                            <Column field="Question" title="Question" width="400px" cell={cellVerticalAlign} />
-                            <Column field="AuditDetail" title="Audit Detail" width="400px" cell={cellVerticalAlign}/>
-                            <Column field="ReferenceNumber" title="Reference #" width="130px"  cell={cellVerticalAlign}/>
-                            <Column field="Suppliers" title="Suppliers" width="250px" cell={cellVerticalAlign}/>
-                            <Column field="Species" title="Species" width="130px" cell={cellVerticalAlign}/>
+                            <Column field="AuditDate" title="Audit Date" type="date" cell={cellDate} />
+                            <Column field="Question" title="Question" cell={cellVerticalAlign} />
+                            <Column field="AuditDetail" title="Audit Detail"  cell={cellVerticalAlign}/>
+                            <Column field="ReferenceNumber" title="Reference #"  cell={cellVerticalAlign}/>
+                            <Column field="Suppliers" title="Suppliers" cell={cellVerticalAlign}/>
+                            <Column field="Species" title="Species"  cell={cellVerticalAlign}/>
                         </Grid>
                     </Paper>
                 }
@@ -177,6 +179,8 @@ class AuditData extends GridDetailRow {
                     <Paper>
                         <Grid
                             data={major}
+                            resizable={true}
+                            reorderable={true}
                             sortable
                             sort={this.state.sort}
                             onSortChange={(e) => {
@@ -185,12 +189,12 @@ class AuditData extends GridDetailRow {
                                 });
                             }}
                             style={{width: "100%", minHeight: "300px"}}>
-                            <Column field="AuditDate" title="Audit Date" type="date" format="{0:MM dd, yyyy}" width="130px" cell={cellDate} />
-                            <Column field="Question" title="Question" width="400px" cell={cellVerticalAlign} />
-                            <Column field="AuditDetail" title="Audit Detail" width="400px" cell={cellVerticalAlign}/>
-                            <Column field="ReferenceNumber" title="Reference #" width="130px" cell={cellVerticalAlign} />
-                            <Column field="Suppliers" title="Suppliers" width="250px" cell={cellVerticalAlign}/>
-                            <Column field="Species" title="Species" width="130px" cell={cellVerticalAlign}/>
+                            <Column field="AuditDate" title="Audit Date" type="date"  cell={cellDate} />
+                            <Column field="Question" title="Question"  cell={cellVerticalAlign} />
+                            <Column field="AuditDetail" title="Audit Detail"  cell={cellVerticalAlign}/>
+                            <Column field="ReferenceNumber" title="Reference #" cell={cellVerticalAlign} />
+                            <Column field="Suppliers" title="Suppliers"  cell={cellVerticalAlign}/>
+                            <Column field="Species" title="Species" cell={cellVerticalAlign}/>
                         </Grid>
                     </Paper>
                 }
@@ -199,6 +203,8 @@ class AuditData extends GridDetailRow {
                     <Paper>
                         <Grid
                             data={critical}
+                            resizable={true}
+                            reorderable={true}
                             sortable
                             sort={this.state.sort}
                             onSortChange={(e) => {
@@ -207,12 +213,12 @@ class AuditData extends GridDetailRow {
                                 });
                             }}
                             style={{width: "100%", minHeight: "300px"}}>
-                            <Column field="AuditDate" title="Audit Date" type="date" format="{0:MM dd, yyyy}" width="130px" cell={cellDate} />
-                            <Column field="Question" title="Question" width="400px"  cell={cellVerticalAlign}/>
-                            <Column field="AuditDetail" title="Audit Detail" width="400px" cell={cellVerticalAlign}/>
-                            <Column field="ReferenceNumber" title="Reference #" width="130px"  cell={cellVerticalAlign}/>
-                            <Column field="Suppliers" title="Suppliers" width="250px" cell={cellVerticalAlign}/>
-                            <Column field="Species" title="Species" width="130px" cell={cellVerticalAlign}/>
+                            <Column field="AuditDate" title="Audit Date" type="date" cell={cellDate} />
+                            <Column field="Question" title="Question" cell={cellVerticalAlign}/>
+                            <Column field="AuditDetail" title="Audit Detail" cell={cellVerticalAlign}/>
+                            <Column field="ReferenceNumber" title="Reference #"  cell={cellVerticalAlign}/>
+                            <Column field="Suppliers" title="Suppliers" cell={cellVerticalAlign}/>
+                            <Column field="Species" title="Species"  cell={cellVerticalAlign}/>
                         </Grid>
                     </Paper>
                 }
@@ -339,6 +345,8 @@ class Nonconformities extends React.Component {
                 <Grid
                     data={this.state.data}
                     detail={AuditData}
+                    resizable={true}
+                    reorderable={true}
                     sortable={true}
                     onSortChange={this.handleSortChange}
                     sort={this.state.sort}
