@@ -6,7 +6,9 @@
     "facilityType": "salmonfarm",
     "species": "Salmon",
     "expiration": "",
-    "rating": null
+    "rating": null,
+    "latitude": -52.03638889,
+    "longitude": -72.93083333
   },
   {
     "bapNo": "F10770C",
@@ -933,7 +935,9 @@
     "facilityType": "plant",
     "species": "Salmon",
     "expiration": "11-03-2018",
-    "rating": 4
+    "rating": 4,
+    "Lat": -41.49198333,
+    "Lon": -73.03234444
   },
   {
     "bapNo": "P10579",
@@ -942,7 +946,9 @@
     "facilityType": "plant",
     "species": "Shrimp",
     "expiration": "10-25-2018",
-    "rating": 1
+    "rating": 1,
+    "Lat": 15.763998,
+    "Lon": 80.028619
   },
   {
     "bapNo": "RP10021",
