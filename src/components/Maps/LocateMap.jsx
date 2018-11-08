@@ -10,15 +10,13 @@ import {
 const CustomSkinMap = withScriptjs(
   withGoogleMap(props => (
     <GoogleMap
-      defaultZoom={6}
-      //defaultCenter={{ lat: props.latitude, lng: props.longitude }}
-      defaultCenter={{ lat: -2.203816, lng:	-79.897453 }}
-      //defaultCenter={{ lat: 52.03638889, lng: -72.93083333 }}
+      defaultZoom={7}
+      defaultCenter={{ lat: props.latitude, lng: props.longitude }}
 
       defaultOptions={{
         scrollwheel: true,
         zoomControl: true,
-        mapTypeId: "satellite",
+        mapTypeId: "hybrid",
         styles: [
           {
             featureType: "water",
@@ -62,7 +60,7 @@ const CustomSkinMap = withScriptjs(
             elementType: "labels.text.stroke",
             stylers: [{ color: "#ffffff" }]
           },
-          { featureType: "poi", stylers: [{ visibility: "off" }] },
+          { featureType: "poi", stylers: [{ visibility: "on" }] },
           {
             featureType: "landscape.natural",
             elementType: "geometry.fill",
@@ -81,8 +79,7 @@ const CustomSkinMap = withScriptjs(
         ]
       }}
     >
-    {/* <Marker position={{ lat: 52.03638889, lng: -72.93083333 }} title={props.name}/> */}
-<Marker position={{ lat: -2.191198, lng: -79.879930 }} />
+    <Marker position={{ lat: props.latitude, lng: props.longitude }} title={props.name}/>
 
     </GoogleMap>
   ))
@@ -95,6 +92,9 @@ function LocateMap({ ...props }) {
   return (
       <div >
         <CustomSkinMap
+          latitude={props.latitude}
+          longitude={props.longitude}
+          name={props.name}
           googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIKtIpp2m2PDlNBRHy2F9F2LzJMYXWb3U"
           loadingElement={<div style={{ height: `100%`}} />}
 

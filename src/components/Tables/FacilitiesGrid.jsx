@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import withStyles from "@material-ui/core/styles/withStyles";
 import PropTypes from "prop-types";
+import geoData from "assets/data/all_geo.json";
 
 import StarIcon from "@material-ui/icons/StarRate";
 import { withState } from './with-state.jsx';
@@ -22,6 +23,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
+import Slide from '@material-ui/core/Slide';
 
 import LocateMap from "./../Maps/LocateMap.jsx";
 
@@ -33,6 +35,13 @@ const styles = theme => ({
   }
 });
 const StatefulGrid = withState(Grid);
+
+
+function Transition(props) {
+  return <Slide direction="up" {...props} />;
+}
+
+
 class cellWithStars extends React.Component {
     render() {
         const icon = this.props.dataItem.rating === 1 ? <span><StarIcon/></span> :
@@ -92,7 +101,6 @@ class cellWithButton extends React.Component {
     };
 
     handleClick(e) {
-        //alert(`${this.props.dataItem.latitude}, ${this.props.dataItem.longitude}` );
         this.setState({ open: true });
     }
 
@@ -109,8 +117,10 @@ class cellWithButton extends React.Component {
                     maxWidth="lg"
                     aria-labelledby="alert-dialog-title"
                     aria-describedby="alert-dialog-description"
+                    TransitionComponent={Transition}
+                    keepMounted
                     >
-                        <DialogTitle id="alert-dialog-title">{this.props.dataItem.location}</DialogTitle>
+                        <DialogTitle id="alert-dialog-title">{this.props.dataItem.BAPID} - {this.props.dataItem.location}</DialogTitle>
                         <DialogContent >
                             <DialogContentText id="alert-dialog-description">
                                 <p>Latitude: {this.props.dataItem.latitude} </p>
@@ -163,6 +173,8 @@ class cellWithButton extends React.Component {
             this._export.save();
         }
 
+
+
         render() {
             //console.log('%cRendering grid props: ' + JSON.stringify(this.props), "color:orange");
 
@@ -174,11 +186,19 @@ class cellWithButton extends React.Component {
                 }
             };
 
+            const mergeArray = (source, merge, by) => source.map(item => ({
+                ...item,
+                ...(merge.find(i => i[by] === item[by]) || {}),
+            }));
+
+            const facilitiesData = mergeArray(facilities, geoData, 'BAPID');
+
+
             return (
                 <Paper>
 
                     <ExcelExport ref={(exporter) => { this._export = exporter; }}>
-                        <StatefulGrid data={facilities} ref={(grid) => this.grid = grid}>
+                        <StatefulGrid data={facilitiesData} ref={(grid) => this.grid = grid}>
                             <GridToolbar >
                                 <div style={{float: "right"}}>
                                     <button
@@ -206,7 +226,7 @@ class cellWithButton extends React.Component {
                                 </div>
                             </GridToolbar>
 
-                            { this.props.authenticated && <GridColumn field="bapNo" title="BAP ID" minResizableWidth={120} filterable={this.state.showFilters} /> }
+                            { this.props.authenticated && <GridColumn field="BAPID" title="BAP ID" minResizableWidth={120} filterable={this.state.showFilters} /> }
 
                             <GridColumn field="location" title="Name" filterable={this.state.showFilters} cell={cellEllipsis}/>
 
