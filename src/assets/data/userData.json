@@ -39,7 +39,13 @@
                     { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"]},
                     { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] }
                   ]
-                }
+              },{
+                "entitlement": "Notifications",
+                "filters": [
+                  { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"]},
+                  { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] }
+                ]
+              }
               ]
           },{
             "affiliation": "Walmart",
