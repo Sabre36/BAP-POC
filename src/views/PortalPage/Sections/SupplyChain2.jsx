@@ -1,17 +1,14 @@
 import React from "react";
-import { Tree, treeUtil } from 'react-d3-tree';
-//import Tree from 'react-d3-tree';
+//import { Tree, treeUtil } from 'react-d3-tree';
 
-// @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import aboutBAPStyle from "assets/jss/site-styles/views/landingPageSections/aboutBAPStyle.jsx";
 import guidGenerator from './../Helpers/guidGenerator.jsx';
 import CenteredTree from "components/Charts/CenteredTree.jsx";
-import ReactSankey from 'react-sankey';
+//import ReactSankey from 'react-sankey';
 
 //import SankeyChart from "components/SankeyChart/SankeyChxart.jsx";
 
@@ -151,6 +148,7 @@ class SupplyChain extends React.Component {
                         </h2>
                         <h4 className={classes.description}>
 
+{/*
                             <div>
                                 <style dangerouslySetInnerHTML={{__html: `
                                         .custom-arrow-class {
@@ -218,7 +216,7 @@ class SupplyChain extends React.Component {
                                 </div>
 
 
-
+*/}
 
                                 </h4>
                             </GridItem>
