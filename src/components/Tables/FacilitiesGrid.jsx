@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import withStyles from "@material-ui/core/styles/withStyles";
-import PropTypes from "prop-types";
 import geoData from "assets/data/all_geo.json";
 
 import StarIcon from "@material-ui/icons/StarRate";
@@ -27,13 +25,6 @@ import Slide from '@material-ui/core/Slide';
 
 import LocateMap from "./../Maps/LocateMap.jsx";
 
-
-
-const styles = theme => ({
-  dialogCustomizedWidth: {
-    maxWidth: '80%'
-  }
-});
 const StatefulGrid = withState(Grid);
 
 
@@ -105,7 +96,6 @@ class cellWithButton extends React.Component {
     }
 
     render() {
-        const { classes } = this.props;
 
         return (
             <div>

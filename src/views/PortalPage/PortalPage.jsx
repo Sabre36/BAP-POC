@@ -227,7 +227,7 @@ class PortalPage extends React.Component {
 
         itemRender = (li, itemProps) => {
             const itemChildren =
-                <span style={{fontSize: "18px", fontWeight: 400, paddingRight: "50px" }}>
+                <span key={guidGenerator()} style={{fontSize: "18px", fontWeight: 400, paddingRight: "50px" }}>
                     {li.props.children}
                 </span>;
 
@@ -338,6 +338,7 @@ class PortalPage extends React.Component {
                                 { this.props.affiliationNames.length > 1 &&
                                     <DropDownList style={{display: 'inline-block', width: 'auto', minWidth: '150px', color: '#ffffff'}}
                                         data={this.props.affiliationNames}
+                                        key={guidGenerator()}
                                         defaultValue={this.props.defaultAffiliation}
                                         itemRender={this.itemRender}
                                         valueRender={this.valueRender}

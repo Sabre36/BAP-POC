@@ -72,7 +72,7 @@ class App extends React.Component {
             species: childState.species,
         });
 
-        console.log('%cCurrent login: ' + JSON.stringify(this.state), "color: magenta");
+        //console.log('%cCurrent login: ' + JSON.stringify(this.state), "color: magenta");
         hist.push('/portal');
     }
 

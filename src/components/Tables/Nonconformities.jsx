@@ -4,23 +4,13 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import { Grid, GridColumn as Column, GridDetailRow } from '@progress/kendo-react-grid';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
-import GridContainer from "components/Grid/GridContainer.jsx";
-import GridItem from "components/Grid/GridItem.jsx";
 import { orderBy } from '@progress/kendo-data-query';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import nonConformitiesGrid from "assets/jss/site-styles/components/nonConformitiesGrid.jsx";
 import Moment from 'react-moment';
-
-
 import nonconf from './../../assets/data/Kroger/nonconf.json';
-
-import nonconformitiesData from './../../assets/data/Kroger/non_conformities.json';
-import geoData from "assets/data/all_geo.json";
+//import nonconformitiesData from './../../assets/data/Kroger/non_conformities.json';
+//import geoData from "assets/data/all_geo.json";
 import round from "./../../views/PortalPage/Helpers/round.jsx";
 
 function formatNum(value, decimals) {
@@ -124,7 +114,6 @@ class AuditData extends GridDetailRow {
     };
 
     render() {
-        const { classes } = this.props;
         const dataItem = this.props.dataItem;
         let minor = [], major = [], critical = [];
 

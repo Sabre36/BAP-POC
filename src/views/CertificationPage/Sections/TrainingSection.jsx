@@ -92,7 +92,7 @@ class TrainingSection extends React.Component {
                                 New auditor candidates, existing auditors requiring refresher training, and observers — including government officials, producers and other industry stakeholders — are encouraged to attend our regularly held BAP auditor training courses.
                                 <br/>
                                 <br/>
-                                If you are a prospective CB interested in applying for accreditation, please review our <a href="">criteria, requirements, and application form</a>.
+                                If you are a prospective CB interested in applying for accreditation, please review our <a href="XXXX">criteria, requirements, and application form</a>.
                                 <br/>
                                 <br/><Button variant="outlined" color="primary">
                                     LEARN MORE

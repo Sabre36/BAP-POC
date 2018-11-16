@@ -40,7 +40,7 @@ export default connect(
         </StockButton>
         &nbsp;&nbsp;&nbsp;
 
-        <StockButton variant="raised" color="primary" onClick={signin} >
+        <StockButton variant="contained" color="primary" onClick={signin} >
             Sign in
         </StockButton>
 

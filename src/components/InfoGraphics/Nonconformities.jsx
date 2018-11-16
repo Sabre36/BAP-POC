@@ -13,6 +13,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import MUITooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
+import guidGenerator from './../../views/PortalPage/Helpers/guidGenerator.jsx';
 
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
 
@@ -82,8 +83,8 @@ class Nonconformities extends React.Component {
 
                                 <TableBody>
                                     { data.map((item) =>
-                                        <TableRow className={classes.tr}>
-                                            <TableCell className={classes.td}>
+                                        <TableRow className={classes.tr} key={guidGenerator()} >
+                                            <TableCell className={classes.td} key={guidGenerator()} >
 
                                                 { item.name === "Minor" &&
                                                     <span className={classes.yellowCircle} title={item.name}>

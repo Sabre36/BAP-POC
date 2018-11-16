@@ -2,19 +2,10 @@ import React from "react";
 //import { Tree, treeUtil } from 'react-d3-tree';
 
 import withStyles from "@material-ui/core/styles/withStyles";
-// core components
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import aboutBAPStyle from "assets/jss/site-styles/views/landingPageSections/aboutBAPStyle.jsx";
-import guidGenerator from './../Helpers/guidGenerator.jsx';
-import CenteredTree from "components/Charts/CenteredTree.jsx";
-//import ReactSankey from 'react-sankey';
 
-//import SankeyChart from "components/SankeyChart/SankeyChxart.jsx";
-
-//import sankeyData from "assets/data/sankey.json";
-
-//const csvSource = 'assets/data/testdata.csv';
 
 class SupplyChain extends React.Component {
     constructor() {
@@ -35,28 +26,6 @@ class SupplyChain extends React.Component {
 
     render() {
         const { classes } = this.props;
-
-        const styles = {
-            fontFamily: 'Roboto',
-            fontSize: '14px',
-            textAlign: 'center',
-        };
-
-
-        const chartConfig = {
-            padding: { top: 5, right: 0, bottom: 10, left: 0 },
-            node: {
-                width: 175,
-                maxHeight: 200,
-                minHeight: 100,
-                rectMinHeight: 30,
-                paddingBottom: 10,
-            },
-            link: {
-                width: 100
-            }
-        };
-
 
         const createNode = (title, value, id) => ({ title, value, id });
         const createLink = (sourceId, targetId) => ({ sourceId, targetId });
@@ -132,7 +101,6 @@ class SupplyChain extends React.Component {
             createLink(101, 202), createLink(101, 203),
 
             createLink(102, 201), createLink(102, 203), createLink(102,204)
-
         ];
 
 

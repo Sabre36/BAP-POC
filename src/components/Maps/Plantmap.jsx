@@ -1,5 +1,4 @@
 import React from "react";
-import withStyles from "@material-ui/core/styles/withStyles";
 import Datamap from 'react-datamaps';
 import { ResponsiveContainer } from 'recharts';
 import PropTypes from "prop-types";
@@ -15,8 +14,6 @@ class Plantmap extends React.Component {
     };
 
     render() {
-        const { classes } = this.props;
-
         return (
             <div style={{padding: '10px'}}>
                 <ResponsiveContainer  height={275} aspect={4.0/1.5}>

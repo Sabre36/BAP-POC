@@ -9,6 +9,7 @@ import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import MUITooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
+import guidGenerator from './../../views/PortalPage/Helpers/guidGenerator.jsx';
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
 
 const yr1 = [
@@ -126,8 +127,9 @@ const renderActiveShape = (props) => {
                         <GridContainer>
                             <GridItem md={6}>
                                 <ResponsiveContainer height={275} width="100%">
-                                    <PieChart >
+                                    <PieChart key={guidGenerator()}>
                                         <Pie
+                                            key={guidGenerator()}
                                             activeIndex={this.state.activeIndex}
                                             activeShape={renderActiveShape}
                                             data={yr1}
@@ -137,7 +139,7 @@ const renderActiveShape = (props) => {
                                             paddingAngle={1}
                                             >
                                                 {
-                                                    yr1.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+                                                    yr1.map((entry, index) => <Cell key={guidGenerator()} fill={COLORS[index % COLORS.length]}/>)
                                                 }
                                             </Pie>
                                         </PieChart>
@@ -146,8 +148,9 @@ const renderActiveShape = (props) => {
                                 </GridItem>
                                 <GridItem md={6}>
                                     <ResponsiveContainer height={275} width="100%">
-                                        <PieChart>
+                                        <PieChart key={guidGenerator()}>
                                             <Pie
+                                                key={guidGenerator()}
                                                 activeIndex={this.state.activeIndex}
                                                 activeShape={renderActiveShape}
                                                 data={yr2}
@@ -157,7 +160,7 @@ const renderActiveShape = (props) => {
                                                 paddingAngle={1}
                                                 >
                                                     {
-                                                        yr2.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+                                                        yr2.map((entry, index) => <Cell key={guidGenerator()} fill={COLORS[index % COLORS.length]}/>)
                                                     }
                                                 </Pie>
                                             </PieChart>

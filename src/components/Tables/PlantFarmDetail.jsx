@@ -149,7 +149,6 @@ class DetailComponent extends GridDetailRow {
 
     render() {
         const dataItem = this.props.dataItem;
-        const { classes } = this.props;
 
         return (
 

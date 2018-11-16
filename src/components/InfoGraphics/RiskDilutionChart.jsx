@@ -1,10 +1,9 @@
 import React from "react";
-import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
 import IconButton from '@material-ui/core/IconButton';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Text, Cell, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Cell, ResponsiveContainer } from 'recharts';
 import DefaultTooltipContent from 'recharts/lib/component/DefaultTooltipContent';
 import MUITooltip from '@material-ui/core/Tooltip';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -12,6 +11,7 @@ import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle
 import riskData from './../../assets/data/Kroger/risk_scores.json';
 import sortBy from './../../views/PortalPage/Helpers/sortBy.jsx';
 import round from "./../../views/PortalPage/Helpers/round.jsx";
+import guidGenerator from './../../views/PortalPage/Helpers/guidGenerator.jsx';
 import Typography from '@material-ui/core/Typography';
 
 const CustomTooltip = props => {
@@ -141,7 +141,8 @@ class RiskDilutionChart extends React.Component {
 
                                 <Bar dataKey="DilutionScore" stackId="b">
                                     {dilutionData.map((entry, index) => (
-                                        <Cell fill={
+                                        <Cell
+                                            key={guidGenerator()} fill={
                                             entry.DilutionScore === 1 ? 'rgba(55,97,26,.9)' :
                                             entry.DilutionScore === 2 ? 'rgba(255,204,3,.9)' :
                                             entry.DilutionScore === 3 ? 'rgba(248,156,5,.9)' :

@@ -228,7 +228,7 @@ class LoginPage extends React.Component {
                                                 </StockButton>
                                                 &nbsp;&nbsp;
 
-                                                <StockButton variant="raised" color="primary"  onClick={this.handleSigninClick}>
+                                                <StockButton variant="contained" color="primary"  onClick={this.handleSigninClick}>
                                                     Sign in
                                                 </StockButton>
 
