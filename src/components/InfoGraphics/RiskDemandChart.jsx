@@ -6,12 +6,13 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Text, Cell, ResponsiveContainer } from 'recharts';
 import DefaultTooltipContent from 'recharts/lib/component/DefaultTooltipContent';
-import MUITooltip from '@material-ui/core/Tooltip';
+import MuiTooltip from '@material-ui/core/Tooltip';
 import MenuIcon from '@material-ui/icons/Menu';
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
 import riskData from './../../assets/data/Kroger/risk_scores.json';
 import sortBy from './../../views/PortalPage/Helpers/sortBy.jsx';
 import round from "./../../views/PortalPage/Helpers/round.jsx";
+import Typography from '@material-ui/core/Typography';
 
 const CustomTooltip = props => {
     // payload[0] doesn't exist when tooltip isn't visible
@@ -39,16 +40,15 @@ const CustomTooltip = props => {
 
 const tooltipTitle = ({rejects}) => {
     return (
-        <div style={{fontSize: '15px', padding: '10px'}}>
-            <p>
-                <strong>Demand</strong> risk is defined as demand exceeding or meeting shipments by +- 10% or greater.
-            </p>
+        <Typography>
+                <strong>Demand risk</strong> is defined as demand exceeding or meeting shipments by +- 10% or greater.
+                <br/>
             { rejects > 0 &&
-                <p>
+                <div>
                     Note: {rejects} suppliers were missing data and are omitted from this chart.
-                </p>
+                </div>
             }
-        </div>
+        </Typography>
     );
 };
 
@@ -126,13 +126,14 @@ class RiskDemandChart extends React.Component {
                             <MenuIcon className={classes.iconButtonStyle}/>
                         </IconButton>
                         <h4 className={classes.infoGraphicTitle}>
-                            Risk - Supplier meeting demand &nbsp;
-                            <MUITooltip
+                            Risk - Supplier meeting demand
+                            <MuiTooltip
+                                classes={{ tooltip: classes.lightTooltip }}
                                 title={tooltipTitle({rejects})}>
-                                <span className={classes.tooltip}>
+                                <span className={classes.tooltipIcon}>
                                     <i className={"fa fa-sm fa-info-circle"}/>
                                 </span>
-                            </MUITooltip>
+                            </MuiTooltip>
                         </h4>
                     </CardActions>
 

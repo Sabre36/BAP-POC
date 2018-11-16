@@ -7,8 +7,9 @@ import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
 import MenuIcon from '@material-ui/icons/Menu';
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
+import MUITooltip from '@material-ui/core/Tooltip';
+import Typography from '@material-ui/core/Typography';
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
-
 
 const yr1 = [
     {year: 2016, name: '4 Star', value: 90},
@@ -66,6 +67,14 @@ const renderActiveShape = (props) => {
         );
     };
 
+    const tooltipTitle = () => {
+        return (
+            <Typography>
+                A year to year comparison of production volume by star status.
+            </Typography>
+        );
+    };
+
     class ProductionChart extends React.Component {
         constructor(props) {
             super(props);
@@ -102,7 +111,16 @@ const renderActiveShape = (props) => {
                             <IconButton aria-label='Menu' color='inherit' onClick={this.handleClick.bind(this)}>
                                 <MenuIcon className={classes.iconButtonStyle}/>
                             </IconButton>
-                            <h4 className={classes.infoGraphicTitle}>Production by rating</h4>
+                            <h4 className={classes.infoGraphicTitle} >
+                                Production by rating
+                                <MUITooltip
+                                    classes={{ tooltip: classes.lightTooltip }}
+                                    title={tooltipTitle()}>
+                                    <span className={classes.tooltipIcon}>
+                                        <i className={"fa fa-sm fa-info-circle"}/>
+                                    </span>
+                                </MUITooltip>
+                            </h4>
                         </CardActions>
 
                         <GridContainer>

@@ -33,7 +33,7 @@ class GalleryList extends React.Component {
 
     render() {
         return (
-            <Gallery photos={photos} direction={"column"} columns={"3"} />
+            <Gallery photos={photos} direction="column" columns={3} />
         );
     }
 }

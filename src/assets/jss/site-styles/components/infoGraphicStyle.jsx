@@ -46,6 +46,11 @@ const infoGraphicStyle = theme => ({
     icon: {
         paddingLeft: '12px'
     },
+    tooltipIcon: {
+        color: 'rgba(0,0,0,.33)',
+        paddingLeft: '4px',
+        fontSize: '18px !important'
+    },
     tooltipCursor: {
         cursor: 'pointer'
     },
@@ -54,7 +59,7 @@ const infoGraphicStyle = theme => ({
         color: theme.palette.text.primary,
         boxShadow: theme.shadows[1],
         fontSize: '15px',
-        padding: '10px'
+        padding: '15px'
     },
     darkTooltip: {
         fontSize: 15,

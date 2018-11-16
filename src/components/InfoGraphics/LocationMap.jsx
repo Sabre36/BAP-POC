@@ -7,10 +7,13 @@ import CardActions from '@material-ui/core/CardActions';
 import MenuIcon from '@material-ui/icons/Menu';
 import Plantmap from './../Maps/Plantmap.jsx';
 import inputData from "assets/data/Kroger/kroger_data.json";
+import MUITooltip from '@material-ui/core/Tooltip';
+import Typography from '@material-ui/core/Typography';
+
 import geoData from "assets/data/all_geo.json";
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
 
-function  getFillColor(view) {
+function getFillColor(view) {
     var color = null;
     switch (view) {
         case "shipments": color = "#02419A"; break;
@@ -20,6 +23,15 @@ function  getFillColor(view) {
     }
     return color;
 }
+
+const tooltipTitle = () => {
+    return (
+        <Typography>
+            A geographic comparison of plant <strong>demand</strong> (projected), <strong>actual</strong> shipments and <strong>production</strong> volumes in metric tons.
+        </Typography>
+    );
+};
+
 
 class LocationMap extends React.Component {
     constructor(props) {
@@ -169,7 +181,16 @@ class LocationMap extends React.Component {
                         <IconButton aria-label='Menu' color='inherit' onClick={this.handleClick.bind(this)}>
                             <MenuIcon className={classes.iconButtonStyle}/>
                         </IconButton>
-                        <h4 className={classes.infoGraphicTitle}>Worldwide {this.state.view} by plant</h4>
+                        <h4 className={classes.infoGraphicTitle}>
+                            Worldwide {this.state.view} by plant
+                            <MUITooltip
+                                classes={{ tooltip: classes.lightTooltip }}
+                                title={tooltipTitle()}>
+                                <span className={classes.tooltipIcon}>
+                                    <i className={"fa fa-sm fa-info-circle"}/>
+                                </span>
+                            </MUITooltip>
+                        </h4>
                     </CardActions>
 
                     <div style={styles.viewContainer}>

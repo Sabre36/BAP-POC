@@ -21,13 +21,13 @@ class AboutBAPSection extends React.Component {
                         <h2 className={classes.title}>What we offer</h2>
                         <h4 className={classes.description}>
                             <ShowMore lines={11} anchorClass={classes.moreLessLightText}>
-                                    <b style={{fontSize: '36px'}}>W</b>e’re your seafood supply chain solution – a “one-stop shop” for certification.
-                                    <br/>
-                                    <br/>
-                                    Everyone wins. Producers appreciate the time saved from having to patch together various certification programs to cover only a portion of what our BAP standards cover. Consumers win because before the seafood has arrived at a supermarket or restaurant, it originated from BAP-certified processing plants and/or farms.
+                                <strong style={{fontSize: '36px'}}>W</strong>e’re your seafood supply chain solution – a “one-stop shop” for certification.
+                                <br/>
+                                <br/>
+                                Everyone wins. Producers appreciate the time saved from having to patch together various certification programs to cover only a portion of what our BAP standards cover. Consumers win because before the seafood has arrived at a supermarket or restaurant, it originated from BAP-certified processing plants and/or farms.
 
-                                    <br/><br/>
-                                    And we are market-driven. Our market development team actively promotes the advantages of BAP certification to an influential network of retailers and foodservice operators on behalf of all BAP-certified facilities.
+                                <br/><br/>
+                                And we are market-driven. Our market development team actively promotes the advantages of BAP certification to an influential network of retailers and foodservice operators on behalf of all BAP-certified facilities.
                             </ShowMore>
                         </h4>
                     </GridItem>

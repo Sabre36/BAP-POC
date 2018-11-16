@@ -29,6 +29,7 @@
     "react-datamaps": "^0.4.1",
     "react-datetime": "2.15.0",
     "react-dom": "16.4.2",
+    "react-faux-dom": "^4.2.0",
     "react-google-maps": "^9.4.5",
     "react-helmet": "^5.2.0",
     "react-moment": "^0.8.3",
@@ -37,7 +38,7 @@
     "react-photo-gallery": "^6.2.1",
     "react-player": "^1.6.6",
     "react-router-dom": "4.3.1",
-    "react-scripts": "1.1.4",
+    "react-scripts": "^2.1.1",
     "react-show-more": "^2.0.0",
     "react-sidebar": "^3.0.2",
     "react-simple-storage": "^1.4.0",
@@ -79,5 +80,11 @@
     "build-package": "npm run build-package-css && babel src --out-dir dist",
     "build-kendo-css-min": "node-sass-chokidar ./node_modules/@progress/kendo-theme-material/scss -o ./src/assets/plugins/kendo/ --output-style compressed",
     "build-kendo-css": "node-sass-chokidar ./node_modules/@progress/kendo-theme-material/scss -o ./src/assets/plugins/kendo/ "
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

@@ -11,7 +11,18 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import MUITooltip from '@material-ui/core/Tooltip';
+import Typography from '@material-ui/core/Typography';
+
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
+
+const tooltipTitle = () => {
+    return (
+        <Typography>
+            Minor, major, and critical audit summary results are displayed; clicking on a row will display plant and farm detail audit data.
+        </Typography>
+    );
+};
 
 class Nonconformities extends React.Component {
 
@@ -45,7 +56,16 @@ class Nonconformities extends React.Component {
                         <IconButton aria-label='Menu' color='inherit' onClick={this.handleClick.bind(this)}>
                             <MenuIcon className={classes.iconButtonStyle}/>
                         </IconButton>
-                        <h4 className={classes.infoGraphicTitle}>Non-conformance</h4>
+                        <h4 className={classes.infoGraphicTitle}>
+                            Non-conformance
+                            <MUITooltip
+                                classes={{ tooltip: classes.lightTooltip }}
+                                title={tooltipTitle()}>
+                                <span className={classes.tooltipIcon}>
+                                    <i className={"fa fa-sm fa-info-circle"}/>
+                                </span>
+                            </MUITooltip>
+                        </h4>
                     </CardActions>
 
                     <CardContent>

@@ -12,6 +12,7 @@ import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle
 import riskData from './../../assets/data/Kroger/risk_scores.json';
 import sortBy from './../../views/PortalPage/Helpers/sortBy.jsx';
 import round from "./../../views/PortalPage/Helpers/round.jsx";
+import Typography from '@material-ui/core/Typography';
 
 const CustomTooltip = props => {
     // payload[0] doesn't exist when tooltip isn't visible
@@ -38,18 +39,18 @@ const CustomTooltip = props => {
     return <DefaultTooltipContent {...props} />;
 };
 
+
 const tooltipTitle = ({rejects}) => {
     return (
-        <div style={{fontSize: '15px', padding: '10px'}}>
-            <p>
-                <strong>Dilution</strong> risk is defined as supplier relying on farms which support multiple supplers.
-            </p>
+        <Typography>
+                <strong>Dilution risk</strong> is defined as supplier relying on farms which support multiple supplers.
+                <br/>
             { rejects > 0 &&
-                <p>
+                <div>
                     Note: {rejects} suppliers were missing data and are omitted from this chart.
-                </p>
+                </div>
             }
-        </div>
+        </Typography>
     );
 };
 
@@ -112,10 +113,11 @@ class RiskDilutionChart extends React.Component {
                             <MenuIcon className={classes.iconButtonStyle}/>
                         </IconButton>
                         <h4 className={classes.infoGraphicTitle}>
-                            Risk - Supplier dilution &nbsp;
+                            Risk - Supplier dilution
                             <MUITooltip
+                                classes={{ tooltip: classes.lightTooltip }}
                                 title={tooltipTitle({rejects})}>
-                                <span className={classes.tooltip}>
+                                <span className={classes.tooltipIcon}>
                                     <i className={"fa fa-sm fa-info-circle"}/>
                                 </span>
                             </MUITooltip>

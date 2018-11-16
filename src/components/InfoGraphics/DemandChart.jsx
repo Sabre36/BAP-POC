@@ -3,10 +3,20 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import IconButton from '@material-ui/core/IconButton';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
+import MUITooltip from '@material-ui/core/Tooltip';
+import Typography from '@material-ui/core/Typography';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import MenuIcon from '@material-ui/icons/Menu';
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
 
+
+const tooltipTitle = () => {
+    return (
+        <Typography>
+            <strong>Demand</strong>, or <emphasis> projected</emphasis> volume, is compared to <strong>actual</strong> shipments and <strong>production</strong> (from audit data).
+        </Typography>
+    );
+};
 
 class DemandChart extends React.Component {
 
@@ -30,7 +40,16 @@ class DemandChart extends React.Component {
                         <IconButton aria-label='Menu' color='inherit' onClick={this.handleClick.bind(this)}>
                             <MenuIcon className={classes.iconButtonStyle}/>
                         </IconButton>
-                        <h4 className={classes.infoGraphicTitle}>Demand versus capacity</h4>
+                        <h4 className={classes.infoGraphicTitle}>
+                            Demand versus capacity
+                            <MUITooltip
+                                classes={{ tooltip: classes.lightTooltip }}
+                                title={tooltipTitle()}>
+                                <span className={classes.tooltipIcon}>
+                                    <i className={"fa fa-sm fa-info-circle"}/>
+                                </span>
+                            </MUITooltip>
+                        </h4>
                     </CardActions>
 
                     <ResponsiveContainer height={300} aspect={4.0/1.5}>
