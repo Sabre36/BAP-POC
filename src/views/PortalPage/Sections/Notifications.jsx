@@ -6,6 +6,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import aboutBAPStyle from "assets/jss/site-styles/views/landingPageSections/aboutBAPStyle.jsx";
+import SankeyContainer from "components/SankeyChart/SankeyContainer.jsx";
 
 class Notifications extends React.Component {
     render() {
@@ -14,14 +15,11 @@ class Notifications extends React.Component {
         return (
             <div className={classes.section}>
                 <GridContainer style={{minHeight: "100vh"}}>
-                    <GridItem xs={12} sm={12} md={6}>
-                        <h2 className={classes.title}>Notices</h2>
-                        <h4 className={classes.description}>
 
-                            Stuff here...
-                        </h4>
-
+                    <GridItem xs={12} sm={12} md={12}>
+                        <SankeyContainer id="sankey" foregroundColor="#164250" title="a title" footer="a footer" value="99%" percent={0.92} />
                     </GridItem>
+
                 </GridContainer>
             </div>
         );

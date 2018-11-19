@@ -44,7 +44,7 @@ import Labs from './Sections/Labs.jsx';
 import Notifications from './Sections/Notifications.jsx';
 import Scorecard from './Sections/Scorecard.jsx';
 import Settings from './Sections/Settings.jsx';
-import SupplyChain from './Sections/SupplyChain2.jsx';
+import SupplyChain from './Sections/SupplyChain1.jsx';
 import YearlyRecap from './Sections/YearlyRecap.jsx';
 
 
