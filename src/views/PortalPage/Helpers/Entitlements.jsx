@@ -32,7 +32,7 @@ class Entitlements extends React.Component {
             >
                 { this.props.text === 'Scorecard' && <ChartIcon style={styles.icon} color="secondary"/> }
                 { this.props.text === 'Yearly recap' && <TimeIcon style={styles.icon} color="secondary"/> }
-                { this.props.text === 'Gap analysis' && <GridIcon style={styles.icon} color="secondary" /> }
+                { this.props.text === 'Plant and farm detail' && <GridIcon style={styles.icon} color="secondary" /> }
                 { this.props.text === 'Non-conformities' && <NonConformIcon style={styles.icon} color="secondary"/> }
                 { this.props.text === 'Supply chain' && <LinkIcon style={styles.icon} color="secondary"/> }
                 { this.props.text === 'Settings' && <SettingsIcon style={styles.icon} color="secondary"/> }
