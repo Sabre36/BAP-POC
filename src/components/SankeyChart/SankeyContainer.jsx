@@ -1,81 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import SankeyChart from './SankeyChart.jsx';
-//import Topology from './Topology.jsx';
 
-function getData() {
-    return {
-        "nodes": [{
-        "node": 0,
-        "name": "node0"
-    }, {
-        "node": 1,
-        "name": "node1"
-    }, {
-        "node": 2,
-        "name": "node2"
-    }, {
-        "node": 3,
-        "name": "node3"
-    }, {
-        "node": 4,
-        "name": "node4"
-    }, {
-        "node": 5,
-        "name": "node5"
-    }, {
-        "node": 6,
-        "name": "node6"
-    }, {
-        "node": 7,
-        "name": "node7"
-    }],
-        "links": [{
-        "source": 0,
-        "target": 2,
-        "value": 25
-    }, {
-        "source": 1,
-        "target": 2,
-        "value": 5
-    }, {
-        "source": 1,
-        "target": 3,
-        "value": 20
-    }, {
-        "source": 2,
-        "target": 4,
-        "value": 29
-    }, {
-        "source": 2,
-        "target": 5,
-        "value": 1
-    }, {
-        "source": 3,
-        "target": 4,
-        "value": 10
-    }, {
-        "source": 3,
-        "target": 5,
-        "value": 2
-    }, {
-        "source": 3,
-        "target": 6,
-        "value": 8
-    }, {
-        "source": 4,
-        "target": 7,
-        "value": 39
-    }, {
-        "source": 5,
-        "target": 7,
-        "value": 3
-    }, {
-        "source": 6,
-        "target": 7,
-        "value": 8
-    }]};
-}
 
 class SankeyContainer extends React.Component {
 
@@ -98,103 +24,22 @@ class SankeyContainer extends React.Component {
 
     const graph = {
         "nodes": [
-            {
-                "id":"asset59bc678fc3e5960254ac1f1b",
-                "name":"Kroger",
-                "objId":"59bc678fc3e5960254ac1f1b",
-                "type":"server",
-                "node":0
-            },{
-                "id":"asset59bc678fc3e5960254ac1f1a",
-                "name":"Eastern Seafood",
-                "objId":"59bc678fc3e5960254ac1f1a",
-                "type":"asset",
-                "node":1
-            },{
-                "id":"group59bc678fc3e5960254ac1f2f",
-                "name":"Aquastar",
-                "objId":"59bc678fc3e5960254ac1f2f",
-                "type":"asset",
-                "node":2
-            },{
-                "id":"user59bc6790c3e5960254ac1fc4",
-                "name":"Pacific Fish",
-                "objId":"59bc6790c3e5960254ac1fc4",
-                "type":"asset",
-                "node":3
-            },{
-                "id":"user59bc6790c3e5960254ac1fc4",
-                "name":"P10002",
-                "objId":"59bc6790c3e5960254ac1fa4",
-                "type":"group",
-                "node":4
-            },{
-                "id":"user59bc6790c3e5960254ac1ff4",
-                "name":"P10003",
-                "objId":"59bc6790c3e5960254ac1fa4",
-                "type":"group",
-                "node":5
-            },{
-                "id":"user59bc6790c3e5960254ac1ff4",
-                "name":"P10004",
-                "objId":"59bc6790c3e5960254ac1fa4",
-                "type":"group",
-                "node":6
-            },{
-                "id":"user59bc6790c3e5960254ac1fc4",
-                "name":"P10005",
-                "objId":"59bc6790c3e5960254ac1fa4",
-                "type":"group",
-                "node":7
-            },{
-                "id":"user59bc6790c3e5960254ac1ff4",
-                "name":"P10006",
-                "objId":"59bc6790c3e5960254ac1fa4",
-                "type":"group",
-                "node":8
-            },{
-                "id":"user59bc6790c3e5960254ac1ff4",
-                "name":"P10007",
-                "objId":"59bc6790c3e5960254ac1fa4",
-                "type":"group",
-                "node":9
-            },{
-                "id":"user59bc6790c3e5960254ac1ff4",
-                "name":"F10001",
-                "objId":"59bc6790c3e5960254ac1fa4",
-                "type":"user",
-                "node":10
-            },{
-                "id":"user59bc6790c3e5960254ac1ff4",
-                "name":"F10002",
-                "objId":"59bc6790c3e5960254ac1fa4",
-                "type":"user",
-                "node":11
-            },{
-                "id":"user59bc6790c3e5960254ac1ff4",
-                "name":"F10003",
-                "objId":"59bc6790c3e5960254ac1fa4",
-                "type":"user",
-                "node":12
-            },{
-                "id":"user59bc6790c3e5960254ac1ff4",
-                "name":"F10004",
-                "objId":"59bc6790c3e5960254ac1fa4",
-                "type":"user",
-                "node":13
-            },{
-                "id":"user59bc6790c3e5960254ac1ff4",
-                "name":"F10005",
-                "objId":"59bc6790c3e5960254ac1fa4",
-                "type":"user",
-                "node":14
-            },{
-                "id":"user59bc6790c3e5960254ac1ff4",
-                "name":"F10006",
-                "objId":"59bc6790c3e5960254ac1fa4",
-                "type":"user",
-                "node":15
-            }
+            { "name":"Kroger", "type":"endorser", "shipped": 22.1, "node":0 },
+            { "name":"Eastern Seafood", "type":"supplier", "shipped": 12.2, "node":1 },
+            { "name":"Aquastar", "type":"supplier", "shipped": 9, "node":2 },
+            { "name":"Pacific Fish", "type":"supplier", "shipped": 22, "node":3 },
+            { "name":"P10002", "type":"plant", "shipped": 8.8, "node":4 },
+            { "name":"P10003", "type":"plant", "shipped": 14.2, "node":5 },
+            { "name":"P10004", "type":"plant", "shipped": 19.2, "node":6 },
+            { "name":"P10005", "type":"plant", "shipped": 42.1, "node":7 },
+            { "name":"P10006", "type":"plant", "shipped": 7.1, "node":8 },
+            { "name":"P10007", "type":"plant", "shipped": 9.1, "node":9 },
+            { "name":"F10001", "type":"farm", "shipped": 2.2, "node":10 },
+            { "name":"F10002", "type":"hatchery", "shipped": .89, "node":11 },
+            { "name":"F10003", "type":"farm", "shipped": 11.1, "node":12 },
+            { "name":"F10004", "type":"farm", "shipped": 13.2, "node":13 },
+            { "name":"F10005", "type":"feedmill", "shipped": 14.2, "node":14 },
+            { "name":"F10006", "type":"farm", "shipped": 1, "node":15 }
         ],
         "links": [
             {"source":0, "target":1,"value":10},
@@ -231,7 +76,7 @@ class SankeyContainer extends React.Component {
     return (
       <div style={style}>
         <SankeyChart
-          graph={graph} type="server"
+          graph={graph} type="endorser"
         />
       </div>
     );

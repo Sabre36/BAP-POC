@@ -4,6 +4,20 @@ import * as d3 from 'd3';
 import SankeyHelper from './SankeyHelper.jsx';
 import Dimensions from 'react-dimensions';
 
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function getName(name, type) {
+    let newName = name;
+    if (type === 'endorser' || type === 'supplier')
+        newName = name;
+    else
+        newName = `${name} (${capitalizeFirstLetter(type)})`;
+
+    return newName;
+}
+
 class SankeyChart extends React.Component {
     constructor(props) {
         super(props);
@@ -109,17 +123,19 @@ class SankeyChart extends React.Component {
     addNodes = (svg) => {
         const nodeWidth = this.diagram.nodeWidth();
         const diagramWidth = this.state.width;
+        const Y_PADDING = 22;
         const node = svg.append('g').selectAll('.node')
         .data(this.diagram.nodes())
         .enter().append('g')
         .attr('class', 'node')
         .attr('transform', (d) => `translate(${d.x},${d.y})`);
-        // .call(d3.behavior.drag()
-        // .origin((d) => d)
-        // .on('dragstart', function () {
-        //   this.parentNode.appendChild(this);
-        // })
-        // .on('drag', this.dragmove));
+
+        .call(d3.behavior.drag()
+        .origin((d) => d)
+        .on('dragstart', function () {
+          this.parentNode.appendChild(this);
+        })
+        .on('drag', this.dragmove));
 
         // add the circles for the nodes
         node.append('circle')
@@ -138,15 +154,17 @@ class SankeyChart extends React.Component {
         // add in the title for the nodes
         node.append('text')
         .attr('x', (d) => -6 + nodeWidth / 2 - Math.sqrt(d.dy))
-        .attr('y', (d) => d.dy / 2)
+        .attr('y', (d) => d.dy / 2 + Y_PADDING)
         .attr('dy', '.35em')
         .attr('text-anchor', 'end')
         .attr('text-shadow', '0 1px 0 #fff')
         .attr('font-size', 14)
-        .style('font-family', 'Open Sans')
+        .style('font-family', 'Roboto')
         .style('font-weight', (d) => d.id === this.props.graph.sourceId ? '800' : '400')
         .attr('transform', null)
-        .text((d) => d.name)
+
+        //.text((d) => `${d.name} (${capitalizeFirstLetter(d.type)})`)
+        .text((d) => getName(d.name, d.type))
         .filter((d) => d.x < diagramWidth / 2)
         .attr('x', (d) => 6 + nodeWidth / 2 + Math.sqrt(d.dy))
         .attr('text-anchor', 'start');

@@ -2,10 +2,12 @@ import * as d3 from 'd3';
 //import { NodeType } from './Topology.jsx';
 
 const NodeType = {
-  ASSET: 'asset',
-  GROUP: 'group',
-  SERVER: 'server',
-  USER: 'user'
+  SUPPLIER: 'supplier',
+  PLANT: 'plant',
+  ENDORSER: 'endorser',
+  FARM: 'farm',
+  FEEDMILL: 'feedmill',
+  HATCHERY: 'hatchery'
 };
 
 export default {
@@ -13,10 +15,13 @@ export default {
 }
 
 const nodeTypeColors = {
-  [NodeType.SERVER]: '#7E46B7',
-  [NodeType.ASSET]: '#02419A',
-  [NodeType.GROUP]: '#37611A',
-  [NodeType.USER]: '#B1E18E',
+  [NodeType.ENDORSER]:  '#ab0520',
+  [NodeType.SUPPLIER]:  '#F89C05',
+  [NodeType.PLANT]:     '#FFCC03',
+  [NodeType.FARM]:      '#65B12F',
+  [NodeType.HATCHERY]:  '#157bdc',
+  //[NodeType.FEEDMILL]:  '#7E46B7',
+  [NodeType.FEEDMILL]:  'rgba(75,0,130,.40)',
 };
 
 function createDiagram(graph) {
