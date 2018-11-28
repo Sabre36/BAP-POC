@@ -18,7 +18,9 @@ import Typography from '@material-ui/core/Typography';
 import { OffCanvas, OffCanvasMenu, OffCanvasBody } from 'react-offcanvas';
 import { Helmet } from 'react-helmet';
 import { DropDownList } from '@progress/kendo-react-dropdowns';
-
+import Slider from '@material-ui/lab/Slider'; // not yet released officially
+import FormLabel from '@material-ui/core/FormLabel';
+import TextField from '@material-ui/core/TextField';
 // Custom components
 import Footer from 'components/Footer/Footer.jsx';
 import GridContainer from 'components/Grid/GridContainer.jsx';
@@ -79,6 +81,8 @@ class PortalPage extends React.Component {
 
         this.handleViewClick = this.handleViewClick.bind(this);
         this.handleAffiliationChange = this.handleAffiliationChange.bind(this);
+        this.handleSliderChange = this.handleSliderChange.bind(this);
+        this.handleSliderTextChange = this.handleSliderTextChange.bind(this);
     }
 
     state = {
@@ -94,6 +98,7 @@ class PortalPage extends React.Component {
         alertDismissed: false,
         isMenuOpen: true,
         cols: 10,
+        value: 100,
     }
 
     componentWillMount() {
@@ -131,6 +136,16 @@ class PortalPage extends React.Component {
     handleTabChange = (event, value) => {
         this.setState({ tabIndex: value });
 
+    };
+
+    handleSliderChange = (event, value) => {
+        this.setState({ value });
+    };
+
+    handleSliderTextChange = name => event => {
+        this.setState({
+            [name]: event.target.value,
+        });
     };
 
     handleViewClick = async (index) => {
@@ -237,7 +252,7 @@ class PortalPage extends React.Component {
 
         render() {
             const { classes, ...rest } = this.props;
-            //const { value } = this.state;
+             const { value } = this.state;
 
             const styles = {
                 root: {
@@ -286,7 +301,7 @@ class PortalPage extends React.Component {
                     overflowX: 'hidden'
                 },
                 tabContainer: {
-                    height: '1000px',
+                    height: '1500px',
                     overFlowY: 'auto',
                 }
             };
@@ -364,7 +379,7 @@ class PortalPage extends React.Component {
 
                 <div style={{zIndex: '4', margin: '55px', color: '#000'}}>
                     <OffCanvas width={275} transitionDuration={300} isMenuOpened={this.state.isMenuOpened} position={"left"} style={styles.offCanvas}>
-                        <OffCanvasBody style={{marginRight: 0, paddinRight: 0, overflowX: 'hidden!important'}}>
+                        <OffCanvasBody>
                             <div style={{marginTop: '-50px'}}>
                                 <GridContainer>
                                     <GridItem xs={this.state.cols} sm={this.state.cols} md={this.state.cols} >
@@ -423,6 +438,41 @@ class PortalPage extends React.Component {
                                                 <br/>
                                             </div>
                                         }
+
+                                        <div style={{marginLeft: "25px"}}>
+                                            <br/>
+                                            <MuiThemeProvider theme={darktheme}>
+                                                <FormControl component='fieldset' className={classes.formControl}>
+                                                    <FormLabel component='legend'>Yield conversion</FormLabel>
+                                                    <br/>
+                                                        <TextField
+                                                             id="standard-number"
+                                                             label="Percent"
+                                                             value={value}
+                                                             onChange={this.handleSliderTextChange('value')}
+                                                             type="number"
+                                                             className={classes.textField}
+                                                             InputLabelProps={{shrink: true}}
+                                                             margin="normal"
+                                                         />
+                                                        <br/>
+                                                        <Slider
+                                                          classes={{ container: classes.slider }}
+                                                          value={value}
+                                                          min={0}
+                                                          max={100}
+                                                          step={1}
+                                                          aria-labelledby="label"
+                                                          onChange={this.handleSliderChange}
+                                                        />
+                                                </FormControl>
+                                                <br/>
+                                                <br/>
+                                            </MuiThemeProvider>
+                                            <br/>
+                                        </div>
+
+
                                     </div>
                                 </TabContainer>
                             }
