@@ -100,7 +100,7 @@ class PortalPage extends React.Component {
         // sets the initial state
         this.setState({
             isMenuOpened: true,
-            cols: this.state.isMenuOpen ? 10 : 12,
+            cols: 10
         })
     }
 
@@ -283,14 +283,12 @@ class PortalPage extends React.Component {
                     backgroundImage: `url(${Background})`,
                     borderRight: "1px solid paleblue",
                     boxShadow: "inset 0 0 0 1000px rgba(0,0,0,.35)",
-
                     overflowX: 'hidden'
-
                 },
-                offCanvasContainer: {
-                    //marginTop: "172px",
-                    //width: "100%",
-                },
+                tabContainer: {
+                    height: '1000px',
+                    overFlowY: 'auto',
+                }
             };
 
             return (
@@ -365,9 +363,8 @@ class PortalPage extends React.Component {
                 </AppBar>
 
                 <div style={{zIndex: '4', margin: '55px', color: '#000'}}>
-
                     <OffCanvas width={275} transitionDuration={300} isMenuOpened={this.state.isMenuOpened} position={"left"} style={styles.offCanvas}>
-                        <OffCanvasBody className={styles.bodyClass} >
+                        <OffCanvasBody style={{marginRight: 0, paddinRight: 0, overflowX: 'hidden!important'}}>
                             <div style={{marginTop: '-50px'}}>
                                 <GridContainer>
                                     <GridItem xs={this.state.cols} sm={this.state.cols} md={this.state.cols} >
@@ -381,59 +378,57 @@ class PortalPage extends React.Component {
                                         {this.state.defaultEntitlement === 'Settings' && <Settings/> }
                                     </GridItem>
                                 </GridContainer>
-                                <Footer />
                             </div>
                         </OffCanvasBody>
 
                         <OffCanvasMenu style={styles.offCanvasMenu}>
-                            <div style={styles.offCanvasContainer}>
-                                <Tabs value={this.state.tabIndex} fullWidth={true} color="white" onChange={this.handleTabChange} classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}>
-                                    {/* <Tab label='Views' icon={<img src={ViewIcon} height={18} alt="Views" />} style={styles.tab} classes={{ root: classes.tabRoot, selected: classes.tabSelected }}> </Tab>
-                                    <Tab  label='Filters' icon={<img src={FilterIcon} height={18} alt="Filters" />} style={styles.tab} classes={{ root: classes.tabRoot, selected: classes.tabSelected }}/> */}
-                                    <Tab label='Views' style={styles.tab} classes={{ root: classes.tabRoot, selected: classes.tabSelected }}> </Tab>
-                                    <Tab label='Filters' style={styles.tab} classes={{ root: classes.tabRoot, selected: classes.tabSelected }}/>
-                                </Tabs>
-                            </div>
+                            <Tabs value={this.state.tabIndex} fullWidth={true} color="white" onChange={this.handleTabChange} classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}>
+                                <Tab label='Views' style={styles.tab} classes={{ root: classes.tabRoot, selected: classes.tabSelected }}> </Tab>
+                                <Tab label='Filters' style={styles.tab} classes={{ root: classes.tabRoot, selected: classes.tabSelected }}/>
+                            </Tabs>
 
-                            {this.state.tabIndex === 1 && <TabContainer>
-                                <div>
-                                    { this.state.species.length > 0 &&
-                                        <div style={{marginLeft: "25px", marginTop: "10px"}}>
-                                            <FormControl component='fieldset' className={classes.formControl}>
-                                                <Species species={this.state.species} userAffiliation={this.state.defaultAffiliation} theme={darktheme}/>
-                                            </FormControl>
-                                            <br/>
-                                            <br/>
+
+                            { this.state.tabIndex === 0 &&
+                                <TabContainer>
+                                    <MuiThemeProvider theme={darktheme}>
+                                        <div style={{overflow: "auto", zIndex: "99999"}}>
+                                            <List key={guidGenerator()} component='nav' style={{marginLeft: '-18px', marginRight: '-18px'}}>
+                                                {this.state.entitlementNames.map((item) =>
+                                                    <Entitlements key={guidGenerator()} text={item} selected={this.state.defaultEntitlement} handler={() => this.handleViewClick(item)}/>
+                                                )}
+                                            </List>
                                         </div>
-                                    }
+                                    </MuiThemeProvider>
+                                </TabContainer>
+                            }
 
-                                    { this.state.countries.length > 0 &&
-                                        <div style={{marginLeft: "25px"}}>
-                                            <FormControl component='fieldset' className={classes.formControl}>
-                                                <Countries countries={this.state.countries} userAffiliation={this.state.defaultAffiliation} theme={darktheme}/>
-                                            </FormControl>
-                                            <br/>
-                                        </div>
-                                    }
-                                </div>
-                            </TabContainer>
-                        }
+                            { this.state.tabIndex === 1 &&
+                                <TabContainer>
+                                    <div style={styles.tabContainer}>
+                                        { this.state.species.length > 0 &&
+                                            <div style={{marginLeft: "25px", marginTop: "10px"}}>
+                                                <FormControl component='fieldset' className={classes.formControl}>
+                                                    <Species species={this.state.species} userAffiliation={this.state.defaultAffiliation} theme={darktheme}/>
+                                                </FormControl>
+                                                <br/>
+                                                <br/>
+                                            </div>
+                                        }
 
-                        { this.state.tabIndex === 0 && <TabContainer>
-                            <MuiThemeProvider theme={darktheme}>
-                                <div style={{overflow: "auto", zIndex: "99999"}}>
-                                    <List key={guidGenerator()} component='nav' style={{marginLeft: '-18px', marginRight: '-18px'}}>
-                                        {this.state.entitlementNames.map((item) =>
-                                            <Entitlements key={guidGenerator()} text={item} selected={this.state.defaultEntitlement} handler={() => this.handleViewClick(item)}/>
-                                        )}
-                                    </List>
-                                </div>
-                            </MuiThemeProvider>
-                        </TabContainer>
-                    }
-                </OffCanvasMenu>
-            </OffCanvas>
-        </div>
+                                        { this.state.countries.length > 0 &&
+                                            <div style={{marginLeft: "25px"}}>
+                                                <FormControl component='fieldset' className={classes.formControl}>
+                                                    <Countries countries={this.state.countries} userAffiliation={this.state.defaultAffiliation} theme={darktheme}/>
+                                                </FormControl>
+                                                <br/>
+                                            </div>
+                                        }
+                                    </div>
+                                </TabContainer>
+                            }
+                        </OffCanvasMenu>
+                    </OffCanvas>
+                </div>
 
         { !this.state.alertDismissed &&
             <RenderAlerts alerts={this.state.alertList}/>
