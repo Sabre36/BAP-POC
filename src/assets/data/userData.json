@@ -30,8 +30,8 @@
                   "filters": [
                     { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"] },
                     { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] },
-                    { "date": ["1/1/2016", "1/31/2018"]},
-                    { "type": ["Plants", "Farms", "Feedmills", "Hatcheries"]}
+                    { "type": ["Plants", "Farms", "Feedmills", "Hatcheries"]},
+                    { "date": ["All", "Last audit"]}
                   ]
                 },{
                   "entitlement": "Supply chain",

@@ -9,7 +9,7 @@ import LandingPage from "views/LandingPage/LandingPage.jsx";
 import LoginPage from "views/LoginPage/LoginPage.jsx";
 import CertificationPage from "views/CertificationPage/CertificationPage.jsx";
 import FacilitiesPage from "views/FacilitiesPage/FacilitiesPage.jsx";
-import PortalPage from "views/PortalPage/PortalPage.jsx";
+import PortalPage from "views/PortalPage/PortalPage6.jsx";
 import { Helmet } from "react-helmet";
 
 import "assets/scss/site-styles.css";
