@@ -59,7 +59,7 @@ class Countries extends React.Component {
 
         checkBoxComponentList.push(
             <MuiThemeProvider theme={this.props.theme}>
-                <FormLabel component='legend'>Countries</FormLabel>
+                <FormLabel component='legend'>COUNTRIES</FormLabel>
             </MuiThemeProvider>
         );
 

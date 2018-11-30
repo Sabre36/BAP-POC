@@ -17,34 +17,34 @@
                   "entitlement": "Scorecard",
                   "filters": [
                     { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"] },
-                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] }
+                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] },
+                    { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
                   ]
                 },{
                   "entitlement": "Plant and farm detail",
                   "filters": [
                     { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"] },
-                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] }
+                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] },
+                    { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
                   ]
                 },{
                   "entitlement": "Non-conformities",
                   "filters": [
                     { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"] },
                     { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] },
-                    { "type": ["Plants", "Farms", "Feedmills", "Hatcheries"]},
-                    { "date": ["All", "Last audit"]}
+                    { "facililty": ["All", "Farms", "Feedmills", "Hatcheries"]},
+                    { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
                   ]
                 },{
                   "entitlement": "Supply chain",
                   "filters": [
                     { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"]},
-                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] }
+                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] },
+                    { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
                   ]
               },{
                 "entitlement": "Notifications",
-                "filters": [
-                  { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"]},
-                  { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] }
-                ]
+                "filters": []
               }
               ]
           },{
@@ -59,33 +59,37 @@
                 "entitlement": "Scorecard",
                 "filters": [
                   { "species": ["Shrimp", "Tilapia"] },
-                  { "countries": ["China", "India", "Thailand", "Viet Nam"]}
+                  { "countries": ["China", "India", "Thailand", "Viet Nam"]},
+                  { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
                 ]
               },{
                 "entitlement": "Yearly recap",
                 "filters": [
                     { "species": ["Shrimp", "Tilapia"] },
-                    { "countries": ["China", "India", "Thailand", "Viet Nam"] }
+                    { "countries": ["China", "India", "Thailand", "Viet Nam"] },
+                    { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
                 ]
               },{
               "entitlement": "Non-conformities",
               "filters": [
                     { "species": ["Shrimp", "Tilapia"] },
                     { "countries": ["China", "India", "Thailand", "Viet Nam"] },
-                    { "date": ["1/1/2016", "1/31/2018"]},
-                    { "type": ["Plants", "Farms", "Feedmills", "Hatcheries"]}
+                    { "facililty": ["All", "Farms", "Feedmills", "Hatcheries"]},
+                    { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
                 ]
             },{
               "entitlement": "Plant and farm detail",
               "filters": [
                 { "species": ["Shrimp", "Tilapia"] },
-                { "countries": ["China", "India", "Thailand", "Viet Nam"] }
+                { "countries": ["China", "India", "Thailand", "Viet Nam"] },
+                { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
               ]
             },{
                 "entitlement": "Supply chain",
                 "filters": [
                       { "species": ["Shrimp", "Tilapia", "Something else"] },
-                      { "countries": ["Some new country","Viet Nam"] }
+                      { "countries": ["Some new country","Viet Nam"] },
+                      { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
                   ]
             }
         ]
@@ -102,25 +106,29 @@
                 "entitlement": "Scorecard",
                 "filters": [
                     { "species": ["Pangasius", "Salmon", "Shrimp", "Tilapia"] },
-                    { "countries": ["Bangladesh", "China", "Chile", "Indonesia"] }
+                    { "countries": ["Bangladesh", "China", "Chile", "Indonesia"] },
+                    { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
                 ]
               },{
                 "entitlement": "Yearly recap",
                 "filters": [
                   { "species": ["Pangasius", "Salmon", "Shrimp", "Tilapia"] },
-                  { "countries": ["Bangladesh", "China", "Chile", "Indonesia"] }
+                  { "countries": ["Bangladesh", "China", "Chile", "Indonesia"] },
+                  { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
                 ]
                 },{
                   "entitlement": "Plant and farm detail",
                   "filters": [
                     { "species": ["Pangasius", "Salmon", "Shrimp", "Tilapia"] },
-                    { "countries": ["Bangladesh", "China", "Chile", "Indonesia"] }
+                    { "countries": ["Bangladesh", "China", "Chile", "Indonesia"] },
+                    { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
                   ]
                 },{
                   "entitlement": "Supply chain",
                   "filters": [
                     { "species": ["Pangasius", "Salmon", "Shrimp", "Tilapia"] },
-                    { "countries": ["Bangladesh", "China", "Chile", "Indonesia"] }
+                    { "countries": ["Bangladesh", "China", "Chile", "Indonesia"] },
+                    { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
                   ]
               },{
                 "entitlement": "Notifications",
@@ -149,7 +157,8 @@
                   "entitlement": "Yearly recap",
                   "filters": [
                       { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"]},
-                      { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "India", "Indonesia","Thailand", "United States", "Viet Nam"]}
+                      { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "India", "Indonesia","Thailand", "United States", "Viet Nam"]},
+                      { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
                   ]
                 },{
                 "entitlement": "Settings",
@@ -180,7 +189,9 @@
                 "entitlement": "Non-conformities",
                 "filters": [
                     { "species": ["Shrimp", "Tilapia"] },
-                    { "countries": ["China", "India", "Thailand", "Viet Nam"] }
+                    { "countries": ["China", "India", "Thailand", "Viet Nam"] },
+                    { "facililty": ["All", "Farms", "Feedmills", "Hatcheries"]},
+                    { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
                 ]
               },{
                 "entitlement": "Notifications",
@@ -199,19 +210,23 @@
                 "entitlement": "Scorecard",
                 "filters": [
                     { "species": ["Pangasius", "Salmon", "Shrimp", "Tilapia"] },
-                    { "countries": ["Bangladesh", "China", "Chile", "Indonesia"] }
+                    { "countries": ["Bangladesh", "China", "Chile", "Indonesia"] },
+                    { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
                 ]
             },{
                 "entitlement": "Yearly recap",
                 "filters": [
                     { "species": ["Pangasius", "Salmon", "Shrimp", "Tilapia"] },
-                    { "countries": ["Bangladesh", "China", "Chile", "Indonesia"]}
+                    { "countries": ["Bangladesh", "China", "Chile", "Indonesia"]},
+                    { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
                 ]
             },{
                 "entitlement": "Non-conformities",
                 "filters": [
                     { "species": ["Pangasius", "Salmon", "Shrimp", "Tilapia"] },
-                    { "countries": ["Bangladesh", "China", "Chile", "Indonesia"] }
+                    { "countries": ["Bangladesh", "China", "Chile", "Indonesia"] },
+                    { "facililty": ["All", "Farms", "Feedmills", "Hatcheries"]},
+                    { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
                 ]
               }
             ]
@@ -225,19 +240,23 @@
                 "entitlement": "Scorecard",
                 "filters": [
                     { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"]},
-                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "India", "Indonesia","Thailand", "United States", "Viet Nam"]}
+                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "India", "Indonesia","Thailand", "United States", "Viet Nam"]},
+                    { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
                 ]
             },{
                 "entitlement": "Yearly recap",
                 "filters": [
                     { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"] },
-                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "India", "Indonesia","Thailand", "United States", "Viet Nam"] }
+                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "India", "Indonesia","Thailand", "United States", "Viet Nam"] },
+                    { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
                 ]
               },{
                 "entitlement": "Non-conformities",
                 "filters": [
                     { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"]},
-                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "India", "Indonesia","Thailand", "United States", "Viet Nam"]}
+                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "India", "Indonesia","Thailand", "United States", "Viet Nam"]},
+                    { "facililty": ["All", "Farms", "Feedmills", "Hatcheries"]},
+                    { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
                 ]
               }
             ]
@@ -247,7 +266,7 @@
 
       {
         "id": "5bbf8e9f9eb6fc70c8fb2bc1",
-        "userName": "tim",
+        "userName": "jeff",
         "isAuthenticated": true,
         "affiliations": [
         {
@@ -275,13 +294,16 @@
                 "entitlement": "Non-conformities",
                 "filters": [
                     { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"]},
-                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "India", "Indonesia","Thailand", "United States", "Viet Nam"] }
+                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "India", "Indonesia","Thailand", "United States", "Viet Nam"] },
+                    { "facililty": ["All", "Farms", "Feedmills", "Hatcheries"]},
+                    { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
                 ]
             },{
                 "entitlement": "Scorecard",
                 "filters": [
                     { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"]},
-                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "India", "Indonesia","Thailand", "United States", "Viet Nam"]}
+                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "India", "Indonesia","Thailand", "United States", "Viet Nam"]},
+                    { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
                 ]
             },{
                 "entitlement": "Settings",
@@ -301,19 +323,23 @@
                 "entitlement": "Non-conformities",
                 "filters": [
                     { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"] },
-                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] }
+                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] },
+                    { "facililty": ["All", "Farms", "Feedmills", "Hatcheries"]},
+                    { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
                 ]
             },{
                 "entitlement": "Scorecard",
                 "filters": [
                     { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"] },
-                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] }
+                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] },
+                    { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
                 ]
             },{
                 "entitlement": "Labs",
                 "filters": [
                     { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"]},
-                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] }
+                    { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] },
+                    { "units": ["Metric tons (MT), Kilograms (KG), Pounds (lbs)"]}
                 ]
               }
             ]

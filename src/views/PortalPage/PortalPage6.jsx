@@ -423,7 +423,7 @@ class PortalPage extends React.Component {
                                     } }>
                                     <div>
                                         { this.state.species.length > 0 &&
-                                            <ExpansionPanel expanded={true} style={{backgroundColor: 'rgba(255,255,255,.1)'}}>
+                                            <ExpansionPanel defaultExpanded style={{backgroundColor: 'rgba(255,255,255,.1)'}}>
                                                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
                                                   <Typography className={classes.heading}>Species</Typography>
                                                 </ExpansionPanelSummary>
