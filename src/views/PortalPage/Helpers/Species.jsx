@@ -63,7 +63,6 @@ class Species extends React.Component {
         return (
             <MuiThemeProvider theme={this.props.theme}>
                 <FormControl component="fieldset" className={classes.formControl}>
-                    <FormLabel component='legend'>SPECIES</FormLabel>
                      <RadioGroup
                         aria-label="Species"
                         name="species"
@@ -83,27 +82,26 @@ class Species extends React.Component {
                     <div>
                         <br/>
                         <FormControl component='fieldset' className={classes.formControl}>
-                            <FormLabel component='legend'>YIELD CONVERSION</FormLabel>
-                                <TextField
-                                     id="standard-number"
-                                     label="Percent"
-                                     value={value}
-                                     onChange={this.handleSliderTextChange('value')}
-                                     type="number"
-                                     className={classes.textField}
-                                     InputLabelProps={{shrink: true}}
-                                     margin="normal"
-                                 />
-                                <br/>
-                                <Slider
-                                  classes={{ container: classes.slider }}
-                                  value={value}
-                                  min={0}
-                                  max={100}
-                                  step={1}
-                                  aria-labelledby="label"
-                                  onChange={this.handleSliderChange}
-                                />
+                            <TextField
+                                 id="standard-number"
+                                 label="Percent"
+                                 value={value}
+                                 onChange={this.handleSliderTextChange('value')}
+                                 type="number"
+                                 className={classes.textField}
+                                 InputLabelProps={{shrink: true}}
+                                 margin="normal"
+                             />
+                            <br/>
+                            <Slider
+                              classes={{ container: classes.slider }}
+                              value={value}
+                              min={0}
+                              max={100}
+                              step={1}
+                              aria-labelledby="label"
+                              onChange={this.handleSliderChange}
+                            />
                         </FormControl>
                     </div>
                 }

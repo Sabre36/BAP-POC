@@ -39,6 +39,8 @@ class LoginPage extends React.Component {
             defaultEntitlement: "Scorecard",
             countries: [],
             species: [],
+            facilities: [],
+            units: [],
             filterList: [],
             alertList: []
         };
@@ -59,6 +61,8 @@ class LoginPage extends React.Component {
         let _defaultEntitlement = null;
         let _filterList = [];
         let _species = [];
+        let _facilities = [];
+        let _units = [];
         let _countries = [];
         let _defaultRole = null;
         let _alertList = [];
@@ -69,17 +73,8 @@ class LoginPage extends React.Component {
                 _affiliationList = userData[i].affiliations;
                 //console.log("a:" + JSON.stringify(_affiliationList));
                 for (let j=0; j<_affiliationList.length; j++) {
-                    // for this user, create a simple list of just affiliation names
                     _affiliationNames.push(_affiliationList[j].affiliation);
-
-                    // and get the first affiliation name to work with
                     _defaultAffiliation = _affiliationNames[0];
-
-                    // now, create an alert array of ALL messages (including duplicates).  Not sure if this makes sense?
-                    // let msg = _affiliationList[j].alerts;
-                    // for (let m=0; m<msg.length; m++) {
-                    //     _msgList.push(msg[m]);
-                    // }
                 }
                 break;
             }
@@ -107,11 +102,11 @@ class LoginPage extends React.Component {
         console.log("\n%cUSER: " + this.state.userName + " (role: " + _defaultRole + ")", "color:green");
         console.log("%cAFFILIATIONS: " + JSON.stringify(_affiliationNames) + " (default: " + _defaultAffiliation + ")", "color:green");
         console.log("%cENTITLEMENTS: " + JSON.stringify(_entitlementNames) + " (default:" + _defaultEntitlement + ")",  "color:green");
-        //console.log("%cFILTER LIST: " + JSON.stringify(_filterList));
+        // console.log("%cFILTER LIST: " + JSON.stringify(_filterList));
         // console.log("%cSPECIES: " + JSON.stringify(_species),  "color:green");
         // console.log("%cCOUNTRIES: " + JSON.stringify(_countries),  "color:green");
-        //console.log("%cALERT LIST: " + JSON.stringify(_alertList), "color: green");
-        //console.log("%cMESSAGE SUBSET: " + JSON.stringify(_msgList), "color: green");
+        // console.log("%cALERT LIST: " + JSON.stringify(_alertList), "color: green");
+
 
          await this.setState({
             authenticated: true,
@@ -123,6 +118,8 @@ class LoginPage extends React.Component {
             defaultEntitlement: _defaultEntitlement,
             filterList: _filterList,
             species: _species,
+            facilties: _facilities,
+            units: _units,
             countries: _countries,
             alertList: _alertList,
         });

@@ -17,7 +17,8 @@ import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-
+import Button from '@material-ui/core/Button';
+import Divider from '@material-ui/core/Divider';
 
 // Misc components
 import { OffCanvas, OffCanvasMenu, OffCanvasBody } from 'react-offcanvas';
@@ -40,6 +41,9 @@ import guidGenerator from './Helpers/guidGenerator.jsx';
 import Entitlements from './Helpers/Entitlements.jsx';
 import Countries from './Helpers/Countries.jsx';
 import Species from './Helpers/Species.jsx';
+import Units from './Helpers/Units.jsx';
+import Audits from './Helpers/Audits.jsx';
+import Facilities from './Helpers/Facilities.jsx';
 import RenderAlerts from './Helpers/RenderAlerts.jsx';
 import TabContainer from './Helpers/TabContainer.jsx';
 
@@ -58,6 +62,10 @@ import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
+import ScheduleIcon from '@material-ui/icons/Schedule';
+
+import GlobeIcon from "components/Icons/GlobeIcon.jsx";
 
 
 
@@ -106,6 +114,9 @@ class PortalPage extends React.Component {
         filterList: this.props.filterList,
         species: this.props.species,
         countries: this.props.countries,
+        facilities: this.props.facilities,
+        audits: this.props.audits,
+        units: this.props.units,
         alertList: this.props.alertList,
         alertDismissed: false,
         isMenuOpen: true,
@@ -174,6 +185,9 @@ class PortalPage extends React.Component {
         let _filterList = [];
         let _species = [];
         let _countries = [];
+        let _facilities = [];
+        let _audits = [];
+        let _units = [];
 
         for (let i=0; i<this.props.affiliationList.length; i++) {
             //console.log('%chandleAffiliation state: ' + JSON.stringify(this.props.affiliationList[i].affiliation), 'color:orange');
@@ -189,6 +203,9 @@ class PortalPage extends React.Component {
                             _filterList.length; fi++) {
                                 let sp = _filterList[fi].species;
                                 let co = _filterList[fi].countries;
+                                let fa = _filterList[fi].facilities;
+                                let un = _filterList[fi].units;
+                                let au = _filterList[fi].audits;
 
                                 if (sp != null) {
                                     _species = sp;
@@ -196,6 +213,18 @@ class PortalPage extends React.Component {
 
                                 if (co != null) {
                                     _countries = co;
+                                }
+
+                                if (fa != null) {
+                                    _facilities = fa;
+                                }
+
+                                if (un != null) {
+                                    _units = un;
+                                }
+
+                                if (au != null) {
+                                    _audits = au;
                                 }
                             }
                         }
@@ -208,9 +237,13 @@ class PortalPage extends React.Component {
                 defaultEntitlement: index,
                 countries: _countries,
                 species: _species,
+                facilities: _facilities,
+                units: _units,
+                audits: _audits,
                 alertDismissed: true,
                 //isMenuOpened: !this.state.isMenuOpened
             });
+            console.log("%chandleViewClick: " + this.state.audits, "color: orange");
         };
 
         handleAffiliationChange = async (event) => {
@@ -244,7 +277,7 @@ class PortalPage extends React.Component {
                 tabIndex: 0,
                 alertDismissed: false
             });
-            console.log('%cRendering state: ' + JSON.stringify(this.state), 'color:orange');
+            //console.log('%cAfter handleAffiliationChange: ' + JSON.stringify(this.state), 'color:orange');
         }
 
         valueRender = (element, value) => {
@@ -328,7 +361,22 @@ class PortalPage extends React.Component {
                     top: '275px',
                     paddingTop: '275px',
                     marginTop: '275px'
+                },
+                accordion: {
+                    verticalAlign: 'middle',
+                    display: 'inline-block',
+                    whiteSpace: 'no-wrap',
+                    lineHeight: '30px',
+                    height: '30px'
+                },
+                accordionIcon: {
+                    marginRight: '5px',
+                },
+                accordionLabel: {
+                    padding: 0,
+                    marginTop: '-10px!important',
                 }
+
             };
 
             return (
@@ -422,59 +470,88 @@ class PortalPage extends React.Component {
                                         this.setState({ isPaneOpen: false });
                                     } }>
                                     <div>
-                                        { this.state.species.length > 0 &&
-                                            <ExpansionPanel defaultExpanded style={{backgroundColor: 'rgba(255,255,255,.1)'}}>
+                                        { this.state.species != null &&
+                                            <ExpansionPanel defaultExpanded>
                                                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                                                  <Typography className={classes.heading}>Species</Typography>
+                                                    <FormLabel>Species</FormLabel>
                                                 </ExpansionPanelSummary>
                                                 <ExpansionPanelDetails>
                                                     <FormControl component='fieldset' className={classes.formControl}>
                                                         <Species species={this.state.species} userAffiliation={this.state.defaultAffiliation} />
-
-
                                                     </FormControl>
                                                 </ExpansionPanelDetails>
-                                              </ExpansionPanel>
+                                            </ExpansionPanel>
                                         }
 
-                                        { this.state.countries.length > 0 &&
-                                            <ExpansionPanel style={{backgroundColor: 'rgba(255,255,255,.1)'}}>
-                                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                                                  <Typography className={classes.heading}>Countries</Typography>
+                                        { this.state.countries != null &&
+                                            <ExpansionPanel >
+                                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} >
+                                                    <FormLabel>Countries</FormLabel>
                                                 </ExpansionPanelSummary>
                                                 <ExpansionPanelDetails>
-                                                <FormControl component='fieldset' className={classes.formControl}>
-                                                    <Countries countries={this.state.countries} userAffiliation={this.state.defaultAffiliation} />
-                                                </FormControl>
+                                                    <FormControl component='fieldset' className={classes.formControl}>
+                                                        <Countries countries={this.state.countries} userAffiliation={this.state.defaultAffiliation} />
+                                                    </FormControl>
                                                 </ExpansionPanelDetails>
-                                              </ExpansionPanel>
+                                            </ExpansionPanel>
                                         }
 
-                                        <ExpansionPanel style={{backgroundColor: 'rgba(255,255,255,.1)'}}>
-                                            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                                              <Typography className={classes.heading}>Units</Typography>
-                                            </ExpansionPanelSummary>
-                                            <ExpansionPanelDetails>
-                                            <FormControl component='fieldset' className={classes.formControl}>
+                                        { this.state.facilities != null &&
+                                            <ExpansionPanel>
+                                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                                                    <FormLabel>Facilities</FormLabel>
+                                                </ExpansionPanelSummary>
+                                                <ExpansionPanelDetails>
+                                                    <FormControl component='fieldset' className={classes.formControl}>
+                                                        <Facilities facilities={this.state.facilities} userAffiliation={this.state.defaultAffiliation} />
+                                                    </FormControl>
+                                                </ExpansionPanelDetails>
+                                            </ExpansionPanel>
+                                        }
 
-                                            </FormControl>
-                                            </ExpansionPanelDetails>
-                                        </ExpansionPanel>
+                                        { this.state.audits != null  &&
+                                            <ExpansionPanel >
+                                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                                                    <div style={styles.accordion}>
+                                                        <FormLabel style={styles.accordionLabel}>
+                                                            <ScheduleIcon style={styles.accordionIcon}/>Audit Period
+                                                        </FormLabel>
+                                                    </div>
+                                                </ExpansionPanelSummary>
+                                                <ExpansionPanelDetails>
+                                                    <FormControl component='fieldset' className={classes.formControl}>
+                                                        <Audits audits={this.state.audits} userAffiliation={this.state.defaultAffiliation} />
+                                                    </FormControl>
+                                                </ExpansionPanelDetails>
+                                            </ExpansionPanel>
+                                        }
+
+
+                                        { this.state.units != null &&
+                                            <ExpansionPanel >
+                                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                                                    <div style={styles.accordion}>
+                                                        <FormLabel style={styles.accordionLabel}>
+                                                            <ScheduleIcon style={styles.accordionIcon}/>Units
+                                                        </FormLabel>
+                                                    </div>
+                                                </ExpansionPanelSummary>
+                                                <ExpansionPanelDetails>
+                                                    <FormControl component='fieldset' className={classes.formControl}>
+                                                        <Units units={this.state.units} userAffiliation={this.state.defaultAffiliation} />
+                                                    </FormControl>
+                                                </ExpansionPanelDetails>
+                                            </ExpansionPanel>
+                                        }
+                                        <br/>
+
+                                        <Button color="primary" variant="raised" style={{marginLeft: '20px'}}>Apply</Button>
+                                        <Button color="primary" variant="outlined" style={{marginLeft: '10px'}}>Save</Button>
 
                                     </div>
                                     <br />
 
                                 </SlidingPane>
-                                {/*
-                                <SlidingPane
-                                    isOpen={ this.state.isPaneOpenLeft }
-                                    title='Hey, it is optional pane title.  I can be React component too.'
-                                    from='left'
-                                    width='200px'
-                                    onRequestClose={ () => this.setState({ isPaneOpenLeft: false }) }>
-                                    <div>And I am pane content on left.</div>
-                                </SlidingPane>
-                                */}
 
                                 <GridContainer>
                                     <GridItem xs={this.state.cols} sm={this.state.cols} md={this.state.cols} >

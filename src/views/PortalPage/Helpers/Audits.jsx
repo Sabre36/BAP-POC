@@ -23,25 +23,16 @@ const styles = {
   },
 };
 
-function getValue(str) {
-    let starting = str.indexOf( '(' );
-    let ending = str.indexOf( ')' ) - 1;
-    let len = ending - starting;
 
-    return str.substr(starting+1, len).toLowerCase();
-}
-
-
-class Units extends React.Component {
+class Audits extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedValue: 'mt'
+            selectedValue: 'all'
         };
 
         this.handleRadioChange = this.handleRadioChange.bind(this);
     }
-
 
     handleRadioChange = event => {
         this.setState({ selectedValue: event.target.value });
@@ -52,18 +43,20 @@ class Units extends React.Component {
         const {selectedValue} = this.state;
 
         return (
+
             <MuiThemeProvider theme={this.props.theme}>
                 <FormControl component="fieldset" className={classes.formControl}>
+                    <FormLabel component='legend'>AUDITS</FormLabel>
                      <RadioGroup
-                        aria-label="Units"
-                        name="units"
+                        aria-label="Audit period"
+                        name="audits"
                         className={classes.group}
                         value={this.state.selectedValue}
                         onChange={this.handleRadioChange}
                     >
 
-                    { this.props.units.length > 0 && this.props.units.map((item) =>
-                        <FormControlLabel value={getValue(item)} control={<Radio color='primary'/>} label={item}/>
+                    { this.props.audits.map((item) =>
+                        <FormControlLabel value={item.toLowerCase()} control={<Radio color='primary'/>} label={item}/>
                     )}
 
                   </RadioGroup>
@@ -73,4 +66,4 @@ class Units extends React.Component {
     }
 }
 
-export default withStyles(styles)(Units);
+export default withStyles(styles)(Audits);

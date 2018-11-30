@@ -57,12 +57,6 @@ class Countries extends React.Component {
     render() {
         let checkBoxComponentList = [];
 
-        checkBoxComponentList.push(
-            <MuiThemeProvider theme={this.props.theme}>
-                <FormLabel component='legend'>COUNTRIES</FormLabel>
-            </MuiThemeProvider>
-        );
-
         for (let i=0; i<this.props.countries.length; i++){
             let val = this.props.countries[i].trim().toLowerCase().replace(/\s/g, "");
             //console.log('render countries: i=' + i + ': ' + props.countries[i]);

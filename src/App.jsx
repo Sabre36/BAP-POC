@@ -48,6 +48,8 @@ class App extends React.Component {
             defaultEntitlement: null,
             countries: [],
             species: [],
+            facilities: [],
+            units: [],
         }
 
         this.handleLogin = this.handleLogin.bind(this);
@@ -70,9 +72,11 @@ class App extends React.Component {
             alertList: childState.alertList,
             countries:  childState.countries,
             species: childState.species,
+            facilities: childState.species,
+            units: childState.units
         });
 
-        //console.log('%cCurrent login: ' + JSON.stringify(this.state), "color: magenta");
+        //console.log('%cCurrent login: ' + this.state.defaultEntitlement + " " + this.state.units, "color: orange");
         hist.push('/portal');
     }
 
@@ -131,6 +135,8 @@ class App extends React.Component {
                                         alertList={this.state.alertList}
                                         countries={this.state.countries}
                                         species={this.state.species}
+                                        facilities={this.state.facilities}
+                                        units={this.state.units}
                                     />
                                 )
                             )}/>
@@ -154,7 +160,5 @@ class App extends React.Component {
         );
     }
 }
-
-
 
 export default App;
