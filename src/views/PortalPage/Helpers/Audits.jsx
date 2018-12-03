@@ -46,7 +46,6 @@ class Audits extends React.Component {
 
             <MuiThemeProvider theme={this.props.theme}>
                 <FormControl component="fieldset" className={classes.formControl}>
-                    <FormLabel component='legend'>AUDITS</FormLabel>
                      <RadioGroup
                         aria-label="Audit period"
                         name="audits"

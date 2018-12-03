@@ -1,7 +1,6 @@
 import React from "react";
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch, Redirect } from "react-router-dom";
-//import indexRoutes from "routes/index.jsx";
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import { createMuiTheme } from '@material-ui/core/styles';
 
@@ -41,15 +40,10 @@ class App extends React.Component {
             authenticated: false,
             userName: '',
             password: '',
-            defaultRole: null,
-            affiliationNames: [],
+
+            affiliationNames: null,
             defaultAffiliation: null,
-            entitlementNames: [],
-            defaultEntitlement: null,
-            countries: [],
-            species: [],
-            facilities: [],
-            units: [],
+            entitlementNames: null
         }
 
         this.handleLogin = this.handleLogin.bind(this);
@@ -70,10 +64,6 @@ class App extends React.Component {
             entitlementNames: childState.entitlementNames,
             defaultEntitlement: childState.defaultEntitlement,
             alertList: childState.alertList,
-            countries:  childState.countries,
-            species: childState.species,
-            facilities: childState.species,
-            units: childState.units
         });
 
         //console.log('%cCurrent login: ' + this.state.defaultEntitlement + " " + this.state.units, "color: orange");
@@ -126,17 +116,14 @@ class App extends React.Component {
                                     <PortalPage
                                         userName={this.state.userName}
                                         authenticated={true}
-                                        defaultRole={this.state.defaultRole}
+
                                         affiliationNames={this.state.affiliationNames}
                                         affiliationList={this.state.affiliationList}
                                         defaultAffiliation={this.state.defaultAffiliation}
                                         entitlementNames={this.state.entitlementNames}
-                                        defaultEntitlement={this.state.defaultEntitlement}
+                                        currentEntitlement={this.state.defaultEntitlement}
                                         alertList={this.state.alertList}
-                                        countries={this.state.countries}
-                                        species={this.state.species}
-                                        facilities={this.state.facilities}
-                                        units={this.state.units}
+
                                     />
                                 )
                             )}/>

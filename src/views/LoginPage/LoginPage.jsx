@@ -37,11 +37,6 @@ class LoginPage extends React.Component {
             defaultAffiliation: null,
             entitlementList: [],
             defaultEntitlement: "Scorecard",
-            countries: [],
-            species: [],
-            facilities: [],
-            units: [],
-            filterList: [],
             alertList: []
         };
 
@@ -60,10 +55,6 @@ class LoginPage extends React.Component {
         let _entitlementNames = [];
         let _defaultEntitlement = null;
         let _filterList = [];
-        let _species = [];
-        let _facilities = [];
-        let _units = [];
-        let _countries = [];
         let _defaultRole = null;
         let _alertList = [];
 
@@ -102,10 +93,7 @@ class LoginPage extends React.Component {
         console.log("\n%cUSER: " + this.state.userName + " (role: " + _defaultRole + ")", "color:green");
         console.log("%cAFFILIATIONS: " + JSON.stringify(_affiliationNames) + " (default: " + _defaultAffiliation + ")", "color:green");
         console.log("%cENTITLEMENTS: " + JSON.stringify(_entitlementNames) + " (default:" + _defaultEntitlement + ")",  "color:green");
-        // console.log("%cFILTER LIST: " + JSON.stringify(_filterList));
-        // console.log("%cSPECIES: " + JSON.stringify(_species),  "color:green");
-        // console.log("%cCOUNTRIES: " + JSON.stringify(_countries),  "color:green");
-        // console.log("%cALERT LIST: " + JSON.stringify(_alertList), "color: green");
+
 
 
          await this.setState({
@@ -116,11 +104,6 @@ class LoginPage extends React.Component {
             defaultAffiliation: _defaultAffiliation,
             entitlementNames: _entitlementNames,
             defaultEntitlement: _defaultEntitlement,
-            filterList: _filterList,
-            species: _species,
-            facilties: _facilities,
-            units: _units,
-            countries: _countries,
             alertList: _alertList,
         });
 

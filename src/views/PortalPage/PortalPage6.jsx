@@ -7,26 +7,25 @@ import Modal from 'react-modal';
 import SlidingPane from 'react-sliding-pane';
 import 'assets/scss/slide-pane.css';
 
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
 
 // Core Material-UI components
 import AppBar from '@material-ui/core/AppBar';
 import FormControl from '@material-ui/core/FormControl';
 import IconButton from '@material-ui/core/IconButton';
 import List from '@material-ui/core/List';
-import Tab from '@material-ui/core/Tab';
-import Tabs from '@material-ui/core/Tabs';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import Divider from '@material-ui/core/Divider';
+
+
 
 // Misc components
 import { OffCanvas, OffCanvasMenu, OffCanvasBody } from 'react-offcanvas';
 import { Helmet } from 'react-helmet';
-import { DropDownList } from '@progress/kendo-react-dropdowns';
-import Slider from '@material-ui/lab/Slider'; // not yet released officially
 import FormLabel from '@material-ui/core/FormLabel';
-import TextField from '@material-ui/core/TextField';
+
 // Custom components
 import Footer from 'components/Footer/Footer.jsx';
 import GridContainer from 'components/Grid/GridContainer.jsx';
@@ -45,7 +44,7 @@ import Units from './Helpers/Units.jsx';
 import Audits from './Helpers/Audits.jsx';
 import Facilities from './Helpers/Facilities.jsx';
 import RenderAlerts from './Helpers/RenderAlerts.jsx';
-import TabContainer from './Helpers/TabContainer.jsx';
+
 
 
 // Sections
@@ -62,10 +61,9 @@ import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
-import ScheduleIcon from '@material-ui/icons/Schedule';
-
-import GlobeIcon from "components/Icons/GlobeIcon.jsx";
+import GlobeIcon from '@material-ui/icons/Public';
+import ScheduleIcon from '@material-ui/icons/DateRange';
+import BuildingIcon from "@material-ui/icons/Business";
 
 
 
@@ -74,7 +72,10 @@ import MenuIcon from '@material-ui/icons/Menu';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import PrintIcon from '@material-ui/icons/Print';
 import SaveAltIcon from '@material-ui/icons/SaveAlt';
+import WorldIcon from '@material-ui/icons/Language';
 import FilterIcon from "components/Icons/FilterIcon";
+import SpeciesIcon from "@material-ui/icons/Waves";
+//import SpeciesIcon from "components/Icons/SpeciesIcon";
 
 // Images
 var Background = process.env.PUBLIC_URL + '/bap/portal-sidebar.png';
@@ -101,22 +102,19 @@ class PortalPage extends React.Component {
 
         this.handleViewClick = this.handleViewClick.bind(this);
         this.handleAffiliationChange = this.handleAffiliationChange.bind(this);
-        this.handleSliderChange = this.handleSliderChange.bind(this);
-        this.handleSliderTextChange = this.handleSliderTextChange.bind(this);
     }
 
     state = {
         activeSlide : 5,
         tabIndex: 0,
         defaultAffiliation: this.props.defaultAffiliation,
-        defaultEntitlement: this.props.defaultEntitlement,
+        currentEntitlement: this.props.currentEntitlement,
         entitlementNames: this.props.entitlementNames,
-        filterList: this.props.filterList,
-        species: this.props.species,
-        countries: this.props.countries,
-        facilities: this.props.facilities,
-        audits: this.props.audits,
-        units: this.props.units,
+        species: [],
+        countries: [],
+        facilities: [],
+        audits: [],
+        units: [],
         alertList: this.props.alertList,
         alertDismissed: false,
         isMenuOpen: true,
@@ -128,32 +126,22 @@ class PortalPage extends React.Component {
     }
 
     componentDidMount() {
+        console.log("componentDidUpdate:" + this.props.currentEntitlement);
         Modal.setAppElement(this.el);
+
+        // initially, set the first entitlement and then the first set of filters
+        this.setAffiliation(this.state.defaultAffiliation);
+        //this.setFilters(this.state.currentEntitlement);
     }
 
     componentWillMount() {
+        console.log("componentWillUpdate:" + this.props.currentEntitlement);
         // sets the initial state
         this.setState({
             isMenuOpened: true,
             cols: 10
         })
     }
-
-    // componentWillReceiveProps() {
-    //     console.log("componentWillReceiveProps:" + this.props.defaultEntitlement);
-    // }
-    //
-    // componentWillUpdate() {
-    //     console.log("componentWillUpdate:" + this.props.defaultEntitlement);
-    // }
-    //
-    // componentDidUpdate() {
-    //     console.log("componentDidUpdate:" + this.props.defaultEntitlement);
-    // }
-    //
-    // componentWillUnmount() {
-    //     console.log("componentWillUnmount:" + this.props.defaultEntitlement);
-    // }
 
     async handleSidebar() {
         await this.setState({
@@ -162,26 +150,43 @@ class PortalPage extends React.Component {
         });
     }
 
+    setAffiliation(index) {
+        let _defaultAffiliation = index;
+        let _entitlementNames = [];
+        let _alertList = [];
+        let _currentEntitlement = null;
 
-    handleTabChange = (event, value) => {
-        this.setState({ tabIndex: value });
+        for (let i=0; i<this.props.affiliationList.length; i++) {
+            //console.log('%chandleAffiliation state: ' + JSON.stringify(this.props.affiliationList[i].affiliation), 'color:orange');
+            if (this.props.affiliationList[i].affiliation === _defaultAffiliation) {
+                for (let en=0; en<this.props.affiliationList[i].entitlements.length; en++) {
+                    let name = this.props.affiliationList[i].entitlements[en].entitlement;
+                    _entitlementNames.push(name);
+                }
 
-    };
+                for (let al=0; al<this.props.affiliationList[i].alerts.length; al++) {
+                    _alertList.push(this.props.affiliationList[i].alerts[al]);
+                }
 
-    handleSliderChange = (event, value) => {
-        this.setState({ value });
-    };
+                _currentEntitlement = _entitlementNames[0];
 
-    handleSliderTextChange = name => event => {
+                this.setFilters(_currentEntitlement);
+                break;
+            }
+        }
+
         this.setState({
-            [name]: event.target.value,
+            defaultAffiliation: _defaultAffiliation,
+            entitlementNames: _entitlementNames,
+            currentEntitlement: _currentEntitlement,
+            alertList: _alertList,
+            tabIndex: 0,
+            alertDismissed: false
         });
-    };
+        console.log('%cAfter handleAffiliationChange: ' + JSON.stringify(this.state), 'color:green');
+    }
 
-    handleViewClick = async (index) => {
-
-        console.log("view index=" + index);
-
+    setFilters(index) {
         let _filterList = [];
         let _species = [];
         let _countries = [];
@@ -196,7 +201,6 @@ class PortalPage extends React.Component {
                     let name = this.props.affiliationList[i].entitlements[en].entitlement;
 
                     if (name === index) {
-
                         _filterList = this.props.affiliationList[i].entitlements[en].filters;
 
                         for (let fi=0; fi<
@@ -233,78 +237,28 @@ class PortalPage extends React.Component {
                 }
             }
 
-            await this.setState({
-                defaultEntitlement: index,
+            this.setState({
                 countries: _countries,
                 species: _species,
                 facilities: _facilities,
                 units: _units,
                 audits: _audits,
                 alertDismissed: true,
-                //isMenuOpened: !this.state.isMenuOpened
+                isPaneOpen: true
             });
             console.log("%chandleViewClick: " + this.state.audits, "color: orange");
+        }
+
+        handleViewClick = async (index) => {
+            await this.setFilters(index);
         };
 
         handleAffiliationChange = async (event) => {
-            let _defaultAffiliation = event.target.value;
-            let _entitlementNames = [];
-            let _alertList = [];
-            let _defaultEntitlement = null;
-
-            for (let i=0; i<this.props.affiliationList.length; i++) {
-                //console.log('%chandleAffiliation state: ' + JSON.stringify(this.props.affiliationList[i].affiliation), 'color:orange');
-                if (this.props.affiliationList[i].affiliation === _defaultAffiliation) {
-                    for (let en=0; en<this.props.affiliationList[i].entitlements.length; en++) {
-                        let name = this.props.affiliationList[i].entitlements[en].entitlement;
-                        _entitlementNames.push(name);
-                    }
-
-                    for (let al=0; al<this.props.affiliationList[i].alerts.length; al++) {
-                        _alertList.push(this.props.affiliationList[i].alerts[al]);
-                    }
-
-                    _defaultEntitlement = _entitlementNames[0];
-                    break;
-                }
-            }
-
-            await this.setState({
-                defaultAffiliation: _defaultAffiliation,
-                entitlementNames: _entitlementNames,
-                defaultEntitlement: _defaultEntitlement,
-                alertList: _alertList,
-                tabIndex: 0,
-                alertDismissed: false
-            });
-            //console.log('%cAfter handleAffiliationChange: ' + JSON.stringify(this.state), 'color:orange');
+            await this.setAffiliation(event.target.value);
         }
-
-        valueRender = (element, value) => {
-            if (!value) {
-                return element;
-            }
-            const children = [
-                <span key={guidGenerator()} style={{color: '#fff', fontSize: '21px', fontWeight: 500}}>
-                    {value}
-                </span>,
-            ];
-            return React.cloneElement(element, { ...element.props }, children);
-        }
-
-        itemRender = (li, itemProps) => {
-            const itemChildren =
-                <span key={guidGenerator()} style={{fontSize: "18px", fontWeight: 400, paddingRight: "50px" }}>
-                    {li.props.children}
-                </span>;
-
-            return React.cloneElement(li, li.props, itemChildren);
-        }
-
 
         render() {
             const { classes, ...rest } = this.props;
-             const { value } = this.state;
 
             const styles = {
                 root: {
@@ -328,8 +282,7 @@ class PortalPage extends React.Component {
                 appbar: {
                     backgroundColor: 'rgba(0,0,0.3)'
                 },
-                tab: {
-                    color: "#fff",
+                viewContainer: {
                     minWidth: "110px",
                     marginTop: "15px"
                 },
@@ -339,44 +292,29 @@ class PortalPage extends React.Component {
                 offCanvasMenu: {
                     marginTop: "172px",
                     height: "100vh",
-                    //height: "100vh",
-                    //backgroundPosition: "left 0 top 0",
                     backgroundPosition: "0 0",
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "275px 100vh",
-                    //backgroundSize: "275px 1200px",
-                    //backgroundSize: "cover",
-                    //backgroundSize: "cover",
                     backgroundImage: `url(${Background})`,
                     borderRight: "1px solid paleblue",
                     boxShadow: "inset 0 0 0 1000px rgba(0,0,0,.35)",
                     overflowX: 'hidden'
                 },
-                tabContainer: {
-                    height: '1500px',
-                    overFlowY: 'auto',
-                },
-                filterContainer: {
-                    position: 'absolute',
-                    top: '275px',
-                    paddingTop: '275px',
-                    marginTop: '275px'
-                },
                 accordion: {
-                    verticalAlign: 'middle',
-                    display: 'inline-block',
+                    display: 'block',
                     whiteSpace: 'no-wrap',
-                    lineHeight: '30px',
-                    height: '30px'
                 },
                 accordionIcon: {
-                    marginRight: '5px',
+                    position: 'absolute',
+                    top: '10px',
+                    left: '25px'
                 },
                 accordionLabel: {
-                    padding: 0,
-                    marginTop: '-10px!important',
-                }
-
+                    marginLeft: '35px'
+                },
+                textField: {
+                    fontSize: 21
+                 }
             };
 
             return (
@@ -421,23 +359,25 @@ class PortalPage extends React.Component {
                                 { this.props.affiliationNames.length === 1 &&
                                     <span>{this.props.defaultAffiliation}</span>
                                 }
+
                                 { this.props.affiliationNames.length > 1 &&
-                                    <DropDownList style={{display: 'inline-block', width: 'auto', minWidth: '150px', color: '#ffffff'}}
-                                        data={this.props.affiliationNames}
-                                        key={guidGenerator()}
-                                        defaultValue={this.props.defaultAffiliation}
-                                        itemRender={this.itemRender}
-                                        valueRender={this.valueRender}
-                                        header={<div style={{ paddingTop: '20px' }}></div>}
-                                        onChange={this.handleAffiliationChange}
-                                        dataItemKey='defaultAffiliation'
-                                    />
+                                    <MuiThemeProvider theme={darktheme}>
+                                        <Select
+                                            value={this.state.defaultAffiliation}
+                                            onChange={this.handleAffiliationChange}
+                                            style={{ fontSize: "21px", border: 'none' }}
+                                        >
+                                            { this.props.affiliationNames.map((item) =>
+                                                <MenuItem key={guidGenerator()} value={item}>{item}</MenuItem>
+                                            )}
+                                        </Select>
+
+                                    </MuiThemeProvider>
                                 }
                             )
                         </Typography>
 
                         <section style={styles.rightToolbar}>
-
                             <IconButton color='inherit' aria-label='Filters' onClick={() => this.setState({ isPaneOpen: !this.state.isPaneOpen })}>
                                 <FilterIcon />
                             </IconButton>
@@ -456,8 +396,6 @@ class PortalPage extends React.Component {
                 </AppBar>
 
                 <div style={{zIndex: '4', margin: '55px', color: '#000'}} ref={ref => this.el = ref}>
-
-
                     <OffCanvas width={275} transitionDuration={300} isMenuOpened={this.state.isMenuOpened} position={"left"} style={styles.offCanvas}>
                         <OffCanvasBody>
                             <div style={{marginTop: '-50px'}}>
@@ -469,11 +407,15 @@ class PortalPage extends React.Component {
                                         // triggered on "<" on left top click or on outside click
                                         this.setState({ isPaneOpen: false });
                                     } }>
-                                    <div>
-                                        { this.state.species != null &&
+                                    <div style={{overflowY: 'auto', height: '1500px'}}>
+                                        { this.state.species.length > 0 &&
                                             <ExpansionPanel defaultExpanded>
                                                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                                                    <FormLabel>Species</FormLabel>
+                                                    <div style={styles.accordion}>
+                                                        <FormLabel style={styles.accordionLabel}>
+                                                            <SpeciesIcon style={styles.accordionIcon}/>Species
+                                                        </FormLabel>
+                                                    </div>
                                                 </ExpansionPanelSummary>
                                                 <ExpansionPanelDetails>
                                                     <FormControl component='fieldset' className={classes.formControl}>
@@ -483,10 +425,14 @@ class PortalPage extends React.Component {
                                             </ExpansionPanel>
                                         }
 
-                                        { this.state.countries != null &&
+                                        { this.state.countries.length > 0 &&
                                             <ExpansionPanel >
                                                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} >
-                                                    <FormLabel>Countries</FormLabel>
+                                                    <div style={styles.accordion}>
+                                                        <FormLabel style={styles.accordionLabel}>
+                                                            <GlobeIcon style={styles.accordionIcon}/>Countries
+                                                        </FormLabel>
+                                                    </div>
                                                 </ExpansionPanelSummary>
                                                 <ExpansionPanelDetails>
                                                     <FormControl component='fieldset' className={classes.formControl}>
@@ -496,10 +442,14 @@ class PortalPage extends React.Component {
                                             </ExpansionPanel>
                                         }
 
-                                        { this.state.facilities != null &&
+                                        { this.state.facilities.length > 0 &&
                                             <ExpansionPanel>
                                                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                                                    <FormLabel>Facilities</FormLabel>
+                                                    <div style={styles.accordion}>
+                                                        <FormLabel style={styles.accordionLabel}>
+                                                            <BuildingIcon style={styles.accordionIcon}/>Facilities
+                                                        </FormLabel>
+                                                    </div>
                                                 </ExpansionPanelSummary>
                                                 <ExpansionPanelDetails>
                                                     <FormControl component='fieldset' className={classes.formControl}>
@@ -509,7 +459,7 @@ class PortalPage extends React.Component {
                                             </ExpansionPanel>
                                         }
 
-                                        { this.state.audits != null  &&
+                                        { this.state.audits.length > 0  &&
                                             <ExpansionPanel >
                                                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
                                                     <div style={styles.accordion}>
@@ -526,13 +476,12 @@ class PortalPage extends React.Component {
                                             </ExpansionPanel>
                                         }
 
-
-                                        { this.state.units != null &&
+                                        { this.state.units.length > 0 &&
                                             <ExpansionPanel >
                                                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
                                                     <div style={styles.accordion}>
                                                         <FormLabel style={styles.accordionLabel}>
-                                                            <ScheduleIcon style={styles.accordionIcon}/>Units
+                                                            <WorldIcon style={styles.accordionIcon}/>Units
                                                         </FormLabel>
                                                     </div>
                                                 </ExpansionPanelSummary>
@@ -545,8 +494,13 @@ class PortalPage extends React.Component {
                                         }
                                         <br/>
 
-                                        <Button color="primary" variant="raised" style={{marginLeft: '20px'}}>Apply</Button>
-                                        <Button color="primary" variant="outlined" style={{marginLeft: '10px'}}>Save</Button>
+                                        { (this.state.species.length > 0 || this.state.countries.length > 0 || this.state.facilities.length > 0 ||
+                                            this.state.audits.length > 0 || this.state.units.length > 0) &&
+                                            <div>
+                                                <Button color="primary" variant="raised" style={{marginLeft: '20px'}}>Apply</Button>
+                                                <Button color="primary" variant="outlined" style={{marginLeft: '10px'}}>Save</Button>
+                                            </div>
+                                        }
 
                                     </div>
                                     <br />
@@ -555,99 +509,29 @@ class PortalPage extends React.Component {
 
                                 <GridContainer>
                                     <GridItem xs={this.state.cols} sm={this.state.cols} md={this.state.cols} >
-                                        {this.state.defaultEntitlement === 'Scorecard' && <Scorecard/> }
-                                        {this.state.defaultEntitlement === 'Yearly recap' && <YearlyRecap/> }
-                                        {this.state.defaultEntitlement === 'Plant and farm detail' && <FarmDetail/> }
-                                        {this.state.defaultEntitlement === 'Non-conformities' && <Compliance/> }
-                                        {this.state.defaultEntitlement === 'Supply chain' && <SupplyChain/> }
-                                        {this.state.defaultEntitlement === 'Notifications' && <Notifications/> }
-                                        {this.state.defaultEntitlement === 'Labs' && <Labs/> }
-                                        {this.state.defaultEntitlement === 'Settings' && <Settings/> }
+                                        {this.state.currentEntitlement === 'Scorecard' && <Scorecard/> }
+                                        {this.state.currentEntitlement === 'Yearly recap' && <YearlyRecap/> }
+                                        {this.state.currentEntitlement === 'Plant and farm detail' && <FarmDetail/> }
+                                        {this.state.currentEntitlement === 'Non-conformities' && <Compliance/> }
+                                        {this.state.currentEntitlement === 'Supply chain' && <SupplyChain/> }
+                                        {this.state.currentEntitlement === 'Notifications' && <Notifications/> }
+                                        {this.state.currentEntitlement === 'Labs' && <Labs/> }
+                                        {this.state.currentEntitlement === 'Settings' && <Settings/> }
                                     </GridItem>
                                 </GridContainer>
                             </div>
                         </OffCanvasBody>
 
                         <OffCanvasMenu style={styles.offCanvasMenu}>
-                            <Tabs value={this.state.tabIndex} fullWidth={true} color="white" onChange={this.handleTabChange} classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}>
-                                <Tab label='Views' style={styles.tab} classes={{ root: classes.tabRoot, selected: classes.tabSelected }}> </Tab>
-                                <Tab label='Filters' style={styles.tab} classes={{ root: classes.tabRoot, selected: classes.tabSelected }}/>
-                            </Tabs>
-
-
-                            { this.state.tabIndex === 0 &&
-                                <TabContainer>
-                                    <MuiThemeProvider theme={darktheme}>
-                                        <div style={{overflow: "auto", zIndex: "99999"}}>
-                                            <List key={guidGenerator()} component='nav' style={{marginLeft: '-18px', marginRight: '-18px'}}>
-                                                {this.state.entitlementNames.map((item) =>
-                                                    <Entitlements key={guidGenerator()} text={item} selected={this.state.defaultEntitlement} handler={() => this.handleViewClick(item)}/>
-                                                )}
-                                            </List>
-                                        </div>
-                                    </MuiThemeProvider>
-                                </TabContainer>
-                            }
-
-                            { this.state.tabIndex === 1 &&
-                                <TabContainer>
-                                    <div style={styles.tabContainer}>
-                                        { this.state.species.length > 0 &&
-                                            <div style={{marginLeft: "25px", marginTop: "10px"}}>
-                                                <FormControl component='fieldset' className={classes.formControl}>
-                                                    <Species species={this.state.species} userAffiliation={this.state.defaultAffiliation} theme={darktheme}/>
-                                                </FormControl>
-                                                <br/>
-                                                <br/>
-                                            </div>
-                                        }
-
-                                        { this.state.countries.length > 0 &&
-                                            <div style={{marginLeft: "25px"}}>
-                                                <FormControl component='fieldset' className={classes.formControl}>
-                                                    <Countries countries={this.state.countries} userAffiliation={this.state.defaultAffiliation} theme={darktheme}/>
-                                                </FormControl>
-                                                <br/>
-                                            </div>
-                                        }
-
-                                        <div style={{marginLeft: "25px"}}>
-                                            <br/>
-                                            <MuiThemeProvider theme={darktheme}>
-                                                <FormControl component='fieldset' className={classes.formControl}>
-                                                    <FormLabel component='legend'>Yield conversion</FormLabel>
-                                                    <br/>
-                                                        <TextField
-                                                             id="standard-number"
-                                                             label="Percent"
-                                                             value={value}
-                                                             onChange={this.handleSliderTextChange('value')}
-                                                             type="number"
-                                                             className={classes.textField}
-                                                             InputLabelProps={{shrink: true}}
-                                                             margin="normal"
-                                                         />
-                                                        <br/>
-                                                        <Slider
-                                                          classes={{ container: classes.slider }}
-                                                          value={value}
-                                                          min={0}
-                                                          max={100}
-                                                          step={1}
-                                                          aria-labelledby="label"
-                                                          onChange={this.handleSliderChange}
-                                                        />
-                                                </FormControl>
-                                                <br/>
-                                                <br/>
-                                            </MuiThemeProvider>
-                                            <br/>
-                                        </div>
-
-
-                                    </div>
-                                </TabContainer>
-                            }
+                            <div className={classes.viewContainer}>
+                                <MuiThemeProvider theme={darktheme}>
+                                    <List key={guidGenerator()} component='nav' style={{marginLeft: '-18px', marginRight: '-18px'}}>
+                                        {this.state.entitlementNames.map((item) =>
+                                            <Entitlements key={guidGenerator()} text={item} selected={this.state.currentEntitlement} handler={() => this.handleViewClick(item)}/>
+                                        )}
+                                    </List>
+                                </MuiThemeProvider>
+                            </div>
                         </OffCanvasMenu>
                     </OffCanvas>
                 </div>
@@ -655,6 +539,7 @@ class PortalPage extends React.Component {
         { !this.state.alertDismissed &&
             <RenderAlerts alerts={this.state.alertList}/>
         }
+        <Footer></Footer>
     </div>
 );
 }
