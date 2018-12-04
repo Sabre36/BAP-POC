@@ -1,26 +1,16 @@
 import React from 'react';
 import withStyles from '@material-ui/core/styles/withStyles';
 import { MuiThemeProvider } from '@material-ui/core/styles';
-
-import FormLabel from '@material-ui/core/FormLabel';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-
 import RadioGroup from '@material-ui/core/RadioGroup';
 import Radio from '@material-ui/core/Radio';
 import FormControl from '@material-ui/core/FormControl';
-
-import Slider from '@material-ui/lab/Slider';
-import TextField from '@material-ui/core/TextField';
-
 import guidGenerator from './guidGenerator.jsx';
 
 const styles = {
   root: {
     width: 300,
-  },
-  slider: {
-    padding: '22px 0px',
-  },
+  }
 };
 
 
@@ -46,6 +36,7 @@ class Facilities extends React.Component {
             <MuiThemeProvider theme={this.props.theme}>
                 <FormControl component="fieldset" className={classes.formControl}>
                      <RadioGroup
+                        key={guidGenerator()}
                         aria-label="Facilities"
                         name="facilities"
                         className={classes.group}
@@ -54,7 +45,7 @@ class Facilities extends React.Component {
                     >
 
                     { this.props.facilities.length > 0 && this.props.facilities.map((item) =>
-                        <FormControlLabel value={item.toLowerCase()} control={<Radio color='primary'/>} label={item}/>
+                        <FormControlLabel key={guidGenerator()} value={item.toLowerCase()} control={<Radio color='primary'/>} label={item}/>
                     )}
 
                   </RadioGroup>

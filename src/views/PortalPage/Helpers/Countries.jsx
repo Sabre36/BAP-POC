@@ -1,10 +1,7 @@
 import React from 'react';
 import { MuiThemeProvider } from '@material-ui/core/styles';
-
-import FormLabel from '@material-ui/core/FormLabel';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-
 import guidGenerator from './guidGenerator.jsx';
 
 class Countries extends React.Component {

@@ -54,7 +54,6 @@ class LoginPage extends React.Component {
         let _defaultAffiliation = null;
         let _entitlementNames = [];
         let _defaultEntitlement = null;
-        let _filterList = [];
         let _defaultRole = null;
         let _alertList = [];
 
@@ -84,7 +83,6 @@ class LoginPage extends React.Component {
 
         //_entitlementList = _affiliationList[0].entitlements[0];
         _defaultEntitlement = _affiliationList[0].entitlements[0].entitlement;
-        _filterList = _affiliationList[0].entitlements[0].filters;
         _defaultRole = _affiliationList[0].role;
 
         // Gets a unique list of message
@@ -93,8 +91,6 @@ class LoginPage extends React.Component {
         console.log("\n%cUSER: " + this.state.userName + " (role: " + _defaultRole + ")", "color:green");
         console.log("%cAFFILIATIONS: " + JSON.stringify(_affiliationNames) + " (default: " + _defaultAffiliation + ")", "color:green");
         console.log("%cENTITLEMENTS: " + JSON.stringify(_entitlementNames) + " (default:" + _defaultEntitlement + ")",  "color:green");
-
-
 
          await this.setState({
             authenticated: true,
@@ -106,8 +102,6 @@ class LoginPage extends React.Component {
             defaultEntitlement: _defaultEntitlement,
             alertList: _alertList,
         });
-
-        //alert(JSON.stringify(this.state.alertList));
 
         await this.props.handleLogin( this.state );
     };

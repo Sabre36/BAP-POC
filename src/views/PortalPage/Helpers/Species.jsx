@@ -1,8 +1,6 @@
 import React from 'react';
 import withStyles from '@material-ui/core/styles/withStyles';
 import { MuiThemeProvider } from '@material-ui/core/styles';
-
-import FormLabel from '@material-ui/core/FormLabel';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 import RadioGroup from '@material-ui/core/RadioGroup';
@@ -70,20 +68,20 @@ class Species extends React.Component {
                         value={this.state.selectedValue}
                         onChange={this.handleRadioChange}
                     >
-                    <FormControlLabel value="all" control={<Radio color="primary"/>} label="All" />
+                    <FormControlLabel key={guidGenerator()} value="all" control={<Radio color="primary"/>} label="All" />
 
                     { this.props.species.map((item) =>
-                        <FormControlLabel value={item} control={<Radio color='primary'/>} label={item}/>
+                        <FormControlLabel key={guidGenerator()} value={item} control={<Radio color='primary'/>} label={item}/>
                     )}
                   </RadioGroup>
                 </FormControl>
 
-                { this.state.selectedValue != "all" &&
+                { this.state.selectedValue !== "all" &&
                     <div>
                         <br/>
                         <FormControl component='fieldset' className={classes.formControl}>
                             <TextField
-                                 id="standard-number"
+                                 key={guidGenerator()}
                                  label="Percent"
                                  value={value}
                                  onChange={this.handleSliderTextChange('value')}
@@ -94,13 +92,14 @@ class Species extends React.Component {
                              />
                             <br/>
                             <Slider
-                              classes={{ container: classes.slider }}
-                              value={value}
-                              min={0}
-                              max={100}
-                              step={1}
-                              aria-labelledby="label"
-                              onChange={this.handleSliderChange}
+                                key={guidGenerator()}
+                                classes={{ container: classes.slider }}
+                                value={value}
+                                min={0}
+                                max={100}
+                                step={1}
+                                aria-labelledby="label"
+                                onChange={this.handleSliderChange}
                             />
                         </FormControl>
                     </div>
