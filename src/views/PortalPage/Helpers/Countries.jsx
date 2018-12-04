@@ -47,7 +47,7 @@ class Countries extends React.Component {
             case 'vietnam': { this.setState({ vietnam: !this.state.vietnam}); break; }
             default: {}
         }
-        console.log('%chandleChange - after: ' + JSON.stringify(this.state), "color:blue");
+        //console.log('%chandleChange - after: ' + JSON.stringify(this.state), "color:blue");
     };
 
 

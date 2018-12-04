@@ -24,7 +24,7 @@ class LoginPage extends React.Component {
     constructor(props) {
         super(props);
         // we use this to make the card to appear after the page has been rendered
-        console.log('%cRendering props: ' + JSON.stringify(this.props), "color:blue");
+        //console.log('%cRendering props: ' + JSON.stringify(this.props), "color:blue");
 
         this.state = {
             cardAnimation: "cardHidden",
@@ -88,9 +88,9 @@ class LoginPage extends React.Component {
         // Gets a unique list of message
         //_msgList = uniqueObjects(_msgList, ['message']);
 
-        console.log("\n%cUSER: " + this.state.userName + " (role: " + _defaultRole + ")", "color:green");
-        console.log("%cAFFILIATIONS: " + JSON.stringify(_affiliationNames) + " (default: " + _defaultAffiliation + ")", "color:green");
-        console.log("%cENTITLEMENTS: " + JSON.stringify(_entitlementNames) + " (default:" + _defaultEntitlement + ")",  "color:green");
+        //console.log("\n%cUSER: " + this.state.userName + " (role: " + _defaultRole + ")", "color:green");
+        //console.log("%cAFFILIATIONS: " + JSON.stringify(_affiliationNames) + " (default: " + _defaultAffiliation + ")", "color:green");
+        //console.log("%cENTITLEMENTS: " + JSON.stringify(_entitlementNames) + " (default:" + _defaultEntitlement + ")",  "color:green");
 
          await this.setState({
             authenticated: true,

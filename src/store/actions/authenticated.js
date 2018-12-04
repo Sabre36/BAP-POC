@@ -43,13 +43,6 @@ export default connect(
         <StockButton variant="contained" color="primary" onClick={signin} >
             Sign in
         </StockButton>
-
-
-        {/* <StockButton variant="raised" color="primary" onClick={() => {
-            //alert('hi');
-            {signin}
-        }} */}
-
     </div>
   </div>
 ));
