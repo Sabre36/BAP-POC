@@ -45,7 +45,7 @@ const headerLinksStyle = theme => ({
                 display: "block",
                 height: "1px",
                 marginLeft: "15px",
-                backgroundColor: "#e5e5e5"
+                backgroundColor: "#e5e5e5",
             }
         }
     },
@@ -74,10 +74,15 @@ const headerLinksStyle = theme => ({
             marginLeft: "15px",
             marginBottom: "8px",
             marginTop: "8px",
+            color: "rgba(0,0,0,.84)",
             textAlign: "left",
             "& > span:first-child": {
                 justifyContent: "flex-start"
-            }
+            },
+            "&:hover,&:focus": {
+                color: "#fff",
+                background: "#157bdc"
+            },
         }
     },
     notificationNavLink: {
