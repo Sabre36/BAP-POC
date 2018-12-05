@@ -30,18 +30,22 @@ const headerLinksStyle = theme => ({
     },
     listItem: {
         float: "left",
-        fontSize: "16px",
+        fontSize: "15px",
         color: "inherit",
         position: "relative",
         display: "block",
         width: "auto",
         margin: "0",
         padding: "0",
+        [theme.breakpoints.down("md")]: {
+            fontSize: "14px"
+        },
         [theme.breakpoints.down("sm")]: {
             width: "100%",
             "&:after": {
                 width: "calc(100% - 30px)",
                 content: '""',
+                fontSize: "14px",
                 display: "block",
                 height: "1px",
                 marginLeft: "15px",
@@ -52,7 +56,6 @@ const headerLinksStyle = theme => ({
     listItemText: {
         padding: "0 !important"
     },
-
     navLink: {
         color: "inherit",
         position: "relative",
@@ -69,11 +72,17 @@ const headerLinksStyle = theme => ({
             color: "inherit",
             background: "rgba(200, 200, 200, 0.3)"
         },
+        [theme.breakpoints.down("md")]: {
+            fontSize: "13px",
+            paddingRight: "6px",
+            paddingLeft: "6px",
+        },
         [theme.breakpoints.down("sm")]: {
             width: "calc(100% - 30px)",
             marginLeft: "15px",
             marginBottom: "8px",
             marginTop: "8px",
+            fontSize: "14px",
             color: "rgba(0,0,0,.84)",
             textAlign: "left",
             "& > span:first-child": {
@@ -112,7 +121,14 @@ const headerLinksStyle = theme => ({
         color: "inherit",
         fontSize: "15px",
         fontWeight: "500",
-        backgroundColor: "rgba(255, 255, 255, 0.3)"
+        backgroundColor: "rgba(255, 255, 255, 0.3)",
+        paddingRight: "14px",
+        paddingLeft: "14px",
+        [theme.breakpoints.down("md")]: {
+            fontSize: "13px",
+            paddingRight: "7px",
+            paddingLeft: "7px"
+        },
     },
     icons: {
         width: "20px",
@@ -121,7 +137,7 @@ const headerLinksStyle = theme => ({
     },
     socialIcons: {
         position: "relative",
-        fontSize: "20px !important",
+        fontSize: "24px !important",
         marginRight: "4px"
     },
     dropdownLink: {
@@ -132,10 +148,7 @@ const headerLinksStyle = theme => ({
             padding: "10px 20px"
         }
     },
-    ...tooltip,
-    marginRight5: {
-        marginRight: "5px"
-    }
+    ...tooltip
 });
 
 export default headerLinksStyle;

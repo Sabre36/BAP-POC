@@ -54,6 +54,12 @@ const headerStyle = theme => ({
         textTransform: "none",
         color: "inherit",
         whiteSpace: "nowrap",
+        [theme.breakpoints.down("md")]: {
+            fontSize: "18px"
+        },
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "24px"
+        },
         "&:hover,&:focus": {
             color: "inherit",
             background: "transparent"
