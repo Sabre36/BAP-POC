@@ -347,10 +347,9 @@ class PortalPage extends React.Component {
                         {...rest}
                     />
 
-                <div style={{zIndex: '4', margin: '55px'}} ref={ref => this.el = ref}>
-                    <div style={{marginTop: '-50px'}}>
-
-                        <div className="appbar">
+                <div style={{zIndex: '4', margin: '55px'}} >
+                    <div style={{marginTop: '-50px'}} ref={ref => this.el = ref}>
+                        <div className="appbar" >
                             <div className="welcome">
                                 <Typography variant='title' color='inherit'>Welcome {this.props.userName}  (
 

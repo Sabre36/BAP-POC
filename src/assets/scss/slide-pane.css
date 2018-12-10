@@ -15,10 +15,19 @@
 .slide-pane_from_right {
   margin-left: auto;
   transform: translateX(100%);
-  position: absolute;
+
+  position: relative;
+  margin-top: 175px;
+
+
+  /* position: fixed;
+  top: 175px;
+  right: 0; */
+
+  /* position: absolute;
   bottom: 0;
   right: 0;
-  height: calc(100vh - 125px);
+  height: calc(100vh - 125px); */
 }
 
 /* .slide-pane_from_right:before {
@@ -28,7 +37,6 @@
 
 .slide-pane_from_right.ReactModal__Content--after-open {
   transform: translateX(0%);
-
 }
 
 .slide-pane_from_right.ReactModal__Content--after-open:after {
