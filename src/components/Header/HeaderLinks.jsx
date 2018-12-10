@@ -82,7 +82,7 @@ function HeaderLinks({ ...props }) {
                         //href="./consumers"
                         color="transparent"
                         className={ props.itemIndex == 4 ? classes.navLinkActive : classes.navLink }
-                        > Consumers
+                        > Resources
                     </Button>
                 </Link>
             </ListItem>
