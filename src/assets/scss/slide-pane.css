@@ -15,13 +15,25 @@
 .slide-pane_from_right {
   margin-left: auto;
   transform: translateX(100%);
-  position: fixed;
-  top: 175px;
+  position: absolute;
+  bottom: 0;
   right: 0;
+  height: calc(100vh - 125px);
 }
 
+/* .slide-pane_from_right:before {
+    position: fixed;
+    margin-top: 175px;
+} */
+
 .slide-pane_from_right.ReactModal__Content--after-open {
-  transform: translateX(0%); }
+  transform: translateX(0%);
+
+}
+
+.slide-pane_from_right.ReactModal__Content--after-open:after {
+
+}
 
 .slide-pane_from_right.ReactModal__Content--before-close {
   transform: translateX(100%); }

@@ -347,7 +347,7 @@ class PortalPage extends React.Component {
                         {...rest}
                     />
 
-                <div style={{zIndex: '4', margin: '55px', color: '#000'}} ref={ref => this.el = ref}>
+                <div style={{zIndex: '4', margin: '55px'}} ref={ref => this.el = ref}>
                     <div style={{marginTop: '-50px'}}>
 
                         <div className="appbar">
@@ -390,8 +390,127 @@ class PortalPage extends React.Component {
                                     </IconButton>
                                 </span>
                                 </Typography>
-
                             </div>
+                            <SlidingPane
+                                isOpen={ this.state.isPaneOpen }
+                                width={"300px"}
+                                title='Filters'
+                                onRequestClose={ () => {
+                                    this.setState({ isPaneOpen: false });
+                                } }>
+                                <div style={{height: '1500px'}}>
+                                    { this.state.species.length > 0 &&
+                                        <ExpansionPanel defaultExpanded>
+                                            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                                                <div style={styles.accordion}>
+                                                    <FormLabel style={styles.accordionLabel}>
+                                                        <SpeciesIcon style={styles.accordionIcon}/>Species
+                                                    </FormLabel>
+                                                </div>
+                                            </ExpansionPanelSummary>
+                                            <ExpansionPanelDetails>
+                                                <FormControl component='fieldset' className={classes.formControl}>
+                                                    <Species species={this.state.species} userAffiliation={this.state.defaultAffiliation} />
+                                                </FormControl>
+                                            </ExpansionPanelDetails>
+                                        </ExpansionPanel>
+                                    }
+
+                                    { this.state.countries.length > 0 &&
+                                        <ExpansionPanel >
+                                            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} >
+                                                <div style={styles.accordion}>
+                                                    <FormLabel style={styles.accordionLabel}>
+                                                        <GlobeIcon style={styles.accordionIcon}/>Countries
+                                                    </FormLabel>
+                                                </div>
+                                            </ExpansionPanelSummary>
+                                            <ExpansionPanelDetails>
+                                                <FormControl component='fieldset' className={classes.formControl}>
+                                                    <Countries countries={this.state.countries} userAffiliation={this.state.defaultAffiliation} />
+                                                </FormControl>
+                                            </ExpansionPanelDetails>
+                                        </ExpansionPanel>
+                                    }
+
+                                    { this.state.facilities.length > 0 &&
+                                        <ExpansionPanel>
+                                            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                                                <div style={styles.accordion}>
+                                                    <FormLabel style={styles.accordionLabel}>
+                                                        <BuildingIcon style={styles.accordionIcon}/>Facilities
+                                                    </FormLabel>
+                                                </div>
+                                            </ExpansionPanelSummary>
+                                            <ExpansionPanelDetails>
+                                                <FormControl component='fieldset' className={classes.formControl}>
+                                                    <Facilities facilities={this.state.facilities} userAffiliation={this.state.defaultAffiliation} />
+                                                </FormControl>
+                                            </ExpansionPanelDetails>
+                                        </ExpansionPanel>
+                                    }
+
+                                    { this.state.audits.length > 0  &&
+                                        <ExpansionPanel >
+                                            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                                                <div style={styles.accordion}>
+                                                    <FormLabel style={styles.accordionLabel}>
+                                                        <ScheduleIcon style={styles.accordionIcon}/>Audit Period
+                                                    </FormLabel>
+                                                </div>
+                                            </ExpansionPanelSummary>
+                                            <ExpansionPanelDetails>
+                                                <FormControl component='fieldset' className={classes.formControl}>
+                                                    <Audits audits={this.state.audits} userAffiliation={this.state.defaultAffiliation} />
+                                                </FormControl>
+                                            </ExpansionPanelDetails>
+                                        </ExpansionPanel>
+                                    }
+
+                                    { this.state.units.length > 0 &&
+                                        <ExpansionPanel >
+                                            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                                                <div style={styles.accordion}>
+                                                    <FormLabel style={styles.accordionLabel}>
+                                                        <WorldIcon style={styles.accordionIcon}/>Units
+                                                    </FormLabel>
+                                                </div>
+                                            </ExpansionPanelSummary>
+                                            <ExpansionPanelDetails>
+                                                <FormControl component='fieldset' className={classes.formControl}>
+                                                    <Units units={this.state.units} userAffiliation={this.state.defaultAffiliation} />
+                                                </FormControl>
+                                            </ExpansionPanelDetails>
+                                        </ExpansionPanel>
+                                    }
+                                    <br/>
+
+                                    { (this.state.species.length > 0 || this.state.countries.length > 0 || this.state.facilities.length > 0 ||
+                                        this.state.audits.length > 0 || this.state.units.length > 0) &&
+                                        <div>
+                                            <Button color="primary" variant="contained" style={{marginLeft: '20px'}}>Apply</Button>
+                                            {/*}<Button color="primary" variant="outlined" style={{marginLeft: '10px'}}>Save</Button>*/}
+                                                <div style={{float: 'right', verticalAlign: 'top'}}>
+                                                    <FormControlLabel
+                                                        control={
+                                                          <Switch
+                                                            checked={this.state.autoShow}
+                                                            onChange={this.handleSwitchChange}
+                                                            value="autoShow"
+                                                            color="primary"
+                                                          />
+                                                        }
+                                                        label="Always show"
+                                                      />
+                                                </div>
+                                        </div>
+                                    }
+
+                                </div>
+                                <br />
+
+                            </SlidingPane>
+
                         </div>
                           <input type="checkbox" checked={this.state.isMenuOpened} class="openSidebarMenu"
                               id="openSidebarMenu" aria-label="Toggle sidebar" title="Toggle sidebar"
@@ -445,132 +564,6 @@ class PortalPage extends React.Component {
                                 }
                             </div>
                           </div>
-
-
-                        <SlidingPane
-                            isOpen={ this.state.isPaneOpen }
-                            width={"300px"}
-                            title='Filters'
-                            onRequestClose={ () => {
-                                // triggered on "<" on left top click or on outside click
-                                this.setState({ isPaneOpen: false });
-                            } }>
-                            <div style={{overflowY: 'auto', height: '1500px'}}>
-                                { this.state.species.length > 0 &&
-                                    <ExpansionPanel defaultExpanded>
-                                        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                                            <div style={styles.accordion}>
-                                                <FormLabel style={styles.accordionLabel}>
-                                                    <SpeciesIcon style={styles.accordionIcon}/>Species
-                                                </FormLabel>
-                                            </div>
-                                        </ExpansionPanelSummary>
-                                        <ExpansionPanelDetails>
-                                            <FormControl component='fieldset' className={classes.formControl}>
-                                                <Species species={this.state.species} userAffiliation={this.state.defaultAffiliation} />
-                                            </FormControl>
-                                        </ExpansionPanelDetails>
-                                    </ExpansionPanel>
-                                }
-
-                                { this.state.countries.length > 0 &&
-                                    <ExpansionPanel >
-                                        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} >
-                                            <div style={styles.accordion}>
-                                                <FormLabel style={styles.accordionLabel}>
-                                                    <GlobeIcon style={styles.accordionIcon}/>Countries
-                                                </FormLabel>
-                                            </div>
-                                        </ExpansionPanelSummary>
-                                        <ExpansionPanelDetails>
-                                            <FormControl component='fieldset' className={classes.formControl}>
-                                                <Countries countries={this.state.countries} userAffiliation={this.state.defaultAffiliation} />
-                                            </FormControl>
-                                        </ExpansionPanelDetails>
-                                    </ExpansionPanel>
-                                }
-
-                                { this.state.facilities.length > 0 &&
-                                    <ExpansionPanel>
-                                        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                                            <div style={styles.accordion}>
-                                                <FormLabel style={styles.accordionLabel}>
-                                                    <BuildingIcon style={styles.accordionIcon}/>Facilities
-                                                </FormLabel>
-                                            </div>
-                                        </ExpansionPanelSummary>
-                                        <ExpansionPanelDetails>
-                                            <FormControl component='fieldset' className={classes.formControl}>
-                                                <Facilities facilities={this.state.facilities} userAffiliation={this.state.defaultAffiliation} />
-                                            </FormControl>
-                                        </ExpansionPanelDetails>
-                                    </ExpansionPanel>
-                                }
-
-                                { this.state.audits.length > 0  &&
-                                    <ExpansionPanel >
-                                        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                                            <div style={styles.accordion}>
-                                                <FormLabel style={styles.accordionLabel}>
-                                                    <ScheduleIcon style={styles.accordionIcon}/>Audit Period
-                                                </FormLabel>
-                                            </div>
-                                        </ExpansionPanelSummary>
-                                        <ExpansionPanelDetails>
-                                            <FormControl component='fieldset' className={classes.formControl}>
-                                                <Audits audits={this.state.audits} userAffiliation={this.state.defaultAffiliation} />
-                                            </FormControl>
-                                        </ExpansionPanelDetails>
-                                    </ExpansionPanel>
-                                }
-
-                                { this.state.units.length > 0 &&
-                                    <ExpansionPanel >
-                                        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                                            <div style={styles.accordion}>
-                                                <FormLabel style={styles.accordionLabel}>
-                                                    <WorldIcon style={styles.accordionIcon}/>Units
-                                                </FormLabel>
-                                            </div>
-                                        </ExpansionPanelSummary>
-                                        <ExpansionPanelDetails>
-                                            <FormControl component='fieldset' className={classes.formControl}>
-                                                <Units units={this.state.units} userAffiliation={this.state.defaultAffiliation} />
-                                            </FormControl>
-                                        </ExpansionPanelDetails>
-                                    </ExpansionPanel>
-                                }
-                                <br/>
-
-                                { (this.state.species.length > 0 || this.state.countries.length > 0 || this.state.facilities.length > 0 ||
-                                    this.state.audits.length > 0 || this.state.units.length > 0) &&
-                                    <div>
-                                        <Button color="primary" variant="contained" style={{marginLeft: '20px'}}>Apply</Button>
-                                        {/*}<Button color="primary" variant="outlined" style={{marginLeft: '10px'}}>Save</Button>*/}
-                                            <div style={{float: 'right', verticalAlign: 'top'}}>
-                                                <FormControlLabel
-                                                    control={
-                                                      <Switch
-                                                        checked={this.state.autoShow}
-                                                        onChange={this.handleSwitchChange}
-                                                        value="autoShow"
-                                                        color="primary"
-                                                      />
-                                                    }
-                                                    label="Always show"
-                                                  />
-                                            </div>
-                                    </div>
-                                }
-
-                            </div>
-                            <br />
-
-                        </SlidingPane>
-
-
-
-
                     </div>
                 </div>
 
