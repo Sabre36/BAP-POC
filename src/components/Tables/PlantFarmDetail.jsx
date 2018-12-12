@@ -11,8 +11,12 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Switch from '@material-ui/core/Switch';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 import plantData from './../../assets/data/plantData.json';
+import supplyChainData from './../../assets/data/supplyChainData.json';
 import round from "./../../views/PortalPage/Helpers/round.jsx";
+
 
 function formatNum(value, decimals) {
     let n = round(value, decimals);
@@ -153,78 +157,37 @@ class DetailComponent extends GridDetailRow {
         return (
 
             <section>
-                <Tabs value={this.state.tabIndex} fullWidth={true} color="white" onChange={this.handleTabChange}>
-                    <Tab label='Plant Recap'/>
-                    <Tab label='Risk Analysis'/>
+                <Tabs value={this.state.tabIndex} fullWidth={true} onChange={this.handleTabChange}>
                     <Tab label='Farm detail'/>
+                    <Tab label='Plant summary'/>
                 </Tabs>
 
-                {/* TAB 1 */}
+                {/* TAB 0 */}
                 { this.state.tabIndex === 0 &&
-                    <Paper>
-                        <GridContainer>
-                            <GridItem md={3}>
-                                <br/>
-                                <div style={{textAlign: 'right'}}>
-                                    <p><strong>Total production (2017)</strong></p>
-                                    <p><strong>Projected (2018)</strong></p>
-                                    <p><strong>Shipped (2017)</strong> </p>
-                                    <p><strong>Shipped (2016)</strong></p>
-                                </div>
-                            </GridItem>
-                            <GridItem md={2}>
-                                <br/>
-                                <div style={{textAlign: 'left'}}>
-                                    <p> {dataItem.TotalProduction} {dataItem.TotalProduction > 0 ? ' MT' : '-'} </p>
-                                    <p> {dataItem.Projected2017} {dataItem.Projected2017 > 0 ? ' MT' : '-'}</p>
-                                    <p> {dataItem.Shipped2017} {dataItem.Shipped2017 > 0 ? ' MT' : '-'}</p>
-                                    <p> {dataItem.Shipped2016} {dataItem.Shipped2016 > 0 ? ' MT' : '-'}</p>
-
-                                </div>
-                            </GridItem>
-                            <GridItem md={3}>
-                                <br/>
-                                <div style={{textAlign: 'right'}}>
-                                    <p><strong>2 star production (2018):</strong></p>
-                                    <p><strong>Number of farms:</strong></p>
-                                </div>
-                            </GridItem>
-
-                            <GridItem md={2}>
-                                <br/>
-                                <div style={{textAlign: 'left'}}>
-                                    <p> {dataItem.Production2Star} {dataItem.Production2Star > 0 ? ' MT' : '-'} </p>
-                                    <p> {dataItem.Farms}</p>
-                                </div>
-                            </GridItem>
-                        </GridContainer>
-                    </Paper>
-                }
-
-                {/* TAB 2 */}
-                { this.state.tabIndex === 2 &&
-                    <Paper >
+                    <Paper style={{height: '500px', paddingBottom: '25px', overflowX: 'hidden', overflowY: 'auto'}}>
                         <Table >
                             <TableHead>
                                 <TableRow>
-                                    <TableCell>BAP ID</TableCell>
-                                    <TableCell>Name</TableCell>
-                                    <TableCell>Country</TableCell>
-                                    <TableCell date>Expiration</TableCell>
-                                    <TableCell numeric>Plants Served</TableCell>
-                                    {/* <TableCell numeric>Aggregate Volume</TableCell> */}
+                                    <TableCell padding="dense">BAP ID</TableCell>
+                                    <TableCell padding="dense">FACILITY NAME</TableCell>
+                                    <TableCell padding="dense">COUNRTRY</TableCell>
+                                    <TableCell padding="dense"numeric># PLANTS SERVED</TableCell>
+                                    <TableCell padding="dense" date>EXPIRATION</TableCell>
+                                    <TableCell padding="dense">SPECIES</TableCell>
+                                    <TableCell padding="dense" numeric>PRODUCTION VOLUME</TableCell>
                                 </TableRow>
                             </TableHead>
 
                             <TableBody>
-                                { dataItem.FarmData.map((item) =>
+                                { dataItem.farmData.map((item) =>
                                     <TableRow>
-                                        <TableCell>{item.BAPId}</TableCell>
-                                        <TableCell>{item.Name}</TableCell>
-                                        <TableCell>{item.Country}</TableCell>
-                                        <TableCell>{item.Expires}</TableCell>
-                                        <TableCell numeric>{item.PlantsServed}</TableCell>
-                                        {/* <TableCell numeric>{item.PlantsServed * 4.42}</TableCell> */}
+                                        <TableCell padding="none">{item.bapid}</TableCell>
+                                        <TableCell padding="none">{item.facilityName}</TableCell>
+                                        <TableCell padding="none">{item.country}</TableCell>
+                                        <TableCell numeric padding="dense">{item.plantsServed}</TableCell>
+                                        <TableCell padding="dense">{item.expiration}</TableCell>
+                                        <TableCell padding="dense">Shrimp</TableCell>
+                                        <TableCell padding="dense">222</TableCell>
                                     </TableRow>
                                 ) }
                             </TableBody>
@@ -234,49 +197,65 @@ class DetailComponent extends GridDetailRow {
 
                 {/* TAB 1 */}
                 { this.state.tabIndex === 1 &&
-                    <Paper>
+                    <Paper style={{minHeight: '500px'}}>
                         <GridContainer>
                             <GridItem md={3}>
                                 <br/>
                                 <div style={{textAlign: 'right'}}>
-                                    <p><strong>Production</strong></p>
-                                    <p><strong>Projected</strong></p>
-                                    <p><strong>Shortfall vs. surplus (#)</strong> </p>
-                                    <p><strong>Shortfall vs. surplus (%)</strong></p>
+                                    <p><strong>BAP id</strong></p>
+                                    <p><strong>Plant name</strong></p>
+                                    <p><strong>Country</strong></p>
+                                    <p><strong>Rating</strong></p>
+                                    <p><strong># of farms</strong></p>
+                                    <p><strong># of suppliers served</strong></p>
+                                    <p><strong>Suppliers</strong></p>
                                 </div>
                             </GridItem>
                             <GridItem md={2}>
                                 <br/>
-                                <div style={{textAlign: 'left'}}>
-                                    <p> {dataItem.TotalProduction} {dataItem.TotalProduction > 0 ? ' MT' : '-'} </p>
-                                    <p> {dataItem.Projected2017} {dataItem.Projected2017 > 0 ? ' MT' : '-'}</p>
-                                    <p> {dataItem.Delta} {dataItem.Delta > 0 ? ' MT' : '-'}</p>
-                                    <p> {dataItem.Risk} {dataItem.Risk > 0 ? '%' : '-'}</p>
+                                <div style={{textAlign: 'left', fontSize: '20px!important'}}>
+                                    <p> {dataItem.bapid}</p>
+                                    <p> {dataItem.facilityName}</p>
+                                    <p> {dataItem.country}</p>
+                                    <p> {dataItem.rating}</p>
+                                    <p> {dataItem.farmCount}</p>
+                                    <p> {dataItem.suppliersServed}</p>
+
+                                    <ul style={{listStylePosition: "inside", paddingLeft: 0}}>
+                                    { dataItem.suppliersList.map((item) =>
+                                        <li >{item}</li>
+                                    ) }
+                                    </ul>
 
                                 </div>
                             </GridItem>
                             <GridItem md={3}>
                                 <br/>
                                 <div style={{textAlign: 'right'}}>
-                                    <p><strong>Number of farms</strong></p>
-                                    <p><strong>Dilution ratio <i className={"fa fa-sm fa-info-circle"} title="The farm-to-plant ratio (1:1 is ideal)"/></strong></p>
-                                    <p><strong>Average farm volume <i className={"fa fa-sm fa-info-circle"} title="Average farm volume is computed..."/></strong></p>
-                                    {/* <p><strong>Adjusted farm volume <i className={"fa fa-sm fa-info-circle"} title="Average volume x diffusion ratio"/></strong></p> */}
+                                    <p><strong>Total plant production</strong></p>
+                                    <p><strong>Total farm production</strong></p>
+                                    <p><strong>Projected {dataItem.year1ProjectedLabel}</strong></p>
+                                    <p><strong>Projected {dataItem.year2ProjectedLabel}</strong></p>
+                                    <p><strong>Shipped {dataItem.year1ShippedLabel}</strong> </p>
+                                    <p><strong>Shipped {dataItem.year2ShippedLabel}</strong></p>
                                 </div>
                             </GridItem>
 
                             <GridItem md={2}>
                                 <br/>
                                 <div style={{textAlign: 'left'}}>
-                                    <p> {dataItem.Farms}</p>
-                                    <p> {dataItem.FarmPlantRatio}</p>
-                                    <p> {dataItem.AvgFarm} {dataItem.AvgFarm > 0 ? ' MT' : '-'}</p>
-                                    {/* <p> {dataItem.AdjFarm} {dataItem.AdjFarm > 0 ? ' MT' : '-'}</p> */}
+                                    <p> {dataItem.totalPlantProduction} {dataItem.totalPlantProduction > 0 ? ' MT' : '-'} </p>
+                                    <p> {dataItem.totalFarmProduction} {dataItem.totalFarmProduction > 0 ? ' MT' : '-'} </p>
+                                    <p> {dataItem.year1Projected} {dataItem.year1Projected > 0 ? ' MT' : '-'}</p>
+                                    <p> {dataItem.year2Projected} {dataItem.year2Projected > 0 ? ' MT' : '-'}</p>
+                                    <p> {dataItem.year1Shipped} {dataItem.year1Shipped > 0 ? ' MT' : '-'}</p>
+                                    <p> {dataItem.year2Shipped} {dataItem.year2Shipped > 0 ? ' MT' : '-'}</p>
                                 </div>
                             </GridItem>
                         </GridContainer>
                     </Paper>
                 }
+
             </section>
         );
     }
@@ -289,11 +268,13 @@ class PlantFarmDetail extends React.Component {
         this.gridRef = React.createRef();
 
         this.state = {
-            data: plantData.slice(0,10),
+            data: supplyChainData.slice(0,10),
             sort: [],
             skip: 0,
+            showDilution: false
         };
         this.expandChange = this.expandChange.bind(this);
+        this.handleSwitchChange = this.handleSwitchChange.bind(this);
     }
 
     componentDidMount(){
@@ -301,13 +282,13 @@ class PlantFarmDetail extends React.Component {
 
         for(var i = 0; i < ths.length; i++){
 
-            ths[i].setAttribute("style", "font-weight: 500; font-size: 14px");
+            ths[i].setAttribute("style", "height: '150px; font-weight: 500; font-size: 14px;");
 
             // For the last 4 columns, right justify the headings
-            if ( i > 3 && i < 8 ) {
+            if ( i > 3 && i < 10 ) {
                 ths[i].setAttribute("style", "text-align: right; font-weight: 500; font-size: 14px;");
-            } else if ( i === 8 ) {
-                ths[i].setAttribute("style", "text-align: center; font-weight: 500; font-size: 14px;");
+            } else if ( i === 10 ) {
+                ths[i].setAttribute("style", "text-align: center; font-weight: 500; font-size: 14px; ");
             }
         }
     }
@@ -325,6 +306,10 @@ class PlantFarmDetail extends React.Component {
         })
     }
 
+    handleSwitchChange() {
+        this.setState({showDilution: !this.state.showDilution});
+    }
+
     handlePageChange = (event) => {
         this.setState({
             data: plantData.slice(event.page.skip, event.page.skip + event.page.take),
@@ -334,34 +319,51 @@ class PlantFarmDetail extends React.Component {
 
     render() {
         return (
-            <div ref={this.gridRef}>
-                <Grid
-                    data={this.state.data}
-                    detail={DetailComponent}
-                    resizable={true}
-                    reorderable={true}
-                    sortable={true}
-                    onSortChange={this.handleSortChange}
-                    sort={this.state.sort}
-                    onPageChange={this.handlePageChange}
-                    total={this.state.data.length}
-                    skip={this.state.skip}
-                    pageable={true}
-                    pageSize={10}
-                    style={{ height: 'calc(100vh - 220px' }}
-                    expandField="expanded"
-                    onExpandChange={this.expandChange}
-                    >
-                        <Column field="BAPId" title="BAP ID" minResizableWidth={110} width="110px" filterable={true}  />
-                        <Column field="Name" title="Plant Name" minResizableWidth={150} width="250px" cell={cellEllipsis} />
-                        <Column field="Country" title="Country" width="120px" cell={cellEllipsis}/>
-                        <Column field="Farms" title="Farms" type="number" cell={cellIntegerRight}/>
-                        <Column field="TotalProduction" title="Total Production" type="number" cell={cellFloatRight}/>
-                        <Column field="Projected2017" title="Total Projected" type="number"  cell={cellFloatRight} />
-                        <Column field="Delta" title="Difference" type="number" cell={cellFloatRightColorize}  />
-                        <Column field="Risk" title="Confidence" type="number" width="140px" cell={cellPercentDiff}  />
+            <div>
+                <div style={{textAlign: 'right'}}>
+                    <FormControlLabel
+                        control={
+                          <Switch
+                            checked={this.state.showDilution}
+                            onChange={this.handleSwitchChange}
+                            value="showDilution"
+                            color="primary"
+                          />
+                        }
+                        label="Show dilution"
+                      />
+                </div>
+                <div ref={this.gridRef} >
+                    <Grid
+                        data={this.state.data}
+                        detail={DetailComponent}
+                        resizable={true}
+                        reorderable={true}
+                        sortable={true}
+                        onSortChange={this.handleSortChange}
+                        sort={this.state.sort}
+                        onPageChange={this.handlePageChange}
+                        total={this.state.data.length}
+                        skip={this.state.skip}
+                        pageable={true}
+                        pageSize={10}
+                        style={{ height: 'calc(100vh - 255px', padding: '15px' }}
+                        expandField="expanded"
+                        onExpandChange={this.expandChange}
+                        >
+                            <Column field="bapid" title="BAP ID" minResizableWidth={110} width="110px" filterable={true}  />
+                            <Column field="facilityName" title="PLANT NAME" minResizableWidth={150} width="250px" cell={cellEllipsis} />
+                            <Column field="country" title="COUNTRY" width="120px" cell={cellEllipsis}/>
+                            <Column field="suppliersServed" title="# SUPPLIERS SERVED" type="number" cell={cellIntegerRight}/>
+                            <Column field="farmCount" title="# FARMS" type="number" cell={cellIntegerRight}/>
+                            <Column field="totalPlantProduction" title="Total Plant Production" type="number" cell={cellFloatRight}/>
+                            <Column field="totalFarmProduction" title="Total Farm Production" type="number" cell={cellFloatRight}/>
+                            <Column field="Projected2017" title="Total Projected" type="number"  cell={cellFloatRight} />
+                            <Column field="Delta" title="DIFFERENCE" type="number" cell={cellFloatRightColorize}  />
+                            <Column field="Risk" title="CONFIDENCE" type="number" width="140px" cell={cellPercentDiff}  />
 
-                    </Grid>
+                        </Grid>
+                    </div>
                 </div>
             );
         }

@@ -1,0 +1,1076 @@
+[
+    {
+        "bapid": "P10053",
+        "facilityName": "PT. Panca Mitra MultiPerdana",
+        "country": "Indonesia",
+        "rating": 3,
+        "totalPlantProduction": 3410.0,
+        "totalFarmProduction": 3120.3,
+        "totalPlantProductionLabel": "2017",
+
+        "year1Shipped": 4444,
+        "year1ShippedLabel": "2016",
+        "year2Shipped": null,
+        "year2ShippedLabel": "2017",
+
+        "year1Projected": 5555,
+        "year1ProjectedLabel": "2017",
+        "year2Projected": 6666,
+        "year2ProjectedLabel": "2018",
+
+        "suppliersServed": 6,
+        "suppliersList": ["B.J's", "Brakes", "Captain D's", "Krogers", "Sysco", "Wegmanns"],
+
+        "farmCount": 9,
+        "farmData": [
+            {
+                "bapid": "F10815C", "facilityName": "Panca Mitra IOM 1 - Empang Kuningan", "country": "Indonesia", "expiration": "04-18-2019", "plantsServed": 1, "speciesData": [
+                    {"species": "Shrimp", "totalProduction": 11},
+                    {"species": "Tilapia",  "totalProduction": 3}
+                ]
+            },{
+                "bapid": "F10815A", "facilityName": "Panca Mitra IOM 1 - Kampe Mandiri", "country": "Indonesia", "expiration": "04-18-2019", "plantsServed": 2, "speciesData": [
+                    {"species": "Shrimp", "totalProduction": 8.2}
+                ]
+            },{
+                "bapid": "F10815B", "facilityName": "Panca Mitra IOM 1 - Karya Bersama Sukses", "country": "Indonesia", "expiration": "04-18-2019", "plantsServed": 11
+            },{
+                "bapid": "F10974E", "facilityName": "Panca Mitra IOM 2 - Citra Bhirawa Wira Sakti", "country": "Indonesia", "expiration": "1-22-2019", "plantsServed": 3
+            },{
+                "bapid": "F10974C", "facilityName": "Panca Mitra IOM 2 - Sidojoyo Utama Tanjung Pecinan", "country": "Indonesia", "expiration": "1-22-2019", "plantsServed": 2
+            },{
+                "bapid": "F10974B", "facilityName": "Panca Mitra IOM 2 - Tambak Pecemengan", "country": "Indonesia", "expiration": "1-10-2019", "plantsServed": 2
+            },{
+                "bapid": "F10974D", "facilityName": "Panca Mitra IOM 2 - UD. Cahaya Sentra", "country": "Indonesia", "expiration": "1-10-2019", "plantsServed": 1
+            },{
+                "bapid": "F10644", "facilityName": "PT Permata Citra Nusa 3 - Asembakor", "country": "Indonesia", "expiration": "01-08-2019", "plantsServed": 3
+            },{
+                "bapid": "F11024", "facilityName": "Sumber Sewu Samudra", "country": "Indonesia", "expiration": "01-11-2019", "plantsServed": 1
+            }
+        ]
+    },
+    {
+        "bapid": "P10081",
+        "facilityName": "Guangzhou Luxe Seafood Enterprise Ltd.",
+        "country": "China",
+        "rating": 2,
+
+        "totalPlantProduction": 3410.0,
+        "totalFarmProduction": 3120.3,
+        "totalPlantProductionLabel": "2017",
+
+        "year1Shipped": 3333,
+        "year1ShippedLabel": "2017",
+        "year2Shipped": null,
+        "year2ShippedLabel": "2018",
+
+        "year1Projected": 5454,
+        "year1ProjectedLabel": "2017",
+        "year2Projected": 2323,
+        "year2ProjectedLabel": "2018",
+
+        "suppliersServed": 5,
+        "suppliersList": ["Eastern Fish Company", "ZF America", "Tampa Bay Fisheries, Inc. Supplier", "The Fishin' Company", "Chicken of the Sea Frozen Foods-Supplier"],
+
+        "farmCount": 4,
+        "farmData": [
+            {
+                "bapid": "F10247", "facilityName": "Guangzhou Luxe Seafood Enterprise Ltd.", "country": "China", "expiration": "08-09-2019", "plantsServed": 1, "speciesData": [
+                    {"species": "Shrimp", "totalProduction": 11},
+                    {"species": "Tilapia",  "totalProduction": 3}
+                ]
+            },{
+                "bapid": "F10271", "facilityName": "The Second Aquafarm of Zhuhai Fumin Tilapia Aquafarm & Research Co., Ltd.", "country": "China", "expiration": "04-18-2019", "plantsServed": 2, "speciesData": [
+                    {"species": "Shrimp", "totalProduction": 11},
+                    {"species": "Tilapia",  "totalProduction": 3}
+                ]
+            },{
+                "bapid": "F10429", "facilityName": "The Third Aquafarm of Zhuhai Fumin Tilapia Aquafarm & Research Co., Ltd.", "country": "China", "expiration": "04-18-2019", "plantsServed": 11, "speciesData": [
+                    {"species": "Shrimp", "totalProduction": 11},
+                    {"species": "Tilapia",  "totalProduction": 3}
+                ]
+            },{
+                "bapid": "F10105", "facilityName": "Zhuhai Jiayi Aquatic Limit Company", "country": "China", "expiration": "04-03-2019", "plantsServed": 3, "speciesData": [
+                    {"species": "Shrimp", "totalProduction": 11},
+                    {"species": "Tilapia",  "totalProduction": 3}
+                ]
+            },{
+                "bapid": "F10206", "facilityName": "Zhuhai Yihai Aquatic Co., Ltd.", "country": "China", "expiration": "08-09-2019", "plantsServed": 2, "speciesData": [
+                    {"species": "Shrimp", "totalProduction": 11},
+                    {"species": "Tilapia",  "totalProduction": 3}
+                ]
+            }
+        ]
+    },
+    {
+        "facilityName": "PT. Bahari Makmur Sejati - Medan",
+        "country": "Indonesia",
+        "facility": "P10517:F10115,F10607,F10446",
+        "bapid": "P10517",
+        "totalProduction": 3510,
+        "Production2Star": 3210.25,
+        "Shipped2017": null,
+        "Projected2017": 3000.00,
+        "Shipped2016": 3356.25,
+        "Delta": 510,
+        "Risk": 17,
+        "farmCount": 3,
+        "farmData": [
+            {
+                "bapid": "F10115", "facilityName": "PT. Bahari Makmur Sejati - Medan #1", "country": "Indonesia"
+            },{
+                "bapid": "F10607", "facilityName": "PT. Bahari Makmur Sejati - Medan #2", "country": "Indonesia"
+            },{
+                "bapid": "F10446", "facilityName": "PT. Bahari Makmur Sejati - Medan #3", "country": "Indonesia"
+            }
+        ]
+    },
+    {
+        "facilityName": "Xian-Ning Seafood Co., Ltd.",
+        "country": "Thailand",
+        "facility": "P10086:F10167F,F10167C",
+        "bapid": "P10086",
+        "totalProduction": 202.2,
+        "Production2Star": 107,
+        "Shipped2017": null,
+        "Projected2017": 395,
+        "Shipped2016": 278.7,
+        "Delta": -193,
+        "Risk": -48.86,
+        "farmCount": 2,
+        "farmData": [
+            {
+                "bapid": "F10167F", "facilityName": "Xian-Ning Seafood Co., Ltd. #1", "country": "Thailand"
+            },{
+                "bapid": "F10167C", "facilityName": "Xian-Ning Seafood Co., Ltd. #2", "country": "Thailand"
+            }
+        ]
+
+    },
+    {
+        "facilityName": "Coastal Corporation Ltd.",
+        "country": "India",
+        "facility": "P10227:F10447",
+        "bapid": "P10227",
+        "totalProduction": 200.1,
+        "Production2Star": 174.29,
+        "Shipped2017": null,
+        "Projected2017": 266.39,
+        "Shipped2016": 234.79,
+        "Delta": -64.9,
+        "Risk": -24.4,
+        "farmCount": 1,
+        "farmData": [
+            {
+                "bapid": "F10447", "facilityName": "Coastal Corporation Ltd. #1", "country": "India"
+            }
+        ]
+    },
+    {
+        "facilityName": "Procesadora Aguas Clara Ltda.",
+        "country": "Chile",
+        "facility": "P10329:F10502B",
+        "bapid": "P10329",
+        "totalProduction": 70,
+        "Production2Star": 62.5,
+        "Shipped2017": null,
+        "Projected2017": 145.19,
+        "Shipped2016": 19.06,
+        "Delta": -75.9,
+        "Risk": -51.79,
+        "farmCount": 1
+    },
+    {
+        "facilityName": "Nekkanti Sea Foods Limited - Kakinada Plant",
+        "country": "India",
+        "facility": "P10575:F10847",
+        "bapid": "P10575",
+        "totalProduction": 80,
+        "Production2Star": 188.33,
+        "Shipped2017": null,
+        "Projected2017": 152.9,
+        "Shipped2016": 136.39,
+        "Delta": 50,
+        "Risk": 32.89,
+        "farmCount": 2
+    },
+    {
+        "facilityName": "Sprint Exports Private Limited",
+        "country": "India",
+        "facility": "P10263:F10505",
+        "bapid": "P10263",
+        "totalProduction": 60,
+        "Production2Star": 104,
+        "Shipped2017": null,
+        "Projected2017": 59.89,
+        "Shipped2016": 123.41,
+        "Delta": 0.11,
+        "Risk": 0.18,
+        "farmCount": 3
+    },
+    {
+        "facilityName": "Gemini Sea Food Ltd.",
+        "country": "Banglasdesh",
+        "facility": "P10103:F11026",
+        "bapid": "P10103",
+        "totalProduction": 58,
+        "Production2Star": 58,
+        "Shipped2017": null,
+        "Projected2017": 265,
+        "Shipped2016": 0.04,
+        "Delta": null,
+        "Risk": null,
+        "farmCount": 3
+    },
+    {
+        "facilityName": "PT. Fresh On Time Seafood",
+        "country": "Indonesia",
+        "facility": "P10637:F11023",
+        "bapid": "P10637",
+        "totalProduction": 80,
+        "Production2Star": 174,
+        "Shipped2017": null,
+        "Projected2017": 108.9,
+        "Shipped2016": 109.68,
+        "Delta": -28,
+        "Risk": -25.93,
+        "farmCount": 2
+    },
+    {
+        "facilityName": "Castlerock Fisheries Pvt. Ltd.",
+        "country": "India",
+        "facility": "P10440:F10609",
+        "bapid": "P10440",
+        "totalProduction": null,
+        "Production2Star": 84,
+        "Shipped2017": null,
+        "Projected2017": 4.99,
+        "Shipped2016": null,
+        "farmCount": 1
+    },
+    {
+        "facility": "P10066:F10443,F10060",
+        "bapid": "P10066",
+        "Production2Star": 854,
+        "Shipped2017": null,
+        "Projected2017": 768.97,
+        "Shipped2016": 813.79,
+        "farmCount": 1
+    },
+    {
+        "facility": "P10293:F10434",
+        "bapid": "P10293",
+        "Production2Star": 125.42,
+        "Shipped2017": null,
+        "Projected2017": 18.92,
+        "Shipped2016": 65.71
+    },
+    {
+        "facility": "P10416:F10434",
+        "bapid": "P10416",
+        "Production2Star": 125.42,
+        "Shipped2017": null,
+        "Projected2017": 18.92,
+        "Shipped2016": 29.76
+    },
+    {
+        "facility": "P10523:F10244",
+        "bapid": "P10523",
+        "Production2Star": 214,
+        "Shipped2017": null,
+        "Projected2017": 107.08,
+        "Shipped2016": 90.7
+    },
+    {
+        "facility": "P10372:F10559A",
+        "bapid": "P10372",
+        "Production2Star": 122.5,
+        "Shipped2017": null,
+        "Projected2017": 2.5,
+        "Shipped2016": null
+    },
+    {
+        "facility": "P10643:F10559A",
+        "bapid": "P10643",
+        "Production2Star": 122.5,
+        "Shipped2017": null,
+        "Projected2017": 2.5,
+        "Shipped2016": null
+    },
+    {
+        "facility": "P10159:F10863",
+        "bapid": "P10159",
+        "Production2Star": 132,
+        "Shipped2017": null,
+        "Projected2017": 0.09,
+        "Shipped2016": 3.17
+    },
+    {
+        "facility": "P10479:F10610",
+        "bapid": "P10479",
+        "Production2Star": 135,
+        "Shipped2017": null,
+        "Projected2017": 0.74,
+        "Shipped2016": 0.84
+    },
+    {
+        "facility": "P10056:F10847,F10259A,F10259B",
+        "bapid": "P10056",
+        "Production2Star": 529.82,
+        "Shipped2017": null,
+        "Projected2017": 374.63,
+        "Shipped2016": 499.53
+    },
+    {
+        "facility": "P10455:F10691",
+        "bapid": "P10455",
+        "Production2Star": 266.6,
+        "Shipped2017": null,
+        "Projected2017": 5.47,
+        "Shipped2016": 6.22
+    },
+    {
+        "facility": "P10069:F10257",
+        "bapid": "P10069",
+        "Production2Star": 450,
+        "Shipped2017": null,
+        "Projected2017": 141.64,
+        "Shipped2016": 131.1
+    },
+    {
+        "facility": "P10458:F10714",
+        "bapid": "P10458",
+        "Production2Star": 342.5,
+        "Shipped2017": null,
+        "Projected2017": 4.99,
+        "Shipped2016": 14.52
+    },
+    {
+        "facility": "P10290:F10690",
+        "bapid": "P10290",
+        "Production2Star": 343,
+        "Shipped2017": null,
+        "Projected2017": 4.99,
+        "Shipped2016": null
+    },
+    {
+        "facility": "P10248:F10607,F10446",
+        "bapid": "P10248",
+        "Production2Star": 593.25,
+        "Shipped2017": null,
+        "Projected2017": 246.85,
+        "Shipped2016": 207.47
+    },
+    {
+        "facility": "P10011:F10241",
+        "bapid": "P10011",
+        "Production2Star": 362.5,
+        "Shipped2017": null,
+        "Projected2017": 14.29,
+        "Shipped2016": 14.52
+    },
+    {
+        "facility": "P10204:F10560",
+        "bapid": "P10204",
+        "Production2Star": 464,
+        "Shipped2017": null,
+        "Projected2017": 74.86,
+        "Shipped2016": 92.13
+    },
+    {
+        "facility": "P10513:F10590A",
+        "bapid": "P10513",
+        "Production2Star": 450,
+        "Shipped2017": null,
+        "Projected2017": 4.99,
+        "Shipped2016": 30.85
+    },
+    {
+        "facility": "P10162:F10692,F10547B,F10547C,F10547D,F10547E,F10547F,F10547A",
+        "bapid": "P10162",
+        "Production2Star": 503.5,
+        "Shipped2017": null,
+        "Projected2017": 35.82,
+        "Shipped2016": 188.59
+    },
+    {
+        "facility": "P10327:F10692,F10547B,F10547C,F10547D,F10547E,F10547F,F10547A",
+        "bapid": "P10327",
+        "Production2Star": 503.5,
+        "Shipped2017": null,
+        "Projected2017": 35.82,
+        "Shipped2016": 161.77
+    },
+    {
+        "facility": "P10181:F10828",
+        "bapid": "P10181",
+        "Production2Star": 489,
+        "Shipped2017": null,
+        "Projected2017": 13.16,
+        "Shipped2016": 13.61
+    },
+    {
+        "facility": "P10427:F10847,F10259A,F10259B",
+        "bapid": "P10427",
+        "Production2Star": 529.82,
+        "Shipped2017": null,
+        "Projected2017": 34.48,
+        "Shipped2016": 15.43
+    },
+    {
+        "facility": "P10091:F10567,F10137,F10106",
+        "bapid": "P10091",
+        "Production2Star": 515.5,
+        "Shipped2017": null,
+        "Projected2017": 19.96,
+        "Shipped2016": 436.33
+    },
+    {
+        "facility": "P10232:F10274",
+        "bapid": "P10232",
+        "Production2Star": 778,
+        "Shipped2017": null,
+        "Projected2017": 161.88,
+        "Shipped2016": 158.71
+    },
+    {
+        "facility": "P10578:F11227A,F10916C,F10916A,F11227B",
+        "bapid": "P10578",
+        "Production2Star": 630,
+        "Shipped2017": null,
+        "Projected2017": 4.99,
+        "Shipped2016": null
+    },
+    {
+        "facility": "P10015:F10358,F10795C",
+        "bapid": "P10015",
+        "Production2Star": 946.42,
+        "Shipped2017": null,
+        "Projected2017": 305.81,
+        "Shipped2016": 548.54
+    },
+    {
+        "facility": "P10076:F10563",
+        "bapid": "P10076",
+        "Production2Star": 810.05,
+        "Shipped2017": null,
+        "Projected2017": 141.64,
+        "Shipped2016": 128.76
+    },
+    {
+        "facility": "P10434:F10244,F10702A,F10702B,F10702C,F10702D",
+        "bapid": "P10434",
+        "Production2Star": 795.98,
+        "Shipped2017": null,
+        "Projected2017": 29.95,
+        "Shipped2016": 13.61
+    },
+    {
+        "facility": "P10071:F10283",
+        "bapid": "P10071",
+        "Production2Star": 861,
+        "Shipped2017": null,
+        "Projected2017": 68.06,
+        "Shipped2016": 79.6
+    },
+    {
+        "facility": "P10060:F10378",
+        "bapid": "P10060",
+        "Production2Star": 1066.00,
+        "Shipped2017": null,
+        "Projected2017": 61.41,
+        "Shipped2016": 70.36
+    },
+    {
+        "facility": "P10163:F10709A,F10709B,F10363E,F10363D,F10363B,F10363C,F10363A",
+        "bapid": "P10163",
+        "Production2Star": 1834.00,
+        "Shipped2017": null,
+        "Projected2017": 820.99,
+        "Shipped2016": 319.91
+    },
+    {
+        "facility": "P10535:F10425F,F10425G,F10425I,F10425J,F10425E",
+        "bapid": "P10535",
+        "Production2Star": 1148.00,
+        "Shipped2017": null,
+        "Projected2017": 76.44,
+        "Shipped2016": 183.77
+    },
+    {
+        "facility": "P10476:F10588",
+        "bapid": "P10476",
+        "Production2Star": 1151.00,
+        "Shipped2017": null,
+        "Projected2017": 29.95,
+        "Shipped2016": null
+    },
+    {
+        "facility": "P10512:F10585",
+        "bapid": "P10512",
+        "Production2Star": 1287.00,
+        "Shipped2017": null,
+        "Projected2017": 136.12,
+        "Shipped2016": 139.7
+    },
+    {
+        "facility": "P10426:F10921,F10728,F10729",
+        "bapid": "P10426",
+        "Production2Star": 1519.14,
+        "Shipped2017": null,
+        "Projected2017": 222.32,
+        "Shipped2016": 222.45
+    },
+    {
+        "facility": "P10260:F10443,F10060,F10607",
+        "bapid": "P10260",
+        "Production2Star": 1381.25,
+        "Shipped2017": null,
+        "Projected2017": 8.21,
+        "Shipped2016": 28.16
+    },
+    {
+        "facility": "P10028:F10148,F10097A,F10097B,F10137,F10414",
+        "bapid": "P10028",
+        "Production2Star": 1818.00,
+        "Shipped2017": null,
+        "Projected2017": 101.57,
+        "Shipped2016": 113.25
+    },
+    {
+        "facility": "P10482:F10487",
+        "bapid": "P10482",
+        "Production2Star": 3865.00,
+        "Shipped2017": null,
+        "Projected2017": 2041.74,
+        "Shipped2016": 1296.73
+    },
+    {
+        "facility": "P10203:F10115,F10607,F10446",
+        "bapid": "P10203",
+        "Production2Star": 2049.25,
+        "Shipped2017": null,
+        "Projected2017": 128.17,
+        "Shipped2016": 387.72
+    },
+    {
+        "facility": "P10123:F10837,F10841,F10693,F10097A,F10097B,F10402,F10414",
+        "bapid": "P10123",
+        "Production2Star": 2215.50,
+        "Shipped2017": null,
+        "Projected2017": 111.17,
+        "Shipped2016": 283.49
+    },
+    {
+        "facility": "P10010:F10241,F10755,F10756,F10757",
+        "bapid": "P10010",
+        "Production2Star": 2543.50,
+        "Shipped2017": null,
+        "Projected2017": 246.14,
+        "Shipped2016": 247.94
+    },
+    {
+        "facility": "P10249:F10354",
+        "bapid": "P10249",
+        "Production2Star": 2465.50,
+        "Shipped2017": null,
+        "Projected2017": 22.43,
+        "Shipped2016": 45.55
+    },
+    {
+        "facility": "P10654:F10354",
+        "bapid": "P10654",
+        "Production2Star": 2465.50,
+        "Shipped2017": null,
+        "Projected2017": 6.81,
+        "Shipped2016": 6.17
+    },
+    {
+        "facility": "P10485:F10815C,F10815A,F10815B,F10974E,F10974C,F10974B,F10974D,F10644,F10714,F11024",
+        "bapid": "P10485",
+        "Production2Star": 2693.00,
+        "Shipped2017": null,
+        "Projected2017": 0.25,
+        "Shipped2016": 0.24
+    },
+    {
+        "facility": "P10089:F10448A,F10448B,F10448C,F10448E,F10448D,F10632B,F10632C,F10632D,F10632E,F10632A",
+        "bapid": "P10089",
+        "Production2Star": 2862.00,
+        "Shipped2017": null,
+        "Projected2017": 87.12,
+        "Shipped2016": 89.16
+    },
+    {
+        "facility": "P10437:F10742,F10725",
+        "bapid": "P10437",
+        "Production2Star": 4271.00,
+        "Shipped2017": null,
+        "Projected2017": 1436.02,
+        "Shipped2016": 1447.55
+    },
+    {
+        "facility": "P10337:F11016,F11077,F10486",
+        "bapid": "P10337",
+        "Production2Star": 2890.55,
+        "Shipped2017": null,
+        "Projected2017": 4.99,
+        "Shipped2016": 108.69
+    },
+    {
+        "facility": "P10072:F10442B,F10442A,F10975,F10872B,F10872F,F10872E,F10872C,F10872A,F10044",
+        "bapid": "P10072",
+        "Production2Star": 2926.24,
+        "Shipped2017": null,
+        "Projected2017": 30.85,
+        "Shipped2016": 30.85
+    },
+    {
+        "facility": "P10451:F10061",
+        "bapid": "P10451",
+        "Production2Star": 3071.00,
+        "Shipped2017": null,
+        "Projected2017": 108.72,
+        "Shipped2016": 0.8
+    },
+    {
+        "facility": "P10085:F10061",
+        "bapid": "P10085",
+        "Production2Star": 3071.00,
+        "Shipped2017": null,
+        "Projected2017": 5,
+        "Shipped2016": 188.57
+    },
+    {
+        "facility": "P10303:F10194",
+        "bapid": "P10303",
+        "Production2Star": 3510.00,
+        "Shipped2017": null,
+        "Projected2017": 47.35,
+        "Shipped2016": 81.63
+    },
+    {
+        "facility": "P10491:F10073,F10576",
+        "bapid": "P10491",
+        "Production2Star": 3628.57,
+        "Shipped2017": null,
+        "Projected2017": 92.1,
+        "Shipped2016": 92.89
+    },
+    {
+        "facility": "P10285:F10606B,F10606A",
+        "bapid": "P10285",
+        "Production2Star": 3797.50,
+        "Shipped2017": null,
+        "Projected2017": 46.47,
+        "Shipped2016": 42.96
+    },
+    {
+        "facility": "P10230:F10606B,F10606A",
+        "bapid": "P10230",
+        "Production2Star": 3797.50,
+        "Shipped2017": null,
+        "Projected2017": 19.25,
+        "Shipped2016": 15.58
+    },
+    {
+        "facility": "P10054:F10538,F10536,F10537,F10612,F10535,F10595,F10604",
+        "bapid": "P10054",
+        "Production2Star": 4901.00,
+        "Shipped2017": null,
+        "Projected2017": 55.92,
+        "Shipped2016": 50.84
+    },
+    {
+        "facility": "P10233:F10213,F10773,F10254,F10786,F10774",
+        "bapid": "P10233",
+        "Production2Star": 5260.47,
+        "Shipped2017": null,
+        "Projected2017": 22.71,
+        "Shipped2016": 25.8
+    },
+    {
+        "facility": "P10128:F11128,F10550",
+        "bapid": "P10128",
+        "Production2Star": 6493.52,
+        "Shipped2017": null,
+        "Projected2017": 1156.64,
+        "Shipped2016": 1206.20
+    },
+    {
+        "facility": "P10109:F10525,F10526,F10890",
+        "bapid": "P10109",
+        "Production2Star": 5350.12,
+        "Shipped2017": null,
+        "Projected2017": 7.26,
+        "Shipped2016": 7.52
+    },
+    {
+        "facility": "P10067:F10215A,F10215B,F10100A,F10100C,F10215C,F10800A,F10800B,F10711A,F10711I,F10711H,F10711C,F10711D,F10711E,F10711B,F10711G,F10711F",
+        "bapid": "P10067",
+        "Production2Star": 5898.00,
+        "Shipped2017": null,
+        "Projected2017": 226.86,
+        "Shipped2016": 153.33
+    },
+    {
+        "facility": "P10241:F10264",
+        "bapid": "P10241",
+        "Production2Star": 6000.00,
+        "Shipped2017": null,
+        "Projected2017": 14.97,
+        "Shipped2016": null
+    },
+    {
+        "facility": "P10074:F10517,F10731",
+        "bapid": "P10074",
+        "Production2Star": 7006.45,
+        "Shipped2017": null,
+        "Projected2017": 141.64,
+        "Shipped2016": 128.76
+    },
+    {
+        "facility": "P10520:F10976,F10627",
+        "bapid": "P10520",
+        "Production2Star": 7562.00,
+        "Shipped2017": null,
+        "Projected2017": 7.59,
+        "Shipped2016": 0.94
+    },
+    {
+        "facility": "P10342:F10639,F10640",
+        "bapid": "P10342",
+        "Production2Star": 8118.00,
+        "Shipped2017": null,
+        "Projected2017": 3.78,
+        "Shipped2016": 4.3
+    },
+    {
+        "facility": "P10209:F10790,F10791,F11091",
+        "bapid": "P10209",
+        "Production2Star": 8360.37,
+        "Shipped2017": null,
+        "Projected2017": 48.86,
+        "Shipped2016": null
+    },
+    {
+        "facility": "P10149:F10638",
+        "bapid": "P10149",
+        "Production2Star": 8599.00,
+        "Shipped2017": null,
+        "Projected2017": 3.52,
+        "Shipped2016": 3.44
+    },
+    {
+        "facility": "P10526:F10458B,F10458A",
+        "bapid": "P10526",
+        "Production2Star": 9488.00,
+        "Shipped2017": null,
+        "Projected2017": 0.91,
+        "Shipped2016": 1.08
+    },
+    {
+        "facility": "P10277:F10474,F10473",
+        "bapid": "P10277",
+        "Production2Star": 11854.00,
+        "Shipped2017": null,
+        "Projected2017": 0.45,
+        "Shipped2016": 0.54
+    },
+    {
+        "facility": "P10090:F10469,F10471,F10470,F10389,F10390",
+        "bapid": "P10090",
+        "Production2Star": 12821.00,
+        "Shipped2017": null,
+        "Projected2017": 37.85,
+        "Shipped2016": 43.01
+    },
+    {
+        "facility": "P10498:F10594A,F10594B,F10594C",
+        "bapid": "P10498",
+        "Production2Star": 15140.00,
+        "Shipped2017": null,
+        "Projected2017": 368.74,
+        "Shipped2016": 365.61
+    },
+    {
+        "facility": "P10262:F10266H,F10266E,F10266G,F10266I,F10266A,F10266C,F10266F,F10266B,F10266D,F10296,F10296M",
+        "bapid": "P10262",
+        "Production2Star": 15403.00,
+        "Shipped2017": null,
+        "Projected2017": 158.8,
+        "Shipped2016": 158.8
+    },
+    {
+        "facility": "P10279:F10193",
+        "bapid": "P10279",
+        "Production2Star": 16479.00,
+        "Shipped2017": null,
+        "Projected2017": 49.42,
+        "Shipped2016": 177.58
+    },
+    {
+        "facility": "P10271:F10697,F10287,F10622,F10623,F10624",
+        "bapid": "P10271",
+        "Production2Star": 19706.87,
+        "Shipped2017": null,
+        "Projected2017": 7.57,
+        "Shipped2016": 8.6
+    },
+    {
+        "facility": "P10301:F10596,F10597",
+        "bapid": "P10301",
+        "Production2Star": 25638.00,
+        "Shipped2017": null,
+        "Projected2017": 1136.06,
+        "Shipped2016": 1177.06
+    },
+    {
+        "facility": "P10368:F10534,F10589,F10648,F10253",
+        "bapid": "P10368",
+        "Production2Star": 27252.00,
+        "Shipped2017": 310.33,
+        "Projected2017": 9.57,
+        "Shipped2016": 9.83
+    },
+    {
+        "facility": "P10328:F10575L,F10575M,F10575N,F10575O,F10575J,F10575K,F10575P,F10575Q,F10502A,F10502B,F10575D,F10575A,F10575E,F10575H,F10575B,F10575F,F10575G,F10575I,F10575C",
+        "bapid": "P10328",
+        "Production2Star": 35600.50,
+        "Shipped2017": null,
+        "Projected2017": 997.57,
+        "Shipped2016": 783.03
+    },
+    {
+        "facility": "P10329:F10575L,F10575M,F10575N,F10575O,F10575J,F10575K,F10575P,F10575Q,F10502A,F10502B,F10575D,F10575A,F10575E,F10575H,F10575B,F10575F,F10575G,F10575I,F10575C",
+        "bapid": "P10329",
+        "Production2Star": 35600.50,
+        "Shipped2017": null,
+        "Projected2017": 204.4,
+        "Shipped2016": 204.39
+    },
+    {
+        "facility": "P10338:F10961,F10718,F10844A,F10844B,F10802A,F10802B,F10766,F10808A,F10802C,F11140,F10766A,F10654",
+        "bapid": "P10338",
+        "Production2Star": 49215.00,
+        "Shipped2017": null,
+        "Projected2017": 439.22,
+        "Shipped2016": 611.52
+    },
+    {
+        "facility": "P10341:F10315B,F10315C,F10315D,F10315A,F10570,F10570B,F10570C,F10570E,F10570F,F10570D,F10570G,F10570L,F10570J,F10570H,F10570A,F10570I",
+        "bapid": "P10341",
+        "Production2Star": 59314.00,
+        "Shipped2017": null,
+        "Projected2017": 685.98,
+        "Shipped2016": 702.46
+    },
+    {
+        "facility": "P10269:F10273S,F10273K,F10273O,F10273L,F10273E,F10273R,F10273T,F10273D,F10273P,F10273H,F10273M,F10273F,F10273Q,F10273I,F10273J,F10273C,F10273B,F10273A,F10273N,F10273G",
+        "bapid": "P10269",
+        "Production2Star": 77571.00,
+        "Shipped2017": null,
+        "Projected2017": 424.73,
+        "Shipped2016": 482.11
+    },
+    {
+        "facility": "P10298:F10328B,F10328L,F11127,F10328T,F10328E,F10328N,F10328U,F10328K,F10328C,F10328A,F10328M,F10328S,F10328J,F10328I,F10328O,F10328G,F10328F,F10328V,F10328H,F10328R,F10328D,F10328P,F10328Q",
+        "bapid": "P10298",
+        "Production2Star": 105816.00,
+        "Shipped2017": null,
+        "Projected2017": 1146.63,
+        "Shipped2016": "1,232.32"
+    },
+    {
+        "facility": "P10360:F10290N,F10290Z,F10290AA,F10290AC,F10290U,F10290Y,F10290W,F10290AB,F10290I,F10290S,F10290Q,F10290O,F10290P,F10290A,F10290E,F10290J,F10290H,F10290R,F10290K,F10290B,F10290C,F10290L,F10290G,F10290M,F10290AD,F10290D,F10290T,F10290V,F10290X,F10290F",
+        "bapid": "P10360",
+        "Production2Star": 114726.00,
+        "Shipped2017": null,
+        "Projected2017": 7.16,
+        "Shipped2016": 5.35
+    },
+    {
+        "facility": "P10016:F10115,F10443,F10060",
+        "bapid": "P10016",
+        "Production2Star": 2310.00,
+        "Shipped2017": null,
+        "Projected2017": null,
+        "Shipped2016": 24.5
+    },
+    {
+        "facility": "P10030:F10727C,F10727A,F10727B,F10770A,F10770B,F10770D,F10770C,F10770E,F10799A,F10799B,F10799C,F10816A,F10816B,F10816C,F10816D,F10816E,F10698B,F10698C,F10263,F10629C,F11015D,F11015B,F11015A,F10759C,F10759A,F11089A,F11089B,F11089C,F11015C,F10629B,F10629A,F10758",
+        "bapid": "P10030",
+        "Production2Star": 1472.50,
+        "Shipped2017": null,
+        "Projected2017": null,
+        "Shipped2016": 89.84
+    },
+    {
+        "facility": "P10031:F10727C,F10727A,F10727B,F10770A,F10770B,F10770D,F10770C,F10770E,F10799A,F10799B,F10799C,F10816A,F10816B,F10816C,F10816D,F10816E,F10698B,F10698C,F10263,F10629C,F10629A,F10758",
+        "bapid": "P10031",
+        "Production2Star": 778.5,
+        "Shipped2017": null,
+        "Projected2017": null,
+        "Shipped2016": 88.48
+    },
+    {
+        "facility": "P10037:F10720A,F10720E,F10720G,F10720B,F10617E,F10617C,F10617B",
+        "bapid": "P10037",
+        "Production2Star": 777.8,
+        "Shipped2017": null,
+        "Projected2017": null,
+        "Shipped2016": 94.5
+    },
+    {
+        "facility": "P10061:F10377",
+        "bapid": "P10061",
+        "Production2Star": 1657.00,
+        "Shipped2017": null,
+        "Projected2017": null,
+        "Shipped2016": 109.08
+    },
+    {
+        "facility": "P10080:F10271,F10429,F10105,F10206",
+        "bapid": "P10080",
+        "Production2Star": 7952.55,
+        "Shipped2017": null,
+        "Projected2017": null,
+        "Shipped2016": 57.11
+    },
+    {
+        "facility": "P10134:F10488",
+        "bapid": "P10134",
+        "Production2Star": 234.5,
+        "Shipped2017": null,
+        "Projected2017": null,
+        "Shipped2016": 30.87
+    },
+    {
+        "facility": "P10168:F10350H,F10350F,F10350E,F10350C,F10350D,F10350A,F10350B",
+        "bapid": "P10168",
+        "Production2Star": 1542.00,
+        "Shipped2017": null,
+        "Projected2017": null,
+        "Shipped2016": 27.21
+    },
+    {
+        "facility": "P10212:F10265",
+        "bapid": "P10212",
+        "Production2Star": 228,
+        "Shipped2017": null,
+        "Projected2017": null,
+        "Shipped2016": 46.5
+    },
+    {
+        "facility": "P10217:F10243",
+        "bapid": "P10217",
+        "Production2Star": 113.16,
+        "Shipped2017": null,
+        "Projected2017": null,
+        "Shipped2016": 15.43
+    },
+    {
+        "facility": "P10281:F10776,F10295",
+        "bapid": "P10281",
+        "Production2Star": 1158.00,
+        "Shipped2017": null,
+        "Projected2017": null,
+        "Shipped2016": 32.65
+    },
+    {
+        "facility": "P10291:F10440H,F10440G,F10440F,F10440E",
+        "bapid": "P10291",
+        "Production2Star": 2965.26,
+        "Shipped2017": null,
+        "Projected2017": null,
+        "Shipped2016": 32.67
+    },
+    {
+        "facility": "P10306:F10643",
+        "bapid": "P10306",
+        "Production2Star": 59,
+        "Shipped2017": null,
+        "Projected2017": null,
+        "Shipped2016": 8.3
+    },
+    {
+        "facility": "P10314:F10552A,F10552F,F10552E,F10552C,F10552B,F10552D",
+        "bapid": "P10314",
+        "Production2Star": 21036.00,
+        "Shipped2017": null,
+        "Projected2017": null,
+        "Shipped2016": 5.36
+    },
+    {
+        "facility": "P10318:F10387",
+        "bapid": "P10318",
+        "Production2Star": 2016.39,
+        "Shipped2017": null,
+        "Projected2017": null,
+        "Shipped2016": 150.77
+    },
+    {
+        "facility": "P10345:F10533H,F10533I,F10533AA,F10533O,F10533D,F10533P,F10533U,F10533J,F10533AQ,F10533A,F10533B,F10533C,F10533Q,F10533F,F10533G,F10533K,F10533W,F10533AJ,F10533AH,F10533Z,F10533R,F10533AK,F10533AL,F10533AE,F10533V,F10533E,F10533AI,F10362B,F10362A,F10362C,F10362E,F10362D",
+        "bapid": "P10345",
+        "Production2Star": 79788.00,
+        "Shipped2017": null,
+        "Projected2017": null,
+        "Shipped2016": 1.04
+    },
+    {
+        "facility": "P10387:F10416",
+        "bapid": "P10387",
+        "Production2Star": 1643.50,
+        "Shipped2017": null,
+        "Projected2017": null,
+        "Shipped2016": 0.43
+    },
+    {
+        "facility": "P10413:F10553A,F10553C,F10553B",
+        "bapid": "P10413",
+        "Production2Star": 133,
+        "Shipped2017": null,
+        "Projected2017": null,
+        "Shipped2016": 23.97
+    },
+    {
+        "facility": "P10430:F10488",
+        "bapid": "P10430",
+        "Production2Star": 234.5,
+        "Shipped2017": null,
+        "Projected2017": null,
+        "Shipped2016": 14.94
+    },
+    {
+        "facility": "P10469:F10493",
+        "bapid": "P10469",
+        "Production2Star": 1228.00,
+        "Shipped2017": null,
+        "Projected2017": null,
+        "Shipped2016": 42.76
+    },
+    {
+        "facility": "P10515:F10585",
+        "bapid": "P10515",
+        "Production2Star": 1287.00,
+        "Shipped2017": null,
+        "Projected2017": null,
+        "Shipped2016": 3.16
+    },
+    {
+        "facility": "P10527:F10259A,F10259B",
+        "bapid": "P10527",
+        "Production2Star": 341.49,
+        "Shipped2017": null,
+        "Projected2017": null,
+        "Shipped2016": 45.15
+    },
+    {
+        "facility": "P10565:F10302K,F10302F,F10302P,F10302J,F10302G,F10302O,F10302I,F10302L,F10302A,F10302B,F10302C,F10302N,F10302D,F10302E,F10302M,F10302H",
+        "bapid": "P10565",
+        "Production2Star": 53752.00,
+        "Shipped2017": null,
+        "Projected2017": null,
+        "Shipped2016": 3.76
+    }
+]
