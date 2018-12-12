@@ -14,7 +14,7 @@ class FarmDetail extends React.Component {
 
         return (
             <div className={classes.section}>
-                <GridContainer style={{minHeight: "100vh"}}>
+                <GridContainer>
                     <GridItem xs={12} sm={12} md={12}>
                         <PlantFarmDetail/>
                     </GridItem>

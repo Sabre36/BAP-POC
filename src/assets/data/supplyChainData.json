@@ -8,14 +8,14 @@
         "totalFarmProduction": 3120.3,
         "totalPlantProductionLabel": "2017",
 
-        "year1Shipped": 4444,
+        "year1Shipped": 2450,
         "year1ShippedLabel": "2016",
         "year2Shipped": null,
         "year2ShippedLabel": "2017",
 
-        "year1Projected": 5555,
+        "year1Projected": 3510,
         "year1ProjectedLabel": "2017",
-        "year2Projected": 6666,
+        "year2Projected": 3109.2,
         "year2ProjectedLabel": "2018",
 
         "suppliersServed": 6,
@@ -64,7 +64,7 @@
         "year2Shipped": null,
         "year2ShippedLabel": "2018",
 
-        "year1Projected": 5454,
+        "year1Projected": 2921.6,
         "year1ProjectedLabel": "2017",
         "year2Projected": 2323,
         "year2ProjectedLabel": "2018",

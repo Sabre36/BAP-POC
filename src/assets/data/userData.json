@@ -21,7 +21,7 @@
                     { "units": ["Metric tons (MT)", "Kilograms (KG)", "Pounds (lbs)"]}
                   ]
                 },{
-                  "entitlement": "Plant and farm detail",
+                  "entitlement": "Supply chain analysis",
                   "filters": [
                     { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"] },
                     { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] },
@@ -80,7 +80,7 @@
                     { "units": ["Metric tons (MT)", "Kilograms (KG)", "Pounds (lbs)"]}
                 ]
             },{
-              "entitlement": "Plant and farm detail",
+              "entitlement": "Supply chain analysis",
               "filters": [
                 { "species": ["Shrimp", "Tilapia"] },
                 { "countries": ["China", "India", "Thailand", "Viet Nam"] },
@@ -119,7 +119,7 @@
                   { "units": ["Metric tons (MT)", "Kilograms (KG)", "Pounds (lbs)"]}
                 ]
                 },{
-                  "entitlement": "Plant and farm detail",
+                  "entitlement": "Supply chain analysis",
                   "filters": [
                     { "species": ["Pangasius", "Salmon", "Shrimp", "Tilapia"] },
                     { "countries": ["Bangladesh", "China", "Chile", "Indonesia"] },

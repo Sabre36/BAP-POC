@@ -20,7 +20,7 @@ import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle
 const tooltipTitle = () => {
     return (
         <Typography>
-            Minor, major, and critical audit summary results are displayed; clicking on a row will display plant and farm detail audit data.
+            Minor, major, and critical audit summary results are displayed; clicking on a row will display Supply chain analysis audit data.
         </Typography>
     );
 };

@@ -403,7 +403,7 @@ class PortalPage extends React.Component {
                                     <GridItem xs={this.state.cols} sm={this.state.cols} md={this.state.cols} >
                                         {this.state.currentEntitlement === 'Scorecard' && <Scorecard/> }
                                         {this.state.currentEntitlement === 'Yearly recap' && <YearlyRecap/> }
-                                        {this.state.currentEntitlement === 'Plant and farm detail' && <FarmDetail/> }
+                                        {this.state.currentEntitlement === 'Supply chain analysis' && <FarmDetail/> }
                                         {this.state.currentEntitlement === 'Non-conformities' && <Compliance/> }
                                         {this.state.currentEntitlement === 'Supply chain' && <SupplyChain/> }
                                         {this.state.currentEntitlement === 'Notifications' && <Notifications/> }

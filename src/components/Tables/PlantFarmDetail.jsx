@@ -18,6 +18,10 @@ import supplyChainData from './../../assets/data/supplyChainData.json';
 import round from "./../../views/PortalPage/Helpers/round.jsx";
 
 
+function transformSpeciesList(list) {
+    return <p>hi there</p>;
+}
+
 function formatNum(value, decimals) {
     let n = round(value, decimals);
     let newValue = isNaN(n) ? '-' : n;
@@ -57,6 +61,27 @@ function colorMap(value) {
     }
 
     return color;
+}
+
+function RenderSpecies(props){
+    let speciesList = [];
+
+    if (props.list != null) {
+        for (let i=0; i < props.list.length; i++) {
+
+            if (props.type === "species") {
+                speciesList.push(
+                    <p>{props.list[i].species}</p>
+                );
+            }
+            if (props.type === "production") {
+                speciesList.push(
+                    <p>{props.list[i].totalProduction}</p>
+                );
+            }
+        }
+    }
+    return speciesList;
 }
 
 
@@ -105,7 +130,7 @@ class cellIntegerRight extends React.Component {
 class cellFloatRight extends React.Component {
     render() {
         const style = {
-            textAlign: "right",
+            textAlign: "right"
         };
 
         return (
@@ -171,25 +196,25 @@ class DetailComponent extends GridDetailRow {
                                     <TableCell padding="dense">BAP ID</TableCell>
                                     <TableCell padding="dense">FACILITY NAME</TableCell>
                                     <TableCell padding="dense">COUNRTRY</TableCell>
-                                    <TableCell padding="dense"numeric># PLANTS SERVED</TableCell>
+                                    <TableCell padding="dense" numeric style={{textAlign: "right"}}># PLANTS SERVED</TableCell>
                                     <TableCell padding="dense" date>EXPIRATION</TableCell>
                                     <TableCell padding="dense">SPECIES</TableCell>
-                                    <TableCell padding="dense" numeric>PRODUCTION VOLUME</TableCell>
+                                    <TableCell padding="dense" numeric style={{textAlign: "right"}}>PRODUCTION VOLUME</TableCell>
                                 </TableRow>
                             </TableHead>
 
                             <TableBody>
                                 { dataItem.farmData.map((item) =>
                                     <TableRow>
-                                        <TableCell padding="none">{item.bapid}</TableCell>
-                                        <TableCell padding="none">{item.facilityName}</TableCell>
-                                        <TableCell padding="none">{item.country}</TableCell>
-                                        <TableCell numeric padding="dense">{item.plantsServed}</TableCell>
-                                        <TableCell padding="dense">{item.expiration}</TableCell>
-                                        <TableCell padding="dense">Shrimp</TableCell>
-                                        <TableCell padding="dense">222</TableCell>
+                                        <TableCell padding="none" style={{verticalAlign: "top"}}>{item.bapid}</TableCell>
+                                        <TableCell padding="none" style={{verticalAlign: "top"}}>{item.facilityName}</TableCell>
+                                        <TableCell padding="none" style={{verticalAlign: "top"}}>{item.country}</TableCell>
+                                        <TableCell numeric padding="dense" style={{verticalAlign: "top", textAlign: "right"}}>{item.plantsServed}</TableCell>
+                                        <TableCell padding="dense" style={{verticalAlign: "top"}}>{item.expiration}</TableCell>
+                                        <TableCell padding="dense" style={{verticalAlign: "top"}}><RenderSpecies list={item.speciesData} type={"species"}/></TableCell>
+                                        <TableCell padding="dense" style={{verticalAlign: "top", textAlign: "right"}}><RenderSpecies list={item.speciesData} type={"production"}/></TableCell>
                                     </TableRow>
-                                ) }
+                                )}
                             </TableBody>
                         </Table>
                     </Paper>
@@ -221,11 +246,11 @@ class DetailComponent extends GridDetailRow {
                                     <p> {dataItem.farmCount}</p>
                                     <p> {dataItem.suppliersServed}</p>
 
-                                    <ul style={{listStylePosition: "inside", paddingLeft: 0}}>
+                                    <ol style={{listStylePosition: "inside", paddingLeft: 0}}>
                                     { dataItem.suppliersList.map((item) =>
                                         <li >{item}</li>
                                     ) }
-                                    </ul>
+                                    </ol>
 
                                 </div>
                             </GridItem>
@@ -278,21 +303,43 @@ class PlantFarmDetail extends React.Component {
     }
 
     componentDidMount(){
-        var ths = this.gridRef.current.getElementsByTagName('th');
 
+        var ths = this.gridRef.current.getElementsByTagName('th');
         for(var i = 0; i < ths.length; i++){
 
-            ths[i].setAttribute("style", "height: '150px; font-weight: 500; font-size: 14px;");
+            ths[i].setAttribute("style", "height: 65px; font-weight: 500; font-size: 14px; overflow-wrap: break-word; word-wrap: break-word;");
 
             // For the last 4 columns, right justify the headings
             if ( i > 3 && i < 10 ) {
                 ths[i].setAttribute("style", "text-align: right; font-weight: 500; font-size: 14px;");
             } else if ( i === 10 ) {
-                ths[i].setAttribute("style", "text-align: center; font-weight: 500; font-size: 14px; ");
+                ths[i].setAttribute("style", "text-align: center; font-weight: 500; font-size: 14px;");
             }
         }
+
+        this.processData();
     }
 
+    processData() {
+        let transform = [];
+        let showDilution = this.state.showDilution;
+
+        this.state.data.forEach(function(el) {
+            el.adjustedFarmProduction = el.totalFarmProduction / el.suppliersServed;
+
+            if (showDilution === true) {
+                el.diff = el.year1Projected - el.adjustedFarmProduction;
+                el.confidence = ((el.year1Projected - el.adjustedFarmProduction) / el.year1Projected) * 100;
+            }
+            else {
+                el.diff = el.year1Projected - el.totalFarmProduction;
+                el.confidence = ((el.year1Projected - el.totalFarmProduction) / el.year1Projected) * 100;
+            }
+            transform.push(el);
+            //console.log(el.bapid +  " " + el.facilityName + " " + el.year1Projected + " " + el.totalFarmProduction + " " + el.diff + " " + el.confidence );
+        });
+        this.setState({data: transform});
+    }
 
     expandChange(event) {
         event.dataItem.expanded = !event.dataItem.expanded;
@@ -307,7 +354,9 @@ class PlantFarmDetail extends React.Component {
     }
 
     handleSwitchChange() {
+
         this.setState({showDilution: !this.state.showDilution});
+                this.processData();
     }
 
     handlePageChange = (event) => {
@@ -330,7 +379,7 @@ class PlantFarmDetail extends React.Component {
                             color="primary"
                           />
                         }
-                        label="Show dilution"
+                        label={this.state.showDilution ? "Reset dilution" : "Show dilution"}
                       />
                 </div>
                 <div ref={this.gridRef} >
@@ -356,11 +405,18 @@ class PlantFarmDetail extends React.Component {
                             <Column field="country" title="COUNTRY" width="120px" cell={cellEllipsis}/>
                             <Column field="suppliersServed" title="# SUPPLIERS SERVED" type="number" cell={cellIntegerRight}/>
                             <Column field="farmCount" title="# FARMS" type="number" cell={cellIntegerRight}/>
-                            <Column field="totalPlantProduction" title="Total Plant Production" type="number" cell={cellFloatRight}/>
-                            <Column field="totalFarmProduction" title="Total Farm Production" type="number" cell={cellFloatRight}/>
-                            <Column field="Projected2017" title="Total Projected" type="number"  cell={cellFloatRight} />
-                            <Column field="Delta" title="DIFFERENCE" type="number" cell={cellFloatRightColorize}  />
-                            <Column field="Risk" title="CONFIDENCE" type="number" width="140px" cell={cellPercentDiff}  />
+                            <Column field="totalPlantProduction" title="TOTAL PLANT PRODUCTION" type="number" cell={cellFloatRight}/>
+
+                            { this.state.showDilution === true &&
+                                <Column field="adjustedFarmProduction" title="TOTAL FARM PRODUCTION" type="number" cell={cellFloatRight}/>
+                            }
+                            { this.state.showDilution === false &&
+                                <Column field="totalFarmProduction" title="TOTAL FARM PRODUCTION" type="number" cell={cellFloatRight}/>
+                            }
+
+                            <Column field="year1Projected" title="TOTAL PROJECTED year1ProjectedLabel" type="number"  cell={cellFloatRight} />
+                            <Column field="diff" title="DIFFERENCE" type="number" cell={cellFloatRightColorize}  />
+                            <Column field="confidence" title="CONFIDENCE" type="number" width="140px" cell={cellPercentDiff}  />
 
                         </Grid>
                     </div>
