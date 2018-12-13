@@ -43,6 +43,7 @@ import Entitlements from './Helpers/Entitlements.jsx';
 import Countries from './Helpers/Countries.jsx';
 import Species from './Helpers/Species.jsx';
 import Units from './Helpers/Units.jsx';
+import Comparison from './Helpers/Comparison.jsx';
 import Audits from './Helpers/Audits.jsx';
 import Facilities from './Helpers/Facilities.jsx';
 import RenderAlerts from './Helpers/RenderAlerts.jsx';
@@ -165,6 +166,7 @@ class PortalPage extends React.Component {
         facilities: [],
         audits: [],
         units: [],
+        comparison: [],
         alertList: this.props.alertList,
         alertDismissed: false,
         isMenuOpen: true,
@@ -244,6 +246,7 @@ class PortalPage extends React.Component {
         let _facilities = [];
         let _audits = [];
         let _units = [];
+        let _comparison = [];
 
         for (let i=0; i<this.props.affiliationList.length; i++) {
             //console.log('%chandleAffiliation state: ' + JSON.stringify(this.props.affiliationList[i].affiliation), 'color:orange');
@@ -261,6 +264,7 @@ class PortalPage extends React.Component {
                                 let fa = _filterList[fi].facilities;
                                 let un = _filterList[fi].units;
                                 let au = _filterList[fi].audits;
+                                let cm = _filterList[fi].comparison;
 
                                 if (sp != null) {
                                     _species = sp;
@@ -281,6 +285,10 @@ class PortalPage extends React.Component {
                                 if (au != null) {
                                     _audits = au;
                                 }
+
+                                if (cm != null) {
+                                    _comparison = cm;
+                                }
                             }
                         }
                     }
@@ -294,6 +302,7 @@ class PortalPage extends React.Component {
                 facilities: _facilities,
                 units: _units,
                 audits: _audits,
+                comparison: _comparison,
                 alertDismissed: true,
                 isPaneOpen: this.state.autoShow
             });
@@ -466,6 +475,23 @@ class PortalPage extends React.Component {
                                         </ExpansionPanel>
                                     }
 
+                                    { this.state.comparison.length > 0 &&
+                                        <ExpansionPanel >
+                                            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                                                <div style={styles.accordion}>
+                                                    <FormLabel style={styles.accordionLabel}>
+                                                        <WorldIcon style={styles.accordionIcon}/>Comparison column
+                                                    </FormLabel>
+                                                </div>
+                                            </ExpansionPanelSummary>
+                                            <ExpansionPanelDetails>
+                                                <FormControl component='fieldset' className={classes.formControl}>
+                                                    <Comparison comparison={this.state.comparison} userAffiliation={this.state.defaultAffiliation} />
+                                                </FormControl>
+                                            </ExpansionPanelDetails>
+                                        </ExpansionPanel>
+                                    }
+
                                     { this.state.units.length > 0 &&
                                         <ExpansionPanel >
                                             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
@@ -499,7 +525,7 @@ class PortalPage extends React.Component {
                                                             color="primary"
                                                           />
                                                         }
-                                                        label="Always show"
+                                                        label="ALWAYS SHOW"
                                                       />
                                                 </div>
                                         </div>

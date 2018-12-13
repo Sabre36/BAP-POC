@@ -13,13 +13,14 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Switch from '@material-ui/core/Switch';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Tooltip from '@material-ui/core/Tooltip';
-import StarIcon from "@material-ui/icons/StarRate";
 import plantData from './../../assets/data/plantData.json';
 import supplyChainData from './../../assets/data/supplyChainData.json';
 import round from "./../../views/PortalPage/Helpers/round.jsx";
 
 
+function transformSpeciesList(list) {
+    return <p>hi there</p>;
+}
 
 function formatNum(value, decimals) {
     let n = round(value, decimals);
@@ -83,30 +84,20 @@ function RenderSpecies(props){
     return speciesList;
 }
 
-function RenderRating (props) {
-    let starList = [];
-
-    if (props.rating > 0 && props.rating <= 4) {
-        for (let i = 0; i < props.rating; i++) {
-            starList.push(<StarIcon/>);
-        }
-    }
-    else starList.push("N/A");
-
-    return starList;
-}
-
 
 class cellPercentDiff extends React.Component {
     render() {
         let value = this.props.dataItem[this.props.field];
         let strValue = isNaN(value) ? value : round(this.props.dataItem[this.props.field], 1).toString() + "%";
 
+
+
         const style = {
             textAlign: "center",
             minWidth: "90px",
             color: "#fff",
             fontWeight: 500,
+            //backgroundColor: hsl_col_perc(value, red, green)
             backgroundColor: colorMap(value)
         };
 
@@ -241,7 +232,6 @@ class DetailComponent extends GridDetailRow {
                                     <p><strong>Country</strong></p>
                                     <p><strong>Rating</strong></p>
                                     <p><strong># of farms</strong></p>
-                                    <p><strong># of endorsers served</strong></p>
                                     <p><strong># of suppliers served</strong></p>
                                     <p><strong>Suppliers</strong></p>
                                 </div>
@@ -252,9 +242,8 @@ class DetailComponent extends GridDetailRow {
                                     <p> {dataItem.bapid}</p>
                                     <p> {dataItem.facilityName}</p>
                                     <p> {dataItem.country}</p>
-                                    <p> <RenderRating rating={dataItem.rating} /> </p>
+                                    <p> {dataItem.rating}</p>
                                     <p> {dataItem.farmCount}</p>
-                                    <p> {dataItem.endorsersServed}</p>
                                     <p> {dataItem.suppliersServed}</p>
 
                                     <ol style={{listStylePosition: "inside", paddingLeft: 0}}>
@@ -316,7 +305,7 @@ class PlantFarmDetail extends React.Component {
     componentDidMount(){
 
         var ths = this.gridRef.current.getElementsByTagName('th');
-        for(var i = 0; i < ths.length; i++){
+        for(var i = 0; i < ths[1].length; i++){
 
             ths[i].setAttribute("style", "height: 65px; font-weight: 500; font-size: 14px; overflow-wrap: break-word; word-wrap: break-word;");
 
@@ -336,15 +325,15 @@ class PlantFarmDetail extends React.Component {
         let showDilution = this.state.showDilution;
 
         this.state.data.forEach(function(el) {
-            //el.adjustedFarmProduction = el.totalFarmProduction / el.suppliersServed;
+            el.adjustedFarmProduction = el.totalFarmProduction / el.suppliersServed;
 
             if (showDilution === true) {
-                el.diff =  el.dilutedFarmProduction - el.year1Projected;
-                el.confidence = ((el.dilutedFarmProduction - el.year1Projected) / el.dilutedFarmProduction) * 100;
+                el.diff = el.year1Projected - el.adjustedFarmProduction;
+                el.confidence = ((el.year1Projected - el.adjustedFarmProduction) / el.year1Projected) * 100;
             }
             else {
-                el.diff =  el.totalFarmProduction - el.year1Projected;
-                el.confidence = ((el.totalFarmProduction - el.year1Projected) / el.dilutedFarmProduction) * 100;
+                el.diff = el.year1Projected - el.totalFarmProduction;
+                el.confidence = ((el.year1Projected - el.totalFarmProduction) / el.year1Projected) * 100;
             }
             transform.push(el);
             //console.log(el.bapid +  " " + el.facilityName + " " + el.year1Projected + " " + el.totalFarmProduction + " " + el.diff + " " + el.confidence );
@@ -365,8 +354,9 @@ class PlantFarmDetail extends React.Component {
     }
 
     handleSwitchChange() {
-        this.processData();
+
         this.setState({showDilution: !this.state.showDilution});
+                this.processData();
     }
 
     handlePageChange = (event) => {
@@ -382,23 +372,15 @@ class PlantFarmDetail extends React.Component {
                 <div style={{textAlign: 'right'}}>
                     <FormControlLabel
                         control={
-                            <Switch
-                                checked={this.state.showDilution}
-                                onChange={this.handleSwitchChange}
-                                value="showDilution"
-                                color="primary"
-                                />
+                          <Switch
+                            checked={this.state.showDilution}
+                            onChange={this.handleSwitchChange}
+                            value="showDilution"
+                            color="primary"
+                          />
                         }
-                        label={this.state.showDilution ? "RESET DILUTION" : "SHOW DILUTION"}
-                    />
-                <Tooltip
-                    title="Dilution is defined as ...TODO: get a definition from Molly or Matt"
-                    placement="left-end"
-                    >
-                        <span>
-                            <i className={"fa fa-info-circle"}/>
-                        </span>
-                    </Tooltip>
+                        label={this.state.showDilution ? "Reset dilution" : "Show dilution"}
+                      />
                 </div>
                 <div ref={this.gridRef} >
                     <Grid
@@ -421,26 +403,27 @@ class PlantFarmDetail extends React.Component {
                             <Column field="bapid" title="BAP ID" minResizableWidth={110} width="110px" filterable={true}  />
                             <Column field="facilityName" title="PLANT NAME" minResizableWidth={150} width="250px" cell={cellEllipsis} />
                             <Column field="country" title="COUNTRY" width="120px" cell={cellEllipsis}/>
-
-                            { this.state.data[0].type === "endorser" &&
-                                <Column field="endorsersServed" title="# ENDORSERS SERVED" type="number" cell={cellIntegerRight}/>
-                            }
-
-                            { this.state.data[0].type === "supplier" &&
-                                <Column field="suppliersServed" title="# SUPPLIERS SERVED" type="number" cell={cellIntegerRight}/>
-                            }
-
-                            <Column field="farmCount" title="# FARMS" type="number" cell={cellIntegerRight}/>
-                            <Column field="totalPlantProduction" title="TOTAL PLANT PRODUCTION" type="number" cell={cellFloatRight}/>
+                            <Column title="COUNTS">
+                                <Column field="suppliersServed" title="SUPPLIERS SERVED" type="number" cell={cellIntegerRight}/>
+                                <Column field="farmCount" title="FARMS" type="number" cell={cellIntegerRight}/>
+                            </Column>
 
                             { this.state.showDilution === true &&
-                                <Column field="dilutedFarmProduction" title="TOTAL FARM PRODUCTION" type="number" cell={cellFloatRight}/>
+                                <Column title="TOTAL PRODUCTION" >
+                                    <Column type="number"  field="totalPlantProduction" title="PLANT" cell={cellFloatRight}  />
+                                    <Column field="adjustedFarmProduction" title="FARM" type="number" cell={cellFloatRight}/>
+                                </Column>
                             }
                             { this.state.showDilution === false &&
-                                <Column field="totalFarmProduction" title="TOTAL FARM PRODUCTION" type="number" cell={cellFloatRight}/>
+                                <Column title="TOTAL PRODUCTION" >
+                                    <Column type="number"  field="totalPlantProduction" title="PLANT" cell={cellFloatRight}  />
+                                    <Column field="totalFarmProduction" title="FARM" type="number" cell={cellFloatRight}/>
+                                </Column>
                             }
+                            <Column title="TOTAL PROJECTED">
+                                <Column field="year1Projected" title="2017" type="number"  cell={cellFloatRight} />
+                            </Column>
 
-                            <Column field="year1Projected" title="TOTAL PROJECTED year1ProjectedLabel" type="number"  cell={cellFloatRight} />
                             <Column field="diff" title="DIFFERENCE" type="number" cell={cellFloatRightColorize}  />
                             <Column field="confidence" title="CONFIDENCE" type="number" width="140px" cell={cellPercentDiff}  />
 
