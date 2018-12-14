@@ -112,20 +112,6 @@ const styles = {
         minWidth: "110px",
         marginTop: "15px"
     },
-    // offCanvas: {
-    //     overFlowX: 'hidden',
-    // },
-    // offCanvasMenu: {
-    //     marginTop: "172px",
-    //     height: "100vh",
-    //     backgroundPosition: "0 0",
-    //     backgroundRepeat: "no-repeat",
-    //     backgroundSize: "275px 100vh",
-    //     backgroundImage: `url(${Background})`,
-    //     borderRight: "1px solid paleblue",
-    //     boxShadow: "inset 0 0 0 1000px rgba(0,0,0,.35)",
-    //     overflowX: 'hidden'
-    // },
     accordion: {
         display: 'block',
         whiteSpace: 'no-wrap',
@@ -137,11 +123,7 @@ const styles = {
     },
     accordionLabel: {
         marginLeft: '35px'
-    },
-    // textField: {
-    //     fontSize: 21
-    // },
-
+    }
 };
 
 
@@ -151,7 +133,7 @@ class PortalPage extends React.Component {
 
         this.handleViewClick = this.handleViewClick.bind(this);
         this.handleAffiliationChange = this.handleAffiliationChange.bind(this);
-        this.handleSwitchChange = this.handleSwitchChange.bind(this);
+        this.handleAutoShowChange = this.handleAutoShowChange.bind(this);
         this.handleSidebar = this.handleSidebar.bind(this);
     }
 
@@ -194,7 +176,7 @@ class PortalPage extends React.Component {
         })
     }
 
-    handleSwitchChange() {
+    handleAutoShowChange() {
         this.setState({autoShow: !this.state.autoShow, alertDismissed: true});
     }
 
@@ -520,7 +502,7 @@ class PortalPage extends React.Component {
                                                         control={
                                                           <Switch
                                                             checked={this.state.autoShow}
-                                                            onChange={this.handleSwitchChange}
+                                                            onChange={this.handleAutoShowChange}
                                                             value="autoShow"
                                                             color="primary"
                                                           />

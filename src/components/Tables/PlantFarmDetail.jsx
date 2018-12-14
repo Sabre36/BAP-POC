@@ -19,8 +19,6 @@ import plantData from './../../assets/data/plantData.json';
 import supplyChainData from './../../assets/data/supplyChainData.json';
 import round from "./../../views/PortalPage/Helpers/round.jsx";
 
-
-
 function formatNum(value, decimals) {
     let n = round(value, decimals);
     let newValue = isNaN(n) ? '-' : n;
@@ -140,6 +138,22 @@ class cellFloatRight extends React.Component {
     render() {
         const style = {
             textAlign: "right"
+        };
+
+        return (
+            <td style={style}>
+                {formatNum(this.props.dataItem[this.props.field],1)}
+            </td>
+        );
+    }
+}
+
+class cellDilution extends React.Component {
+    render() {
+        const style = {
+            textAlign: "right",
+            color: "#157bdc",
+            fontWeight: 400
         };
 
         return (
@@ -364,9 +378,9 @@ class PlantFarmDetail extends React.Component {
         })
     }
 
-    handleSwitchChange() {
-        this.processData();
-        this.setState({showDilution: !this.state.showDilution});
+    async handleSwitchChange() {
+        await this.setState({showDilution: !this.state.showDilution});
+        await this.processData();
     }
 
     handlePageChange = (event) => {
@@ -434,7 +448,7 @@ class PlantFarmDetail extends React.Component {
                             <Column field="totalPlantProduction" title="TOTAL PLANT PRODUCTION" type="number" cell={cellFloatRight}/>
 
                             { this.state.showDilution === true &&
-                                <Column field="dilutedFarmProduction" title="TOTAL FARM PRODUCTION" type="number" cell={cellFloatRight}/>
+                                <Column field="dilutedFarmProduction" title="TOTAL FARM PRODUCTION" type="number" cell={cellDilution}/>
                             }
                             { this.state.showDilution === false &&
                                 <Column field="totalFarmProduction" title="TOTAL FARM PRODUCTION" type="number" cell={cellFloatRight}/>
