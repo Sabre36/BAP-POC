@@ -1,0 +1,125 @@
+
+[
+    {
+        "filters": [
+            { "reportType": "endorser"},
+            { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"] },
+            { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] },
+            { "units": ["Metric tons (MT)", "Kilograms (KG)", "Pounds (lbs)"] },
+            { "columns": ["Shipments 2016", "Shipments 2017", "Projected 2017", "Projected 2018"] }
+        ]
+    },
+    {
+        "supplyData": [
+            {
+                "type": "endorser",
+                "bapid": "XXXP10053",
+                "facilityName": "PT. Panca Mitra MultiPerdana",
+                "country": "Indonesia",
+                "rating": 2,
+                "totalPlantProduction": 3410.0,
+                "totalFarmProduction": 3120.3,
+                "dilutedFarmProduction": 2100,
+                "auditYear": 2017,
+
+                "year1Shipped": 2450,
+                "year1ShippedLabel": "2016",
+                "year2Shipped": null,
+                "year2ShippedLabel": "2017",
+
+                "year1Projected": 3510,
+                "year1ProjectedLabel": "2017",
+                "year2Projected": 3109.2,
+                "year2ProjectedLabel": "2018",
+
+                "endorsersServed": 2,
+                "suppliersServed": 6,
+                "suppliersList": ["B.J's", "Brakes", "Captain D's", "Krogers", "Sysco", "Wegmanns"],
+
+                "farmCount": 9,
+                "farmData": [
+                    {
+                        "bapid": "F10815C", "facilityName": "Panca Mitra IOM 1 - Empang Kuningan", "country": "Indonesia", "expiration": "04-18-2019", "plantsServed": 1, "speciesData": [
+                            {"species": "Shrimp", "totalProduction": 11, "dilutedProduction": 3.2},
+                            {"species": "Tilapia",  "totalProduction": 3, "dilutedProduction": 3.2}
+                        ]
+                    },{
+                        "bapid": "F10815A", "facilityName": "Panca Mitra IOM 1 - Kampe Mandiri", "country": "Indonesia", "expiration": "04-18-2019", "plantsServed": 2, "speciesData": [
+                            {"species": "Shrimp", "totalProduction": 8.2, "dilutedProduction": 3.2}
+                        ]
+                    },{
+                        "bapid": "F10815B", "facilityName": "Panca Mitra IOM 1 - Karya Bersama Sukses", "country": "Indonesia", "expiration": "04-18-2019", "plantsServed": 11
+                    },{
+                        "bapid": "F10974E", "facilityName": "Panca Mitra IOM 2 - Citra Bhirawa Wira Sakti", "country": "Indonesia", "expiration": "1-22-2019", "plantsServed": 3
+                    },{
+                        "bapid": "F10974C", "facilityName": "Panca Mitra IOM 2 - Sidojoyo Utama Tanjung Pecinan", "country": "Indonesia", "expiration": "1-22-2019", "plantsServed": 2
+                    },{
+                        "bapid": "F10974B", "facilityName": "Panca Mitra IOM 2 - Tambak Pecemengan", "country": "Indonesia", "expiration": "1-10-2019", "plantsServed": 2
+                    },{
+                        "bapid": "F10974D", "facilityName": "Panca Mitra IOM 2 - UD. Cahaya Sentra", "country": "Indonesia", "expiration": "1-10-2019", "plantsServed": 1
+                    },{
+                        "bapid": "F10644", "facilityName": "PT Permata Citra Nusa 3 - Asembakor", "country": "Indonesia", "expiration": "01-08-2019", "plantsServed": 3
+                    },{
+                        "bapid": "F11024", "facilityName": "Sumber Sewu Samudra", "country": "Indonesia", "expiration": "01-11-2019", "plantsServed": 1
+                    }
+                ]
+            },
+            {
+                "type": "supplier",
+                "bapid": "P10081",
+                "facilityName": "Guangzhou Luxe Seafood Enterprise Ltd.",
+                "country": "China",
+                "rating": null,
+
+                "totalPlantProduction": 3410.0,
+                "totalFarmProduction": 3120.3,
+                "dilutedFarmProduction": 2810,
+                "auditYear": 2017,
+
+                "year1Shipped": 3333,
+                "year1ShippedLabel": "2017",
+                "year2Shipped": null,
+                "year2ShippedLabel": "2018",
+
+                "year1Projected": 2921.6,
+                "year1ProjectedLabel": "2017",
+                "year2Projected": 2323,
+                "year2ProjectedLabel": "2018",
+
+                "endorsersServed": 2,
+                "suppliersServed": 5,
+                "suppliersList": ["Eastern Fish Company", "ZF America", "Tampa Bay Fisheries, Inc. Supplier", "The Fishin' Company", "Chicken of the Sea Frozen Foods-Supplier"],
+
+                "farmCount": 4,
+                "farmData": [
+                    {
+                        "bapid": "F10247", "facilityName": "Guangzhou Luxe Seafood Enterprise Ltd.", "country": "China", "expiration": "08-09-2019", "plantsServed": 1, "speciesData": [
+                            {"species": "Shrimp", "totalProduction": 11, "dilutedProduction": 4.2},
+                            {"species": "Tilapia",  "totalProduction": 3, "dilutedProduction": 0.77}
+                        ]
+                    },{
+                        "bapid": "F10271", "facilityName": "The Second Aquafarm of Zhuhai Fumin Tilapia Aquafarm & Research Co., Ltd.", "country": "China", "expiration": "04-18-2019", "plantsServed": 2, "speciesData": [
+                            {"species": "Shrimp", "totalProduction": 9.2, "dilutedProduction": 3.2},
+                            {"species": "Tilapia",  "totalProduction": 3, "dilutedProduction": 1.1}
+                        ]
+                    },{
+                        "bapid": "F10429", "facilityName": "The Third Aquafarm of Zhuhai Fumin Tilapia Aquafarm & Research Co., Ltd.", "country": "China", "expiration": "04-18-2019", "plantsServed": 11, "speciesData": [
+                            {"species": "Shrimp", "totalProduction": 11, "dilutedProduction": 3.2},
+                            {"species": "Tilapia",  "totalProduction": 3, "dilutedProduction": 3.2}
+                        ]
+                    },{
+                        "bapid": "F10105", "facilityName": "Zhuhai Jiayi Aquatic Limit Company", "country": "China", "expiration": "04-03-2019", "plantsServed": 3, "speciesData": [
+                            {"species": "Shrimp", "totalProduction": 11, "dilutedProduction": 3.2},
+                            {"species": "Tilapia",  "totalProduction": 3, "dilutedProduction": 3.2}
+                        ]
+                    },{
+                        "bapid": "F10206", "facilityName": "Zhuhai Yihai Aquatic Co., Ltd.", "country": "China", "expiration": "08-09-2019", "plantsServed": 2, "speciesData": [
+                            {"species": "Shrimp", "totalProduction": 11, "dilutedProduction": 3.2},
+                            {"species": "Tilapia",  "totalProduction": 3, "dilutedProduction": 3.2}
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
