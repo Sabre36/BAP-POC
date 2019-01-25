@@ -3,7 +3,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import IconButton from '@material-ui/core/IconButton';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, Sector, Cell, Legend, Tooltip, ResponsiveContainer } from 'recharts';
 import MenuIcon from '@material-ui/icons/Menu';
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
@@ -12,167 +12,41 @@ import Typography from '@material-ui/core/Typography';
 import guidGenerator from './../../views/PortalPage/Helpers/guidGenerator.jsx';
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
 
-const yr1 = [
-    {year: 2016, name: '4 Star', value: 90},
-    {year: 2016, name: '3 Star', value: 54},
-    {year: 2016, name: '2 Star', value: 55},
-    {year: 2016, name: '1 Star', value: 6}
+
+
+const data01 = [
+	{name: 'Group A', value: 400, fill: '#8884d8',},
+	{name: 'Group B', value: 300, fill: '#9cacf1',},
+ 	{name: 'Group C', value: 300, fill: '#8dd1e1'},
+  {name: 'Group D', value: 200, fill: '#82ca9d'},
+  {name: 'Group E', value: 278, fill: '#a4de6c'},
+  {name: 'Group F', value: 189, fill: '#d0ed57'},
 ];
 
-const yr2 = [
-    {year: 2017, name: '4 Star', value: 111.6},
-    {year: 2017, name: '3 Star', value: 60},
-    {year: 2017, name: '2 Star', value: 33},
-    {year: 2017, name: '1 Star', value: 22}
-];
+const data02 = [{name: 'Group A', value: 2400}, {name: 'Group B', value: 4567},
+                  {name: 'Group C', value: 1398}, {name: 'Group D', value: 9800},
+                  {name: 'Group E', value: 3908}, {name: 'Group F', value: 4800}];
 
-const COLORS = ['#37611A', '#37611A', '#65B12F', '#B1E18E'];
+const colors = ['red', 'green', 'purple', 'blue', 'black', 'silver']
 
-const renderActiveShape = (props) => {
+class ProductionChart extends React.Component {
+	render () {
+  	return (
+    <ResponsiveContainer>
+    	<PieChart width={700} height={300}>
+        <Pie data={data02} cx="50%" cy="50%" outerRadius={50} label>
+          {
+            data02.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={colors[index]}/>
+            ))
+          }
+        </Pie>
+        <Legend verticalAlign="bottom" height={36}/>
+        <Tooltip/>
+       </PieChart>
+    </ResponsiveContainer>
+);
+}
+}
 
-    const { cx, cy, innerRadius, startAngle, endAngle,
-        fill, payload, percent, value } = props;
-        const innerRadiusPadding = 10 ;
-        const outerRadiusPadding = 6 ;
-        const radiusPadding = 20;
-
-        return (
-            <g>
-                <text x={cx} y={cy-25} dy={8} textAnchor="middle" >{payload.name}</text>
-                <text x={cx} y={cy-5} dy={8} textAnchor="middle" >{`${value} MT`}</text>
-                <text x={cx} y={cy+15} dy={8} textAnchor="middle" >{`${(percent * 100).toFixed(1)}%`}</text>
-
-                <Sector
-                    cx={cx}
-                    cy={cy}
-                    startAngle={startAngle}
-                    endAngle={endAngle}
-                    innerRadius={innerRadius - innerRadiusPadding}
-                    outerRadius={innerRadius - outerRadiusPadding}
-                    fill={fill}
-                />
-
-                <Sector
-                    cx={cx}
-                    cy={cy}
-                    startAngle={startAngle}
-                    endAngle={endAngle}
-                    innerRadius={innerRadius}
-                    outerRadius={innerRadius + radiusPadding}
-                    fill={fill}
-                />
-
-                {/* HACK to position the year label under the pie so that it will move with the responsive container */}
-                <text x={cx} y={cy+125} dy={8} textAnchor="middle">{payload.year}</text>
-            </g>
-        );
-    };
-
-    const tooltipTitle = () => {
-        return (
-            <Typography>
-                A year to year comparison of production volume by star status.
-            </Typography>
-        );
-    };
-
-    class ProductionChart extends React.Component {
-        constructor(props) {
-            super(props);
-            this.state = {
-                activeIndex: 0
-            };
-
-            this.onPieEnter = this.onPieEnter.bind(this);
-        }
-
-        getInitialState() {
-            return {
-                activeIndex: 0,
-            };
-        }
-
-        onPieEnter(data, index) {
-            this.setState({
-                activeIndex: index,
-            });
-        }
-
-        handleClick() {
-            alert('click');
-        }
-
-        render() {
-            const { classes } = this.props;
-
-            return (
-                <div>
-                    <Card className={classes.cardLarge}>
-                        <CardActions>
-                            <IconButton aria-label='Menu' color='inherit' onClick={this.handleClick.bind(this)}>
-                                <MenuIcon className={classes.iconButtonStyle}/>
-                            </IconButton>
-                            <h4 className={classes.infoGraphicTitle} >
-                                Production by rating
-                                <MUITooltip
-                                    classes={{ tooltip: classes.lightTooltip }}
-                                    title={tooltipTitle()}>
-                                    <span className={classes.tooltipIcon}>
-                                        <i className={"fa fa-sm fa-info-circle"}/>
-                                    </span>
-                                </MUITooltip>
-                            </h4>
-                        </CardActions>
-
-                        <GridContainer>
-                            <GridItem md={6}>
-                                <ResponsiveContainer height={275} width="100%">
-                                    <PieChart key={guidGenerator()}>
-                                        <Pie
-                                            key={guidGenerator()}
-                                            activeIndex={this.state.activeIndex}
-                                            activeShape={renderActiveShape}
-                                            data={yr1}
-                                            innerRadius={80}
-                                            outerRadius={100}
-                                            onMouseEnter={this.onPieEnter}
-                                            paddingAngle={1}
-                                            >
-                                                {
-                                                    yr1.map((entry, index) => <Cell key={guidGenerator()} fill={COLORS[index % COLORS.length]}/>)
-                                                }
-                                            </Pie>
-                                        </PieChart>
-
-                                    </ResponsiveContainer>
-                                </GridItem>
-                                <GridItem md={6}>
-                                    <ResponsiveContainer height={275} width="100%">
-                                        <PieChart key={guidGenerator()}>
-                                            <Pie
-                                                key={guidGenerator()}
-                                                activeIndex={this.state.activeIndex}
-                                                activeShape={renderActiveShape}
-                                                data={yr2}
-                                                innerRadius={80}
-                                                outerRadius={100}
-                                                onMouseEnter={this.onPieEnter}
-                                                paddingAngle={1}
-                                                >
-                                                    {
-                                                        yr2.map((entry, index) => <Cell key={guidGenerator()} fill={COLORS[index % COLORS.length]}/>)
-                                                    }
-                                                </Pie>
-                                            </PieChart>
-                                        </ResponsiveContainer>
-                                </GridItem>
-                            </GridContainer>
-                        </Card>
-                    </div>
-                );
-            }
-        }
-
-
-
-        export default withStyles(infoGraphicStyle)(ProductionChart);
+export default ProductionChart;

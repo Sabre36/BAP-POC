@@ -77,7 +77,7 @@ class App extends React.Component {
             <div>
                 <Helmet>
                     <meta name="description" content="Best Aquaculture Practices Certification" />
-                    <meta name="application-name" content="Best Aquaculture Practices Certification" />\
+                    <meta name="application-name" content="Best Aquaculture Practices Certification" />
 
                     <meta name="twitter:card" content="summary" />
                     <meta name="twitter:title" content="Best Aquaculture Practices Certification" />

@@ -31,7 +31,7 @@ class InfoGraphic3 extends React.Component {
             <div>
                 <Card className={classes.card} style={{backgroundColor: '#7E46B7'}}>
                     <div className={classes.heading}>
-                        Supply Chain (YoY) &nbsp;
+                        Supply Chain &nbsp;
                         <Tooltip classes={{ tooltip: classes.lightTooltip }}
                             title="Growth or decline of number of facilities in this supply chain from the previous calendar year.">
                             <span className={classes.tooltipCursor}>
@@ -48,18 +48,20 @@ class InfoGraphic3 extends React.Component {
                                 </GridItem>
                                 <GridItem md={3} className={classes.title}>
                                     {yr2.suppliers}
-
+                                    {/*
                                     <label className={classes.delta}>{delta1}%
                                         <span className={classes.arrows}>
                                             { delta1 < 0 && <i className={"fa fa-md fa-arrow-down"} title="Decrease"/>}
                                             { delta1 > 0 && <i className={"fa fa-md fa-arrow-up"} title="Increase"/>}
                                         </span>
                                     </label>
+                                    */}
 
                                     <label className={classes.legend}>Suppliers</label>
                                 </GridItem>
                                 <GridItem md={3} className={classes.title}>
                                     {yr2.plants}
+                                    {/*
 
                                     <label className={classes.delta}>{delta2}%
                                         <span className={classes.arrows}>
@@ -67,18 +69,21 @@ class InfoGraphic3 extends React.Component {
                                             { delta2 > 0 && <i className={"fa fa-md fa-arrow-up"} title="Increase"/>}
                                         </span>
                                     </label>
+                                    */}
 
                                     <label className={classes.legend}>Plants</label>
                                 </GridItem>
                                 <GridItem md={3} className={classes.title}>
                                     {yr2.farms}
 
+                                    {/*
                                     <label className={classes.delta}>{delta3}%
                                         <span className={classes.arrows}>
                                             { delta3 < 0 && <i className={"fa fa-md fa-arrow-down"} title="Decrease"/>}
                                             { delta3 > 0 && <i className={"fa fa-md fa-arrow-up"} title="Increase"/>}
                                         </span>
                                     </label>
+                                    */}
 
                                     <label className={classes.legend}>Farms</label>
                                 </GridItem>

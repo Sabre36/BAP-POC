@@ -8,7 +8,7 @@ import DefaultTooltipContent from 'recharts/lib/component/DefaultTooltipContent'
 import MUITooltip from '@material-ui/core/Tooltip';
 import MenuIcon from '@material-ui/icons/Menu';
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
-import riskData from './../../assets/data/Kroger/risk_scores.json';
+import riskData from './../../assets/data/risk_scores.json';
 import sortBy from './../../views/PortalPage/Helpers/sortBy.jsx';
 import round from "./../../views/PortalPage/Helpers/round.jsx";
 import guidGenerator from './../../views/PortalPage/Helpers/guidGenerator.jsx';
@@ -113,7 +113,7 @@ class RiskDilutionChart extends React.Component {
                             <MenuIcon className={classes.iconButtonStyle}/>
                         </IconButton>
                         <h4 className={classes.infoGraphicTitle}>
-                            Risk - Supplier dilution
+                            Risk - Supply chain dilution
                             <MUITooltip
                                 classes={{ tooltip: classes.lightTooltip }}
                                 title={tooltipTitle({rejects})}>
@@ -134,7 +134,7 @@ class RiskDilutionChart extends React.Component {
                             <BarChart
                                 data={dilutionData}
                                 layout="vertical"
-                                margin={{top: 20, right: 30, left: 20, bottom: 5}}>
+                                >
 
                                 <XAxis type="number" hide />
                                 <YAxis type="category" dataKey="Supplier" width={225} />

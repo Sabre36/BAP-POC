@@ -1,0 +1,155 @@
+[
+  {
+    "Supplier": "Supplier 1 .................",
+    "Shipped": 635.21,
+    "Demand": 635.21,
+    "DilutionRatio": 3.4
+  },
+  {
+    "Supplier": "Supplier 2 .................",
+    "Shipped": 68.71,
+    "Demand": 30.92,
+    "DilutionRatio": 1.5
+  },
+  {
+    "Supplier": "Supplier 3  .................",
+    "Shipped": 3518.25,
+    "Demand": 1011.12,
+    "DilutionRatio": 6.5
+  },
+  {
+    "Supplier": "Supplier 4 .................",
+    "Shipped": 1028.05,
+    "Demand": 1076.71,
+    "DilutionRatio": 4.5
+  },
+  {
+    "Supplier": "Supplier 5 .................",
+    "Shipped": 482.11,
+    "Demand": 424.73,
+    "DilutionRatio": 11.2
+  },
+  {
+    "Supplier": "Supplier 6 .................",
+    "Shipped": 460.98,
+    "Demand": 460.98,
+    "DilutionRatio": 1.8
+  },
+  {
+    "Supplier": "Supplier 7 .................",
+    "Shipped": 2730.68,
+    "Demand": 2529.63,
+    "DilutionRatio": 14.2
+  },
+  {
+    "Supplier": "Supplier 8 .................",
+    "Shipped": 1528.03,
+    "Demand": 1538.47,
+    "DilutionRatio": 1
+  },
+  {
+    "Supplier": "Supplier 9 .................",
+    "Shipped": 11.15,
+    "Demand": 20.1,
+    "DilutionRatio": 7.2,
+    "Farms": 11
+  },
+  {
+    "Supplier": "Supplier 10 .................",
+    "Shipped": 16.21,
+    "Demand": 18.26,
+    "DilutionRatio": 11.4,
+    "Farms": 20
+  },
+  {
+    "Supplier": "Supplier 11 .................",
+    "Shipped": 166.12,
+    "Demand": 160,
+    "DilutionRatio": 8.1,
+    "Farms": 14
+  },
+  {
+    "Supplier": "Supplier 12 .................",
+    "Shipped": 5.35,
+    "Demand": 7.16,
+    "DilutionRatio": 2.1,
+    "Farms": 3
+  },
+  {
+    "Supplier": "Supplier 13 .................",
+    "Shipped": 1695.94,
+    "Demand": 1821,
+    "DilutionRatio": 1.3,
+    "Farms": 2
+  },
+  {
+    "Supplier": "Supplier 14 .................",
+    "Shipped": 45.55,
+    "Demand": 37.4,
+    "DilutionRatio": 2,
+    "Farms": 4
+  },
+  {
+    "Supplier": "Supplier 15 .................",
+    "Shipped": 1167.5,
+    "Demand": 2125.44,
+    "DilutionRatio": 4.2,
+    "Farms": 5
+  },
+  {
+    "Supplier": "Supplier 16 .................",
+    "Shipped": 586.22,
+    "Demand": 644.85,
+    "DilutionRatio": 3.3,
+    "Farms": 8
+  },
+  {
+    "Supplier": "Supplier 17 .................",
+    "Shipped": 0,
+    "Demand": 0,
+    "DilutionRatio": 4.3,
+    "Farms": 7
+  },
+  {
+    "Supplier": "Supplier 18 .................",
+    "Shipped": 443.89,
+    "Demand": 463.25,
+    "DilutionRatio": 5.4,
+    "Farms": 11
+  },
+  {
+    "Supplier": "Supplier 19 .................",
+    "Shipped": 1296.73,
+    "Demand": 2121.59,
+    "DilutionRatio": 2.4,
+    "Farms": 3
+  },
+  {
+    "Supplier": "Supplier 20 .................",
+    "Shipped": 716.1,
+    "Demand": 698.73,
+    "DilutionRatio": 1.6,
+    "Farms": 2
+  },
+  {
+    "Supplier": "Supplier 21 .................",
+    "Shipped": 86.94,
+    "Demand": 78.95,
+    "DilutionRatio": 1.2,
+    "Farms": 2
+  },
+  {
+    "Supplier": "Supplier 22 .................",
+    "Shipped": 694.76,
+    "Demand": 441.42,
+    "DilutionRatio": 6.2,
+    "Farms": 6
+  },
+  {
+    "Supplier": "Supplier 23 .................",
+    "Shipped": null,
+    "Demand": 4.2,
+    "DilutionRatio": 3.4,
+    "Farms": 7
+  }
+]

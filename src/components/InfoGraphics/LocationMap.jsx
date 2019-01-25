@@ -171,7 +171,14 @@ class LocationMap extends React.Component {
                 paddingRight: '20px',
                 cursor: 'pointer',
                 fontWeight: 400
-            }
+            },
+            anchorFocus: {
+                fontSize: '13px',
+                paddingRight: '20px',
+                cursor: 'pointer',
+                fontWeight: 400,
+                color: '#7bd34b'
+            },
         };
 
         return (
@@ -194,7 +201,7 @@ class LocationMap extends React.Component {
                     </CardActions>
 
                     <div style={styles.viewContainer}>
-                        <a aria-label='Shipments' style={styles.anchor} onClick={this.handleViewShips.bind(this)}> Shipments </a>
+                        <a aria-label='Shipments' style={styles.anchorFocus} onClick={this.handleViewShips.bind(this)}> Shipments </a>
                         <a aria-label='Demand' style={styles.anchor} onClick={this.handleViewProjected.bind(this)}> Demand </a>
                         <a aria-label='Production' style={styles.anchor} onClick={this.handleViewProduction.bind(this)}> Production </a>
                     </div>

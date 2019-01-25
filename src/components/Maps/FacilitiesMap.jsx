@@ -7,6 +7,14 @@ import {
   Marker
 } from "react-google-maps";
 
+import { MarkerWithLabel } from 'react-google-maps/lib/components/addons/MarkerWithLabel';
+
+var markerStyling= {
+  clear: "both", display: "inline-block", backgroundColor: "#00921A", fontWeight: '500',
+  color: "#FFFFFF", boxShadow: "0 6px 8px 0 rgba(63,63,63,0.11)", borderRadius: "23px",
+  padding: "8px 16px", whiteSpace: "nowrap", width: "160px", textAlign: "center"
+};
+
 const CustomSkinMap = withScriptjs(
   withGoogleMap(props => (
     <GoogleMap
@@ -78,15 +86,21 @@ const CustomSkinMap = withScriptjs(
         ]
       }}
     >
-    <Marker position={{ lat: -2.191198, lng: -79.879930 }} />
+    <Marker position={{ lat: -2.191198, lng: -79.879930 }}
+        icon={{
+              url: "/assets/img/svg/globe.svg"
+            }}
+    />
     <Marker position={{ lat: -2.223363, lng: -80.958462 }} />
+
+{/*
     <Marker position={{ lat: -3.292368, lng: -79.848633 }} />
 
     <Marker position={{ lat: 13.736717, lng: 100.523186 }} />
     <Marker position={{ lat: 23.179260, lng: 77.454422 }} />
     <Marker position={{ lat: 22.279995, lng: 114.175468 }} />
 
-
+*/}
 
     </GoogleMap>
   ))

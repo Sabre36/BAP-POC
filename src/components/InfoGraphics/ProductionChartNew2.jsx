@@ -29,8 +29,8 @@ class DemandChart extends React.Component {
 
         const data = [
             //{name: '2016', shipped: 28872.39, projected: null, production: null},
-            {name: '2017', "shipped 2016": 30010.33, "projected: 2017": 24907.73, "production 2017": 96104.01},
-            //{name: '2018', shipped: null, projected: null, production: 90207},
+            {name: '2016', plant: 27011.33, projected: 24907.73, farm: 24000.01},
+            {name: '2017', plant: 21500, projected: 26011, farm: 22331},
         ];
 
         return (
@@ -41,7 +41,7 @@ class DemandChart extends React.Component {
                             <MenuIcon className={classes.iconButtonStyle}/>
                         </IconButton>
                         <h4 className={classes.infoGraphicTitle}>
-                            Demand versus capacity
+                            Demand versus Production
                             <MUITooltip
                                 classes={{ tooltip: classes.lightTooltip }}
                                 title={tooltipTitle()}>
@@ -58,9 +58,9 @@ class DemandChart extends React.Component {
                             <YAxis/>
                             <Tooltip/>
                             <Legend align="right" verticalAlign="middle" layout="vertical"/>
-                            <Bar dataKey="projected 2017" name="Demand" fill="#8AA2C8" />
-                            <Bar dataKey="shipped 2016" name="Shipped" fill="#02419A" />
-                            <Bar dataKey="production 2017" name="Production" fill="#4C8623" />
+                            <Bar dataKey="projected" name="Demand" fill="darkred" />
+                            <Bar dataKey="plant" name="Plant" fill="#02419A" />
+                            <Bar dataKey="farm" name="Farm" fill="#4C8623" />
                         </BarChart>
                     </ResponsiveContainer>
                 </Card>

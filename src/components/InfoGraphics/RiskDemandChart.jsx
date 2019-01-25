@@ -8,11 +8,13 @@ import DefaultTooltipContent from 'recharts/lib/component/DefaultTooltipContent'
 import MuiTooltip from '@material-ui/core/Tooltip';
 import MenuIcon from '@material-ui/icons/Menu';
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
-import riskData from './../../assets/data/Kroger/risk_scores.json';
+import riskData from './../../assets/data/risk_scores.json';
 import sortBy from './../../views/PortalPage/Helpers/sortBy.jsx';
 import round from "./../../views/PortalPage/Helpers/round.jsx";
 import guidGenerator from './../../views/PortalPage/Helpers/guidGenerator.jsx';
 import Typography from '@material-ui/core/Typography';
+
+import ProgressBar from './../ProgressBar/ProgressBar.jsx';
 
 const CustomTooltip = props => {
     // payload[0] doesn't exist when tooltip isn't visible
@@ -21,7 +23,7 @@ const CustomTooltip = props => {
         const newPayload = [
             {
                 value:
-                <div style={{padding: '5px', fontSize: '15px'}}>
+                <div style={{padding: '5px', fontSize: '14px'}}>
                     <text><i>{props.payload[0].payload.Supplier}</i></text><hr/>
                     <text><b>Shipped:</b> {round(props.payload[0].payload.Shipped,1)}</text><br/>
                     <text><b>Demand:</b> {round(props.payload[0].payload.Demand,1)}</text><br/>
@@ -125,7 +127,7 @@ class RiskDemandChart extends React.Component {
                             <MenuIcon className={classes.iconButtonStyle}/>
                         </IconButton>
                         <h4 className={classes.infoGraphicTitle}>
-                            Risk - Supplier meeting demand
+                            Risk - Supply chain meeting demand
                             <MuiTooltip
                                 classes={{ tooltip: classes.lightTooltip }}
                                 title={tooltipTitle({rejects})}>
@@ -142,14 +144,42 @@ class RiskDemandChart extends React.Component {
                     </span>
 
                     <div className={classes.riskBarsContainer} >
+
+
+
+                        <ProgressBar percentage={0}  label="Aquastar 0"/>
+                        <ProgressBar percentage={10}  label="A very long supplier label 10"/>
+                        <ProgressBar percentage={18}  label="short 18"/>
+                        <ProgressBar percentage={20}  label="Supplier 20"/>
+                        <ProgressBar percentage={21}  label="Supplier 21"/>
+                        <ProgressBar percentage={30}  label="Supplier 30"/>
+
+                        <ProgressBar percentage={32}  label="Aquastar 32"/>
+                        <ProgressBar percentage={39}  label="A very long supplier label 39"/>
+                        <ProgressBar percentage={38}  label="Supplier 38"/>
+                        <ProgressBar percentage={40}  label="Supplier 40"/>
+                        <ProgressBar percentage={41}  label="Supplier 41"/>
+                        <ProgressBar percentage={50}  label="Supplier 50"/>
+
+                        <ProgressBar percentage={52}  label="Aquastar 52"/>
+                        <ProgressBar percentage={60}  label="A very long supplier label 60"/>
+                        <ProgressBar percentage={68}  label="Supplier 68"/>
+                        <ProgressBar percentage={75}  label="Supplier 75"/>
+                        <ProgressBar percentage={90}  label="Supplier 90"/>
+                        <ProgressBar percentage={101}  label="Supplier 101"/>
+
+
+
+                        {/*
                         <ResponsiveContainer width="130%" height={750}>
                             <BarChart
                                 data={data}
                                 layout="vertical"
-                                margin={{top: 20, right: 30, left: 20, bottom: 5}}>
+                                >
 
                                 <XAxis type="number" hide />
-                                <YAxis type="category" dataKey="Supplier" width={225} />
+                                <YAxis type="category" dataKey="Supplier" width={225}
+                                     />
 
                                 <Bar dataKey="DemandScore" stackId="a">
                                     {data.map((entry, index) => (
@@ -166,6 +196,7 @@ class RiskDemandChart extends React.Component {
                                     <Tooltip content={<CustomTooltip/>} cursor={false}/>
                                 </BarChart>
                             </ResponsiveContainer>
+                            */}
                         </div>
                     </Card>
                 </div>

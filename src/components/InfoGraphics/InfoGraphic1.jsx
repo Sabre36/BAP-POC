@@ -14,7 +14,7 @@ import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle
 class InfoGraphic1 extends React.Component {
     render() {
         const { classes } = this.props;
-        const shipped = {volume: 28.9, label: 2016};
+        const shipped = {volume: 28.9, label: 2018};
         const demand = {volume: 24.9, label: 2017};
         let delta = Math.round( ((shipped.volume - demand.volume) / shipped.volume * 100));
 

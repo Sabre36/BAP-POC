@@ -65,18 +65,29 @@ const infoGraphicStyle = theme => ({
         fontSize: 15,
         padding: '10px'
     },
+    nonConfTable: {
+        margin: 0,
+        padding: 0,
+        marginTop: '-10px!important'
+    },
     tr: {
+        maxHeight: '20px',
+        padding: 0,
+        margin: 0,
         '&:hover': {
             backgroundColor: 'rgba(0,0,0,.075) !important',
         },
     },
     td: {
-        fontSize: '16px',
-        fontWeight: 300
+        fontSize: '14px',
+        fontWeight: 300,
+        whiteSpace: 'nowrap',
+        maxWidth: '20%'
     },
     th: {
-        fontSize: '18px',
-        fontWeight: 400
+        fontSize: '14px',
+        fontWeight: 400,
+        whiteSpace: 'nowrap',
     },
     redCircle: {
         color: '#ab0520',
@@ -115,9 +126,9 @@ const infoGraphicStyle = theme => ({
         maxHeight: '250px',
         overflowY: 'auto',
         overflowX: 'hidden',
-        width: '100%',
+        width: 'calc(100% - 55px)',
         position: 'absolute',
-        top: '95px'
+        top: '95px',
     },
     riskLabelLowest: {
         position: 'absolute',
@@ -128,7 +139,7 @@ const infoGraphicStyle = theme => ({
     },
     riskLabelHighest: {
         position: 'absolute',
-        right: '95px',
+        right: '55px',
         top: '80px',
         fontSize: '12px',
         textTransform: 'uppercase'

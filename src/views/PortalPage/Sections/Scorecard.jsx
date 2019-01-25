@@ -12,8 +12,8 @@ import InfoGraphic2 from "components/InfoGraphics/InfoGraphic2.jsx";
 import InfoGraphic3 from "components/InfoGraphics/InfoGraphic3.jsx";
 import DemandChart from "components/InfoGraphics/DemandChart.jsx";
 import LocationMap from "components/InfoGraphics/LocationMap.jsx";
-import ProductionChart from "components/InfoGraphics/ProductionChart.jsx";
-import Nonconformities from "components/InfoGraphics/Nonconformities.jsx";
+import ProductionChart from "components/InfoGraphics/ProductionChartNew.jsx";
+import Nonconformities from "components/InfoGraphics/NonconformitiesNew.jsx";
 import RiskDilutionChart from "components/InfoGraphics/RiskDilutionChart.jsx";
 import RiskDemandChart from "components/InfoGraphics/RiskDemandChart.jsx";
 

@@ -1,0 +1,52 @@
+[
+    {
+        "reportType": "supplier",
+        "facilityType": "plant",
+        "localid": 12345,
+        "bapid": "P10440",
+        "endorsersServed": 3,
+        "suppliersServed": 2,
+        "rating": 4,
+        "facility":  {
+            "name": "Castlerock Fisheries Pvt. Ltd.",
+            "address": "etc.",
+            "country": "India",
+            "latitude": 47.722222,
+            "longitude": -72.222222
+        },
+        "production": [{
+            "species": "shrimp",
+            "year": 2017,
+            "2Star": 84,
+            "4Star": 84,
+            "total": 264,
+            "shipped": 6.99,
+            "projected": 4.99,
+            "delta": -2.0,
+            "risk": -2.0
+        }],
+        "suppliers": [
+            {"localID": 12834, "name": "Castlerock Supplier Pvt. Ltd.", "latitude": 47.722222, "longitude": -72.222222},
+            {"localID": 12835, "name": "Castlerock Supplier Sky's the Limit", "latitude": 47.333, "longitude": -72.333}
+        ],
+        "farms": [{
+            "localID": 12334, 
+            "bapid": "F10447", 
+            "rating": 3,
+            "facility":  {
+                "name": "Coastal Corporation Ltd. #1",
+                "address": "etc.",
+                "country": "India",
+                "latitude": 47.722222,
+                "longitude": -72.222222
+            },
+            "expiration": "04-18-2019", 
+            "plantsServed": 1, 
+            "production": [
+                {"species": "shrimp", "year": 2017, "total": 11, "diluted": 3.2},
+                {"species": "shrimp", "year": 2018, "total": 20, "diluted": 1.2},
+                {"species": "tilapia",  "year": 2017, "total": 3, "diluted": 3.2}
+            ]
+        }]
+    }
+]

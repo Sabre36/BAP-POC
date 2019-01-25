@@ -1,0 +1,73 @@
+[
+    {
+        "id": "5bbf8e9f9b14661a64856e8f",
+        "userName": "Molly Bloom",
+        "userPhone": null,
+        "userEmail": "mbloom@megaseafood.com",
+        "affiliations": [ {
+              "affiliation": "Mega Seafood",
+              "affiliationType": "supplier",
+              "affiliationRole": "user",
+              "entitlements": [{
+                  "entitlement": "Scorecard",
+                  "filters": [
+                        { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"] },
+                        { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] },
+                        { "units": ["Metric tons (MT)", "Kilograms (KG)", "Pounds (lbs)"]}
+                        ]
+                    },{
+                    "entitlement": "Supply chain analysis",
+                    "filters": [
+                        { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"] },
+                        { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] },
+                        { "units": ["Metric tons (MT)", "Kilograms (KG)", "Pounds (lbs)"] },
+                        { "comparison": ["Shipments 2016", "Shipments 2017", "Projected 2017", "Projected 2018"] }
+                        ]
+                    },{
+                    "entitlement": "Non-conformities",
+                    "filters": [
+                        { "species": ["Catfish", "Mussels", "Pangasius", "Salmon", "Shrimp", "Tilapia", "Trout"] },
+                        { "countries": ["Bangladesh", "Brazil", "Canada", "Chile", "Equador", "Guatamala", "Indonesia", "United States"] },
+                        { "facilities": ["All", "Plants", "Farms", "Feedmills", "Hatcheries"]},
+                        { "audits": ["Last audit", "All"]}
+                        ]
+                    },{
+                    "entitlement": "Notifications",
+                    "filters": [],
+                    "messages": [
+                        { "message": "The system will be down for maintainence on Friday Nov 1, 2019 at 12:00AM EST","type": "info" },
+                        { "message": "Your certification expires in 22 days","type": "error" }
+                    ]
+                }
+            ]
+        },{
+            "affiliation": "Walmart",
+            "affiliationType": "endorser",
+            "affiliationRole": "admin",
+            "entitlements": [ {
+                "entitlement": "Scorecard",
+                "filters": [
+                      { "species": ["Shrimp", "Tilapia"] },
+                      { "countries": ["China", "India", "Thailand", "Viet Nam"]},
+                      { "units": ["Metric tons (MT)", "Kilograms (KG)", "Pounds (lbs)"]}
+                  ]
+                },{
+                "entitlement": "Non-conformities",
+                    "filters": [
+                        { "species": ["Shrimp", "Tilapia"] },
+                        { "countries": ["China", "India", "Thailand", "Viet Nam"] },
+                        { "facilities": ["All", "Plants", "Farms", "Feedmills", "Hatcheries"]},
+                        { "audits": ["All", "Last audit"]}
+                    ]
+                },{
+                "entitlement": "Supply chain analysis",
+                    "filters": [
+                        { "species": ["Shrimp", "Tilapia"] },
+                        { "countries": ["China", "India", "Thailand", "Viet Nam"] },
+                        { "units": ["Metric tons (MT)", "Kilograms (KG)", "Pounds (lbs)"]}
+                  ]
+              }
+          ]
+        }]
+    }
+]
