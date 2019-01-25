@@ -64,6 +64,8 @@ class RiskDemandChart extends React.Component {
     render() {
         const { classes } = this.props;
 
+        let tooltipData = [{demand: 10, shipped: 8, farmproduction: 3}];
+
         let data = [];
         let rejects = 0;
 
@@ -147,7 +149,7 @@ class RiskDemandChart extends React.Component {
 
 
 
-                        <ProgressBar percentage={0}  label="Aquastar 0"/>
+                        <ProgressBar percentage={0}  label="Aquastar 0" data={tooltipData}/>
                         <ProgressBar percentage={10}  label="A very long supplier label 10"/>
                         <ProgressBar percentage={18}  label="short 18"/>
                         <ProgressBar percentage={20}  label="Supplier 20"/>

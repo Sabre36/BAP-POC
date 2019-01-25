@@ -8,6 +8,7 @@ class Filler extends React.Component {
         let pct = this.props.percentage;
         let color;
         let adjPercent;
+        let tt;
 
         if (pct >= 0 && pct < 20) {
             adjPercent = 20;
@@ -26,9 +27,11 @@ class Filler extends React.Component {
             color = 'rgba(171,5,32,.9)';
         }
 
+        tt = JSON.stringify(this.props.data)
+
 
         return (
-            <div className="progress-filler" style={{ width: `${adjPercent}%`, backgroundColor: `${color}` }} />
+            <div className="progress-filler" style={{ width: `${adjPercent}%`, backgroundColor: `${color}` }} title={tt}/>
         );
     }
 }
@@ -40,10 +43,10 @@ class ProgressBar extends React.Component {
 
     render() {
         return (
-            <div className="progress-container">
+            <div className="progress-container" >
                 <label>{this.props.label}</label>
                 <div className="progress-bar">
-                    <Filler percentage={this.props.percentage} />
+                    <Filler percentage={this.props.percentage} data={this.props.data}/>
                 </div>
             </div>
         );

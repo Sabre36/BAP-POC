@@ -44,4 +44,5 @@
     height: 100%;
     border-radius: inherit;
     transition: width .3s ease-in;
+    cursor: pointer;
 }
