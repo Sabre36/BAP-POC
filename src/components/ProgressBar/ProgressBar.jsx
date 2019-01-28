@@ -2,6 +2,8 @@ import React from 'react';
 import './ProgressBar.css';
 
 
+
+
 class Filler extends React.Component {
     render() {
 

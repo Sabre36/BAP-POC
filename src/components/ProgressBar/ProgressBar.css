@@ -8,7 +8,7 @@
 }
 
 .progress-container > label {
-    line-height: 30px;
+    line-height: 28px;
     vertical-align: middle;
     width: 210px;
     display: inline-block;
@@ -30,11 +30,11 @@
 
 .progress-bar {
     position: relative;
-    height: 30px;
+    height: 28px;
     width: 100%;
 
     border-radius: 2px;
-    border: 1px solid rgba(0,0,0,.05);;
+    border: 1px solid rgba(0,0,0,.02);
     background-color: rgba(0,0,0,.1);
     margin-left: 4px;
 }
