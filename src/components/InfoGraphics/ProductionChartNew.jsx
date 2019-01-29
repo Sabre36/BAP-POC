@@ -106,7 +106,6 @@ class ProductionChart extends React.Component {
         }
     }
 
-
     componentDidMount(){
         this.processData();
     }

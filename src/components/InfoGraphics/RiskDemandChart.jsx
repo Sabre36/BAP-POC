@@ -64,7 +64,7 @@ class RiskDemandChart extends React.Component {
     render() {
         const { classes } = this.props;
 
-        let tooltipData = [{demand: 10, shipped: 8, farmproduction: 3}];
+        let tooltipData = [{supplier: 'blah', projected: 11, shipped: 8, production: 3}];
 
         let data = [];
         let rejects = 0;
@@ -147,28 +147,15 @@ class RiskDemandChart extends React.Component {
 
                     <div className={classes.riskBarsContainer} >
 
+                        {data.map((item) =>
+                            <ProgressBar key={guidGenerator()} label={item.Supplier} percent={item.percent} tooltipData={item} />
+                        )}
 
 
-                        <ProgressBar percentage={0}  label="Aquastar 0" data={tooltipData}/>
-                        <ProgressBar percentage={10}  label="A very long supplier label 10"/>
-                        <ProgressBar percentage={18}  label="short 18"/>
-                        <ProgressBar percentage={20}  label="Supplier 20"/>
-                        <ProgressBar percentage={21}  label="Supplier 21"/>
-                        <ProgressBar percentage={30}  label="Supplier 30"/>
 
-                        <ProgressBar percentage={32}  label="Aquastar 32"/>
-                        <ProgressBar percentage={39}  label="A very long supplier label 39"/>
-                        <ProgressBar percentage={38}  label="Supplier 38"/>
-                        <ProgressBar percentage={40}  label="Supplier 40"/>
-                        <ProgressBar percentage={41}  label="Supplier 41"/>
-                        <ProgressBar percentage={50}  label="Supplier 50"/>
-
-                        <ProgressBar percentage={52}  label="Aquastar 52"/>
-                        <ProgressBar percentage={60}  label="A very long supplier label 60"/>
-                        <ProgressBar percentage={68}  label="Supplier 68"/>
-                        <ProgressBar percentage={75}  label="Supplier 75"/>
-                        <ProgressBar percentage={90}  label="Supplier 90"/>
-                        <ProgressBar percentage={101}  label="Supplier 101"/>
+                        <ProgressBar percent={0} label="Aquastar" tooltipData={tooltipData}/>
+                        <ProgressBar percent={10} label="A very long supplier label abc ddd 10" tooltipData={tooltipData}/>
+                        <ProgressBar percent={18} label="short 18" tooltipData={tooltipData}/>
 
 
 

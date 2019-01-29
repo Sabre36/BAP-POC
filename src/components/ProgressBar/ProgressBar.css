@@ -26,6 +26,7 @@
     position: absolute;
     left: 210px;
     top: inherit;
+    width: calc(100% - 210px);
 }
 
 .progress-bar {
@@ -45,4 +46,32 @@
     border-radius: inherit;
     transition: width .3s ease-in;
     cursor: pointer;
+}
+
+.progress-tooltip-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.progress-tooltip-list > li {
+    line-height: 28px;
+    min-width: 400px;
+}
+
+.progress-tooltip-label  {
+    margin-left: 4px;
+    font-weight: 400!important;
+    text-align: right;
+    min-width: 150px;
+    display: inline-block;
+}
+
+.progress-tooltip-value  {
+    margin-left: 8px;
+    font-weight: 300!important;
+    text-align: right;
+    min-width: 45px;
+    display: inline-block;
 }
