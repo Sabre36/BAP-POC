@@ -18,7 +18,7 @@ import ProgressBar from './../ProgressBar/ProgressBar.jsx';
 const tooltipTitle = ({rejects}) => {
     return (
         <Typography>
-                <strong>Demand risk</strong> is defined as demand exceeding shipments.
+                <strong>Dilution risk</strong> is defined as shipments being diluted because of farms serving multiple supply chains <strong>-and-</strong>demand exceeding the dilulted shipments.
                 <br/>
                 <br/>
             { rejects > 0 &&
@@ -31,7 +31,7 @@ const tooltipTitle = ({rejects}) => {
 };
 
 
-class SupplierDemandChart extends React.Component {
+class SupplierDilutionChart extends React.Component {
 
     state = {
         units: 'MT'
@@ -44,20 +44,28 @@ class SupplierDemandChart extends React.Component {
     render() {
         const { classes } = this.props;
 
-        let data = [];
+        let dilutedData = [];
         let rejects = 0;
         let units = this.state.units;
 
         riskData.forEach(function(el) {
-            let percent = 100 * (el.shipped - el.demand) / ((el.shipped + el.demand) / 2);
-            //let percent = ((el.shipped - el.demand) / el.shipped) * 100;
+            // compute the dilution based on the ratio
+            let dilutedShipped = el.shipped * el.dilutionRatio;
+            el.dilutedShipped = dilutedShipped;
+            el.ratio = el.dilutionRatio;
+
+            // recalc the percent
+            let percent = 100 * (el.dilutedShipped - el.demand) / ((el.dilutedShipped + el.demand) / 2);
 
             // convert MT to kg/lbs
             el.demand_kg = el.demand * 1000;
             el.demand_lbs = el.demand * 2204.62;
 
-            el.shipped_kg = el.shipped * 1000;
-            el.shipped_lbs = el.shipped * 2204.62;
+            el.shipped_kg = el.dilutedShipped * 1000;
+            el.shipped_lbs = el.dilutedShipped * 2204.62;
+
+            el.dilutedShipped_kg = el.dilutedShipped * 1000;
+            el.dilutedShipped_lbs = el.dilutedShipped * 2204.62;
 
             el.curUnits = units;
 
@@ -65,20 +73,19 @@ class SupplierDemandChart extends React.Component {
             if (isNaN(percent)) {
                 percent = 0;
                 rejects+=1;
-            } else if (isNaN(el.shipped) || el.shipped === 0 || el.shipped === null ) {
+            } else if (isNaN(el.dilutedShipped) || el.dilutedShipped === 0 || el.dilutedShipped === null ) {
                 percent = 0;
                 rejects+=1;
             }
             else {
                 el.percent = percent;
                 el.label = el.supplier;
-
-                data.push(el);
+                dilutedData.push(el);
             }
         });
 
-        data.SortBy(el => el.percent, true);
-        console.log("DEMAND RISK: " + JSON.stringify(data));
+        dilutedData.SortBy(el => el.percent, true);
+        console.log("DILUTED RISK: " + JSON.stringify(dilutedData));
 
         return (
             <div>
@@ -88,7 +95,7 @@ class SupplierDemandChart extends React.Component {
                             <MenuIcon className={classes.iconButtonStyle}/>
                         </IconButton>
                         <h4 className={classes.infoGraphicTitle}>
-                            Risk - Supplier shipments meeting demand
+                            Risk - Supplier diluted shipments meeting demand
                             <Tooltip
                                 classes={{ tooltip: classes.lightTooltip }}
                                 title={tooltipTitle({rejects})}>
@@ -106,8 +113,8 @@ class SupplierDemandChart extends React.Component {
 
                     <div className={classes.riskBarsContainer} >
 
-                        {data.map((item) =>
-                            <ProgressBar key={GuidGenerator()} label={item.label} percent={item.percent} tooltipData={item} />
+                        {dilutedData.map((dilutedItem) =>
+                            <ProgressBar key={GuidGenerator()} label={dilutedItem.label} percent={dilutedItem.percent} tooltipData={dilutedItem} />
                         )}
                         </div>
                     </Card>
@@ -118,4 +125,4 @@ class SupplierDemandChart extends React.Component {
 
 
 
-export default withStyles(infoGraphicStyle)(SupplierDemandChart);
+export default withStyles(infoGraphicStyle)(SupplierDilutionChart);

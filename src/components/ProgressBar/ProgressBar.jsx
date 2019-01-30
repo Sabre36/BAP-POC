@@ -67,13 +67,14 @@ class ProgressBar extends React.Component {
         let units = this.props.tooltipData.curUnits;
         let demand = 0;
         let shipped = 0;
+        let dilutedShipped = 0;
 
         demand = units === "MT" ? this.props.tooltipData.demand : units === "kg" ? this.props.tooltipData.demand_kg : this.props.tooltipData.demand_lbs;
         shipped = units === "MT" ? this.props.tooltipData.shipped : units === "kg" ? this.props.tooltipData.shipped_kg : this.props.tooltipData.shipped_lbs;
+        dilutedShipped = units === "MT" ? this.props.tooltipData.dilutedShipped : units === "kg" ? this.props.tooltipData.dilutedShipped_kg : this.props.tooltipData.dilutedShipped_lbs;
 
         let delta = shipped - demand;
         let posSign = delta > 0 ? '+' : delta < 0 ? '-' : '';
-
         delta = Math.abs(delta);
 
         return (
@@ -96,6 +97,19 @@ class ProgressBar extends React.Component {
                                         <span className="progress-tooltip-label">Shipped:</span>
                                         <span className="progress-tooltip-value">{Round(shipped, 1)} {units}</span>
                                     </li>
+
+                                    { dilutedShipped !== shipped &&
+                                        <div>
+                                            <li>
+                                                <span className="progress-tooltip-label">Shipped (diluted):</span>
+                                                <span className="progress-tooltip-value">{Round(dilutedShipped, 1)} {units}</span>
+                                            </li>
+                                            <li>
+                                                <span className="progress-tooltip-label">Dilution ratio:</span>
+                                                <span className="progress-tooltip-value">{Round(this.props.tooltipData.dilutionRatio, 2)}</span>
+                                            </li>
+                                        </div>
+                                    }
 
                                     <li>
                                         <span className="progress-tooltip-label">Difference:</span>

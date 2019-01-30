@@ -55,7 +55,7 @@
     font-size: 16px;
 }
 
-.progress-tooltip-list > li {
+.progress-tooltip-list > * {
     line-height: 28px;
     min-width: 400px;
 }
@@ -72,6 +72,6 @@
     margin-left: 8px;
     font-weight: 300!important;
     text-align: right;
-    min-width: 45px;
+    min-width: 60px;
     display: inline-block;
 }
