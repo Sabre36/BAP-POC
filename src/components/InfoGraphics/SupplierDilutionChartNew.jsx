@@ -23,7 +23,7 @@ const tooltipTitle = ({rejects}) => {
                 <br/>
             { rejects > 0 &&
                 <div>
-                    Note: {rejects} suppliers were missing data and were omitted from this chart.
+                    Note: {rejects} supplier(s) were missing data and were omitted from this chart.
                 </div>
             }
         </Typography>

@@ -11,7 +11,7 @@ import InfoGraphic1 from "components/InfoGraphics/InfoGraphic1.jsx";
 import InfoGraphic2 from "components/InfoGraphics/InfoGraphic2.jsx";
 import InfoGraphic3 from "components/InfoGraphics/InfoGraphic3.jsx";
 import DemandChart from "components/InfoGraphics/DemandChart.jsx";
-import LocationMap from "components/InfoGraphics/LocationMap.jsx";
+import VolumeByPlantMap from "components/InfoGraphics/VolumeByPlantMap.jsx";
 import ProductionChart from "components/InfoGraphics/ProductionChartNew.jsx";
 import Nonconformities from "components/InfoGraphics/NonconformitiesNew.jsx";
 import SupplierDilutionChart from "components/InfoGraphics/SupplierDilutionChartNew.jsx";
@@ -42,7 +42,7 @@ class Scorecard extends React.Component {
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={6}>
-                        <LocationMap/>
+                        <VolumeByPlantMap/>
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={6}>

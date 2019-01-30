@@ -7,21 +7,15 @@ import { PieChart, Pie, Sector, Cell, Legend, ResponsiveContainer } from 'rechar
 import MenuIcon from '@material-ui/icons/Menu';
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
-import MUITooltip from '@material-ui/core/Tooltip';
+import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
-import guidGenerator from './../../views/PortalPage/Helpers/guidGenerator.jsx';
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
 
-const productionRatioData = [
-    { name: 'Plant', value: 221.9 },
-    { name: 'Farm', value: 333.2 }
-];
+import {GuidGenerator, ToCommas} from './../../views/PortalPage/Helpers/Utils.js';
+import scorecardData from './../../assets/data/scorecard.json';
+
 
 const COLORS = ['#37611A', '#65B12F'];
-
-function toCommas(value) {
-    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
 
 const renderActiveShape = (props) => {
     const RADIAN = Math.PI / 180;
@@ -41,15 +35,12 @@ const renderActiveShape = (props) => {
     let displayValue = '';
 
     if (units === "MT") {
-        displayValue = `${toCommas(payload.mt)} ${payload.units}`;
+        displayValue = `${ToCommas(payload.mt)} ${payload.units}`;
     } else if (units === "kg") {
-        displayValue = `${toCommas(payload.kg)} ${payload.units}`;
+        displayValue = `${ToCommas(payload.kg)} ${payload.units}`;
     } else {
-        displayValue = `${toCommas(payload.lbs.toFixed(1))} ${payload.units}`;
+        displayValue = `${ToCommas(payload.lbs.toFixed(1))} ${payload.units}`;
     }
-
-
-
 
     return (
         <g>
@@ -96,14 +87,10 @@ const tooltipTitle = () => {
 };
 
 class ProductionChart extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            activeIndex: 0,
-            units: 'MT',
-            data: productionRatioData
-        }
+    state = {
+        activeIndex: 0,
+        units: 'MT',
+        data: []
     }
 
     componentDidMount(){
@@ -112,19 +99,26 @@ class ProductionChart extends React.Component {
 
     processData() {
         let transform = [];
+        let units = this.state.units;
 
-        productionRatioData.forEach(function(el) {
-            el.mt = el.value;
-            el.kg = el.mt * 1000;
-            el.lbs = el.mt * 2204.62;
-            el.units = 'MT';
+        scorecardData.forEach(function(section) {
+            let pr = section.productionRatio;
 
-            transform.push(el);
-            console.log("AFTER TRANSFORM=>" + JSON.stringify(el) );
+            pr.forEach(function(el) {
+                el.mt = el.value;
+                el.kg = el.mt * 1000;
+                el.lbs = el.mt * 2204.62;
+                el.units = units;
+
+                transform.push(el);
+            });
         });
+
         this.setState({
             data: transform
         });
+
+        //console.log("RATIO CHART" + JSON.stringify(this.state.data) );
     }
 
     onPieEnter(data, index) {
@@ -145,13 +139,13 @@ class ProductionChart extends React.Component {
                         </IconButton>
                         <h4 className={classes.infoGraphicTitle} >
                             Production ratio by rating
-                            <MUITooltip
+                            <Tooltip
                                 classes={{ tooltip: classes.lightTooltip }}
                                 title={tooltipTitle()}>
                                 <span className={classes.tooltipIcon}>
                                     <i className={"fa fa-sm fa-info-circle"}/>
                                 </span>
-                            </MUITooltip>
+                            </Tooltip>
                         </h4>
                     </CardActions>
 
@@ -164,11 +158,11 @@ class ProductionChart extends React.Component {
                                 innerRadius={90}
                                 outerRadius={110}
                                 paddingAngle={1}
-                                units="kg"
+                                units={this.state.units}
                                 onMouseEnter={this.onPieEnter.bind(this)}
                                 >
                                 {
-                                    this.state.data.map((entry, index) => <Cell key={guidGenerator()} fill={COLORS[index % COLORS.length]}/>)
+                                    this.state.data.map((entry, index) => <Cell key={GuidGenerator()} fill={COLORS[index % COLORS.length]}/>)
                                 }
                             </Pie>
                             <Legend align="right" verticalAlign="middle" layout="vertical" iconType="circle"/>
