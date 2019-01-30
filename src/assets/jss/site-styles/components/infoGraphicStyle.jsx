@@ -81,27 +81,39 @@ const infoGraphicStyle = theme => ({
         },
     },
     td: {
-        fontSize: '14px',
+        fontSize: '15px',
+        fontWeight: 300,
+        whiteSpace: 'nowrap'
+
+    },
+    tdtotal: {
+        fontSize: '15px',
         fontWeight: 300,
         whiteSpace: 'nowrap',
-        maxWidth: '20%'
+        fontWeight: 400,
+        backgroundColor: 'rgba(0,0,0,.05)'
     },
+
     th: {
-        fontSize: '14px',
+        fontSize: '15px',
         fontWeight: 400,
         whiteSpace: 'nowrap',
+        backgroundColor: 'rgba(0,0,0,.05)'
     },
     redCircle: {
         color: '#ab0520',
-        paddingRight: '6px'
+        marginLeft: '6px',
+        fontSize: '14px'
     },
     orangeCircle: {
         color: '#F89C05',
-        paddingRight: '6px'
+        marginLeft: '6px',
+        fontSize: '14px'
     },
     yellowCircle: {
         color: '#FFCC03',
-        paddingRight: '6px'
+        marginLeft: '6px',
+        fontSize: '14px'
     },
     greenArrow: {
         color: '#37611A'

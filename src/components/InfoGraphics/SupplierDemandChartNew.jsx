@@ -8,7 +8,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
 import Typography from '@material-ui/core/Typography';
 
-import riskData from './../../assets/data/supplierByDemand.json';
+import scorecardData from './../../assets/data/scorecard.json';
 
 import SortBy from './../../views/PortalPage/Helpers/Utils.js';
 import {GuidGenerator} from './../../views/PortalPage/Helpers/Utils.js';
@@ -48,37 +48,41 @@ class SupplierDemandChart extends React.Component {
         let rejects = 0;
         let units = this.state.units;
 
-        riskData.forEach(function(el) {
-            let percent = 100 * (el.shipped - el.demand) / ((el.shipped + el.demand) / 2);
-            //let percent = ((el.shipped - el.demand) / el.shipped) * 100;
+        //console.log("SCORECARD:" + JSON.stringify(scorecardData));
 
-            // convert MT to kg/lbs
-            el.demand_kg = el.demand * 1000;
-            el.demand_lbs = el.demand * 2204.62;
+        scorecardData.forEach(function(section) {
+            let r = section.riskData;
 
-            el.shipped_kg = el.shipped * 1000;
-            el.shipped_lbs = el.shipped * 2204.62;
+            r.forEach(function(el) {
+                let percent = 100 * (el.shipped - el.demand) / ((el.shipped + el.demand) / 2);
 
-            el.curUnits = units;
+                el.demand_kg = el.demand * 1000;
+                el.demand_lbs = el.demand * 2204.62;
 
-            // drop missing records
-            if (isNaN(percent)) {
-                percent = 0;
-                rejects+=1;
-            } else if (isNaN(el.shipped) || el.shipped === 0 || el.shipped === null ) {
-                percent = 0;
-                rejects+=1;
-            }
-            else {
-                el.percent = percent;
-                el.label = el.supplier;
+                el.shipped_kg = el.shipped * 1000;
+                el.shipped_lbs = el.shipped * 2204.62;
 
-                data.push(el);
-            }
+                el.curUnits = units;
+
+                // drop missing records
+                if (isNaN(percent)) {
+                    percent = 0;
+                    rejects+=1;
+                } else if (isNaN(el.shipped) || el.shipped === 0 || el.shipped === null ) {
+                    percent = 0;
+                    rejects+=1;
+                }
+                else {
+                    el.percent = percent;
+                    el.label = el.name;
+
+                    data.push(el);
+                }
+            });
         });
 
         data.SortBy(el => el.percent, true);
-        console.log("DEMAND RISK: " + JSON.stringify(data));
+        //console.log("DEMAND RISK: " + JSON.stringify(data));
 
         return (
             <div>
@@ -115,7 +119,5 @@ class SupplierDemandChart extends React.Component {
             );
         }
     }
-
-
 
 export default withStyles(infoGraphicStyle)(SupplierDemandChart);

@@ -8,7 +8,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
 import Typography from '@material-ui/core/Typography';
 
-import riskData from './../../assets/data/supplierByDemand.json';
+import scorecardData from './../../assets/data/scorecard.json';
 
 import SortBy from './../../views/PortalPage/Helpers/Utils.js';
 import {GuidGenerator} from './../../views/PortalPage/Helpers/Utils.js';
@@ -48,44 +48,49 @@ class SupplierDilutionChart extends React.Component {
         let rejects = 0;
         let units = this.state.units;
 
-        riskData.forEach(function(el) {
-            // compute the dilution based on the ratio
-            let dilutedShipped = el.shipped * el.dilutionRatio;
-            el.dilutedShipped = dilutedShipped;
-            el.ratio = el.dilutionRatio;
+        scorecardData.forEach(function(section) {
+            let r = section.riskData;
 
-            // recalc the percent
-            let percent = 100 * (el.dilutedShipped - el.demand) / ((el.dilutedShipped + el.demand) / 2);
+            r.forEach(function(el) {
 
-            // convert MT to kg/lbs
-            el.demand_kg = el.demand * 1000;
-            el.demand_lbs = el.demand * 2204.62;
+                // compute the dilution based on the ratio
+                let dilutedShipped = el.shipped * el.dilutionRatio;
+                el.dilutedShipped = dilutedShipped;
+                el.ratio = el.dilutionRatio;
 
-            el.shipped_kg = el.dilutedShipped * 1000;
-            el.shipped_lbs = el.dilutedShipped * 2204.62;
+                // recalc the percent
+                let percent = 100 * (el.dilutedShipped - el.demand) / ((el.dilutedShipped + el.demand) / 2);
 
-            el.dilutedShipped_kg = el.dilutedShipped * 1000;
-            el.dilutedShipped_lbs = el.dilutedShipped * 2204.62;
+                // convert MT to kg/lbs
+                el.demand_kg = el.demand * 1000;
+                el.demand_lbs = el.demand * 2204.62;
 
-            el.curUnits = units;
+                el.shipped_kg = el.dilutedShipped * 1000;
+                el.shipped_lbs = el.dilutedShipped * 2204.62;
 
-            // drop missing records
-            if (isNaN(percent)) {
-                percent = 0;
-                rejects+=1;
-            } else if (isNaN(el.dilutedShipped) || el.dilutedShipped === 0 || el.dilutedShipped === null ) {
-                percent = 0;
-                rejects+=1;
-            }
-            else {
-                el.percent = percent;
-                el.label = el.supplier;
-                dilutedData.push(el);
-            }
+                el.dilutedShipped_kg = el.dilutedShipped * 1000;
+                el.dilutedShipped_lbs = el.dilutedShipped * 2204.62;
+
+                el.curUnits = units;
+
+                // drop missing records
+                if (isNaN(percent)) {
+                    percent = 0;
+                    rejects+=1;
+                } else if (isNaN(el.dilutedShipped) || el.dilutedShipped === 0 || el.dilutedShipped === null ) {
+                    percent = 0;
+                    rejects+=1;
+                }
+                else {
+                    el.percent = percent;
+                    el.label = el.name;
+                    dilutedData.push(el);
+                }
+            });
         });
 
         dilutedData.SortBy(el => el.percent, true);
-        console.log("DILUTED RISK: " + JSON.stringify(dilutedData));
+        //console.log("DILUTED RISK: " + JSON.stringify(dilutedData));
 
         return (
             <div>
