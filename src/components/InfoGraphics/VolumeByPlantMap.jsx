@@ -12,7 +12,7 @@ import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import infoGraphicStyle from 'assets/jss/site-styles/components/infoGraphicStyle.jsx';
 
-import {MergeArray} from './../../views/PortalPage/Helpers/Utils.js';
+import { MergeArray, GetVolumeByUnits } from './../../views/PortalPage/Helpers/Utils.js';
 import scorecardData from 'assets/data/scorecard.json';
 import geoData from "assets/data/all_geo.json";
 
@@ -36,7 +36,7 @@ function getRadius(vol) {
 const tooltipTitle = () => {
     return (
         <Typography>
-            A geographic comparison of plant <strong>demand</strong> (projected), <strong>actual</strong> shipments and <strong>production</strong> volumes.
+            A geographic comparison of plant <strong>shipments</strong>, <strong>projected</strong>, and <strong>projected</strong> volumes for the most recent data available.
         </Typography>
     );
 };
@@ -51,43 +51,13 @@ class VolumeByPlantMap extends React.Component {
     state = {
         view: 'shipments',
         color: '#02419A',
-        units: 'MT',
+        units: 'lbs',
         data: []
     }
 
     handleClick() {
         alert('click');
     }
-
-    // async handleViewShips() {
-    //     //this.setState({ view: 'shipments', color: getFillColor('shipments'), field: 'shippedRadius'} );
-    //     await this.setState((prevState, props) => {
-    //         return {
-    //           //view: 'projected',
-    //           color: getFillColor('shipments'),
-    //           view: prevState.view = 'shipments'
-    //         };
-    //       });
-    //
-    //       this.processData();
-    // }
-    //
-    // async handleViewProjected() {
-    //     await this.setState((prevState, props) => {
-    //         return {
-    //           //view: 'projected',
-    //           color: getFillColor('projected'),
-    //           view: prevState.view = 'projected'
-    //         };
-    //       });
-    //
-    //       this.processData();
-    // }
-    //
-    // async handleViewProduction() {
-    //     await this.setState({ view: 'production', color: getFillColor('production')} );
-    //     this.processData();
-    // }
 
     componentDidMount(){
         this.processData();
@@ -112,18 +82,17 @@ class VolumeByPlantMap extends React.Component {
         temp = MergeArray(pm, geoData, 'bapid');
 
         temp.forEach(function(el) {
-            //el.radius = getRadius(view === 'shipments' ? el.shipped : view === 'production' ? el.production : el.projected);
+
             transform.push({
                 bapid: el.bapid,
                 name: el.name,
                 country: el.country,
-                //radius: el.radius,
                 radius: getRadius(view === 'shipments' ? el.shipped : view === 'production' ? el.production : el.projected),
                 latitude: el.lat,
                 longitude: el.lon,
-                production: el.production,
-                shipped: el.shipped,
-                projected: el.projected,
+                production: GetVolumeByUnits(el.production, units),
+                shipped: GetVolumeByUnits(el.shipped, units),
+                projected: GetVolumeByUnits(el.projected, units),
                 fillKey: view === 'shipments' ? 'SHIPS' : view === 'production' ? 'PRODUCTION' : 'PROJECTED',
             });
         });
@@ -132,29 +101,12 @@ class VolumeByPlantMap extends React.Component {
             data: transform
         });
 
-        console.log('PROCESSDATA: records=' + this.state.data.length + ' view=' + this.state.view + '\n\n' +  JSON.stringify(this.state.data));
+        //console.log('PROCESSDATA: records=' + this.state.data.length + ' view=' + this.state.view + '\n\n' +  JSON.stringify(this.state.data));
     }
 
     render() {
 
         const { classes } = this.props;
-
-        // const styles = {
-        //     toggleContainer: {
-        //         height: 30,
-        //         //padding: `${theme.spacing.unit}px ${theme.spacing.unit * 2}px`,
-        //         display: 'flex',
-        //         alignItems: 'center',
-        //         justifyContent: 'center',
-        //         //margin: `${theme.spacing.unit}px 0`,
-        //     },
-        //     toggleButton: {
-        //         color: '#157bdc',
-        //     },
-        //     toggleButtonSelected: {
-        //         color: '#43A546'
-        //     }
-        // };
 
         return (
             <div>
@@ -194,7 +146,7 @@ class VolumeByPlantMap extends React.Component {
                         </ToggleButtonGroup>
                     </div>
 
-                    <PlantMapNew data={this.state.data} color={this.state.color} units={this.state.units}/>
+                    <PlantMapNew data={this.state.data} units={this.state.units} view={this.state.view}/>
 
                 </Card>
             </div>

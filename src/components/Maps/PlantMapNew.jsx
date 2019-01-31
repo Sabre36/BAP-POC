@@ -8,7 +8,6 @@ import './PlantMapNew.css';
 
 class PlantMapNew extends React.Component {
 
-
     addClickHandlers = (ref) => {
         if (ref && ref.map) {
             ref.map.svg.selectAll('.datamaps-bubble').on('click', (bubble) => {
@@ -16,7 +15,6 @@ class PlantMapNew extends React.Component {
             });
         }
     };
-
 
     render() {
         //console.log("IN PLANTMAP: " + JSON.stringify(this.props.data));
@@ -44,7 +42,7 @@ class PlantMapNew extends React.Component {
                             borderColor: 'rgba(0,0,0,.2)',
                             popupOnHover: true,
                             highlightOnHover: true,
-                            highlightFillColor: this.props.color,
+                            highlightFillColor: this.props.view === "shipment" ? 'rgba(#02419A, .25)' : this.props.view === "projected" ? 'rgba(#8AA2C8, .25)' : 'rgba(#4C8623, .25)',
                             highlightBorderColor: 'rgba(0, 0, 0, 0.2)',
                             highlightBorderWidth: 2,
                             highlightBorderOpacity: 1,
@@ -72,8 +70,8 @@ class PlantMapNew extends React.Component {
 PlantMapNew.propTypes = {
     mapStyle: PropTypes.object,
     data: PropTypes.array,
-    color: PropTypes.string,
-    units: PropTypes.string
+    units: PropTypes.string,
+    view: PropTypes.string
 };
 
 export default withStyles(infoGraphicStyle)(PlantMapNew);

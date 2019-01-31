@@ -18,6 +18,27 @@ export const MergeArray = (source, merge, by) => source.map(item => ({
     ...(merge.find(i => i[by] === item[by]) || {}),
 }));
 
+export function GetVolumeByUnits (vol, units) {
+    let newVol = 0;
+
+    switch (units) {
+        case 'MT': {
+            newVol = vol;
+            break;
+        }
+        case 'kg': {
+            newVol = vol * 1000;
+            break;
+        }
+        case 'lbs': {
+            newVol = vol * 2204.62;
+            break;
+        }
+    }
+
+    return newVol;
+}
+
 export default Array.prototype.SortBy = function(key_func, reverse=false){
     return this.sort( (a, b) => ( key_func(b) - key_func(a) ) * (reverse ? 1 : -1) )
 }
