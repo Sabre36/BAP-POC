@@ -13,6 +13,11 @@ export function ToCommas(value) {
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+export const MergeArray = (source, merge, by) => source.map(item => ({
+    ...item,
+    ...(merge.find(i => i[by] === item[by]) || {}),
+}));
+
 export default Array.prototype.SortBy = function(key_func, reverse=false){
     return this.sort( (a, b) => ( key_func(b) - key_func(a) ) * (reverse ? 1 : -1) )
 }

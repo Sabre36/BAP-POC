@@ -157,6 +157,19 @@ const infoGraphicStyle = theme => ({
         top: '80px',
         fontSize: '12px',
         textTransform: 'uppercase'
+    },
+    toggleContainer: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    toggleButton: {
+        color: '#157bdc',
+        textTransform: 'capitalize'
+    },
+    toggleButtonSelected: {
+        color: '#43A546',
+        textTransform: 'capitalize'
     }
 });
 

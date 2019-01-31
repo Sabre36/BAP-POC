@@ -1,0 +1,13 @@
+.hoverContainer {
+	padding: 4px;
+    margin: 8px;
+	border-radius: 1px;
+	background-color: #fff;
+	box-shadow: 1px 1px 5px #ccc;
+	font-size: 12px;
+	border: 1px solid #ccc;
+    z-index: 999999;
+    text-align: left;
+    display: block;
+    white-space: nowrap;
+}

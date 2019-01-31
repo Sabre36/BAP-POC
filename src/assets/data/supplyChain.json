@@ -30,8 +30,8 @@
             {"localID": 12835, "name": "Castlerock Supplier Sky's the Limit", "latitude": 47.333, "longitude": -72.333}
         ],
         "farms": [{
-            "localID": 12334, 
-            "bapid": "F10447", 
+            "localID": 12334,
+            "bapid": "F10447",
             "rating": 3,
             "facility":  {
                 "name": "Coastal Corporation Ltd. #1",
@@ -40,8 +40,8 @@
                 "latitude": 47.722222,
                 "longitude": -72.222222
             },
-            "expiration": "04-18-2019", 
-            "plantsServed": 1, 
+            "expiration": "04-18-2019",
+            "plantsServed": 1,
             "production": [
                 {"species": "shrimp", "year": 2017, "total": 11, "diluted": 3.2},
                 {"species": "shrimp", "year": 2018, "total": 20, "diluted": 1.2},

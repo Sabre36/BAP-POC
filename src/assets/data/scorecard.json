@@ -109,7 +109,9 @@
             { "bapid": "P10086", "name": "Xian-Ning Seafood Co. Ltd.", "latitude":  99.97365556, "longitude":  99.97365556, "shipped":  395, "projected":  395, "production":  107 },
             { "bapid": "P10440", "name": "Castlerock Fisheries Pvt. Ltd.", "latitude":  73.14153056, "longitude":  73.14153056, "shipped":  4.99, "projected":  4.99, "production":  110 },
             { "bapid": "P10434", "name": "Suryamitra Exim Pvt. Ltd. ", "latitude":  81.5194027, "longitude":  81.5194027, "shipped":  29.95, "projected":  29.95, "production":  795.98 },
-            { "bapid": "P10163", "name": "Sagar Grandhi Exports Ltd.", "latitude":  80.0297802, "longitude":  80.0297802, "shipped":  820.99, "projected":  820.99, "production":  1947 },
+
+            { "bapid": "P10163", "name": "Sagar Grandhi Exports Ltd.", "latitude": 15.25002117,"longitude": 80.0297802, "shipped":  820.99, "projected":  820.99, "production":  1947 },
+
             { "bapid": "P10430", "name": "PT. Surya Adikumala Abadi ", "latitude":  114.4218889, "longitude":  114.4218889, "shipped":  14.94, "projected":  null, "production":  234.5 },
             { "bapid": "P10427", "name": "Visakhaptnam", "latitude":  83.314966, "longitude":  83.314966, "shipped":  34.48, "projected":  34.48, "production":  739.4833333 },
             { "bapid": "P10209", "name": "Tongwei Hainan Aquatic Products Co. Ltd.", "latitude":  110.0827512, "longitude":  110.0827512, "shipped":  48.86, "projected":  48.86, "production":  8360.37 },
