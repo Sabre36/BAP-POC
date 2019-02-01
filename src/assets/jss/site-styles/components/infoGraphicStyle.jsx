@@ -49,19 +49,35 @@ const infoGraphicStyle = theme => ({
         paddingLeft: '12px'
     },
     tooltipIcon: {
-        color: 'rgba(0,0,0,.33)',
+        color: 'rgba(0,0,0,.84)',
         paddingLeft: '4px',
-        fontSize: '18px !important'
+        fontSize: '18px !important',
+        cursor: 'pointer'
     },
     tooltipCursor: {
         cursor: 'pointer'
     },
     lightTooltip: {
+        padding: '15px',
         background: theme.palette.common.white,
         color: theme.palette.text.primary,
+        opacity: '1.0!important',
         boxShadow: theme.shadows[1],
-        fontSize: '15px',
-        padding: '15px'
+        border: '1px solid rgba(0,0,0,.1)',
+        textAlign: 'left',
+        fontSize: '16px',
+    },
+    infoButtonTip: {
+        padding: '10px',
+        minWidth: '425px',
+        lineHeight: '24px',
+        background: theme.palette.common.white,
+        color: theme.palette.text.primary,
+        opacity: '1.0!important',
+        boxShadow: theme.shadows[1],
+        border: '1px solid rgba(0,0,0,.1)',
+        textAlign: 'left',
+        fontSize: '16px',
     },
     darkTooltip: {
         fontSize: 15,

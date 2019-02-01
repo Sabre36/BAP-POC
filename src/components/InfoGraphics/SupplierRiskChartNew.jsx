@@ -16,31 +16,31 @@ import {GuidGenerator} from './../../views/PortalPage/Helpers/Utils.js';
 
 import ProgressBar from './../ProgressBar/ProgressBar.jsx';
 
-
 const tooltipTitle = ({rejects}) => {
     return (
         <Typography>
-                <strong>Risk</strong> is defined when projected volume, utilizing a dilution algorithm, exceeds production volume.
+                <strong>Risk</strong> is defined when projected volume exceeds production volume.
                 <br/>
                 <br/>
                 <table>
                     <tr style={{verticalAlign: 'top'}}>
-                        <td><div style={{backgroundColor: 'rgb(55,97,26)', width: '15px', height: '15px', marginRight: '4px'}}/></td> <td>Diluted production 10% or greater than projected volume</td>
+                        <td><div style={{backgroundColor: 'rgb(55,97,26)', width: '15px', height: '15px', marginRight: '4px'}}/></td> <td>Production 10% or greater than projected volume</td>
                     </tr>
                     <tr style={{verticalAlign: 'top'}}>
-                        <td><div style={{backgroundColor: '#65B12F', width: '15px', height: '15px', marginRight: '4px'}}/></td> <td>Diluted roduction 0 to 10% greater than projected volume</td>
+                        <td><div style={{backgroundColor: '#65B12F', width: '15px', height: '15px', marginRight: '4px'}}/></td> <td>Production 0 to 10% greater than projected volume</td>
                     </tr>
                     <tr style={{verticalAlign: 'top'}}>
-                        <td><div style={{backgroundColor: 'rgb(228,136,0)', width: '15px', height: '15px', marginRight: '4px'}}/></td> <td>Diluted production 0 to-10% or less than projected volume</td>
+                        <td><div style={{backgroundColor: 'rgb(228,136,0)', width: '15px', height: '15px', marginRight: '4px'}}/></td> <td>Production 0 to-10% or less than projected volume</td>
                     </tr>
                     <tr style={{verticalAlign: 'top'}}>
-                        <td><div style={{backgroundColor: 'rgb(171,5,32)', width: '15px', height: '15px', marginRight: '4px'}}/></td> <td>Diluted production -10% or less than projected volume</td>
+                        <td><div style={{backgroundColor: 'rgb(171,5,32)', width: '15px', height: '15px', marginRight: '4px'}}/></td> <td>Production -10% or less than projected volume</td>
                     </tr>
                 </table>
 
-
             { rejects > 0 &&
                 <div>
+                    <br/>
+                    <br/>
                     Note: {rejects} supplier(s) were missing data and were omitted from this chart.
                 </div>
             }
@@ -49,15 +49,11 @@ const tooltipTitle = ({rejects}) => {
 };
 
 
-class SupplierDilutionChart extends React.Component {
+class SupplierRiskChart extends React.Component {
 
     state = {
         units: 'MT',
         open: false
-    }
-
-    handleClick() {
-        alert('click');
     }
 
     handleTooltipClose = () => {
@@ -68,32 +64,30 @@ class SupplierDilutionChart extends React.Component {
         this.setState({ open: true });
     };
 
+    handleClick() {
+        alert('click');
+    }
+
     render() {
         const { classes } = this.props;
 
-        let dilutedData = [];
+        let data = [];
         let rejects = 0;
         let units = this.state.units;
+
+        //console.log("SCORECARD:" + JSON.stringify(scorecardData));
 
         scorecardData.forEach(function(section) {
             let r = section.riskData;
 
             r.forEach(function(el) {
+                let percent = 100 * (el.production - el.projected) / ((el.production + el.projected) / 2);
 
-                // compute the dilution based on the ratio
-                el.dilutedProduction = el.production * el.dilutionRatio;
-                //el.ratio = el.dilutionRatio;
-
-                // recalc the percent
-                let percent = 100 * (el.dilutedProduction - el.projected) / ((el.dilutedProduction + el.projected) / 2);
-
-                // convert MT to kg/lbs
                 el.projected_kg = el.projected * 1000;
                 el.projected_lbs = el.projected * 2204.62;
-                el.production_kg = el.dilutedProduction * 1000;
-                el.production_lbs = el.dilutedProduction * 2204.62;
-                el.dilutedProduction_kg = el.dilutedProduction * 1000;
-                el.dilutedProduction_lbs = el.dilutedProduction * 2204.62;
+
+                el.shipped_kg = el.shipped * 1000;
+                el.shipped_lbs = el.shipped * 2204.62;
 
                 el.curUnits = units;
 
@@ -101,20 +95,21 @@ class SupplierDilutionChart extends React.Component {
                 if (isNaN(percent)) {
                     percent = 0;
                     rejects+=1;
-                } else if (isNaN(el.dilutedProduction) || el.dilutedProduction === 0 || el.dilutedProduction === null ) {
+                } else if (isNaN(el.shipped) || el.shipped === 0 || el.shipped === null ) {
                     percent = 0;
                     rejects+=1;
                 }
                 else {
                     el.percent = percent;
                     el.label = el.name;
-                    dilutedData.push(el);
+
+                    data.push(el);
                 }
             });
         });
 
-        dilutedData.SortBy(el => el.percent, true);
-        //console.log("DILUTED RISK: " + JSON.stringify(dilutedData));
+        data.SortBy(el => el.percent, true);
+        //console.log("projected RISK: " + JSON.stringify(data));
 
         return (
             <div>
@@ -126,7 +121,7 @@ class SupplierDilutionChart extends React.Component {
                             </IconButton>
 
                             <h4 className={classes.infoGraphicTitle}>
-                                Risk - Production (diluted) meeting projected volume
+                                Risk - Production meeting projected volume
 
                                 <Tooltip
                                     classes={{ tooltip: classes.infoButtonTip }}
@@ -153,17 +148,17 @@ class SupplierDilutionChart extends React.Component {
 
                         <div className={classes.riskBarsContainer} >
 
-                            {dilutedData.map((dilutedItem) =>
-                                <ProgressBar key={GuidGenerator()} label={dilutedItem.label} percent={dilutedItem.percent} tooltipData={dilutedItem} />
+                            {data.map((item) =>
+                                <ProgressBar key={GuidGenerator()} label={item.label} percent={item.percent} tooltipData={item} />
                             )}
                             </div>
-                        </ClickAwayListener>
-                    </Card>
-                </div>
-            );
-        }
+                    </ClickAwayListener>
+                </Card>
+            </div>
+        );
     }
+}
 
 
 
-export default withStyles(infoGraphicStyle)(SupplierDilutionChart);
+export default withStyles(infoGraphicStyle)(SupplierRiskChart);

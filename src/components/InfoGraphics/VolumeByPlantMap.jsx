@@ -7,6 +7,7 @@ import CardActions from '@material-ui/core/CardActions';
 import MenuIcon from '@material-ui/icons/Menu';
 import PlantMapNew from './../Maps/PlantMapNew.jsx';
 import Tooltip from '@material-ui/core/Tooltip';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Typography from '@material-ui/core/Typography';
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
@@ -49,6 +50,7 @@ class VolumeByPlantMap extends React.Component {
     }
 
     state = {
+        open: false,
         view: 'shipments',
         color: '#02419A',
         units: 'lbs',
@@ -62,6 +64,14 @@ class VolumeByPlantMap extends React.Component {
     componentDidMount(){
         this.processData();
     }
+
+    handleTooltipClose = () => {
+        this.setState({ open: false });
+    };
+
+    handleTooltipOpen = () => {
+        this.setState({ open: true });
+    };
 
     async handleChange (event, view) {
         await this.setState({ view });
@@ -111,43 +121,52 @@ class VolumeByPlantMap extends React.Component {
         return (
             <div>
                 <Card style={{height: '375px', overflow: 'sroll'}}>
-                    <CardActions>
-                        <IconButton aria-label='Menu' color='inherit' onClick={this.handleClick.bind(this)}>
-                            <MenuIcon className={classes.iconButtonStyle}/>
-                        </IconButton>
-                        <h4 className={classes.infoGraphicTitle}>
-                            Plant {this.state.view} volume
-                            <Tooltip
-                                classes={{ tooltip: classes.lightTooltip }}
-                                title={tooltipTitle()}>
-                                <span className={classes.tooltipIcon}>
-                                    <i className={'fa fa-sm fa-info-circle'}/>
-                                </span>
-                            </Tooltip>
-                        </h4>
-                    </CardActions>
+                    <ClickAwayListener onClickAway={this.handleTooltipClose}>
+                        <CardActions>
+                            <IconButton aria-label='Menu' color='inherit' onClick={this.handleClick.bind(this)}>
+                                <MenuIcon className={classes.iconButtonStyle}/>
+                            </IconButton>
+                            <h4 className={classes.infoGraphicTitle}>
+                                Plant {this.state.view} volume
+                                <Tooltip
+                                    classes={{ tooltip: classes.lightTooltip }}
+                                    PopperProps={{
+                                        disablePortal: true,
+                                    }}
+                                    onClose={this.handleTooltipClose}
+                                    open={this.state.open}
+                                    disableFocusListener
+                                    disableHoverListener
+                                    disableTouchListener
+                                    title={tooltipTitle()}>
+                                    <span className={classes.tooltipIcon} onClick={this.handleTooltipOpen}>
+                                        <i className={"fa fa-sm fa-info-circle"}/>
+                                    </span>
+                                </Tooltip>
+                            </h4>
+                        </CardActions>
 
-                    <div className={classes.toggleContainer}>
-                        <ToggleButtonGroup exclusive onChange={this.handleChange}>
-                            <ToggleButton value="shipments"
-                                className={ this.state.view === 'shipments' ? classes.toggleButtonSelected : classes.toggleButton }>
-                                Shipments
-                            </ToggleButton>
+                        <div className={classes.toggleContainer}>
+                            <ToggleButtonGroup exclusive onChange={this.handleChange}>
+                                <ToggleButton value="shipments"
+                                    className={ this.state.view === 'shipments' ? classes.toggleButtonSelected : classes.toggleButton }>
+                                    Shipments
+                                </ToggleButton>
 
-                            <ToggleButton value="projected"
-                                className={ this.state.view === 'projected' ? classes.toggleButtonSelected : classes.toggleButton }>
-                                Projected
-                            </ToggleButton>
+                                <ToggleButton value="projected"
+                                    className={ this.state.view === 'projected' ? classes.toggleButtonSelected : classes.toggleButton }>
+                                    Projected
+                                </ToggleButton>
 
-                            <ToggleButton value="production"
-                                className={ this.state.view === 'production' ? classes.toggleButtonSelected : classes.toggleButton }>
-                                Production
-                            </ToggleButton>
-                        </ToggleButtonGroup>
-                    </div>
+                                <ToggleButton value="production"
+                                    className={ this.state.view === 'production' ? classes.toggleButtonSelected : classes.toggleButton }>
+                                    Production
+                                </ToggleButton>
+                            </ToggleButtonGroup>
+                        </div>
 
-                    <PlantMapNew data={this.state.data} units={this.state.units} view={this.state.view}/>
-
+                        <PlantMapNew data={this.state.data} units={this.state.units} view={this.state.view}/>
+                    </ClickAwayListener>
                 </Card>
             </div>
         );

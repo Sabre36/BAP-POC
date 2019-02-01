@@ -16,28 +16,37 @@ class Filler extends React.Component {
         let pct = this.props.percentage;
         let color;
         let adjPercent;
-        let tt;
 
-
-        if (pct >= 20.0) {
-            adjPercent = 20;
-            color = 'rgba(55,97,26,.9)';
-        } else if (pct >= 0.0 && pct < 20.0) {
-            adjPercent = 40;
-            color = '#65B12F';
-        } else if (pct >= -10.0 && pct < 0 ) {
-            adjPercent = 60;
-            color = 'rgba(255,204,3,.9)';
-        }
-        else if (pct >= -20.0 && pct < -10.0) {
-            adjPercent = 80;
-            color = 'rgba(248,156,5,.9)';
-        }
-        else {
+        if (pct < -10.0 ) {
             adjPercent = 100;
             color = 'rgba(171,5,32,.9)';
+        } else if (pct < 0 && pct > -10.0) {
+            adjPercent = 75;
+            color = 'rgba(228,136,0,.9)';
+        } else if (pct >= 0 && pct < 10.0) {
+            adjPercent = 50;
+            color = '#65B12F';
+        } else {
+            adjPercent = 25;
+            color = 'rgba(55,97,26,.9)';
         }
 
+        // if (pct < 0) {
+        //     adjPercent = 100;
+        //     color = 'rgba(171,5,32,.9)'
+        // } else if (pct >= 0 && pct < 5.0) {
+        //     adjPercent = 80;
+        //     color = 'rgba(228,136,0,.9)';
+        // } else if (pct >= 5.0 && pct < 10.0 ) {
+        //     adjPercent = 60;
+        //     color = 'rgba(255,204,3,.9)';
+        // } else if (pct >= 10.0 && pct < 20.0) {
+        //     adjPercent = 40;
+        //     color = 'rgba(#65B12F, .9)';
+        // } else {
+        //     adjPercent = 20;
+        //     color = 'rgba(55,97,26,.9)';
+        // }
 
         return (
             <div className="progress-filler" style={{ width: `${adjPercent}%`, backgroundColor: `${color}` }} />
@@ -56,8 +65,6 @@ class ProgressBar extends React.Component {
         });
     };
 
-
-
     render() {
 
         const { label } = this.props;
@@ -65,15 +72,15 @@ class ProgressBar extends React.Component {
         const { percent } = this.props;
 
         let units = this.props.tooltipData.curUnits;
-        let demand = 0;
-        let shipped = 0;
-        let dilutedShipped = 0;
+        let projected = 0;
+        let production = 0;
+        let dilutedProduction = 0;
 
-        demand = units === "MT" ? this.props.tooltipData.demand : units === "kg" ? this.props.tooltipData.demand_kg : this.props.tooltipData.demand_lbs;
-        shipped = units === "MT" ? this.props.tooltipData.shipped : units === "kg" ? this.props.tooltipData.shipped_kg : this.props.tooltipData.shipped_lbs;
-        dilutedShipped = units === "MT" ? this.props.tooltipData.dilutedShipped : units === "kg" ? this.props.tooltipData.dilutedShipped_kg : this.props.tooltipData.dilutedShipped_lbs;
+        projected = units === "MT" ? this.props.tooltipData.projected : units === "kg" ? this.props.tooltipData.projected_kg : this.props.tooltipData.projected_lbs;
+        production = units === "MT" ? this.props.tooltipData.production : units === "kg" ? this.props.tooltipData.production_kg : this.props.tooltipData.production_lbs;
+        dilutedProduction = units === "MT" ? this.props.tooltipData.dilutedProduction : units === "kg" ? this.props.tooltipData.dilutedProduction_kg : this.props.tooltipData.dilutedProduction_lbs;
 
-        let delta = shipped - demand;
+        let delta = production - projected;
         let posSign = delta > 0 ? '+' : delta < 0 ? '-' : '';
         delta = Math.abs(delta);
 
@@ -89,27 +96,23 @@ class ProgressBar extends React.Component {
                                 <Divider/>
                                 <ul className="progress-tooltip-list">
                                     <li>
-                                        <span className="progress-tooltip-label">Demand:</span>
-                                        <span className="progress-tooltip-value">{Round(demand, 1)} {units}</span>
+                                        <span className="progress-tooltip-label">Projected:</span>
+                                        <span className="progress-tooltip-value">{Round(projected, 1)} {units}</span>
                                     </li>
 
                                     <li>
-                                        <span className="progress-tooltip-label">Shipped:</span>
-                                        <span className="progress-tooltip-value">{Round(shipped, 1)} {units}</span>
+                                        <span className="progress-tooltip-label">Production:</span>
+                                        <span className="progress-tooltip-value">{Round(production, 1)} {units}</span>
                                     </li>
 
-                                    { dilutedShipped !== shipped &&
-                                        <div>
-                                            <li>
-                                                <span className="progress-tooltip-label">Shipped (diluted):</span>
-                                                <span className="progress-tooltip-value">{Round(dilutedShipped, 1)} {units}</span>
-                                            </li>
-                                            <li>
-                                                <span className="progress-tooltip-label">Dilution ratio:</span>
-                                                <span className="progress-tooltip-value">{Round(this.props.tooltipData.dilutionRatio, 2)}</span>
-                                            </li>
-                                        </div>
-                                    }
+                                    <li>
+                                        <span className="progress-tooltip-label">Production (diluted):</span>
+                                        <span className="progress-tooltip-value">{Round(dilutedProduction, 1)} {units}</span>
+                                    </li>
+                                    <li>
+                                        <span className="progress-tooltip-label">Dilution ratio:</span>
+                                        <span className="progress-tooltip-value">{Round(this.props.tooltipData.dilutionRatio, 2)}</span>
+                                    </li>
 
                                     <li>
                                         <span className="progress-tooltip-label">Difference:</span>

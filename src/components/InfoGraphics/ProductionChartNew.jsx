@@ -8,6 +8,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import Tooltip from '@material-ui/core/Tooltip';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Typography from '@material-ui/core/Typography';
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
 
@@ -81,13 +82,14 @@ const renderActiveShape = (props) => {
 const tooltipTitle = () => {
     return (
         <Typography>
-            A ratio between plant and total farm volume
+            A ratio between 1 star and 2+ "capable" facilities
         </Typography>
     );
 };
 
 class ProductionChart extends React.Component {
     state = {
+        open: false,
         activeIndex: 0,
         units: 'MT',
         data: []
@@ -96,6 +98,14 @@ class ProductionChart extends React.Component {
     componentDidMount(){
         this.processData();
     }
+
+    handleTooltipClose = () => {
+        this.setState({ open: false });
+    };
+
+    handleTooltipOpen = () => {
+        this.setState({ open: true });
+    };
 
     processData() {
         let transform = [];
@@ -133,41 +143,51 @@ class ProductionChart extends React.Component {
         return (
             <div>
                 <Card className={classes.cardLarge}>
-                    <CardActions>
-                        <IconButton aria-label='Menu' color='inherit'>
-                            <MenuIcon className={classes.iconButtonStyle}/>
-                        </IconButton>
-                        <h4 className={classes.infoGraphicTitle} >
-                            Production ratio by rating
-                            <Tooltip
-                                classes={{ tooltip: classes.lightTooltip }}
-                                title={tooltipTitle()}>
-                                <span className={classes.tooltipIcon}>
-                                    <i className={"fa fa-sm fa-info-circle"}/>
-                                </span>
-                            </Tooltip>
-                        </h4>
-                    </CardActions>
+                    <ClickAwayListener onClickAway={this.handleTooltipClose}>
+                        <CardActions>
+                            <IconButton aria-label='Menu' color='inherit'>
+                                <MenuIcon className={classes.iconButtonStyle}/>
+                            </IconButton>
+                            <h4 className={classes.infoGraphicTitle} >
+                                Production ratio
+                                <Tooltip
+                                    classes={{ tooltip: classes.lightTooltip }}
+                                    PopperProps={{
+                                        disablePortal: true,
+                                    }}
+                                    onClose={this.handleTooltipClose}
+                                    open={this.state.open}
+                                    disableFocusListener
+                                    disableHoverListener
+                                    disableTouchListener
+                                    title={tooltipTitle()}>
+                                    <span className={classes.tooltipIcon} onClick={this.handleTooltipOpen}>
+                                        <i className={"fa fa-sm fa-info-circle"}/>
+                                    </span>
+                                </Tooltip>
+                            </h4>
+                        </CardActions>
 
-                    <ResponsiveContainer height="85%">
-                        <PieChart margin={{right: 40}}>
-                            <Pie
-                                activeIndex={this.state.activeIndex}
-                                activeShape={renderActiveShape}
-                                data={this.state.data}
-                                innerRadius={90}
-                                outerRadius={110}
-                                paddingAngle={1}
-                                units={this.state.units}
-                                onMouseEnter={this.onPieEnter.bind(this)}
-                                >
-                                {
-                                    this.state.data.map((entry, index) => <Cell key={GuidGenerator()} fill={COLORS[index % COLORS.length]}/>)
-                                }
-                            </Pie>
-                            <Legend align="right" verticalAlign="middle" layout="vertical" iconType="circle"/>
-                        </PieChart>
-                    </ResponsiveContainer>
+                        <ResponsiveContainer height="85%">
+                            <PieChart margin={{right: 40}}>
+                                <Pie
+                                    activeIndex={this.state.activeIndex}
+                                    activeShape={renderActiveShape}
+                                    data={this.state.data}
+                                    innerRadius={90}
+                                    outerRadius={110}
+                                    paddingAngle={1}
+                                    units={this.state.units}
+                                    onMouseEnter={this.onPieEnter.bind(this)}
+                                    >
+                                    {
+                                        this.state.data.map((entry, index) => <Cell key={GuidGenerator()} fill={COLORS[index % COLORS.length]}/>)
+                                    }
+                                </Pie>
+                                <Legend align="right" verticalAlign="middle" layout="vertical" iconType="circle"/>
+                            </PieChart>
+                        </ResponsiveContainer>
+                    </ClickAwayListener>
                 </Card>
             </div>
         );

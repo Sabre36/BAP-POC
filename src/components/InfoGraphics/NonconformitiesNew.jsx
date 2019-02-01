@@ -12,6 +12,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Tooltip from '@material-ui/core/Tooltip';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Typography from '@material-ui/core/Typography';
 import guidGenerator from './../../views/PortalPage/Helpers/guidGenerator.jsx';
 
@@ -29,10 +30,21 @@ const tooltipTitle = () => {
 
 
 class Nonconformities extends React.Component {
+    state = {
+        open: false
+    }
 
     handleClick() {
         alert('click');
     }
+
+    handleTooltipClose = () => {
+        this.setState({ open: false });
+    };
+
+    handleTooltipOpen = () => {
+        this.setState({ open: true });
+    };
 
     render() {
         const { classes } = this.props;
@@ -50,67 +62,77 @@ class Nonconformities extends React.Component {
         return (
             <div>
                 <Card className={classes.cardLarge}>
-                    <CardActions>
-                        <IconButton aria-label='Menu' color='inherit' onClick={this.handleClick.bind(this)}>
-                            <MenuIcon className={classes.iconButtonStyle}/>
-                        </IconButton>
-                        <h4 className={classes.infoGraphicTitle}>
-                            Non-conformance (last audit)
-                            <Tooltip
-                                classes={{ tooltip: classes.lightTooltip }}
-                                title={tooltipTitle()}>
-                                <span className={classes.tooltipIcon}>
-                                    <i className={"fa fa-sm fa-info-circle"}/>
-                                </span>
-                            </Tooltip>
-                        </h4>
-                    </CardActions>
+                    <ClickAwayListener onClickAway={this.handleTooltipClose}>
+                        <CardActions>
+                            <IconButton aria-label='Menu' color='inherit' onClick={this.handleClick.bind(this)}>
+                                <MenuIcon className={classes.iconButtonStyle}/>
+                            </IconButton>
+                            <h4 className={classes.infoGraphicTitle}>
+                                Non-conformance (last audit)
+                                <Tooltip
+                                    classes={{ tooltip: classes.infoButtonTip }}
+                                    PopperProps={{
+                                        disablePortal: true,
+                                    }}
+                                    onClose={this.handleTooltipClose}
+                                    open={this.state.open}
+                                    disableFocusListener
+                                    disableHoverListener
+                                    disableTouchListener
+                                    title={tooltipTitle()}>
+                                    <span className={classes.tooltipIcon} onClick={this.handleTooltipOpen}>
+                                        <i className={"fa fa-sm fa-info-circle"}/>
+                                    </span>
+                                </Tooltip>
+                            </h4>
+                        </CardActions>
 
-                    <CardContent style={{paddingTop: '4px'}}>
-                         <Paper className={classes.nonConfTable} >
-                            <Table padding="dense" >
-                                <TableHead>
-                                    <TableRow>
-                                        <TableCell className={classes.th} />
+                        <CardContent style={{paddingTop: '4px'}}>
+                             <Paper className={classes.nonConfTable} >
+                                <Table padding="dense" >
+                                    <TableHead>
+                                        <TableRow>
+                                            <TableCell className={classes.th} />
 
-                                        <TableCell className={classes.th} numeric>
-                                            <label title="Minor">Minor</label>
-                                            <span className={classes.yellowCircle}>
-                                                <i className={"fa fa-md fa-circle"} />
-                                            </span>
-                                        </TableCell>
-                                        <TableCell className={classes.th} numeric>
-                                            <label title="Major">Major</label>
-                                            <span className={classes.orangeCircle}>
-                                                <i className={"fa fa-md fa-circle"} />
-                                            </span>
-                                        </TableCell>
-                                        <TableCell className={classes.th} numeric>
-                                            <label title="Critical">Critical</label>
-                                            <span className={classes.redCircle}>
-                                                <i className={"fa fa-md fa-circle"}/>
-                                            </span>
-                                        </TableCell>
-                                        <TableCell numeric className={classes.tdtotal}>
-                                            <label title="Total">Total</label>
-                                        </TableCell>
-                                    </TableRow>
-                                </TableHead>
-
-                                <TableBody>
-                                    { data.map((item) =>
-                                        <TableRow className={classes.tr} key={guidGenerator()} >
-                                            <TableCell className={classes.td} key={guidGenerator()}>{item.name}</TableCell>
-                                            <TableCell className={classes.td} numeric> {item.minor}</TableCell>
-                                            <TableCell className={classes.td} numeric> {item.major}</TableCell>
-                                            <TableCell className={classes.td} numeric>{item.critical}</TableCell>
-                                            <TableCell className={classes.tdtotal} numeric>{item.total}</TableCell>
+                                            <TableCell className={classes.th} numeric>
+                                                <label title="Minor">Minor</label>
+                                                <span className={classes.yellowCircle}>
+                                                    <i className={"fa fa-md fa-circle"} />
+                                                </span>
+                                            </TableCell>
+                                            <TableCell className={classes.th} numeric>
+                                                <label title="Major">Major</label>
+                                                <span className={classes.orangeCircle}>
+                                                    <i className={"fa fa-md fa-circle"} />
+                                                </span>
+                                            </TableCell>
+                                            <TableCell className={classes.th} numeric>
+                                                <label title="Critical">Critical</label>
+                                                <span className={classes.redCircle}>
+                                                    <i className={"fa fa-md fa-circle"}/>
+                                                </span>
+                                            </TableCell>
+                                            <TableCell numeric className={classes.tdtotal}>
+                                                <label title="Total">Total</label>
+                                            </TableCell>
                                         </TableRow>
-                                    ) }
-                                </TableBody>
-                            </Table>
-                        </Paper>
-                    </CardContent>
+                                    </TableHead>
+
+                                    <TableBody>
+                                        { data.map((item) =>
+                                            <TableRow className={classes.tr} key={guidGenerator()} >
+                                                <TableCell className={classes.td} key={guidGenerator()}>{item.name}</TableCell>
+                                                <TableCell className={classes.td} numeric> {item.minor}</TableCell>
+                                                <TableCell className={classes.td} numeric> {item.major}</TableCell>
+                                                <TableCell className={classes.td} numeric>{item.critical}</TableCell>
+                                                <TableCell className={classes.tdtotal} numeric>{item.total}</TableCell>
+                                            </TableRow>
+                                        ) }
+                                    </TableBody>
+                                </Table>
+                            </Paper>
+                        </CardContent>
+                    </ClickAwayListener>
                 </Card>
             </div>
         );

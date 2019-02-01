@@ -15,7 +15,7 @@ import VolumeByPlantMap from "components/InfoGraphics/VolumeByPlantMap.jsx";
 import ProductionChart from "components/InfoGraphics/ProductionChartNew.jsx";
 import Nonconformities from "components/InfoGraphics/NonconformitiesNew.jsx";
 import SupplierDilutionChart from "components/InfoGraphics/SupplierDilutionChartNew.jsx";
-import SupplierDemandChart from "components/InfoGraphics/SupplierDemandChartNew.jsx";
+import SupplierRiskChart from "components/InfoGraphics/SupplierRiskChartNew.jsx";
 
 class Scorecard extends React.Component {
     render() {
@@ -54,7 +54,7 @@ class Scorecard extends React.Component {
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={6}>
-                        <SupplierDemandChart/>
+                        <SupplierRiskChart/>
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={6}>

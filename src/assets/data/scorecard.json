@@ -3,8 +3,8 @@
         "report": "scorecard",
         "type": "endorser",
         "productionRatio": [
-            { "name": "Plant", "value": 221.9 },
-            { "name": "Farm", "value": 333.2 }
+            { "name": "1 star", "value": 221.9 },
+            { "name": "2+ star (capable)", "value": 333.2 }
         ],
         "nonconformitiesData": [
             { "name": "Food Safety", "minor": 3, "major": 4, "critical": 0, "total": 7},
@@ -14,25 +14,24 @@
             { "name": "Total", "minor": 24, "Major": 6, "major": 3, "critical": 2, "total": 32}
         ],
         "riskData": [
-            { "name": "supplier 1", "shipped": 635.21, "demand": 635.21, "dilutionRatio": 0.90 },
-            { "name": "supplier 2", "shipped": 68.71, "demand": 30.92, "dilutionRatio": 1.0 },
-            { "name": "supplier 3 ","shipped": 3518.25, "demand": 1011.12, "dilutionRatio": 0.88},
-            { "name": "supplier 4","shipped": 1028.05,"demand": 1076.71, "dilutionRatio": 0.77},
-            { "name": "supplier 5", "shipped": 482.11, "demand": 424.73, "dilutionRatio": 1.0},
-            { "name": "supplier 6", "shipped": 460.98, "demand": 460.98, "dilutionRatio": 0.44 },
-            { "name": "supplier 7", "shipped": 2730.68, "demand": 2529.63, "dilutionRatio": 1.0 },
-            { "name": "supplier 8", "shipped": 1528.03, "demand": 1538.47,"dilutionRatio": 0.5},
-            { "name": "supplier 9", "shipped": 11.15,"demand": 20.1, "dilutionRatio": 0.22 },
-            { "name": "supplier 10", "shipped": 16.21, "demand": 18.26, "dilutionRatio": 0.9 },
-            { "name": "supplier 11", "shipped": 166.12, "demand": 160, "dilutionRatio": 0.44 },
-            { "name": "supplier 12", "shipped": 5.35, "demand": 7.16, "dilutionRatio": 0.882 },
-            { "name": "supplier 13", "shipped": 1695.94, "demand": 1821, "dilutionRatio": 0.44 },
-            { "name": "supplier 14", "shipped": 45.55, "demand": 37.4, "dilutionRatio": 0.29 },
-            { "name": "supplier 15", "shipped": 1167.5, "demand": 2125.44,"dilutionRatio": 0.882 },
-            { "name": "supplier 16", "shipped": 586.22,  "demand": 644.85, "dilutionRatio": 0.33 },
-            { "name": "supplier 17", "shipped": 0, "demand": 0,"dilutionRatio": 0.59 },
-            { "name": "supplier 18", "shipped": 443.89, "demand": 463.25, "dilutionRatio": 0.765 },
-            { "name": "supplier 19", "shipped": 1296.73, "demand": 2121.59, "dilutionRatio": 1.0 }
+            { "name": "supplier 1", "shipped": 635.21, "production": 633.2, "projected": 635.21, "dilutionRatio": 0.90 },
+            { "name": "supplier 2", "shipped": 68.71, "production": 28.1, "projected": 30.92, "dilutionRatio": 1.0 },
+            { "name": "supplier 3 ","shipped": 3518.25, "production": 1109, "projected": 1011.12, "dilutionRatio": 0.88},
+            { "name": "supplier 4","shipped": 1028.05, "production": 1092, "projected": 1076.71, "dilutionRatio": 0.77},
+            { "name": "supplier 5", "shipped": 482.11, "production": 425, "projected": 424.73, "dilutionRatio": 1.0},
+            { "name": "supplier 6", "shipped": 460.98, "production": 464.1, "projected": 460.98, "dilutionRatio": 0.44 },
+            { "name": "supplier 7", "shipped": 2730.68, "production": 3121, "projected": 2529.63, "dilutionRatio": 1.0 },
+            { "name": "supplier 8", "shipped": 1528.03, "production": 1529, "projected": 1538.47,"dilutionRatio": 0.5},
+            { "name": "supplier 9", "shipped": 11.15, "production": 20.2, "projected": 20.1, "dilutionRatio": 0.22 },
+            { "name": "supplier 10", "shipped": 16.21, "production": 643, "projected": 18.26, "dilutionRatio": 0.9 },
+            { "name": "supplier 11", "shipped": 166.12, "production": 162, "projected": 160, "dilutionRatio": 0.44 },
+            { "name": "supplier 12", "shipped": 5.35, "production": 7.1, "projected": 7.16, "dilutionRatio": 0.882 },
+            { "name": "supplier 13", "shipped": 1695.94, "production": 643, "production": 643, "projected": 1821, "dilutionRatio": 0.44 },
+            { "name": "supplier 14", "shipped": 45.55, "production": 48, "projected": 37.4, "dilutionRatio": 0.29 },
+            { "name": "supplier 15", "shipped": 1167.5, "production": 2124, "projected": 2125.44,"dilutionRatio": 0.882 },
+            { "name": "supplier 16", "shipped": 586.22,  "production": 643, "projected": 644.85, "dilutionRatio": 0.33 },
+            { "name": "supplier 17", "shipped": 443.89, "production": 400, "projected": 463.25, "dilutionRatio": 0.765 },
+            { "name": "supplier 18", "shipped": 1296.73, "production": 2189, "projected": 2121.59, "dilutionRatio": 1.0 }
         ],
         "plantMapData": [
             { "bapid": "P10230", "name": "Planta Quemchi ", "latitude":  -73.48881397, "longitude":  -73.48881397, "shipped":  19.25, "projected":  19.25, "production":  3797.5 },
