@@ -10,7 +10,7 @@ import aboutBAPStyle from "assets/jss/site-styles/views/landingPageSections/abou
 import InfoGraphic1 from "components/InfoGraphics/InfoGraphic1.jsx";
 import InfoGraphic2 from "components/InfoGraphics/InfoGraphic2.jsx";
 import InfoGraphic3 from "components/InfoGraphics/InfoGraphic3.jsx";
-import ComparisonChart from "components/InfoGraphics/ComparisonChartNew.jsx";
+import ComparisonChart from "components/InfoGraphics/ComparisonChartNew2.jsx";
 import VolumeByPlantMap from "components/InfoGraphics/VolumeByPlantMap.jsx";
 import ProductionChart from "components/InfoGraphics/ProductionChartNew.jsx";
 import Nonconformities from "components/InfoGraphics/NonconformitiesNew.jsx";

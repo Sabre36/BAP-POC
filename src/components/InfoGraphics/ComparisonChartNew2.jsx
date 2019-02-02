@@ -6,7 +6,7 @@ import CardActions from '@material-ui/core/CardActions';
 import MUITooltip from '@material-ui/core/Tooltip';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Typography from '@material-ui/core/Typography';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend,Cell, CartesianGrid, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend,Cell, CartesianGrid, ResponsiveContainer, LabelList} from 'recharts';
 import {GuidGenerator, ToCommas} from './../../views/PortalPage/Helpers/Utils.js';
 import MenuIcon from '@material-ui/icons/Menu';
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
@@ -20,6 +20,19 @@ const tooltipTitle = () => {
             <strong>Projected</strong> volume is compared to <strong>same year</strong> shipments and <strong>production</strong> (from audit data).
         </Typography>
     );
+};
+
+const renderCustomizedLabel = (props) => {
+  const { x, y, width, height, value } = props;
+
+
+  return (
+    <g>
+      <text x={x+width} y={y+width} fill="#000">
+        {value}
+      </text>
+    </g>
+  );
 };
 
 class ComparisonChart extends React.Component {
@@ -82,7 +95,7 @@ class ComparisonChart extends React.Component {
                             <MenuIcon className={classes.iconButtonStyle}/>
                         </IconButton>
                         <h4 className={classes.infoGraphicTitle}>
-                            Demand versus capacity
+                            Projected vs. shipped/production volumes
                             <MUITooltip
                                 classes={{ tooltip: classes.lightTooltip }}
                                 PopperProps={{
@@ -101,21 +114,24 @@ class ComparisonChart extends React.Component {
                         </h4>
                     </CardActions>
 
+                    <br/>
+                    <br/>
 
-                    <ResponsiveContainer width="90%" height={300}>
 
-                        <BarChart data={this.state.data}
-                            margin={{top: 5, right: 30, left: 100, bottom: 5}}>
-                               <XAxis dataKey="name" />
-                               <YAxis allowDataOverflow={true} padding={{left: 30, right: 30}}/>
-                               <Tooltip/>
-                               <Bar dataKey="volume" fill="#8884d8" padding={{left: 30, right: 30}}>
-                                {
+                    <ResponsiveContainer  height="60%">
+                        <BarChart width={400} height={200} data={this.state.data} layout="vertical" margin={{left: 50, right: 100}}>
+                           <XAxis type="number" axisLine={false} axisLine={false} tickLine={false}  padding={{ left: 40 }}/>
+                           <YAxis dataKey="name" type="category" axisLine={false} tickLine={false} tick={true} />
+                           <Bar dataKey="volume" barSize={50}>
+                               {
                                     this.state.data.map((entry, index) => {
                                         return <Cell fill={COLORS[index % COLORS.length]} />;
                                     })
                                 }
-                               </Bar>
+                                <LabelList dataKey="volume" position="right" offset={40}  />
+                           </Bar>
+
+
                           </BarChart>
                     </ResponsiveContainer>
                 </ClickAwayListener>
