@@ -2,16 +2,21 @@
     {
         "report": "scorecard",
         "type": "endorser",
+        "comparisonData": [
+            { "name": "Projected", "year": 2017, "volume": 24907.74 },
+            { "name": "Shipped", "year": 2016, "volume": 30010.33 },
+            { "name": "Production" , "year": 2017, "volume": 96104.01 }
+        ],
         "productionRatio": [
             { "name": "1 star", "value": 221.9 },
             { "name": "2+ star (capable)", "value": 333.2 }
         ],
         "nonconformitiesData": [
-            { "name": "Food Safety", "minor": 3, "major": 4, "critical": 0, "total": 7},
-            { "name": "Social", "minor": 12, "major": 1, "critical": 0, "total": 13},
-            { "name": "Environmental", "minor": 6, "major": 0, "critical": 1, "total": 7},
-            { "name": "Animal welfare", "minor": 3, "major": 1, "critical": 1, "total": 5},
-            { "name": "Total", "minor": 24, "Major": 6, "major": 3, "critical": 2, "total": 32}
+            { "name": "Food Safety", "minor": 3, "major": 4, "critical": 0, "total": 7 },
+            { "name": "Social", "minor": 12, "major": 1, "critical": 0, "total": 13 },
+            { "name": "Environmental", "minor": 6, "major": 0, "critical": 1, "total": 7 },
+            { "name": "Animal welfare", "minor": 3, "major": 1, "critical": 1, "total": 5 },
+            { "name": "Total", "minor": 24, "Major": 6, "major": 3, "critical": 2, "total": 32 }
         ],
         "riskData": [
             { "name": "supplier 1", "shipped": 635.21, "production": 633.2, "projected": 635.21, "dilutionRatio": 0.90 },
@@ -21,7 +26,7 @@
             { "name": "supplier 5", "shipped": 482.11, "production": 425, "projected": 424.73, "dilutionRatio": 1.0},
             { "name": "supplier 6", "shipped": 460.98, "production": 464.1, "projected": 460.98, "dilutionRatio": 0.44 },
             { "name": "supplier 7", "shipped": 2730.68, "production": 3121, "projected": 2529.63, "dilutionRatio": 1.0 },
-            { "name": "supplier 8", "shipped": 1528.03, "production": 1529, "projected": 1538.47,"dilutionRatio": 0.5},
+            { "name": "supplier 8", "shipped": 1528.03, "production": 1529, "projected": 1538.47,"dilutionRatio": 0.5 },
             { "name": "supplier 9", "shipped": 11.15, "production": 20.2, "projected": 20.1, "dilutionRatio": 0.22 },
             { "name": "supplier 10", "shipped": 16.21, "production": 643, "projected": 18.26, "dilutionRatio": 0.9 },
             { "name": "supplier 11", "shipped": 166.12, "production": 162, "projected": 160, "dilutionRatio": 0.44 },
