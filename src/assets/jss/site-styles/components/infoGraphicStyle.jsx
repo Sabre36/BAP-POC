@@ -86,7 +86,8 @@ const infoGraphicStyle = theme => ({
     nonConfTable: {
         margin: 0,
         padding: 0,
-        marginTop: '-10px!important'
+        marginTop: '-10px!important',
+        overflowX: 'hidden'
     },
     tr: {
         maxHeight: '20px',
@@ -99,8 +100,14 @@ const infoGraphicStyle = theme => ({
     td: {
         fontSize: '15px',
         fontWeight: 300,
-        whiteSpace: 'nowrap'
-
+        whiteSpace: 'nowrap',
+        '&:first-child': {
+            maxWidth: '125px',
+            whiteSpace: 'nowrap',
+            overflowX: 'hidden',
+            textOverflow: 'ellipsis',
+            paddingLeft: '10px',
+        }
     },
     tdtotal: {
         fontSize: '15px',
