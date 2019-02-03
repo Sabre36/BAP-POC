@@ -53,7 +53,7 @@ class VolumeByPlantMap extends React.Component {
         open: false,
         view: 'shipments',
         color: '#02419A',
-        units: 'lbs',
+        units: 'MT',
         data: []
     }
 

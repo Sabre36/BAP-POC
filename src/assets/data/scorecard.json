@@ -9,7 +9,7 @@
         ],
         "productionRatio": [
             { "name": "1 star", "value": 221.9 },
-            { "name": "2+ star (capable)", "value": 333.2 }
+            { "name": "2+ star capable", "value": 333.2 }
         ],
         "nonconformitiesData": [
             { "name": "Food Safety", "minor": 3, "major": 4, "critical": 0, "total": 7 },

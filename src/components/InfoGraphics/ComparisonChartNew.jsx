@@ -3,11 +3,11 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import IconButton from '@material-ui/core/IconButton';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
-import MUITooltip from '@material-ui/core/Tooltip';
+import Tooltip from '@material-ui/core/Tooltip';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Typography from '@material-ui/core/Typography';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend,Cell, CartesianGrid, ResponsiveContainer } from 'recharts';
-import {GuidGenerator, ToCommas} from './../../views/PortalPage/Helpers/Utils.js';
+import { BarChart, Bar, XAxis, YAxis, Tooltip,Cell, ResponsiveContainer } from 'recharts';
+import { GuidGenerator, ToCommas } from './../../views/PortalPage/Helpers/Utils.js';
 import MenuIcon from '@material-ui/icons/Menu';
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
 import scorecardData from './../../assets/data/scorecard.json';
@@ -83,7 +83,7 @@ class ComparisonChart extends React.Component {
                         </IconButton>
                         <h4 className={classes.infoGraphicTitle}>
                             Demand versus capacity
-                            <MUITooltip
+                            <Tooltip
                                 classes={{ tooltip: classes.lightTooltip }}
                                 PopperProps={{
                                     disablePortal: true,
@@ -97,7 +97,7 @@ class ComparisonChart extends React.Component {
                                 <span className={classes.tooltipIcon} onClick={this.handleTooltipOpen}>
                                     <i className={"fa fa-sm fa-info-circle"}/>
                                 </span>
-                            </MUITooltip>
+                            </Tooltip>
                         </h4>
                     </CardActions>
 
@@ -112,7 +112,52 @@ class ComparisonChart extends React.Component {
                                <Bar dataKey="volume" fill="#8884d8" padding={{left: 30, right: 30}}>
                                 {
                                     this.state.data.map((entry, index) => {
-                                        return <Cell fill={COLORS[index % COLORS.length]} />;
+                                        return
+                                        <Tooltip
+                                            classes={{ tooltip: classes.lightTooltip }}
+                                            title={
+                                                <React.Fragment>
+                                                    <Typography color="inherit">
+                                                        <h5> <strong>{label}</strong></h5>
+                                                        <Divider/>
+                                                        <ul className="progress-tooltip-list">
+                                                            <li>
+                                                                <span className="progress-tooltip-label">Projected:</span>
+                                                                <span className="progress-tooltip-value">{Round(projected, 1)} {units}</span>
+                                                            </li>
+
+                                                            <li>
+                                                                <span className="progress-tooltip-label">Production:</span>
+                                                                <span className="progress-tooltip-value">{Round(production, 1)} {units}</span>
+                                                            </li>
+
+                                                            <li>
+                                                                <span className="progress-tooltip-label">Production (diluted):</span>
+                                                                <span className="progress-tooltip-value">{Round(dilutedProduction, 1)} {units}</span>
+                                                            </li>
+                                                            <li>
+                                                                <span className="progress-tooltip-label">Dilution ratio:</span>
+                                                                <span className="progress-tooltip-value">{Round(this.props.tooltipData.dilutionRatio, 2)}</span>
+                                                            </li>
+
+                                                            <li>
+                                                                <span className="progress-tooltip-label">Difference:</span>
+                                                                <span className="progress-tooltip-value">{posSign}{Round(delta, 1)}</span>
+                                                            </li>
+
+                                                            <li>
+                                                                <span className="progress-tooltip-label">Percent Difference:</span>
+                                                                <span className="progress-tooltip-value">{Round(percent, 1)}%</span>
+                                                            </li>
+                                                        </ul>
+                                                    </Typography>
+                                                    <span className={classes.arrow} ref={this.handleArrowRef} />
+                                                </React.Fragment>
+                                            }
+                                            >
+                                            <Cell fill={COLORS[index % COLORS.length]} />
+                                        </Tooltip>;
+
                                     })
                                 }
                                </Bar>

@@ -1,13 +1,15 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
+import PropTypes from "prop-types";
+
 import IconButton from '@material-ui/core/IconButton';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
-import MUITooltip from '@material-ui/core/Tooltip';
+import Tooltip from '@material-ui/core/Tooltip';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Typography from '@material-ui/core/Typography';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend,Cell, CartesianGrid, ResponsiveContainer, LabelList} from 'recharts';
-import {GuidGenerator, ToCommas} from './../../views/PortalPage/Helpers/Utils.js';
+import { BarChart, Bar, XAxis, YAxis, Cell, Tooltip as TT, ResponsiveContainer, LabelList} from 'recharts';
+import { GetVolumeByUnits } from './../../views/PortalPage/Helpers/Utils.js';
 import MenuIcon from '@material-ui/icons/Menu';
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
 import scorecardData from './../../assets/data/scorecard.json';
@@ -22,18 +24,39 @@ const tooltipTitle = () => {
     );
 };
 
-const renderCustomizedLabel = (props) => {
-  const { x, y, width, height, value } = props;
-
+const dataTooltip = (units) => {
+     //const { active } = this.props;
+    //const {volume} = this.props;
 
   return (
-    <g>
-      <text x={x+width} y={y+width} fill="#000">
-        {value}
-      </text>
-    </g>
+      <div className="custom-tooltip">
+        <p className="label">{units}</p>
+        <p className="desc">Anything you want can be displayed here.</p>
+      </div>
   );
 };
+
+class CustomTooltip extends React.Component {
+    render() {
+        const { active } = this.props;
+        const { payload, label } = this.props;
+
+        return (
+            <div className="custom-tooltip">
+              <p className="label">{`${label} : ${payload[0].value}`}</p>
+              <p className="desc">Anything you want can be displayed here.</p>
+            </div>
+         );
+    }
+}
+
+CustomTooltip.propTypes = {
+    type: PropTypes.string,
+    payload: PropTypes.array,
+    label: PropTypes.string,
+};
+
+
 
 class ComparisonChart extends React.Component {
     state = {
@@ -54,6 +77,7 @@ class ComparisonChart extends React.Component {
         this.setState({ open: true });
     };
 
+
     componentDidMount(){
         this.processData();
     }
@@ -64,11 +88,10 @@ class ComparisonChart extends React.Component {
 
         scorecardData.forEach(function(section) {
             let cd = section.comparisonData;
-            console.log("COMPARISON CHART 1" + JSON.stringify(cd) );
-
             cd.forEach(function(el) {
-                el.volume_kg = el.volume * 1000;
-                el.volume_lbs = el.volume * 2204.62;
+                // NOTE: 'Volume' and Name -- with uppercase are both intention and used in chart
+                el.Volume = GetVolumeByUnits(el.volume, units);
+                el.Name = `${el.name} (${el.year})`;
                 el.units = units;
 
                 transform.push(el);
@@ -96,7 +119,7 @@ class ComparisonChart extends React.Component {
                         </IconButton>
                         <h4 className={classes.infoGraphicTitle}>
                             Projected vs. shipped/production volumes
-                            <MUITooltip
+                            <Tooltip
                                 classes={{ tooltip: classes.lightTooltip }}
                                 PopperProps={{
                                     disablePortal: true,
@@ -110,7 +133,7 @@ class ComparisonChart extends React.Component {
                                 <span className={classes.tooltipIcon} onClick={this.handleTooltipOpen}>
                                     <i className={"fa fa-sm fa-info-circle"}/>
                                 </span>
-                            </MUITooltip>
+                            </Tooltip>
                         </h4>
                     </CardActions>
 
@@ -119,19 +142,19 @@ class ComparisonChart extends React.Component {
 
 
                     <ResponsiveContainer  height="60%">
-                        <BarChart width={400} height={200} data={this.state.data} layout="vertical" margin={{left: 50, right: 100}}>
-                           <XAxis type="number" axisLine={false} axisLine={false} tickLine={false}  padding={{ left: 40 }}/>
-                           <YAxis dataKey="name" type="category" axisLine={false} tickLine={false} tick={true} />
-                           <Bar dataKey="volume" barSize={50}>
+                        <BarChart width={400} height={200} data={this.state.data} layout="vertical" margin={{left: 50, right: 120}}>
+                           <XAxis type="number" axisLine={false} axisLine={false} tickLine={false}  padding={{ left: 40 }} />
+                           <YAxis dataKey="Name" type="category" axisLine={false} tickLine={false} tick={true} />
+                           <TT cursor={false} contentStyle={{ fontSize: '14px', textAlign: 'left' }}
+                               formatter={(Volume) => new Intl.NumberFormat('en').format(Volume)}/>
+                           <Bar dataKey="Volume" barSize={50} unit={this.state.units}>
                                {
                                     this.state.data.map((entry, index) => {
                                         return <Cell fill={COLORS[index % COLORS.length]} />;
                                     })
                                 }
-                                <LabelList dataKey="volume" position="right" offset={40}  />
+                                <LabelList dataKey="Volume" position="right" offset={50}  />
                            </Bar>
-
-
                           </BarChart>
                     </ResponsiveContainer>
                 </ClickAwayListener>
