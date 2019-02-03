@@ -18,9 +18,11 @@ class PlantMapNew extends React.Component {
 
     render() {
         //console.log("IN PLANTMAP: " + JSON.stringify(this.props.data));
+        const { isDialog} = this.props;
+
         return (
             <div style={{padding: '10px'}}>
-                <ResponsiveContainer  height={275} aspect={4.0/1.5}>
+                <ResponsiveContainer height={!isDialog ? 275 : '100%'} aspect={!isDialog ? 4.0/1.5 : 16.0/9.0}>
                     <Datamap
                         ref={this.addClickHandlers}
                         geographyConfig={{
@@ -71,7 +73,8 @@ PlantMapNew.propTypes = {
     mapStyle: PropTypes.object,
     data: PropTypes.array,
     units: PropTypes.string,
-    view: PropTypes.string
+    view: PropTypes.string,
+    isDialog: PropTypes.boolean
 };
 
 export default withStyles(infoGraphicStyle)(PlantMapNew);

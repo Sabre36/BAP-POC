@@ -4,7 +4,7 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import IconButton from '@material-ui/core/IconButton';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
-import MenuIcon from '@material-ui/icons/Menu';
+import OpenDialogIcon from '@material-ui/icons/OpenInNew';
 import PlantMapNew from './../Maps/PlantMapNew.jsx';
 import Tooltip from '@material-ui/core/Tooltip';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
@@ -12,6 +12,14 @@ import Typography from '@material-ui/core/Typography';
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import infoGraphicStyle from 'assets/jss/site-styles/components/infoGraphicStyle.jsx';
+
+import Paper from '@material-ui/core/Paper';
+import Dialog from '@material-ui/core/Dialog';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Slide from '@material-ui/core/Slide';
+import CloseIcon from '@material-ui/icons/Close';
 
 import { MergeArray, GetVolumeByUnits } from './../../views/PortalPage/Helpers/Utils.js';
 import scorecardData from 'assets/data/scorecard.json';
@@ -42,6 +50,10 @@ const tooltipTitle = () => {
     );
 };
 
+function Transition(props) {
+    return <Slide direction="up" {...props} />;
+}
+
 
 class VolumeByPlantMap extends React.Component {
     constructor(props) {
@@ -50,27 +62,33 @@ class VolumeByPlantMap extends React.Component {
     }
 
     state = {
-        open: false,
+        tooltipOpen: false,
+        dialogOpen: false,
         view: 'shipments',
         color: '#02419A',
         units: 'MT',
         data: []
     }
 
-    handleClick() {
-        alert('click');
-    }
 
     componentDidMount(){
         this.processData();
     }
 
+    handleDialogOpen() {
+        this.setState( { dialogOpen: true } );
+    }
+
+    handleDialogClose = () => {
+        this.setState({ dialogOpen: false });
+    };
+
     handleTooltipClose = () => {
-        this.setState({ open: false });
+        this.setState({ tooltipOpen: false });
     };
 
     handleTooltipOpen = () => {
-        this.setState({ open: true });
+        this.setState({ tooltipOpen: true });
     };
 
     async handleChange (event, view) {
@@ -93,18 +111,20 @@ class VolumeByPlantMap extends React.Component {
 
         temp.forEach(function(el) {
 
-            transform.push({
-                bapid: el.bapid,
-                name: el.name,
-                country: el.country,
-                radius: getRadius(view === 'shipments' ? el.shipped : view === 'production' ? el.production : el.projected),
-                latitude: el.lat,
-                longitude: el.lon,
-                production: GetVolumeByUnits(el.production, units),
-                shipped: GetVolumeByUnits(el.shipped, units),
-                projected: GetVolumeByUnits(el.projected, units),
-                fillKey: view === 'shipments' ? 'SHIPS' : view === 'production' ? 'PRODUCTION' : 'PROJECTED',
-            });
+            if ( el.name !== null ) {
+                transform.push({
+                    bapid: el.bapid,
+                    name: el.name,
+                    country: el.country,
+                    radius: getRadius(view === 'shipments' ? el.shipped : view === 'production' ? el.production : el.projected),
+                    latitude: el.lat,
+                    longitude: el.lon,
+                    production: GetVolumeByUnits(el.production, units),
+                    shipped: GetVolumeByUnits(el.shipped, units),
+                    projected: GetVolumeByUnits(el.projected, units),
+                    fillKey: view === 'shipments' ? 'SHIPS' : view === 'production' ? 'PRODUCTION' : 'PROJECTED',
+                });
+            }
         });
 
         await this.setState({
@@ -120,11 +140,55 @@ class VolumeByPlantMap extends React.Component {
 
         return (
             <div>
+                <Dialog
+
+                    open={this.state.dialogOpen}
+                    onClose={this.handleDialogClose}
+                    fullWidth
+                    maxWidth="xl"
+                    aria-labelledby="alert-dialog-title"
+                    aria-describedby="alert-dialog-description"
+                    TransitionComponent={Transition}
+                    keepMounted={false}
+                    >
+                    <div>
+                        <DialogTitle>
+                            <h4 className={classes.infoGraphicTitle}>
+                                <IconButton onClick={this.handleDialogClose} title="Close" style={{float: 'right', marginTop: '-12px'}}>
+                                    <CloseIcon/>
+                                </IconButton>
+                                Plant {this.state.view} volume
+                            </h4>
+                            <div className={classes.toggleContainer}>
+                                <ToggleButtonGroup exclusive onChange={this.handleChange}>
+                                    <ToggleButton value="shipments"
+                                        className={ this.state.view === 'shipments' ? classes.toggleButtonSelected : classes.toggleButton }>
+                                        Shipments
+                                    </ToggleButton>
+
+                                    <ToggleButton value="projected"
+                                        className={ this.state.view === 'projected' ? classes.toggleButtonSelected : classes.toggleButton }>
+                                        Projected
+                                    </ToggleButton>
+
+                                    <ToggleButton value="production"
+                                        className={ this.state.view === 'production' ? classes.toggleButtonSelected : classes.toggleButton }>
+                                        Production
+                                    </ToggleButton>
+                                </ToggleButtonGroup>
+                            </div>
+                        </DialogTitle>
+                    </div>
+                    <DialogContent style={{overflowY: 'hidden'}}>
+                        <PlantMapNew data={this.state.data} units={this.state.units} view={this.state.view} isDialog={true}/>
+                    </DialogContent>
+                </Dialog>
+
                 <Card className={classes.cardLarge}>
                     <ClickAwayListener onClickAway={this.handleTooltipClose}>
                         <CardActions>
-                            <IconButton aria-label='Menu' color='inherit' onClick={this.handleClick.bind(this)}>
-                                <MenuIcon className={classes.iconButtonStyle}/>
+                            <IconButton aria-label='Menu' color='inherit' onClick={this.handleDialogOpen.bind(this)}>
+                                <OpenDialogIcon className={classes.iconButtonStyle}/>
                             </IconButton>
                             <h4 className={classes.infoGraphicTitle}>
                                 Plant {this.state.view} volume
@@ -134,7 +198,7 @@ class VolumeByPlantMap extends React.Component {
                                         disablePortal: true,
                                     }}
                                     onClose={this.handleTooltipClose}
-                                    open={this.state.open}
+                                    open={this.state.tooltipOpen}
                                     disableFocusListener
                                     disableHoverListener
                                     disableTouchListener
