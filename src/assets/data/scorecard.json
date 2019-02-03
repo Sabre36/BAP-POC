@@ -2,6 +2,9 @@
     {
         "report": "scorecard",
         "type": "endorser",
+        "infoGraphics3": [
+            { "period": "Jan 1, 2019", "endorsers": 1, "suppliers": 3, "plants": 14, "farms": 148 }
+        ],
         "comparisonData": [
             { "name": "Projected", "year": 2017, "volume": 24907.74 },
             { "name": "Shipped", "year": 2016, "volume": 30010.33 },

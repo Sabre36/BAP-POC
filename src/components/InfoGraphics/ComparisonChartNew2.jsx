@@ -103,7 +103,7 @@ class ComparisonChart extends React.Component {
             data: transform
         });
 
-        console.log("COMPARISON CHART 2" + JSON.stringify(this.state.data) );
+        //console.log("COMPARISON CHART 2" + JSON.stringify(this.state.data) );
     }
 
     render() {

@@ -2,14 +2,22 @@
 
 const infoGraphicStyle = theme => ({
     card: {
-        width: '100%',
         height: "140px",
-        marginBottom: '20px'
+        marginBottom: '15px'
     },
     cardLarge: {
         width: '100%',
         height: "375px",
         marginBottom: '20px'
+    },
+    infoGraphics1Card: {
+        backgroundColor: '#02419A!important'
+    },
+    infoGraphics2Card: {
+        backgroundColor: '#539127!important'
+    },
+    infoGraphics3Card: {
+        backgroundColor: '#7E46B7!important'
     },
     heading: {
         height: '22px',
@@ -18,7 +26,15 @@ const infoGraphicStyle = theme => ({
         fontSize: '18px',
         fontWeight: '400',
         marginRight: '15px',
-        marginTop: '15px'
+        marginTop: '15px',
+        whiteSpace: 'nowrap',
+        overflowX: 'hidden',
+        textOverflow: 'ellipsis',
+        [theme.breakpoints.down("md")]: {
+            height: "18px",
+            fontSize: "16px",
+            marginRight: "10px"
+        }
     },
     title: {
         color: '#fff',
@@ -27,7 +43,56 @@ const infoGraphicStyle = theme => ({
         margin: 0,
         display: 'block',
         paddingTop: '6px',
+        whiteSpace: 'nowrap',
+        overflowX: 'hidden',
+        textOverflow: 'ellipsis',
+        [theme.breakpoints.down("lg")]: {
+            fontSize: "32px",
+            //color: 'red'
+        },
+        [theme.breakpoints.down("md")]: {
+            fontSize: "42px",
+            //color: 'orange'
 
+        },
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "42px",
+            //color: 'yellow'
+        },
+        [theme.breakpoints.down("xs")]: {
+            fontSize: "42px",
+            //color: 'purple'
+        },
+    },
+    legend: {
+        fontSize: '14px',
+        color: '#fff',
+        margin: 0,
+        paddingTop: '6px',
+        display: 'block',
+        whiteSpace: 'nowrap',
+        overflowX: 'hidden',
+        textOverflow: 'ellipsis',
+        [theme.breakpoints.down("md")]: {
+            fontSize: "12px"
+        },
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "10px"
+        },
+        [theme.breakpoints.down("xs")]: {
+            fontSize: "10px"
+        },
+    },
+    icon: {
+        paddingLeft: '12px',
+        visibility: 'visible',
+
+        // [theme.breakpoints.down("sm")]: {
+        //     visibility: 'hidden'
+        // },
+        // [theme.breakpoints.down("xs")]: {
+        //     visibility: 'hidden'
+        // },
     },
     delta: {
         fontSize: '13px',
@@ -38,19 +103,16 @@ const infoGraphicStyle = theme => ({
     arrows: {
         marginLeft: '4px'
     },
-    legend: {
-        fontSize: '14px',
-        color: '#fff',
-        margin: 0,
-        paddingTop: '6px',
-        display: 'block'
-    },
-    icon: {
-        paddingLeft: '12px'
-    },
+
     tooltipIcon: {
         color: 'rgba(0,0,0,.84)',
         paddingLeft: '4px',
+        fontSize: '18px !important',
+        cursor: 'pointer'
+    },
+    tooltipIconLight: {
+        color: '#fff',
+        paddingLeft: '6px',
         fontSize: '18px !important',
         cursor: 'pointer'
     },

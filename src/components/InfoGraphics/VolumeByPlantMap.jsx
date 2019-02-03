@@ -120,7 +120,7 @@ class VolumeByPlantMap extends React.Component {
 
         return (
             <div>
-                <Card style={{height: '375px', overflow: 'sroll'}}>
+                <Card className={classes.cardLarge}>
                     <ClickAwayListener onClickAway={this.handleTooltipClose}>
                         <CardActions>
                             <IconButton aria-label='Menu' color='inherit' onClick={this.handleClick.bind(this)}>
