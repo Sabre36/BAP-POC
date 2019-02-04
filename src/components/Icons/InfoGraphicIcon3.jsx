@@ -1,10 +1,9 @@
 import React from "react";
-import icon from './../../assets/img/svg/TrendIcon.svg';
+import icon from './../../assets/img/svg/InfoGraphic3.svg';
 import ReactSVG from 'react-svg';
 import './../../assets/scss/site-styles.css';
 
-class TrendIcon extends React.Component {
-
+class InfoGraphicIcon3 extends React.Component {
     render() {
         return (
             <ReactSVG src={icon} />
@@ -12,4 +11,4 @@ class TrendIcon extends React.Component {
     }
 }
 
-export default TrendIcon;
+export default InfoGraphicIcon3;

@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="54px" height="51px" viewBox="0 0 54 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+<svg width="50px" height="51px" viewBox="0 0 50 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
     <title>TrendIcon</title>
     <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="SCT" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="SCT-ALTERNATIVES" transform="translate(-360.000000, -346.000000)">
-            <g id="INFOBOX3-b" transform="translate(340.000000, 308.000000)">
-                <g id="TrendIcon" transform="translate(21.000000, 39.328223)">
-                    <g id="line-chart">
-                        <ellipse id="Oval-3" stroke="#FFFFFF" stroke-width="2" cx="26" cy="24" rx="26" ry="24"></ellipse>
-                        <g id="Group" transform="translate(15.166667, 14.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                            <polygon id="Shape" points="1.80555556 0 0 0 0 20 21.6666667 20 21.6666667 18.3333333 1.80555556 18.3333333"></polygon>
-                            <polygon id="Shape" points="14.3352367 0 14.3352367 1.69182373 18.5375207 1.69182373 4.33333333 14.8034577 5.62916358 16 19.8338092 2.88794311 19.8338092 6.76729493 21.6666667 6.76729493 21.6666667 0"></polygon>
-                        </g>
-                    </g>
-                </g>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="TrendIcon" transform="translate(1.000000, 1.000000)">
+            <circle id="Oval-3" stroke="#FFFFFF" stroke-width="2" cx="24" cy="24.328223" r="24"></circle>
+            <g id="Group" transform="translate(15.166667, 14.328223)" fill="#FFFFFF">
+                <polygon id="Shape" points="1.64141415 0 0 0 0 20 19.6969697 20 19.6969697 18.3333333 1.64141415 18.3333333"></polygon>
+                <polygon id="Shape" points="13.0320334 0 13.0320334 1.69182373 16.8522915 1.69182373 3.93939394 14.8034577 5.11742144 16 18.0307356 2.88794311 18.0307356 6.76729493 19.6969697 6.76729493 19.6969697 0"></polygon>
             </g>
         </g>
     </g>
