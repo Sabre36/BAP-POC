@@ -11,8 +11,8 @@
             { "name": "Production" , "year": 2017, "volume": 96104.01 }
         ],
         "productionRatio": [
-            { "name": "1 star", "value": 221.9 },
-            { "name": "2+ star capable", "value": 333.2 }
+            { "name": "1 star", "value": 555.9 },
+            { "name": "1 or 2+ star capable", "value": 333.2 }
         ],
         "nonconformitiesData": [
             { "name": "Food Safety", "minor": 3, "major": 4, "critical": 0, "total": 7 },
@@ -28,7 +28,7 @@
             { "name": "supplier 4","shipped": 1028.05, "production": 1092, "projected": 1076.71, "dilutionRatio": 0.77},
             { "name": "supplier 5", "shipped": 482.11, "production": 425, "projected": 424.73, "dilutionRatio": 1.0},
             { "name": "supplier 6", "shipped": 460.98, "production": 464.1, "projected": 460.98, "dilutionRatio": 0.44 },
-            { "name": "supplier 7", "shipped": 2730.68, "production": 3121, "projected": 2529.63, "dilutionRatio": 1.0 },
+            { "name": "supplier 7", "shipped": 2730.68, "production": null, "projected": null, "dilutionRatio": 1.0 },
             { "name": "supplier 8", "shipped": 1528.03, "production": 1529, "projected": 1538.47,"dilutionRatio": 0.5 },
             { "name": "supplier 9", "shipped": 11.15, "production": 20.2, "projected": 20.1, "dilutionRatio": 0.22 },
             { "name": "supplier 10", "shipped": 16.21, "production": 643, "projected": 18.26, "dilutionRatio": 0.9 },
