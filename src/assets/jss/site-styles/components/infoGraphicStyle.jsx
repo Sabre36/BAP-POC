@@ -16,19 +16,18 @@ const infoGraphicStyle = theme => ({
         padding: 0,
         margin: 0,
         width: '97%',
-        //backgroundColor: 'orange'
+        //backgroundColor: 'cyan'
     },
     infoGraphics1Card: {
-        backgroundColor: '#02419A!important'
+        backgroundColor: '#02419A'
     },
     infoGraphics2Card: {
-        backgroundColor: '#539127!important'
+        backgroundColor: '#539127'
     },
     infoGraphics3Card: {
-        backgroundColor: '#7E46B7!important'
+        backgroundColor: '#7E46B7'
     },
     heading: {
-        height: '22px',
         textAlign: 'right',
         color: '#fff',
         fontSize: '18px',
@@ -51,7 +50,7 @@ const infoGraphicStyle = theme => ({
             //color: 'purple'
         },
     },
-    title: {
+    indicator: {
         color: '#fff',
         fontSize: '42px',
         textAlign:  'center',
@@ -61,6 +60,7 @@ const infoGraphicStyle = theme => ({
         whiteSpace: 'nowrap',
         overflowX: 'hidden',
         textOverflow: 'ellipsis',
+        //backgroundColor: 'orange',
         [theme.breakpoints.down("lg")]: {
             fontSize: "32px",
             //color: 'red'
@@ -82,7 +82,7 @@ const infoGraphicStyle = theme => ({
         fontSize: '14px',
         color: '#fff',
         margin: 0,
-        paddingTop: '6px',
+        marginTop: '12px',
         display: 'block',
         whiteSpace: 'nowrap',
         overflowX: 'hidden',
@@ -127,16 +127,26 @@ const infoGraphicStyle = theme => ({
         color: 'rgba(0,0,0,.84)',
         paddingLeft: '4px',
         fontSize: '18px !important',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        '&:hover': {
+            backgroundColor: 'transparent !important',
+        },
     },
     tooltipIconLight: {
         color: '#fff',
-        paddingLeft: '6px',
+        paddingLeft: '4px',
         fontSize: '18px !important',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        '&:hover': {
+            backgroundColor: 'transparent !important',
+        },
     },
     tooltipCursor: {
         cursor: 'pointer'
+    },
+    tooltipWrap: {
+        fontSize: '16px',
+        whiteSpace: 'normal'
     },
     lightTooltip: {
         padding: '15px',

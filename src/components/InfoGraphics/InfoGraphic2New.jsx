@@ -13,13 +13,14 @@ import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle
 import { Round } from './../../views/PortalPage/Helpers/Utils.js';
 import scorecardData from 'assets/data/scorecard.json';
 
-const tooltipTitle = (period) => {
+const tooltipTitle = (classes) => {
     return (
-        <Typography>
+        <Typography className={classes.tooltipWrap}>
             A year over year comparison, when available, of production.
         </Typography>
     );
 };
+
 
 class InfoGraphic2 extends React.Component {
     state = {
@@ -84,37 +85,37 @@ class InfoGraphic2 extends React.Component {
             <div>
                 <Card className={[classes.card, classes.infoGraphics2Card]}>
                     <ClickAwayListener onClickAway={this.handleTooltipClose}>
-                    <div className={classes.heading}>
-                        Production (YoY)
+                        <div className={classes.heading} onClick={this.handleTooltipOpen}>
+                            Supply chain
+                            <Tooltip
+                                classes={{ tooltip: classes.lightTooltip }}
+                                PopperProps={{
+                                    disablePortal: true,
+                                }}
+                                onClose={this.handleTooltipClose}
+                                open={this.state.open}
+                                disableFocusListener
+                                disableHoverListener
+                                disableTouchListener
+                                title={tooltipTitle(classes)}>
+                                <span className={classes.tooltipIconLight} >
+                                    <i className={"fa fa-sm fa-info-circle"} />
+                                </span>
+                            </Tooltip>
+                        </div>
 
-                        <Tooltip
-                            classes={{ tooltip: classes.lightTooltip }}
-                            PopperProps={{
-                                disablePortal: true,
-                            }}
-                            onClose={this.handleTooltipClose}
-                            open={this.state.open}
-                            placement="bottom-end"
-                            disableFocusListener
-                            disableHoverListener
-                            disableTouchListener
-                            title={tooltipTitle(this.state.period)}>
-                            <span className={classes.tooltipIconLight} onClick={this.handleTooltipOpen}>
-                                <i className={"fa fa-sm fa-info-circle"}/>
-                            </span>
-                        </Tooltip>
-                    </div>
-                    <CardContent >
-                        <Typography gutterBottom variant="headline" component="h2" className={classes.whitetitle}>
+                        <CardContent >
                             <GridContainer className={classes.infoGraphicContainer}>
                                 <GridItem xs={2} xs={2} md={2} className={classes.icon}>
                                     <InfoGraphicIcon2 />
                                 </GridItem>
-                                <GridItem xs={5} sm={5} md={5} className={classes.title}>
+
+                                <GridItem xs={5} sm={5} md={5} className={classes.indicator}>
                                     {this.state.col1}
                                     <label className={classes.legend}>{this.state.col1Label}</label>
                                 </GridItem>
-                                <GridItem xs={5} sm={5} md={5} className={classes.title}>
+
+                                <GridItem xs={5} sm={5} md={5} className={classes.indicator}>
                                     {this.state.col2}
 
                                     <label className={classes.delta}>{this.state.pctDiff}%
@@ -126,10 +127,10 @@ class InfoGraphic2 extends React.Component {
 
                                     <label className={classes.legend}>{this.state.col2Label}</label>
                                 </GridItem>
+
                             </GridContainer>
-                        </Typography>
-                    </CardContent>
-                </ClickAwayListener>
+                        </CardContent>
+                    </ClickAwayListener>
                 </Card>
             </div>
         );

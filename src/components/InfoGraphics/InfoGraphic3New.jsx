@@ -13,10 +13,10 @@ import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle
 import { Round } from './../../views/PortalPage/Helpers/Utils.js';
 import scorecardData from 'assets/data/scorecard.json';
 
-const tooltipTitle = (period) => {
+const tooltipTitle = (classes) => {
     return (
-        <Typography>
-            A year over year comparison, when available, of production.
+        <Typography className={classes.tooltipWrap}>
+            The number of facilities for the supply chain.
         </Typography>
     );
 };
@@ -97,52 +97,50 @@ class InfoGraphic2 extends React.Component {
             <div>
                 <Card className={[classes.card, classes.infoGraphics3Card]}>
                     <ClickAwayListener onClickAway={this.handleTooltipClose}>
-                    <div className={classes.heading}>
-                        Supply chain
 
-                        <Tooltip
-                            classes={{ tooltip: classes.lightTooltip }}
-                            PopperProps={{
-                                disablePortal: true,
-                            }}
-                            onClose={this.handleTooltipClose}
-                            open={this.state.open}
-                            placement="bottom-end"
-                            disableFocusListener
-                            disableHoverListener
-                            disableTouchListener
-                            title={tooltipTitle(this.state.period)}>
-                            <span className={classes.tooltipIconLight} onClick={this.handleTooltipOpen}>
-                                <i className={"fa fa-sm fa-info-circle"}/>
-                            </span>
-                        </Tooltip>
-                    </div>
-                    <CardContent >
-                        <Typography gutterBottom variant="headline" component="h2" className={classes.whitetitle}>
+                        <div className={classes.heading} onClick={this.handleTooltipOpen}>
+                            Supply chain
+                            <Tooltip
+                                classes={{ tooltip: classes.lightTooltip }}
+                                PopperProps={{
+                                    disablePortal: true,
+                                }}
+                                onClose={this.handleTooltipClose}
+                                open={this.state.open}
+                                disableFocusListener
+                                disableHoverListener
+                                disableTouchListener
+                                title={tooltipTitle(classes)}>
+                                <span className={classes.tooltipIconLight} >
+                                    <i className={"fa fa-sm fa-info-circle"} />
+                                </span>
+                            </Tooltip>
+                        </div>
+
+                        <CardContent >
                             <GridContainer className={classes.infoGraphicContainer}>
                                 <GridItem xs={2} xs={2} md={2} className={classes.icon}>
                                     <InfoGraphicIcon3 />
                                 </GridItem>
 
-                                <GridItem xs={4} sm={4} md={4} className={classes.title}>
+                                <GridItem xs={4} sm={4} md={4} className={classes.indicator}>
                                     {this.state.col1}
                                     <label className={classes.legend}>{this.state.col1Label}</label>
                                 </GridItem>
 
-                                <GridItem xs={3} sm={3} md={3} className={classes.title}>
+                                <GridItem xs={3} sm={3} md={3} className={classes.indicator}>
                                     {this.state.col2}
                                     <label className={classes.legend}>{this.state.col2Label}</label>
                                 </GridItem>
 
-                                <GridItem xs={3} sm={3} md={3} className={classes.title}>
+                                <GridItem xs={3} sm={3} md={3} className={classes.indicator}>
                                     {this.state.col3}
                                     <label className={classes.legend}>{this.state.col3Label}</label>
                                 </GridItem>
 
                             </GridContainer>
-                        </Typography>
-                    </CardContent>
-                </ClickAwayListener>
+                        </CardContent>
+                    </ClickAwayListener>
                 </Card>
             </div>
         );

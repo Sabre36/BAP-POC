@@ -17,7 +17,7 @@ export class InfoGraphicIcon1 extends React.Component {
     }
 }
 
-export class InfoGraphicIcon3 extends React.Component {
+export class InfoGraphicIcon2 extends React.Component {
     render() {
         return (
             <ReactSVG src={infoGraphic2} />
@@ -25,7 +25,7 @@ export class InfoGraphicIcon3 extends React.Component {
     }
 }
 
-export class InfoGraphicIcon2 extends React.Component {
+export class InfoGraphicIcon3 extends React.Component {
     render() {
         return (
             <ReactSVG src={infoGraphic3} />
