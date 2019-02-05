@@ -10,13 +10,10 @@ const infoGraphicStyle = theme => ({
         height: "375px",
         marginBottom: '20px'
     },
-    infoGraphicContainer: {
-        position: 'absolute',
-        left: 0,
-        padding: 0,
-        margin: 0,
-        width: '97%',
-        //backgroundColor: 'orange'
+    infoGraphicsBaseCard: {
+        height: "140px",
+        marginBottom: 0,
+        padding: 0
     },
     infoGraphics1Card: {
         backgroundColor: '#02419A!important'
@@ -39,17 +36,58 @@ const infoGraphicStyle = theme => ({
         overflowX: 'hidden',
         textOverflow: 'ellipsis',
         [theme.breakpoints.down("md")]: {
-            fontSize: "14px",
-            //color: 'orange'
-        },
-        [theme.breakpoints.down("sm")]: {
-            fontSize: "18px",
-            //color: 'yellow'
-        },
-        [theme.breakpoints.down("xs")]: {
-            fontSize: "18px",
-            //color: 'purple'
-        },
+            height: "18px",
+            fontSize: "16px",
+            marginRight: "10px"
+        }
+    },
+    indicatorContainer: {
+        position: 'absolute',
+        top: '55px',
+        left: 0,
+        width: '100%',
+        height: '80px',
+        display: 'flex',
+        flexWrap: 'nowrap',
+        margin: 0,
+        marginLeft: '2px',
+        padding: 0,
+        alignItems: 'flex-start'
+    },
+    indicatorCol2: {
+        width: '50%',
+        backgroundColor: 'red',
+        color: '#fff'
+    },
+    indicatorCol3: {
+        width: '32%',
+        backgroundColor: 'orange',
+        color: '#fff',
+        maxHeight: '100px',
+        whiteSpace: 'nowrap',
+        overflowX: 'hidden',
+        textOverflow: 'ellipsis'
+    },
+    indicatorTitle: {
+        color: '#fff',
+        textAlign: 'left',
+        verticalAlign: 'middle',
+        fontSize: '38px',
+        margin: 0,
+        padding: 0,
+        whiteSpace: 'nowrap',
+        overflowX: 'hidden',
+        textOverflow: 'ellipsis'
+    },
+    indicatorCell: {
+        textAlign: 'center',
+        verticalAlign: 'top',
+        fontSize: '48px'
+    },
+    indicatorIcon: {
+        position: 'absolute',
+        top: 'calc((140px / 2) - (48px / 2)',
+        left: '12px',
     },
     title: {
         color: '#fff',
@@ -66,15 +104,16 @@ const infoGraphicStyle = theme => ({
             //color: 'red'
         },
         [theme.breakpoints.down("md")]: {
-            fontSize: "22px",
+            fontSize: "42px",
             //color: 'orange'
+
         },
         [theme.breakpoints.down("sm")]: {
-            fontSize: "32px",
+            fontSize: "42px",
             //color: 'yellow'
         },
         [theme.breakpoints.down("xs")]: {
-            fontSize: "32px",
+            fontSize: "42px",
             //color: 'purple'
         },
     },
@@ -88,30 +127,25 @@ const infoGraphicStyle = theme => ({
         overflowX: 'hidden',
         textOverflow: 'ellipsis',
         [theme.breakpoints.down("md")]: {
-            fontSize: "13px"
+            fontSize: "12px"
         },
         [theme.breakpoints.down("sm")]: {
-            fontSize: "14px",
-            //color: 'yellow'
+            fontSize: "10px"
         },
         [theme.breakpoints.down("xs")]: {
-            fontSize: "14px",
-            //color: 'purple'
+            fontSize: "10px"
         },
     },
     icon: {
         paddingLeft: '12px',
-        display: 'inherit',
+        visibility: 'visible',
 
-        [theme.breakpoints.down("md")]: {
-            display: 'none'
-        },
-        [theme.breakpoints.down("sm")]: {
-            display: 'inherit'
-        },
-        [theme.breakpoints.down("xs")]: {
-            display: 'none'
-        },
+        // [theme.breakpoints.down("sm")]: {
+        //     visibility: 'hidden'
+        // },
+        // [theme.breakpoints.down("xs")]: {
+        //     visibility: 'hidden'
+        // },
     },
     delta: {
         fontSize: '13px',

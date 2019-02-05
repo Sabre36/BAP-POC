@@ -5,7 +5,7 @@ import GridItem from "components/Grid/GridItem.jsx";
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import TrendIcon from "./../Icons/TrendIcon.jsx";
+import InfoGraphicIcon3 from "./../Icons/InfoGraphicIcon3.jsx";
 import Tooltip from '@material-ui/core/Tooltip';
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
 
@@ -44,7 +44,7 @@ class InfoGraphic3 extends React.Component {
                         <Typography gutterBottom variant="headline" component="h2" className={classes.whitetitle}>
                             <GridContainer>
                                 <GridItem md={3} className={classes.icon}>
-                                    <TrendIcon />
+                                    <InfoGraphicIcon3 />
                                 </GridItem>
                                 <GridItem md={3} className={classes.title}>
                                     {yr2.suppliers}

@@ -126,7 +126,7 @@ class SupplierDilutionChart extends React.Component {
                             </IconButton>
 
                             <h4 className={classes.infoGraphicTitle}>
-                                Risk - Production (diluted) meeting projected volume
+                                Production (diluted) meeting projected volume
 
                                 <Tooltip
                                     classes={{ tooltip: classes.infoButtonTip }}

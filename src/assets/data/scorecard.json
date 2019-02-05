@@ -2,8 +2,16 @@
     {
         "report": "scorecard",
         "type": "endorser",
+        "infoGraphics1": [
+            { "period": "2017", "shipped": 999.1 },
+            { "period": "2018", "shipped": 1029.8 }
+        ],
+        "infoGraphics2": [
+            { "period": "Previous", "production": 679.1 },
+            { "period": "Last audit", "production": 872.2 }
+        ],
         "infoGraphics3": [
-            { "period": "Jan 1, 2019", "endorsers": 1, "suppliers": 3, "plants": 14, "farms": 148 }
+            { "period": "Feb 1, 2019", "endorsers": 1, "suppliers": 3, "plants": 14, "farms": 148 }
         ],
         "comparisonData": [
             { "name": "Projected", "year": 2017, "volume": 24907.74 },

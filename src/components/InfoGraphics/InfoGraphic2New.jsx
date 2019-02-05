@@ -6,7 +6,7 @@ import GridItem from "components/Grid/GridItem.jsx";
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import { InfoGraphicIcon3 } from "./../Icons/SVGIcons";
+import { InfoGraphicIcon2 } from "./../Icons/SVGIcons";
 import Tooltip from '@material-ui/core/Tooltip';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
@@ -25,14 +25,11 @@ class InfoGraphic2 extends React.Component {
     state = {
         open: false,
         units: 'MT',
-        reportType: '',
-        period: '',
+        pctDiff: 0,
         col1: 0,
         col2: 0,
-        col3: 0,
         col1Label: '',
-        col2Label: '',
-        col3Label: ''
+        col2Label: ''
     }
 
     handleTooltipClose = () => {
@@ -48,46 +45,36 @@ class InfoGraphic2 extends React.Component {
     }
 
     async processData() {
-        let _type, _period, _col1, _col2, _col3, _col1Label, _col2Label, _col3Label;
+        let i = 0, _col1, _col1Label, _col2, _col2Label, _pctDiff;
 
 
         scorecardData.forEach(function(section) {
+            let info = section.infoGraphics2;
 
-            let info = section.infoGraphics3;
-             _type = section.type;
-
-            // Note: to be orthgonal, treating this as though there are multiple rows of data.
             info.forEach(function(el) {
-                _period = el.period;
-
-                if (_type === "endorser") {
-                    _col1 = el.suppliers;
-                    _col1Label = 'Suppliers';
-                } else {
-                    _col1 = el.endorsers;
-                    _col1Label = 'Endorsers';
+                if (i == 0) {
+                    _col1 = el.production;
+                    _col1Label = el.period;
                 }
-
-                _col2 = el.plants;
-                _col2Label = "Plants";
-                _col3 = el.farms;
-                _col3Label = "Farms";
-
+                else if (i == 1) {
+                    _col2 = el.production;
+                    _col2Label = el.period;
+                }
+                i++;
             });
         });
 
+        _pctDiff = 100 * (_col2 - _col1) / ((_col2 + _col1) / 2);
+
         await this.setState({
-            reportType: _type,
-            period: _period,
+            pctDiff: Round(_pctDiff, 1),
             col1: _col1,
-            co12: _col2,
-            col3: _col3,
+            col2: _col2,
             col1Label: _col1Label,
             col2Label: _col2Label,
-            col3Label: _col3Label
         });
 
-        console.log('INFOGRAPHIC3 STATE: ' + JSON.stringify(this.state));
+        console.log('INFOGRAPHIC2 STATE: ' + JSON.stringify(this.state));
     }
 
     render() {
@@ -95,10 +82,10 @@ class InfoGraphic2 extends React.Component {
 
         return (
             <div>
-                <Card className={[classes.card, classes.infoGraphics3Card]}>
+                <Card className={[classes.card, classes.infoGraphics2Card]}>
                     <ClickAwayListener onClickAway={this.handleTooltipClose}>
                     <div className={classes.heading}>
-                        Supply chain
+                        Production (YoY)
 
                         <Tooltip
                             classes={{ tooltip: classes.lightTooltip }}
@@ -121,24 +108,24 @@ class InfoGraphic2 extends React.Component {
                         <Typography gutterBottom variant="headline" component="h2" className={classes.whitetitle}>
                             <GridContainer className={classes.infoGraphicContainer}>
                                 <GridItem xs={2} xs={2} md={2} className={classes.icon}>
-                                    <InfoGraphicIcon3 />
+                                    <InfoGraphicIcon2 />
                                 </GridItem>
-
-                                <GridItem xs={4} sm={4} md={4} className={classes.title}>
+                                <GridItem xs={5} sm={5} md={5} className={classes.title}>
                                     {this.state.col1}
                                     <label className={classes.legend}>{this.state.col1Label}</label>
                                 </GridItem>
-
-                                <GridItem xs={3} sm={3} md={3} className={classes.title}>
+                                <GridItem xs={5} sm={5} md={5} className={classes.title}>
                                     {this.state.col2}
+
+                                    <label className={classes.delta}>{this.state.pctDiff}%
+                                        <span className={classes.arrows}>
+                                            { this.state.pctDiff < 0 && <i className={"fa fa-md fa-arrow-down"} title="Decrease"/>}
+                                            { this.state.pctDiff > 0 && <i className={"fa fa-md fa-arrow-up"} title="Increase"/>}
+                                        </span>
+                                    </label>
+
                                     <label className={classes.legend}>{this.state.col2Label}</label>
                                 </GridItem>
-
-                                <GridItem xs={3} sm={3} md={3} className={classes.title}>
-                                    {this.state.col3}
-                                    <label className={classes.legend}>{this.state.col3Label}</label>
-                                </GridItem>
-
                             </GridContainer>
                         </Typography>
                     </CardContent>

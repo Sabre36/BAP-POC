@@ -121,7 +121,7 @@ class SupplierRiskChart extends React.Component {
                             </IconButton>
 
                             <h4 className={classes.infoGraphicTitle}>
-                                Risk - Production meeting projected volume
+                                Production meeting projected volume
 
                                 <Tooltip
                                     classes={{ tooltip: classes.infoButtonTip }}

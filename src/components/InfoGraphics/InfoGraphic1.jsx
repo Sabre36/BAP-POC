@@ -6,7 +6,7 @@ import GridItem from "components/Grid/GridItem.jsx";
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import FishIcon from "./../Icons/FishIcon.jsx";
+import InfoGraphicIcon1 from "./../Icons/InfoGraphicIcon1.jsx";
 import Tooltip from '@material-ui/core/Tooltip';
 import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
 
@@ -34,14 +34,14 @@ class InfoGraphic1 extends React.Component {
                     <CardContent >
                         <Typography gutterBottom variant="headline" component="h2" className={classes.whitetitle}>
                             <GridContainer>
-                                <GridItem md={3} className={classes.icon}>
-                                    <FishIcon />
+                                <GridItem xs={2} sm={2} md={2} lg={2} className={classes.icon}>
+                                    <InfoGraphicIcon1 />
                                 </GridItem>
-                                <GridItem md={4} className={classes.title}>
+                                <GridItem xs={4} sm={4} md={4} lg={4} className={classes.title}>
                                     {demand.volume}
                                     <label className={classes.legend}>Demand ({demand.label})</label>
                                 </GridItem>
-                                <GridItem md={4} className={classes.title}>
+                                <GridItem xs={4} sm={4} md={2} lg={2} className={classes.title}>
                                     {shipped.volume}
                                     <label className={classes.delta}>{delta}%
                                         <span className={classes.arrows}>

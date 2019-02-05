@@ -4,7 +4,6 @@ import ReactSVG from 'react-svg';
 import './../../assets/scss/site-styles.css';
 
 class FishIcon extends React.Component {
-
     render() {
         return (
             <ReactSVG src={icon} svgStyle={{ width: 22 }}/>
