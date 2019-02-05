@@ -39,6 +39,27 @@ export function GetVolumeByUnits (vol, units) {
     return newVol;
 }
 
+export function FormatVolumeByUnits (vol, units) {
+    let newVol = ToCommas(vol);
+
+    switch (units) {
+        case 'MT': {
+            newVol = `${newVol} MT`;
+            break;
+        }
+        case 'kg': {
+            newVol = `${newVol} kg`;
+            break;
+        }
+        case 'lbs': {
+            newVol = `${newVol} lbs`;
+            break;
+        }
+    }
+
+    return newVol;
+}
+
 export default Array.prototype.SortBy = function(key_func, reverse=false){
     return this.sort( (a, b) => ( key_func(b) - key_func(a) ) * (reverse ? 1 : -1) )
 }

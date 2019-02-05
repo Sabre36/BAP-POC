@@ -86,7 +86,7 @@ class InfoGraphic1 extends React.Component {
                 <Card className={[classes.card, classes.infoGraphics1Card]}>
                     <ClickAwayListener onClickAway={this.handleTooltipClose}>
                         <div className={classes.heading} onClick={this.handleTooltipOpen}>
-                            Supply chain
+                            Shipments (YoY)
                             <Tooltip
                                 classes={{ tooltip: classes.lightTooltip }}
                                 PopperProps={{

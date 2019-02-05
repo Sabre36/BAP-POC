@@ -1,0 +1,210 @@
+import React from "react";
+import withStyles from "@material-ui/core/styles/withStyles";
+import IconButton from '@material-ui/core/IconButton';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import { PieChart, Pie, Sector, Cell, Legend, ResponsiveContainer } from 'recharts';
+import MenuIcon from '@material-ui/icons/Menu';
+import GridContainer from "components/Grid/GridContainer.jsx";
+import GridItem from "components/Grid/GridItem.jsx";
+import Tooltip from '@material-ui/core/Tooltip';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import Typography from '@material-ui/core/Typography';
+import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle.jsx";
+
+import {GuidGenerator, ToCommas, GetVolumeByUnits, FormatVolumeByUnits} from './../../views/PortalPage/Helpers/Utils.js';
+import scorecardData from './../../assets/data/scorecard.json';
+
+
+//const COLORS = ['#37611A', '#65B12F'];
+const COLORS = ['#539127'];
+
+const renderActiveShape = (props) => {
+    const RADIAN = Math.PI / 180;
+    const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle, fill, payload, percent, value } = props;
+
+    const sin = Math.sin(-RADIAN * midAngle);
+    const cos = Math.cos(-RADIAN * midAngle);
+    const sx = cx + (outerRadius + 10) * cos;
+    const sy = cy + (outerRadius + 10) * sin;
+    const mx = cx + (outerRadius + 30) * cos;
+    const my = cy + (outerRadius + 30) * sin;
+    const ex = mx + (cos >= 0 ? 1 : -1) * 22;
+    const ey = my;
+    const textAnchor = cos >= 0 ? 'start' : 'end';
+    const units = payload.units;
+
+    const oneStarLabel = payload.oneStarLabel;
+    let oneStarValue = FormatVolumeByUnits(GetVolumeByUnits(payload.oneStarValue, units), units);
+
+
+    let color = fill;
+    color = "#37611A";
+
+    let displayValue = '';
+
+    if (units === "MT") {
+        displayValue = `${ToCommas(payload.mt)} ${payload.units}`;
+    } else if (units === "kg") {
+        displayValue = `${ToCommas(payload.kg)} ${payload.units}`;
+    } else {
+        displayValue = `${ToCommas(payload.lbs.toFixed(1))} ${payload.units}`;
+    }
+
+    return (
+        <g>
+            <text x={cx} y={cy-12} dy={8} textAnchor="middle" fill={fill} style={{fontSize: '18px', fontWeight: '500'}}>
+                {payload.name}
+            </text>
+            <text x={cx} y={cy+12} dy={8} textAnchor="middle" fill={fill}>
+
+                {`${displayValue}`}
+            </text>
+
+            <Sector
+                cx={cx}
+                cy={cy}
+                innerRadius={innerRadius}
+                outerRadius={outerRadius}
+                startAngle={startAngle}
+                endAngle={endAngle}
+                fill={fill}
+                />
+
+            <Sector
+                cx={cx}
+                cy={cy}
+                startAngle={startAngle}
+                endAngle={endAngle}
+                innerRadius={outerRadius + 6}
+                outerRadius={outerRadius + 10}
+                fill={color}
+                />
+            <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none"/>
+            <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none"/>
+
+            <text x={ex + (cos >= 0 ? 1 : -1) * 25 - 55} y={ey-10} textAnchor={textAnchor} fill="#333" style={{fontSize: '18px', fontWeight: '400', textAlign:'right'}}>{`${oneStarLabel} `}</text>
+            <text x={ex + (cos >= 0 ? 1 : -1) * 25 - 55} y={ey+10} textAnchor={textAnchor} fill="#333" style={{textAlign:'right'}}>{`${oneStarValue} `}</text>
+        </g>
+    );
+};
+
+const tooltipTitle = () => {
+    return (
+        <Typography>
+            A ratio between 1 star and 2+ "capable" facilities
+        </Typography>
+    );
+};
+
+class ProductionRatioDonut extends React.Component {
+    state = {
+        open: false,
+        activeIndex: 0,
+        units: 'MT',
+        data: []
+    }
+
+    componentDidMount(){
+        this.processData();
+    }
+
+    handleTooltipClose = () => {
+        this.setState({ open: false });
+    };
+
+    handleTooltipOpen = () => {
+        this.setState({ open: true });
+    };
+
+    processData() {
+        let transform = [];
+        let units = this.state.units;
+
+        scorecardData.forEach(function(section) {
+            let pr = section.productionRatio;
+
+            pr.forEach(function(el) {
+                el.mt = el.value;
+                el.kg = el.mt * 1000;
+                el.lbs = el.mt * 2204.62;
+                el.units = units;
+
+                transform.push(el);
+            });
+        });
+
+        transform[0].oneStarLabel = "1, 2+ star capable";
+        transform[0].oneStarValue = 333.2;
+
+        this.setState({
+            data: transform
+        });
+
+        //console.log("RATIO CHART" + JSON.stringify(this.state.data) );
+    }
+
+    onPieEnter(data, index) {
+        this.setState({
+            activeIndex: index,
+        });
+    }
+
+    render () {
+        const { classes } = this.props;
+
+        return (
+            <div>
+                <Card className={classes.cardLarge}>
+                    <ClickAwayListener onClickAway={this.handleTooltipClose}>
+                        <CardActions>
+                            <IconButton aria-label='Menu' color='inherit'>
+                                <MenuIcon className={classes.iconButtonStyle}/>
+                            </IconButton>
+                            <h4 className={classes.infoGraphicTitle} >
+                                Production capability
+                                <Tooltip
+                                    classes={{ tooltip: classes.lightTooltip }}
+                                    PopperProps={{
+                                        disablePortal: true,
+                                    }}
+                                    onClose={this.handleTooltipClose}
+                                    open={this.state.open}
+                                    disableFocusListener
+                                    disableHoverListener
+                                    disableTouchListener
+                                    title={tooltipTitle()}>
+                                    <span className={classes.tooltipIcon} onClick={this.handleTooltipOpen}>
+                                        <i className={"fa fa-sm fa-info-circle"}/>
+                                    </span>
+                                </Tooltip>
+                            </h4>
+                        </CardActions>
+
+                        <ResponsiveContainer height="85%">
+                            <PieChart margin={{right: 40}}>
+                                <Pie
+                                    activeIndex={this.state.activeIndex}
+                                    activeShape={renderActiveShape}
+                                    data={this.state.data}
+                                    innerRadius={90}
+                                    outerRadius={110}
+                                    paddingAngle={0}
+                                    stroke="none"
+                                    units={this.state.units}
+                                    >
+                                    {
+                                        this.state.data.map((entry, index) => <Cell key={GuidGenerator()} fill={COLORS[index % COLORS.length]}/>)
+                                    }
+                                </Pie>
+
+                            </PieChart>
+                        </ResponsiveContainer>
+                    </ClickAwayListener>
+                </Card>
+            </div>
+        );
+    }
+}
+
+export default withStyles(infoGraphicStyle)(ProductionRatioDonut);

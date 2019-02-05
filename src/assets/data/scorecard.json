@@ -3,12 +3,12 @@
         "report": "scorecard",
         "type": "endorser",
         "infoGraphics1": [
-            { "period": "2017", "shipped": 999.1 },
-            { "period": "2018", "shipped": 1029.8 }
+            { "period": "Previous", "shipped": 999.1 },
+            { "period": "Current", "shipped": 1029.8 }
         ],
         "infoGraphics2": [
             { "period": "Previous", "production": 679.1 },
-            { "period": "Last audit", "production": 872.2 }
+            { "period": "Current", "production": 872.2 }
         ],
         "infoGraphics3": [
             { "period": "Feb 1, 2019", "endorsers": 1, "suppliers": 3, "plants": 14, "farms": 148 }
@@ -20,7 +20,7 @@
         ],
         "productionRatio": [
             { "name": "1 star", "value": 555.9 },
-            { "name": "1 or 2+ star capable", "value": 333.2 }
+            { "name": "1, 2+ star capable", "value": 333.2 }
         ],
         "nonconformitiesData": [
             { "name": "Food Safety", "minor": 3, "major": 4, "critical": 0, "total": 7 },
