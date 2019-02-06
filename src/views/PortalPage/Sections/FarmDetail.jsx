@@ -5,7 +5,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
-import PlantFarmDetail from "components/Tables/PlantFarmDetailNew.jsx";
+import PlantFarmDetail from "components/Tables/PlantFarmDetailNew2.jsx";
 import aboutBAPStyle from "assets/jss/site-styles/views/landingPageSections/aboutBAPStyle.jsx";
 
 class FarmDetail extends React.Component {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, GridColumn as Column, GridDetailRow } from '@progress/kendo-react-grid';
+
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
 import GridContainer from "components/Grid/GridContainer.jsx";
@@ -20,7 +21,19 @@ import plantData from './../../assets/data/plantData.json';
 //import supplyChainData from './../../assets/data/supplyChainData.json';
 import supplyChainData from './../../assets/data/supplyChain-walmart.json';
 
+
+
 import round from "./../../views/PortalPage/Helpers/round.jsx";
+
+const styles = {
+    detailLabel: {
+        whiteSpace: 'nowrap',
+        overflowX: 'hidden',
+        textOverflow: 'ellipsis',
+        maxWidth: '200px'
+    }
+}
+
 
 function formatNum(value, decimals) {
     let n = round(value, decimals);
@@ -209,6 +222,7 @@ class DetailComponent extends GridDetailRow {
 
     render() {
         const dataItem = this.props.dataItem;
+        const {classes} = this.props;
 
         return (
 
@@ -239,8 +253,8 @@ class DetailComponent extends GridDetailRow {
                                 { dataItem.farms.map((item) =>
                                     <TableRow>
                                         <TableCell padding="none" style={{verticalAlign: "top"}}>{item.bapid}</TableCell>
-                                        <TableCell padding="none" style={{verticalAlign: "top"}}>{item.facility.name}</TableCell>
-                                        <TableCell padding="none" style={{verticalAlign: "top"}}>{item.facility.country}</TableCell>
+                                        <TableCell padding="none" style={{verticalAlign: "top"}}>{item.name}</TableCell>
+                                        <TableCell padding="none" style={{verticalAlign: "top"}}>{item.country}</TableCell>
                                         <TableCell numeric padding="dense" style={{verticalAlign: "top", textAlign: "right"}}>{item.plantsServed}</TableCell>
                                         <TableCell padding="dense" style={{verticalAlign: "top"}}>{item.expiration}</TableCell>
                                         <TableCell padding="dense" style={{verticalAlign: "top"}}><RenderSpecies list={item.production} type={"species"}/></TableCell>
@@ -275,8 +289,8 @@ class DetailComponent extends GridDetailRow {
                                 <br/>
                                 <div style={{textAlign: 'left', fontSize: '20px!important'}}>
                                     <p> {dataItem.bapid}</p>
-                                    <p> {dataItem.facility.name}</p>
-                                    <p> {dataItem.facility.country}</p>
+                                    <p style={styles.detailLabel}> {dataItem.name}</p>
+                                    <p> {dataItem.country}</p>
                                     <p> <RenderRating rating={dataItem.rating} /> </p>
                                     <p> {dataItem.farmCount}</p>
                                     <p> {dataItem.endorsersServed}</p>
@@ -285,7 +299,7 @@ class DetailComponent extends GridDetailRow {
 
                                     <ol style={{listStylePosition: "inside", paddingLeft: 0}}>
                                     { dataItem.suppliers.map((item) =>
-                                        <li >{item.name}</li>
+                                        <li style={styles.detailLabel}>{item.name}</li>
                                     ) }
                                     </ol>
 
@@ -295,24 +309,20 @@ class DetailComponent extends GridDetailRow {
                             <GridItem md={3}>
                                 <br/>
                                 <div style={{textAlign: 'right'}}>
-                                    <p><strong>{dataItem.year1Label}&nbsp; plant production</strong></p>
-                                    <p><strong>{dataItem.year1Label}&nbsp; farm production</strong></p>
-                                    <p><strong>{dataItem.year1Label}&nbsp; Projected</strong></p>
-                                    <p><strong>Projected {dataItem.year2ProjectedLabel}</strong></p>
-                                    <p><strong>{dataItem.year1Label}&nbsp; Shipped</strong> </p>
-                                    <p><strong>Shipped {dataItem.year2ShippedLabel}</strong></p>
+                                    <p><strong>{dataItem.yearLabel} Plant production</strong></p>
+                                    <p><strong>{dataItem.yearLabel} Farm production</strong></p>
+                                    <p><strong>{dataItem.yearLabel} Projected</strong></p>
+                                    <p><strong>{dataItem.yearLabel} Shipped</strong></p>
                                 </div>
                             </GridItem>
 
                             <GridItem md={2}>
                                 <br/>
                                 <div style={{textAlign: 'left'}}>
-                                    <p> {dataItem.totalPlantProduction} {dataItem.totalPlantProduction > 0 ? ' MT' : '-'} </p>
-                                    <p> {dataItem.totalFarmProduction} {dataItem.totalFarmProduction > 0 ? ' MT' : '-'} </p>
-                                    <p> {dataItem.totalPlantProjected} {dataItem.totalPlantProjected > 0 ? ' MT' : '-'}</p>
-                                    <p> {dataItem.year2Projected} {dataItem.year2Projected > 0 ? ' MT' : '-'}</p>
-                                    <p> {dataItem.totalPlantShipped} {dataItem.totalPlantShipped > 0 ? ' MT' : '-'}</p>
-                                    <p> {dataItem.year2Shipped} {dataItem.year2Shipped > 0 ? ' MT' : '-'}</p>
+                                    <p> {dataItem.totalPlantProduction} {dataItem.totalPlantProduction >= 0 ? ' MT' : '-'} </p>
+                                    <p> {dataItem.totalFarmProduction} {dataItem.totalFarmProduction >= 0 ? ' MT' : '-'} </p>
+                                    <p> {dataItem.totalPlantProjected} {dataItem.totalPlantProjected >= 0 ? ' MT' : '-'}</p>
+                                    <p> {dataItem.totalPlantShipped} {dataItem.totalPlantShipped >= 0 ? ' MT' : '-'}</p>
                                 </div>
                             </GridItem>
                         </GridContainer>
@@ -367,23 +377,33 @@ class PlantFarmDetail extends React.Component {
         let _totalFarmProduction = 0;
         let _totalDilutedFarmProduction = 0;
         let _yearLabel = null;
+        let _reportType = null;
 
-        this.state.data.forEach(function(el) {
+        supplyChainData.forEach(function(el) {
 
-            // recast nested detail in plant-level data
-            el.facilityName = el.facility.name;
-            el.country = el.facility.country;
-            el.totalPlantProduction = el.production[0].total;
-            el.totalPlantProjected = el.production[0].projected;
-            el.totalPlantShipped = el.production[0].shipped;
-            _yearLabel = el.production[0].year;
-            el.year1Label = _yearLabel;
+            _reportType = el.reportType;
+
+            el.facilityName = el.name;
+            el.country = el.country;
+
+            el.production.forEach(function(plant) {
+                el.totalPlantShipped = plant.shipped;
+                el.totalPlantProduction = plant.total;
+                el.totalPlantProjected = plant.projected;
+                el.yearLabel = plant.year;
+            });
+
+
+            //el.totalPlantProduction = el.production[0].total;
+            //el.totalPlantProjected = el.production[0].projected;
+            //el.totalPlantShipped = el.production[0].shipped;
+            //_yearLabel = el.production[0].year;
             el.farmCount = el.farms.length;
 
             // loop through the farm detail and come up with some plant-level summary fields
             el.farms.forEach(function(farm) {
                 //console.log("DETAIL=>" + JSON.stringify(farmDetail));
-                console.log(farm.bapid  + " " + farm.facility.name);
+                console.log(farm.bapid  + " " + farm.name);
                 farm.production.forEach(function(prod) {
                     _totalFarmProduction += prod.total;
                     _totalDilutedFarmProduction += prod.diluted;
@@ -511,4 +531,4 @@ class PlantFarmDetail extends React.Component {
         }
     }
 
-    export default PlantFarmDetail;
+export default PlantFarmDetail;
