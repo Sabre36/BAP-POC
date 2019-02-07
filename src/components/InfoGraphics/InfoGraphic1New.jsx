@@ -13,13 +13,14 @@ import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle
 import { Round } from './../../views/PortalPage/Helpers/Utils.js';
 import scorecardData from 'assets/data/scorecard.json';
 
-const tooltipTitle = (classes) => {
+const tooltipTitle = (classes, period1, period2) => {
     return (
         <Typography className={classes.tooltipWrap}>
-            A year over year comparison, when available, of shipments.
+            Projected versus production volume: <strong>{period1}</strong> vs. <strong>{period2}.</strong>
         </Typography>
     );
 };
+
 
 class InfoGraphic1 extends React.Component {
     state = {
@@ -28,8 +29,10 @@ class InfoGraphic1 extends React.Component {
         pctDiff: 0,
         col1: 0,
         col2: 0,
-        col1Label: '',
-        col2Label: ''
+        col1Period: '',
+        col1Label: 'Projected',
+        col2Period: '',
+        col2Label: 'Production',
     }
 
     handleTooltipClose = () => {
@@ -45,20 +48,20 @@ class InfoGraphic1 extends React.Component {
     }
 
     async processData() {
-        let i = 0, _col1, _col1Label, _col2, _col2Label, _pctDiff;
+        let i = 0, _col1, _col1Period, _col2, _col2Period, _pctDiff;
 
 
         scorecardData.forEach(function(section) {
-            let info = section.infoGraphics1;
+            let info = section.infoGraphic1;
 
             info.forEach(function(el) {
                 if (i == 0) {
-                    _col1 = el.shipped;
-                    _col1Label = el.period;
+                    _col1 = el.projected;
+                    _col1Period = el.period;
                 }
                 else if (i == 1) {
-                    _col2 = el.shipped;
-                    _col2Label = el.period;
+                    _col2 = el.production;
+                    _col2Period = el.period;
                 }
                 i++;
             });
@@ -70,8 +73,8 @@ class InfoGraphic1 extends React.Component {
             pctDiff: Round(_pctDiff, 1),
             col1: _col1,
             col2: _col2,
-            col1Label: _col1Label,
-            col2Label: _col2Label,
+            col1Period: _col1Period,
+            col2Period: _col2Period
         });
 
         console.log('INFOGRAPHIC1 STATE: ' + JSON.stringify(this.state));
@@ -80,13 +83,12 @@ class InfoGraphic1 extends React.Component {
     render() {
         const { classes } = this.props;
 
-
         return (
             <div>
                 <Card className={[classes.card, classes.infoGraphics1Card]}>
                     <ClickAwayListener onClickAway={this.handleTooltipClose}>
                         <div className={classes.heading} onClick={this.handleTooltipOpen}>
-                            Shipments (YoY)
+                            Projected vs. Production
                             <Tooltip
                                 classes={{ tooltip: classes.lightTooltip }}
                                 PopperProps={{
@@ -97,7 +99,7 @@ class InfoGraphic1 extends React.Component {
                                 disableFocusListener
                                 disableHoverListener
                                 disableTouchListener
-                                title={tooltipTitle(classes)}>
+                                title={tooltipTitle(classes, this.state.col1Period, this.state.col2Period)}>
                                 <span className={classes.tooltipIconLight} >
                                     <i className={"fa fa-sm fa-info-circle"} />
                                 </span>
@@ -127,9 +129,10 @@ class InfoGraphic1 extends React.Component {
 
                                     <label className={classes.legend}>{this.state.col2Label}</label>
                                 </GridItem>
+
                             </GridContainer>
                         </CardContent>
-                </ClickAwayListener>
+                    </ClickAwayListener>
                 </Card>
             </div>
         );

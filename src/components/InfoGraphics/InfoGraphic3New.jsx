@@ -13,10 +13,10 @@ import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle
 import { Round } from './../../views/PortalPage/Helpers/Utils.js';
 import scorecardData from 'assets/data/scorecard.json';
 
-const tooltipTitle = (classes) => {
+const tooltipTitle = (classes, period) => {
     return (
         <Typography className={classes.tooltipWrap}>
-            The number of facilities for the supply chain.
+            The number of facilities for the supply chain as of {period}.
         </Typography>
     );
 };
@@ -53,7 +53,7 @@ class InfoGraphic2 extends React.Component {
 
         scorecardData.forEach(function(section) {
 
-            let info = section.infoGraphics3;
+            let info = section.infoGraphic3;
              _type = section.type;
 
             // Note: to be orthgonal, treating this as though there are multiple rows of data.
@@ -110,7 +110,7 @@ class InfoGraphic2 extends React.Component {
                                 disableFocusListener
                                 disableHoverListener
                                 disableTouchListener
-                                title={tooltipTitle(classes)}>
+                                title={tooltipTitle(classes, this.state.period)}>
                                 <span className={classes.tooltipIconLight} >
                                     <i className={"fa fa-sm fa-info-circle"} />
                                 </span>

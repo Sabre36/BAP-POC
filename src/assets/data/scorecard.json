@@ -1,22 +1,22 @@
 [
     {
         "report": "scorecard",
-        "type": "endorser",
-        "infoGraphics1": [
-            { "period": "Previous", "shipped": 999.1 },
-            { "period": "Current", "shipped": 1029.8 }
+        "reportType": "endorser",
+        "infoGraphic1": [
+            { "period": "2018", "projected": 999.1 },
+            { "period": "2017", "production": 1029.8 }
         ],
-        "infoGraphics2": [
-            { "period": "Previous", "production": 679.1 },
-            { "period": "Current", "production": 872.2 }
+        "infoGraphic2": [
+            { "period": "Apr 2017", "production": 679.1 },
+            { "period": "Mar 2018", "production": 872.2 }
         ],
-        "infoGraphics3": [
+        "infoGraphic3": [
             { "period": "Feb 1, 2019", "endorsers": 1, "suppliers": 3, "plants": 14, "farms": 148 }
         ],
         "comparisonData": [
             { "name": "Projected", "year": 2017, "volume": 24907.74 },
             { "name": "Shipped", "year": 2016, "volume": 30010.33 },
-            { "name": "Production" , "year": 2017, "volume": 96104.01 }
+            { "name": "Production" , "year": "Current", "volume": 96104.01 }
         ],
         "productionRatio": [
             { "name": "1 star", "value": 555.9 },

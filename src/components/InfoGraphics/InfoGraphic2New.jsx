@@ -13,10 +13,10 @@ import infoGraphicStyle from "assets/jss/site-styles/components/infoGraphicStyle
 import { Round } from './../../views/PortalPage/Helpers/Utils.js';
 import scorecardData from 'assets/data/scorecard.json';
 
-const tooltipTitle = (classes) => {
+const tooltipTitle = (classes, period1, period2) => {
     return (
         <Typography className={classes.tooltipWrap}>
-            A year over year comparison, when available, of production.
+            A period to period production volume comparison: <strong>{period1}</strong> vs. <strong>{period2}.</strong>
         </Typography>
     );
 };
@@ -29,8 +29,10 @@ class InfoGraphic2 extends React.Component {
         pctDiff: 0,
         col1: 0,
         col2: 0,
-        col1Label: '',
-        col2Label: ''
+        col1Period: '',
+        col1Label: 'Previous',
+        col2Period: '',
+        col2Label: 'Current',
     }
 
     handleTooltipClose = () => {
@@ -46,20 +48,20 @@ class InfoGraphic2 extends React.Component {
     }
 
     async processData() {
-        let i = 0, _col1, _col1Label, _col2, _col2Label, _pctDiff;
+        let i = 0, _col1, _col1Period, _col2, _col2Period, _pctDiff;
 
 
         scorecardData.forEach(function(section) {
-            let info = section.infoGraphics2;
+            let info = section.infoGraphic2;
 
             info.forEach(function(el) {
                 if (i == 0) {
                     _col1 = el.production;
-                    _col1Label = el.period;
+                    _col1Period = el.period;
                 }
                 else if (i == 1) {
                     _col2 = el.production;
-                    _col2Label = el.period;
+                    _col2Period = el.period;
                 }
                 i++;
             });
@@ -71,8 +73,8 @@ class InfoGraphic2 extends React.Component {
             pctDiff: Round(_pctDiff, 1),
             col1: _col1,
             col2: _col2,
-            col1Label: _col1Label,
-            col2Label: _col2Label,
+            col1Period: _col1Period,
+            col2Period: _col2Period
         });
 
         console.log('INFOGRAPHIC2 STATE: ' + JSON.stringify(this.state));
@@ -97,7 +99,7 @@ class InfoGraphic2 extends React.Component {
                                 disableFocusListener
                                 disableHoverListener
                                 disableTouchListener
-                                title={tooltipTitle(classes)}>
+                                title={tooltipTitle(classes, this.state.col1Period, this.state.col2Period)}>
                                 <span className={classes.tooltipIconLight} >
                                     <i className={"fa fa-sm fa-info-circle"} />
                                 </span>
